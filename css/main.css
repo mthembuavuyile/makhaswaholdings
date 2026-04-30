@@ -446,9 +446,11 @@ nav a.active::after {
    ===================================================== */
 .hero {
     width: 100%;
-    height: clamp(340px, 55vw, 560px);
+    min-height: clamp(260px, 40vw, 400px);
     background: #c8cdd5 url('../images/building.jpeg') center / cover no-repeat;
     position: relative;
+    display: flex;
+    align-items: flex-end;
 }
 
 .hero::after {
@@ -459,10 +461,8 @@ nav a.active::after {
 }
 
 .hero-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+    width: 100%;
     z-index: 2;
     padding: 48px 40px;
     color: var(--white);
@@ -519,7 +519,7 @@ nav a.active::after {
    ===================================================== */
 .page-hero {
     width: 100%;
-    height: clamp(260px, 40vw, 400px);
+    min-height: clamp(260px, 40vw, 400px);
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -536,10 +536,7 @@ nav a.active::after {
 }
 
 .page-hero .hero-content {
-    position: relative;
-    z-index: 2;
     padding: 40px;
-    color: var(--white);
 }
 
 .page-hero .hero-content h1 {
@@ -1953,7 +1950,7 @@ footer {
 
     /* Hero */
     .hero {
-        height: clamp(260px, 60vw, 400px);
+        min-height: clamp(200px, 45vw, 320px);
     }
 
     .hero-content {
@@ -1966,7 +1963,7 @@ footer {
 
     /* Page hero */
     .page-hero {
-        height: clamp(200px, 45vw, 320px);
+        min-height: clamp(200px, 45vw, 320px);
     }
 
     .page-hero .hero-content {
