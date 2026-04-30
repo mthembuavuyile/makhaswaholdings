@@ -252,7 +252,7 @@ function buildFooter() {
         </div>
 
         <div class="footer-bottom">
-            <p>${cfg.company.copyright}</p>
+            <p>${cfg.company.copyright} | Developed by <a href="https://vylex.co.za" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Vylex</a></p>
             <div class="footer-bottom-reg">
                 <span>REG: ${cfg.company.registration}</span>
                 <span>${cfg.company.bbbee}</span>

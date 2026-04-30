@@ -401,8 +401,7 @@
             </div>
 
             <div>
-                <form class="contact-form"
-                    onsubmit="event.preventDefault(); alert('Thank you for your message. Makhaswa Holdings will respond shortly.');">
+                <form id="contact-form" class="contact-form" method="POST" action="#">
                     <label for="c-name">Your Name</label>
                     <input type="text" id="c-name" placeholder="Full Name" required>
 
@@ -433,6 +432,7 @@
 
     <!-- Scripts — components.js MUST load before app.js -->
     <script src="js/components.js"></script>
+    <script src="js/forms.js"></script>
     <script src="js/app.js"></script>
 </body>
 
