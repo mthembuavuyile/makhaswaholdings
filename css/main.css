@@ -96,6 +96,205 @@ ul {
     text-align: center;
 }
 
+.text-left {
+    text-align: left;
+}
+
+/* =====================================================
+   UTILITY CLASSES — Replace inline styles (DRY)
+   ===================================================== */
+.u-center-block {
+    text-align: center;
+}
+
+.u-mt-sm {
+    margin-top: 1rem;
+}
+
+.u-mt-md {
+    margin-top: 1.2rem;
+}
+
+.u-mb-sm {
+    margin-bottom: 0.5rem;
+}
+
+.u-mb-md {
+    margin-bottom: 1rem;
+}
+
+.u-mb-lg {
+    margin-bottom: 1.5rem;
+}
+
+.u-font-office-heading {
+    font-size: 1.1rem;
+}
+
+/* Subtitle positioning helpers */
+.section-subtitle--centered {
+    text-align: center;
+    margin: 0 auto 32px;
+    max-width: 800px;
+}
+
+.section-subtitle--tight {
+    text-align: center;
+    margin: -16px auto 12px;
+}
+
+.section-subtitle--spaced {
+    text-align: center;
+    margin: -16px auto 40px;
+}
+
+.section-subtitle--bottom {
+    text-align: center;
+    margin: 28px auto 0;
+    font-size: 13px;
+}
+
+.section-subtitle--open {
+    margin-top: -16px;
+    margin-bottom: 32px;
+}
+
+/* Grade-codes block used inside compliance cards */
+.grade-codes--block {
+    margin-top: 12px;
+    font-size: 15px;
+}
+
+.grade-codes--sub {
+    font-size: 13px;
+    color: var(--text-light);
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Grade badge override for about page */
+.grade-badge--sm {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+/* Accreditation logo centered (about page) */
+.accreditation-logo--centered {
+    margin: 0 auto 16px;
+}
+
+/* B-BBEE value size overrides */
+.bbee-value--sm {
+    font-size: 20px;
+}
+
+.bbee-value--xs {
+    font-size: 16px;
+}
+
+/* CTA wrapper */
+.cta-center {
+    text-align: center;
+    margin-top: 32px;
+}
+
+/* Container top-padding variant */
+.container--pt-flush {
+    padding-top: 40px;
+}
+
+/* Fraud warning callout on careers */
+.fraud-callout {
+    margin-top: 32px;
+    padding: 20px;
+    background: var(--off-white);
+    border-left: 3px solid var(--primary);
+}
+
+.fraud-callout h4 {
+    font-size: 13px;
+    color: var(--primary);
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.fraud-callout p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Careers apply info text */
+.apply-info-text {
+    font-size: 13.5px;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* Contact page inline hero bg (via data attribute handled in CSS) */
+.page-hero-contact {
+    background-image: url('../images/warehouse-induustrial.jpeg');
+}
+
+.page-hero-faq {
+    background-image: url('../images/An_eye-level_photo_202604152315.jpeg');
+}
+
+.page-hero-terms {
+    background-image: url('../images/concrete-panels.jpeg');
+}
+
+/* Icon vertical-align helper */
+.icon-inline {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Footer component styles — replaces inline styles on map items */
+.map-title {
+    font-size: 11px;
+    color: #aec4db;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.map-item--spaced {
+    margin-bottom: 12px;
+}
+
+.footer-contact-separator {
+    margin-top: 10px;
+}
+
+
+
+/* Services list with top margin */
+.services-list--mt {
+    margin-top: 16px;
+}
+
+/* FAQ answer link style */
+.link-primary {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Legal contact link */
+.link-primary-bold {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Contact form CTA hero heading style */
+.section-title--contact-heading {
+    margin-top: 40px;
+    margin-bottom: 8px;
+}
+
 /* =====================================================
    LAYOUT CONTAINER
    ===================================================== */
@@ -1448,9 +1647,9 @@ footer {
 
 .footer-map {
     width: 100%;
-    height: 180px;
+    height: 100px;
     border: none;
-    margin-top: 12px;
+    margin-top: 0;
     filter: grayscale(60%) contrast(1.1);
     transition: filter var(--transition);
 }
@@ -1627,6 +1826,84 @@ footer {
 
 .legal-content ul li {
     margin-bottom: 8px;
+}
+
+/* =====================================================
+   CAREERS
+   ===================================================== */
+.careers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.job-card {
+    background: var(--white);
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--primary);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.job-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.job-card h3 {
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.job-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.job-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.job-card p {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-apply {
+    display: inline-block;
+    background: var(--off-white);
+    color: var(--primary);
+    padding: 10px 24px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background var(--transition), color var(--transition);
+    border: 1px solid var(--border);
+}
+
+.btn-apply:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.page-hero-careers {
+    background-image: url('../images/building.jpeg');
+    background-position: center 30%;
 }
 
 /* =====================================================

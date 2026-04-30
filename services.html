@@ -22,38 +22,8 @@
 
 <body>
 
-    <!-- =====================================================
-         HEADER
-    ===================================================== -->
-    <header>
-        <a href="index.html" class="logo">
-            <img src="images/transparent-logo.png" alt="Makhaswa Holdings Logo">
-            <div class="logo-text">Makhaswa<small>Holdings (Pty) Ltd</small></div>
-        </a>
-
-        <!-- Desktop Navigation -->
-        <nav id="desktop-nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="services.html" class="active">Services</a>
-            <a href="index.html#projects">Projects</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-
-        <!-- Burger Button -->
-        <button class="burger" id="burger-btn" aria-label="Toggle menu" aria-expanded="false">
-            <i data-lucide="menu" width="26" height="26"></i>
-        </button>
-    </header>
-
-    <!-- Mobile Navigation Drawer -->
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="index.html#projects">Projects</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+    <!-- Shared Header (injected by components.js) -->
+    <div id="site-header"></div>
 
     <!-- =====================================================
          PAGE HERO
@@ -76,7 +46,7 @@
 
     <div class="container">
         <h2 class="section-title text-center">Core Services</h2>
-        <p class="section-subtitle" style="text-align:center; margin: -16px auto 40px;">The service mix below comes
+        <p class="section-subtitle section-subtitle--spaced">The service mix below comes
             directly from our areas of active CIDB-graded capability and operational experience.</p>
 
         <div class="service-detail-grid">
@@ -168,13 +138,13 @@
             <img src="images/An_eye-level_photo_202604152315.jpeg" alt="Makhaswa project management team"
                 class="about-img">
             <div class="about-text">
-                <h2 class="section-title" style="text-align:left;">Project Management</h2>
+                <h2 class="section-title text-left">Project Management</h2>
                 <p>Makhaswa Holdings provides full project lifecycle management including site preparation,
                     coordination, engineering planning, and execution. Our disciplined approach ensures every project is
                     delivered safely, on time, and within budget.</p>
                 <p>From initial feasibility through to handover, our project management team coordinates all trades,
                     manages budgets, and ensures quality workmanship at every stage.</p>
-                <ul class="services-list" style="margin-top: 16px;">
+                <ul class="services-list services-list--mt">
                     <li><i data-lucide="check-circle-2" width="16" height="16"></i> Full project lifecycle management
                     </li>
                     <li><i data-lucide="check-circle-2" width="16" height="16"></i> Site preparation and coordination
@@ -243,7 +213,7 @@
          SAFETY
     ===================================================== -->
     <div class="safety-banner">
-        <h3><i data-lucide="hard-hat" width="24" height="24" style="vertical-align: middle; margin-right: 8px;"></i>
+        <h3><i data-lucide="hard-hat" width="24" height="24" class="icon-inline"></i>
             Health &amp; Safety</h3>
         <p>Health and Safety is non-negotiable at Makhaswa. We adhere to the Occupational Health and Safety Act (OHSA)
             and maintain robust safety management systems to protect our employees, sub-contractors, clients, and the
@@ -255,148 +225,18 @@
     ===================================================== -->
     <div class="section-banner">Ready to Start Your Next Project?</div>
 
-    <div class="container" style="text-align: center;">
+    <div class="container u-center-block">
         <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle" style="margin: -16px auto 28px; text-align: center;">Connect with our team for a
+        <p class="section-subtitle section-subtitle--tight">Connect with our team for a
             detailed consultation on your upcoming civil, building, or infrastructure requirements.</p>
-        <a href="index.html#contact" class="btn-view-all">Contact Makhaswa Holdings</a>
+        <a href="contact.html" class="btn-view-all">Contact Makhaswa Holdings</a>
     </div>
 
-    <!-- =====================================================
-         FOOTER
-    ===================================================== -->
-        <footer>
-        <div class="footer-inner">
-
-            <!-- Col 1: Brand -->
-            <div class="footer-col footer-col--brand">
-                <div class="footer-logo">
-                    <img src="images/transparent-logo.png" alt="Makhaswa Logo">
-                    <div class="footer-logo-text">Makhaswa<small>Holdings (Pty) Ltd</small></div>
-                </div>
-                <p class="footer-desc">A dynamic civil engineering and construction company committed to excellence,
-                    efficiency, and building lasting infrastructure solutions across South Africa.</p>
-            </div>
-
-            <!-- Col 2: Quick Links -->
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i><a
-                            href="index.html">Home</a></li>
-                    <li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i><a
-                            href="about.html">About Us</a></li>
-                    <li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i><a
-                            href="services.html">Our Services</a></li>
-                    <li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i><a
-                            href="index.html#projects">Projects</a></li>
-                    <li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i><a
-                            href="contact.html">Contact Us</a></li>
-                    <li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i><a
-                            href="faq.html">FAQs</a></li>
-                    <li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i><a
-                            href="terms.html">Terms &amp; Conditions</a></li>
-                </ul>
-            </div>
-
-            <!-- Col 3: Capabilities -->
-            <div class="footer-col">
-                <h4>Capabilities</h4>
-                <ul>
-                    <li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i>Earthworks</li>
-                    <li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i>Civil Works</li>
-                    <li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i>Road Construction
-                    </li>
-                    <li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i>General Building
-                    </li>
-                    <li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i>Project Management
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Col 4: Contact -->
-            <div class="footer-col">
-                <h4>Contact Us</h4>
-
-                <ul>
-                    <!-- Locations -->
-                    <li><strong>Locations</strong></li>
-                    <li>
-                        <i data-lucide="map-pin" width="14" height="14" class="footer-icon"></i>
-                        Pretoria: 869 Patryshond St, Garsfontein, 0042
-                    </li>
-                    <li>
-                        <i data-lucide="map-pin" width="14" height="14" class="footer-icon"></i>
-                        Johannesburg: Riversands Incubation Hub, Midrand, 2021
-                    </li>
-
-                    <!-- Phones -->
-                    <li style="margin-top: 10px;"><strong>Phone</strong></li>
-                    <li>
-                        <i data-lucide="phone" width="14" height="14" class="footer-icon"></i>
-                        Pretoria: 012 944 1702
-                    </li>
-                    <li>
-                        <i data-lucide="phone" width="14" height="14" class="footer-icon"></i>
-                        Johannesburg: 011 568 0938
-                    </li>
-                    <li>
-                        <i data-lucide="message-square" width="14" height="14" class="footer-icon"></i>
-                        WhatsApp: +27 81 359 8003
-                    </li>
-
-                    <!-- Emails -->
-                    <li style="margin-top: 10px;"><strong>Email</strong></li>
-                    <li>
-                        <i data-lucide="mail" width="14" height="14" class="footer-icon"></i>
-                        info@makhaswaholdings.co.za
-                    </li>
-                    <li>
-                        <i data-lucide="mail" width="14" height="14" class="footer-icon"></i>
-                        admin@makhaswaholdings.co.za
-                    </li>
-                    <li>
-                        <i data-lucide="mail" width="14" height="14" class="footer-icon"></i>
-                        tenders@makhaswaholdings.co.za
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Col 5: Our Footprint (maps) -->
-            <div class="footer-col footer-col--footprint">
-                <h4>Our Footprint</h4>
-                <div class="footer-maps">
-
-
-                    <div class="map-item" style="margin-bottom: 12px;">
-                        <span class="map-title" style="font-size: 11px; color: #aec4db; display: block; margin-bottom: 4px;">Garsfontein – 869 Patryshond St</span>
-                        <iframe class="footer-map" style="height: 100px; margin-top: 0;" src="https://maps.google.com/maps?q=869%20Patryshond%20St%2C%20Garsfontein&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"
-                            title="Garsfontein Office" allowfullscreen="">
-                        </iframe>
-                    </div>
-
-                    <div class="map-item">
-                        <span class="map-title" style="font-size: 11px; color: #aec4db; display: block; margin-bottom: 4px;">Midrand – Riversands Incubation Hub</span>
-                        <iframe class="footer-map" style="height: 100px; margin-top: 0;" src="https://maps.google.com/maps?q=Riversands%20Incubation%20Hub&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"
-                            title="Midrand Office" allowfullscreen="">
-                        </iframe>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Makhaswa Holdings (Pty) Ltd. All Rights Reserved.</p>
-            <div class="footer-bottom-reg">
-                <span>REG: K2023/648268/07</span>
-                <span>B-BBEE Level 1 Contributor</span>
-            </div>
-        </div>
-    </footer>
+    <!-- Shared Footer (injected by components.js) -->
+    <div id="site-footer"></div>
 
     <!-- Scripts -->
+    <script src="js/components.js"></script>
     <script src="js/app.js"></script>
 </body>
 

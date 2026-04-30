@@ -1,14 +1,25 @@
 /* =====================================================
    MAKHASWA HOLDINGS — APP.JS
-   Shared across index.html, about.html, services.html
+   Main application script. Loads shared components
+   (header/footer) and handles interactions.
    ===================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialise Lucide icons
+
+    // -------------------------------------------------------
+    // 1. Inject shared header & footer from components.js
+    // -------------------------------------------------------
+    if (window.MakhaswaComponents) {
+        window.MakhaswaComponents.injectComponents();
+    }
+
+    // -------------------------------------------------------
+    // 2. Initialise Lucide icons (after components are injected)
+    // -------------------------------------------------------
     if (window.lucide) lucide.createIcons();
 
     // -------------------------------------------------------
-    // Burger menu toggle
+    // 3. Burger menu toggle
     // -------------------------------------------------------
     const burgerBtn = document.getElementById('burger-btn');
     const mobileNav = document.getElementById('mobile-nav');
@@ -52,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------
-    // Smooth scroll for same-page anchor links
+    // 4. Smooth scroll for same-page anchor links
     // -------------------------------------------------------
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -68,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -------------------------------------------------------
-    // Animate stats on scroll (simple counter)
+    // 5. Animate stats on scroll (simple counter)
     // -------------------------------------------------------
     const statNumbers = document.querySelectorAll('.stat-number');
     let statsAnimated = false;
@@ -103,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateStats();
 
     // -------------------------------------------------------
-    // Fade-in on scroll (IntersectionObserver)
+    // 6. Fade-in on scroll (IntersectionObserver)
     // -------------------------------------------------------
     const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
@@ -131,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -------------------------------------------------------
-    // FAQ Accordion
+    // 7. FAQ Accordion
     // -------------------------------------------------------
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
