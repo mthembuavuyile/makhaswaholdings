@@ -14,7 +14,7 @@ const SITE_CONFIG = {
     company: {
         name: 'Makhaswa',
         legalName: 'Holdings (Pty) Ltd',
-        registration: 'K2023/648268/07',
+        registration: 'K2017/307900/07',
         bbbee: 'B-BBEE Level 1 Contributor',
         tagline: 'A dynamic civil engineering and construction company committed to excellence, efficiency, and building lasting infrastructure solutions across South Africa.',
         logoSrc: 'images/transparent-logo.png',
@@ -23,23 +23,23 @@ const SITE_CONFIG = {
     },
 
     nav: [
-        { label: 'Home',     href: 'index.html' },
+        { label: 'Home', href: 'index.html' },
         { label: 'About Us', href: 'about.html' },
         { label: 'Services', href: 'services.html' },
         { label: 'Projects', href: 'index.html#projects' },
-        { label: 'Careers',  href: 'careers.html' },
-        { label: 'Contact',  href: 'contact.html' },
+        { label: 'Careers', href: 'careers.html' },
+        { label: 'Contact', href: 'contact.html' },
     ],
 
     quickLinks: [
-        { label: 'Home',                href: 'index.html' },
-        { label: 'About Us',            href: 'about.html' },
-        { label: 'Our Services',         href: 'services.html' },
-        { label: 'Projects',            href: 'index.html#projects' },
-        { label: 'Careers',             href: 'careers.html' },
-        { label: 'Contact Us',          href: 'contact.html' },
-        { label: 'FAQs',                href: 'faq.html' },
-        { label: 'Terms & Conditions',  href: 'terms.html' },
+        { label: 'Home', href: 'index.html' },
+        { label: 'About Us', href: 'about.html' },
+        { label: 'Our Services', href: 'services.html' },
+        { label: 'Projects', href: 'index.html#projects' },
+        { label: 'Careers', href: 'careers.html' },
+        { label: 'Contact Us', href: 'contact.html' },
+        { label: 'FAQs', href: 'faq.html' },
+        { label: 'Terms & Conditions', href: 'terms.html' },
     ],
 
     capabilities: [
@@ -53,11 +53,11 @@ const SITE_CONFIG = {
     offices: {
         pretoria: {
             label: 'Pretoria',
-            address: '869 Patryshond St, Garsfontein, 0042',
+            address: '869 Patryshond Street, Garsfontein, Pretoria, Gauteng, 0042, South Africa',
             phone: '012 944 1702',
-            mapQuery: '869%20Patryshond%20St%2C%20Garsfontein',
+            mapQuery: '869%20Patryshond%20Street%2C%20Garsfontein%20Pretoria',
             mapTitle: 'Garsfontein Office',
-            mapLabel: 'Garsfontein \u2013 869 Patryshond St',
+            mapLabel: 'Garsfontein \u2013 869 Patryshond Street',
         },
         johannesburg: {
             label: 'Johannesburg',
