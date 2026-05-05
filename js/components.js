@@ -73,7 +73,7 @@ const SITE_CONFIG = {
         whatsapp: '+27 81 359 8003',
         emails: [
             'info@makhaswaholdings.co.za',
-            'admin@makhaswaholdings.co.za',
+            'careers@makhaswaholdings.co.za',
             'tenders@makhaswaholdings.co.za',
         ],
     },
