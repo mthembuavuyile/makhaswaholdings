@@ -44,6 +44,56 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        .compact-job {
+            margin-top: 16px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .compact-job:last-of-type {
+            border-bottom: none;
+            margin-bottom: 8px;
+        }
+
+        .compact-job h4 {
+            color: var(--primary);
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .compact-job .job-meta {
+            margin-bottom: 8px;
+        }
+
+        .compact-job p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        .job-bullets {
+            list-style: disc;
+            padding-left: 20px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .job-bullets li {
+            font-size: 13.5px;
+            color: var(--text-light);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .cta-left {
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+    </style>
 </head>
 
 <body>
@@ -100,61 +150,129 @@
     </div>
 
     <!-- =====================================================
-         CURRENT OPENINGS
+         TYPICAL ROLES
     ===================================================== -->
-    <div class="section-banner">Current Vacancies</div>
+    <div class="section-banner">Positions We Recruit For</div>
 
     <div class="container">
-        <h2 class="section-title">Open Positions</h2>
-        <p class="section-subtitle section-subtitle--open">Explore our current job opportunities across Gauteng and
-            beyond. If you do not see a role that fits, you can still send us your CV for future consideration.</p>
+        <h2 class="section-title">Typical Roles</h2>
+        <p class="section-subtitle section-subtitle--open">While we may not always have active openings, we frequently
+            recruit for the following positions. If you match any of these profiles, submit your CV for our talent pool.
+        </p>
 
-        <div class="careers-grid">
-            <!-- Job Card 1 -->
-            <div class="job-card">
-                <h3>Civil Engineer</h3>
+        <!-- CATEGORY: Engineering & Management -->
+        <div class="career-category">
+            <h3 class="category-title">Engineering & Management</h3>
+
+            <div class="compact-job">
+                <h4>Civil Engineer</h4>
                 <div class="job-meta">
                     <span><i data-lucide="map-pin" width="14" height="14"></i> Pretoria, GP</span>
                     <span><i data-lucide="clock" width="14" height="14"></i> Full-Time</span>
                 </div>
                 <p>Seeking an experienced Civil Engineer to manage road construction and stormwater projects. BEng/BSc
                     Civil required, PR Eng registration advantageous.</p>
-                <a href="#apply-section" class="btn-apply">Apply Now</a>
             </div>
 
-            <!-- Job Card 2 -->
-            <div class="job-card">
-                <h3>Site Manager</h3>
+            <div class="compact-job">
+                <h4>Site Manager</h4>
                 <div class="job-meta">
                     <span><i data-lucide="map-pin" width="14" height="14"></i> Various Sites, GP</span>
                     <span><i data-lucide="clock" width="14" height="14"></i> Contract</span>
                 </div>
                 <p>Looking for a strong Site Manager with 5+ years experience in commercial building and structural
                     projects. Must have valid health & safety certificates.</p>
-                <a href="#apply-section" class="btn-apply">Apply Now</a>
             </div>
 
-            <!-- Job Card 3 -->
-            <div class="job-card">
-                <h3>Quantity Surveyor</h3>
+            <div class="compact-job">
+                <h4>Quantity Surveyor</h4>
                 <div class="job-meta">
                     <span><i data-lucide="map-pin" width="14" height="14"></i> Midrand, GP</span>
                     <span><i data-lucide="clock" width="14" height="14"></i> Full-Time</span>
                 </div>
                 <p>Responsible for project estimation, cost planning, and contract administration. Minimum 3 years
                     experience in construction environments.</p>
-                <a href="#apply-section" class="btn-apply">Apply Now</a>
             </div>
 
-            <!-- Job Card 4 -->
-            <div class="job-card">
-                <h3>Heavy Machinery Operator</h3>
+            <div class="cta-left">
+                <a href="#apply-section" class="btn-apply">Apply Now</a>
+            </div>
+        </div>
+
+        <!-- CATEGORY: Skilled Artisans & Trades -->
+        <div class="career-category">
+            <h3 class="category-title">Skilled Artisans & Trades</h3>
+
+            <div class="compact-job">
+                <h4>Electrical Artisan</h4>
+                <div class="job-meta">
+                    <span><i data-lucide="map-pin" width="14" height="14"></i> Various Sites, GP</span>
+                    <span><i data-lucide="clock" width="14" height="14"></i> Contract / Full-Time</span>
+                </div>
+                <p>Qualified Electrical Artisan to handle site installations, maintenance, and compliance testing.
+                    Trade test certificate required.</p>
+            </div>
+
+            <div class="compact-job">
+                <h4>Mechanical Artisan</h4>
                 <div class="job-meta">
                     <span><i data-lucide="map-pin" width="14" height="14"></i> Various Sites, GP</span>
                     <span><i data-lucide="clock" width="14" height="14"></i> Contract</span>
                 </div>
-                <p>Experienced operators needed for excavators, TLBs, and graders. Valid operator certificates and clean
-                    safety record are essential.</p>
+                <p>Specialist in HVAC & Systems installation and maintenance. Relevant trade test and 3+ years
+                    experience preferred.</p>
+            </div>
+
+            <div class="compact-job">
+                <h4>Painter / Finishing Artisan</h4>
+                <div class="job-meta">
+                    <span><i data-lucide="map-pin" width="14" height="14"></i> Various Sites, GP</span>
+                    <span><i data-lucide="clock" width="14" height="14"></i> Contract</span>
+                </div>
+                <p>Experienced painters and finishing artisans for commercial and residential construction projects.
+                    High attention to detail required.</p>
+            </div>
+
+            <div class="compact-job">
+                <h4>Bricklayer / Mason</h4>
+                <div class="job-meta">
+                    <span><i data-lucide="map-pin" width="14" height="14"></i> Various Sites, GP</span>
+                    <span><i data-lucide="clock" width="14" height="14"></i> Contract</span>
+                </div>
+                <p>Skilled bricklayers and masons for Civil & Building Works. Proven experience in robust structural
+                    masonry is essential.</p>
+            </div>
+
+            <div class="cta-left">
+                <a href="#apply-section" class="btn-apply">Apply Now</a>
+            </div>
+        </div>
+
+        <!-- CATEGORY: Operations & General Labour -->
+        <div class="career-category">
+            <h3 class="category-title">Operations & General Labour</h3>
+
+            <div class="compact-job">
+                <h4>Heavy Machinery Operator</h4>
+                <div class="job-meta">
+                    <span><i data-lucide="map-pin" width="14" height="14"></i> Various Sites, GP</span>
+                    <span><i data-lucide="clock" width="14" height="14"></i> Contract</span>
+                </div>
+                <p>Experienced operators needed for excavators, TLBs, and graders. Valid operator certificates and
+                    clean safety record are essential.</p>
+            </div>
+
+            <div class="compact-job">
+                <h4>General Construction Labourer</h4>
+                <div class="job-meta">
+                    <span><i data-lucide="map-pin" width="14" height="14"></i> Various Sites, GP</span>
+                    <span><i data-lucide="clock" width="14" height="14"></i> Contract</span>
+                </div>
+                <p>Hardworking individuals needed to assist with site preparation, material handling, and general
+                    construction tasks.</p>
+            </div>
+
+            <div class="cta-left">
                 <a href="#apply-section" class="btn-apply">Apply Now</a>
             </div>
         </div>
@@ -202,10 +320,21 @@
                     <label for="position">Position Applied For</label>
                     <select id="position" name="position" required>
                         <option value="" disabled selected>Select a position...</option>
-                        <option value="Civil Engineer">Civil Engineer</option>
-                        <option value="Site Manager">Site Manager</option>
-                        <option value="Quantity Surveyor">Quantity Surveyor</option>
-                        <option value="Heavy Machinery Operator">Heavy Machinery Operator</option>
+                        <optgroup label="Engineering & Management">
+                            <option value="Civil Engineer">Civil Engineer</option>
+                            <option value="Site Manager">Site Manager</option>
+                            <option value="Quantity Surveyor">Quantity Surveyor</option>
+                        </optgroup>
+                        <optgroup label="Skilled Artisans & Trades">
+                            <option value="Electrical Artisan">Electrical Artisan</option>
+                            <option value="Mechanical Artisan">Mechanical Artisan (HVAC & Systems)</option>
+                            <option value="Painter / Finishing Artisan">Painter / Finishing Artisan</option>
+                            <option value="Bricklayer / Mason">Bricklayer / Mason (Civil & Building Works)</option>
+                        </optgroup>
+                        <optgroup label="Operations & General Labour">
+                            <option value="Heavy Machinery Operator">Heavy Machinery Operator</option>
+                            <option value="General Construction Labourer">General Construction Labourer</option>
+                        </optgroup>
                         <option value="Open Application">Open Application / Other</option>
                     </select>
 
