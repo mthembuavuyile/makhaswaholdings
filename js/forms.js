@@ -3,10 +3,9 @@
    Web3Forms integration for:
      - Contact form  (#contact-form)
      - Careers form  (#careers-form)  — includes CV upload
+*/
 
-
-const WEB3FORMS_ACCESS_KEY = '6c3cc842-8262-4cd0-9510-466f761b9a94'; // ← replace this
-
+const WEB3FORMS_ACCESS_KEY = '6c3cc842-8262-4cd0-9510-466f761b9a94';
 /* ------------------------------------------------------------------
    UTILITY HELPERS
 ------------------------------------------------------------------ */
