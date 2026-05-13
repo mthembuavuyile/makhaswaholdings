@@ -2101,3 +2101,64 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* =====================================================
+   FORM STATUS MESSAGES  (used by forms.js)
+   ===================================================== */
+.form-status {
+    display: none;
+    margin-top: 16px;
+    padding: 14px 18px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    border-left: 4px solid transparent;
+    border-radius: 0;
+    animation: fadeStatusIn 0.3s ease;
+}
+
+@keyframes fadeStatusIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.form-status--loading {
+    background: #eef4ff;
+    border-left-color: var(--primary);
+    color: var(--primary);
+}
+
+.form-status--success {
+    background: #eaf7ee;
+    border-left-color: #1d8348;
+    color: #1d5e34;
+}
+
+.form-status--error {
+    background: #fdf2f2;
+    border-left-color: #c0392b;
+    color: #922b21;
+}
+
+.form-status a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.form-status .status-icon {
+    margin-right: 6px;
+    font-style: normal;
+}
+
+/* Disabled state during submission */
+.contact-form input:disabled,
+.contact-form select:disabled,
+.contact-form textarea:disabled,
+.contact-form button:disabled,
+#careers-form input:disabled,
+#careers-form select:disabled,
+#careers-form textarea:disabled,
+#careers-form button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
