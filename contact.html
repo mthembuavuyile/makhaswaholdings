@@ -92,26 +92,30 @@
             </div>
             <div>
                 <form id="contact-form" class="contact-form" method="POST" action="#">
+                    <!-- Web3Forms Honeypot (spam protection) -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+
                     <label for="c-name">Your Name</label>
-                    <input type="text" id="c-name" placeholder="Full Name" required>
+                    <input type="text" id="c-name" name="name" placeholder="Full Name" required>
 
                     <label for="c-email">Email Address</label>
-                    <input type="email" id="c-email" placeholder="you@example.com" required>
+                    <input type="email" id="c-email" name="email" placeholder="you@example.com" required>
 
                     <label for="c-subject">Subject / Enquiry Type</label>
-                    <select id="c-subject">
+                    <select id="c-subject" name="subject">
                         <option value="">Select an enquiry type...</option>
-                        <option value="tender">Tender Enquiry</option>
-                        <option value="project">Project Enquiry</option>
-                        <option value="compliance">Compliance Request</option>
-                        <option value="general">General Enquiry</option>
+                        <option value="Tender Enquiry">Tender Enquiry</option>
+                        <option value="Project Enquiry">Project Enquiry</option>
+                        <option value="Compliance Request">Compliance Request</option>
+                        <option value="General Enquiry">General Enquiry</option>
                     </select>
 
                     <label for="c-message">Your Message</label>
-                    <textarea id="c-message" placeholder="Tell us about your project or requirements..."
+                    <textarea id="c-message" name="message" placeholder="Tell us about your project or requirements..."
                         required></textarea>
 
                     <button type="submit">Send Message</button>
+                    <div id="contact-form-status" class="form-status"></div>
                 </form>
             </div>
         </div>

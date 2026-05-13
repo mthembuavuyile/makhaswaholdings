@@ -1542,6 +1542,44 @@ nav a.active::after {
     transform: translateY(-2px);
 }
 
+.contact-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Form Status Toast — inline success / error messages */
+.form-status {
+    margin-top: 16px;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.6;
+    border-radius: 4px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.35s ease, padding 0.35s ease;
+}
+
+.form-status--visible {
+    max-height: 120px;
+    opacity: 1;
+    padding: 14px 18px;
+}
+
+.form-status--success {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-left: 4px solid #2e7d32;
+}
+
+.form-status--error {
+    background: #fce4ec;
+    color: #c62828;
+    border-left: 4px solid #c62828;
+}
+
 /* Locations Section */
 .locations-grid {
     display: grid;
