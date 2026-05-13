@@ -1551,33 +1551,30 @@ nav a.active::after {
 /* Form Status Toast — inline success / error messages */
 .form-status {
     margin-top: 16px;
-    padding: 0;
+    padding: 14px 18px;
     font-size: 13px;
     font-weight: 600;
     line-height: 1.6;
     border-radius: 4px;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.35s ease, opacity 0.35s ease, padding 0.35s ease;
+    display: none;
 }
 
-.form-status--visible {
-    max-height: 120px;
-    opacity: 1;
-    padding: 14px 18px;
+.form-status--loading {
+    background: #eef3fb;
+    color: var(--primary);
+    border-left: 4px solid var(--primary);
 }
 
 .form-status--success {
-    background: #e8f5e9;
-    color: #2e7d32;
-    border-left: 4px solid #2e7d32;
+    background: #edf7f1;
+    color: #145730;
+    border-left: 4px solid #1a7340;
 }
 
 .form-status--error {
-    background: #fce4ec;
-    color: #c62828;
-    border-left: 4px solid #c62828;
+    background: #fdf1f0;
+    color: #8b2219;
+    border-left: 4px solid #c0392b;
 }
 
 /* Locations Section */
@@ -2119,108 +2116,7 @@ footer {
     }
 }
 
-/* Loading spinner ring */
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.form-status {
-    display: none;
-    align-items: flex-start;
-    gap: 12px;
-    margin-top: 20px;
-    padding: 16px 20px;
-    font-family: var(--font);
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 1.65;
-    border-left: 4px solid transparent;
-    animation: statusSlideIn 0.35s cubic-bezier(0.22, 0.61, 0.36, 1) both;
-}
-
-/* JS sets display:flex via the helper */
-.form-status.form-status--loading,
-.form-status.form-status--success,
-.form-status.form-status--error {
-    display: flex;
-}
-
-/* Icon column */
-.form-status__icon {
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-    margin-top: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Text column */
-.form-status__body {
-    flex: 1;
-}
-
-.form-status__title {
-    display: block;
-    font-weight: 700;
-    font-size: 13px;
-    margin-bottom: 2px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.form-status__text {
-    display: block;
-    font-size: 12.5px;
-    opacity: 0.9;
-}
-
-.form-status__text a {
-    font-weight: 700;
-    text-decoration: underline;
-    color: inherit;
-}
-
-/* ── Loading ── */
-.form-status--loading {
-    background: #eef3fb;
-    border-left-color: var(--primary);
-    color: var(--primary);
-}
-
-.form-status--loading .form-status__spinner {
-    width: 18px;
-    height: 18px;
-    border: 2px solid rgba(8, 45, 90, 0.2);
-    border-top-color: var(--primary);
-    border-radius: 50%;
-    animation: spin 0.75s linear infinite;
-}
-
-/* ── Success ── */
-.form-status--success {
-    background: #edf7f1;
-    border-left-color: #1a7340;
-    color: #145730;
-}
-
-.form-status--success .form-status__icon svg {
-    stroke: #1a7340;
-}
-
-/* ── Error ── */
-.form-status--error {
-    background: #fdf1f0;
-    border-left-color: #c0392b;
-    color: #8b2219;
-}
-
-.form-status--error .form-status__icon svg {
-    stroke: #c0392b;
-}
+/* Form styles removed to prevent duplication */
 
 /* ── Disabled state while submitting ── */
 .contact-form input:disabled,
