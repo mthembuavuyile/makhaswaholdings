@@ -53,7 +53,7 @@ const SITE_CONFIG = {
     offices: {
         pretoria: {
             label: 'Pretoria',
-            address: '869 Patryshond Street, Garsfontein, Pretoria, Gauteng, 0042, South Africa',
+            address: '869 Patryshond Street, Garsfontein, Pretoria, 0042',
             phone: '012 944 1702',
             mapQuery: '869%20Patryshond%20Street%2C%20Garsfontein%20Pretoria',
             mapTitle: 'Garsfontein Office',
@@ -61,7 +61,7 @@ const SITE_CONFIG = {
         },
         johannesburg: {
             label: 'Johannesburg',
-            address: 'Riversands Incubation Hub, Midrand, 2021',
+            address: 'Riversands Incubation Hub, Midrand, Johannesburg, 2021',
             phone: '011 568 0938',
             mapQuery: 'Riversands%20Incubation%20Hub',
             mapTitle: 'Midrand Office',
@@ -203,13 +203,19 @@ function buildFooter() {
                 <ul>
                     <!-- Locations -->
                     <li><strong>Locations</strong></li>
-                    <li>
-                        <i data-lucide="map-pin" width="14" height="14" class="footer-icon"></i>
-                        ${pta.label}: ${pta.address}
+                    <li style="align-items: flex-start;">
+                        <i data-lucide="map-pin" width="14" height="14" class="footer-icon" style="margin-top: 4px;"></i>
+                        <div>
+                            ${pta.label}:<br>
+                            <a href="https://maps.google.com/?q=${pta.mapQuery}" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; display: inline-block; margin-top: 4px;">${pta.address}</a>
+                        </div>
                     </li>
-                    <li>
-                        <i data-lucide="map-pin" width="14" height="14" class="footer-icon"></i>
-                        ${jhb.label}: ${jhb.address}
+                    <li style="align-items: flex-start;">
+                        <i data-lucide="map-pin" width="14" height="14" class="footer-icon" style="margin-top: 4px;"></i>
+                        <div>
+                            ${jhb.label}:<br>
+                            <a href="https://maps.google.com/?q=${jhb.mapQuery}" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; display: inline-block; margin-top: 4px;">${jhb.address}</a>
+                        </div>
                     </li>
 
                     <!-- Phones -->
