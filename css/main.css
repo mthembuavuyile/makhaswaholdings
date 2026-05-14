@@ -485,21 +485,68 @@ nav a.active::after {
     margin-bottom: 24px;
 }
 
+.hero-cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
 .hero-cta {
-    display: inline-block;
-    background: var(--white);
-    color: var(--primary);
-    padding: 13px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    padding: 13px 20px;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transition: background var(--transition), transform var(--transition);
+    transition: background var(--transition), transform var(--transition), color var(--transition), border var(--transition);
+    border: 2px solid transparent;
 }
 
 .hero-cta:hover {
-    background: var(--off-white);
     transform: translateY(-2px);
+}
+
+.hero-cta--primary {
+    background: var(--white);
+    color: var(--primary);
+    border-color: var(--white);
+}
+
+.hero-cta--primary:hover {
+    background: var(--off-white);
+    border-color: var(--off-white);
+}
+
+.hero-cta--secondary {
+    background: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.hero-cta--secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Nav Contact Button Highlight */
+nav a.nav-contact-btn {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 4px;
+    /* Rectangle highlight */
+}
+
+nav a.nav-contact-btn::after {
+    display: none;
+    /* Hide the underline effect */
+}
+
+nav a.nav-contact-btn:hover {
+    background-color: var(--primary-mid);
+    color: var(--white);
 }
 
 .hero-banner {

@@ -99,7 +99,12 @@ function buildHeader() {
 
     const navLinksDesktop = cfg.nav.map(link => {
         const isActive = activePage === link.href || (activePage === '' && link.href === 'index.html');
-        return `<a href="${link.href}"${isActive ? ' class="active"' : ''}>${link.label}</a>`;
+        let classes = isActive ? 'active' : '';
+        if (link.label === 'Contact' || link.label === 'Contact Us') {
+            classes += (classes ? ' ' : '') + 'nav-contact-btn';
+        }
+        const classAttr = classes ? ` class="${classes}"` : '';
+        return `<a href="${link.href}"${classAttr}>${link.label}</a>`;
     }).join('\n            ');
 
     const navLinksMobile = cfg.nav.map(link =>

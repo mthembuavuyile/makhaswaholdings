@@ -9,6 +9,9 @@
         content="Makhaswa Holdings (Pty) Ltd is a dynamic civil engineering and construction company based in Pretoria, Gauteng. Delivering large-scale infrastructure and building projects across South Africa.">
 
     <!-- SEO & Canonical -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Makhaswa Holdings (Pty) Ltd">
+    <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://makhaswaholdings.co.za/">
 
     <!-- Favicons & App Icons -->
@@ -44,6 +47,48 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/main.css">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ConstructionBusiness",
+      "name": "Makhaswa Holdings (Pty) Ltd",
+      "url": "https://makhaswaholdings.co.za/",
+      "logo": "https://makhaswaholdings.co.za/images/logo.jpeg",
+      "description": "Makhaswa Holdings (Pty) Ltd is a dynamic civil engineering and construction company delivering large-scale infrastructure and building projects across South Africa.",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "869 Patryshond Street, Garsfontein",
+          "addressLocality": "Pretoria",
+          "addressRegion": "Gauteng",
+          "postalCode": "0042",
+          "addressCountry": "ZA"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "No 19, Riversands Incubation Hub, 8–12 Incubation Drive, Riverside View Ext 15",
+          "addressLocality": "Midrand",
+          "addressRegion": "Gauteng",
+          "postalCode": "2021",
+          "addressCountry": "ZA"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+27-12-944-1702",
+          "contactType": "customer service"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+27-11-568-0938",
+          "contactType": "customer service"
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -60,7 +105,10 @@
             <p>Makhaswa Holdings (Pty) Ltd is a dynamic civil engineering and construction company delivering
                 large-scale infrastructure and building projects across South Africa with a strong focus on quality,
                 efficiency, and reliability.</p>
-            <a href="services.html" class="hero-cta">Explore Our Services</a>
+            <div class="hero-cta-group">
+                <a href="services.html" class="hero-cta hero-cta--primary">Explore Our Services</a>
+                <a href="contact.html" class="hero-cta hero-cta--secondary">Contact Us</a>
+            </div>
         </div>
     </div>
     <div class="hero-banner">
