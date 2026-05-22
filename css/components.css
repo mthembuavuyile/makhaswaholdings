@@ -481,21 +481,31 @@ nav a.nav-contact-btn:hover {
     color: var(--primary);
 }
 
-.services-grid {
+.services-grid,
+.services-grid--4cols {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
     margin-top: 20px;
 }
 
-.services-grid img {
+.services-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.services-grid--4cols {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.services-grid img,
+.services-grid--4cols img {
     width: 100%;
     height: 100px;
     object-fit: cover;
     transition: transform 0.35s ease;
 }
 
-.services-grid img:hover {
+.services-grid img:hover,
+.services-grid--4cols img:hover {
     transform: scale(1.05);
 }
 
@@ -1572,6 +1582,10 @@ nav a.nav-contact-btn:hover {
 
     /* Services image grid */
     .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .services-grid--4cols {
         grid-template-columns: repeat(2, 1fr);
     }
 
