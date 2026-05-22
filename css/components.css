@@ -159,6 +159,10 @@ nav a.nav-contact-btn:hover {
     background-image: url('../images/highway-asphalt-paving-construction.jpeg');
 }
 
+.page-hero-projects {
+    background-image: url('../images/Construction_site_with-machines.jpeg');
+}
+
 /* =====================================================
    ABOUT SPLIT
    ===================================================== */
@@ -1619,4 +1623,243 @@ nav a.nav-contact-btn:hover {
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
+}
+
+/* =====================================================
+   PORTFOLIO / PROJECTS HUB FILTER
+   ===================================================== */
+.portfolio-filter-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-light);
+    padding: 8px 20px;
+    font-family: var(--font);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.filter-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+}
+
+/* =====================================================
+   PROJECT DETAIL / CASE STUDY LAYOUT
+   ===================================================== */
+.project-detail-hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 100px 20px;
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 40px;
+}
+
+.project-detail-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 45, 90, 0.75); /* var(--primary) with opacity */
+    z-index: 1;
+}
+
+.project-detail-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-detail-hero h1 {
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    color: var(--white);
+}
+
+.project-detail-hero .project-sector-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    padding: 4px 16px;
+    margin-bottom: 16px;
+}
+
+.project-detail-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+}
+
+.project-description h3 {
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-left: 3px solid var(--primary);
+    padding-left: 12px;
+}
+
+.project-description p {
+    font-size: 13.5px;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.project-spec-card {
+    background: var(--off-white);
+    padding: 30px;
+    box-shadow: var(--shadow-sm);
+    border-top: 3px solid var(--primary);
+    height: fit-content;
+}
+
+.project-spec-card h3 {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+.project-spec-list {
+    list-style: none;
+}
+
+.project-spec-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 13px;
+}
+
+.project-spec-list li:last-child {
+    border-bottom: none;
+}
+
+.project-spec-list strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.project-spec-list span {
+    color: var(--text);
+    text-align: right;
+}
+
+/* Case Study Gallery */
+.project-gallery-title {
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: var(--primary);
+    border-left: 3px solid var(--primary);
+    padding-left: 12px;
+}
+
+.project-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.project-gallery-item {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    box-shadow: var(--shadow-sm);
+}
+
+.project-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Back to Portfolio CTA */
+.project-actions {
+    text-align: center;
+    border-top: 1px solid var(--border);
+    padding-top: 32px;
+    margin-top: 48px;
+}
+
+.btn-back-portfolio {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 11px 28px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all var(--transition);
+}
+
+.btn-back-portfolio:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Responsive styles for details page */
+@media (max-width: 768px) {
+    .project-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .project-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .project-gallery-grid {
+        grid-template-columns: 1fr;
+    }
 }
