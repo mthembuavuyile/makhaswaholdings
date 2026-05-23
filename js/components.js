@@ -22,6 +22,11 @@ const SITE_CONFIG = {
         copyright: `\u00A9 ${new Date().getFullYear()} Makhaswa Holdings (Pty) Ltd. All Rights Reserved.`
     },
 
+    social: {
+        facebook: 'https://www.facebook.com/p/Makhaswa-Holdings-61573713636972/',
+        linkedin: 'https://www.linkedin.com/company/makhaswaholdings/?originalSubdomain=za'
+    },
+
     nav: [
         { label: 'Home', href: 'index.html' },
         { label: 'About Us', href: 'about.html' },
@@ -193,6 +198,10 @@ function buildFooter() {
                     <div class="footer-logo-text">${cfg.company.name}<small>${cfg.company.legalName}</small></div>
                 </div>
                 <p class="footer-desc">${cfg.company.tagline}</p>
+                <div class="footer-social">
+                    <a href="${cfg.social.facebook}" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i data-lucide="facebook" width="18" height="18"></i></a>
+                    <a href="${cfg.social.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin" width="18" height="18"></i></a>
+                </div>
             </div>
 
             <!-- Col 2: Quick Links -->

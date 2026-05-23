@@ -264,3 +264,29 @@ footer {
     line-height: 1.7;
     margin-bottom: 16px;
 }
+
+/* Footer social links */
+.footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.footer-social a {
+    color: #aec4db;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    transition: color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.footer-social a:hover {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
