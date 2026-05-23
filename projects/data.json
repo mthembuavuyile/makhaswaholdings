@@ -11,11 +11,6 @@
           "title": "Bulk Site Clearance"
         },
         {
-          "src": "images/projects/earthworks/makhaswa (2).jpeg",
-          "alt": "Workers spreading lime/cement stabiliser across a prepared subgrade, a soil stabilisation technique used before surfacing, with a TLB/tractor in the background",
-          "title": "Subgrade Soil Stabilisation"
-        },
-        {
           "src": "images/projects/earthworks/makhaswa (3).jpeg",
           "alt": "A large cleared and graded site with compaction machinery in the distance preparing the ground",
           "title": "Clearing & Grubbing"
@@ -24,6 +19,11 @@
           "src": "images/projects/earthworks/makhaswa (4).jpeg",
           "alt": "Heavy roller compacting the prepared soil subgrade to meet engineering compaction codes",
           "title": "Subgrade Soil Compaction"
+        },
+        {
+          "src": "images/projects/earthworks/makhaswa (2).jpeg",
+          "alt": "Workers spreading lime/cement stabiliser across a prepared subgrade, a soil stabilisation technique used before surfacing, with a TLB/tractor in the background",
+          "title": "Subgrade Soil Stabilisation"
         },
         {
           "src": "images/projects/earthworks/makhaswa (5).jpeg",
@@ -37,17 +37,17 @@
         },
         {
           "src": "images/SiteClearance&MassEarthworks.jpeg",
-          "alt": "Excavator removing topsoil",
+          "alt": "Multiple bulldozers and excavators stripping and clearing topsoil across a vast open earthworks site",
           "title": "Topsoil Stripping"
         },
         {
           "src": "images/Construction_site_with-machines.jpeg",
-          "alt": "Site prep for foundations",
+          "alt": "Wide view of heavy construction machinery working along a dirt corridor at sunset during site preparation",
           "title": "Site Preparation Works"
         },
         {
           "src": "images/workers.jpeg",
-          "alt": "Heavy graders leveling site",
+          "alt": "Team of civil engineers and site workers in high-visibility vests and hard hats reviewing plans with surveying equipment on a completed road",
           "title": "Bulk Grading Operations"
         }
       ]
@@ -58,49 +58,49 @@
       "description": "Stormwater drainage networks, sewer reticulation, culverts, and concrete foundations.",
       "images": [
         {
-          "src": "images/projects/civilworks/makhaswa (10).jpeg",
-          "alt": "Concrete stormwater pipe installation",
-          "title": "Stormwater Culvert Pipelaying"
+          "src": "images/projects/civilworks/makhaswa (5).jpeg",
+          "alt": "Completed multi-barrel concrete culvert bridge structure set into an embankment on a rural road",
+          "title": "Culvert Bridge Construction"
         },
         {
-          "src": "images/projects/civilworks/makhaswa (11).jpeg",
-          "alt": "Trench excavation for pipelines",
-          "title": "Deep Sewer Line Trenching"
+          "src": "images/projects/civilworks/makhaswa (26).jpeg",
+          "alt": "Large diameter concrete pipe laid inside a deep excavated trench for bulk stormwater infrastructure",
+          "title": "Bulk Pipe Installation"
         },
         {
-          "src": "images/projects/civilworks/makhaswa (12).jpeg",
-          "alt": "Manhole brickwork and framing",
-          "title": "Concrete Manhole Construction"
+          "src": "images/projects/civilworks/makhaswa (22).jpeg",
+          "alt": "Workers in PPE constructing a brick-lined manhole and junction box inside an excavated pit",
+          "title": "Manhole & Junction Box Construction"
         },
         {
-          "src": "images/projects/civilworks/makhaswa (13).jpeg",
-          "alt": "Subsoil drainage system",
-          "title": "Subsoil Drainage Installation"
+          "src": "images/projects/civilworks/makhaswa (8).jpeg",
+          "alt": "Site worker in PPE supervising precast box culvert units being positioned on a prepared road base",
+          "title": "Precast Box Culvert Installation"
         },
         {
-          "src": "images/projects/civilworks/makhaswa (14).jpeg",
-          "alt": "Stormwater pipe bedding",
-          "title": "Pipe Bedding & Backfilling"
+          "src": "images/projects/civilworks/makhaswa (28).jpeg",
+          "alt": "Worker in PPE hand-laying bricks to construct a stormwater catch pit within a timber-shuttered excavation",
+          "title": "Stormwater Catch Pit Construction"
         },
         {
-          "src": "images/projects/civilworks/makhaswa (15).jpeg",
-          "alt": "Concrete structural foundations",
-          "title": "Reinforced Concrete Foundations"
+          "src": "images/projects/civilworks/makhaswa (24).jpeg",
+          "alt": "Dense steel rebar mesh and timber formwork prepared inside a deep excavation for a concrete retaining wall",
+          "title": "Retaining Wall Construction"
         },
         {
           "src": "images/projects/civilworks/makhaswa (16).jpeg",
-          "alt": "Gabion basket installation",
-          "title": "Gabion Wall Construction"
+          "alt": "Placing concrete cover slabs on a stormwater drainage channel",
+          "title": "Stormwater Channel & Cover Slabs"
         },
         {
           "src": "images/projects/civilworks/makhaswa (17).jpeg",
-          "alt": "Kerb inlet drainage box",
-          "title": "Kerb Inlet & Catchpit Construction"
+          "alt": "Brickwork and steel reinforcement for an underground stormwater chamber",
+          "title": "Underground Junction Chamber"
         },
         {
           "src": "images/projects/civilworks/makhaswa (18).jpeg",
-          "alt": "Sewer pipeline connections",
-          "title": "Reticulation Pipeline Connections"
+          "alt": "Workers installing large diameter concrete pipes in a deep trench",
+          "title": "Bulk Concrete Pipeline Installation"
         }
       ]
     },
@@ -110,49 +110,49 @@
       "description": "Road bed preparation, layer works, asphalt surfacing, and interlocking block paving.",
       "images": [
         {
-          "src": "images/projects/roadsandsurfacing/makhaswa (20).jpeg",
-          "alt": "Asphalt surfacing installation",
+          "src": "images/projects/roadsandsurfacing/makhaswa (10).jpeg",
+          "alt": "Freshly laid asphalt surface stretching along a newly constructed road with red soil shoulders on either side",
           "title": "Asphalt Surfacing & Laying"
         },
         {
-          "src": "images/projects/roadsandsurfacing/makhaswa (21).jpeg",
-          "alt": "Subbase layer compaction",
+          "src": "images/projects/roadsandsurfacing/makhaswa (14).jpeg",
+          "alt": "Grader compacting and shaping a wide roadbed base layer on a residential road under construction",
           "title": "Roadbed Compaction & Layer Works"
         },
         {
-          "src": "images/projects/roadsandsurfacing/makhaswa (22).jpeg",
-          "alt": "Interlocking paving block installation",
+          "src": "images/projects/roadsandsurfacing/makhaswa (21).jpeg",
+          "alt": "Long stretch of completed interlocking paving block sidewalk running alongside a road through open farmland",
           "title": "Interlocking Paving Block Sidewalks"
         },
         {
-          "src": "images/projects/roadsandsurfacing/makhaswa (23).jpeg",
-          "alt": "Concrete kerbing placement",
+          "src": "images/projects/roadsandsurfacing/makhaswa (41).jpeg",
+          "alt": "Aerial view of freshly installed interlocking paving blocks and precast concrete kerbing along a road at sunset",
           "title": "Precast Concrete Kerbing"
         },
         {
-          "src": "images/projects/roadsandsurfacing/makhaswa (29).jpeg",
-          "alt": "Road profiling and grading",
+          "src": "images/projects/roadsandsurfacing/makhaswa (53).jpeg",
+          "alt": "Worker in PPE inspecting a concrete lined road channel during roadbed profiling and drainage operations",
           "title": "Roadbed Profiling Operations"
         },
         {
-          "src": "images/projects/roadsandsurfacing/makhaswa (30).jpeg",
-          "alt": "Finished asphalt roadway",
+          "src": "images/projects/roadsandsurfacing/makhaswa (49).jpeg",
+          "alt": "Workers in PPE laying interlocking paving blocks on a completed residential roadway in a suburban area",
           "title": "Completed Surfaced Roadway"
         },
         {
-          "src": "images/projects/roadsandsurfacing/makhaswa (33).jpeg",
-          "alt": "Dump rock layer placement",
-          "title": "Stabilized Subbase Layering"
+          "src": "images/projects/roadsandsurfacing/makhaswa (61).jpeg",
+          "alt": "Installation of interlocking block paving alongside road kerbing",
+          "title": "Interlocking Block Paving"
         },
         {
-          "src": "images/projects/roadsandsurfacing/makhaswa (34).jpeg",
-          "alt": "Walkway interlocking paving",
-          "title": "Walkway & Pavement Solutions"
+          "src": "images/projects/roadsandsurfacing/makhaswa (55).jpeg",
+          "alt": "Constructed traffic roundabout with paved apron and concrete kerbing",
+          "title": "Roundabout Construction & Paving"
         },
         {
-          "src": "images/projects/roadsandsurfacing/makhaswa (35).jpeg",
-          "alt": "Road rehabilitation works",
-          "title": "Road Rehabilitation & Surfacing"
+          "src": "images/projects/roadsandsurfacing/makhaswa (18).jpeg",
+          "alt": "Road rollers compacting a newly surfaced road layer",
+          "title": "Road Surfacing & Compaction"
         }
       ]
     },
@@ -162,27 +162,27 @@
       "description": "Commercial, industrial, public buildings, schools, and clinics construction.",
       "images": [
         {
-          "src": "images/projects/buildingconstruction/makhaswa (30).jpeg",
+          "src": "images/projects/buildingconstruction/makhaswa (49).jpeg",
           "alt": "Clinic building construction site",
           "title": "Community Clinic Brickwork"
         },
         {
-          "src": "images/projects/buildingconstruction/makhaswa (31).jpeg",
+          "src": "images/projects/buildingconstruction/makhaswa (48).jpeg",
           "alt": "School classroom building foundation",
           "title": "Educational Facility Foundations"
         },
         {
-          "src": "images/projects/buildingconstruction/makhaswa (32).jpeg",
+          "src": "images/projects/buildingconstruction/makhaswa (43).jpeg",
           "alt": "Bricklaying for commercial structure",
           "title": "Commercial Building Bricklaying"
         },
         {
-          "src": "images/projects/buildingconstruction/makhaswa (33).jpeg",
+          "src": "images/projects/buildingconstruction/makhaswa (51).jpeg",
           "alt": "Roof truss installation",
           "title": "Roof Covering & Carpentry"
         },
         {
-          "src": "images/projects/buildingconstruction/makhaswa (34).jpeg",
+          "src": "images/projects/buildingconstruction/makhaswa (45).jpeg",
           "alt": "Interior plastering and finishes",
           "title": "Interior Plastering & Rhinolite"
         },
@@ -192,7 +192,7 @@
           "title": "Window & Door Glazing"
         },
         {
-          "src": "images/projects/buildingconstruction/makhaswa (36).jpeg",
+          "src": "images/projects/buildingconstruction/diep-school.jpeg",
           "alt": "Ablution blocks installation",
           "title": "Ablution Block Construction"
         },
@@ -202,7 +202,7 @@
           "title": "Completed Public Facility"
         },
         {
-          "src": "images/projects/buildingconstruction/makhaswa (38).jpeg",
+          "src": "images/projects/buildingconstruction/CLINIC.jpeg",
           "alt": "Structural steel installation",
           "title": "Steel Framing & Structural Work"
         }
