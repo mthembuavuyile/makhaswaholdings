@@ -1,0 +1,264 @@
+{
+  "categories": {
+    "earthworks": {
+      "title": "Earthworks & Site Clearance",
+      "slug": "mass-earthworks-site-clearance.html",
+      "description": "Bulk earthmoving, excavation, site clearance, and soil compaction services for major infrastructure projects.",
+      "images": [
+        {
+          "src": "images/projects/earthworks/makhaswa (1).jpeg",
+          "alt": "Site clearance excavation and grading",
+          "title": "Bulk Site Clearance"
+        },
+        {
+          "src": "images/projects/earthworks/makhaswa (2).jpeg",
+          "alt": "Heavy machinery clearing land",
+          "title": "Clearing & Grubbing"
+        },
+        {
+          "src": "images/projects/earthworks/makhaswa (3).jpeg",
+          "alt": "Excavator digging foundations",
+          "title": "Foundation Excavation"
+        },
+        {
+          "src": "images/projects/earthworks/makhaswa (4).jpeg",
+          "alt": "TLB clearing site debris",
+          "title": "Debris Removal & Clearing"
+        },
+        {
+          "src": "images/projects/earthworks/makhaswa (5).jpeg",
+          "alt": "Compaction rolling on site",
+          "title": "Subgrade Soil Compaction"
+        },
+        {
+          "src": "images/projects/earthworks/makhaswa (6).jpeg",
+          "alt": "Bulk earthworks leveling",
+          "title": "Mass Earthworks & Leveling"
+        },
+        {
+          "src": "images/SiteClearance&MassEarthworks.jpeg",
+          "alt": "Excavator removing topsoil",
+          "title": "Topsoil Stripping"
+        },
+        {
+          "src": "images/Construction_site_with-machines.jpeg",
+          "alt": "Site prep for foundations",
+          "title": "Site Preparation Works"
+        },
+        {
+          "src": "images/workers.jpeg",
+          "alt": "Heavy graders leveling site",
+          "title": "Bulk Grading Operations"
+        }
+      ]
+    },
+    "civil": {
+      "title": "Civil Works & Stormwater",
+      "slug": "sewer-stormwater-pipelines.html",
+      "description": "Stormwater drainage networks, sewer reticulation, culverts, and concrete foundations.",
+      "images": [
+        {
+          "src": "images/projects/civilworks/makhaswa (10).jpeg",
+          "alt": "Concrete stormwater pipe installation",
+          "title": "Stormwater Culvert Pipelaying"
+        },
+        {
+          "src": "images/projects/civilworks/makhaswa (11).jpeg",
+          "alt": "Trench excavation for pipelines",
+          "title": "Deep Sewer Line Trenching"
+        },
+        {
+          "src": "images/projects/civilworks/makhaswa (12).jpeg",
+          "alt": "Manhole brickwork and framing",
+          "title": "Concrete Manhole Construction"
+        },
+        {
+          "src": "images/projects/civilworks/makhaswa (13).jpeg",
+          "alt": "Subsoil drainage system",
+          "title": "Subsoil Drainage Installation"
+        },
+        {
+          "src": "images/projects/civilworks/makhaswa (14).jpeg",
+          "alt": "Stormwater pipe bedding",
+          "title": "Pipe Bedding & Backfilling"
+        },
+        {
+          "src": "images/projects/civilworks/makhaswa (15).jpeg",
+          "alt": "Concrete structural foundations",
+          "title": "Reinforced Concrete Foundations"
+        },
+        {
+          "src": "images/projects/civilworks/makhaswa (16).jpeg",
+          "alt": "Gabion basket installation",
+          "title": "Gabion Wall Construction"
+        },
+        {
+          "src": "images/projects/civilworks/makhaswa (17).jpeg",
+          "alt": "Kerb inlet drainage box",
+          "title": "Kerb Inlet & Catchpit Construction"
+        },
+        {
+          "src": "images/projects/civilworks/makhaswa (18).jpeg",
+          "alt": "Sewer pipeline connections",
+          "title": "Reticulation Pipeline Connections"
+        }
+      ]
+    },
+    "roads": {
+      "title": "Road Construction",
+      "slug": "layer-works-paving.html",
+      "description": "Road bed preparation, layer works, asphalt surfacing, and interlocking block paving.",
+      "images": [
+        {
+          "src": "images/projects/roadsandsurfacing/makhaswa (20).jpeg",
+          "alt": "Asphalt surfacing installation",
+          "title": "Asphalt Surfacing & Laying"
+        },
+        {
+          "src": "images/projects/roadsandsurfacing/makhaswa (21).jpeg",
+          "alt": "Subbase layer compaction",
+          "title": "Roadbed Compaction & Layer Works"
+        },
+        {
+          "src": "images/projects/roadsandsurfacing/makhaswa (22).jpeg",
+          "alt": "Interlocking paving block installation",
+          "title": "Interlocking Paving Block Sidewalks"
+        },
+        {
+          "src": "images/projects/roadsandsurfacing/makhaswa (23).jpeg",
+          "alt": "Concrete kerbing placement",
+          "title": "Precast Concrete Kerbing"
+        },
+        {
+          "src": "images/projects/roadsandsurfacing/makhaswa (29).jpeg",
+          "alt": "Road profiling and grading",
+          "title": "Roadbed Profiling Operations"
+        },
+        {
+          "src": "images/projects/roadsandsurfacing/makhaswa (30).jpeg",
+          "alt": "Finished asphalt roadway",
+          "title": "Completed Surfaced Roadway"
+        },
+        {
+          "src": "images/projects/roadsandsurfacing/makhaswa (33).jpeg",
+          "alt": "Dump rock layer placement",
+          "title": "Stabilized Subbase Layering"
+        },
+        {
+          "src": "images/projects/roadsandsurfacing/makhaswa (34).jpeg",
+          "alt": "Walkway interlocking paving",
+          "title": "Walkway & Pavement Solutions"
+        },
+        {
+          "src": "images/projects/roadsandsurfacing/makhaswa (35).jpeg",
+          "alt": "Road rehabilitation works",
+          "title": "Road Rehabilitation & Surfacing"
+        }
+      ]
+    },
+    "building": {
+      "title": "General Building",
+      "slug": "commercial-industrial-construction.html",
+      "description": "Commercial, industrial, public buildings, schools, and clinics construction.",
+      "images": [
+        {
+          "src": "images/projects/buildingconstruction/makhaswa (30).jpeg",
+          "alt": "Clinic building construction site",
+          "title": "Community Clinic Brickwork"
+        },
+        {
+          "src": "images/projects/buildingconstruction/makhaswa (31).jpeg",
+          "alt": "School classroom building foundation",
+          "title": "Educational Facility Foundations"
+        },
+        {
+          "src": "images/projects/buildingconstruction/makhaswa (32).jpeg",
+          "alt": "Bricklaying for commercial structure",
+          "title": "Commercial Building Bricklaying"
+        },
+        {
+          "src": "images/projects/buildingconstruction/makhaswa (33).jpeg",
+          "alt": "Roof truss installation",
+          "title": "Roof Covering & Carpentry"
+        },
+        {
+          "src": "images/projects/buildingconstruction/makhaswa (34).jpeg",
+          "alt": "Interior plastering and finishes",
+          "title": "Interior Plastering & Rhinolite"
+        },
+        {
+          "src": "images/projects/buildingconstruction/makhaswa (35).jpeg",
+          "alt": "Aluminium window frame installation",
+          "title": "Window & Door Glazing"
+        },
+        {
+          "src": "images/projects/buildingconstruction/makhaswa (36).jpeg",
+          "alt": "Ablution blocks installation",
+          "title": "Ablution Block Construction"
+        },
+        {
+          "src": "images/projects/buildingconstruction/makhaswa (37).jpeg",
+          "alt": "Completed clinic ward building",
+          "title": "Completed Public Facility"
+        },
+        {
+          "src": "images/projects/buildingconstruction/makhaswa (38).jpeg",
+          "alt": "Structural steel installation",
+          "title": "Steel Framing & Structural Work"
+        }
+      ]
+    },
+    "housing": {
+      "title": "Housing Developments",
+      "slug": "housing-developments.html",
+      "description": "Large scale residential estates, low cost housing, and community developments.",
+      "images": [
+        {
+          "src": "images/projects/engineering-project-delivery/makhaswa (1).jpeg",
+          "alt": "Residential housing development layout",
+          "title": "Multi-Unit Housing Foundations"
+        },
+        {
+          "src": "images/projects/engineering-project-delivery/makhaswa (2).jpeg",
+          "alt": "Row house brickwork structures",
+          "title": "Residential Block Brickwork"
+        },
+        {
+          "src": "images/projects/engineering-project-delivery/makhaswa (3).jpeg",
+          "alt": "Housing roof truss placement",
+          "title": "Housing Estate Roofing"
+        },
+        {
+          "src": "images/projects/engineering-project-delivery/makhaswa (4).jpeg",
+          "alt": "Completed low income houses",
+          "title": "Completed Residential Units"
+        },
+        {
+          "src": "images/projects/engineering-project-delivery/makhaswa (5).jpeg",
+          "alt": "Interior tiling and bathroom finishes",
+          "title": "Interior Finishes & Tiling"
+        },
+        {
+          "src": "images/projects/engineering-project-delivery/makhaswa (6).jpeg",
+          "alt": "Housing development water connection",
+          "title": "Erf Water & Sewer Connections"
+        },
+        {
+          "src": "images/mass-residential-housing-development.jpeg",
+          "alt": "Pouring concrete slabs for houses",
+          "title": "Foundation Slab Pouring"
+        },
+        {
+          "src": "images/building.jpeg",
+          "alt": "Completed residential estate house",
+          "title": "Completed Residential Home"
+        },
+        {
+          "src": "images/workers.jpeg",
+          "alt": "Electrical wiring in new houses",
+          "title": "Electrical Reticulation & Wiring"
+        }
+      ]
+    }
+  }
+}
