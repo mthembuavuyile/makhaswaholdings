@@ -1,7 +1,7 @@
 {
   "categories": {
     "earthworks": {
-      "title": "Earthworks & Site Clearance",
+      "title": "Earthworks & Site Prep",
       "slug": "mass-earthworks-site-clearance.html",
       "description": "Bulk earthmoving, excavation, site clearance, and soil compaction services for major infrastructure projects.",
       "images": [
@@ -53,7 +53,7 @@
       ]
     },
     "civil": {
-      "title": "Civil Works & Stormwater",
+      "title": "Civil Works & Infrastructure",
       "slug": "sewer-stormwater-pipelines.html",
       "description": "Stormwater drainage networks, sewer reticulation, culverts, and concrete foundations.",
       "images": [
@@ -105,7 +105,7 @@
       ]
     },
     "roads": {
-      "title": "Road Construction",
+      "title": "Road Construction & Surfacing",
       "slug": "layer-works-paving.html",
       "description": "Road bed preparation, layer works, asphalt surfacing, and interlocking block paving.",
       "images": [
@@ -157,7 +157,7 @@
       ]
     },
     "building": {
-      "title": "General Building",
+      "title": "Commercial & Public Buildings",
       "slug": "commercial-industrial-construction.html",
       "description": "Commercial, industrial, public buildings, schools, and clinics construction.",
       "images": [
@@ -209,7 +209,7 @@
       ]
     },
     "housing": {
-      "title": "Housing Developments",
+      "title": "Residential Housing Developments",
       "slug": "housing-developments.html",
       "description": "Large scale residential estates, low cost housing, and community developments.",
       "images": [

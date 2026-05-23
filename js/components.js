@@ -43,10 +43,11 @@ const SITE_CONFIG = {
     ],
 
     capabilities: [
-        'Earthworks',
-        'Civil Works',
-        'Road Construction',
-        'General Building',
+        'Earthworks & Site Prep',
+        'Civil Works & Infrastructure',
+        'Road Construction & Surfacing',
+        'Commercial & Public Buildings',
+        'Residential Housing Developments',
         'Project Management',
     ],
 
