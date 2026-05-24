@@ -67,7 +67,7 @@ const SITE_CONFIG = {
         },
         johannesburg: {
             label: 'Johannesburg',
-            address: 'Riversands Incubation Hub, Midrand, Johannesburg, 2021',
+            address: 'Riversands Incubation Hub, Midrand, Johannesburg, 2189',
             phone: '011 568 0938',
             mapQuery: 'Riversands%20Incubation%20Hub',
             mapTitle: 'Midrand Office',
