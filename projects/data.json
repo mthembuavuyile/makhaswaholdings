@@ -2,7 +2,7 @@
   "categories": {
     "earthworks": {
       "title": "Earthworks & Site Prep",
-      "slug": "mass-earthworks-site-clearance.html",
+      "slug": "earthworks-site-prep.html",
       "description": "Bulk earthmoving, excavation, site clearance, and soil compaction services for major infrastructure projects.",
       "images": [
         {
@@ -54,7 +54,7 @@
     },
     "civil": {
       "title": "Civil Works & Infrastructure",
-      "slug": "sewer-stormwater-pipelines.html",
+      "slug": "civil-works-infrastructure.html",
       "description": "Stormwater drainage networks, sewer reticulation, culverts, and concrete foundations.",
       "images": [
         {
@@ -106,7 +106,7 @@
     },
     "roads": {
       "title": "Road Construction & Surfacing",
-      "slug": "layer-works-paving.html",
+      "slug": "road-construction-surfacing.html",
       "description": "Road bed preparation, layer works, asphalt surfacing, and interlocking block paving.",
       "images": [
         {
@@ -157,91 +157,39 @@
       ]
     },
     "building": {
-      "title": "Commercial & Public Buildings",
-      "slug": "commercial-industrial-construction.html",
-      "description": "Commercial, industrial, public buildings, schools, and clinics construction.",
+      "title": "Building Construction & Housing Developments",
+      "slug": "building-construction-housing.html",
+      "description": "Commercial, industrial, public buildings, schools, clinics, and residential housing developments.",
       "images": [
         {
           "src": "images/projects/buildingconstruction/makhaswa (49).jpeg",
-          "alt": "Clinic building construction site",
-          "title": "Community Clinic Brickwork"
-        },
-        {
-          "src": "images/projects/buildingconstruction/makhaswa (48).jpeg",
-          "alt": "School classroom building foundation",
-          "title": "Educational Facility Foundations"
+          "alt": "Workers constructing a red brick wall using scaffolding on a construction site",
+          "title": "Brick Wall Construction"
         },
         {
           "src": "images/projects/buildingconstruction/makhaswa (43).jpeg",
-          "alt": "Bricklaying for commercial structure",
-          "title": "Commercial Building Bricklaying"
-        },
-        {
-          "src": "images/projects/buildingconstruction/makhaswa (51).jpeg",
-          "alt": "Roof truss installation",
-          "title": "Roof Covering & Carpentry"
-        },
-        {
-          "src": "images/projects/buildingconstruction/makhaswa (45).jpeg",
-          "alt": "Interior plastering and finishes",
-          "title": "Interior Plastering & Rhinolite"
-        },
-        {
-          "src": "images/projects/buildingconstruction/makhaswa (35).jpeg",
-          "alt": "Aluminium window frame installation",
-          "title": "Window & Door Glazing"
+          "alt": "Workers preparing a large concrete foundation slab with steel reinforcement mesh",
+          "title": "Foundation Slab Preparation"
         },
         {
           "src": "images/projects/buildingconstruction/diep-school.jpeg",
-          "alt": "Ablution blocks installation",
-          "title": "Ablution Block Construction"
+          "alt": "Newly completed 4-classroom school block with a blue IBR roof and face-brick walls, built for a South African primary school",
+          "title": "Construction of 4 Classrooms – School Infrastructure"
         },
         {
-          "src": "images/projects/buildingconstruction/makhaswa (37).jpeg",
-          "alt": "Completed clinic ward building",
-          "title": "Completed Public Facility"
+          "src": "images/projects/buildingconstruction/makhaswa (48).jpeg",
+          "alt": "Close-up of structural red brick wall and pillar construction with earthworks at the base",
+          "title": "Structural Brickwork"
+        },
+        {
+          "src": "images/projects/buildingconstruction/house.jpeg",
+          "alt": "Double-storey residential house under construction in Samrand, Centurion, showing plastered walls and balcony framing",
+          "title": "Double-Storey Residential House – Samrand, Centurion"
         },
         {
           "src": "images/projects/buildingconstruction/CLINIC.jpeg",
-          "alt": "Structural steel installation",
-          "title": "Steel Framing & Structural Work"
-        }
-      ]
-    },
-    "housing": {
-      "title": "Residential Housing Developments",
-      "slug": "housing-developments.html",
-      "description": "Large scale residential estates, low cost housing, and community developments.",
-      "images": [
-        {
-          "src": "images/projects/engineering-project-delivery/makhaswa (1).jpeg",
-          "alt": "Residential housing development layout",
-          "title": "Multi-Unit Housing Foundations"
-        },
-        {
-          "src": "images/projects/engineering-project-delivery/makhaswa (2).jpeg",
-          "alt": "Row house brickwork structures",
-          "title": "Residential Block Brickwork"
-        },
-        {
-          "src": "images/projects/engineering-project-delivery/makhaswa (3).jpeg",
-          "alt": "Housing roof truss placement",
-          "title": "Housing Estate Roofing"
-        },
-        {
-          "src": "images/projects/engineering-project-delivery/makhaswa (4).jpeg",
-          "alt": "Completed low income houses",
-          "title": "Completed Residential Units"
-        },
-        {
-          "src": "images/projects/engineering-project-delivery/makhaswa (5).jpeg",
-          "alt": "Interior tiling and bathroom finishes",
-          "title": "Interior Finishes & Tiling"
-        },
-        {
-          "src": "images/projects/engineering-project-delivery/makhaswa (6).jpeg",
-          "alt": "Housing development water connection",
-          "title": "Erf Water & Sewer Connections"
+          "alt": "Completed Rhiza Babuyile community health clinic building with large glazed shopfront facade and modern signage",
+          "title": "Rhiza Babuyile Community Health Clinic"
         },
         {
           "src": "images/mass-residential-housing-development.jpeg",
@@ -254,9 +202,61 @@
           "title": "Completed Residential Home"
         },
         {
-          "src": "images/workers.jpeg",
-          "alt": "Electrical wiring in new houses",
-          "title": "Electrical Reticulation & Wiring"
+          "src": "images/projects/buildingconstruction/makhaswa (45).jpeg",
+          "alt": "Long, completed face brick boundary wall constructed outdoors under a clear blue sky",
+          "title": "Perimeter Brick Wall"
+        }
+      ]
+    },
+    "engineering": {
+      "title": "Engineering Project Delivery",
+      "slug": "engineering-project-delivery.html",
+      "description": "Professional project management, site supervision, surveying, and engineering design delivery.",
+      "images": [
+        {
+          "src": "images/projects/engineering-project-delivery/makhaswa (4).jpeg",
+          "alt": "Fleet of yellow excavators, road rollers, and front-end loaders lined up on a completed asphalt road at dusk",
+          "title": "Heavy Construction Equipment Fleet"
+        },
+        {
+          "src": "images/projects/engineering-project-delivery/delivery (2).png",
+          "alt": "Female site engineer in PPE reviewing construction drawings next to a total station surveying instrument on an active road project",
+          "title": "On-Site Land Surveying & Setting Out"
+        },
+        {
+          "src": "images/projects/engineering-project-delivery/makhaswa (5).jpeg",
+          "alt": "Engineering team reviewing a milestone progress chart on a whiteboard during a construction project progress meeting",
+          "title": "Project Planning & Progress Review"
+        },
+        {
+          "src": "images/projects/engineering-project-delivery/delivery (4).png",
+          "alt": "Civil engineer in PPE pointing and inspecting structural work on a multi-storey reinforced concrete building under construction",
+          "title": "Structural Quality Assurance & Inspection"
+        },
+        {
+          "src": "images/projects/engineering-project-delivery/delivery (6).png",
+          "alt": "Aerial view of a team of engineers in high-visibility vests inspecting civil earthworks and road formation on a large construction site",
+          "title": "Civil Earthworks & Site Supervision"
+        },
+        {
+          "src": "images/projects/civilworks/makhaswa (23).jpeg",
+          "alt": "Worker in PPE next to a large diameter concrete stormwater pipe being installed in an excavated trench by a JCB excavator",
+          "title": "Large Diameter Pipe Installation"
+        },
+        {
+          "src": "images/projects/engineering-project-delivery/makhaswa (6).jpeg",
+          "alt": "Hands of engineers pointing to architectural schematic drawing",
+          "title": "Schematic Review & Planning"
+        },
+        {
+          "src": "images/projects/engineering-project-delivery/delivery (5).png",
+          "alt": "Land surveyor operating a total station surveying instrument",
+          "title": "Precision Site Alignment"
+        },
+        {
+          "src": "images/projects/engineering-project-delivery/delivery (9).png",
+          "alt": "Project manager reviewing work plans on clipboard with crew",
+          "title": "Site Supervision & Delivery"
         }
       ]
     }
