@@ -4,7 +4,7 @@
 .hero {
     width: 100%;
     min-height: clamp(260px, 40vw, 400px);
-    background: #c8cdd5 url('../images/building.jpeg') center / cover no-repeat;
+    background: #c8cdd5 url('../images/aigenerated/makhaswa-building.jpeg') center / cover no-repeat;
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -160,7 +160,7 @@ nav a.nav-contact-btn:hover {
 }
 
 .page-hero-projects {
-    background-image: url('../images/Construction_site_with-machines.jpeg');
+    background-image: url('../images/construction-site-with-machines.jpeg');
 }
 
 /* =====================================================
@@ -1554,6 +1554,29 @@ nav a.nav-contact-btn:hover {
         gap: 28px;
     }
 
+    /* Footer brand — stack logo above text on mobile */
+    .footer-col--brand {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo-hero {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    .footer-brand-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
     .team-grid {
         grid-template-columns: 1fr;
     }
@@ -1685,11 +1708,13 @@ nav a.nav-contact-btn:hover {
         margin: 10px -20px 25px -20px;
         gap: 10px;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Hide scrollbar for Firefox */
+        scrollbar-width: none;
+        /* Hide scrollbar for Firefox */
     }
 
     .portfolio-filter-wrapper::-webkit-scrollbar {
-        display: none; /* Hide scrollbar for Chrome, Safari, Opera */
+        display: none;
+        /* Hide scrollbar for Chrome, Safari, Opera */
     }
 
     .filter-btn {
@@ -1717,7 +1742,8 @@ nav a.nav-contact-btn:hover {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(8, 45, 90, 0.75); /* var(--primary) with opacity */
+    background: rgba(8, 45, 90, 0.75);
+    /* var(--primary) with opacity */
     z-index: 1;
 }
 
@@ -1890,6 +1916,7 @@ nav a.nav-contact-btn:hover {
         grid-template-columns: 1fr;
         gap: 32px;
     }
+
     .project-gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }

@@ -224,22 +224,31 @@ footer {
     flex-wrap: wrap;
 }
 
-/* Footer logo in dark bg */
-.footer-logo {
+/* Footer logo — large hero display */
+.footer-col--brand {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
+    gap: 20px;
+    align-items: flex-start;
 }
 
-.footer-logo img {
-    height: 48px;
-    width: auto;
-    background: var(--white);
-    padding: 6px 12px;
-    border-radius: 8px;
-    box-shadow: var(--shadow-sm);
-    object-fit: contain;
+.footer-logo-hero {
+    flex-shrink: 0;
+    width: 160px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer-logo-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.footer-brand-info {
+    flex: 1;
+    min-width: 0;
 }
 
 .footer-logo-text {
@@ -247,6 +256,7 @@ footer {
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+    margin-bottom: 12px;
 }
 
 .footer-logo-text small {
@@ -289,4 +299,5 @@ footer {
     background: rgba(255, 255, 255, 0.15);
     transform: translateY(-2px);
 }
+
 
