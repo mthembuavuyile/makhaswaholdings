@@ -168,11 +168,34 @@ nav a.nav-contact-btn:hover {
 }
 
 .page-hero-faq {
-    background-image: url('../images/mass-residential-housing-development.jpeg');
+    background:
+        radial-gradient(circle at 80% 20%, rgba(200, 169, 81, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 15% 85%, rgba(12, 58, 109, 0.8) 0%, transparent 55%),
+        linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
 }
 
 .page-hero-terms {
-    background-image: url('../images/concrete-panels.jpeg');
+    background-color: var(--primary);
+    background-image:
+        linear-gradient(rgba(200, 169, 81, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 169, 81, 0.05) 1px, transparent 1px),
+        linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+    background-size: 30px 30px, 30px 30px, 100% 100%;
+    position: relative;
+}
+
+.page-hero-terms::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(200, 169, 81, 0.12) 0%, transparent 55%);
+    pointer-events: none;
+}
+
+/* Override the heavy default overlay since these abstract backgrounds are already optimized for white text readability */
+.page-hero-faq::after,
+.page-hero-terms::after {
+    background: transparent;
 }
 
 /* =====================================================

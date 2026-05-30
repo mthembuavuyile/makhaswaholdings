@@ -34,21 +34,6 @@
           "src": "images/projects/earthworks/makhaswa (6).jpeg",
           "alt": "Excavated foundation trenches with concrete footing preparations on a construction site",
           "title": "Foundation Excavation"
-        },
-        {
-          "src": "images/SiteClearance&MassEarthworks.jpeg",
-          "alt": "Multiple bulldozers and excavators stripping and clearing topsoil across a vast open earthworks site",
-          "title": "Topsoil Stripping"
-        },
-        {
-          "src": "images/Construction_site_with-machines.jpeg",
-          "alt": "Wide view of heavy construction machinery working along a dirt corridor at sunset during site preparation",
-          "title": "Site Preparation Works"
-        },
-        {
-          "src": "images/workers.jpeg",
-          "alt": "Team of civil engineers and site workers in high-visibility vests and hard hats reviewing plans with surveying equipment on a completed road",
-          "title": "Bulk Grading Operations"
         }
       ]
     },
@@ -172,34 +157,9 @@
           "title": "Foundation Slab Preparation"
         },
         {
-          "src": "images/projects/buildingconstruction/diep-school.jpeg",
-          "alt": "Newly completed 4-classroom school block with a blue IBR roof and face-brick walls, built for a South African primary school",
-          "title": "Construction of 4 Classrooms – School Infrastructure"
-        },
-        {
           "src": "images/projects/buildingconstruction/makhaswa (48).jpeg",
           "alt": "Close-up of structural red brick wall and pillar construction with earthworks at the base",
           "title": "Structural Brickwork"
-        },
-        {
-          "src": "images/projects/buildingconstruction/house.jpeg",
-          "alt": "Double-storey residential house under construction in Samrand, Centurion, showing plastered walls and balcony framing",
-          "title": "Double-Storey Residential House – Samrand, Centurion"
-        },
-        {
-          "src": "images/projects/buildingconstruction/CLINIC.jpeg",
-          "alt": "Completed Rhiza Babuyile community health clinic building with large glazed shopfront facade and modern signage",
-          "title": "Rhiza Babuyile Community Health Clinic"
-        },
-        {
-          "src": "images/projects/buildingconstruction/unfinished_house.jpeg",
-          "alt": "Unfinished blockwork construction for mobile park homes, guardhouse, and ablution facilities at Rabie Ridge Depot",
-          "title": "Mobile Park Homes and Facilities Construction"
-        },
-        {
-          "src": "images/warehouse-induustrial.jpeg",
-          "alt": "Completed industrial warehouse building with large roller doors and high eaves",
-          "title": "Industrial Warehouse Project"
         },
         {
           "src": "images/projects/buildingconstruction/makhaswa (45).jpeg",
@@ -214,49 +174,9 @@
       "description": "Professional project management, site supervision, surveying, and engineering design delivery.",
       "images": [
         {
-          "src": "images/projects/engineering-project-delivery/makhaswa (4).jpeg",
-          "alt": "Fleet of yellow excavators, road rollers, and front-end loaders lined up on a completed asphalt road at dusk",
-          "title": "Heavy Construction Equipment Fleet"
-        },
-        {
-          "src": "images/projects/engineering-project-delivery/delivery (2).png",
-          "alt": "Female site engineer in PPE reviewing construction drawings next to a total station surveying instrument on an active road project",
-          "title": "On-Site Land Surveying & Setting Out"
-        },
-        {
-          "src": "images/projects/engineering-project-delivery/makhaswa (5).jpeg",
-          "alt": "Engineering team reviewing a milestone progress chart on a whiteboard during a construction project progress meeting",
-          "title": "Project Planning & Progress Review"
-        },
-        {
-          "src": "images/projects/engineering-project-delivery/delivery (4).png",
-          "alt": "Civil engineer in PPE pointing and inspecting structural work on a multi-storey reinforced concrete building under construction",
-          "title": "Structural Quality Assurance & Inspection"
-        },
-        {
-          "src": "images/projects/engineering-project-delivery/delivery (6).png",
-          "alt": "Aerial view of a team of engineers in high-visibility vests inspecting civil earthworks and road formation on a large construction site",
-          "title": "Civil Earthworks & Site Supervision"
-        },
-        {
           "src": "images/projects/civilworks/makhaswa (23).jpeg",
           "alt": "Worker in PPE next to a large diameter concrete stormwater pipe being installed in an excavated trench by a JCB excavator",
           "title": "Large Diameter Pipe Installation"
-        },
-        {
-          "src": "images/projects/engineering-project-delivery/makhaswa (6).jpeg",
-          "alt": "Hands of engineers pointing to architectural schematic drawing",
-          "title": "Schematic Review & Planning"
-        },
-        {
-          "src": "images/projects/engineering-project-delivery/delivery (5).png",
-          "alt": "Land surveyor operating a total station surveying instrument",
-          "title": "Precision Site Alignment"
-        },
-        {
-          "src": "images/projects/engineering-project-delivery/delivery (9).png",
-          "alt": "Project manager reviewing work plans on clipboard with crew",
-          "title": "Site Supervision & Delivery"
         }
       ]
     }

@@ -47,7 +47,7 @@ function getPathPrefix() {
 }
 
 /**
- * Renders all 45 projects in the main grid
+ * Renders all projects in the main grid
  */
 function renderMainGrid(data, grid) {
     grid.innerHTML = '';
