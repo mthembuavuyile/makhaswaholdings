@@ -152,15 +152,27 @@ nav a.nav-contact-btn:hover {
 }
 
 .page-hero-about {
-    background-image: url('../images/workers.jpeg');
+    background-image: url('../images/aigenerated/workers-standing.jpeg');
 }
 
 .page-hero-services {
-    background-image: url('../images/highway-asphalt-paving-construction.jpeg');
+    background-image: url('../images/aigenerated/roundabout-road.jpeg');
 }
 
 .page-hero-projects {
-    background-image: url('../images/construction-site-with-machines.jpeg');
+    background-image: url('../images/projects/engineering-project-delivery/AI\ \(1\).jpeg');
+}
+
+.page-hero-contact {
+    background-image: url('../images/aigenerated/black-engineer.jpeg');
+}
+
+.page-hero-faq {
+    background-image: url('../images/mass-residential-housing-development.jpeg');
+}
+
+.page-hero-terms {
+    background-image: url('../images/concrete-panels.jpeg');
 }
 
 /* =====================================================
@@ -1452,7 +1464,7 @@ nav a.nav-contact-btn:hover {
 }
 
 .page-hero-careers {
-    background-image: url('../images/building.jpeg');
+    background-image: url('../images/aigenerated/makhaswa-building.jpeg');
     background-position: center 30%;
 }
 

@@ -235,19 +235,6 @@ ul {
     margin-bottom: 24px;
 }
 
-/* Contact page inline hero bg (via data attribute handled in CSS) */
-.page-hero-contact {
-    background-image: url('../images/warehouse-industrial.jpeg');
-}
-
-.page-hero-faq {
-    background-image: url('../images/mass-residential-housing-development.jpeg');
-}
-
-.page-hero-terms {
-    background-image: url('../images/concrete-panels.jpeg');
-}
-
 /* Icon vertical-align helper */
 .icon-inline {
     vertical-align: middle;
