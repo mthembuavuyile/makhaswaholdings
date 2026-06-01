@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Makhaswa Holdings (Pty) Ltd</title>
+    <meta name="description"
+        content="Gallery of construction, civil engineering, and infrastructure projects delivered by Makhaswa Holdings (Pty) Ltd.">
+
+    <!-- SEO & Canonical -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Makhaswa Holdings (Pty) Ltd">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="https://makhaswaholdings.co.za/gallery.html">
+
+    <!-- Favicons & App Icons -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="images/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.js" defer></script>
+
+    <!-- Site Stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Self-Contained Gallery Styles -->
+    <style>
+        /* Container and Header Page Title */
+        .gallery-page-container {
+            max-width: 935px;
+            /* Matches Instagram desktop feed container width */
+            margin: 0 auto;
+            padding: 40px 10px 80px;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 10px;
+        }
+
+        .gallery-header h1 {
+            font-size: clamp(24px, 3.5vw, 36px);
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .gallery-header p {
+            color: var(--text-light);
+            font-size: 14px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Instagram Grid Layout */
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 columns on mobile side-by-side */
+            gap: 4px;
+            /* Instagram-like micro spacing */
+        }
+
+        .grid-item {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            /* Force perfect square aspect ratio */
+            overflow: hidden;
+            background-color: #efefef;
+            cursor: pointer;
+            border-radius: 4px;
+            /* Subtle rounding for a modern touch */
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Cover container keeping aspect ratio */
+            transition: transform 0.4s ease;
+        }
+
+        /* Captions on Grid Item (Desktop Hover Only) */
+        .grid-item-caption {
+            display: none;
+        }
+
+        /* Desktop refinements for Grid */
+        @media (min-width: 736px) {
+            .instagram-grid {
+                grid-template-columns: repeat(3, 1fr);
+                /* 3 columns on tablet/desktop */
+                gap: 28px;
+                /* Larger gap on desktop for an elegant look */
+            }
+
+            .grid-item {
+                border-radius: 8px;
+            }
+
+            /* Hover states on desktop */
+            .grid-item:hover img {
+                transform: scale(1.05);
+                /* Gentle zoom */
+            }
+
+            .grid-item::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.4);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                pointer-events: none;
+                z-index: 1;
+            }
+
+            .grid-item:hover::after {
+                opacity: 1;
+            }
+
+            .grid-item-caption {
+                display: flex;
+                position: absolute;
+                inset: 0;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 16px;
+                color: var(--white);
+                font-size: 13px;
+                font-weight: 600;
+                opacity: 0;
+                z-index: 2;
+                transition: opacity 0.3s ease;
+                pointer-events: none;
+                line-height: 1.4;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            .grid-item:hover .grid-item-caption {
+                opacity: 1;
+            }
+        }
+
+        /* Premium Lightbox Modal Styles */
+        .lightbox-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-modal.active .lightbox-content img {
+            transform: scale(1);
+        }
+
+        /* Lightbox Caption */
+        .lightbox-caption {
+            margin-top: 20px;
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+            padding: 0 10px;
+            font-family: var(--font);
+            opacity: 0.9;
+        }
+
+        /* Lightbox Control Buttons */
+        .lightbox-btn {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--white);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.25s, transform 0.2s;
+            user-select: none;
+            z-index: 10;
+        }
+
+        .lightbox-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .lightbox-btn:active {
+            transform: scale(0.95);
+        }
+
+        .lightbox-close {
+            top: -60px;
+            right: 0;
+        }
+
+        .lightbox-prev {
+            left: -80px;
+            top: calc(50% - 34px);
+            /* centered relative to image height */
+        }
+
+        .lightbox-next {
+            right: -80px;
+            top: calc(50% - 34px);
+            /* centered relative to image height */
+        }
+
+        /* Adjust button positions on smaller screens */
+        @media (max-width: 768px) {
+            .lightbox-prev {
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(0, 0, 0, 0.5);
+            }
+
+            .lightbox-next {
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(0, 0, 0, 0.5);
+            }
+
+            .lightbox-close {
+                top: 15px;
+                right: 15px;
+                background: rgba(0, 0, 0, 0.5);
+                position: fixed;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Shared Header (injected by components.js) -->
+    <div id="site-header">
+        <noscript>
+            <nav aria-label="Navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </noscript>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="gallery-page-container">
+            <div class="gallery-header">
+                <h1>Project Gallery</h1>
+                <p>A visual showcase of our build quality, safety standards, and project delivery across South Africa.
+                </p>
+            </div>
+
+            <!-- Instagram-Style Grid -->
+            <div class="instagram-grid">
+
+                <!-- ROW 1: AI Generated & Building Construction -->
+                <div class="grid-item" data-index="0" data-caption="Precast Concrete Panels">
+                    <img src="images/aigenerated/concrete-panels.jpeg" alt="Precast Concrete Panels" loading="lazy">
+                    <div class="grid-item-caption">Precast Concrete Panels</div>
+                </div>
+                <div class="grid-item" data-index="1" data-caption="School building construction project">
+                    <img src="images/projects/buildingconstruction/school.jpeg"
+                        alt="School building construction project" loading="lazy">
+                    <div class="grid-item-caption">School building construction</div>
+                </div>
+                <div class="grid-item" data-index="2" data-caption="Clinic construction project">
+                    <img src="images/projects/buildingconstruction/clinic.jpeg" alt="Clinic construction project"
+                        loading="lazy">
+                    <div class="grid-item-caption">Clinic construction</div>
+                </div>
+                <div class="grid-item" data-index="3" data-caption="House building construction project">
+                    <img src="images/projects/buildingconstruction/house.jpeg" alt="House building construction project"
+                        loading="lazy">
+                    <div class="grid-item-caption">House building construction</div>
+                </div>
+                <div class="grid-item" data-index="4" data-caption="Stormwater catch">
+                    <img src="images/projects/buildingconstruction/makhaswa (43).jpeg" alt="Stormwater catch"
+                        loading="lazy">
+                    <div class="grid-item-caption">Stormwater catch</div>
+                </div>
+                <div class="grid-item" data-index="5" data-caption="Its a wall">
+                    <img src="images/projects/buildingconstruction/makhaswa (46).jpeg" alt="Its a wall" loading="lazy">
+                    <div class="grid-item-caption">Its a wall</div>
+                </div>
+
+                <!-- ROW 2: Civil Works -->
+                <div class="grid-item" data-index="6" data-caption="Its a stormwater catch">
+                    <img src="images/projects/civilworks/makhaswa (4).jpeg" alt="Its a stormwater catch" loading="lazy">
+                    <div class="grid-item-caption">Its a stormwater catch</div>
+                </div>
+                <div class="grid-item" data-index="7" data-caption="Bridge">
+                    <img src="images/projects/civilworks/makhaswa (1).jpeg" alt="Bridge" loading="lazy">
+                    <div class="grid-item-caption">Bridge</div>
+                </div>
+                <div class="grid-item" data-index="8" data-caption="Precast box culvert">
+                    <img src="images/projects/civilworks/makhaswa (8).jpeg" alt="Precast box culvert" loading="lazy">
+                    <div class="grid-item-caption">Precast box culvert</div>
+                </div>
+                <div class="grid-item" data-index="9" data-caption="Diameter pipe in the ground">
+                    <img src="images/projects/civilworks/makhaswa (26).jpeg" alt="Diameter pipe in the ground"
+                        loading="lazy">
+                    <div class="grid-item-caption">Diameter pipe in the ground</div>
+                </div>
+                <div class="grid-item" data-index="10"
+                    data-caption="Preparation for concrete structure steel reinforcement, and formwork">
+                    <img src="images/projects/civilworks/makhaswa (30).jpeg"
+                        alt="Preparation for concrete structure steel reinforcement, and formwork" loading="lazy">
+                    <div class="grid-item-caption">Preparation for concrete structure steel reinforcement, and formwork
+                    </div>
+                </div>
+
+                <!-- ROW 3: Roads and Surfacing -->
+                <div class="grid-item" data-index="11" data-caption="Roads & Surfacing">
+                    <img src="images/projects/roadsandsurfacing/makhaswa (1).jpeg" alt="Roads & Surfacing"
+                        loading="lazy">
+                    <div class="grid-item-caption">Roads & Surfacing</div>
+                </div>
+                <div class="grid-item" data-index="12" data-caption="Roads & Surfacing">
+                    <img src="images/projects/roadsandsurfacing/makhaswa (6).jpeg" alt="Roads & Surfacing"
+                        loading="lazy">
+                    <div class="grid-item-caption">Roads & Surfacing</div>
+                </div>
+                <div class="grid-item" data-index="13" data-caption="Roads & Surfacing">
+                    <img src="images/projects/roadsandsurfacing/makhaswa (14).jpeg" alt="Roads & Surfacing"
+                        loading="lazy">
+                    <div class="grid-item-caption">Roads & Surfacing</div>
+                </div>
+                <div class="grid-item" data-index="14" data-caption="Roads & Surfacing">
+                    <img src="images/projects/roadsandsurfacing/makhaswa (18).jpeg" alt="Roads & Surfacing"
+                        loading="lazy">
+                    <div class="grid-item-caption">Roads & Surfacing</div>
+                </div>
+                <div class="grid-item" data-index="15" data-caption="Roundabout with block paving apron.">
+                    <img src="images/projects/roadsandsurfacing/makhaswa (34).jpeg"
+                        alt="Roundabout with block paving apron." loading="lazy">
+                    <div class="grid-item-caption">Roundabout with block paving apron.</div>
+                </div>
+                <div class="grid-item" data-index="16"
+                    data-caption="Tar road Freshly laid asphalt road leading to a roundabout">
+                    <img src="images/projects/roadsandsurfacing/makhaswa (33).jpeg"
+                        alt="Tar road Freshly laid asphalt road leading to a roundabout" loading="lazy">
+                    <div class="grid-item-caption">Tar road Freshly laid asphalt road leading to a roundabout</div>
+                </div>
+                <div class="grid-item" data-index="17"
+                    data-caption="Construction crew installing concrete kerbing on site.">
+                    <img src="images/projects/roadsandsurfacing/makhaswa (54).jpeg"
+                        alt="Construction crew installing concrete kerbing on site." loading="lazy">
+                    <div class="grid-item-caption">Construction crew installing concrete kerbing on site.</div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-btn lightbox-close" id="lightbox-close-btn" aria-label="Close Gallery Modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <button class="lightbox-btn lightbox-prev" id="lightbox-prev-btn" aria-label="Previous Image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <img id="lightbox-img" src="" alt="Active Gallery Image">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+            <button class="lightbox-btn lightbox-next" id="lightbox-next-btn" aria-label="Next Image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Shared Footer (injected by components.js) -->
+    <div id="site-footer">
+        <noscript>
+            <nav aria-label="Footer Navigation">
+                <a href="index.html">Home</a> |
+                <a href="about.html">About Us</a> |
+                <a href="services.html">Services</a> |
+                <a href="projects.html">Projects</a> |
+                <a href="careers.html">Careers</a> |
+                <a href="contact.html">Contact Us</a> |
+                <a href="faq.html">FAQs</a> |
+                <a href="terms.html">Terms & Conditions</a>
+            </nav>
+        </noscript>
+    </div>
+
+    <!-- Site Scripts -->
+    <script src="js/components.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Self-Contained Lightbox JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gridItems = document.querySelectorAll('.grid-item');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCap = document.getElementById('lightbox-caption');
+            const closeBtn = document.getElementById('lightbox-close-btn');
+            const prevBtn = document.getElementById('lightbox-prev-btn');
+            const nextBtn = document.getElementById('lightbox-next-btn');
+
+            let currentIndex = 0;
+            const images = Array.from(gridItems).map(item => {
+                const img = item.querySelector('img');
+                return {
+                    src: img.src,
+                    alt: img.alt,
+                    caption: item.getAttribute('data-caption') || ''
+                };
+            });
+
+            const openLightbox = (index) => {
+                currentIndex = index;
+                updateLightboxImage();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Stop scrolling behind modal
+            };
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            const showPrev = (e) => {
+                if (e) e.stopPropagation();
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateLightboxImage();
+            };
+
+            const showNext = (e) => {
+                if (e) e.stopPropagation();
+                currentIndex = (currentIndex + 1) % images.length;
+                updateLightboxImage();
+            };
+
+            const updateLightboxImage = () => {
+                lightboxImg.src = images[currentIndex].src;
+                lightboxImg.alt = images[currentIndex].alt;
+                lightboxCap.textContent = images[currentIndex].caption;
+            };
+
+            // Grid items click event
+            gridItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    openLightbox(index);
+                });
+            });
+
+            // Control click events
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', showPrev);
+            nextBtn.addEventListener('click', showNext);
+
+            // Click background to close
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+                    closeLightbox();
+                }
+            });
+
+            // Keyboard controls
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowLeft') {
+                    showPrev();
+                } else if (e.key === 'ArrowRight') {
+                    showNext();
+                }
+            });
+
+            // Mobile Swipe / Touch support
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            lightbox.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            lightbox.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            const handleSwipe = () => {
+                const swipeThreshold = 50;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    showNext();
+                } else if (touchEndX > touchStartX + swipeThreshold) {
+                    showPrev();
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>
