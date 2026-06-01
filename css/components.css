@@ -2048,3 +2048,228 @@ nav a.nav-contact-btn:hover {
     line-height: 1.6;
     margin: 0;
 }
+
+/* =====================================================
+   404 ERROR PAGE STYLES
+   ===================================================== */
+.error-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - var(--header-h) - 450px);
+    padding: 80px 20px;
+    background-color: var(--off-white);
+    background-image: 
+        linear-gradient(rgba(8, 45, 90, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(8, 45, 90, 0.04) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Faint architectural line accents */
+.error-section::before {
+    content: '';
+    position: absolute;
+    inset: 40px;
+    border: 1px dashed rgba(8, 45, 90, 0.15);
+    pointer-events: none;
+}
+
+.error-section::after {
+    content: 'DIM_REF: 404_PAGE_ERR';
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-family: monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+.error-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(8, 45, 90, 0.1);
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    max-width: 650px;
+    width: 100%;
+    padding: 48px 40px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.error-graphic {
+    margin: 0 auto 32px;
+    width: 100%;
+    max-width: 320px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+/* Crane cable and block swing animation */
+@keyframes crane-swing {
+    0%, 100% {
+        transform: rotate(-4deg);
+    }
+    50% {
+        transform: rotate(4deg);
+    }
+}
+
+.swinging-cable-group {
+    animation: crane-swing 3.5s ease-in-out infinite;
+    transform-origin: 160px 20px; /* Cable connection point on jib */
+}
+
+/* Blinking warning light on top of crane */
+@keyframes warning-blink {
+    0%, 100% {
+        opacity: 0.35;
+        fill: #d9534f;
+    }
+    50% {
+        opacity: 1;
+        fill: #ff3b30;
+    }
+}
+
+.warning-light {
+    animation: warning-blink 1.2s infinite;
+}
+
+.error-badge {
+    display: inline-block;
+    background: rgba(200, 169, 81, 0.15);
+    color: var(--primary);
+    border: 1px solid var(--gold);
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    border-radius: 4px;
+}
+
+.error-card h1 {
+    font-size: clamp(24px, 3.5vw, 32px);
+    font-weight: 800;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.error-card p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.error-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+.error-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 180px;
+    padding: 12px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background var(--transition), transform var(--transition), border-color var(--transition), color var(--transition);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.error-btn--primary {
+    background: var(--primary);
+    color: var(--white);
+    border: 2px solid var(--primary);
+}
+
+.error-btn--primary:hover {
+    background: var(--primary-mid);
+    border-color: var(--primary-mid);
+    transform: translateY(-2px);
+}
+
+.error-btn--secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.error-btn--secondary:hover {
+    background: rgba(8, 45, 90, 0.05);
+    transform: translateY(-2px);
+}
+
+.error-quick-links {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+}
+
+.error-quick-links h3 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+}
+
+.error-links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+}
+
+.error-links-grid a {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color var(--transition);
+}
+
+.error-links-grid a:hover {
+    color: var(--gold);
+}
+
+@media (max-width: 768px) {
+    .error-section {
+        padding: 40px 15px;
+    }
+    .error-card {
+        padding: 32px 20px;
+    }
+    .error-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .error-btn {
+        width: 100%;
+        min-width: unset;
+    }
+}
