@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Makhaswa Holdings (Pty) Ltd</title>
     <meta name="description"
-        content="Gallery of construction, civil engineering, and infrastructure projects delivered by Makhaswa Holdings (Pty) Ltd.">
+        content="Gallery of construction, civil engineering, earthworks, road surfacing, and infrastructure projects delivered by Makhaswa Holdings (Pty) Ltd.">
 
     <!-- SEO & Canonical -->
     <meta name="robots" content="index, follow">
@@ -36,97 +36,144 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
 
-    <!-- Self-Contained Gallery Styles -->
+    <!-- =============================================
+         SELF-CONTAINED GALLERY STYLES
+         ============================================= -->
     <style>
-        /* Container and Header Page Title */
+        /* ── Page Container ── */
         .gallery-page-container {
-            max-width: 935px;
-            /* Matches Instagram desktop feed container width */
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 10px 80px;
+            padding: 48px 20px 96px;
         }
 
+        /* ── Header ── */
         .gallery-header {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 0 10px;
+            margin-bottom: 48px;
         }
 
         .gallery-header h1 {
-            font-size: clamp(24px, 3.5vw, 36px);
+            font-size: clamp(26px, 3.5vw, 40px);
             color: var(--primary);
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
         }
 
         .gallery-header p {
             color: var(--text-light);
-            font-size: 14px;
-            max-width: 500px;
+            font-size: 15px;
+            max-width: 560px;
             margin: 0 auto;
+            line-height: 1.6;
         }
 
-        /* Instagram Grid Layout */
-        .instagram-grid {
+        /* ── Category Filter Tabs ── */
+        .gallery-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 9px 22px;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            font-family: var(--font, 'Montserrat', sans-serif);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.22s ease;
+            background: #f4f4f4;
+            color: #555;
+            outline: none;
+        }
+
+        .filter-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ── Gallery Grid ── */
+        .gallery-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            /* 2 columns on mobile side-by-side */
-            gap: 4px;
-            /* Instagram-like micro spacing */
+            gap: 6px;
         }
 
+        @media (min-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+        }
+
+        /* ── Grid Item ── */
         .grid-item {
             position: relative;
             aspect-ratio: 1 / 1;
-            /* Force perfect square aspect ratio */
             overflow: hidden;
-            background-color: #efefef;
+            background-color: #e8e8e8;
             cursor: pointer;
-            border-radius: 4px;
-            /* Subtle rounding for a modern touch */
+            border-radius: 6px;
+            animation: fadeInUp 0.35s ease both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .grid-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Cover container keeping aspect ratio */
             transition: transform 0.4s ease;
+            display: block;
         }
 
-        /* Captions on Grid Item (Desktop Hover Only) */
-        .grid-item-caption {
-            display: none;
-        }
-
-        /* Desktop refinements for Grid */
-        @media (min-width: 736px) {
-            .instagram-grid {
-                grid-template-columns: repeat(3, 1fr);
-                /* 3 columns on tablet/desktop */
-                gap: 28px;
-                /* Larger gap on desktop for an elegant look */
-            }
-
-            .grid-item {
-                border-radius: 8px;
-            }
-
-            /* Hover states on desktop */
+        /* ── Hover overlay (desktop) ── */
+        @media (min-width: 600px) {
             .grid-item:hover img {
-                transform: scale(1.05);
-                /* Gentle zoom */
+                transform: scale(1.06);
             }
 
             .grid-item::after {
                 content: '';
                 position: absolute;
                 inset: 0;
-                background: rgba(0, 0, 0, 0.4);
+                background: rgba(0, 0, 0, 0.42);
                 opacity: 0;
-                transition: opacity 0.3s ease;
+                transition: opacity 0.28s ease;
                 pointer-events: none;
                 z-index: 1;
             }
@@ -136,35 +183,137 @@
             }
 
             .grid-item-caption {
-                display: flex;
                 position: absolute;
                 inset: 0;
+                display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 text-align: center;
-                padding: 16px;
-                color: var(--white);
-                font-size: 13px;
+                padding: 14px;
+                color: #fff;
+                font-size: 12px;
                 font-weight: 600;
                 opacity: 0;
                 z-index: 2;
-                transition: opacity 0.3s ease;
+                transition: opacity 0.28s ease;
                 pointer-events: none;
-                line-height: 1.4;
+                line-height: 1.45;
                 text-transform: uppercase;
-                letter-spacing: 0.5px;
+                letter-spacing: 0.4px;
             }
 
             .grid-item:hover .grid-item-caption {
                 opacity: 1;
             }
+
+            .grid-item-caption .caption-icon {
+                font-size: 20px;
+                margin-bottom: 7px;
+                opacity: 0.85;
+            }
         }
 
-        /* Premium Lightbox Modal Styles */
+        @media (max-width: 599px) {
+            .grid-item-caption {
+                display: none;
+            }
+        }
+
+        /* ── Category badge on each item ── */
+        .grid-item-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            padding: 3px 8px;
+            border-radius: 20px;
+            pointer-events: none;
+            z-index: 3;
+            display: none;
+        }
+
+        /* ── Pagination ── */
+        .gallery-pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+
+        .page-btn {
+            min-width: 40px;
+            height: 40px;
+            padding: 0 12px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            background: #fff;
+            color: #444;
+            font-family: var(--font, 'Montserrat', sans-serif);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .page-btn:hover:not(:disabled) {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .page-btn.active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+        }
+
+        .page-btn:disabled {
+            opacity: 0.35;
+            cursor: default;
+        }
+
+        .page-btn svg {
+            width: 16px;
+            height: 16px;
+            stroke-width: 2.5;
+        }
+
+        /* ── Gallery count label ── */
+        .gallery-count {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-light, #888);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        /* ── Empty state ── */
+        .gallery-empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+            font-size: 15px;
+            display: none;
+        }
+
+        /* ── Premium Lightbox Modal ── */
         .lightbox-modal {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(0, 0, 0, 0.96);
             z-index: 2000;
             display: flex;
             align-items: center;
@@ -181,8 +330,8 @@
 
         .lightbox-content {
             position: relative;
-            max-width: 90%;
-            max-height: 80vh;
+            max-width: 90vw;
+            max-height: 85vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -191,11 +340,11 @@
 
         .lightbox-content img {
             max-width: 100%;
-            max-height: 70vh;
+            max-height: 72vh;
             object-fit: contain;
-            border-radius: 4px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-            transform: scale(0.95);
+            border-radius: 6px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+            transform: scale(0.94);
             transition: transform 0.3s ease;
         }
 
@@ -203,85 +352,112 @@
             transform: scale(1);
         }
 
-        /* Lightbox Caption */
         .lightbox-caption {
-            margin-top: 20px;
-            color: var(--white);
-            font-size: 14px;
+            margin-top: 18px;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 13px;
             font-weight: 500;
             text-align: center;
-            max-width: 600px;
-            line-height: 1.5;
-            letter-spacing: 0.5px;
-            padding: 0 10px;
-            font-family: var(--font);
-            opacity: 0.9;
+            max-width: 560px;
+            line-height: 1.55;
+            letter-spacing: 0.4px;
+            padding: 0 12px;
+            font-family: var(--font, 'Montserrat', sans-serif);
         }
 
-        /* Lightbox Control Buttons */
+        .lightbox-counter {
+            margin-top: 10px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.45);
+            font-family: var(--font, 'Montserrat', sans-serif);
+            letter-spacing: 0.5px;
+        }
+
         .lightbox-btn {
             position: absolute;
             background: rgba(255, 255, 255, 0.1);
             border: none;
-            color: var(--white);
-            width: 48px;
-            height: 48px;
+            color: #fff;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: background 0.25s, transform 0.2s;
+            transition: background 0.22s, transform 0.18s;
             user-select: none;
             z-index: 10;
+            backdrop-filter: blur(4px);
         }
 
         .lightbox-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.22);
+            transform: scale(1.08);
         }
 
         .lightbox-btn:active {
-            transform: scale(0.95);
+            transform: scale(0.94);
+        }
+
+        .lightbox-btn svg {
+            width: 22px;
+            height: 22px;
+            stroke-width: 2.5;
         }
 
         .lightbox-close {
-            top: -60px;
+            top: -64px;
             right: 0;
         }
 
         .lightbox-prev {
-            left: -80px;
-            top: calc(50% - 34px);
-            /* centered relative to image height */
+            left: -72px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-prev:hover {
+            transform: translateY(-50%) scale(1.08);
         }
 
         .lightbox-next {
-            right: -80px;
-            top: calc(50% - 34px);
-            /* centered relative to image height */
+            right: -72px;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
-        /* Adjust button positions on smaller screens */
+        .lightbox-next:hover {
+            transform: translateY(-50%) scale(1.08);
+        }
+
         @media (max-width: 768px) {
             .lightbox-prev {
                 left: 10px;
                 top: 50%;
                 transform: translateY(-50%);
-                background: rgba(0, 0, 0, 0.5);
+                background: rgba(0, 0, 0, 0.55);
+            }
+
+            .lightbox-prev:hover {
+                transform: translateY(-50%) scale(1.06);
             }
 
             .lightbox-next {
                 right: 10px;
                 top: 50%;
                 transform: translateY(-50%);
-                background: rgba(0, 0, 0, 0.5);
+                background: rgba(0, 0, 0, 0.55);
+            }
+
+            .lightbox-next:hover {
+                transform: translateY(-50%) scale(1.06);
             }
 
             .lightbox-close {
-                top: 15px;
-                right: 15px;
-                background: rgba(0, 0, 0, 0.5);
+                top: 14px;
+                right: 14px;
+                background: rgba(0, 0, 0, 0.55);
                 position: fixed;
             }
         }
@@ -307,137 +483,64 @@
     <!-- Main Content -->
     <main id="main-content">
         <div class="gallery-page-container">
+
+            <!-- Header -->
             <div class="gallery-header">
                 <h1>Project Gallery</h1>
-                <p>A visual showcase of our build quality, safety standards, and project delivery across South Africa.
-                </p>
+                <p>A visual showcase of our build quality, safety standards, and project delivery across South Africa —
+                    from earthworks and civil infrastructure to road surfacing and building construction.</p>
             </div>
 
-            <!-- Instagram-Style Grid -->
-            <div class="instagram-grid">
-
-                <!-- ROW 1: AI Generated & Building Construction -->
-                <div class="grid-item" data-index="0" data-caption="Precast concrete panel construction">
-                    <img src="images/aigenerated/concrete-panels.jpeg" alt="Precast concrete panel construction"
-                        loading="lazy">
-                    <div class="grid-item-caption">Precast concrete panel construction</div>
-                </div>
-                <div class="grid-item" data-index="1" data-caption="School building construction">
-                    <img src="images/projects/buildingconstruction/school.jpeg" alt="School building construction"
-                        loading="lazy">
-                    <div class="grid-item-caption">School building construction</div>
-                </div>
-                <div class="grid-item" data-index="2" data-caption="Rhiza Babuyile Clinic">
-                    <img src="images/projects/buildingconstruction/clinic.jpeg" alt="Rhiza Babuyile Clinic"
-                        loading="lazy">
-                    <div class="grid-item-caption">Rhiza Babuyile Clinic</div>
-                </div>
-                <div class="grid-item" data-index="3" data-caption="House building construction">
-                    <img src="images/projects/buildingconstruction/house.jpeg" alt="House building construction"
-                        loading="lazy">
-                    <div class="grid-item-caption">House building construction</div>
-                </div>
-                <div class="grid-item" data-index="4" data-caption="Concrete foundation preparation">
-                    <img src="images/projects/buildingconstruction/makhaswa (43).jpeg"
-                        alt="Concrete foundation preparation" loading="lazy">
-                    <div class="grid-item-caption">Concrete foundation preparation</div>
-                </div>
-                <div class="grid-item" data-index="5" data-caption="Curved brick boundary wall">
-                    <img src="images/projects/buildingconstruction/makhaswa (46).jpeg" alt="Curved brick boundary wall"
-                        loading="lazy">
-                    <div class="grid-item-caption">Curved brick boundary wall</div>
-                </div>
-
-                <!-- ROW 2: Civil Works -->
-                <div class="grid-item" data-index="6" data-caption="Its a stormwater catch">
-                    <img src="images/projects/civilworks/makhaswa (4).jpeg" alt="Its a stormwater catch" loading="lazy">
-                    <div class="grid-item-caption">Its a stormwater catch</div>
-                </div>
-                <div class="grid-item" data-index="7" data-caption="Bridge">
-                    <img src="images/projects/civilworks/makhaswa (1).jpeg" alt="Bridge" loading="lazy">
-                    <div class="grid-item-caption">Bridge</div>
-                </div>
-                <div class="grid-item" data-index="8" data-caption="Precast box culvert">
-                    <img src="images/projects/civilworks/makhaswa (8).jpeg" alt="Precast box culvert" loading="lazy">
-                    <div class="grid-item-caption">Precast box culvert</div>
-                </div>
-                <div class="grid-item" data-index="9" data-caption="Diameter pipe in the ground">
-                    <img src="images/projects/civilworks/makhaswa (26).jpeg" alt="Diameter pipe in the ground"
-                        loading="lazy">
-                    <div class="grid-item-caption">Diameter pipe in the ground</div>
-                </div>
-                <div class="grid-item" data-index="10"
-                    data-caption="Preparation for concrete structure steel reinforcement, and formwork">
-                    <img src="images/projects/civilworks/makhaswa (30).jpeg"
-                        alt="Preparation for concrete structure steel reinforcement, and formwork" loading="lazy">
-                    <div class="grid-item-caption">Preparation for concrete structure steel reinforcement, and formwork
-                    </div>
-                </div>
-
-                <!-- ROW 3: Roads and Surfacing -->
-                <div class="grid-item" data-index="11" data-caption="Roads & Surfacing">
-                    <img src="images/projects/roadsandsurfacing/makhaswa (1).jpeg" alt="Roads & Surfacing"
-                        loading="lazy">
-                    <div class="grid-item-caption">Roads & Surfacing</div>
-                </div>
-                <div class="grid-item" data-index="12" data-caption="Roads & Surfacing">
-                    <img src="images/projects/roadsandsurfacing/makhaswa (6).jpeg" alt="Roads & Surfacing"
-                        loading="lazy">
-                    <div class="grid-item-caption">Roads & Surfacing</div>
-                </div>
-                <div class="grid-item" data-index="13" data-caption="Roads & Surfacing">
-                    <img src="images/projects/roadsandsurfacing/makhaswa (14).jpeg" alt="Roads & Surfacing"
-                        loading="lazy">
-                    <div class="grid-item-caption">Roads & Surfacing</div>
-                </div>
-                <div class="grid-item" data-index="14" data-caption="Roads & Surfacing">
-                    <img src="images/projects/roadsandsurfacing/makhaswa (18).jpeg" alt="Roads & Surfacing"
-                        loading="lazy">
-                    <div class="grid-item-caption">Roads & Surfacing</div>
-                </div>
-                <div class="grid-item" data-index="15" data-caption="Roundabout with block paving apron.">
-                    <img src="images/projects/roadsandsurfacing/makhaswa (34).jpeg"
-                        alt="Roundabout with block paving apron." loading="lazy">
-                    <div class="grid-item-caption">Roundabout with block paving apron.</div>
-                </div>
-                <div class="grid-item" data-index="16"
-                    data-caption="Tar road Freshly laid asphalt road leading to a roundabout">
-                    <img src="images/projects/roadsandsurfacing/makhaswa (33).jpeg"
-                        alt="Tar road Freshly laid asphalt road leading to a roundabout" loading="lazy">
-                    <div class="grid-item-caption">Tar road Freshly laid asphalt road leading to a roundabout</div>
-                </div>
-                <div class="grid-item" data-index="17"
-                    data-caption="Construction crew installing concrete kerbing on site.">
-                    <img src="images/projects/roadsandsurfacing/makhaswa (54).jpeg"
-                        alt="Construction crew installing concrete kerbing on site." loading="lazy">
-                    <div class="grid-item-caption">Construction crew installing concrete kerbing on site.</div>
-                </div>
-
+            <!-- Category Filter Tabs -->
+            <div class="gallery-filters" id="gallery-filters" role="tablist" aria-label="Filter gallery by category">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All
+                    Projects</button>
+                <button class="filter-btn" data-filter="earthworks" role="tab" aria-selected="false">Earthworks &amp;
+                    Site Prep</button>
+                <button class="filter-btn" data-filter="civil" role="tab" aria-selected="false">Civil Works</button>
+                <button class="filter-btn" data-filter="roads" role="tab" aria-selected="false">Roads &amp;
+                    Surfacing</button>
+                <button class="filter-btn" data-filter="building" role="tab" aria-selected="false">Building
+                    Construction</button>
             </div>
+
+            <!-- Count label -->
+            <p class="gallery-count" id="gallery-count" aria-live="polite"></p>
+
+            <!-- Grid -->
+            <div class="gallery-grid" id="gallery-grid" role="list" aria-label="Project photo gallery"></div>
+
+            <!-- Empty state -->
+            <div class="gallery-empty" id="gallery-empty">No images found for this category.</div>
+
+            <!-- Pagination -->
+            <nav class="gallery-pagination" id="gallery-pagination" aria-label="Gallery pages"></nav>
+
         </div>
     </main>
 
     <!-- Lightbox Modal -->
-    <div class="lightbox-modal" id="lightbox">
+    <div class="lightbox-modal" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
         <div class="lightbox-content">
-            <button class="lightbox-btn lightbox-close" id="lightbox-close-btn" aria-label="Close Gallery Modal">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <button class="lightbox-btn lightbox-close" id="lightbox-close-btn" aria-label="Close image viewer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
-            <button class="lightbox-btn lightbox-prev" id="lightbox-prev-btn" aria-label="Previous Image">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <button class="lightbox-btn lightbox-prev" id="lightbox-prev-btn" aria-label="Previous image">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>
             </button>
             <img id="lightbox-img" src="" alt="Active Gallery Image">
             <div class="lightbox-caption" id="lightbox-caption"></div>
-            <button class="lightbox-btn lightbox-next" id="lightbox-next-btn" aria-label="Next Image">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <div class="lightbox-counter" id="lightbox-counter"></div>
+            <button class="lightbox-btn lightbox-next" id="lightbox-next-btn" aria-label="Next image">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
             </button>
@@ -455,7 +558,7 @@
                 <a href="careers.html">Careers</a> |
                 <a href="contact.html">Contact Us</a> |
                 <a href="faq.html">FAQs</a> |
-                <a href="terms.html">Terms & Conditions</a>
+                <a href="terms.html">Terms &amp; Conditions</a>
             </nav>
         </noscript>
     </div>
@@ -465,111 +568,309 @@
     <script src="js/forms.js"></script>
     <script src="js/app.js"></script>
 
-    <!-- Self-Contained Lightbox JS -->
+    <!-- =============================================
+         SELF-CONTAINED GALLERY JS
+         ============================================= -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const gridItems = document.querySelectorAll('.grid-item');
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const lightboxCap = document.getElementById('lightbox-caption');
-            const closeBtn = document.getElementById('lightbox-close-btn');
-            const prevBtn = document.getElementById('lightbox-prev-btn');
-            const nextBtn = document.getElementById('lightbox-next-btn');
+        (() => {
+            'use strict';
 
-            let currentIndex = 0;
-            const images = Array.from(gridItems).map(item => {
-                const img = item.querySelector('img');
-                return {
-                    src: img.src,
-                    alt: img.alt,
-                    caption: item.getAttribute('data-caption') || ''
-                };
-            });
+            /* ── All gallery images (sourced from projects/data.json) ── */
+            const GALLERY_DATA = [
+                /* ── Earthworks & Site Prep ── */
+                { src: 'images/projects/earthworks/makhaswa (1).jpeg', alt: 'A large cleared, graded, and leveled dirt field prepared for construction', title: 'Bulk Site Clearance', category: 'earthworks' },
+                { src: 'images/projects/earthworks/makhaswa (3).jpeg', alt: 'A large cleared and graded site with compaction machinery in the distance preparing the ground', title: 'Clearing & Grubbing', category: 'earthworks' },
+                { src: 'images/projects/earthworks/makhaswa (4).jpeg', alt: 'Heavy roller compacting the prepared soil subgrade to meet engineering compaction codes', title: 'Subgrade Soil Compaction', category: 'earthworks' },
+                { src: 'images/projects/earthworks/makhaswa (2).jpeg', alt: 'Workers spreading lime/cement stabiliser across a prepared subgrade — soil stabilisation technique used before surfacing, with a TLB/tractor in the background', title: 'Subgrade Soil Stabilisation', category: 'earthworks' },
+                { src: 'images/projects/earthworks/makhaswa (5).jpeg', alt: 'Orange excavator digging a deep trench or channel for bulk earthworks preparation', title: 'Bulk Excavation', category: 'earthworks' },
+                { src: 'images/projects/earthworks/makhaswa (6).jpeg', alt: 'Excavated foundation trenches with concrete footing preparations on a construction site', title: 'Foundation Excavation', category: 'earthworks' },
 
-            const openLightbox = (index) => {
-                currentIndex = index;
-                updateLightboxImage();
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Stop scrolling behind modal
+                /* ── Civil Works & Infrastructure ── */
+                { src: 'images/projects/civilworks/makhaswa (5).jpeg', alt: 'Completed multi-barrel concrete culvert bridge structure set into an embankment on a rural road', title: 'Culvert Bridge Construction', category: 'civil' },
+                { src: 'images/projects/civilworks/makhaswa (26).jpeg', alt: 'Large diameter concrete pipe laid inside a deep excavated trench for bulk stormwater infrastructure', title: 'Bulk Pipe Installation', category: 'civil' },
+                { src: 'images/projects/civilworks/makhaswa (22).jpeg', alt: 'Workers in PPE constructing a brick-lined manhole and junction box inside an excavated pit', title: 'Manhole & Junction Box Construction', category: 'civil' },
+                { src: 'images/projects/civilworks/makhaswa (8).jpeg', alt: 'Site worker in PPE supervising precast box culvert units being positioned on a prepared road base', title: 'Precast Box Culvert Installation', category: 'civil' },
+                { src: 'images/projects/civilworks/makhaswa (28).jpeg', alt: 'Worker in PPE hand-laying bricks to construct a stormwater catch pit within a timber-shuttered excavation', title: 'Stormwater Catch Pit Construction', category: 'civil' },
+                { src: 'images/projects/civilworks/makhaswa (24).jpeg', alt: 'Dense steel rebar mesh and timber formwork prepared inside a deep excavation for a concrete retaining wall', title: 'Retaining Wall Construction', category: 'civil' },
+                { src: 'images/projects/civilworks/makhaswa (16).jpeg', alt: 'Placing concrete cover slabs on a stormwater drainage channel', title: 'Stormwater Channel & Cover Slabs', category: 'civil' },
+                { src: 'images/projects/civilworks/makhaswa (17).jpeg', alt: 'Brickwork and steel reinforcement for an underground stormwater chamber', title: 'Underground Junction Chamber', category: 'civil' },
+                { src: 'images/projects/civilworks/makhaswa (18).jpeg', alt: 'Workers installing large diameter concrete pipes in a deep trench', title: 'Bulk Concrete Pipeline Installation', category: 'civil' },
+                { src: 'images/projects/civilworks/makhaswa (4).jpeg', alt: 'Stormwater catch pit construction on site', title: 'Stormwater Catch', category: 'civil' },
+                { src: 'images/projects/civilworks/makhaswa (1).jpeg', alt: 'Bridge construction project', title: 'Bridge', category: 'civil' },
+                { src: 'images/projects/civilworks/makhaswa (30).jpeg', alt: 'Preparation for concrete structure steel reinforcement, and formwork', title: 'Concrete Structure Preparation', category: 'civil' },
+                { src: 'images/projects/civilworks/makhaswa (23).jpeg', alt: 'Worker in PPE next to a large diameter concrete stormwater pipe being installed in an excavated trench by a JCB excavator', title: 'Large Diameter Pipe Installation', category: 'civil' },
+
+                /* ── Road Construction & Surfacing ── */
+                { src: 'images/projects/roadsandsurfacing/makhaswa (10).jpeg', alt: 'Freshly laid asphalt surface stretching along a newly constructed road with red soil shoulders on either side', title: 'Asphalt Surfacing & Laying', category: 'roads' },
+                { src: 'images/projects/roadsandsurfacing/makhaswa (14).jpeg', alt: 'Grader compacting and shaping a wide roadbed base layer on a residential road under construction', title: 'Roadbed Compaction & Layer Works', category: 'roads' },
+                { src: 'images/projects/roadsandsurfacing/makhaswa (21).jpeg', alt: 'Long stretch of completed interlocking paving block sidewalk running alongside a road through open farmland', title: 'Interlocking Paving Block Sidewalks', category: 'roads' },
+                { src: 'images/projects/roadsandsurfacing/makhaswa (41).jpeg', alt: 'Aerial view of freshly installed interlocking paving blocks and precast concrete kerbing along a road at sunset', title: 'Precast Concrete Kerbing', category: 'roads' },
+                { src: 'images/projects/roadsandsurfacing/makhaswa (53).jpeg', alt: 'Worker in PPE inspecting a concrete lined road channel during roadbed profiling and drainage operations', title: 'Roadbed Profiling Operations', category: 'roads' },
+                { src: 'images/projects/roadsandsurfacing/makhaswa (49).jpeg', alt: 'Workers in PPE laying interlocking paving blocks on a completed residential roadway in a suburban area', title: 'Completed Surfaced Roadway', category: 'roads' },
+                { src: 'images/projects/roadsandsurfacing/makhaswa (61).jpeg', alt: 'Installation of interlocking block paving alongside road kerbing', title: 'Interlocking Block Paving', category: 'roads' },
+                { src: 'images/projects/roadsandsurfacing/makhaswa (55).jpeg', alt: 'Constructed traffic roundabout with paved apron and concrete kerbing', title: 'Roundabout Construction & Paving', category: 'roads' },
+                { src: 'images/projects/roadsandsurfacing/makhaswa (18).jpeg', alt: 'Road rollers compacting a newly surfaced road layer', title: 'Road Surfacing & Compaction', category: 'roads' },
+                { src: 'images/projects/roadsandsurfacing/makhaswa (1).jpeg', alt: 'Roads & Surfacing project on site', title: 'Roads & Surfacing', category: 'roads' },
+                { src: 'images/projects/roadsandsurfacing/makhaswa (6).jpeg', alt: 'Roads & Surfacing construction work', title: 'Roads & Surfacing', category: 'roads' },
+                { src: 'images/projects/roadsandsurfacing/makhaswa (34).jpeg', alt: 'Roundabout with block paving apron', title: 'Roundabout with Block Paving Apron', category: 'roads' },
+                { src: 'images/projects/roadsandsurfacing/makhaswa (33).jpeg', alt: 'Freshly laid asphalt road leading to a roundabout', title: 'Fresh Asphalt Road to Roundabout', category: 'roads' },
+                { src: 'images/projects/roadsandsurfacing/makhaswa (54).jpeg', alt: 'Construction crew installing concrete kerbing on site', title: 'Concrete Kerbing Installation', category: 'roads' },
+
+                /* ── Building Construction & Housing ── */
+                { src: 'images/projects/buildingconstruction/makhaswa (49).jpeg', alt: 'Workers constructing a red brick wall using scaffolding on a construction site', title: 'Brick Wall Construction', category: 'building' },
+                { src: 'images/projects/buildingconstruction/makhaswa (43).jpeg', alt: 'Workers preparing a large concrete foundation slab with steel reinforcement mesh', title: 'Foundation Slab Preparation', category: 'building' },
+                { src: 'images/projects/buildingconstruction/makhaswa (48).jpeg', alt: 'Close-up of structural red brick wall and pillar construction with earthworks at the base', title: 'Structural Brickwork', category: 'building' },
+                { src: 'images/projects/buildingconstruction/makhaswa (45).jpeg', alt: 'Long, completed face brick boundary wall constructed outdoors under a clear blue sky', title: 'Perimeter Brick Wall', category: 'building' },
+                { src: 'images/aigenerated/concrete-panels.jpeg', alt: 'Precast concrete panel construction', title: 'Precast Concrete Panel Construction', category: 'building' },
+                { src: 'images/projects/buildingconstruction/school.jpeg', alt: 'School building construction project', title: 'School Building Construction', category: 'building' },
+                { src: 'images/projects/buildingconstruction/clinic.jpeg', alt: 'Rhiza Babuyile Clinic construction', title: 'Rhiza Babuyile Clinic', category: 'building' },
+                { src: 'images/projects/buildingconstruction/house.jpeg', alt: 'House building construction project', title: 'House Building Construction', category: 'building' },
+                { src: 'images/projects/buildingconstruction/makhaswa (46).jpeg', alt: 'Curved brick boundary wall on site', title: 'Curved Brick Boundary Wall', category: 'building' },
+            ];
+
+            const CATEGORY_LABELS = {
+                all: 'All Projects',
+                earthworks: 'Earthworks & Site Prep',
+                civil: 'Civil Works',
+                roads: 'Roads & Surfacing',
+                building: 'Building Construction',
             };
 
-            const closeLightbox = () => {
+            const ITEMS_PER_PAGE = 12;
+
+            /* ── State ── */
+            let activeFilter = 'all';
+            let currentPage = 1;
+            let filteredData = [];
+            let lightboxIndex = 0; // index within filteredData on current page (used for lightbox across all filtered)
+            let allFilteredImages = []; // flat array for lightbox navigation
+
+            /* ── DOM refs ── */
+            const grid = document.getElementById('gallery-grid');
+            const pagination = document.getElementById('gallery-pagination');
+            const countLabel = document.getElementById('gallery-count');
+            const emptyState = document.getElementById('gallery-empty');
+            const lightbox = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightbox-img');
+            const lbCap = document.getElementById('lightbox-caption');
+            const lbCounter = document.getElementById('lightbox-counter');
+            const lbClose = document.getElementById('lightbox-close-btn');
+            const lbPrev = document.getElementById('lightbox-prev-btn');
+            const lbNext = document.getElementById('lightbox-next-btn');
+
+            /* ── Filter ── */
+            function applyFilter(filter) {
+                activeFilter = filter;
+                currentPage = 1;
+                filteredData = filter === 'all'
+                    ? GALLERY_DATA
+                    : GALLERY_DATA.filter(img => img.category === filter);
+                allFilteredImages = filteredData;
+                render();
+            }
+
+            /* ── Render grid + pagination ── */
+            function render() {
+                const total = filteredData.length;
+                const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
+                const start = (currentPage - 1) * ITEMS_PER_PAGE;
+                const pageItems = filteredData.slice(start, start + ITEMS_PER_PAGE);
+
+                /* Count label */
+                countLabel.textContent = total === 0
+                    ? ''
+                    : `Showing ${start + 1}–${Math.min(start + pageItems.length, total)} of ${total} photos`;
+
+                /* Empty state */
+                emptyState.style.display = total === 0 ? 'block' : 'none';
+                grid.style.display = total === 0 ? 'none' : 'grid';
+
+                /* Build grid items */
+                grid.innerHTML = '';
+                pageItems.forEach((img, i) => {
+                    const globalIndex = start + i; // index in allFilteredImages
+
+                    const item = document.createElement('div');
+                    item.className = 'grid-item';
+                    item.setAttribute('role', 'listitem');
+                    item.setAttribute('tabindex', '0');
+                    item.setAttribute('aria-label', img.title);
+                    item.style.animationDelay = `${i * 0.04}s`;
+                    item.dataset.globalIndex = globalIndex;
+
+                    item.innerHTML = `
+                    <img src="${img.src}" alt="${img.alt}" loading="lazy">
+                    <div class="grid-item-caption">
+                        <span class="caption-icon">&#128269;</span>
+                        ${img.title}
+                    </div>
+                `;
+
+                    item.addEventListener('click', () => openLightbox(globalIndex));
+                    item.addEventListener('keydown', e => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            openLightbox(globalIndex);
+                        }
+                    });
+
+                    grid.appendChild(item);
+                });
+
+                /* Build pagination */
+                buildPagination(totalPages);
+            }
+
+            /* ── Pagination builder ── */
+            function buildPagination(totalPages) {
+                pagination.innerHTML = '';
+                if (totalPages <= 1) return;
+
+                const makeBtn = (label, page, isIcon = false) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'page-btn' + (page === currentPage ? ' active' : '');
+                    btn.setAttribute('aria-label', isIcon ? label : `Page ${page}`);
+                    if (page === currentPage) btn.setAttribute('aria-current', 'page');
+                    btn.innerHTML = isIcon ? label : page;
+                    btn.disabled = (page < 1 || page > totalPages);
+                    btn.addEventListener('click', () => {
+                        currentPage = page;
+                        render();
+                        grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    });
+                    return btn;
+                };
+
+                /* Prev arrow */
+                const prevSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>`;
+                const prevBtn = makeBtn('Previous page', currentPage - 1, true);
+                prevBtn.innerHTML = prevSVG;
+                prevBtn.disabled = currentPage === 1;
+                prevBtn.addEventListener('click', () => {
+                    if (currentPage > 1) { currentPage--; render(); grid.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                });
+                pagination.appendChild(prevBtn);
+
+                /* Page number buttons — show max 5 around current */
+                const range = pageRange(currentPage, totalPages);
+                let lastPage = 0;
+                range.forEach(p => {
+                    if (p === '…') {
+                        const ellipsis = document.createElement('span');
+                        ellipsis.textContent = '…';
+                        ellipsis.style.cssText = 'padding:0 4px;color:#aaa;align-self:center;font-size:13px;';
+                        pagination.appendChild(ellipsis);
+                    } else {
+                        pagination.appendChild(makeBtn(p, p));
+                    }
+                    lastPage = p;
+                });
+
+                /* Next arrow */
+                const nextSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>`;
+                const nextBtn = makeBtn('Next page', currentPage + 1, true);
+                nextBtn.innerHTML = nextSVG;
+                nextBtn.disabled = currentPage === totalPages;
+                nextBtn.addEventListener('click', () => {
+                    if (currentPage < totalPages) { currentPage++; render(); grid.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                });
+                pagination.appendChild(nextBtn);
+            }
+
+            /* Returns array of page numbers/ellipses to show */
+            function pageRange(current, total) {
+                if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+                const pages = [];
+                pages.push(1);
+                if (current > 3) pages.push('…');
+                const start = Math.max(2, current - 1);
+                const end = Math.min(total - 1, current + 1);
+                for (let i = start; i <= end; i++) pages.push(i);
+                if (current < total - 2) pages.push('…');
+                pages.push(total);
+                return pages;
+            }
+
+            /* ── Lightbox ── */
+            function openLightbox(globalIndex) {
+                lightboxIndex = globalIndex;
+                updateLightbox();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                lbImg.focus();
+            }
+
+            function closeLightbox() {
                 lightbox.classList.remove('active');
                 document.body.style.overflow = '';
-            };
+            }
 
-            const showPrev = (e) => {
+            function showPrev(e) {
                 if (e) e.stopPropagation();
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                updateLightboxImage();
-            };
+                lightboxIndex = (lightboxIndex - 1 + allFilteredImages.length) % allFilteredImages.length;
+                updateLightbox();
+            }
 
-            const showNext = (e) => {
+            function showNext(e) {
                 if (e) e.stopPropagation();
-                currentIndex = (currentIndex + 1) % images.length;
-                updateLightboxImage();
-            };
+                lightboxIndex = (lightboxIndex + 1) % allFilteredImages.length;
+                updateLightbox();
+            }
 
-            const updateLightboxImage = () => {
-                lightboxImg.src = images[currentIndex].src;
-                lightboxImg.alt = images[currentIndex].alt;
-                lightboxCap.textContent = images[currentIndex].caption;
-            };
+            function updateLightbox() {
+                const img = allFilteredImages[lightboxIndex];
+                lbImg.src = img.src;
+                lbImg.alt = img.alt;
+                lbCap.textContent = img.title;
+                lbCounter.textContent = `${lightboxIndex + 1} / ${allFilteredImages.length}`;
+            }
 
-            // Grid items click event
-            gridItems.forEach((item, index) => {
-                item.addEventListener('click', () => {
-                    openLightbox(index);
+            /* ── Event listeners ── */
+            document.getElementById('gallery-filters').addEventListener('click', e => {
+                const btn = e.target.closest('.filter-btn');
+                if (!btn) return;
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
                 });
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+                applyFilter(btn.dataset.filter);
             });
 
-            // Control click events
-            closeBtn.addEventListener('click', closeLightbox);
-            prevBtn.addEventListener('click', showPrev);
-            nextBtn.addEventListener('click', showNext);
+            lbClose.addEventListener('click', closeLightbox);
+            lbPrev.addEventListener('click', showPrev);
+            lbNext.addEventListener('click', showNext);
 
-            // Click background to close
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
-                    closeLightbox();
-                }
+            lightbox.addEventListener('click', e => {
+                if (e.target === lightbox) closeLightbox();
             });
 
-            // Keyboard controls
-            document.addEventListener('keydown', (e) => {
+            document.addEventListener('keydown', e => {
                 if (!lightbox.classList.contains('active')) return;
-
-                if (e.key === 'Escape') {
-                    closeLightbox();
-                } else if (e.key === 'ArrowLeft') {
-                    showPrev();
-                } else if (e.key === 'ArrowRight') {
-                    showNext();
-                }
+                if (e.key === 'Escape') closeLightbox();
+                else if (e.key === 'ArrowLeft') showPrev();
+                else if (e.key === 'ArrowRight') showNext();
             });
 
-            // Mobile Swipe / Touch support
+            /* Touch/swipe on lightbox */
             let touchStartX = 0;
-            let touchEndX = 0;
-
-            lightbox.addEventListener('touchstart', (e) => {
+            lightbox.addEventListener('touchstart', e => {
                 touchStartX = e.changedTouches[0].screenX;
             }, { passive: true });
-
-            lightbox.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
+            lightbox.addEventListener('touchend', e => {
+                const dx = e.changedTouches[0].screenX - touchStartX;
+                if (Math.abs(dx) > 50) dx < 0 ? showNext() : showPrev();
             }, { passive: true });
 
-            const handleSwipe = () => {
-                const swipeThreshold = 50;
-                if (touchEndX < touchStartX - swipeThreshold) {
-                    showNext();
-                } else if (touchEndX > touchStartX + swipeThreshold) {
-                    showPrev();
-                }
-            };
-        });
+            /* ── Boot ── */
+            document.addEventListener('DOMContentLoaded', () => {
+                applyFilter('all');
+            });
+
+            // If DOMContentLoaded already fired (script runs after DOM is ready)
+            if (document.readyState !== 'loading') applyFilter('all');
+        })();
     </script>
 </body>
 
