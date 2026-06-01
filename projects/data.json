@@ -2,7 +2,6 @@
   "categories": {
     "earthworks": {
       "title": "Earthworks & Site Prep",
-      "slug": "earthworks-site-prep.html",
       "description": "Bulk earthmoving, excavation, site clearance, and soil compaction services for major infrastructure projects.",
       "images": [
         {
@@ -39,7 +38,6 @@
     },
     "civil": {
       "title": "Civil Works & Infrastructure",
-      "slug": "civil-works-infrastructure.html",
       "description": "Stormwater drainage networks, sewer reticulation, culverts, and concrete foundations.",
       "images": [
         {
@@ -101,12 +99,16 @@
           "src": "images/projects/civilworks/makhaswa (30).jpeg",
           "alt": "Preparation for concrete structure steel reinforcement, and formwork",
           "title": "Concrete Structure Preparation"
+        },
+        {
+          "src": "images/projects/civilworks/makhaswa (23).jpeg",
+          "alt": "Worker in PPE next to a large diameter concrete stormwater pipe being installed in an excavated trench by a JCB excavator",
+          "title": "Large Diameter Pipe Installation"
         }
       ]
     },
     "roads": {
       "title": "Road Construction & Surfacing",
-      "slug": "road-construction-surfacing.html",
       "description": "Road bed preparation, layer works, asphalt surfacing, and interlocking block paving.",
       "images": [
         {
@@ -183,7 +185,6 @@
     },
     "building": {
       "title": "Building Construction & Housing Developments",
-      "slug": "building-construction-housing.html",
       "description": "Commercial, industrial, public buildings, schools, clinics, and residential housing developments.",
       "images": [
         {
@@ -230,18 +231,6 @@
           "src": "images/projects/buildingconstruction/makhaswa (46).jpeg",
           "alt": "Curved brick boundary wall",
           "title": "Curved Brick Boundary Wall"
-        }
-      ]
-    },
-    "engineering": {
-      "title": "Engineering Project Delivery",
-      "slug": "engineering-project-delivery.html",
-      "description": "Professional project management, site supervision, surveying, and engineering design delivery.",
-      "images": [
-        {
-          "src": "images/projects/civilworks/makhaswa (23).jpeg",
-          "alt": "Worker in PPE next to a large diameter concrete stormwater pipe being installed in an excavated trench by a JCB excavator",
-          "title": "Large Diameter Pipe Installation"
         }
       ]
     }

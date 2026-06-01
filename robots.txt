@@ -4,7 +4,6 @@
 # Standard Search Engine Crawlers
 User-agent: *
 Allow: /
-Disallow: /projects/project-detail-template.html
 
 # AI & Chatbot Crawlers
 User-agent: GPTBot

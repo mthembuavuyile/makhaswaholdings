@@ -1,12 +1,11 @@
 /* =====================================================
    MAKHASWA HOLDINGS — PORTFOLIO.JS
-   Handles dynamic loading, rendering, and filtering
-   of projects from projects/data.json.
+   Handles dynamic loading, rendering, filtering,
+   and lightbox display of projects.
    ===================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-    const prefix = getPathPrefix();
-    const jsonUrl = prefix ? 'data.json' : 'projects/data.json';
+    const jsonUrl = 'projects/data.json';
 
     fetch(jsonUrl)
         .then(response => {
@@ -16,35 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.json();
         })
         .then(data => {
-            // 1. Determine if we are on the main portfolio page (projects.html)
             const mainGrid = document.getElementById('projects-grid');
             if (mainGrid) {
                 renderMainGrid(data, mainGrid);
                 setupFilters();
-            }
-
-            // 2. Determine if we are on a category landing page
-            const categoryGallery = document.getElementById('category-gallery');
-            if (categoryGallery) {
-                const categoryId = categoryGallery.getAttribute('data-category');
-                renderCategoryGallery(data, categoryGallery, categoryId, prefix);
+                setupLightbox();
+                checkURLFilter();
             }
         })
         .catch(err => {
             console.error('Error loading portfolio:', err);
         });
 });
-
-/**
- * Helper to determine path prefix (../ for files in /projects/)
- */
-function getPathPrefix() {
-    const path = window.location.pathname;
-    if (path.toLowerCase().includes('/projects/')) {
-        return '../';
-    }
-    return '';
-}
 
 /**
  * Renders all projects in the main grid
@@ -66,10 +48,12 @@ function renderMainGrid(data, grid) {
     Object.keys(categories).forEach(catId => {
         const cat = categories[catId];
         cat.images.forEach(img => {
-            const card = document.createElement('a');
-            card.href = `projects/${cat.slug}`;
+            const card = document.createElement('div');
             card.className = 'project-card';
             card.setAttribute('data-category', catId);
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('aria-label', `View image: ${img.title}`);
             
             // Set initial style for IntersectionObserver fade-in
             card.style.opacity = '0';
@@ -130,44 +114,163 @@ function setupFilters() {
 }
 
 /**
- * Renders the 9 specific images for a given category landing page
+ * Checks for a '?filter=' query parameter in the URL and triggers filter
  */
-function renderCategoryGallery(data, gallery, categoryId, prefix) {
-    gallery.innerHTML = '';
-    const cat = data.categories[categoryId];
-    
-    if (!cat) {
-        console.error(`Category data not found for: ${categoryId}`);
-        return;
+function checkURLFilter() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterParam = urlParams.get('filter');
+    if (filterParam) {
+        const targetBtn = document.querySelector(`.filter-btn[data-filter="${filterParam}"]`);
+        if (targetBtn) {
+            // Slight delay to allow DOM/IntersectionObserver rendering to align
+            setTimeout(() => {
+                targetBtn.click();
+            }, 100);
+        }
     }
+}
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
+/**
+ * Sets up the premium lightbox modal with dynamic visibility filtering
+ */
+function setupLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCap = document.getElementById('lightbox-caption');
+    const closeBtn = document.getElementById('lightbox-close-btn');
+    const prevBtn = document.getElementById('lightbox-prev-btn');
+    const nextBtn = document.getElementById('lightbox-next-btn');
 
-    cat.images.forEach(img => {
-        const item = document.createElement('div');
-        item.className = 'project-gallery-item';
-        
-        // Set initial style for IntersectionObserver fade-in
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    if (!lightbox || !lightboxImg || !lightboxCap) return;
 
-        // Prepend path prefix to the image source (e.g. '../')
-        const imgSrc = prefix + img.src;
+    let currentIndex = 0;
+    let visibleImages = [];
 
-        item.innerHTML = `
-            <img src="${imgSrc}" alt="${img.alt}" loading="lazy" width="600" height="400">
+    // Open Lightbox
+    const openLightbox = (index, imagesList) => {
+        currentIndex = index;
+        visibleImages = imagesList;
+        updateLightboxImage();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Stop background scrolling
+    };
+
+    // Close Lightbox
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    // Previous Image
+    const showPrev = (e) => {
+        if (e) e.stopPropagation();
+        if (visibleImages.length === 0) return;
+        currentIndex = (currentIndex - 1 + visibleImages.length) % visibleImages.length;
+        updateLightboxImage();
+    };
+
+    // Next Image
+    const showNext = (e) => {
+        if (e) e.stopPropagation();
+        if (visibleImages.length === 0) return;
+        currentIndex = (currentIndex + 1) % visibleImages.length;
+        updateLightboxImage();
+    };
+
+    // Update Image in Lightbox
+    const updateLightboxImage = () => {
+        const currentImg = visibleImages[currentIndex];
+        lightboxImg.src = currentImg.src;
+        lightboxImg.alt = currentImg.alt;
+        lightboxCap.innerHTML = `
+            <strong style="color: var(--gold); text-transform: uppercase; letter-spacing: 1px; display: block; font-size: 11px; margin-bottom: 6px;">
+                ${currentImg.category}
+            </strong>
+            ${currentImg.title}
         `;
-        
-        gallery.appendChild(item);
-        observer.observe(item);
+    };
+
+    // Card click events (setup delegation or card list query)
+    document.getElementById('projects-grid').addEventListener('click', (e) => {
+        const card = e.target.closest('.project-card');
+        if (!card) return;
+
+        // Query only visible cards at the moment of click
+        const visibleCards = Array.from(document.querySelectorAll('.project-card'))
+            .filter(c => c.style.display !== 'none');
+
+        const imagesList = visibleCards.map(c => {
+            const imgEl = c.querySelector('img');
+            const catEl = c.querySelector('.project-overlay span');
+            const titleEl = c.querySelector('.project-overlay h4');
+            return {
+                src: imgEl.src,
+                alt: imgEl.alt,
+                category: catEl ? catEl.textContent : '',
+                title: titleEl ? titleEl.textContent : ''
+            };
+        });
+
+        const index = visibleCards.indexOf(card);
+        if (index !== -1) {
+            openLightbox(index, imagesList);
+        }
     });
+
+    // Support keyboard activation (Enter key)
+    document.getElementById('projects-grid').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const card = e.target.closest('.project-card');
+            if (card) {
+                card.click();
+            }
+        }
+    });
+
+    // Button controls
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
+
+    // Background click to close
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+            closeLightbox();
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+
+        if (e.key === 'Escape') {
+            closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+            showPrev();
+        } else if (e.key === 'ArrowRight') {
+            showNext();
+        }
+    });
+
+    // Touch Swipe navigation for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightbox.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    const handleSwipe = () => {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+            showNext();
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+            showPrev();
+        }
+    };
 }
