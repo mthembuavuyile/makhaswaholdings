@@ -156,7 +156,82 @@ nav a.nav-contact-btn:hover {
 }
 
 .page-hero-services {
-    background-image: url('../images/aigenerated/roundabout-road.jpeg');
+    background-color: var(--primary);
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(12, 58, 109, 0.95) 0%, rgba(8, 45, 90, 1) 100%),
+        linear-gradient(rgba(200, 169, 81, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 169, 81, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 80px 80px, 80px 80px, 20px 20px, 20px 20px;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero-services::after {
+    background: linear-gradient(to bottom, rgba(8, 45, 90, 0.2) 0%, rgba(8, 45, 90, 0.75) 100%);
+}
+
+.blueprint-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.blueprint-svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+}
+
+/* Blueprint animations */
+@keyframes blueprintPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+    50% {
+        transform: scale(1.6);
+        opacity: 0.9;
+    }
+}
+
+@keyframes blueprintDash {
+    to {
+        stroke-dashoffset: -40;
+    }
+}
+
+@keyframes compassRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.blueprint-node {
+    animation: blueprintPulse 4s infinite ease-in-out;
+}
+
+.node-1 { transform-origin: 300px 250px; animation-delay: 0s; }
+.node-2 { transform-origin: 500px 150px; animation-delay: 1.3s; }
+.node-3 { transform-origin: 700px 300px; animation-delay: 2.6s; }
+
+.blueprint-line-draw {
+    stroke-dasharray: 10 5;
+    animation: blueprintDash 20s linear infinite;
+}
+
+.blueprint-compass {
+    animation: compassRotate 180s linear infinite;
+    transform-origin: 850px 200px;
 }
 
 .page-hero-projects {
