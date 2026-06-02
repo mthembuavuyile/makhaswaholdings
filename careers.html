@@ -49,56 +49,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
-
-    <style>
-        .compact-job {
-            margin-top: 16px;
-            margin-bottom: 20px;
-            padding-bottom: 16px;
-            border-bottom: 1px dashed var(--border);
-        }
-
-        .compact-job:last-of-type {
-            border-bottom: none;
-            margin-bottom: 8px;
-        }
-
-        .compact-job h4 {
-            color: var(--primary);
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .compact-job .job-meta {
-            margin-bottom: 8px;
-        }
-
-        .compact-job p {
-            font-size: 13.5px;
-            color: var(--text-muted);
-            margin-bottom: 0;
-        }
-
-        .job-bullets {
-            list-style: disc;
-            padding-left: 20px;
-            margin-top: 16px;
-            margin-bottom: 16px;
-        }
-
-        .job-bullets li {
-            font-size: 13.5px;
-            color: var(--text-light);
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
-
-        .cta-left {
-            margin-top: 16px;
-            margin-bottom: 16px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/pages/careers.css">
 </head>
 
 <body>
@@ -327,44 +278,208 @@
                     <!-- Web3Forms Honeypot (spam protection) -->
                     <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    <!-- Step Progress Indicator -->
+                    <div class="step-progress">
+                        <div class="step-progress-item active" data-step="1">
+                            <span class="step-num">1</span>
+                            <span class="step-label">Personal</span>
+                        </div>
+                        <div class="step-progress-item" data-step="2">
+                            <span class="step-num">2</span>
+                            <span class="step-label">Role</span>
+                        </div>
+                        <div class="step-progress-item" data-step="3">
+                            <span class="step-num">3</span>
+                            <span class="step-label">Accreditation</span>
+                        </div>
+                        <div class="step-progress-item" data-step="4">
+                            <span class="step-num">4</span>
+                            <span class="step-label">Review</span>
+                        </div>
+                    </div>
 
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    <!-- STEP 1: Personal Details -->
+                    <div class="form-step active" data-step="1">
+                        <h3 class="step-heading">Personal Details</h3>
+                        <p class="step-subheading">Please provide your contact details so we can reach you.</p>
 
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="Enter your contact number">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
 
-                    <label for="position">Position Applied For</label>
-                    <select id="position" name="position" required>
-                        <option value="" disabled selected>Select a position...</option>
-                        <optgroup label="Engineering & Management">
-                            <option value="Civil Engineer">Civil Engineer</option>
-                            <option value="Site Manager">Site Manager</option>
-                            <option value="Quantity Surveyor">Quantity Surveyor</option>
-                        </optgroup>
-                        <optgroup label="Skilled Artisans & Trades">
-                            <option value="Electrical Artisan">Electrical Artisan</option>
-                            <option value="Mechanical Artisan">Mechanical Artisan (HVAC & Systems)</option>
-                            <option value="Painter / Finishing Artisan">Painter / Finishing Artisan</option>
-                            <option value="Bricklayer / Mason">Bricklayer / Mason (Civil & Building Works)</option>
-                        </optgroup>
-                        <optgroup label="Operations & General Labour">
-                            <option value="Heavy Machinery Operator">Heavy Machinery Operator</option>
-                            <option value="General Construction Labourer">General Construction Labourer</option>
-                        </optgroup>
-                        <option value="Open Application">Open Application / Other</option>
-                    </select>
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
 
-                    <label for="message">Cover Letter / Message</label>
-                    <textarea id="message" name="message" required
-                        placeholder="Tell us why you are a great fit for Makhaswa Holdings..."></textarea>
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Enter your contact number (e.g. 082 123 4567)">
 
-                    <label for="cv">Upload CV / Resume (PDF, DOC, DOCX — Max 5MB)</label>
-                    <input type="file" id="cv" name="attachment" accept=".pdf,.doc,.docx" required>
+                        <label for="location">City & Province *</label>
+                        <input type="text" id="location" name="location" required placeholder="e.g. Pretoria, Gauteng">
+                    </div>
 
-                    <button type="submit">Submit Application</button>
+                    <!-- STEP 2: Role & Experience -->
+                    <div class="form-step" data-step="2">
+                        <h3 class="step-heading">Role & Experience</h3>
+                        <p class="step-subheading">Tell us about your professional background and alignment.</p>
+
+                        <label for="position">Position Applied For *</label>
+                        <select id="position" name="position" required>
+                            <option value="" disabled selected>Select a position...</option>
+                            <optgroup label="Engineering & Management">
+                                <option value="Civil Engineer">Civil Engineer</option>
+                                <option value="Site Manager">Site Manager</option>
+                                <option value="Quantity Surveyor">Quantity Surveyor</option>
+                            </optgroup>
+                            <optgroup label="Skilled Artisans & Trades">
+                                <option value="Electrical Artisan">Electrical Artisan</option>
+                                <option value="Mechanical Artisan">Mechanical Artisan (HVAC & Systems)</option>
+                                <option value="Painter / Finishing Artisan">Painter / Finishing Artisan</option>
+                                <option value="Bricklayer / Mason">Bricklayer / Mason (Civil & Building Works)</option>
+                            </optgroup>
+                            <optgroup label="Operations & General Labour">
+                                <option value="Heavy Machinery Operator">Heavy Machinery Operator</option>
+                                <option value="General Construction Labourer">General Construction Labourer</option>
+                            </optgroup>
+                            <option value="Open Application">Open Application / Other</option>
+                        </select>
+
+                        <label for="experience_years">Years of Experience *</label>
+                        <select id="experience_years" name="experience_years" required>
+                            <option value="" disabled selected>Select years of experience...</option>
+                            <option value="Less than 1 year">Less than 1 year</option>
+                            <option value="1-3 years">1 - 3 years</option>
+                            <option value="3-5 years">3 - 5 years</option>
+                            <option value="5-10 years">5 - 10 years</option>
+                            <option value="10+ years">10+ years</option>
+                        </select>
+
+                        <label for="notice_period">Notice Period *</label>
+                        <select id="notice_period" name="notice_period" required>
+                            <option value="" disabled selected>Select notice period...</option>
+                            <option value="Immediate">Immediate / None</option>
+                            <option value="2 Weeks">2 Weeks</option>
+                            <option value="1 Month">1 Month</option>
+                            <option value="2+ Months">2+ Months</option>
+                        </select>
+
+                        <label for="salary_expectation">Expected Monthly Salary (ZAR Gross) *</label>
+                        <select id="salary_expectation" name="salary_expectation" required>
+                            <option value="" disabled selected>Select expected range...</option>
+                            <option value="Under R15k">Under R15,000</option>
+                            <option value="R15k - R30k">R15,000 - R30,000</option>
+                            <option value="R30k - R50k">R30,000 - R50,000</option>
+                            <option value="R50k - R85k">R50,000 - R85,000</option>
+                            <option value="R85k+">R85,000+</option>
+                        </select>
+                    </div>
+
+                    <!-- STEP 3: Accreditation & Credentials -->
+                    <div class="form-step" data-step="3">
+                        <h3 class="step-heading">Professional Credentials</h3>
+                        <p class="step-subheading">Select all professional registrations or certifications that apply to you.</p>
+
+                        <label>Professional Accreditations</label>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="ecsa_reg" name="ecsa_reg" value="ECSA Registered">
+                                <label for="ecsa_reg">ECSA Registered (PR Eng / Tech)</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sacpcmp_reg" name="sacpcmp_reg" value="SACPCMP Registered">
+                                <label for="sacpcmp_reg">SACPCMP Registered (CM / CHSO)</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="trade_test_cert" name="trade_test_cert" value="Trade Test Qualified">
+                                <label for="trade_test_cert">Valid Trade Test Certificate (Artisans)</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="nhbrc_reg" name="nhbrc_reg" value="NHBRC Registered">
+                                <label for="nhbrc_reg">NHBRC Registered Builder</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="valid_license" name="valid_license" value="Valid Driver's License">
+                                <label for="valid_license">Valid Driver's License (Code 8/10/14)</label>
+                            </div>
+                        </div>
+
+                        <label for="cidb_grade">CIDB Registration Grade *</label>
+                        <select id="cidb_grade" name="cidb_grade" required>
+                            <option value="" disabled selected>Select CIDB grade...</option>
+                            <option value="Not Registered">Not Registered / None</option>
+                            <option value="Grade 1 - 2">Yes - Grade 1 - 2</option>
+                            <option value="Grade 3 - 4">Yes - Grade 3 - 4</option>
+                            <option value="Grade 5 - 6">Yes - Grade 5 - 6</option>
+                            <option value="Grade 7 - 8">Yes - Grade 7 - 8</option>
+                            <option value="Grade 9">Yes - Grade 9</option>
+                        </select>
+                    </div>
+
+                    <!-- STEP 4: Document Upload & Final Review -->
+                    <div class="form-step" data-step="4">
+                        <h3 class="step-heading">Documents & Review</h3>
+                        <p class="step-subheading">Upload your CV and review your application details before submission.</p>
+
+                        <label for="cv">Upload CV / Resume (PDF, DOC, DOCX — Max 5MB) *</label>
+                        <input type="file" id="cv" name="attachment" accept=".pdf,.doc,.docx" required>
+
+                        <label for="message">Cover Letter / Message *</label>
+                        <textarea id="message" name="message" required
+                            placeholder="Tell us why you are a great fit for Makhaswa Holdings..."></textarea>
+
+                        <!-- Review Panel Summary -->
+                        <div class="review-panel">
+                            <h4>Review Your Application Details</h4>
+                            <div class="review-grid">
+                                <div class="review-row">
+                                    <span class="review-label">Full Name:</span>
+                                    <span class="review-val" id="rev-name">-</span>
+                                </div>
+                                <div class="review-row">
+                                    <span class="review-label">Email:</span>
+                                    <span class="review-val" id="rev-email">-</span>
+                                </div>
+                                <div class="review-row">
+                                    <span class="review-label">Phone:</span>
+                                    <span class="review-val" id="rev-phone">-</span>
+                                </div>
+                                <div class="review-row">
+                                    <span class="review-label">Location:</span>
+                                    <span class="review-val" id="rev-location">-</span>
+                                </div>
+                                <div class="review-row">
+                                    <span class="review-label">Position:</span>
+                                    <span class="review-val" id="rev-position">-</span>
+                                </div>
+                                <div class="review-row">
+                                    <span class="review-label">Experience:</span>
+                                    <span class="review-val" id="rev-experience">-</span>
+                                </div>
+                                <div class="review-row">
+                                    <span class="review-label">Notice Period:</span>
+                                    <span class="review-val" id="rev-notice">-</span>
+                                </div>
+                                <div class="review-row">
+                                    <span class="review-label">Salary Expected:</span>
+                                    <span class="review-val" id="rev-salary">-</span>
+                                </div>
+                                <div class="review-row">
+                                    <span class="review-label">Accreditations:</span>
+                                    <span class="review-val" id="rev-accreditations">-</span>
+                                </div>
+                                <div class="review-row">
+                                    <span class="review-label">CIDB Grading:</span>
+                                    <span class="review-val" id="rev-cidb">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step Navigation Buttons -->
+                    <div class="step-buttons">
+                        <button type="button" class="btn-step btn-step--back" id="btn-back" style="display: none;">Back</button>
+                        <button type="button" class="btn-step btn-step--next" id="btn-next">Next</button>
+                        <button type="submit" class="btn-step btn-step--submit" id="btn-submit" style="display: none;">Submit Application</button>
+                    </div>
+
                     <div id="careers-form-status" class="form-status"></div>
                 </form>
             </div>

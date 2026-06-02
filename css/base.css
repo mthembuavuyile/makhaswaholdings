@@ -205,35 +205,7 @@ ul {
     padding-top: 40px;
 }
 
-/* Fraud warning callout on careers */
-.fraud-callout {
-    margin-top: 32px;
-    padding: 20px;
-    background: var(--off-white);
-    border-left: 3px solid var(--primary);
-}
 
-.fraud-callout h4 {
-    font-size: 13px;
-    color: var(--primary);
-    margin-bottom: 8px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.fraud-callout p {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.5;
-}
-
-/* Careers apply info text */
-.apply-info-text {
-    font-size: 13.5px;
-    color: var(--text-light);
-    line-height: 1.6;
-    margin-bottom: 24px;
-}
 
 /* Icon vertical-align helper */
 .icon-inline {

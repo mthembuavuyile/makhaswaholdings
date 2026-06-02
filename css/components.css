@@ -1,4 +1,52 @@
 /* =====================================================
+   SHARED CARD STYLES (DRY)
+   ===================================================== */
+/* Base Card styles shared across all page cards */
+.value-card,
+.leader-card,
+.service-detail-card,
+.compliance-card,
+.csi-card,
+.news-card,
+.bbee-card {
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Base Hover transition shared across interactive cards */
+.value-card,
+.leader-card,
+.service-detail-card,
+.compliance-card,
+.news-card {
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.bbee-card {
+    transition: transform var(--transition);
+}
+
+.value-card:hover,
+.leader-card:hover,
+.service-detail-card:hover,
+.compliance-card:hover,
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.bbee-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Card Top Primary Borders */
+.value-card,
+.compliance-card,
+.csi-card {
+    border-top: 3px solid var(--primary);
+}
+
+/* =====================================================
    HERO — Homepage
    ===================================================== */
 .hero {
@@ -214,16 +262,7 @@ nav a.nav-contact-btn:hover {
 }
 
 .value-card {
-    background: var(--white);
     padding: 28px;
-    border-top: 3px solid var(--primary);
-    box-shadow: var(--shadow-sm);
-    transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.value-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
 }
 
 .value-card h4 {
@@ -398,16 +437,8 @@ nav a.nav-contact-btn:hover {
 }
 
 .leader-card {
-    background: var(--white);
     padding: 24px;
     border-left: 4px solid var(--primary);
-    box-shadow: var(--shadow-sm);
-    transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.leader-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
 }
 
 .leader-card h4 {
@@ -541,15 +572,7 @@ nav a.nav-contact-btn:hover {
 }
 
 .service-detail-card {
-    background: var(--white);
-    box-shadow: var(--shadow-sm);
     overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.service-detail-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
 }
 
 .service-detail-card img {
@@ -724,16 +747,9 @@ nav a.nav-contact-btn:hover {
 }
 
 .bbee-card {
-    background: var(--white);
     padding: 24px;
     text-align: center;
-    box-shadow: var(--shadow-sm);
     border-bottom: 3px solid var(--primary);
-    transition: transform var(--transition);
-}
-
-.bbee-card:hover {
-    transform: translateY(-4px);
 }
 
 .bbee-card .bbee-value {
@@ -763,16 +779,7 @@ nav a.nav-contact-btn:hover {
 }
 
 .compliance-card {
-    background: var(--white);
     padding: 28px;
-    border-top: 3px solid var(--primary);
-    box-shadow: var(--shadow-sm);
-    transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.compliance-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
 }
 
 .compliance-card .grade-badge {
@@ -1006,9 +1013,6 @@ nav a.nav-contact-btn:hover {
 
 .csi-card {
     padding: 28px;
-    background: var(--white);
-    box-shadow: var(--shadow-sm);
-    border-top: 3px solid var(--primary);
 }
 
 .csi-card h4 {
@@ -1044,15 +1048,7 @@ nav a.nav-contact-btn:hover {
 }
 
 .news-card {
-    background: var(--white);
-    box-shadow: var(--shadow-sm);
     overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.news-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
 }
 
 .news-card-img {
@@ -1138,6 +1134,25 @@ nav a.nav-contact-btn:hover {
 
 .btn-view-all:hover {
     background: var(--primary-mid);
+    transform: translateY(-2px);
+}
+
+.btn-view-gallery {
+    display: inline-block;
+    background: transparent;
+    color: var(--white);
+    padding: 11px 28px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background var(--transition), color var(--transition), transform var(--transition);
+    border: 2px solid var(--white);
+}
+
+.btn-view-gallery:hover {
+    background: var(--white);
+    color: var(--primary);
     transform: translateY(-2px);
 }
 
@@ -1502,93 +1517,7 @@ nav a.nav-contact-btn:hover {
     margin-bottom: 8px;
 }
 
-/* =====================================================
-   CAREERS
-   ===================================================== */
-.career-category {
-    margin-top: 48px;
-}
 
-.category-title {
-    color: var(--primary);
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--border);
-}
-
-.careers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
-    margin-top: 24px;
-}
-
-.job-card {
-    background: var(--white);
-    padding: 24px;
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--primary);
-    box-shadow: var(--shadow-sm);
-    transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.job-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-}
-
-.job-card h3 {
-    color: var(--primary);
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.job-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 16px;
-    font-size: 12px;
-    color: var(--text-light);
-    font-weight: 600;
-}
-
-.job-meta span {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.job-card p {
-    font-size: 13.5px;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.btn-apply {
-    display: inline-block;
-    background: var(--off-white);
-    color: var(--primary);
-    padding: 10px 24px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: background var(--transition), color var(--transition);
-    border: 1px solid var(--border);
-}
-
-.btn-apply:hover {
-    background: var(--primary);
-    color: var(--white);
-    border-color: var(--primary);
-}
 
 
 /* =====================================================
