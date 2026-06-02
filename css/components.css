@@ -152,125 +152,32 @@ nav a.nav-contact-btn:hover {
 }
 
 .page-hero-about {
-    background-image: url('../images/aigenerated/workers-standing.jpeg');
+    background-image: url('../assets/about.jpeg');
 }
 
 .page-hero-services {
-    background-color: var(--primary);
-    background-image: 
-        radial-gradient(circle at 50% 50%, rgba(12, 58, 109, 0.95) 0%, rgba(8, 45, 90, 1) 100%),
-        linear-gradient(rgba(200, 169, 81, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(200, 169, 81, 0.05) 1px, transparent 1px),
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 100% 100%, 80px 80px, 80px 80px, 20px 20px, 20px 20px;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.page-hero-services::after {
-    background: linear-gradient(to bottom, rgba(8, 45, 90, 0.2) 0%, rgba(8, 45, 90, 0.75) 100%);
-}
-
-.blueprint-overlay {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.blueprint-svg {
-    width: 100%;
-    height: 100%;
-    opacity: 0.85;
-}
-
-/* Blueprint animations */
-@keyframes blueprintPulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.4;
-    }
-    50% {
-        transform: scale(1.6);
-        opacity: 0.9;
-    }
-}
-
-@keyframes blueprintDash {
-    to {
-        stroke-dashoffset: -40;
-    }
-}
-
-@keyframes compassRotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.blueprint-node {
-    animation: blueprintPulse 4s infinite ease-in-out;
-}
-
-.node-1 { transform-origin: 300px 250px; animation-delay: 0s; }
-.node-2 { transform-origin: 500px 150px; animation-delay: 1.3s; }
-.node-3 { transform-origin: 700px 300px; animation-delay: 2.6s; }
-
-.blueprint-line-draw {
-    stroke-dasharray: 10 5;
-    animation: blueprintDash 20s linear infinite;
-}
-
-.blueprint-compass {
-    animation: compassRotate 180s linear infinite;
-    transform-origin: 850px 200px;
+    background-image: url('../assets/services.jpeg');
 }
 
 .page-hero-projects {
-    background-image: url('../images/projects/engineering-project-delivery/AI\ \(1\).jpeg');
+    background-image: url('../assets/projects.jpeg');
+}
+
+.page-hero-careers {
+    background-image: url('../assets/careers.jpeg');
+    background-position: center 30%;
 }
 
 .page-hero-contact {
-    background-image: url('../images/aigenerated/black-engineer.jpeg');
+    background-image: url('../assets/contact.jpeg');
 }
 
 .page-hero-faq {
-    background:
-        radial-gradient(circle at 80% 20%, rgba(200, 169, 81, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 15% 85%, rgba(12, 58, 109, 0.8) 0%, transparent 55%),
-        linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    background-image: url('../assets/faq.jpeg');
 }
 
 .page-hero-terms {
-    background-color: var(--primary);
-    background-image:
-        linear-gradient(rgba(200, 169, 81, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(200, 169, 81, 0.05) 1px, transparent 1px),
-        linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
-    background-size: 30px 30px, 30px 30px, 100% 100%;
-    position: relative;
-}
-
-.page-hero-terms::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 80% 20%, rgba(200, 169, 81, 0.12) 0%, transparent 55%);
-    pointer-events: none;
-}
-
-/* Override the heavy default overlay since these abstract backgrounds are already optimized for white text readability */
-.page-hero-faq::after,
-.page-hero-terms::after {
-    background: transparent;
+    background-image: url('../assets/terms.jpeg');
 }
 
 /* =====================================================
@@ -1683,10 +1590,6 @@ nav a.nav-contact-btn:hover {
     border-color: var(--primary);
 }
 
-.page-hero-careers {
-    background-image: url('../images/aigenerated/makhaswa-building.jpeg');
-    background-position: center 30%;
-}
 
 /* =====================================================
    RESPONSIVE
@@ -2256,7 +2159,7 @@ nav a.nav-contact-btn:hover {
     min-height: calc(100vh - var(--header-h) - 450px);
     padding: 80px 20px;
     background-color: var(--off-white);
-    background-image: 
+    background-image:
         linear-gradient(rgba(8, 45, 90, 0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(8, 45, 90, 0.04) 1px, transparent 1px);
     background-size: 20px 20px;
@@ -2313,9 +2216,12 @@ nav a.nav-contact-btn:hover {
 
 /* Crane cable and block swing animation */
 @keyframes crane-swing {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: rotate(-4deg);
     }
+
     50% {
         transform: rotate(4deg);
     }
@@ -2323,15 +2229,19 @@ nav a.nav-contact-btn:hover {
 
 .swinging-cable-group {
     animation: crane-swing 3.5s ease-in-out infinite;
-    transform-origin: 160px 20px; /* Cable connection point on jib */
+    transform-origin: 160px 20px;
+    /* Cable connection point on jib */
 }
 
 /* Blinking warning light on top of crane */
 @keyframes warning-blink {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0.35;
         fill: #d9534f;
     }
+
     50% {
         opacity: 1;
         fill: #ff3b30;
@@ -2458,13 +2368,16 @@ nav a.nav-contact-btn:hover {
     .error-section {
         padding: 40px 15px;
     }
+
     .error-card {
         padding: 32px 20px;
     }
+
     .error-buttons {
         flex-direction: column;
         gap: 12px;
     }
+
     .error-btn {
         width: 100%;
         min-width: unset;
