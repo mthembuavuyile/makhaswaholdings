@@ -227,16 +227,24 @@ footer {
 /* Footer logo — large hero display */
 .footer-col--brand {
     display: flex;
+    flex-direction: column;
     gap: 20px;
     align-items: flex-start;
 }
 
+.footer-brand-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
 .footer-logo-hero {
     flex-shrink: 0;
-    width: 160px;
-    border-radius: 10px;
+    width: 180px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .footer-logo-hero img {
@@ -256,7 +264,7 @@ footer {
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 0;
 }
 
 .footer-logo-text small {

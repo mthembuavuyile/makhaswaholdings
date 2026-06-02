@@ -193,11 +193,13 @@ function buildFooter() {
 
             <!-- Col 1: Brand -->
             <div class="footer-col footer-col--brand">
-                <div class="footer-logo-hero">
-                    <img src="${prefix}images/logo.jpeg" alt="Makhaswa Holdings Logo">
+                <div class="footer-brand-header">
+                    <div class="footer-logo-hero">
+                        <img src="${prefix}images/logo.jpeg" alt="Makhaswa Holdings Logo">
+                    </div>
+                    <div class="footer-logo-text">${cfg.company.name}<small>${cfg.company.legalName}</small></div>
                 </div>
                 <div class="footer-brand-info">
-                    <div class="footer-logo-text">${cfg.company.name}<small>${cfg.company.legalName}</small></div>
                     <p class="footer-desc">${cfg.company.tagline}</p>
                     <div class="footer-social">
                         <a href="${cfg.social.facebook}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">

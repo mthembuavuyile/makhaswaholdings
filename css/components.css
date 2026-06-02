@@ -1689,27 +1689,42 @@ nav a.nav-contact-btn:hover {
         gap: 28px;
     }
 
-    /* Footer brand — stack logo above text on mobile */
+    /* Footer brand — stack logo and text side-by-side on mobile, description below */
     .footer-col--brand {
         flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 20px;
+    }
+
+    .footer-brand-header {
+        display: flex;
+        flex-direction: row;
         align-items: center;
-        text-align: center;
+        text-align: left;
+        gap: 16px;
+        width: 100%;
     }
 
     .footer-logo-hero {
-        width: 100%;
+        width: 140px;
         max-width: 100%;
-        border-radius: 12px;
+        border-radius: 8px;
+    }
+
+    .footer-logo-text {
+        margin-bottom: 0;
     }
 
     .footer-brand-info {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        width: 100%;
     }
 
     .footer-social {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .team-grid {
