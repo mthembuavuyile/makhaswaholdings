@@ -2021,7 +2021,6 @@ nav a.nav-contact-btn:hover {
     display: flex;
     flex-direction: column;
     gap: 28px;
-    border-left: 5px solid var(--gold);
 }
 
 .pm-lifecycle::before {
