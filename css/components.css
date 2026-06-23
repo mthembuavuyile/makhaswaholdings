@@ -238,6 +238,34 @@ nav a.nav-contact-btn:hover {
     align-items: center;
 }
 
+.about-split--no-image {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-split--no-image .about-text {
+    text-align: center;
+}
+
+.about-split--no-image .about-text p {
+    text-align: center;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-split--no-image .about-text em {
+    display: inline-block;
+    font-size: 15px;
+    color: var(--primary-mid);
+    margin-top: 20px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    line-height: 1.6;
+}
+
 .about-img {
     width: 100%;
     height: 380px;

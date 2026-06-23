@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Work & Site Activity | Makhaswa Holdings (Pty) Ltd</title>
+    <meta name="description"
+        content="View recent site photos and progress updates from Makhaswa Holdings. Day-to-day civil engineering, earthworks, road construction, and building construction activity in South Africa.">
+
+    <!-- SEO & Canonical -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Makhaswa Holdings (Pty) Ltd">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="https://makhaswaholdings.co.za/recent-photos.html">
+
+    <!-- Favicons & App Icons -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="images/site.webmanifest">
+
+    <!-- Open Graph / Facebook / LinkedIn Link Previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://makhaswaholdings.co.za/recent-photos.html">
+    <meta property="og:title" content="Recent Work & Site Activity | Makhaswa Holdings (Pty) Ltd">
+    <meta property="og:description"
+        content="View recent site photos and progress updates from Makhaswa Holdings. Day-to-day civil engineering, earthworks, road construction, and building construction activity in South Africa.">
+    <meta property="og:image" content="https://makhaswaholdings.co.za/images/logo.jpeg">
+
+    <!-- Twitter Link Previews -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://makhaswaholdings.co.za/recent-photos.html">
+    <meta name="twitter:title" content="Recent Work & Site Activity | Makhaswa Holdings (Pty) Ltd">
+    <meta name="twitter:description"
+        content="View recent site photos and progress updates from Makhaswa Holdings. Day-to-day civil engineering, earthworks, road construction, and building construction activity in South Africa.">
+    <meta name="twitter:image" content="https://makhaswaholdings.co.za/images/logo.jpeg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.js" defer></script>
+
+    <!-- Site Stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/recent-photos.css">
+</head>
+
+<body>
+
+    <!-- Shared Header (injected by components.js) -->
+    <div id="site-header">
+        <noscript>
+            <nav aria-label="Navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="recent-photos.html">Recent Work</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </noscript>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <div class="page-hero page-hero-projects" role="img" aria-label="Makhaswa Holdings site activity portfolio">
+            <div class="hero-content">
+                <h1>Recent Work</h1>
+                <p>Live from the field. Browse real, raw, and ongoing progress updates directly from our active
+                    construction and civil engineering projects.</p>
+            </div>
+        </div>
+        <div class="hero-banner">
+            CIDB Grade 8 CE PE &bull; NHBRC Registered &bull; Level 1 B-BBEE
+        </div>
+
+        <div class="recent-photos-container">
+
+            <!-- Explanation / Informative Notice Box -->
+            <div class="recent-notice">
+                <div class="notice-icon-wrapper">
+                    <i data-lucide="info" width="22" height="22"></i>
+                </div>
+                <div class="notice-text">
+                    <h3>On-Site Action Updates</h3>
+                    <p>This gallery displays live, day-to-day work updates captured directly by our site managers and
+                        engineering crews. Unlike our curated portfolio, these photos provide an unedited look at our
+                        ongoing mass earthworks, road surfacing, pipelaying, and building construction processes as they
+                        happen.</p>
+                </div>
+            </div>
+
+            <!-- Page Count Info -->
+            <p class="recent-count" id="recent-count" aria-live="polite"></p>
+
+            <!-- Image Grid -->
+            <div class="recent-grid" id="recent-grid" role="list" aria-label="Recent site photo gallery">
+                <!-- Dynamically populated by js/recent-photos.js -->
+            </div>
+
+            <!-- Pagination Navigation -->
+            <nav class="recent-pagination" id="recent-pagination" aria-label="Gallery pages"></nav>
+
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <div class="lightbox-content">
+            <button class="lightbox-btn lightbox-close" id="lightbox-close-btn" aria-label="Close image viewer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <button class="lightbox-btn lightbox-prev" id="lightbox-prev-btn" aria-label="Previous image">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <img id="lightbox-img" src="" alt="Active Gallery Image" tabindex="0">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+            <div class="lightbox-counter" id="lightbox-counter"></div>
+            <button class="lightbox-btn lightbox-next" id="lightbox-next-btn" aria-label="Next image">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Shared Footer (injected by components.js) -->
+    <div id="site-footer">
+        <noscript>
+            <nav aria-label="Footer Navigation">
+                <a href="index.html">Home</a> |
+                <a href="about.html">About Us</a> |
+                <a href="services.html">Services</a> |
+                <a href="projects.html">Projects</a> |
+                <a href="recent-photos.html">Recent Work</a> |
+                <a href="careers.html">Careers</a> |
+                <a href="contact.html">Contact Us</a> |
+                <a href="faq.html">FAQs</a> |
+                <a href="terms.html">Terms &amp; Conditions</a>
+            </nav>
+        </noscript>
+    </div>
+
+    <!-- Site Scripts -->
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/recent-photos.js"></script>
+</body>
+
+</html>

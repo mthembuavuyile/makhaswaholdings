@@ -274,7 +274,7 @@
             </div>
 
             <div class="contact-form">
-                <form id="careers-form" action="#" method="POST" enctype="multipart/form-data">
+                <form id="careers-form" action="#" method="POST">
                     <!-- Web3Forms Honeypot (spam protection) -->
                     <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
@@ -413,13 +413,19 @@
                         </select>
                     </div>
 
-                    <!-- STEP 4: Document Upload & Final Review -->
+                    <!-- STEP 4: Message & Final Review -->
                     <div class="form-step" data-step="4">
-                        <h3 class="step-heading">Documents & Review</h3>
-                        <p class="step-subheading">Upload your CV and review your application details before submission.</p>
+                        <h3 class="step-heading">Message & Review</h3>
+                        <p class="step-subheading">Review your application details and add a cover letter message before submission.</p>
 
-                        <label for="cv">Upload CV / Resume (PDF, DOC, DOCX — Max 5MB) *</label>
-                        <input type="file" id="cv" name="attachment" accept=".pdf,.doc,.docx" required>
+                        <div class="email-cv-notice">
+                            <i data-lucide="mail" class="notice-icon" width="18" height="18"></i>
+                            <p>
+                                <strong>Next Step Required:</strong> To finalize your application, please email your comprehensive CV to 
+                                <a href="mailto:careers@makhaswaholdings.co.za">careers@makhaswaholdings.co.za</a> 
+                                after submitting this form.
+                            </p>
+                        </div>
 
                         <label for="message">Cover Letter / Message *</label>
                         <textarea id="message" name="message" required

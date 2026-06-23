@@ -372,6 +372,46 @@
     word-break: break-word;
 }
 
+/* Email CV Notice */
+.email-cv-notice {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: var(--off-white);
+    border-left: 3px solid var(--primary);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.email-cv-notice .notice-icon {
+    color: var(--primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.email-cv-notice p {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.email-cv-notice p strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.email-cv-notice a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.email-cv-notice a:hover {
+    color: var(--gold);
+}
+
 /* Step Buttons Styling */
 .step-buttons {
     display: flex;

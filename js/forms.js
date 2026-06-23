@@ -136,8 +136,6 @@ function initCareersForm() {
     if (!form) return;
 
     const statusEl = document.getElementById('careers-form-status');
-    const cvInput = document.getElementById('cv');
-    const MAX_BYTES = 5 * 1024 * 1024; // 5 MB
 
     // Step-specific DOM Elements
     const formSteps = form.querySelectorAll('.form-step');
@@ -157,25 +155,6 @@ function initCareersForm() {
             el.classList.remove('input-invalid');
         });
     });
-
-    // Live file-size validation
-    if (cvInput) {
-        cvInput.addEventListener('change', function () {
-            const file = this.files[0];
-            if (!file) return;
-
-            if (file.size > MAX_BYTES) {
-                setStatus(statusEl, 'error',
-                    `<span class="status-icon">⚠️</span> The selected file <strong>${file.name}</strong> ` +
-                    `(${formatBytes(file.size)}) exceeds the 5 MB limit. Please choose a smaller file.`);
-                this.value = ''; // clear the input
-            } else {
-                if (statusEl.classList.contains('form-status--error')) {
-                    setStatus(statusEl, '', '');
-                }
-            }
-        });
-    }
 
     // Navigation: Go to a specific step
     function goToStep(stepNum) {
@@ -321,15 +300,6 @@ function initCareersForm() {
         // Guard against double-submission
         if (form.dataset.submitting === 'true') return;
 
-        // Validate file size before submitting
-        const cvFile = cvInput && cvInput.files[0];
-        if (cvFile && cvFile.size > MAX_BYTES) {
-            setStatus(statusEl, 'error',
-                `<span class="status-icon">⚠️</span> Your CV (${formatBytes(cvFile.size)}) exceeds 5 MB. ` +
-                'Please compress or re-export it before uploading.');
-            return;
-        }
-
         form.dataset.submitting = 'true';
         setFormDisabled(form, true);
         setStatus(statusEl, 'loading',
@@ -338,25 +308,6 @@ function initCareersForm() {
         const elements = form.elements;
         const posVal = elements.position ? elements.position.value : '';
         const nameVal = elements.name ? elements.name.value : '';
-
-        // Build multipart FormData
-        const formData = new FormData();
-        formData.append('access_key', WEB3FORMS_ACCESS_KEY);
-        formData.append('subject', `[Makhaswa Holdings] Job Application: ${posVal} (${nameVal})`);
-        formData.append('from_name', 'Makhaswa Careers Portal');
-
-        // Append basic details
-        formData.append('Full Name', elements.name ? elements.name.value.trim() : '');
-        formData.append('Email', elements.email ? elements.email.value.trim() : '');
-        formData.append('Phone', elements.phone ? elements.phone.value.trim() : '');
-        formData.append('Location', elements.location ? elements.location.value.trim() : '');
-        formData.append('Position Applied For', posVal);
-        formData.append('Years of Experience', elements.experience_years ? elements.experience_years.value : '');
-        formData.append('Notice Period', elements.notice_period ? elements.notice_period.value : '');
-        formData.append('Salary Expectation', elements.salary_expectation ? elements.salary_expectation.value : '');
-        formData.append('CIDB Grade', elements.cidb_grade ? elements.cidb_grade.value : '');
-        formData.append('Message / Cover Letter', elements.message ? elements.message.value.trim() : '');
-        formData.append('botcheck', elements.botcheck ? elements.botcheck.checked : false);
 
         // Gather accreditations
         const accreditations = [];
@@ -367,27 +318,44 @@ function initCareersForm() {
                 accreditations.push(el.value);
             }
         });
-        formData.append('Accreditations', accreditations.length > 0 ? accreditations.join(', ') : 'None');
 
-        // Attach CV
-        if (cvFile) {
-            formData.append('attachment', cvFile, cvFile.name);
-        }
+        // Build JSON payload
+        const data = {
+            access_key: WEB3FORMS_ACCESS_KEY,
+            subject: `[Makhaswa Holdings] Job Application: ${posVal} (${nameVal})`,
+            from_name: 'Makhaswa Careers Portal',
+            name: nameVal,
+            email: elements.email ? elements.email.value.trim() : '',
+            phone: elements.phone ? elements.phone.value.trim() : '',
+            location: elements.location ? elements.location.value.trim() : '',
+            position_applied_for: posVal,
+            years_of_experience: elements.experience_years ? elements.experience_years.value : '',
+            notice_period: elements.notice_period ? elements.notice_period.value : '',
+            salary_expectation: elements.salary_expectation ? elements.salary_expectation.value : '',
+            cidb_grade: elements.cidb_grade ? elements.cidb_grade.value : '',
+            accreditations: accreditations.length > 0 ? accreditations.join(', ') : 'None',
+            message: elements.message ? elements.message.value.trim() : '',
+            botcheck: elements.botcheck ? elements.botcheck.checked : false,
+        };
 
         try {
             const response = await fetch(SUBMIT_URL, {
                 method: 'POST',
-                headers: { Accept: 'application/json' },
-                body: formData,
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify(data),
             });
 
             const result = await response.json();
 
             if (response.ok && result.success) {
                 setStatus(statusEl, 'success',
-                    '<span class="status-icon">✅</span> <strong>Application submitted successfully!</strong> ' +
-                    'Thank you for your interest in joining Makhaswa Holdings. ' +
-                    'We will review your credentials and contact shortlisted candidates.');
+                    '<span class="status-icon">✅</span> <strong>Application details submitted!</strong><br><br>' +
+                    '<strong>Crucial Next Step:</strong> Please email your comprehensive CV/Resume directly to ' +
+                    '<a href="mailto:careers@makhaswaholdings.co.za" style="color: inherit; text-decoration: underline; font-weight: bold;">careers@makhaswaholdings.co.za</a> ' +
+                    'to complete your application.');
                 form.reset();
                 // Return to step 1 after success
                 goToStep(1);
