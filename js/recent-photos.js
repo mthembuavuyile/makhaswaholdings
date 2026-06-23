@@ -1,7 +1,7 @@
 /* =====================================================
-   MAKHASWA HOLDINGS — RECENT-PHOTOS.JS
-   Programmatically handles the generation, pagination,
-   and lightbox navigation of the 49 site progress photos.
+   MAKHASWA HOLDINGS — SITE JOURNAL LOGIC
+   Programmatically handles the generation, load-more,
+   and lightbox navigation of site progress photos.
    ===================================================== */
 
 (() => {
@@ -11,7 +11,8 @@
     const TOTAL_IMAGES = 49;
     const IMAGES_DATA = [];
 
-    for (let i = 1; i <= TOTAL_IMAGES; i++) {
+    // Reverse order (newest WhatsApp upload at the top)
+    for (let i = TOTAL_IMAGES; i >= 1; i--) {
         IMAGES_DATA.push({
             src: `newimages/whatsapp (${i}).jpeg`,
             alt: `Live project photo update showing excavation, building works, piping, road construction, or machinery in action on one of our South African sites (Photo ${i})`,
@@ -22,12 +23,12 @@
 
     // ── Configuration ──
     const ITEMS_PER_PAGE = 12;
-    let currentPage = 1;
+    let renderedCount = 0;
     let lightboxIndex = 0;
 
     // ── DOM References ──
     const grid = document.getElementById('recent-grid');
-    const pagination = document.getElementById('recent-pagination');
+    const loadMoreContainer = document.getElementById('recent-pagination');
     const countLabel = document.getElementById('recent-count');
     const lightbox = document.getElementById('lightbox');
     const lbImg = document.getElementById('lightbox-img');
@@ -42,47 +43,41 @@
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('fade-in');
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
     // ── Render Function ──
-    function render() {
+    function renderNextBatch() {
         if (!grid) return;
 
         const totalItems = IMAGES_DATA.length;
-        const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
-        const start = (currentPage - 1) * ITEMS_PER_PAGE;
-        const pageItems = IMAGES_DATA.slice(start, start + ITEMS_PER_PAGE);
+        const nextBatchSize = Math.min(ITEMS_PER_PAGE, totalItems - renderedCount);
+        if (nextBatchSize <= 0) return;
 
-        // Update count label
-        if (countLabel) {
-            countLabel.textContent = `Showing ${start + 1}–${Math.min(start + pageItems.length, totalItems)} of ${totalItems} updates`;
-        }
-
-        // Clear grid and render cards
-        grid.innerHTML = '';
-        pageItems.forEach((img, index) => {
-            const globalIndex = start + index;
+        const batch = IMAGES_DATA.slice(renderedCount, renderedCount + nextBatchSize);
+        batch.forEach((img, index) => {
+            const globalIndex = renderedCount + index;
             const card = document.createElement('div');
-            card.className = 'recent-item';
+            card.className = 'journal-card';
             card.setAttribute('role', 'button');
             card.setAttribute('tabindex', '0');
-            card.setAttribute('aria-label', `Open site photo ${globalIndex + 1}`);
-
-            // CSS animation initialization styles (will be triggered by observer)
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(16px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            card.setAttribute('aria-label', `Open site journal entry LOG-${TOTAL_IMAGES - globalIndex}`);
 
             card.innerHTML = `
-                <img src="${img.src}" alt="${img.alt}" loading="lazy">
-                <div class="recent-item-overlay">
-                    <span>${img.category}</span>
-                    <h4>${img.title}</h4>
+                <div class="journal-card-media">
+                    <img src="${img.src}" alt="${img.alt}" loading="lazy">
+                </div>
+                <div class="journal-card-footer">
+                    <div class="journal-card-info">
+                        <span class="journal-log-badge">LOG #${String(TOTAL_IMAGES - globalIndex).padStart(3, '0')}</span>
+                        <span class="journal-cat-badge">${img.category}</span>
+                    </div>
+                    <div class="journal-card-action">
+                        <i data-lucide="maximize-2" class="journal-zoom-icon"></i>
+                    </div>
                 </div>
             `;
 
@@ -99,69 +94,48 @@
             observer.observe(card);
         });
 
-        // Build pagination buttons
-        buildPagination(totalPages);
+        renderedCount += nextBatchSize;
+
+        // Re-initialize Lucide Icons
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+
+        // Update count label
+        if (countLabel) {
+            countLabel.textContent = `Showing 1–${renderedCount} of ${totalItems} updates`;
+        }
+
+        // Update the Load More button
+        updateLoadMoreButton();
     }
 
-    // ── Pagination Builder ──
-    function buildPagination(totalPages) {
-        if (!pagination) return;
-        pagination.innerHTML = '';
-        if (totalPages <= 1) return;
+    // ── Load More Button Builder ──
+    function updateLoadMoreButton() {
+        if (!loadMoreContainer) return;
+        loadMoreContainer.innerHTML = '';
 
-        const makeButton = (label, page, isIcon = false) => {
+        if (renderedCount < IMAGES_DATA.length) {
             const btn = document.createElement('button');
-            btn.className = 'page-btn' + (page === currentPage ? ' active' : '');
-            btn.setAttribute('aria-label', isIcon ? label : `Go to page ${page}`);
-            if (page === currentPage) btn.setAttribute('aria-current', 'page');
-            btn.innerHTML = label;
-            btn.disabled = (page < 1 || page > totalPages);
+            btn.className = 'btn-load-more';
+            btn.innerHTML = `
+                <span>LOAD MORE ENTRIES</span>
+                <i data-lucide="arrow-down" width="16" height="16"></i>
+            `;
             btn.addEventListener('click', () => {
-                currentPage = page;
-                render();
-                grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                renderNextBatch();
             });
-            return btn;
-        };
+            loadMoreContainer.appendChild(btn);
 
-        // Previous button
-        const prevSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>`;
-        const prevBtn = makeButton(prevSVG, currentPage - 1, true);
-        prevBtn.disabled = (currentPage === 1);
-        pagination.appendChild(prevBtn);
-
-        // Page numbers range
-        const pageRange = getPageRange(currentPage, totalPages);
-        pageRange.forEach(p => {
-            if (p === '…') {
-                const ellipsis = document.createElement('span');
-                ellipsis.textContent = '…';
-                ellipsis.style.cssText = 'padding: 0 6px; color: var(--text-muted); align-self: center; font-size: 14px;';
-                pagination.appendChild(ellipsis);
-            } else {
-                pagination.appendChild(makeButton(p, p));
+            if (window.lucide) {
+                window.lucide.createIcons();
             }
-        });
-
-        // Next button
-        const nextSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>`;
-        const nextBtn = makeButton(nextSVG, currentPage + 1, true);
-        nextBtn.disabled = (currentPage === totalPages);
-        pagination.appendChild(nextBtn);
-    }
-
-    // Helper for generating page number array with ellipses
-    function getPageRange(current, total) {
-        if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
-        const pages = [];
-        pages.push(1);
-        if (current > 3) pages.push('…');
-        const start = Math.max(2, current - 1);
-        const end = Math.min(total - 1, current + 1);
-        for (let i = start; i <= end; i++) pages.push(i);
-        if (current < total - 2) pages.push('…');
-        pages.push(total);
-        return pages;
+        } else {
+            const msg = document.createElement('div');
+            msg.className = 'journal-end-message';
+            msg.textContent = 'You have viewed all site journal updates.';
+            loadMoreContainer.appendChild(msg);
+        }
     }
 
     // ── Lightbox Logic ──
@@ -195,13 +169,31 @@
     function updateLightbox() {
         if (!lbImg || !lbCap || !lbCounter) return;
         const img = IMAGES_DATA[lightboxIndex];
+        
+        // Hide image while loading next to prevent flash of old image
+        lbImg.style.opacity = '0';
+        
+        // Set image source
         lbImg.src = img.src;
         lbImg.alt = img.alt;
+        
+        // Once image loads, fade it in
+        lbImg.onload = () => {
+            lbImg.style.opacity = '1';
+        };
+        
+        // If image is already cached/loaded
+        if (lbImg.complete) {
+            lbImg.style.opacity = '1';
+        }
+
+        const logId = String(TOTAL_IMAGES - lightboxIndex).padStart(3, '0');
         lbCap.innerHTML = `
-            <strong style="color: var(--gold); text-transform: uppercase; letter-spacing: 1px; display: block; font-size: 11px; margin-bottom: 6px;">
-                ${img.category}
-            </strong>
-            ${img.title}
+            <div class="lightbox-caption-header">
+                <span class="lightbox-log-badge">LOG #${logId}</span>
+                <span class="lightbox-category">${img.category}</span>
+            </div>
+            <p class="lightbox-caption-text">${img.title}</p>
         `;
         lbCounter.textContent = `${lightboxIndex + 1} / ${IMAGES_DATA.length}`;
     }
@@ -241,7 +233,7 @@
     }
 
     // ── Initialize ──
-    document.addEventListener('DOMContentLoaded', render);
-    if (document.readyState !== 'loading') render();
+    document.addEventListener('DOMContentLoaded', renderNextBatch);
+    if (document.readyState !== 'loading') renderNextBatch();
 
 })();

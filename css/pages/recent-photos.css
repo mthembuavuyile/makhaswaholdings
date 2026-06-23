@@ -1,6 +1,7 @@
 /* =====================================================
-   MAKHASWA HOLDINGS — RECENT SITE PHOTOS PAGE STYLESHEET
-   Sleek grid, premium lightbox, and responsive notice.
+   MAKHASWA HOLDINGS — SITE JOURNAL PAGE STYLESHEET
+   Asymmetric masonry card layout, premium lightbox,
+   and dynamic loading controls.
    ===================================================== */
 
 /* ── Page Container ── */
@@ -10,259 +11,225 @@
     padding: 48px 20px 96px;
 }
 
-/* ── Header ── */
-.recent-header {
+/* ── Count Label ── */
+.journal-count {
     text-align: center;
-    margin-bottom: 40px;
-}
-
-.recent-header h1 {
-    font-size: clamp(26px, 3.5vw, 40px);
-    color: var(--primary);
-    font-weight: 800;
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 32px;
+    font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 14px;
 }
 
-.recent-header p {
-    color: var(--text-light);
-    font-size: 15px;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
+/* ── Masonry Grid Layout ── */
+.journal-grid {
+    column-count: 3;
+    column-gap: 24px;
+    width: 100%;
 }
 
-/* ── Notice Card ── */
-.recent-notice {
-    background: linear-gradient(135deg, #ffffff, #fcfdff);
-    border-left: 4px solid var(--gold);
-    box-shadow: var(--shadow-sm);
-    padding: 24px;
-    border-radius: 6px;
-    margin-bottom: 40px;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-}
-
-.notice-icon-wrapper {
-    background: rgba(200, 169, 81, 0.1);
-    color: var(--gold);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.notice-text h3 {
-    font-size: 16px;
-    color: var(--primary);
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-
-.notice-text p {
-    font-size: 14px;
-    color: var(--text-light);
-    line-height: 1.5;
-}
-
-/* ── Grid ── */
-.recent-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-}
-
-@media (min-width: 600px) {
-    .recent-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
+@media (max-width: 900px) {
+    .journal-grid {
+        column-count: 2;
+        column-gap: 16px;
     }
 }
 
-@media (min-width: 900px) {
-    .recent-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+@media (max-width: 600px) {
+    .journal-grid {
+        column-count: 1;
+        column-gap: 0;
     }
 }
 
-/* ── Grid Item ── */
-.recent-item {
-    position: relative;
-    aspect-ratio: 4 / 3;
+/* ── Journal Card ── */
+.journal-card {
+    break-inside: avoid;
+    margin-bottom: 24px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
     overflow: hidden;
-    background-color: var(--off-white);
     cursor: pointer;
-    border-radius: 6px;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeInUp 0.35s ease both;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 0.3s ease;
+    
+    /* Animation initial states (Observer target class) */
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(16px);
-    }
+.journal-card.fade-in {
+    animation: journalCardFadeIn 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes journalCardFadeIn {
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.recent-item img {
+/* ── Journal Card Media ── */
+.journal-card-media {
+    position: relative;
     width: 100%;
-    height: 100%;
+    overflow: hidden;
+    background: #f7f9fa;
+}
+
+.journal-card-media img {
+    width: 100%;
+    height: auto;
     object-fit: cover;
-    transition: transform 0.4s ease;
     display: block;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* ── Hover Overlay ── */
-@media (min-width: 768px) {
-    .recent-item:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-md);
-    }
-
-    .recent-item:hover img {
-        transform: scale(1.05);
-    }
-
-    .recent-item::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to top, rgba(8, 45, 90, 0.75), rgba(8, 45, 90, 0.1));
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-        z-index: 1;
-    }
-
-    .recent-item:hover::after {
-        opacity: 1;
-    }
-
-    .recent-item-overlay {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: 16px;
-        color: #fff;
-        opacity: 0;
-        z-index: 2;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-    }
-
-    .recent-item:hover .recent-item-overlay {
-        opacity: 1;
-    }
-
-    .recent-item-overlay span {
-        color: var(--gold);
-        font-size: 10px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 4px;
-    }
-
-    .recent-item-overlay h4 {
-        font-size: 13px;
-        font-weight: 600;
-        line-height: 1.3;
-    }
+/* Hover effects */
+.journal-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(8, 45, 90, 0.08);
+    border-color: rgba(200, 169, 81, 0.4); /* subtle gold */
 }
 
-@media (max-width: 767px) {
-    .recent-item-overlay {
-        display: none;
-    }
+.journal-card:hover .journal-card-media img {
+    transform: scale(1.03);
 }
 
-/* ── Pagination ── */
-.recent-pagination {
+/* ── Card Footer ── */
+.journal-card-footer {
+    padding: 16px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 48px;
-    flex-wrap: wrap;
+    background: #fafbfc;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-.page-btn {
-    min-width: 40px;
-    height: 40px;
-    padding: 0 12px;
-    border-radius: 8px;
-    border: 2px solid var(--border);
-    background: #fff;
-    color: var(--text);
-    font-family: var(--font);
+.journal-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.journal-log-badge {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.journal-cat-badge {
     font-size: 13px;
     font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    color: var(--primary);
+}
+
+/* Zoom/Expand Icon */
+.journal-card-action {
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 1;
-}
-
-.page-btn:hover:not(:disabled) {
-    border-color: var(--primary);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(8, 45, 90, 0.04);
     color: var(--primary);
-    transform: translateY(-1px);
+    transition: all 0.3s ease;
 }
 
-.page-btn.active {
+.journal-card:hover .journal-card-action {
     background: var(--primary);
-    color: #fff;
-    border-color: var(--primary);
-    box-shadow: 0 3px 10px rgba(8, 45, 90, 0.2);
+    color: var(--white);
+    transform: scale(1.1);
 }
 
-.page-btn:disabled {
-    opacity: 0.35;
-    cursor: default;
+.journal-zoom-icon {
+    width: 14px;
+    height: 14px;
 }
 
-.page-btn svg {
-    width: 16px;
-    height: 16px;
-    stroke-width: 2.5;
+/* ── Load More Container ── */
+.journal-load-more-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+    min-height: 50px;
 }
 
-.recent-count {
-    text-align: center;
+/* Button styling */
+.btn-load-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: var(--white);
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-family: var(--font);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+.btn-load-more:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(8, 45, 90, 0.15);
+}
+
+.btn-load-more:active {
+    transform: translateY(0);
+}
+
+.btn-load-more svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-load-more:hover svg {
+    transform: translateY(2px);
+}
+
+/* End of updates message */
+.journal-end-message {
     font-size: 13px;
     color: var(--text-light);
-    margin-bottom: 20px;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-top: 1px solid var(--border);
+    padding: 24px 48px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    text-transform: uppercase;
 }
 
 /* ── Premium Lightbox Modal ── */
 .lightbox-modal {
     position: fixed;
     inset: 0;
-    background: rgba(8, 45, 90, 0.98);
+    background: rgba(8, 45, 90, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     z-index: 2000;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .lightbox-modal.active {
@@ -273,6 +240,7 @@
 .lightbox-content {
     position: relative;
     max-width: 90vw;
+    width: 100%;
     max-height: 85vh;
     display: flex;
     flex-direction: column;
@@ -282,56 +250,96 @@
 
 .lightbox-content img {
     max-width: 100%;
-    max-height: 70vh;
+    max-height: 65vh;
     object-fit: contain;
     border-radius: 6px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    transform: scale(0.95);
-    transition: transform 0.3s ease;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+    transform: scale(0.96);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                opacity 0.3s ease;
 }
 
 .lightbox-modal.active .lightbox-content img {
     transform: scale(1);
 }
 
+/* Elegant Lightbox Footer Area */
 .lightbox-caption {
-    margin-top: 18px;
+    margin-top: 20px;
     color: #fff;
+    text-align: center;
+    max-width: 640px;
+    width: 100%;
+    line-height: 1.5;
+    padding: 0 24px;
+}
+
+.lightbox-caption-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.lightbox-log-badge {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.lightbox-category {
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.lightbox-caption-text {
     font-size: 14px;
     font-weight: 500;
-    text-align: center;
-    max-width: 600px;
-    line-height: 1.5;
-    padding: 0 12px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .lightbox-counter {
-    margin-top: 8px;
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.5);
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
     letter-spacing: 0.5px;
 }
 
+/* Buttons inside Lightbox */
 .lightbox-btn {
     position: absolute;
-    background: rgba(255, 255, 255, 0.08);
-    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: #fff;
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
+    transition: all 0.3s ease;
     user-select: none;
     z-index: 10;
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .lightbox-btn:hover {
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--gold);
     transform: scale(1.08);
 }
 
@@ -345,13 +353,14 @@
     stroke-width: 2.5;
 }
 
+/* Position overrides */
 .lightbox-close {
-    top: -60px;
+    top: -68px;
     right: 0;
 }
 
 .lightbox-prev {
-    left: -70px;
+    left: -80px;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -361,7 +370,7 @@
 }
 
 .lightbox-next {
-    right: -70px;
+    right: -80px;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -370,33 +379,32 @@
     transform: translateY(-50%) scale(1.08);
 }
 
-@media (max-width: 768px) {
+/* Responsiveness for Lightbox */
+@media (max-width: 900px) {
     .lightbox-prev {
-        left: 10px;
+        left: 12px;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(8, 45, 90, 0.8);
     }
-
     .lightbox-prev:hover {
         transform: translateY(-50%) scale(1.05);
     }
 
     .lightbox-next {
-        right: 10px;
+        right: 12px;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(8, 45, 90, 0.8);
     }
-
     .lightbox-next:hover {
         transform: translateY(-50%) scale(1.05);
     }
 
     .lightbox-close {
-        top: 14px;
-        right: 14px;
-        background: rgba(0, 0, 0, 0.6);
+        top: 16px;
+        right: 16px;
+        background: rgba(8, 45, 90, 0.8);
         position: fixed;
     }
 }
