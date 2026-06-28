@@ -209,21 +209,36 @@
         });
     }
 
-    // 4. Surveying & Setup (12 down to 1)
-    for (let num = 11; num >= 1; num--) {
+    // 4. Surveying & Setup (9 down to 1)
+    for (let num = 9; num >= 1; num--) {
         let alt, title;
         if (num === 1) {
-            alt = "Makhaswa Holdings land surveyors mapping and marking boundary lines during initial site establishment.";
-            title = "Initial Site Survey & Boundary Layout";
-        } else if (num >= 2 && num <= 5) {
-            alt = `Construction crew establishing site grids, profiles, and level datum lines (Progress Log #${num}).`;
-            title = `Grid Layout & Levelling Benchmarks - Log #${num}`;
-        } else if (num >= 6 && num <= 9) {
-            alt = `Surveying equipment and pegging out coordinates for bulk excavation (Progress Log #${num}).`;
-            title = `Bulk Excavation Surveying & Coordinates - Log #${num}`;
-        } else {
-            alt = `Final land surveying checks and site clearance verification before groundbreaking (Progress Log #${num}).`;
-            title = `Pre-Excavation Site Layout Inspection - Log #${num}`;
+            alt = "Surveyor operating a total station on open ground during initial site establishment.";
+            title = "Initial Site Survey & Instrument Setup";
+        } else if (num === 2) {
+            alt = "Concrete strip footing laid along a foundation trench during early civil works.";
+            title = "Foundation Trench & Strip Footing";
+        } else if (num === 3) {
+            alt = "PPE-equipped worker operating a theodolite to establish level and alignment on site.";
+            title = "On-Site Levelling & Alignment Check";
+        } else if (num === 4) {
+            alt = "Site supervisor inspecting steel reinforcement grid prior to concrete slab pour.";
+            title = "Rebar Grid Inspection Before Slab Pour";
+        } else if (num === 5) {
+            alt = "Surveying level instrument set up adjacent to structure under construction for datum reference.";
+            title = "Datum Reference & Level Instrument Setup";
+        } else if (num === 6) {
+            alt = "Worker inspecting rebar placement within foundation trench during structural phase.";
+            title = "Foundation Rebar Inspection";
+        } else if (num === 7) {
+            alt = "Technician drilling wall penetration for services installation during building fit-out phase.";
+            title = "Wall Penetration for Services Installation";
+        } else if (num === 8) {
+            alt = "Surveyor positioning tripod instrument alongside masonry structure for setting-out verification.";
+            title = "Setting-Out Verification at Masonry Structure";
+        } else if (num === 9) {
+            alt = "Bricklaying crew constructing masonry walls within foundation trenches during substructure phase.";
+            title = "Substructure Brickwork & Masonry Construction";
         }
         surveyingData.push({
             src: `images/journal/surveying-and-setup/surveying-and-setup (${num}).jpeg`,
