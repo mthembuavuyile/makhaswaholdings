@@ -15,7 +15,7 @@
     const surveyingData = [];
 
     // 1. Commercial Building Construction (14 down to 1)
-    for (let num = 14; num >= 1; num--) {
+    for (let num = 12; num >= 1; num--) {
         let alt, title;
         if (num >= 8) {
             alt = `Structural external brick wall construction and safety scaffolding installation on a commercial site (Progress Log #${num}).`;
@@ -34,7 +34,7 @@
     }
 
     // 2. Residential Housing Construction (82 down to 1)
-    for (let num = 82; num >= 1; num--) {
+    for (let num = 55; num >= 1; num--) {
         let alt, title;
         if (num >= 71) {
             alt = `Timber roof structure framing and brick boundary wall building in progress on residential housing development (Progress Log #${num}).`;
@@ -58,45 +58,82 @@
         });
     }
 
-    // 3. Foundation Work (127 down to 1)
-    for (let num = 127; num >= 1; num--) {
+    // 3. Foundation Work: Concrete Casting (26 down to 1)
+    for (let num = 26; num >= 1; num--) {
         let alt, title;
-        if (num >= 121) {
-            alt = `Subgrade backfilling and mechanical soil compaction around concrete footings to finish foundation slab (Progress Log #${num}).`;
-            title = `Completed Foundation Curing & Compaction - Log #${num}`;
-        } else if (num >= 91) {
-            alt = `Masonry crew laying engineering bricks for the foundation plinth wall and setting up DPC membranes (Progress Log #${num}).`;
-            title = `Foundation Plinth Wall Masonry - Log #${num}`;
-        } else if (num >= 61) {
-            alt = `Pouring structural concrete mix and compacting footings to meet civil engineering codes (Progress Log #${num}).`;
-            title = `Concrete Footings & Slab Pouring - Log #${num}`;
-        } else if (num >= 31) {
-            alt = `Site technicians tying high-tensile steel reinforcing rebar mesh in excavated trenches (Progress Log #${num}).`;
-            title = `Steel Reinforcement Installation - Log #${num}`;
+        if (num >= 18) {
+            alt = `Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation (Progress Log #${num}).`;
+            title = `Concrete Slab Pouring & Formwork - Log #${num}`;
+        } else if (num >= 9) {
+            alt = `Precision leveling, surface floating, and finishing of the structural concrete floor slab on site (Progress Log #${num}).`;
+            title = `Slab Leveling & Power Floating - Log #${num}`;
         } else {
-            alt = `Makhaswa excavation crew digging foundation trenches and setting up shoring (Progress Log #${num}).`;
-            title = `Foundation Trenching & Excavation - Log #${num}`;
+            alt = `Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance (Progress Log #${num}).`;
+            title = `Concrete Curing & Quality Inspection - Log #${num}`;
         }
         foundationData.push({
-            src: `images/journal/foundation/foundation-work (${num}).jpeg`,
+            src: `images/journal/foundation/concrete-casting/foundation-work (${num}).jpeg`,
             alt: alt,
             title: title,
             category: 'foundation',
-            categoryName: 'Foundation Work'
+            categoryName: 'Foundation: Concrete Casting'
         });
     }
 
-    // 4. Surveying & Setup (12 files, descending order)
-    const surveyingIndices = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 1];
-    surveyingIndices.forEach((num) => {
+    // 3b. Foundation Work: Damp-Proofing & Reinforcement (38 down to 1)
+    for (let num = 38; num >= 1; num--) {
+        let alt, title;
+        if (num >= 26) {
+            alt = `Installing heavy-duty Damp Proof Course (DPC) plastic underlay membrane for sub-slab moisture protection (Progress Log #${num}).`;
+            title = `Damp Proof Membrane (DPC) Installation - Log #${num}`;
+        } else if (num >= 14) {
+            alt = `Masonry specialists laying foundation plinth brickwork and placing reinforcing steel brickforce mesh (Progress Log #${num}).`;
+            title = `Foundation Plinth Bricklaying - Log #${num}`;
+        } else {
+            alt = `Ironworkers tying high-tensile steel reinforcing rebar cages and mesh in excavated trenches (Progress Log #${num}).`;
+            title = `Steel Rebar Reinforcement Tie-in - Log #${num}`;
+        }
+        foundationData.push({
+            src: `images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (${num}).jpeg`,
+            alt: alt,
+            title: title,
+            category: 'foundation',
+            categoryName: 'Foundation: Damp-proofing & Rebar'
+        });
+    }
+
+    // 3c. Foundation Work: Earthworks & Platform Preparation (18 down to 1)
+    for (let num = 18; num >= 1; num--) {
+        let alt, title;
+        if (num >= 12) {
+            alt = `Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery (Progress Log #${num}).`;
+            title = `Bulk Excavation & Site Clearance - Log #${num}`;
+        } else if (num >= 6) {
+            alt = `Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes (Progress Log #${num}).`;
+            title = `Subgrade Compaction & Platform Prep - Log #${num}`;
+        } else {
+            alt = `Excavated foundation trenches with structural profiles and line markings set up for geotechnical survey (Progress Log #${num}).`;
+            title = `Foundation Trench Excavation - Log #${num}`;
+        }
+        foundationData.push({
+            src: `images/journal/foundation/earthworks-and-platform-preparation/foundation-work (${num}).jpeg`,
+            alt: alt,
+            title: title,
+            category: 'foundation',
+            categoryName: 'Foundation: Earthworks & Prep'
+        });
+    }
+
+    // 4. Surveying & Setup (12 down to 1)
+    for (let num = 12; num >= 1; num--) {
         let alt, title;
         if (num === 1) {
             alt = "Makhaswa Holdings land surveyors mapping and marking boundary lines during initial site establishment.";
             title = "Initial Site Survey & Boundary Layout";
-        } else if (num >= 10 && num <= 13) {
+        } else if (num >= 2 && num <= 5) {
             alt = `Construction crew establishing site grids, profiles, and level datum lines (Progress Log #${num}).`;
             title = `Grid Layout & Levelling Benchmarks - Log #${num}`;
-        } else if (num >= 14 && num <= 17) {
+        } else if (num >= 6 && num <= 9) {
             alt = `Surveying equipment and pegging out coordinates for bulk excavation (Progress Log #${num}).`;
             title = `Bulk Excavation Surveying & Coordinates - Log #${num}`;
         } else {
@@ -110,7 +147,7 @@
             category: 'surveying',
             categoryName: 'Surveying & Setup'
         });
-    });
+    }
 
     // Combine in reverse chronological stage order (latest stages first)
     const IMAGES_DATA = [...commercialData, ...residentialData, ...foundationData, ...surveyingData];
@@ -150,7 +187,7 @@
         if (!grid) return;
 
         const totalItems = currentDataset.length;
-        
+
         // Handle empty state
         if (totalItems === 0) {
             grid.innerHTML = '<div class="portfolio-empty-message" style="grid-column: 1/-1; text-align: center; padding: 48px; color: var(--text-light); font-weight: 600;">No progress photos found in this phase.</div>';
@@ -283,7 +320,7 @@
                 const headerOffset = 100;
                 const elementPosition = grid.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
+
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
@@ -391,7 +428,7 @@
         setupFilters();
         renderNextBatch();
     });
-    
+
     if (document.readyState !== 'loading') {
         setupFilters();
         renderNextBatch();
