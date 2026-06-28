@@ -14,16 +14,56 @@
     const foundationData = [];
     const surveyingData = [];
 
-    // 1. Commercial Building Construction (14 down to 1)
+    // 1. Commercial Building Construction (12 down to 1)
     for (let num = 12; num >= 1; num--) {
         let alt, title;
-        if (num >= 8) {
-            alt = `Structural external brick wall construction and safety scaffolding installation on a commercial site (Progress Log #${num}).`;
-            title = `Scaffolding & Exterior Wall Masonry - Log #${num}`;
+
+        if (num === 1) {
+            alt = `Interior concrete staircase formwork and rebar reinforcement shuttering in progress on a commercial building site (Progress Log #${num}).`;
+            title = `Staircase Formwork & Rebar Reinforcement - Log #${num}`;
+
+        } else if (num === 2) {
+            alt = `Interior concrete staircase timber formwork boxing with rebar reinforcement visible at base, enclosed by brick walls on a commercial site (Progress Log #${num}).`;
+            title = `Interior Staircase Timber Boxing & Formwork - Log #${num}`;
+
+        } else if (num === 3 || num === 4) {
+            alt = `Completed multi-storey commercial brick building with recessed balconies and face-brick facade, post-construction (Progress Log #${num}).`;
+            title = `Completed Commercial Brick Facade & Balconies - Log #${num}`;
+
+        } else if (num === 5) {
+            alt = `Aerial view of extended commercial building roofline and long-span brick wall construction across the site perimeter (Progress Log #${num}).`;
+            title = `Roofline & Long-Span Perimeter Masonry - Log #${num}`;
+
+        } else if (num === 6) {
+            alt = `Interior concrete staircase nearing completion with face-brick side walls and open stairwell (Progress Log #${num}).`;
+            title = `Interior Staircase Brickwork Completion - Log #${num}`;
+
+        } else if (num === 7) {
+            alt = `Reinforced concrete column with timber formwork casing and scaffold support poles on a commercial site (Progress Log #${num}).`;
+            title = `Concrete Column Formwork & Scaffolding - Log #${num}`;
+
+        } else if (num === 8) {
+            alt = `Flat roof slab construction with steel mesh reinforcement laid across concrete soffit shuttering (Progress Log #${num}).`;
+            title = `Roof Slab Steel Mesh & Soffit Shuttering - Log #${num}`;
+
+        } else if (num === 9) {
+            alt = `Long-span steel rebar beam reinforcement assembly and formwork preparation for elevated concrete slab (Progress Log #${num}).`;
+            title = `Elevated Slab Rebar & Beam Formwork - Log #${num}`;
+
+        } else if (num === 10) {
+            alt = `Covered corridor and colonnade brickwork with plastered internal walls on a commercial building (Progress Log #${num}).`;
+            title = `Commercial Colonnade & Corridor Masonry - Log #${num}`;
+
+        } else if (num === 11) {
+            alt = `Construction worker in full PPE securing vertical steel rebar column reinforcement on elevated scaffolding at a commercial building site (Progress Log #${num}).`;
+            title = `Vertical Rebar Column Reinforcement - Log #${num}`;
+
         } else {
-            alt = `Reinforced concrete brick column construction and scaffold safety towers in progress (Progress Log #${num}).`;
-            title = `Commercial Structural Masonry - Log #${num}`;
+            // num === 12
+            alt = `Workers laying steel mesh reinforcement on a flat concrete slab surface at roof level of a commercial building (Progress Log #${num}).`;
+            title = `Roof Slab Mesh Laying & Concrete Preparation - Log #${num}`;
         }
+
         commercialData.push({
             src: `images/journal/building/commercial/building-construction-work (${num}).jpeg`,
             alt: alt,
@@ -33,22 +73,67 @@
         });
     }
 
-    // 2. Residential Housing Construction (82 down to 1)
+    // 2. Residential Housing Construction (55 down to 1)
     for (let num = 55; num >= 1; num--) {
         let alt, title;
-        if (num >= 71) {
-            alt = `Timber roof structure framing and brick boundary wall building in progress on residential housing development (Progress Log #${num}).`;
-            title = `Roof Structure & Boundary Masonry - Log #${num}`;
-        } else if (num >= 51) {
-            alt = `Superstructure masonry building up first-floor brick walls and window openings (Progress Log #${num}).`;
-            title = `First Floor Superstructure Brickwork - Log #${num}`;
-        } else if (num >= 26) {
-            alt = `Erecting safety scaffolding and preparing concrete ring beams for upper structural slab support (Progress Log #${num}).`;
-            title = `Upper Slab Shuttering & Scaffolding - Log #${num}`;
-        } else {
-            alt = `Bricklaying crew constructing ground floor face-brick walls and installing concrete lintels (Progress Log #${num}).`;
-            title = `Ground Floor Masonry Construction - Log #${num}`;
-        }
+
+        // Pool of SEO caption variants — cycled by num to appear randomised
+        const captionSets = [
+            {
+                alt: `Bricklaying crew constructing ground floor face-brick walls with scaffolding poles erected on a residential housing site (Progress Log #${num}).`,
+                title: `Ground Floor Brickwork & Scaffolding Erection - Log #${num}`
+            },
+            {
+                alt: `Single residential unit brick walls rising to window lintel level with door and window openings formed on site (Progress Log #${num}).`,
+                title: `Residential Wall Openings & Lintel Level Masonry - Log #${num}`
+            },
+            {
+                alt: `Multi-unit residential brick wall construction progressing across several stands with scaffold support poles installed (Progress Log #${num}).`,
+                title: `Multi-Unit Residential Masonry Progress - Log #${num}`
+            },
+            {
+                alt: `Overhead view of timber and steel roof structure framing on a low-cost residential housing development (Progress Log #${num}).`,
+                title: `Residential Roof Structure Framing - Log #${num}`
+            },
+            {
+                alt: `Near-complete single brick room with door and window openings plastered and ready for roof installation (Progress Log #${num}).`,
+                title: `Near-Complete Brick Room & Openings - Log #${num}`
+            },
+            {
+                alt: `Worker in PPE laying face-brick courses on a residential wall with mortar joints and scaffolding visible (Progress Log #${num}).`,
+                title: `Face-Brick Laying & Mortar Coursework - Log #${num}`
+            },
+            {
+                alt: `Aerial view of multiple low-rise residential brick wall units under simultaneous construction on a township housing project (Progress Log #${num}).`,
+                title: `Township Housing Multi-Unit Construction Overview - Log #${num}`
+            },
+            {
+                alt: `Residential brick walls approaching ring beam height with vertical scaffold poles and brick piers in place (Progress Log #${num}).`,
+                title: `Ring Beam Level Masonry & Scaffold Setup - Log #${num}`
+            },
+            {
+                alt: `Early-stage residential brickwork with foundation walls and scaffold poles positioned for wall construction (Progress Log #${num}).`,
+                title: `Foundation Walls & Early Scaffold Positioning - Log #${num}`
+            },
+            {
+                alt: `Geotagged progress photo of residential brick wall construction showing coursework and window opening formation (Progress Log #${num}).`,
+                title: `Geotagged Residential Masonry Progress - Log #${num}`
+            },
+            {
+                alt: `Advanced multi-unit residential brick walls with scaffolding nearing completion of superstructure on housing development (Progress Log #${num}).`,
+                title: `Superstructure Completion & Multi-Unit Masonry - Log #${num}`
+            },
+            {
+                alt: `Residential housing brick walls with concrete lintels installed over door and window openings, scaffolding retained (Progress Log #${num}).`,
+                title: `Concrete Lintels & Residential Wall Openings - Log #${num}`
+            },
+        ];
+
+        // Cycle through caption sets — avoids identical alt/title across 55 entries
+        const caption = captionSets[num % captionSets.length];
+        alt = caption.alt;
+        title = caption.title;
+
         residentialData.push({
             src: `images/journal/building/residential/building-construction-work (${num}).jpeg`,
             alt: alt,
