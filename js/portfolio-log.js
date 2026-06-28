@@ -210,7 +210,7 @@
     }
 
     // 4. Surveying & Setup (12 down to 1)
-    for (let num = 12; num >= 1; num--) {
+    for (let num = 11; num >= 1; num--) {
         let alt, title;
         if (num === 1) {
             alt = "Makhaswa Holdings land surveyors mapping and marking boundary lines during initial site establishment.";
