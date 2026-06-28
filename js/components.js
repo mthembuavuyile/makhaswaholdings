@@ -32,7 +32,7 @@ const SITE_CONFIG = {
         { label: 'About Us', href: 'about.html' },
         { label: 'Services', href: 'services.html' },
         { label: 'Projects', href: 'projects.html' },
-        { label: 'Portfolio', href: 'portfolio.html' },
+        { label: 'Progress Log', href: 'portfolio.html' },
         { label: 'Careers', href: 'careers.html' },
         { label: 'Contact', href: 'contact.html' },
     ],
@@ -42,7 +42,7 @@ const SITE_CONFIG = {
         { label: 'About Us', href: 'about.html' },
         { label: 'Our Services', href: 'services.html' },
         { label: 'Projects', href: 'projects.html' },
-        { label: 'Portfolio', href: 'portfolio.html' },
+        { label: 'Progress Log', href: 'portfolio.html' },
         { label: 'Careers', href: 'careers.html' },
         { label: 'Contact Us', href: 'contact.html' },
         { label: 'FAQs', href: 'faq.html' },
@@ -307,6 +307,50 @@ function buildFooter() {
 
 
 /* =====================================================
+/* =====================================================
+   INJECT LIGHTBOX MODAL DYNAMICALLY
+   ===================================================== */
+function injectLightbox() {
+    if (document.getElementById('lightbox')) return;
+
+    const activePage = getActivePage();
+    if (activePage !== 'portfolio.html' && activePage !== 'projects.html') return;
+
+    const lightboxDiv = document.createElement('div');
+    lightboxDiv.id = 'lightbox';
+    lightboxDiv.className = 'lightbox-modal';
+    lightboxDiv.setAttribute('role', 'dialog');
+    lightboxDiv.setAttribute('aria-modal', 'true');
+    lightboxDiv.setAttribute('aria-label', 'Image viewer');
+
+    lightboxDiv.innerHTML = `
+        <div class="lightbox-content">
+            <button class="lightbox-btn lightbox-close" id="lightbox-close-btn" aria-label="Close image viewer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <button class="lightbox-btn lightbox-prev" id="lightbox-prev-btn" aria-label="Previous image">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <img id="lightbox-img" src="" alt="Active Gallery Image" tabindex="0">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+            <div class="lightbox-counter" id="lightbox-counter"></div>
+            <button class="lightbox-btn lightbox-next" id="lightbox-next-btn" aria-label="Next image">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+    `;
+
+    document.body.appendChild(lightboxDiv);
+}
+
+/* =====================================================
    INJECT COMPONENTS INTO THE DOM
    ===================================================== */
 function injectComponents() {
@@ -320,6 +364,8 @@ function injectComponents() {
     if (footerSlot) {
         footerSlot.outerHTML = buildFooter();
     }
+
+    injectLightbox();
 }
 
 /* Export for app.js to call after DOMContentLoaded */
