@@ -1,0 +1,400 @@
+/* =====================================================
+   MAKHASWA HOLDINGS — PORTFOLIO PROGRESS LOG
+   Programmatically handles dataset generation, filters,
+   progressive loading, and lightbox navigation for
+   235 live project progress photos.
+   ===================================================== */
+
+(() => {
+    'use strict';
+
+    // ── Generate the image datasets programmatically ──
+    const commercialData = [];
+    const residentialData = [];
+    const foundationData = [];
+    const surveyingData = [];
+
+    // 1. Commercial Building Construction (14 down to 1)
+    for (let num = 14; num >= 1; num--) {
+        let alt, title;
+        if (num >= 8) {
+            alt = `Structural external brick wall construction and safety scaffolding installation on a commercial site (Progress Log #${num}).`;
+            title = `Scaffolding & Exterior Wall Masonry - Log #${num}`;
+        } else {
+            alt = `Reinforced concrete brick column construction and scaffold safety towers in progress (Progress Log #${num}).`;
+            title = `Commercial Structural Masonry - Log #${num}`;
+        }
+        commercialData.push({
+            src: `images/journal/building/commercial/building-construction-work (${num}).jpeg`,
+            alt: alt,
+            title: title,
+            category: 'commercial',
+            categoryName: 'Commercial Building'
+        });
+    }
+
+    // 2. Residential Housing Construction (82 down to 1)
+    for (let num = 82; num >= 1; num--) {
+        let alt, title;
+        if (num >= 71) {
+            alt = `Timber roof structure framing and brick boundary wall building in progress on residential housing development (Progress Log #${num}).`;
+            title = `Roof Structure & Boundary Masonry - Log #${num}`;
+        } else if (num >= 51) {
+            alt = `Superstructure masonry building up first-floor brick walls and window openings (Progress Log #${num}).`;
+            title = `First Floor Superstructure Brickwork - Log #${num}`;
+        } else if (num >= 26) {
+            alt = `Erecting safety scaffolding and preparing concrete ring beams for upper structural slab support (Progress Log #${num}).`;
+            title = `Upper Slab Shuttering & Scaffolding - Log #${num}`;
+        } else {
+            alt = `Bricklaying crew constructing ground floor face-brick walls and installing concrete lintels (Progress Log #${num}).`;
+            title = `Ground Floor Masonry Construction - Log #${num}`;
+        }
+        residentialData.push({
+            src: `images/journal/building/residential/building-construction-work (${num}).jpeg`,
+            alt: alt,
+            title: title,
+            category: 'residential',
+            categoryName: 'Residential Building'
+        });
+    }
+
+    // 3. Foundation Work (127 down to 1)
+    for (let num = 127; num >= 1; num--) {
+        let alt, title;
+        if (num >= 121) {
+            alt = `Subgrade backfilling and mechanical soil compaction around concrete footings to finish foundation slab (Progress Log #${num}).`;
+            title = `Completed Foundation Curing & Compaction - Log #${num}`;
+        } else if (num >= 91) {
+            alt = `Masonry crew laying engineering bricks for the foundation plinth wall and setting up DPC membranes (Progress Log #${num}).`;
+            title = `Foundation Plinth Wall Masonry - Log #${num}`;
+        } else if (num >= 61) {
+            alt = `Pouring structural concrete mix and compacting footings to meet civil engineering codes (Progress Log #${num}).`;
+            title = `Concrete Footings & Slab Pouring - Log #${num}`;
+        } else if (num >= 31) {
+            alt = `Site technicians tying high-tensile steel reinforcing rebar mesh in excavated trenches (Progress Log #${num}).`;
+            title = `Steel Reinforcement Installation - Log #${num}`;
+        } else {
+            alt = `Makhaswa excavation crew digging foundation trenches and setting up shoring (Progress Log #${num}).`;
+            title = `Foundation Trenching & Excavation - Log #${num}`;
+        }
+        foundationData.push({
+            src: `images/journal/foundation/foundation-work (${num}).jpeg`,
+            alt: alt,
+            title: title,
+            category: 'foundation',
+            categoryName: 'Foundation Work'
+        });
+    }
+
+    // 4. Surveying & Setup (12 files, descending order)
+    const surveyingIndices = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 1];
+    surveyingIndices.forEach((num) => {
+        let alt, title;
+        if (num === 1) {
+            alt = "Makhaswa Holdings land surveyors mapping and marking boundary lines during initial site establishment.";
+            title = "Initial Site Survey & Boundary Layout";
+        } else if (num >= 10 && num <= 13) {
+            alt = `Construction crew establishing site grids, profiles, and level datum lines (Progress Log #${num}).`;
+            title = `Grid Layout & Levelling Benchmarks - Log #${num}`;
+        } else if (num >= 14 && num <= 17) {
+            alt = `Surveying equipment and pegging out coordinates for bulk excavation (Progress Log #${num}).`;
+            title = `Bulk Excavation Surveying & Coordinates - Log #${num}`;
+        } else {
+            alt = `Final land surveying checks and site clearance verification before groundbreaking (Progress Log #${num}).`;
+            title = `Pre-Excavation Site Layout Inspection - Log #${num}`;
+        }
+        surveyingData.push({
+            src: `images/journal/surveying-and-setup/surveying-and-setup (${num}).jpeg`,
+            alt: alt,
+            title: title,
+            category: 'surveying',
+            categoryName: 'Surveying & Setup'
+        });
+    });
+
+    // Combine in reverse chronological stage order (latest stages first)
+    const IMAGES_DATA = [...commercialData, ...residentialData, ...foundationData, ...surveyingData];
+
+    // ── State ──
+    const ITEMS_PER_PAGE = 15;
+    let currentDataset = IMAGES_DATA;
+    let activeFilter = 'all';
+    let renderedCount = 0;
+    let lightboxIndex = 0;
+
+    // ── DOM References ──
+    const grid = document.getElementById('recent-grid');
+    const loadMoreContainer = document.getElementById('recent-pagination');
+    const countLabel = document.getElementById('recent-count');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    const lbCap = document.getElementById('lightbox-caption');
+    const lbCounter = document.getElementById('lightbox-counter');
+    const lbClose = document.getElementById('lightbox-close-btn');
+    const lbPrev = document.getElementById('lightbox-prev-btn');
+    const lbNext = document.getElementById('lightbox-next-btn');
+
+    // ── Intersection Observer for Fade-In Animation ──
+    const observerOptions = { threshold: 0.05 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // ── Render Function ──
+    function renderNextBatch() {
+        if (!grid) return;
+
+        const totalItems = currentDataset.length;
+        
+        // Handle empty state
+        if (totalItems === 0) {
+            grid.innerHTML = '<div class="portfolio-empty-message" style="grid-column: 1/-1; text-align: center; padding: 48px; color: var(--text-light); font-weight: 600;">No progress photos found in this phase.</div>';
+            if (countLabel) countLabel.textContent = '';
+            updateLoadMoreButton();
+            return;
+        }
+
+        const nextBatchSize = Math.min(ITEMS_PER_PAGE, totalItems - renderedCount);
+        if (nextBatchSize <= 0) return;
+
+        const batch = currentDataset.slice(renderedCount, renderedCount + nextBatchSize);
+        batch.forEach((img, index) => {
+            const globalIndex = renderedCount + index;
+            const card = document.createElement('div');
+            card.className = 'journal-card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('aria-label', `Open site progress entry log ${globalIndex + 1}`);
+
+            card.innerHTML = `
+                <div class="journal-card-media">
+                    <img src="${img.src}" alt="${img.alt}" loading="lazy">
+                </div>
+                <div class="journal-card-footer">
+                    <div class="journal-card-info">
+                        <span class="journal-log-badge">LOG #${String(currentDataset.length - globalIndex).padStart(3, '0')}</span>
+                        <span class="journal-cat-badge">${img.categoryName}</span>
+                    </div>
+                    <div class="journal-card-action">
+                        <i data-lucide="maximize-2" class="journal-zoom-icon"></i>
+                    </div>
+                </div>
+            `;
+
+            // Click and keypress logic for launching Lightbox
+            card.addEventListener('click', () => openLightbox(globalIndex));
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openLightbox(globalIndex);
+                }
+            });
+
+            grid.appendChild(card);
+            observer.observe(card);
+        });
+
+        renderedCount += nextBatchSize;
+
+        // Re-initialize Lucide Icons
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+
+        // Update count label
+        if (countLabel) {
+            countLabel.textContent = `Showing 1–${renderedCount} of ${totalItems} updates`;
+        }
+
+        // Update the Load More button
+        updateLoadMoreButton();
+    }
+
+    // ── Load More Button Builder ──
+    function updateLoadMoreButton() {
+        if (!loadMoreContainer) return;
+        loadMoreContainer.innerHTML = '';
+
+        if (renderedCount < currentDataset.length) {
+            const btn = document.createElement('button');
+            btn.className = 'btn-load-more';
+            btn.innerHTML = `
+                <span>LOAD MORE UPDATES</span>
+                <i data-lucide="arrow-down" width="16" height="16"></i>
+            `;
+            btn.addEventListener('click', () => {
+                renderNextBatch();
+            });
+            loadMoreContainer.appendChild(btn);
+
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        } else if (currentDataset.length > 0) {
+            const msg = document.createElement('div');
+            msg.className = 'journal-end-message';
+            msg.textContent = 'You have viewed all progress logs for this phase.';
+            loadMoreContainer.appendChild(msg);
+        }
+    }
+
+    // ── Category Filters Logic ──
+    function setupFilters() {
+        const filterContainer = document.getElementById('portfolio-filters');
+        if (!filterContainer) return;
+
+        filterContainer.addEventListener('click', (e) => {
+            const btn = e.target.closest('.filter-btn');
+            if (!btn) return;
+
+            // Reset active states
+            const buttons = filterContainer.querySelectorAll('.filter-btn');
+            buttons.forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-selected', 'false');
+            });
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+
+            // Apply filter value
+            const filterValue = btn.getAttribute('data-filter');
+            activeFilter = filterValue;
+
+            if (activeFilter === 'all') {
+                currentDataset = IMAGES_DATA;
+            } else {
+                currentDataset = IMAGES_DATA.filter(img => img.category === activeFilter);
+            }
+
+            // Reset and re-render grid
+            if (grid) {
+                grid.innerHTML = '';
+            }
+            renderedCount = 0;
+            renderNextBatch();
+
+            // Smooth scroll to top of grid
+            if (grid) {
+                const headerOffset = 100;
+                const elementPosition = grid.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+
+    // ── Lightbox Logic ──
+    function openLightbox(index) {
+        if (!lightbox) return;
+        lightboxIndex = index;
+        updateLightbox();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        if (lbImg) lbImg.focus();
+    }
+
+    function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    function showPrev(e) {
+        if (e) e.stopPropagation();
+        lightboxIndex = (lightboxIndex - 1 + currentDataset.length) % currentDataset.length;
+        updateLightbox();
+    }
+
+    function showNext(e) {
+        if (e) e.stopPropagation();
+        lightboxIndex = (lightboxIndex + 1) % currentDataset.length;
+        updateLightbox();
+    }
+
+    function updateLightbox() {
+        if (!lbImg || !lbCap || !lbCounter) return;
+        const img = currentDataset[lightboxIndex];
+
+        // Hide image while loading next to prevent flash of old image
+        lbImg.style.opacity = '0';
+
+        // Set image source
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+
+        // Once image loads, fade it in
+        lbImg.onload = () => {
+            lbImg.style.opacity = '1';
+        };
+
+        // If image is already cached/loaded
+        if (lbImg.complete) {
+            lbImg.style.opacity = '1';
+        }
+
+        const logId = String(currentDataset.length - lightboxIndex).padStart(3, '0');
+        lbCap.innerHTML = `
+            <div class="lightbox-caption-header">
+                <span class="lightbox-log-badge">LOG #${logId}</span>
+                <span class="lightbox-category">${img.categoryName}</span>
+            </div>
+            <p class="lightbox-caption-text">${img.title}</p>
+        `;
+        lbCounter.textContent = `${lightboxIndex + 1} / ${currentDataset.length}`;
+    }
+
+    // ── Setup Lightbox Listeners ──
+    if (lightbox) {
+        if (lbClose) lbClose.addEventListener('click', closeLightbox);
+        if (lbPrev) lbPrev.addEventListener('click', showPrev);
+        if (lbNext) lbNext.addEventListener('click', showNext);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            else if (e.key === 'ArrowLeft') showPrev();
+            else if (e.key === 'ArrowRight') showNext();
+        });
+
+        // Swipe support for mobile
+        let touchStartX = 0;
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        lightbox.addEventListener('touchend', (e) => {
+            const dx = e.changedTouches[0].screenX - touchStartX;
+            const threshold = 55;
+            if (Math.abs(dx) > threshold) {
+                dx < 0 ? showNext() : showPrev();
+            }
+        }, { passive: true });
+    }
+
+    // ── Initialize ──
+    document.addEventListener('DOMContentLoaded', () => {
+        setupFilters();
+        renderNextBatch();
+    });
+    
+    if (document.readyState !== 'loading') {
+        setupFilters();
+        renderNextBatch();
+    }
+
+})();
