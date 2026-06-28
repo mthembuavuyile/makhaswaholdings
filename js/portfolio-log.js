@@ -245,16 +245,16 @@
     let lightboxIndex = 0;
 
     // ── DOM References ──
-    const grid = document.getElementById('recent-grid');
-    const loadMoreContainer = document.getElementById('recent-pagination');
-    const countLabel = document.getElementById('recent-count');
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lightbox-img');
-    const lbCap = document.getElementById('lightbox-caption');
-    const lbCounter = document.getElementById('lightbox-counter');
-    const lbClose = document.getElementById('lightbox-close-btn');
-    const lbPrev = document.getElementById('lightbox-prev-btn');
-    const lbNext = document.getElementById('lightbox-next-btn');
+    let grid = null;
+    let loadMoreContainer = null;
+    let countLabel = null;
+    let lightbox = null;
+    let lbImg = null;
+    let lbCap = null;
+    let lbCounter = null;
+    let lbClose = null;
+    let lbPrev = null;
+    let lbNext = null;
 
     // ── Intersection Observer for Fade-In Animation ──
     const observerOptions = { threshold: 0.05 };
@@ -474,49 +474,69 @@
         lbCounter.textContent = `${lightboxIndex + 1} / ${currentDataset.length}`;
     }
 
-    // ── Setup Lightbox Listeners ──
-    if (lightbox) {
-        if (lbClose) lbClose.addEventListener('click', closeLightbox);
-        if (lbPrev) lbPrev.addEventListener('click', showPrev);
-        if (lbNext) lbNext.addEventListener('click', showNext);
+    // ── Setup Lightbox and Listeners ──
+    function setupLightbox() {
+        lightbox = document.getElementById('lightbox');
+        lbImg = document.getElementById('lightbox-img');
+        lbCap = document.getElementById('lightbox-caption');
+        lbCounter = document.getElementById('lightbox-counter');
+        lbClose = document.getElementById('lightbox-close-btn');
+        lbPrev = document.getElementById('lightbox-prev-btn');
+        lbNext = document.getElementById('lightbox-next-btn');
 
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
-                closeLightbox();
-            }
-        });
+        if (lightbox) {
+            if (lbClose) lbClose.addEventListener('click', closeLightbox);
+            if (lbPrev) lbPrev.addEventListener('click', showPrev);
+            if (lbNext) lbNext.addEventListener('click', showNext);
 
-        document.addEventListener('keydown', (e) => {
-            if (!lightbox.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            else if (e.key === 'ArrowLeft') showPrev();
-            else if (e.key === 'ArrowRight') showNext();
-        });
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+                    closeLightbox();
+                }
+            });
 
-        // Swipe support for mobile
-        let touchStartX = 0;
-        lightbox.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                else if (e.key === 'ArrowLeft') showPrev();
+                else if (e.key === 'ArrowRight') showNext();
+            });
 
-        lightbox.addEventListener('touchend', (e) => {
-            const dx = e.changedTouches[0].screenX - touchStartX;
-            const threshold = 55;
-            if (Math.abs(dx) > threshold) {
-                dx < 0 ? showNext() : showPrev();
-            }
-        }, { passive: true });
+            // Swipe support for mobile
+            let touchStartX = 0;
+            lightbox.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            lightbox.addEventListener('touchend', (e) => {
+                const dx = e.changedTouches[0].screenX - touchStartX;
+                const threshold = 55;
+                if (Math.abs(dx) > threshold) {
+                    dx < 0 ? showNext() : showPrev();
+                }
+            }, { passive: true });
+        }
     }
 
     // ── Initialize ──
-    document.addEventListener('DOMContentLoaded', () => {
+    let initialized = false;
+    function init() {
+        if (initialized) return;
+        initialized = true;
+
+        grid = document.getElementById('recent-grid');
+        loadMoreContainer = document.getElementById('recent-pagination');
+        countLabel = document.getElementById('recent-count');
+
+        setupLightbox();
         setupFilters();
         renderNextBatch();
-    });
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
 
     if (document.readyState !== 'loading') {
-        setupFilters();
-        renderNextBatch();
+        init();
     }
 
 })();
