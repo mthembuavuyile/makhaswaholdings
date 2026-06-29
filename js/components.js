@@ -32,7 +32,6 @@ const SITE_CONFIG = {
         { label: 'About Us', href: 'about.html' },
         { label: 'Services', href: 'services.html' },
         { label: 'Projects', href: 'projects.html' },
-        { label: 'Progress Log', href: 'portfolio.html' },
         { label: 'Careers', href: 'careers.html' },
         { label: 'Contact', href: 'contact.html' },
     ],
@@ -42,7 +41,6 @@ const SITE_CONFIG = {
         { label: 'About Us', href: 'about.html' },
         { label: 'Our Services', href: 'services.html' },
         { label: 'Projects', href: 'projects.html' },
-        { label: 'Progress Log', href: 'portfolio.html' },
         { label: 'Careers', href: 'careers.html' },
         { label: 'Contact Us', href: 'contact.html' },
         { label: 'FAQs', href: 'faq.html' },
@@ -314,7 +312,7 @@ function injectLightbox() {
     if (document.getElementById('lightbox')) return;
 
     const activePage = getActivePage();
-    if (activePage !== 'portfolio.html' && activePage !== 'projects.html') return;
+    if (activePage !== 'projects.html') return;
 
     const lightboxDiv = document.createElement('div');
     lightboxDiv.id = 'lightbox';

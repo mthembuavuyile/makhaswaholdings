@@ -1,12 +1,37 @@
 /* =====================================================
    MAKHASWA HOLDINGS — PORTFOLIO.JS
-   Handles dynamic loading, rendering, filtering,
-   and lightbox display of projects.
+   Handles dynamic loading, rendering, progressive filtering,
+   pagination, and lightbox display of 200+ projects/journal images.
    ===================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-    const jsonUrl = 'projects/data.json';
+    'use strict';
 
+    const jsonUrl = 'projects/data.json';
+    const ITEMS_PER_PAGE = 15;
+
+    // State variables
+    let allImages = [];       // Complete consolidated dataset
+    let currentDataset = [];  // Filtered subset currently active
+    let renderedCount = 0;    // Number of images currently rendered in grid
+    let lightboxIndex = 0;    // Current active index in the lightbox
+
+    // DOM Elements
+    const grid = document.getElementById('projects-grid');
+    const paginationContainer = document.getElementById('projects-pagination');
+    const countLabel = document.getElementById('projects-count');
+    const filterWrapper = document.querySelector('.portfolio-filter-wrapper');
+
+    // Lightbox DOM Elements
+    let lightbox = null;
+    let lbImg = null;
+    let lbCap = null;
+    let lbCounter = null;
+    let lbClose = null;
+    let lbPrev = null;
+    let lbNext = null;
+
+    // Fetch and initialize
     fetch(jsonUrl)
         .then(response => {
             if (!response.ok) {
@@ -15,26 +40,38 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.json();
         })
         .then(data => {
-            const mainGrid = document.getElementById('projects-grid');
-            if (mainGrid) {
-                renderMainGrid(data, mainGrid);
-                setupFilters();
-                setupLightbox();
-                checkURLFilter();
-            }
+            if (!grid) return;
+
+            // Flatten JSON data into allImages array
+            const categories = data.categories;
+            Object.keys(categories).forEach(catId => {
+                const cat = categories[catId];
+                cat.images.forEach(img => {
+                    allImages.push({
+                        src: img.src,
+                        alt: img.alt,
+                        title: img.title,
+                        categoryId: catId,
+                        categoryName: cat.title
+                    });
+                });
+            });
+
+            // Set default dataset
+            currentDataset = allImages;
+
+            // Setup components
+            setupLightbox();
+            setupFilters();
+            checkURLFilter();
+            renderNextBatch();
         })
         .catch(err => {
             console.error('Error loading portfolio:', err);
         });
-});
 
-/**
- * Renders all projects in the main grid
- */
-function renderMainGrid(data, grid) {
-    grid.innerHTML = '';
-    const categories = data.categories;
-
+    // Intersection Observer for fade-in animation
+    const observerOptions = { threshold: 0.05 };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -43,234 +80,264 @@ function renderMainGrid(data, grid) {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, observerOptions);
 
-    Object.keys(categories).forEach(catId => {
-        const cat = categories[catId];
-        cat.images.forEach(img => {
+    // Render next batch of items
+    function renderNextBatch() {
+        if (!grid) return;
+
+        const totalItems = currentDataset.length;
+
+        // Handle empty state
+        if (totalItems === 0) {
+            grid.innerHTML = '<div class="portfolio-empty-message" style="grid-column: 1/-1; text-align: center; padding: 48px; color: var(--text-light); font-weight: 600;">No projects found in this category.</div>';
+            if (countLabel) countLabel.textContent = '';
+            updatePaginationControls();
+            return;
+        }
+
+        const nextBatchSize = Math.min(ITEMS_PER_PAGE, totalItems - renderedCount);
+        if (nextBatchSize <= 0) return;
+
+        const batch = currentDataset.slice(renderedCount, renderedCount + nextBatchSize);
+        batch.forEach((img, index) => {
+            const globalIndex = renderedCount + index;
             const card = document.createElement('div');
             card.className = 'project-card';
-            card.setAttribute('data-category', catId);
             card.setAttribute('role', 'button');
             card.setAttribute('tabindex', '0');
-            card.setAttribute('aria-label', `View image: ${img.title}`);
+            card.setAttribute('aria-label', `Open project image: ${img.title}`);
             
-            // Set initial style for IntersectionObserver fade-in
+            // Set initial styles for fade-in
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            card.style.transition = 'opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)';
 
             card.innerHTML = `
                 <img src="${img.src}" alt="${img.alt}" loading="lazy" width="600" height="400">
                 <div class="project-overlay">
-                    <span>${cat.title}</span>
+                    <span>${img.categoryName}</span>
                     <h4>${img.title}</h4>
                 </div>
             `;
-            
+
+            // Click and keyboard logic
+            card.addEventListener('click', () => openLightbox(globalIndex));
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openLightbox(globalIndex);
+                }
+            });
+
             grid.appendChild(card);
             observer.observe(card);
         });
-    });
-}
 
-/**
- * Sets up event listeners for category filter buttons
- */
-function setupFilters() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Update active button classes
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+        renderedCount += nextBatchSize;
 
-            const filterValue = button.getAttribute('data-filter');
-            const projectCards = document.querySelectorAll('.projects-grid .project-card');
+        // Re-initialize Lucide Icons if loaded
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
 
-            projectCards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
-                if (filterValue === 'all' || cardCategory === filterValue) {
-                    card.style.display = 'block';
-                    // Frame delay to trigger CSS transition opacity
-                    requestAnimationFrame(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    });
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    // Wait for the opacity animation (250ms) before changing display to none
-                    setTimeout(() => {
-                        if (card.style.opacity === '0') {
-                            card.style.display = 'none';
-                        }
-                    }, 250);
-                }
+        // Update count label
+        if (countLabel) {
+            countLabel.textContent = `Showing 1–${renderedCount} of ${totalItems} projects`;
+        }
+
+        updatePaginationControls();
+    }
+
+    // Load More pagination controls builder
+    function updatePaginationControls() {
+        if (!paginationContainer) return;
+        paginationContainer.innerHTML = '';
+
+        if (renderedCount < currentDataset.length) {
+            const btn = document.createElement('button');
+            btn.className = 'btn-load-more';
+            btn.innerHTML = `
+                <span>LOAD MORE PROJECTS</span>
+                <i data-lucide="arrow-down" width="16" height="16"></i>
+            `;
+            btn.addEventListener('click', () => {
+                renderNextBatch();
             });
-        });
-    });
-}
+            paginationContainer.appendChild(btn);
 
-/**
- * Checks for a '?filter=' query parameter in the URL and triggers filter
- */
-function checkURLFilter() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const filterParam = urlParams.get('filter');
-    if (filterParam) {
-        const targetBtn = document.querySelector(`.filter-btn[data-filter="${filterParam}"]`);
-        if (targetBtn) {
-            // Slight delay to allow DOM/IntersectionObserver rendering to align
-            setTimeout(() => {
-                targetBtn.click();
-            }, 100);
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        } else if (currentDataset.length > 0) {
+            const msg = document.createElement('div');
+            msg.className = 'journal-end-message';
+            msg.textContent = 'You have viewed all projects in this category.';
+            paginationContainer.appendChild(msg);
         }
     }
-}
 
-/**
- * Sets up the premium lightbox modal with dynamic visibility filtering
- */
-function setupLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCap = document.getElementById('lightbox-caption');
-    const closeBtn = document.getElementById('lightbox-close-btn');
-    const prevBtn = document.getElementById('lightbox-prev-btn');
-    const nextBtn = document.getElementById('lightbox-next-btn');
+    // Category filters logic
+    function setupFilters() {
+        if (!filterWrapper) return;
 
-    if (!lightbox || !lightboxImg || !lightboxCap) return;
+        filterWrapper.addEventListener('click', (e) => {
+            const btn = e.target.closest('.filter-btn');
+            if (!btn) return;
 
-    let currentIndex = 0;
-    let visibleImages = [];
+            // Reset active states
+            const buttons = filterWrapper.querySelectorAll('.filter-btn');
+            buttons.forEach(b => {
+                b.classList.remove('active');
+                b.removeAttribute('aria-selected');
+            });
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
 
-    // Open Lightbox
-    const openLightbox = (index, imagesList) => {
-        currentIndex = index;
-        visibleImages = imagesList;
-        updateLightboxImage();
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Stop background scrolling
-    };
+            // Apply filter value
+            const filterValue = btn.getAttribute('data-filter');
+            
+            if (filterValue === 'all') {
+                currentDataset = allImages;
+            } else {
+                currentDataset = allImages.filter(img => img.categoryId === filterValue);
+            }
 
-    // Close Lightbox
-    const closeLightbox = () => {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-    };
+            // Reset grid & count
+            if (grid) {
+                grid.innerHTML = '';
+            }
+            renderedCount = 0;
+            renderNextBatch();
 
-    // Previous Image
-    const showPrev = (e) => {
-        if (e) e.stopPropagation();
-        if (visibleImages.length === 0) return;
-        currentIndex = (currentIndex - 1 + visibleImages.length) % visibleImages.length;
-        updateLightboxImage();
-    };
+            // Smooth scroll to top of grid
+            if (grid) {
+                const headerOffset = 120;
+                const elementPosition = grid.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-    // Next Image
-    const showNext = (e) => {
-        if (e) e.stopPropagation();
-        if (visibleImages.length === 0) return;
-        currentIndex = (currentIndex + 1) % visibleImages.length;
-        updateLightboxImage();
-    };
-
-    // Update Image in Lightbox
-    const updateLightboxImage = () => {
-        const currentImg = visibleImages[currentIndex];
-        lightboxImg.src = currentImg.src;
-        lightboxImg.alt = currentImg.alt;
-        lightboxCap.innerHTML = `
-            <strong style="color: var(--gold); text-transform: uppercase; letter-spacing: 1px; display: block; font-size: 11px; margin-bottom: 6px;">
-                ${currentImg.category}
-            </strong>
-            ${currentImg.title}
-        `;
-    };
-
-    // Card click events (setup delegation or card list query)
-    document.getElementById('projects-grid').addEventListener('click', (e) => {
-        const card = e.target.closest('.project-card');
-        if (!card) return;
-
-        // Query only visible cards at the moment of click
-        const visibleCards = Array.from(document.querySelectorAll('.project-card'))
-            .filter(c => c.style.display !== 'none');
-
-        const imagesList = visibleCards.map(c => {
-            const imgEl = c.querySelector('img');
-            const catEl = c.querySelector('.project-overlay span');
-            const titleEl = c.querySelector('.project-overlay h4');
-            return {
-                src: imgEl.src,
-                alt: imgEl.alt,
-                category: catEl ? catEl.textContent : '',
-                title: titleEl ? titleEl.textContent : ''
-            };
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
         });
+    }
 
-        const index = visibleCards.indexOf(card);
-        if (index !== -1) {
-            openLightbox(index, imagesList);
-        }
-    });
-
-    // Support keyboard activation (Enter key)
-    document.getElementById('projects-grid').addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            const card = e.target.closest('.project-card');
-            if (card) {
-                card.click();
+    // Check for '?filter=' in the URL
+    function checkURLFilter() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const filterParam = urlParams.get('filter');
+        if (filterParam && filterWrapper) {
+            const targetBtn = filterWrapper.querySelector(`.filter-btn[data-filter="${filterParam}"]`);
+            if (targetBtn) {
+                setTimeout(() => {
+                    targetBtn.click();
+                }, 100);
             }
         }
-    });
+    }
 
-    // Button controls
-    closeBtn.addEventListener('click', closeLightbox);
-    prevBtn.addEventListener('click', showPrev);
-    nextBtn.addEventListener('click', showNext);
+    // Lightbox modal setup
+    function setupLightbox() {
+        lightbox = document.getElementById('lightbox');
+        lbImg = document.getElementById('lightbox-img');
+        lbCap = document.getElementById('lightbox-caption');
+        lbCounter = document.getElementById('lightbox-counter');
+        lbClose = document.getElementById('lightbox-close-btn');
+        lbPrev = document.getElementById('lightbox-prev-btn');
+        lbNext = document.getElementById('lightbox-next-btn');
 
-    // Background click to close
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
-            closeLightbox();
+        if (lightbox) {
+            if (lbClose) lbClose.addEventListener('click', closeLightbox);
+            if (lbPrev) lbPrev.addEventListener('click', showPrev);
+            if (lbNext) lbNext.addEventListener('click', showNext);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                else if (e.key === 'ArrowLeft') showPrev();
+                else if (e.key === 'ArrowRight') showNext();
+            });
+
+            // Swipe support for mobile
+            let touchStartX = 0;
+            lightbox.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            lightbox.addEventListener('touchend', (e) => {
+                const dx = e.changedTouches[0].screenX - touchStartX;
+                const threshold = 55;
+                if (Math.abs(dx) > threshold) {
+                    dx < 0 ? showNext() : showPrev();
+                }
+            }, { passive: true });
         }
-    });
+    }
 
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('active')) return;
+    // Lightbox controls
+    function openLightbox(index) {
+        if (!lightbox) return;
+        lightboxIndex = index;
+        updateLightbox();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Lock background scrolling
+        if (lbImg) lbImg.focus();
+    }
 
-        if (e.key === 'Escape') {
-            closeLightbox();
-        } else if (e.key === 'ArrowLeft') {
-            showPrev();
-        } else if (e.key === 'ArrowRight') {
-            showNext();
+    function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('active');
+        document.body.style.overflow = ''; // Restore background scrolling
+    }
+
+    function showPrev(e) {
+        if (e) e.stopPropagation();
+        lightboxIndex = (lightboxIndex - 1 + renderedCount) % renderedCount;
+        updateLightbox();
+    }
+
+    function showNext(e) {
+        if (e) e.stopPropagation();
+        lightboxIndex = (lightboxIndex + 1) % renderedCount;
+        updateLightbox();
+    }
+
+    function updateLightbox() {
+        if (!lbImg || !lbCap || !lbCounter) return;
+        const img = currentDataset[lightboxIndex];
+
+        // Hide image while loading next to prevent flash
+        lbImg.style.opacity = '0';
+
+        // Load image
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+
+        lbImg.onload = () => {
+            lbImg.style.opacity = '1';
+        };
+
+        if (lbImg.complete) {
+            lbImg.style.opacity = '1';
         }
-    });
 
-    // Touch Swipe navigation for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
+        // Setup badge and title
+        lbCap.innerHTML = `
+            <div class="lightbox-caption-header">
+                <span class="lightbox-log-badge">PROJECT</span>
+                <span class="lightbox-category">${img.categoryName}</span>
+            </div>
+            <p class="lightbox-caption-text">${img.title}</p>
+        `;
+        lbCounter.textContent = `${lightboxIndex + 1} / ${renderedCount}`;
+    }
 
-    lightbox.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    lightbox.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, { passive: true });
-
-    const handleSwipe = () => {
-        const swipeThreshold = 50;
-        if (touchEndX < touchStartX - swipeThreshold) {
-            showNext();
-        } else if (touchEndX > touchStartX + swipeThreshold) {
-            showPrev();
-        }
-    };
-}
+});

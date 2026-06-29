@@ -49,6 +49,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/projects.css">
 </head>
 
 <body>
@@ -61,7 +62,6 @@
                 <a href="about.html">About Us</a>
                 <a href="services.html">Services</a>
                 <a href="projects.html">Projects</a>
-                <a href="portfolio.html">Progress Log</a>
                 <a href="careers.html">Careers</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -93,18 +93,24 @@
             infrastructure, explore our portfolio of successfully completed public and private sector projects.</p>
 
         <!-- Category Filters -->
-        <div class="portfolio-filter-wrapper">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="earthworks">Earthworks</button>
-            <button class="filter-btn" data-filter="civil">Civil Works</button>
-            <button class="filter-btn" data-filter="roads">Roadworks</button>
-            <button class="filter-btn" data-filter="building">Building &amp; Housing</button>
+        <div class="portfolio-filter-wrapper" role="tablist" aria-label="Filter projects by discipline">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
+            <button class="filter-btn" data-filter="earthworks" role="tab" aria-selected="false">Earthworks &amp; Site Prep</button>
+            <button class="filter-btn" data-filter="civil" role="tab" aria-selected="false">Civil Works &amp; Infrastructure</button>
+            <button class="filter-btn" data-filter="roads" role="tab" aria-selected="false">Road Construction &amp; Surfacing</button>
+            <button class="filter-btn" data-filter="building" role="tab" aria-selected="false">Building &amp; Housing</button>
         </div>
+
+        <!-- Page Count Info -->
+        <p class="journal-count" id="projects-count" aria-live="polite"></p>
 
         <!-- Projects Grid -->
         <div class="projects-grid" id="projects-grid">
             <!-- Dynamically populated by js/portfolio.js -->
         </div>
+
+        <!-- Load More Button Container -->
+        <div class="journal-load-more-container" id="projects-pagination"></div>
     </div>
 
     <!-- =====================================================
@@ -127,7 +133,6 @@
                 <a href="about.html">About Us</a> |
                 <a href="services.html">Services</a> |
                 <a href="projects.html">Projects</a> |
-                <a href="portfolio.html">Progress Log</a> |
                 <a href="careers.html">Careers</a> |
                 <a href="contact.html">Contact Us</a> |
                 <a href="faq.html">FAQs</a> |
