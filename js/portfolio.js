@@ -7,7 +7,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     'use strict';
 
-    const jsonUrl = 'projects/data.json';
+    const categoriesList = ['earthworks', 'civil', 'roads', 'building'];
     const ITEMS_PER_PAGE = 15;
 
     // State variables
@@ -32,29 +32,34 @@ document.addEventListener("DOMContentLoaded", () => {
     let lbNext = null;
 
     // Fetch and initialize
-    fetch(jsonUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Failed to fetch projects data: ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then(data => {
+    const fetchPromises = categoriesList.map(catId =>
+        fetch(`projects/${catId}.json`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch ${catId} projects data: ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then(cat => ({ catId, cat }))
+    );
+
+    Promise.all(fetchPromises)
+        .then(results => {
             if (!grid) return;
 
             // Flatten JSON data into allImages array
-            const categories = data.categories;
-            Object.keys(categories).forEach(catId => {
-                const cat = categories[catId];
-                cat.images.forEach(img => {
-                    allImages.push({
-                        src: img.src,
-                        alt: img.alt,
-                        title: img.title,
-                        categoryId: catId,
-                        categoryName: cat.title
+            results.forEach(({ catId, cat }) => {
+                if (cat && Array.isArray(cat.images)) {
+                    cat.images.forEach(img => {
+                        allImages.push({
+                            src: img.src,
+                            alt: img.alt,
+                            title: img.title,
+                            categoryId: catId,
+                            categoryName: cat.title
+                        });
                     });
-                });
+                }
             });
 
             // Set default dataset
