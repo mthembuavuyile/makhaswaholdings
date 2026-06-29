@@ -7,7 +7,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     'use strict';
 
-    const categoriesList = ['earthworks', 'civil', 'roads', 'building'];
+    const categoriesList = ['civil', 'earthworks', 'roads', 'building'];
     const ITEMS_PER_PAGE = 15;
 
     // State variables
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
             card.setAttribute('role', 'button');
             card.setAttribute('tabindex', '0');
             card.setAttribute('aria-label', `Open project image: ${img.title}`);
-            
+
             // Set initial styles for fade-in
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Apply filter value
             const filterValue = btn.getAttribute('data-filter');
-            
+
             if (filterValue === 'all') {
                 currentDataset = allImages;
             } else {

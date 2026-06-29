@@ -1,481 +1,481 @@
 {
-  "title": "Civil Works & Infrastructure",
-  "description": "Stormwater drainage networks, sewer reticulation, culverts, and concrete foundations.",
-  "images": [
-    {
-      "src": "images/projects/civilworks/makhaswa (5).jpeg",
-      "alt": "Completed multi-barrel concrete culvert bridge structure set into an embankment on a rural road",
-      "title": "Culvert Bridge Construction"
-    },
-    {
-      "src": "images/projects/civilworks/makhaswa (26).jpeg",
-      "alt": "Large diameter concrete pipe laid inside a deep excavated trench for bulk stormwater infrastructure",
-      "title": "Bulk Pipe Installation"
-    },
-    {
-      "src": "images/projects/civilworks/makhaswa (22).jpeg",
-      "alt": "Workers in PPE constructing a brick-lined manhole and junction box inside an excavated pit",
-      "title": "Manhole & Junction Box Construction"
-    },
-    {
-      "src": "images/projects/civilworks/makhaswa (8).jpeg",
-      "alt": "Site worker in PPE supervising precast box culvert units being positioned on a prepared road base",
-      "title": "Precast Box Culvert Installation"
-    },
-    {
-      "src": "images/projects/civilworks/makhaswa (28).jpeg",
-      "alt": "Worker in PPE hand-laying bricks to construct a stormwater catch pit within a timber-shuttered excavation",
-      "title": "Stormwater Catch Pit Construction"
-    },
-    {
-      "src": "images/projects/civilworks/makhaswa (24).jpeg",
-      "alt": "Dense steel rebar mesh and timber formwork prepared inside a deep excavation for a concrete retaining wall",
-      "title": "Retaining Wall Construction"
-    },
-    {
-      "src": "images/projects/civilworks/makhaswa (16).jpeg",
-      "alt": "Placing concrete cover slabs on a stormwater drainage channel",
-      "title": "Stormwater Channel & Cover Slabs"
-    },
-    {
-      "src": "images/projects/civilworks/makhaswa (17).jpeg",
-      "alt": "Brickwork and steel reinforcement for an underground stormwater chamber",
-      "title": "Underground Junction Chamber"
-    },
-    {
-      "src": "images/projects/civilworks/makhaswa (18).jpeg",
-      "alt": "Workers installing large diameter concrete pipes in a deep trench",
-      "title": "Bulk Concrete Pipeline Installation"
-    },
-    {
-      "src": "images/projects/civilworks/makhaswa (4).jpeg",
-      "alt": "Worker finishing a brick-lined stormwater catch pit junction",
-      "title": "Stormwater Catch Pit Completion"
-    },
-    {
-      "src": "images/projects/civilworks/makhaswa (1).jpeg",
-      "alt": "Completed multi-cell precast concrete culvert bridge over a stream bed",
-      "title": "Stormwater Culvert Bridge"
-    },
-    {
-      "src": "images/projects/civilworks/makhaswa (30).jpeg",
-      "alt": "Preparation for concrete structure steel reinforcement, and formwork",
-      "title": "Concrete Structure Preparation"
-    },
-    {
-      "src": "images/projects/civilworks/makhaswa (23).jpeg",
-      "alt": "Worker in PPE next to a large diameter concrete stormwater pipe being installed in an excavated trench by a JCB excavator",
-      "title": "Large Diameter Pipe Installation"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (26).jpeg",
-      "alt": "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation (Progress Log #26).",
-      "title": "Concrete Slab Pouring & Formwork - Log #26"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (25).jpeg",
-      "alt": "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation (Progress Log #25).",
-      "title": "Concrete Slab Pouring & Formwork - Log #25"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (24).jpeg",
-      "alt": "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation (Progress Log #24).",
-      "title": "Concrete Slab Pouring & Formwork - Log #24"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (23).jpeg",
-      "alt": "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation (Progress Log #23).",
-      "title": "Concrete Slab Pouring & Formwork - Log #23"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (22).jpeg",
-      "alt": "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation (Progress Log #22).",
-      "title": "Concrete Slab Pouring & Formwork - Log #22"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (21).jpeg",
-      "alt": "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation (Progress Log #21).",
-      "title": "Concrete Slab Pouring & Formwork - Log #21"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (20).jpeg",
-      "alt": "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation (Progress Log #20).",
-      "title": "Concrete Slab Pouring & Formwork - Log #20"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (19).jpeg",
-      "alt": "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation (Progress Log #19).",
-      "title": "Concrete Slab Pouring & Formwork - Log #19"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (18).jpeg",
-      "alt": "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation (Progress Log #18).",
-      "title": "Concrete Slab Pouring & Formwork - Log #18"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (17).jpeg",
-      "alt": "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site (Progress Log #17).",
-      "title": "Slab Leveling & Power Floating - Log #17"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (16).jpeg",
-      "alt": "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site (Progress Log #16).",
-      "title": "Slab Leveling & Power Floating - Log #16"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (15).jpeg",
-      "alt": "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site (Progress Log #15).",
-      "title": "Slab Leveling & Power Floating - Log #15"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (14).jpeg",
-      "alt": "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site (Progress Log #14).",
-      "title": "Slab Leveling & Power Floating - Log #14"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (13).jpeg",
-      "alt": "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site (Progress Log #13).",
-      "title": "Slab Leveling & Power Floating - Log #13"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (12).jpeg",
-      "alt": "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site (Progress Log #12).",
-      "title": "Slab Leveling & Power Floating - Log #12"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (11).jpeg",
-      "alt": "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site (Progress Log #11).",
-      "title": "Slab Leveling & Power Floating - Log #11"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (10).jpeg",
-      "alt": "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site (Progress Log #10).",
-      "title": "Slab Leveling & Power Floating - Log #10"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (9).jpeg",
-      "alt": "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site (Progress Log #9).",
-      "title": "Slab Leveling & Power Floating - Log #9"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (8).jpeg",
-      "alt": "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance (Progress Log #8).",
-      "title": "Concrete Curing & Quality Inspection - Log #8"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (7).jpeg",
-      "alt": "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance (Progress Log #7).",
-      "title": "Concrete Curing & Quality Inspection - Log #7"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (6).jpeg",
-      "alt": "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance (Progress Log #6).",
-      "title": "Concrete Curing & Quality Inspection - Log #6"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (5).jpeg",
-      "alt": "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance (Progress Log #5).",
-      "title": "Concrete Curing & Quality Inspection - Log #5"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (4).jpeg",
-      "alt": "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance (Progress Log #4).",
-      "title": "Concrete Curing & Quality Inspection - Log #4"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (3).jpeg",
-      "alt": "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance (Progress Log #3).",
-      "title": "Concrete Curing & Quality Inspection - Log #3"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (2).jpeg",
-      "alt": "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance (Progress Log #2).",
-      "title": "Concrete Curing & Quality Inspection - Log #2"
-    },
-    {
-      "src": "images/journal/foundation/concrete-casting/foundation-work (1).jpeg",
-      "alt": "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance (Progress Log #1).",
-      "title": "Concrete Curing & Quality Inspection - Log #1"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (38).jpeg",
-      "alt": "Installing heavy-duty Damp Proof Course (DPC) plastic underlay membrane for sub-slab moisture protection (Progress Log #38).",
-      "title": "Damp Proof Membrane (DPC) Installation - Log #38"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (37).jpeg",
-      "alt": "Installing heavy-duty Damp Proof Course (DPC) plastic underlay membrane for sub-slab moisture protection (Progress Log #37).",
-      "title": "Damp Proof Membrane (DPC) Installation - Log #37"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (36).jpeg",
-      "alt": "Installing heavy-duty Damp Proof Course (DPC) plastic underlay membrane for sub-slab moisture protection (Progress Log #36).",
-      "title": "Damp Proof Membrane (DPC) Installation - Log #36"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (35).jpeg",
-      "alt": "Installing heavy-duty Damp Proof Course (DPC) plastic underlay membrane for sub-slab moisture protection (Progress Log #35).",
-      "title": "Damp Proof Membrane (DPC) Installation - Log #35"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (34).jpeg",
-      "alt": "Installing heavy-duty Damp Proof Course (DPC) plastic underlay membrane for sub-slab moisture protection (Progress Log #34).",
-      "title": "Damp Proof Membrane (DPC) Installation - Log #34"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (33).jpeg",
-      "alt": "Installing heavy-duty Damp Proof Course (DPC) plastic underlay membrane for sub-slab moisture protection (Progress Log #33).",
-      "title": "Damp Proof Membrane (DPC) Installation - Log #33"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (32).jpeg",
-      "alt": "Installing heavy-duty Damp Proof Course (DPC) plastic underlay membrane for sub-slab moisture protection (Progress Log #32).",
-      "title": "Damp Proof Membrane (DPC) Installation - Log #32"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (31).jpeg",
-      "alt": "Installing heavy-duty Damp Proof Course (DPC) plastic underlay membrane for sub-slab moisture protection (Progress Log #31).",
-      "title": "Damp Proof Membrane (DPC) Installation - Log #31"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (30).jpeg",
-      "alt": "Installing heavy-duty Damp Proof Course (DPC) plastic underlay membrane for sub-slab moisture protection (Progress Log #30).",
-      "title": "Damp Proof Membrane (DPC) Installation - Log #30"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (29).jpeg",
-      "alt": "Installing heavy-duty Damp Proof Course (DPC) plastic underlay membrane for sub-slab moisture protection (Progress Log #29).",
-      "title": "Damp Proof Membrane (DPC) Installation - Log #29"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (28).jpeg",
-      "alt": "Installing heavy-duty Damp Proof Course (DPC) plastic underlay membrane for sub-slab moisture protection (Progress Log #28).",
-      "title": "Damp Proof Membrane (DPC) Installation - Log #28"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (27).jpeg",
-      "alt": "Installing heavy-duty Damp Proof Course (DPC) plastic underlay membrane for sub-slab moisture protection (Progress Log #27).",
-      "title": "Damp Proof Membrane (DPC) Installation - Log #27"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (26).jpeg",
-      "alt": "Installing heavy-duty Damp Proof Course (DPC) plastic underlay membrane for sub-slab moisture protection (Progress Log #26).",
-      "title": "Damp Proof Membrane (DPC) Installation - Log #26"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (25).jpeg",
-      "alt": "Masonry specialists laying foundation plinth brickwork and placing reinforcing steel brickforce mesh (Progress Log #25).",
-      "title": "Foundation Plinth Bricklaying - Log #25"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (24).jpeg",
-      "alt": "Masonry specialists laying foundation plinth brickwork and placing reinforcing steel brickforce mesh (Progress Log #24).",
-      "title": "Foundation Plinth Bricklaying - Log #24"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (23).jpeg",
-      "alt": "Masonry specialists laying foundation plinth brickwork and placing reinforcing steel brickforce mesh (Progress Log #23).",
-      "title": "Foundation Plinth Bricklaying - Log #23"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (22).jpeg",
-      "alt": "Masonry specialists laying foundation plinth brickwork and placing reinforcing steel brickforce mesh (Progress Log #22).",
-      "title": "Foundation Plinth Bricklaying - Log #22"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (21).jpeg",
-      "alt": "Masonry specialists laying foundation plinth brickwork and placing reinforcing steel brickforce mesh (Progress Log #21).",
-      "title": "Foundation Plinth Bricklaying - Log #21"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (20).jpeg",
-      "alt": "Masonry specialists laying foundation plinth brickwork and placing reinforcing steel brickforce mesh (Progress Log #20).",
-      "title": "Foundation Plinth Bricklaying - Log #20"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (19).jpeg",
-      "alt": "Masonry specialists laying foundation plinth brickwork and placing reinforcing steel brickforce mesh (Progress Log #19).",
-      "title": "Foundation Plinth Bricklaying - Log #19"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (18).jpeg",
-      "alt": "Masonry specialists laying foundation plinth brickwork and placing reinforcing steel brickforce mesh (Progress Log #18).",
-      "title": "Foundation Plinth Bricklaying - Log #18"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (17).jpeg",
-      "alt": "Masonry specialists laying foundation plinth brickwork and placing reinforcing steel brickforce mesh (Progress Log #17).",
-      "title": "Foundation Plinth Bricklaying - Log #17"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (16).jpeg",
-      "alt": "Masonry specialists laying foundation plinth brickwork and placing reinforcing steel brickforce mesh (Progress Log #16).",
-      "title": "Foundation Plinth Bricklaying - Log #16"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (15).jpeg",
-      "alt": "Masonry specialists laying foundation plinth brickwork and placing reinforcing steel brickforce mesh (Progress Log #15).",
-      "title": "Foundation Plinth Bricklaying - Log #15"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (14).jpeg",
-      "alt": "Masonry specialists laying foundation plinth brickwork and placing reinforcing steel brickforce mesh (Progress Log #14).",
-      "title": "Foundation Plinth Bricklaying - Log #14"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (13).jpeg",
-      "alt": "Ironworkers tying high-tensile steel reinforcing rebar cages and mesh in excavated trenches (Progress Log #13).",
-      "title": "Steel Rebar Reinforcement Tie-in - Log #13"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (12).jpeg",
-      "alt": "Ironworkers tying high-tensile steel reinforcing rebar cages and mesh in excavated trenches (Progress Log #12).",
-      "title": "Steel Rebar Reinforcement Tie-in - Log #12"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (11).jpeg",
-      "alt": "Ironworkers tying high-tensile steel reinforcing rebar cages and mesh in excavated trenches (Progress Log #11).",
-      "title": "Steel Rebar Reinforcement Tie-in - Log #11"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (10).jpeg",
-      "alt": "Ironworkers tying high-tensile steel reinforcing rebar cages and mesh in excavated trenches (Progress Log #10).",
-      "title": "Steel Rebar Reinforcement Tie-in - Log #10"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (9).jpeg",
-      "alt": "Ironworkers tying high-tensile steel reinforcing rebar cages and mesh in excavated trenches (Progress Log #9).",
-      "title": "Steel Rebar Reinforcement Tie-in - Log #9"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (8).jpeg",
-      "alt": "Ironworkers tying high-tensile steel reinforcing rebar cages and mesh in excavated trenches (Progress Log #8).",
-      "title": "Steel Rebar Reinforcement Tie-in - Log #8"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (7).jpeg",
-      "alt": "Ironworkers tying high-tensile steel reinforcing rebar cages and mesh in excavated trenches (Progress Log #7).",
-      "title": "Steel Rebar Reinforcement Tie-in - Log #7"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (6).jpeg",
-      "alt": "Ironworkers tying high-tensile steel reinforcing rebar cages and mesh in excavated trenches (Progress Log #6).",
-      "title": "Steel Rebar Reinforcement Tie-in - Log #6"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (5).jpeg",
-      "alt": "Ironworkers tying high-tensile steel reinforcing rebar cages and mesh in excavated trenches (Progress Log #5).",
-      "title": "Steel Rebar Reinforcement Tie-in - Log #5"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (4).jpeg",
-      "alt": "Ironworkers tying high-tensile steel reinforcing rebar cages and mesh in excavated trenches (Progress Log #4).",
-      "title": "Steel Rebar Reinforcement Tie-in - Log #4"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (3).jpeg",
-      "alt": "Ironworkers tying high-tensile steel reinforcing rebar cages and mesh in excavated trenches (Progress Log #3).",
-      "title": "Steel Rebar Reinforcement Tie-in - Log #3"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (2).jpeg",
-      "alt": "Ironworkers tying high-tensile steel reinforcing rebar cages and mesh in excavated trenches (Progress Log #2).",
-      "title": "Steel Rebar Reinforcement Tie-in - Log #2"
-    },
-    {
-      "src": "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (1).jpeg",
-      "alt": "Ironworkers tying high-tensile steel reinforcing rebar cages and mesh in excavated trenches (Progress Log #1).",
-      "title": "Steel Rebar Reinforcement Tie-in - Log #1"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (18).jpeg",
-      "alt": "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery (Progress Log #18).",
-      "title": "Bulk Excavation & Site Clearance - Log #18"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (17).jpeg",
-      "alt": "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery (Progress Log #17).",
-      "title": "Bulk Excavation & Site Clearance - Log #17"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (16).jpeg",
-      "alt": "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery (Progress Log #16).",
-      "title": "Bulk Excavation & Site Clearance - Log #16"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (15).jpeg",
-      "alt": "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery (Progress Log #15).",
-      "title": "Bulk Excavation & Site Clearance - Log #15"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (14).jpeg",
-      "alt": "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery (Progress Log #14).",
-      "title": "Bulk Excavation & Site Clearance - Log #14"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (13).jpeg",
-      "alt": "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery (Progress Log #13).",
-      "title": "Bulk Excavation & Site Clearance - Log #13"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (12).jpeg",
-      "alt": "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery (Progress Log #12).",
-      "title": "Bulk Excavation & Site Clearance - Log #12"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (11).jpeg",
-      "alt": "Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes (Progress Log #11).",
-      "title": "Subgrade Compaction & Platform Prep - Log #11"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (10).jpeg",
-      "alt": "Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes (Progress Log #10).",
-      "title": "Subgrade Compaction & Platform Prep - Log #10"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (9).jpeg",
-      "alt": "Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes (Progress Log #9).",
-      "title": "Subgrade Compaction & Platform Prep - Log #9"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (8).jpeg",
-      "alt": "Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes (Progress Log #8).",
-      "title": "Subgrade Compaction & Platform Prep - Log #8"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (7).jpeg",
-      "alt": "Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes (Progress Log #7).",
-      "title": "Subgrade Compaction & Platform Prep - Log #7"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (6).jpeg",
-      "alt": "Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes (Progress Log #6).",
-      "title": "Subgrade Compaction & Platform Prep - Log #6"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (5).jpeg",
-      "alt": "Excavated foundation trenches with structural profiles and line markings set up for geotechnical survey (Progress Log #5).",
-      "title": "Foundation Trench Excavation - Log #5"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (4).jpeg",
-      "alt": "Excavated foundation trenches with structural profiles and line markings set up for geotechnical survey (Progress Log #4).",
-      "title": "Foundation Trench Excavation - Log #4"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (3).jpeg",
-      "alt": "Excavated foundation trenches with structural profiles and line markings set up for geotechnical survey (Progress Log #3).",
-      "title": "Foundation Trench Excavation - Log #3"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (2).jpeg",
-      "alt": "Excavated foundation trenches with structural profiles and line markings set up for geotechnical survey (Progress Log #2).",
-      "title": "Foundation Trench Excavation - Log #2"
-    },
-    {
-      "src": "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (1).jpeg",
-      "alt": "Excavated foundation trenches with structural profiles and line markings set up for geotechnical survey (Progress Log #1).",
-      "title": "Foundation Trench Excavation - Log #1"
-    }
-  ]
+    "title":  "Civil Works \u0026 Infrastructure",
+    "description":  "Stormwater drainage networks, sewer reticulation, culverts, and concrete foundations.",
+    "images":  [
+                   {
+                       "src":  "images/projects/civilworks/makhaswa (5).jpeg",
+                       "alt":  "Completed multi-barrel concrete culvert bridge structure set into an embankment on a rural road",
+                       "title":  "Culvert Bridge Construction"
+                   },
+                   {
+                       "src":  "images/projects/civilworks/makhaswa (26).jpeg",
+                       "alt":  "Large diameter concrete pipe laid inside a deep excavated trench for bulk stormwater infrastructure",
+                       "title":  "Bulk Pipe Installation"
+                   },
+                   {
+                       "src":  "images/projects/civilworks/makhaswa (22).jpeg",
+                       "alt":  "Workers in PPE constructing a brick-lined manhole and junction box inside an excavated pit",
+                       "title":  "Manhole \u0026 Junction Box Construction"
+                   },
+                   {
+                       "src":  "images/projects/civilworks/makhaswa (8).jpeg",
+                       "alt":  "Site worker in PPE supervising precast box culvert units being positioned on a prepared road base",
+                       "title":  "Precast Box Culvert Installation"
+                   },
+                   {
+                       "src":  "images/projects/civilworks/makhaswa (28).jpeg",
+                       "alt":  "Worker in PPE hand-laying bricks to construct a stormwater catch pit within a timber-shuttered excavation",
+                       "title":  "Stormwater Catch Pit Construction"
+                   },
+                   {
+                       "src":  "images/projects/civilworks/makhaswa (24).jpeg",
+                       "alt":  "Dense steel rebar mesh and timber formwork prepared inside a deep excavation for a concrete retaining wall",
+                       "title":  "Retaining Wall Construction"
+                   },
+                   {
+                       "src":  "images/projects/civilworks/makhaswa (16).jpeg",
+                       "alt":  "Placing concrete cover slabs on a stormwater drainage channel",
+                       "title":  "Stormwater Channel \u0026 Cover Slabs"
+                   },
+                   {
+                       "src":  "images/projects/civilworks/makhaswa (17).jpeg",
+                       "alt":  "Brickwork and steel reinforcement for an underground stormwater chamber",
+                       "title":  "Underground Junction Chamber"
+                   },
+                   {
+                       "src":  "images/projects/civilworks/makhaswa (18).jpeg",
+                       "alt":  "Workers installing large diameter concrete pipes in a deep trench",
+                       "title":  "Bulk Concrete Pipeline Installation"
+                   },
+                   {
+                       "src":  "images/projects/civilworks/makhaswa (4).jpeg",
+                       "alt":  "Worker finishing a brick-lined stormwater catch pit junction",
+                       "title":  "Stormwater Catch Pit Completion"
+                   },
+                   {
+                       "src":  "images/projects/civilworks/makhaswa (1).jpeg",
+                       "alt":  "Completed multi-cell precast concrete culvert bridge over a stream bed",
+                       "title":  "Stormwater Culvert Bridge"
+                   },
+                   {
+                       "src":  "images/projects/civilworks/makhaswa (30).jpeg",
+                       "alt":  "Preparation for concrete structure steel reinforcement, and formwork",
+                       "title":  "Concrete Structure Preparation"
+                   },
+                   {
+                       "src":  "images/projects/civilworks/makhaswa (23).jpeg",
+                       "alt":  "Worker in PPE next to a large diameter concrete stormwater pipe being installed in an excavated trench by a JCB excavator",
+                       "title":  "Large Diameter Pipe Installation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (26).jpeg",
+                       "alt":  "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation.",
+                       "title":  "Concrete Slab Pouring \u0026 Formwork"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (25).jpeg",
+                       "alt":  "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation.",
+                       "title":  "Concrete Slab Pouring \u0026 Formwork"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (24).jpeg",
+                       "alt":  "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation.",
+                       "title":  "Concrete Slab Pouring \u0026 Formwork"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (23).jpeg",
+                       "alt":  "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation.",
+                       "title":  "Concrete Slab Pouring \u0026 Formwork"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (22).jpeg",
+                       "alt":  "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation.",
+                       "title":  "Concrete Slab Pouring \u0026 Formwork"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (21).jpeg",
+                       "alt":  "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation.",
+                       "title":  "Concrete Slab Pouring \u0026 Formwork"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (20).jpeg",
+                       "alt":  "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation.",
+                       "title":  "Concrete Slab Pouring \u0026 Formwork"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (19).jpeg",
+                       "alt":  "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation.",
+                       "title":  "Concrete Slab Pouring \u0026 Formwork"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (18).jpeg",
+                       "alt":  "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation.",
+                       "title":  "Concrete Slab Pouring \u0026 Formwork"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (17).jpeg",
+                       "alt":  "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site.",
+                       "title":  "Slab Leveling \u0026 Power Floating"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (16).jpeg",
+                       "alt":  "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site.",
+                       "title":  "Slab Leveling \u0026 Power Floating"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (15).jpeg",
+                       "alt":  "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site.",
+                       "title":  "Slab Leveling \u0026 Power Floating"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (14).jpeg",
+                       "alt":  "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site.",
+                       "title":  "Slab Leveling \u0026 Power Floating"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (13).jpeg",
+                       "alt":  "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site.",
+                       "title":  "Slab Leveling \u0026 Power Floating"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (12).jpeg",
+                       "alt":  "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site.",
+                       "title":  "Slab Leveling \u0026 Power Floating"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (11).jpeg",
+                       "alt":  "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site.",
+                       "title":  "Slab Leveling \u0026 Power Floating"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (10).jpeg",
+                       "alt":  "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site.",
+                       "title":  "Slab Leveling \u0026 Power Floating"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (9).jpeg",
+                       "alt":  "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site.",
+                       "title":  "Slab Leveling \u0026 Power Floating"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (8).jpeg",
+                       "alt":  "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance.",
+                       "title":  "Concrete Curing \u0026 Quality Inspection"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (7).jpeg",
+                       "alt":  "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance.",
+                       "title":  "Concrete Curing \u0026 Quality Inspection"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (6).jpeg",
+                       "alt":  "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance.",
+                       "title":  "Concrete Curing \u0026 Quality Inspection"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (5).jpeg",
+                       "alt":  "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance.",
+                       "title":  "Concrete Curing \u0026 Quality Inspection"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (4).jpeg",
+                       "alt":  "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance.",
+                       "title":  "Concrete Curing \u0026 Quality Inspection"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (3).jpeg",
+                       "alt":  "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance.",
+                       "title":  "Concrete Curing \u0026 Quality Inspection"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (2).jpeg",
+                       "alt":  "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance.",
+                       "title":  "Concrete Curing \u0026 Quality Inspection"
+                   },
+                   {
+                       "src":  "images/journal/foundation/concrete-casting/foundation-work (1).jpeg",
+                       "alt":  "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance.",
+                       "title":  "Concrete Curing \u0026 Quality Inspection"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (38).jpeg",
+                       "alt":  "Foundation Surface Bed Preparation - High-quality civil engineering and construction.",
+                       "title":  "Foundation Surface Bed Preparation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (37).jpeg",
+                       "alt":  "Damp Proof Membrane (DPM) Installation - High-quality civil engineering and construction.",
+                       "title":  "Damp Proof Membrane (DPM) Installation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (36).jpeg",
+                       "alt":  "Steel Mesh Reinforcement for Concrete Slab - High-quality civil engineering and construction.",
+                       "title":  "Steel Mesh Reinforcement for Concrete Slab"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (35).jpeg",
+                       "alt":  "Residential Housing Foundation Prep - High-quality civil engineering and construction.",
+                       "title":  "Residential Housing Foundation Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (34).jpeg",
+                       "alt":  "Foundation Surface Bed Preparation - High-quality civil engineering and construction.",
+                       "title":  "Foundation Surface Bed Preparation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (33).jpeg",
+                       "alt":  "Damp Proof Membrane (DPM) Installation - High-quality civil engineering and construction.",
+                       "title":  "Damp Proof Membrane (DPM) Installation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (32).jpeg",
+                       "alt":  "Steel Mesh Reinforcement for Concrete Slab - High-quality civil engineering and construction.",
+                       "title":  "Steel Mesh Reinforcement for Concrete Slab"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (31).jpeg",
+                       "alt":  "Residential Housing Foundation Prep - High-quality civil engineering and construction.",
+                       "title":  "Residential Housing Foundation Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (30).jpeg",
+                       "alt":  "Foundation Surface Bed Preparation - High-quality civil engineering and construction.",
+                       "title":  "Foundation Surface Bed Preparation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (29).jpeg",
+                       "alt":  "Damp Proof Membrane (DPM) Installation - High-quality civil engineering and construction.",
+                       "title":  "Damp Proof Membrane (DPM) Installation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (28).jpeg",
+                       "alt":  "Steel Mesh Reinforcement for Concrete Slab - High-quality civil engineering and construction.",
+                       "title":  "Steel Mesh Reinforcement for Concrete Slab"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (27).jpeg",
+                       "alt":  "Residential Housing Foundation Prep - High-quality civil engineering and construction.",
+                       "title":  "Residential Housing Foundation Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (26).jpeg",
+                       "alt":  "Foundation Surface Bed Preparation - High-quality civil engineering and construction.",
+                       "title":  "Foundation Surface Bed Preparation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (25).jpeg",
+                       "alt":  "Damp Proof Membrane (DPM) Installation - High-quality civil engineering and construction.",
+                       "title":  "Damp Proof Membrane (DPM) Installation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (24).jpeg",
+                       "alt":  "Steel Mesh Reinforcement for Concrete Slab - High-quality civil engineering and construction.",
+                       "title":  "Steel Mesh Reinforcement for Concrete Slab"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (23).jpeg",
+                       "alt":  "Residential Housing Foundation Prep - High-quality civil engineering and construction.",
+                       "title":  "Residential Housing Foundation Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (22).jpeg",
+                       "alt":  "Foundation Surface Bed Preparation - High-quality civil engineering and construction.",
+                       "title":  "Foundation Surface Bed Preparation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (21).jpeg",
+                       "alt":  "Damp Proof Membrane (DPM) Installation - High-quality civil engineering and construction.",
+                       "title":  "Damp Proof Membrane (DPM) Installation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (20).jpeg",
+                       "alt":  "Steel Mesh Reinforcement for Concrete Slab - High-quality civil engineering and construction.",
+                       "title":  "Steel Mesh Reinforcement for Concrete Slab"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (19).jpeg",
+                       "alt":  "Residential Housing Foundation Prep - High-quality civil engineering and construction.",
+                       "title":  "Residential Housing Foundation Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (18).jpeg",
+                       "alt":  "Foundation Surface Bed Preparation - High-quality civil engineering and construction.",
+                       "title":  "Foundation Surface Bed Preparation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (17).jpeg",
+                       "alt":  "Damp Proof Membrane (DPM) Installation - High-quality civil engineering and construction.",
+                       "title":  "Damp Proof Membrane (DPM) Installation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (16).jpeg",
+                       "alt":  "Steel Mesh Reinforcement for Concrete Slab - High-quality civil engineering and construction.",
+                       "title":  "Steel Mesh Reinforcement for Concrete Slab"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (15).jpeg",
+                       "alt":  "Residential Housing Foundation Prep - High-quality civil engineering and construction.",
+                       "title":  "Residential Housing Foundation Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (14).jpeg",
+                       "alt":  "Foundation Surface Bed Preparation - High-quality civil engineering and construction.",
+                       "title":  "Foundation Surface Bed Preparation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (13).jpeg",
+                       "alt":  "Damp Proof Membrane (DPM) Installation - High-quality civil engineering and construction.",
+                       "title":  "Damp Proof Membrane (DPM) Installation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (12).jpeg",
+                       "alt":  "Steel Mesh Reinforcement for Concrete Slab - High-quality civil engineering and construction.",
+                       "title":  "Steel Mesh Reinforcement for Concrete Slab"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (11).jpeg",
+                       "alt":  "Residential Housing Foundation Prep - High-quality civil engineering and construction.",
+                       "title":  "Residential Housing Foundation Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (10).jpeg",
+                       "alt":  "Foundation Surface Bed Preparation - High-quality civil engineering and construction.",
+                       "title":  "Foundation Surface Bed Preparation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (9).jpeg",
+                       "alt":  "Damp Proof Membrane (DPM) Installation - High-quality civil engineering and construction.",
+                       "title":  "Damp Proof Membrane (DPM) Installation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (8).jpeg",
+                       "alt":  "Steel Mesh Reinforcement for Concrete Slab - High-quality civil engineering and construction.",
+                       "title":  "Steel Mesh Reinforcement for Concrete Slab"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (7).jpeg",
+                       "alt":  "Residential Housing Foundation Prep - High-quality civil engineering and construction.",
+                       "title":  "Residential Housing Foundation Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (6).jpeg",
+                       "alt":  "Foundation Surface Bed Preparation - High-quality civil engineering and construction.",
+                       "title":  "Foundation Surface Bed Preparation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (5).jpeg",
+                       "alt":  "Damp Proof Membrane (DPM) Installation - High-quality civil engineering and construction.",
+                       "title":  "Damp Proof Membrane (DPM) Installation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (4).jpeg",
+                       "alt":  "Steel Mesh Reinforcement for Concrete Slab - High-quality civil engineering and construction.",
+                       "title":  "Steel Mesh Reinforcement for Concrete Slab"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (3).jpeg",
+                       "alt":  "Residential Housing Foundation Prep - High-quality civil engineering and construction.",
+                       "title":  "Residential Housing Foundation Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (2).jpeg",
+                       "alt":  "Foundation Surface Bed Preparation - High-quality civil engineering and construction.",
+                       "title":  "Foundation Surface Bed Preparation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/damp-proofing-and-reinforcement/foundation-work (1).jpeg",
+                       "alt":  "Damp Proof Membrane (DPM) Installation - High-quality civil engineering and construction.",
+                       "title":  "Damp Proof Membrane (DPM) Installation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (18).jpeg",
+                       "alt":  "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery.",
+                       "title":  "Bulk Excavation \u0026 Site Clearance"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (17).jpeg",
+                       "alt":  "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery.",
+                       "title":  "Bulk Excavation \u0026 Site Clearance"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (16).jpeg",
+                       "alt":  "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery.",
+                       "title":  "Bulk Excavation \u0026 Site Clearance"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (15).jpeg",
+                       "alt":  "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery.",
+                       "title":  "Bulk Excavation \u0026 Site Clearance"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (14).jpeg",
+                       "alt":  "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery.",
+                       "title":  "Bulk Excavation \u0026 Site Clearance"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (13).jpeg",
+                       "alt":  "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery.",
+                       "title":  "Bulk Excavation \u0026 Site Clearance"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (12).jpeg",
+                       "alt":  "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery.",
+                       "title":  "Bulk Excavation \u0026 Site Clearance"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (11).jpeg",
+                       "alt":  "Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes.",
+                       "title":  "Subgrade Compaction \u0026 Platform Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (10).jpeg",
+                       "alt":  "Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes.",
+                       "title":  "Subgrade Compaction \u0026 Platform Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (9).jpeg",
+                       "alt":  "Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes.",
+                       "title":  "Subgrade Compaction \u0026 Platform Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (8).jpeg",
+                       "alt":  "Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes.",
+                       "title":  "Subgrade Compaction \u0026 Platform Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (7).jpeg",
+                       "alt":  "Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes.",
+                       "title":  "Subgrade Compaction \u0026 Platform Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (6).jpeg",
+                       "alt":  "Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes.",
+                       "title":  "Subgrade Compaction \u0026 Platform Prep"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (5).jpeg",
+                       "alt":  "Excavated foundation trenches with structural profiles and line markings set up for geotechnical survey.",
+                       "title":  "Foundation Trench Excavation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (4).jpeg",
+                       "alt":  "Excavated foundation trenches with structural profiles and line markings set up for geotechnical survey.",
+                       "title":  "Foundation Trench Excavation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (3).jpeg",
+                       "alt":  "Excavated foundation trenches with structural profiles and line markings set up for geotechnical survey.",
+                       "title":  "Foundation Trench Excavation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (2).jpeg",
+                       "alt":  "Excavated foundation trenches with structural profiles and line markings set up for geotechnical survey.",
+                       "title":  "Foundation Trench Excavation"
+                   },
+                   {
+                       "src":  "images/journal/foundation/earthworks-and-platform-preparation/foundation-work (1).jpeg",
+                       "alt":  "Excavated foundation trenches with structural profiles and line markings set up for geotechnical survey.",
+                       "title":  "Foundation Trench Excavation"
+                   }
+               ]
 }
