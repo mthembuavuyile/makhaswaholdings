@@ -54,6 +54,29 @@
     outline-offset: 2px;
 }
 
+@media (max-width: 768px) {
+    .portfolio-filters {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 10px 20px 16px;
+        margin-left: -20px;
+        margin-right: -20px;
+        margin-bottom: 24px;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+    
+    .portfolio-filters::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+    
+    .portfolio-filters .filter-btn {
+        flex-shrink: 0;
+    }
+}
+
 /* ── Count Label ── */
 .journal-count {
     text-align: center;
