@@ -2,7 +2,7 @@
    MAKHASWA HOLDINGS — FORMS.JS
    Web3Forms integration for:
      - Contact form  (#contact-form)
-     - Careers form  (#careers-form)  — includes CV upload
+     - Careers form  (#careers-form)
 */
 
 // Split Web3Forms API Key and Endpoint to prevent false positive antivirus detections (e.g. Trojan:HTML/FakeLogin)
@@ -45,14 +45,7 @@ function setFormDisabled(form, disabled) {
     });
 }
 
-/**
- * Return a human-readable file-size string (e.g. "4.2 MB").
- */
-function formatBytes(bytes) {
-    if (bytes < 1024) return bytes + ' B';
-    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
-    return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
-}
+
 
 /* ------------------------------------------------------------------
    CONTACT FORM
@@ -128,7 +121,7 @@ function initContactForm() {
 }
 
 /* ------------------------------------------------------------------
-   CAREERS FORM  (includes CV file upload via multipart/FormData)
+   CAREERS FORM
 ------------------------------------------------------------------ */
 
 function initCareersForm() {
@@ -201,15 +194,8 @@ function initCareersForm() {
         const inputs = stepContainer.querySelectorAll('[required]');
 
         inputs.forEach(el => {
-            // Check for file inputs
-            if (el.type === 'file') {
-                if (!el.files || el.files.length === 0) {
-                    el.classList.add('input-invalid');
-                    isValid = false;
-                }
-            }
             // Check for text / textarea / select
-            else if (!el.value || el.value.trim() === '') {
+            if (!el.value || el.value.trim() === '') {
                 el.classList.add('input-invalid');
                 isValid = false;
             }
