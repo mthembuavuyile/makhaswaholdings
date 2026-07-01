@@ -334,6 +334,31 @@ function injectLightbox() {
                     <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>
             </button>
+            <div class="lightbox-loader-spinner" id="lightbox-loader" style="display: none;"></div>
+            <div class="lightbox-error-container" id="lightbox-error" style="display: none;">
+                <svg class="error-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="2" y1="2" x2="22" y2="22"></line>
+                    <path d="M10.41 10.41a2 2 0 1 1 2.83 2.83"></path>
+                    <line x1="10.86" y1="20" x2="19" y2="20"></line>
+                    <line x1="3" y1="20" x2="7.14" y2="20"></line>
+                    <line x1="12" y1="4" x2="21" y2="4"></line>
+                    <line x1="3" y1="4" x2="8" y2="4"></line>
+                    <path d="M16 11.23A4.5 4.5 0 0 0 12.77 8"></path>
+                    <path d="M8 12a4.5 4.5 0 0 0 4 4.46"></path>
+                    <path d="M21 16.5v-3.77A4.5 4.5 0 0 0 17.5 9"></path>
+                    <path d="M3 7.5v6.5a4.5 4.5 0 0 0 4.5 4.5H8"></path>
+                </svg>
+                <p>Failed to load image. Please check your connection.</p>
+                <button class="btn-retry lightbox-retry" id="lightbox-retry-btn" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                        <path d="M3 3v5h5"></path>
+                        <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
+                        <path d="M16 16h5v5"></path>
+                    </svg>
+                    Retry
+                </button>
+            </div>
             <img id="lightbox-img" src="" alt="Active Gallery Image" tabindex="0">
             <div class="lightbox-caption" id="lightbox-caption"></div>
             <div class="lightbox-counter" id="lightbox-counter"></div>
