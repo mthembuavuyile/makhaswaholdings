@@ -64,14 +64,17 @@
         margin-left: -20px;
         margin-right: -20px;
         margin-bottom: 24px;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE and Edge */
     }
-    
+
     .portfolio-filters::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
+        display: none;
+        /* Chrome, Safari, Opera */
     }
-    
+
     .portfolio-filters .filter-btn {
         flex-shrink: 0;
     }
@@ -119,10 +122,10 @@
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                border-color 0.3s ease;
-    
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        border-color 0.3s ease;
+
     /* Animation initial states (Observer target class) */
     opacity: 0;
     transform: translateY(20px);
@@ -159,7 +162,8 @@
 .journal-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 30px rgba(8, 45, 90, 0.08);
-    border-color: rgba(200, 169, 81, 0.4); /* subtle gold */
+    border-color: rgba(200, 169, 81, 0.4);
+    /* subtle gold */
 }
 
 .journal-card:hover .journal-card-media img {
@@ -323,7 +327,7 @@
     transform: scale(0.96);
     opacity: 0;
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-                opacity 0.3s ease;
+        opacity 0.3s ease;
 }
 
 .lightbox-modal.active .lightbox-content img {
@@ -453,6 +457,7 @@
         transform: translateY(-50%);
         background: rgba(8, 45, 90, 0.8);
     }
+
     .lightbox-prev:hover {
         transform: translateY(-50%) scale(1.05);
     }
@@ -463,6 +468,7 @@
         transform: translateY(-50%);
         background: rgba(8, 45, 90, 0.8);
     }
+
     .lightbox-next:hover {
         transform: translateY(-50%) scale(1.05);
     }
@@ -483,18 +489,17 @@
 
 /* ── Project Card Skeleton Shimmer ── */
 .project-card.project-card--loading {
-    pointer-events: none;
+    /* Allow early clicking on slow/budget devices */
+    pointer-events: auto;
 }
 
 .project-skeleton {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        90deg,
-        var(--off-white) 25%,
-        #eef0f3 50%,
-        var(--off-white) 75%
-    );
+    background: linear-gradient(90deg,
+            var(--off-white) 25%,
+            #eef0f3 50%,
+            var(--off-white) 75%);
     background-size: 200% 100%;
     animation: project-shimmer 1.5s infinite linear;
     z-index: 1;
@@ -504,6 +509,7 @@
     0% {
         background-position: 200% 0;
     }
+
     100% {
         background-position: -200% 0;
     }
@@ -609,7 +615,9 @@
 }
 
 @keyframes btn-spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* ── Lightbox Spinner & Error Panel ── */
@@ -625,7 +633,9 @@
 }
 
 @keyframes lb-spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .lightbox-error-container {
