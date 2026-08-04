@@ -3,6 +3,56 @@
   "description": "Commercial, industrial, public buildings, schools, clinics, and residential housing developments.",
   "images": [
     {
+      "src": "images/gallery/high-mast-electrical-1.jpeg",
+      "alt": "High-mast electrical works using a cherry picker.",
+      "title": "High-Mast Electrical Works And Machinery"
+    },
+    {
+      "src": "images/gallery/high-mast-electrical-2.jpeg",
+      "alt": "Electrical installation and machinery operation on building exterior.",
+      "title": "High-Mast Electrical Works And Machinery"
+    },
+    {
+      "src": "images/gallery/high-mast-electrical-3.jpeg",
+      "alt": "Personnel working at heights for high-mast electrical installations.",
+      "title": "High-Mast Electrical Works And Machinery"
+    },
+    {
+      "src": "images/gallery/building-photos-1.jpeg",
+      "alt": "Completed or ongoing building construction works.",
+      "title": "Building Photos"
+    },
+    {
+      "src": "images/gallery/concrete-bridges-1.jpeg",
+      "alt": "Formwork and reinforcement for a cast-in-situ concrete bridge.",
+      "title": "Cast-In-Situ Reinforced Concrete Bridges"
+    },
+    {
+      "src": "images/gallery/concrete-bridges-2.jpeg",
+      "alt": "Wide view of cast-in-situ reinforced concrete bridge construction.",
+      "title": "Cast-In-Situ Reinforced Concrete Bridges"
+    },
+    {
+      "src": "images/gallery/concrete-bridges-3.jpeg",
+      "alt": "Reinforcing steel laid out for concrete bridge deck.",
+      "title": "Cast-In-Situ Reinforced Concrete Bridges"
+    },
+    {
+      "src": "images/gallery/building-photos-6.jpeg",
+      "alt": "Exterior view of completed or ongoing building project.",
+      "title": "Building Photos"
+    },
+    {
+      "src": "images/gallery/building-photos-7.jpeg",
+      "alt": "Courtyard view of multi-story building development.",
+      "title": "Building Photos"
+    },
+    {
+      "src": "images/gallery/palisade-fencing-1.jpeg",
+      "alt": "Palisade and perimeter fencing works.",
+      "title": "Palisade & Perimeter Fencing"
+    },
+    {
       "src": "images/projects/buildingconstruction/makhaswa (49).jpeg",
       "alt": "Workers constructing a red brick wall using scaffolding on a construction site",
       "title": "Brick Wall Construction"

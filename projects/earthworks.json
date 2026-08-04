@@ -3,6 +3,21 @@
   "description": "Bulk earthmoving, excavation, site clearance, and soil compaction services for major infrastructure projects.",
   "images": [
     {
+      "src": "images/gallery/surveying-1.jpeg",
+      "alt": "Surveying team setting up equipment on site.",
+      "title": "Surveying"
+    },
+    {
+      "src": "images/gallery/bulk-trenching-earthworks-1.jpeg",
+      "alt": "Bulk trenching and earthworks in progress.",
+      "title": "Bulk Trenching & Earthworks"
+    },
+    {
+      "src": "images/gallery/earthworks-surfacing-1.jpeg",
+      "alt": "Road construction, earthworks, and surfacing.",
+      "title": "Road Construction Earthworks Surfacing"
+    },
+    {
       "src": "images/projects/earthworks/makhaswa (1).jpeg",
       "alt": "A large cleared, graded, and leveled dirt field prepared for construction",
       "title": "Bulk Site Clearance"
