@@ -74,20 +74,20 @@ const SITE_CONFIG = {
             mapLabel: 'Midrand \u2013 Riversands Incubation Hub',
         },
         limpopo: {
-            label: 'Limpopo (Kopano)',
-            address: 'Limpopo Regional Hub (Polokwane, Kopano Region & Surrounding Municipalities)',
+            label: 'Limpopo (Mokopane)',
+            address: '197 Dudu Madisha Drive, Chroompark, Mokopane, 0656',
             phone: '012 944 1702',
-            mapQuery: 'Limpopo%20South%20Africa',
-            mapTitle: 'Limpopo Operations',
-            mapLabel: 'Limpopo Regional Operations',
+            mapQuery: '197%20Dudu%20Madisha%20Drive%2C%20Chroompark%2C%20Mokopane%2C%200656',
+            mapTitle: 'Mokopane Office',
+            mapLabel: 'Mokopane – 197 Dudu Madisha Drive',
         },
         kzn: {
             label: 'KwaZulu-Natal (Durban)',
-            address: 'Durban Regional Hub (Durban & Surrounding KZN Municipalities)',
+            address: '71 Bertha Mkhize Street, Durban Central, Durban, 4001',
             phone: '012 944 1702',
-            mapQuery: 'Durban%20KwaZulu-Natal%20South%20Africa',
-            mapTitle: 'Durban / KZN Operations',
-            mapLabel: 'KwaZulu-Natal Regional Operations',
+            mapQuery: '71%20Bertha%20Mkhize%20Street%2C%20Durban%20Central',
+            mapTitle: 'Durban Office',
+            mapLabel: 'Durban – 71 Bertha Mkhize Street',
         },
     },
 
@@ -270,7 +270,7 @@ function buildFooter() {
                         <i data-lucide="map-pin" width="14" height="14" class="footer-icon" style="margin-top: 4px;"></i>
                         <div>
                             ${lmp.label}:<br>
-                            <span style="display: inline-block; margin-top: 4px; font-size: 0.9em; opacity: 0.95;">${lmp.address}</span>
+                            <a href="https://maps.google.com/?q=${lmp.mapQuery}" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; display: inline-block; margin-top: 4px;">${lmp.address}</a>
                         </div>
                     </li>
                     <li style="align-items: flex-start;">
