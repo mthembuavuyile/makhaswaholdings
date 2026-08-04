@@ -3,26 +3,10 @@
   "description": "Commercial, industrial, public buildings, schools, clinics, and residential housing developments.",
   "images": [
     {
-      "id": "buildingconstruction-1",
-      "src": "images/projects/buildingconstruction/high-mast-electrical-1.jpeg",
-      "alt": "High-mast electrical works using a cherry picker.",
-      "title": "High-Mast Electrical Works And Machinery",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
       "id": "buildingconstruction-2",
       "src": "images/projects/buildingconstruction/high-mast-electrical-2.jpeg",
-      "alt": "Electrical installation and machinery operation on building exterior.",
-      "title": "High-Mast Electrical Works And Machinery",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "buildingconstruction-3",
-      "src": "images/projects/buildingconstruction/high-mast-electrical-3.jpeg",
-      "alt": "Personnel working at heights for high-mast electrical installations.",
-      "title": "High-Mast Electrical Works And Machinery",
+      "alt": "High-level building exterior maintenance and plastering using a mobile boom lift with safety helmet PPE.",
+      "title": "Elevated Building Maintenance & Exterior Plastering",
       "featured": false,
       "date": "2024-08-01"
     },
@@ -50,14 +34,7 @@
       "featured": false,
       "date": "2024-08-01"
     },
-    {
-      "id": "buildingconstruction-10",
-      "src": "images/projects/buildingconstruction/palisade-fencing-1.jpeg",
-      "alt": "Palisade and perimeter fencing works.",
-      "title": "Palisade & Perimeter Fencing",
-      "featured": false,
-      "date": "2024-08-01"
-    },
+
     {
       "id": "buildingconstruction-11",
       "src": "images/projects/buildingconstruction/makhaswa (49).jpeg",
