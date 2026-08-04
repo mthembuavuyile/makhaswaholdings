@@ -3,78 +3,6 @@
   "description": "Road bed preparation, layer works, asphalt surfacing, and interlocking block paving.",
   "images": [
     {
-      "id": "roadsandsurfacing-1",
-      "src": "images/projects/roadsandsurfacing/mounted-truck-machinery-1.jpeg",
-      "alt": "Mounted truck machinery in operation.",
-      "title": "Road Markings And Mounted Truck Machinery",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "roadsandsurfacing-2",
-      "src": "images/projects/roadsandsurfacing/mounted-truck-machinery-2.jpeg",
-      "alt": "Mounted truck machinery on site.",
-      "title": "Road Markings And Mounted Truck Machinery",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "roadsandsurfacing-3",
-      "src": "images/projects/roadsandsurfacing/road-markings-1.jpeg",
-      "alt": "Road marking processes on a new road surface.",
-      "title": "Road Markings And Mounted Truck Machinery",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "roadsandsurfacing-4",
-      "src": "images/projects/roadsandsurfacing/road-markings-2.jpeg",
-      "alt": "Freshly painted STOP sign road markings.",
-      "title": "Road Markings And Mounted Truck Machinery",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "roadsandsurfacing-5",
-      "src": "images/projects/roadsandsurfacing/road-markings-3.jpeg",
-      "alt": "Directional arrow road markings.",
-      "title": "Road Markings And Mounted Truck Machinery",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "roadsandsurfacing-6",
-      "src": "images/projects/roadsandsurfacing/asphalt-photos-1.jpeg",
-      "alt": "Asphalt paving works with roller machinery.",
-      "title": "Asphalt Photos",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "roadsandsurfacing-7",
-      "src": "images/projects/roadsandsurfacing/asphalt-photos-2.jpeg",
-      "alt": "Workers and machinery laying down new asphalt.",
-      "title": "Asphalt Photos",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "roadsandsurfacing-8",
-      "src": "images/projects/roadsandsurfacing/asphalt-photos-3.jpeg",
-      "alt": "Roller compacting fresh asphalt on the road.",
-      "title": "Asphalt Photos",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "roadsandsurfacing-9",
-      "src": "images/projects/roadsandsurfacing/asphalt-photos-4.jpeg",
-      "alt": "Team completing asphalt road surfacing.",
-      "title": "Asphalt Photos",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
       "id": "roadsandsurfacing-10",
       "src": "images/projects/roadsandsurfacing/makhaswa (10).jpeg",
       "alt": "Freshly laid asphalt surface stretching along a newly constructed road with red soil shoulders on either side",
@@ -91,10 +19,18 @@
       "date": "2024-08-01"
     },
     {
-      "id": "roadsandsurfacing-12",
-      "src": "images/projects/roadsandsurfacing/makhaswa (53).jpeg",
-      "alt": "Worker in PPE inspecting a concrete lined road channel during roadbed profiling and drainage operations",
-      "title": "Roadbed Profiling Operations",
+      "id": "roadsandsurfacing-3",
+      "src": "images/projects/roadsandsurfacing/road-markings-1.jpeg",
+      "alt": "Road marking processes on a new road surface.",
+      "title": "Road Markings And Mounted Truck Machinery",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "roadsandsurfacing-6",
+      "src": "images/projects/roadsandsurfacing/asphalt-photos-1.jpeg",
+      "alt": "Asphalt paving works with roller machinery.",
+      "title": "Asphalt Surfacing Works",
       "featured": false,
       "date": "2024-08-01"
     },
@@ -107,6 +43,14 @@
       "date": "2024-08-01"
     },
     {
+      "id": "roadsandsurfacing-1",
+      "src": "images/projects/roadsandsurfacing/mounted-truck-machinery-1.jpeg",
+      "alt": "Mounted truck machinery in operation.",
+      "title": "Road Markings And Mounted Truck Machinery",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
       "id": "roadsandsurfacing-14",
       "src": "images/projects/roadsandsurfacing/makhaswa (41).jpeg",
       "alt": "Aerial view of freshly installed interlocking paving blocks and precast concrete kerbing along a road at sunset",
@@ -115,10 +59,66 @@
       "date": "2024-08-01"
     },
     {
+      "id": "roadsandsurfacing-7",
+      "src": "images/projects/roadsandsurfacing/asphalt-photos-2.jpeg",
+      "alt": "Workers and machinery laying down new asphalt.",
+      "title": "Asphalt Paving Operations",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "roadsandsurfacing-4",
+      "src": "images/projects/roadsandsurfacing/road-markings-2.jpeg",
+      "alt": "Freshly painted STOP sign road markings.",
+      "title": "Road Markings & Signage",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "roadsandsurfacing-12",
+      "src": "images/projects/roadsandsurfacing/makhaswa (53).jpeg",
+      "alt": "Worker in PPE inspecting a concrete lined road channel during roadbed profiling and drainage operations",
+      "title": "Roadbed Profiling Operations",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
       "id": "roadsandsurfacing-15",
       "src": "images/projects/roadsandsurfacing/makhaswa (49).jpeg",
       "alt": "Workers in PPE laying interlocking paving blocks on a completed residential roadway in a suburban area",
-      "title": "Completed Surfaced Roadway",
+      "title": "Interlocking Block Road Construction",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "roadsandsurfacing-8",
+      "src": "images/projects/roadsandsurfacing/asphalt-photos-3.jpeg",
+      "alt": "Roller compacting fresh asphalt on the road.",
+      "title": "Asphalt Compaction Works",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "roadsandsurfacing-5",
+      "src": "images/projects/roadsandsurfacing/road-markings-3.jpeg",
+      "alt": "Directional arrow road markings.",
+      "title": "Road Markings & Markings Painting",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "roadsandsurfacing-2",
+      "src": "images/projects/roadsandsurfacing/mounted-truck-machinery-2.jpeg",
+      "alt": "Mounted truck machinery on site.",
+      "title": "Road Markings And Mounted Truck Machinery",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "roadsandsurfacing-9",
+      "src": "images/projects/roadsandsurfacing/asphalt-photos-4.jpeg",
+      "alt": "Team completing asphalt road surfacing.",
+      "title": "Completed Asphalt Surfacing",
       "featured": false,
       "date": "2024-08-01"
     },
