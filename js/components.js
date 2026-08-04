@@ -73,6 +73,14 @@ const SITE_CONFIG = {
             mapTitle: 'Midrand Office',
             mapLabel: 'Midrand \u2013 Riversands Incubation Hub',
         },
+        limpopo: {
+            label: 'Limpopo (Kopano)',
+            address: 'Limpopo Regional Hub (Polokwane, Kopano Region & Surrounding Municipalities)',
+            phone: '012 944 1702',
+            mapQuery: 'Limpopo%20South%20Africa',
+            mapTitle: 'Limpopo Operations',
+            mapLabel: 'Limpopo Regional Operations',
+        },
     },
 
     contact: {
@@ -163,6 +171,7 @@ function buildFooter() {
     const cfg = SITE_CONFIG;
     const pta = cfg.offices.pretoria;
     const jhb = cfg.offices.johannesburg;
+    const lmp = cfg.offices.limpopo;
     const prefix = getPathPrefix();
 
     /* Quick Links list items */
@@ -246,6 +255,13 @@ function buildFooter() {
                         <div>
                             ${jhb.label}:<br>
                             <a href="https://maps.google.com/?q=${jhb.mapQuery}" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; display: inline-block; margin-top: 4px;">${jhb.address}</a>
+                        </div>
+                    </li>
+                    <li style="align-items: flex-start;">
+                        <i data-lucide="map-pin" width="14" height="14" class="footer-icon" style="margin-top: 4px;"></i>
+                        <div>
+                            ${lmp.label}:<br>
+                            <span style="display: inline-block; margin-top: 4px; font-size: 0.9em; opacity: 0.95;">${lmp.address}</span>
                         </div>
                     </li>
 
