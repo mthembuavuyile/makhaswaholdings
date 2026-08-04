@@ -81,6 +81,14 @@ const SITE_CONFIG = {
             mapTitle: 'Limpopo Operations',
             mapLabel: 'Limpopo Regional Operations',
         },
+        kzn: {
+            label: 'KwaZulu-Natal (Durban)',
+            address: 'Durban Regional Hub (Durban & Surrounding KZN Municipalities)',
+            phone: '012 944 1702',
+            mapQuery: 'Durban%20KwaZulu-Natal%20South%20Africa',
+            mapTitle: 'Durban / KZN Operations',
+            mapLabel: 'KwaZulu-Natal Regional Operations',
+        },
     },
 
     contact: {
@@ -172,6 +180,7 @@ function buildFooter() {
     const pta = cfg.offices.pretoria;
     const jhb = cfg.offices.johannesburg;
     const lmp = cfg.offices.limpopo;
+    const kzn = cfg.offices.kzn;
     const prefix = getPathPrefix();
 
     /* Quick Links list items */
@@ -264,6 +273,13 @@ function buildFooter() {
                             <span style="display: inline-block; margin-top: 4px; font-size: 0.9em; opacity: 0.95;">${lmp.address}</span>
                         </div>
                     </li>
+                    <li style="align-items: flex-start;">
+                        <i data-lucide="map-pin" width="14" height="14" class="footer-icon" style="margin-top: 4px;"></i>
+                        <div>
+                            ${kzn.label}:<br>
+                            <a href="https://maps.google.com/?q=${kzn.mapQuery}" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; display: inline-block; margin-top: 4px;">${kzn.address}</a>
+                        </div>
+                    </li>
 
                     <!-- Phones -->
                     <li class="footer-contact-separator"><strong>Phone</strong></li>
@@ -297,11 +313,18 @@ function buildFooter() {
                             loading="lazy" title="${pta.mapTitle}" allowfullscreen="">
                         </iframe>
                     </div>
-                    <div class="map-item">
+                    <div class="map-item map-item--spaced">
                         <span class="map-title">${jhb.mapLabel}</span>
                         <iframe class="footer-map"
                             src="https://maps.google.com/maps?q=${jhb.mapQuery}&t=&z=13&ie=UTF8&iwloc=&output=embed"
                             loading="lazy" title="${jhb.mapTitle}" allowfullscreen="">
+                        </iframe>
+                    </div>
+                    <div class="map-item">
+                        <span class="map-title">${kzn.mapLabel}</span>
+                        <iframe class="footer-map"
+                            src="https://maps.google.com/maps?q=${kzn.mapQuery}&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            loading="lazy" title="${kzn.mapTitle}" allowfullscreen="">
                         </iframe>
                     </div>
                 </div>
