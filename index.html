@@ -438,68 +438,8 @@
         <div class="section-banner" id="projects">Featured Projects — A glimpse into our portfolio of work.</div>
 
         <div class="container">
-            <div class="projects-grid">
-
-                <a href="projects.html?filter=building" class="project-card">
-                    <img src="images/projects/buildingconstruction/makhaswa (49).jpeg"
-                        alt="Workers constructing a red brick wall using scaffolding on a construction site"
-                        loading="lazy" width="600" height="400">
-                    <div class="project-overlay">
-                        <span>Building Construction &amp; Housing Developments</span>
-                        <h4>Brick Wall Construction</h4>
-                    </div>
-                </a>
-
-                <a href="projects.html?filter=civil" class="project-card">
-                    <img src="images/projects/civilworks/makhaswa (5).jpeg"
-                        alt="Completed multi-barrel concrete culvert bridge structure set into an embankment on a rural road"
-                        loading="lazy" width="600" height="400">
-                    <div class="project-overlay">
-                        <span>Civil Works &amp; Infrastructure</span>
-                        <h4>Culvert Bridge Construction</h4>
-                    </div>
-                </a>
-
-                <a href="projects.html?filter=roads" class="project-card">
-                    <img src="images/projects/roadsandsurfacing/makhaswa (10).jpeg"
-                        alt="Freshly laid asphalt surface stretching along a newly constructed road with red soil shoulders on either side"
-                        loading="lazy" width="600" height="400">
-                    <div class="project-overlay">
-                        <span>Road Construction &amp; Surfacing</span>
-                        <h4>Asphalt Surfacing &amp; Laying</h4>
-                    </div>
-                </a>
-
-                <a href="projects.html?filter=earthworks" class="project-card">
-                    <img src="images/projects/earthworks/makhaswa (1).jpeg"
-                        alt="A large cleared, graded, and leveled dirt field prepared for construction" loading="lazy"
-                        width="600" height="400">
-                    <div class="project-overlay">
-                        <span>Earthworks &amp; Site Prep</span>
-                        <h4>Bulk Site Clearance</h4>
-                    </div>
-                </a>
-
-                <a href="projects.html?filter=civil" class="project-card">
-                    <img src="images/projects/civilworks/makhaswa (26).jpeg"
-                        alt="Large diameter concrete pipe laid inside a deep excavated trench for bulk stormwater infrastructure"
-                        loading="lazy" width="600" height="400">
-                    <div class="project-overlay">
-                        <span>Civil Works &amp; Infrastructure</span>
-                        <h4>Bulk Pipe Installation</h4>
-                    </div>
-                </a>
-
-                <a href="projects.html?filter=civil" class="project-card">
-                    <img src="images/projects/civilworks/makhaswa (23).jpeg"
-                        alt="Worker in PPE next to a large diameter concrete stormwater pipe being installed in an excavated trench by a JCB excavator"
-                        loading="lazy" width="600" height="400">
-                    <div class="project-overlay">
-                        <span>Civil Works &amp; Infrastructure</span>
-                        <h4>Large Diameter Pipe Installation</h4>
-                    </div>
-                </a>
-
+            <div class="projects-grid" id="featured-projects-grid">
+                <!-- Dynamically populated by js/featured-projects.js -->
             </div>
 
             <div class="cta-center">
@@ -656,6 +596,7 @@
     <!-- Scripts — components.js MUST load before app.js -->
     <script src="js/components.js"></script>
     <script src="js/forms.js"></script>
+    <script src="js/featured-projects.js"></script>
     <script src="js/app.js"></script>
 </body>
 
