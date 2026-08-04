@@ -833,6 +833,30 @@
       "title": "Foundation Trench Excavation",
       "featured": false,
       "date": "2024-08-01"
+    },
+    {
+      "id": "civilworks-105",
+      "src": "images/projects/buildingconstruction/concrete-bridges-1.jpeg",
+      "alt": "Formwork and reinforcement for a cast-in-situ concrete bridge.",
+      "title": "Cast-In-Situ Reinforced Concrete Bridges",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "civilworks-106",
+      "src": "images/projects/buildingconstruction/concrete-bridges-2.jpeg",
+      "alt": "Wide view of cast-in-situ reinforced concrete bridge construction.",
+      "title": "Cast-In-Situ Reinforced Concrete Bridges",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "civilworks-107",
+      "src": "images/projects/buildingconstruction/concrete-bridges-3.jpeg",
+      "alt": "Reinforcing steel laid out for concrete bridge deck.",
+      "title": "Cast-In-Situ Reinforced Concrete Bridges",
+      "featured": false,
+      "date": "2024-08-01"
     }
   ]
 }

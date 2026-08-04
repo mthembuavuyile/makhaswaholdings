@@ -29,40 +29,16 @@
     {
       "id": "buildingconstruction-4",
       "src": "images/projects/buildingconstruction/building-photos-1.jpeg",
-      "alt": "Completed or ongoing building construction works.",
-      "title": "Building Photos",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "buildingconstruction-5",
-      "src": "images/projects/buildingconstruction/concrete-bridges-1.jpeg",
-      "alt": "Formwork and reinforcement for a cast-in-situ concrete bridge.",
-      "title": "Cast-In-Situ Reinforced Concrete Bridges",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "buildingconstruction-6",
-      "src": "images/projects/buildingconstruction/concrete-bridges-2.jpeg",
-      "alt": "Wide view of cast-in-situ reinforced concrete bridge construction.",
-      "title": "Cast-In-Situ Reinforced Concrete Bridges",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "buildingconstruction-7",
-      "src": "images/projects/buildingconstruction/concrete-bridges-3.jpeg",
-      "alt": "Reinforcing steel laid out for concrete bridge deck.",
-      "title": "Cast-In-Situ Reinforced Concrete Bridges",
+      "alt": "Completed multi-story residential housing development.",
+      "title": "Multi-Story Residential Complex",
       "featured": false,
       "date": "2024-08-01"
     },
     {
       "id": "buildingconstruction-8",
       "src": "images/projects/buildingconstruction/building-photos-6.jpeg",
-      "alt": "Exterior view of completed or ongoing building project.",
-      "title": "Building Photos",
+      "alt": "Exterior view of completed walk-up residential block.",
+      "title": "Walk-Up Housing Block Exterior",
       "featured": false,
       "date": "2024-08-01"
     },
@@ -70,7 +46,7 @@
       "id": "buildingconstruction-9",
       "src": "images/projects/buildingconstruction/building-photos-7.jpeg",
       "alt": "Courtyard view of multi-story building development.",
-      "title": "Building Photos",
+      "title": "Multi-Story Housing Block & Courtyard",
       "featured": false,
       "date": "2024-08-01"
     },
