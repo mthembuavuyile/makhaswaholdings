@@ -52,7 +52,7 @@
 .hero {
     width: 100%;
     min-height: clamp(260px, 40vw, 400px);
-    background: #c8cdd5 url('../images/aigenerated/makhaswa-building.jpeg') center / cover no-repeat;
+    background: #c8cdd5 url('../images/hero/makhaswa-building.jpeg') center / cover no-repeat;
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -200,32 +200,32 @@ nav a.nav-contact-btn:hover {
 }
 
 .page-hero-about {
-    background-image: url('../assets/about.jpeg');
+    background-image: url('../images/hero/about.jpeg');
 }
 
 .page-hero-services {
-    background-image: url('../assets/services.jpeg');
+    background-image: url('../images/hero/services.jpeg');
 }
 
 .page-hero-projects {
-    background-image: url('../assets/projects.jpeg');
+    background-image: url('../images/hero/projects.jpeg');
 }
 
 .page-hero-careers {
-    background-image: url('../assets/careers.jpeg');
+    background-image: url('../images/hero/careers.jpeg');
     background-position: center 30%;
 }
 
 .page-hero-contact {
-    background-image: url('../assets/contact.jpeg');
+    background-image: url('../images/hero/contact.jpeg');
 }
 
 .page-hero-faq {
-    background-image: url('../assets/faq.jpeg');
+    background-image: url('../images/hero/faq.jpeg');
 }
 
 .page-hero-terms {
-    background-image: url('../assets/terms.jpeg');
+    background-image: url('../images/hero/terms.jpeg');
 }
 
 /* =====================================================

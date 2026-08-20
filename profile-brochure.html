@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makhaswa Holdings - Company Profile</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #082d5a;
+            --primary-mid: #0c3a6d;
+            --secondary: #c8a951;
+            --white: #ffffff;
+            --off-white: #f4f6f8;
+            --gray: #e0e0e0;
+            --text-dark: #333333;
+            --text-light: #666666;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #525659; /* PDF viewer background */
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        /* A4 Page Setup */
+        .page {
+            width: 210mm;
+            height: 297mm;
+            background: var(--white);
+            margin: 10mm auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            page-break-after: always;
+        }
+
+        @media print {
+            body {
+                background: var(--white);
+                margin: 0;
+            }
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            @page {
+                size: A4;
+                margin: 0;
+            }
+        }
+
+        /* Reusable Classes */
+        .bg-primary { background-color: var(--primary); }
+        .bg-secondary { background-color: var(--secondary); }
+        .text-white { color: var(--white); }
+        .text-primary { color: var(--primary); }
+        .text-secondary { color: var(--secondary); }
+        
+        .absolute-fill {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+        }
+
+        /* ==========================================
+           PAGE 1: COVER
+           ========================================== */
+        .cover-page .bg-img {
+            background-image: url('images/projects/earthworks/makhaswa\\ (4).jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .cover-page .overlay {
+            background: linear-gradient(135deg, rgba(8,45,90,0.95) 0%, rgba(8,45,90,0.7) 100%);
+        }
+        .cover-page .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20mm;
+        }
+        .cover-logo-area {
+            position: absolute;
+            top: 20mm;
+            left: 20mm;
+        }
+        .cover-logo-area img {
+            height: 80px;
+        }
+        .cover-page h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 10px;
+        }
+        .cover-page h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        .cover-bar {
+            width: 100%;
+            height: 15mm;
+            background-color: var(--secondary);
+            position: absolute;
+            bottom: 40mm;
+            left: 0;
+            display: flex;
+            align-items: center;
+            padding-left: 20mm;
+        }
+        .cover-bar span {
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+        }
+        .geometric-accent {
+            position: absolute;
+            right: -50mm;
+            top: -50mm;
+            width: 150mm;
+            height: 150mm;
+            background: var(--secondary);
+            opacity: 0.1;
+            transform: rotate(45deg);
+        }
+
+        /* ==========================================
+           PAGE 2: OVERVIEW (TOC)
+           ========================================== */
+        .toc-page {
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .toc-card {
+            width: 170mm;
+            height: 220mm;
+            background: var(--white);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            padding: 20mm;
+        }
+        .toc-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 2px;
+            margin-bottom: 15mm;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .toc-body {
+            display: flex;
+            gap: 15mm;
+            flex-grow: 1;
+        }
+        .toc-image {
+            flex: 1;
+            background-image: url('images/projects/buildingconstruction/makhaswa\\ (23).jpeg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+        }
+        .toc-list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 6mm;
+        }
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--gray);
+            padding-bottom: 3mm;
+        }
+        .toc-item span.title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .toc-item span.page-num {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+        .toc-bg-shape {
+            position: absolute;
+            right: -20mm;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60mm;
+            height: 200mm;
+            background: var(--primary-mid);
+            clip-path: polygon(100% 0, 100% 100%, 0 80%, 0 20%);
+            z-index: 1;
+        }
+
+        /* ==========================================
+           PAGE 3: WHO WE ARE
+           ========================================== */
+        .split-page {
+            display: flex;
+            height: 100%;
+        }
+        .split-left {
+            width: 45%;
+            background-image: url('images/projects/civilworks/makhaswa\\ (23).jpeg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .split-right {
+            width: 55%;
+            padding: 20mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .section-header {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 10mm;
+            position: relative;
+        }
+        .section-header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5mm;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        .split-right p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 6mm;
+        }
+        .quote-block {
+            margin-top: 10mm;
+            padding: 8mm;
+            background: var(--off-white);
+            border-left: 4px solid var(--secondary);
+            font-size: 1.1rem;
+            font-style: italic;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        /* ==========================================
+           PAGE 4: OUR VALUES
+           ========================================== */
+        .values-page {
+            padding: 20mm;
+            background: var(--off-white);
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10mm;
+            margin-top: 15mm;
+        }
+        .value-card {
+            background: var(--white);
+            padding: 10mm;
+            border-top: 5px solid var(--secondary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 8mm;
+        }
+        .value-num {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--gray);
+            line-height: 1;
+        }
+        .value-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 4mm;
+        }
+        .value-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           PAGE 5: ACCREDITATIONS
+           ========================================== */
+        .accred-page {
+            padding: 20mm;
+        }
+        .accred-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10mm;
+            margin-top: 10mm;
+        }
+        .accred-card {
+            border: 1px solid var(--gray);
+            padding: 8mm;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .accred-card img {
+            height: 40px;
+            margin-bottom: 6mm;
+        }
+        .accred-card h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 4mm;
+        }
+        .accred-card p, .accred-card ul {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .accred-card ul {
+            list-style-type: none;
+        }
+        .accred-card ul li::before {
+            content: "■";
+            color: var(--secondary);
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        .accred-card ul li {
+            padding-left: 1em;
+            margin-bottom: 3px;
+        }
+
+        /* ==========================================
+           PAGE 6: CORE SERVICES
+           ========================================== */
+        .services-page {
+            display: flex;
+            flex-direction: column;
+            padding: 20mm;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12mm;
+            margin-top: 10mm;
+        }
+        .service-item h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 4mm;
+            display: flex;
+            align-items: center;
+        }
+        .service-item h3::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary);
+            margin-right: 10px;
+        }
+        .service-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .service-banner {
+            margin-top: auto;
+            height: 70mm;
+            background-image: url('images/projects/roadsandsurfacing/makhaswa\\ (18).jpeg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+        }
+
+        /* ==========================================
+           PAGE 7: PROJECTS SHOWCASE
+           ========================================== */
+        .projects-page {
+            padding: 20mm;
+            background: var(--primary);
+            color: var(--white);
+        }
+        .projects-page .section-header {
+            color: var(--white);
+        }
+        .projects-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 55mm;
+            gap: 6mm;
+            margin-top: 15mm;
+        }
+        .gallery-item {
+            background-color: var(--gray);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .gallery-item:nth-child(1) {
+            grid-row: span 2;
+            background-image: url('images/projects/roadsandsurfacing/makhaswa\\ (60).jpeg');
+        }
+        .gallery-item:nth-child(2) {
+            background-image: url('images/projects/earthworks/makhaswa\\ (4).jpeg');
+        }
+        .gallery-item:nth-child(3) {
+            background-image: url('images/projects/civilworks/makhaswa\\ (5).jpeg');
+        }
+        .gallery-item:nth-child(4) {
+            grid-column: span 2;
+            background-image: url('images/projects/buildingconstruction/makhaswa\\ (49).jpeg');
+            background-position: 50% 30%;
+        }
+
+        /* ==========================================
+           PAGE 8: BACK COVER
+           ========================================== */
+        .back-cover {
+            background: var(--primary-mid);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20mm;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15mm;
+            margin-top: 15mm;
+        }
+        .office-block h4 {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 5mm;
+            text-transform: uppercase;
+        }
+        .office-block p {
+            line-height: 1.8;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        .footer-logo {
+            margin-top: auto;
+            text-align: center;
+            padding-top: 20mm;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-logo h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 5mm;
+        }
+        .footer-logo p {
+            color: var(--secondary);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        /* Page Numbers */
+        .page-number {
+            position: absolute;
+            bottom: 15mm;
+            right: 20mm;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .page-number.white {
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1: COVER -->
+    <section class="page cover-page">
+        <div class="absolute-fill bg-img"></div>
+        <div class="absolute-fill overlay"></div>
+        <div class="geometric-accent"></div>
+        
+        <div class="cover-logo-area">
+            <img src="images/logo.jpeg" alt="Makhaswa Holdings Logo">
+        </div>
+
+        <div class="content text-white">
+            <h2 class="text-secondary">Company Profile</h2>
+            <h1>MAKHASWA<br>HOLDINGS</h1>
+        </div>
+
+        <div class="cover-bar">
+            <span>BUILDING THE FUTURE</span>
+        </div>
+    </section>
+
+    <!-- PAGE 2: TABLE OF CONTENTS -->
+    <section class="page toc-page">
+        <div class="toc-bg-shape"></div>
+        <div class="toc-card">
+            <h2 class="toc-title">Overview</h2>
+            <div class="toc-body">
+                <div class="toc-image"></div>
+                <div class="toc-list">
+                    <div class="toc-item">
+                        <span class="title">About Us</span>
+                        <span class="page-num">03</span>
+                    </div>
+                    <div class="toc-item">
+                        <span class="title">Our Values</span>
+                        <span class="page-num">04</span>
+                    </div>
+                    <div class="toc-item">
+                        <span class="title">Accreditations</span>
+                        <span class="page-num">05</span>
+                    </div>
+                    <div class="toc-item">
+                        <span class="title">Core Services</span>
+                        <span class="page-num">06</span>
+                    </div>
+                    <div class="toc-item">
+                        <span class="title">Projects Showcase</span>
+                        <span class="page-num">07</span>
+                    </div>
+                    <div class="toc-item">
+                        <span class="title">Contact Information</span>
+                        <span class="page-num">08</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-number white">02</div>
+    </section>
+
+    <!-- PAGE 3: ABOUT US -->
+    <section class="page split-page">
+        <div class="split-left"></div>
+        <div class="split-right">
+            <h2 class="section-header">Who We Are</h2>
+            <p><strong>Makhaswa Holdings (Pty) Ltd</strong> is a fully black-owned civil engineering and construction company headquartered in Gauteng, South Africa, with operational offices in Midrand, Pretoria, Mokopane, and Durban.</p>
+            <p>Officially registered on 17 July 2017, the company has grown into a reputable multi-disciplinary contractor trusted by both public and private sector clients for the successful delivery of infrastructure and construction projects.</p>
+            <p>With a strong focus on quality, efficiency, and reliability, Makhaswa Holdings consistently delivers projects on time and within budget while contributing to sustainable community development.</p>
+            
+            <div class="quote-block">
+                "We don't just construct buildings — we create lasting legacies. From concept to completion, we bring your vision to life with precision, passion, and excellence."
+            </div>
+        </div>
+        <div class="page-number">03</div>
+    </section>
+
+    <!-- PAGE 4: OUR VALUES -->
+    <section class="page values-page">
+        <h2 class="section-header">Our Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-num">01</div>
+                <div class="value-content">
+                    <h3>Integrity</h3>
+                    <p>We operate with absolute transparency and ethical standards in all our business dealings. Trust is the foundation of our client relationships.</p>
+                </div>
+            </div>
+            <div class="value-card">
+                <div class="value-num">02</div>
+                <div class="value-content">
+                    <h3>Excellence</h3>
+                    <p>We are dedicated to delivering superior quality workmanship on time and within budget. We do not compromise on the standards of our deliverables.</p>
+                </div>
+            </div>
+            <div class="value-card">
+                <div class="value-num">03</div>
+                <div class="value-content">
+                    <h3>Sustainability</h3>
+                    <p>Commitment to environmental responsibility and construction practices that support long-term community growth and ecological balance.</p>
+                </div>
+            </div>
+            <div class="value-card">
+                <div class="value-num">04</div>
+                <div class="value-content">
+                    <h3>Transformation</h3>
+                    <p>As a Level 1 B-BBEE contributor, we are dedicated to empowering communities, developing local skills, and driving inclusive economic growth across South Africa.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">04</div>
+    </section>
+
+    <!-- PAGE 5: ACCREDITATIONS -->
+    <section class="page accred-page">
+        <h2 class="section-header">Accreditations</h2>
+        
+        <div class="accred-grid">
+            <div class="accred-card">
+                <img src="images/cidb-logo.png" alt="CIDB">
+                <h4>CIDB Registered</h4>
+                <ul>
+                    <li><strong>8CE PE</strong> – Civil Engineering</li>
+                    <li><strong>8ME PE</strong> – Mechanical Eng.</li>
+                    <li><strong>7EB PE</strong> – Electrical Eng.</li>
+                    <li><strong>6GB PE</strong> – General Building</li>
+                    <li><strong>7SB PE</strong> – Specialist Building</li>
+                </ul>
+            </div>
+            
+            <div class="accred-card">
+                <img src="images/nhbrc-logo.png" alt="NHBRC">
+                <h4>NHBRC</h4>
+                <p><strong>Reg. No. 4000006217</strong><br>
+                Provisional Grade 5<br>
+                Housing Consumers Protection Measures Act</p>
+            </div>
+            
+            <div class="accred-card">
+                <img src="images/iso-logo.png" alt="ISO">
+                <h4>International Standards</h4>
+                <ul>
+                    <li><strong>ISO 9001</strong> – Quality Management</li>
+                    <li><strong>ISO 14001</strong> – Environmental</li>
+                    <li><strong>ISO 45001</strong> – Health & Safety</li>
+                </ul>
+            </div>
+            
+            <div class="accred-card">
+                <img src="images/bbbee-logo.png" alt="BBBEE">
+                <h4>Compliance & B-BBEE</h4>
+                <ul>
+                    <li><strong>Level 1</strong> Contributor</li>
+                    <li><strong>135%</strong> Procurement Recognition</li>
+                    <li><strong>CSD:</strong> MAAA0584716</li>
+                    <li><strong>COIDA:</strong> No. 990001157115</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page-number">05</div>
+    </section>
+
+    <!-- PAGE 6: CORE SERVICES -->
+    <section class="page services-page">
+        <h2 class="section-header">Core Services</h2>
+        
+        <div class="services-grid">
+            <div class="service-item">
+                <h3>Earthworks & Site Clearance</h3>
+                <p>Mass earthworks, site leveling with heavy machinery, and large-scale site preparation for robust foundations.</p>
+            </div>
+            <div class="service-item">
+                <h3>Civil Works & Drainage</h3>
+                <p>Implementation of storm-water drainage, sewer pipelines, concrete box culverts, and structural concrete installations.</p>
+            </div>
+            <div class="service-item">
+                <h3>Road Construction & Surfacing</h3>
+                <p>Kerbing, asphalt surfacing, rehabilitation of existing roads, paved walkways, and full road network construction.</p>
+            </div>
+            <div class="service-item">
+                <h3>General Building</h3>
+                <p>Construction of residential and commercial buildings, low-income housing developments, and high-quality solid brickwork structures.</p>
+            </div>
+            <div class="service-item">
+                <h3>Electrical & Mechanical</h3>
+                <p>Installations, power systems, HVAC setups, and mechanical building systems tailored for efficiency and reliability.</p>
+            </div>
+            <div class="service-item">
+                <h3>Project Management</h3>
+                <p>Comprehensive project lifecycle management from conception and planning to execution and final handover.</p>
+            </div>
+        </div>
+        
+        <div class="service-banner"></div>
+        <div class="page-number">06</div>
+    </section>
+
+    <!-- PAGE 7: PROJECTS SHOWCASE -->
+    <section class="page projects-page">
+        <h2 class="section-header">Projects Showcase</h2>
+        <p style="font-size: 1.1rem; opacity: 0.9;">A glimpse into our expansive portfolio showcasing civil engineering, road surfacing, and large-scale infrastructural development across South Africa.</p>
+        
+        <div class="projects-gallery">
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+        </div>
+        
+        <div class="page-number white">07</div>
+    </section>
+
+    <!-- PAGE 8: CONTACT US -->
+    <section class="page back-cover">
+        <div>
+            <h2 class="section-header" style="color: var(--white);">Contact Us</h2>
+            
+            <div class="contact-grid">
+                <div class="office-block">
+                    <h4>Pretoria Office</h4>
+                    <p>869 Patryshond Street<br>Garsfontein, Pretoria, 0042<br>Tel: 012 944 1702</p>
+                </div>
+                
+                <div class="office-block">
+                    <h4>Midrand Office</h4>
+                    <p>Riversands Incubation Hub<br>Riverside View Ext 15, Midrand, 2189<br>Tel: 011 568 0938</p>
+                </div>
+                
+                <div class="office-block">
+                    <h4>Limpopo Office</h4>
+                    <p>197 Dudu Madisha Drive<br>Chroompark, Mokopane, 0656</p>
+                </div>
+                
+                <div class="office-block">
+                    <h4>Durban Office</h4>
+                    <p>71 Bertha Mkhize Street<br>Durban Central, Durban, 4001</p>
+                </div>
+            </div>
+            
+            <div class="contact-grid" style="margin-top: 10mm; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 10mm;">
+                <div class="office-block">
+                    <h4>Direct Contact</h4>
+                    <p>Email: info@makhaswaholdings.co.za<br>WhatsApp: +27 81 359 8003<br>Web: www.makhaswaholdings.co.za</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-logo">
+            <h2>MAKHASWA HOLDINGS</h2>
+            <p>Live Beyond Measures</p>
+        </div>
+        
+        <div class="page-number white">08</div>
+    </section>
+
+</body>
+</html>

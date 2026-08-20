@@ -1,0 +1,373 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=2.5cm, top=3cm, bottom=3.5cm]{geometry}
+\usepackage[default]{montserrat}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+% -------------------------
+% Color Palette (From Website)
+% -------------------------
+\definecolor{mhprimary}{HTML}{082D5A}
+\definecolor{mhprimarymid}{HTML}{0C3A6D}
+\definecolor{mhaccent}{HTML}{1A3668}
+\definecolor{mhgold}{HTML}{C8A951}
+\definecolor{mhoffwhite}{HTML}{F4F6F8}
+\definecolor{mhtext}{HTML}{333333}
+\definecolor{mhtextlight}{HTML}{666666}
+
+\pagecolor{white}
+\color{mhtext}
+
+% -------------------------
+% Headers & Footers
+% -------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\color{mhprimary}\textbf{\thepage}}
+\fancyfoot[R]{\color{mhgold}\footnotesize \textbf{Makhaswa Holdings (Pty) Ltd}}
+\fancyfoot[L]{\color{mhprimarymid}\footnotesize \textbf{Building The Future}}
+
+% -------------------------
+% Section Styling
+% -------------------------
+\usepackage{titlesec}
+\titleformat{\section}{\color{mhprimary}\LARGE\bfseries\uppercase}{}{0em}{}[\vspace{-0.5em}\textcolor{mhgold}{\titlerule[2pt]}]
+\titlespacing*{\section}{0pt}{2ex plus 1ex minus .2ex}{2ex plus .2ex}
+\titleformat{\subsection}{\color{mhgold}\Large\bfseries}{}{0em}{}
+
+% -------------------------
+% Custom Value Box
+% -------------------------
+\newtcolorbox{valuebox}[1]{
+    colback=mhoffwhite,
+    colframe=mhprimary,
+    coltitle=white,
+    title={\textbf{\large #1}},
+    boxrule=1.5pt,
+    arc=4pt,
+    left=15pt, right=15pt, top=15pt, bottom=15pt,
+    fontupper=\color{mhtextlight}\normalsize
+}
+
+\begin{document}
+
+% ==========================================
+% PAGE 1: COVER PAGE
+% ==========================================
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+    % Background
+    \fill[mhprimary] (current page.south west) rectangle (current page.north east);
+    
+    % Gold Accent Shapes
+    \fill[mhgold] (current page.north west) -- +(0,-4) -- +(8,0) -- cycle;
+    \fill[mhgold] (current page.south east) -- +(0,8) -- +(-16,0) -- cycle;
+    
+    % Image Placeholder (Upload makhaswa (4).jpeg to Overleaf and uncomment)
+    % \node[anchor=south, opacity=0.4] at (current page.south) {\includegraphics[width=\paperwidth, height=12cm]{images/projects/earthworks/makhaswa (4).jpeg}};
+\end{tikzpicture}
+
+\vspace*{3cm}
+\begin{center}
+    % \includegraphics[width=6cm]{images/logo.jpeg} \\ % Upload your logo and uncomment
+    \vspace{2cm}
+    \textcolor{white}{\Huge \textbf{MAKHASWA HOLDINGS}} \\[0.5cm]
+    \textcolor{white}{\Large \textbf{(PTY) LTD}} \\[2cm]
+    
+    \textcolor{mhgold}{\hrule height 2pt}
+    \vspace{1cm}
+    \textcolor{white}{\Huge \textbf{COMPANY PROFILE}} \\[1cm]
+    \textcolor{mhgold}{\hrule height 2pt}
+    
+    \vspace{4cm}
+    \textcolor{white}{\Large \textit{Building The Future}} \\[1cm]
+    \textcolor{white}{\large "Live Beyond Measures" $\bullet$ Excellence $\bullet$ Integrity $\bullet$ Transformation}
+\end{center}
+\end{titlepage}
+\clearpage
+
+% ==========================================
+% PAGE 2: TABLE OF CONTENTS & QUICK FACTS
+% ==========================================
+\section*{Table of Contents}
+\renewcommand{\contentsname}{}
+\tableofcontents
+
+\vspace{5cm}
+\begin{tcolorbox}[colback=mhprimary, colframe=mhprimary, coltext=white, arc=0pt, left=20pt, right=20pt, top=20pt, bottom=20pt]
+\begin{center}
+\Large \textbf{AT A GLANCE} \\
+\vspace{0.5cm}
+\large
+100+ Employees \quad $\bullet$ \quad Level 1 B-BBEE \quad $\bullet$ \quad 8 CE PE Grading \quad $\bullet$ \quad 135\% Procurement Recognition
+\end{center}
+\end{tcolorbox}
+\clearpage
+
+% ==========================================
+% PAGE 3: WHO WE ARE
+% ==========================================
+\section{Who We Are}
+\addcontentsline{toc}{section}{Who We Are}
+
+Makhaswa Holdings (Pty) Ltd is a fully black-owned civil engineering and construction company headquartered in Gauteng, South Africa, with operational offices in Midrand, Pretoria, Mokopane, and Durban. 
+
+Officially registered on 17 July 2017, the company has grown into a reputable multi-disciplinary contractor trusted by both public and private sector clients for the successful delivery of infrastructure and construction projects.
+
+\vspace{0.5cm}
+\textcolor{mhprimarymid}{\textbf{\large "We don't just construct buildings — we create lasting legacies. From concept to completion, we bring your vision to life with precision, passion, and excellence."}}
+\vspace{0.5cm}
+
+With a strong focus on quality, efficiency, and reliability, Makhaswa Holdings consistently delivers projects on time and within budget while contributing to sustainable community development.
+
+\vspace{1cm}
+% Uncomment when image is uploaded
+% \begin{center}
+% \includegraphics[width=\textwidth, height=8cm, keepaspectratio]{images/projects/civilworks/makhaswa (23).jpeg}
+% \end{center}
+
+\clearpage
+
+% ==========================================
+% PAGE 4: OUR VALUES
+% ==========================================
+\section{Our Values}
+\addcontentsline{toc}{section}{Our Values}
+
+\vspace{1cm}
+\begin{valuebox}{Integrity}
+We operate with absolute transparency and ethical standards in all our business dealings. Trust is the foundation of our client relationships.
+\end{valuebox}
+\vspace{1cm}
+
+\begin{valuebox}{Excellence}
+We are dedicated to delivering superior quality workmanship on time and within budget. We do not compromise on the standards of our deliverables.
+\end{valuebox}
+\vspace{1cm}
+
+\begin{valuebox}{Sustainability}
+Commitment to environmental responsibility and construction practices that support long-term community growth and ecological balance.
+\end{valuebox}
+
+\clearpage
+
+% ==========================================
+% PAGE 5: ACCREDITATIONS & CIDB
+% ==========================================
+\section{Accreditations \& Compliance}
+\addcontentsline{toc}{section}{Accreditations \& Compliance}
+
+Makhaswa Holdings is a fully compliant contractor holding top-tier industry gradings, ensuring quality, safety, and excellence across all disciplines.
+
+\vspace{1cm}
+\subsection*{Construction Industry Development Board (CIDB)}
+\textbf{CRS No. 10153817} \\
+We hold the following active gradings:
+\begin{itemize}[label=\textcolor{mhgold}{$\bullet$}]
+    \item \textbf{8CE PE} – Civil Engineering
+    \item \textbf{8ME PE} – Mechanical Engineering
+    \item \textbf{7EB PE} – Electrical Engineering
+    \item \textbf{6GB PE} – General Building
+    \item \textbf{7SB PE} – Specialist Building Works
+\end{itemize}
+
+\vspace{1cm}
+\subsection*{National Home Builders Registration Council (NHBRC)}
+\textbf{Reg. No. 4000006217} \\
+Provisional Grade 5 \\
+Housing Consumers Protection Measures Act
+
+\clearpage
+
+% ==========================================
+% PAGE 6: B-BBEE & ISO STANDARDS
+% ==========================================
+\section{Compliance \& Transformation}
+\addcontentsline{toc}{section}{Compliance \& Transformation}
+
+\subsection*{B-BBEE Certification}
+\begin{itemize}[label=\textcolor{mhprimary}{$\bullet$}]
+    \item \textbf{Level 1 Contributor}
+    \item 135\% Procurement Recognition
+\end{itemize}
+
+\vspace{1cm}
+\subsection*{International Standards (ISO)}
+\begin{itemize}[label=\textcolor{mhprimary}{$\bullet$}]
+    \item \textbf{ISO 9001} – Quality Management Systems
+    \item \textbf{ISO 14001} – Environmental Management Systems
+    \item \textbf{ISO 45001} – Occupational Health \& Safety Management Systems
+\end{itemize}
+
+\vspace{1cm}
+\subsection*{Corporate \& Tax Compliance}
+\begin{itemize}[label=\textcolor{mhprimary}{$\bullet$}]
+    \item \textbf{CSD Registered:} Central Supplier Database (MAAA0584716)
+    \item \textbf{SARS Compliance:} VAT \& Income Tax Compliant (VAT 4840286027)
+    \item \textbf{COIDA Registered:} No. 990001157115
+    \item \textbf{UIF Registered:} No. 2577464/8
+\end{itemize}
+\clearpage
+
+% ==========================================
+% PAGE 7: CORE SERVICES (CIVIL)
+% ==========================================
+\section{Core Services: Civil \& Earthworks}
+\addcontentsline{toc}{section}{Core Services: Civil \& Earthworks}
+
+\subsection*{Earthworks \& Site Clearance}
+Mass earthworks, site leveling with heavy machinery, and large-scale site preparation for robust foundations.
+
+\vspace{0.5cm}
+\subsection*{Civil Works \& Drainage}
+Implementation of storm-water drainage, sewer pipelines, concrete box culverts, and structural concrete installations.
+
+\vspace{0.5cm}
+\subsection*{Road Construction \& Surfacing}
+Kerbing, asphalt surfacing, rehabilitation of existing roads, paved pedestrian walkways, and full road network construction.
+
+\vspace{1cm}
+% Uncomment when image is uploaded
+% \begin{center}
+% \includegraphics[width=0.8\textwidth]{images/projects/roadsandsurfacing/makhaswa (18).jpeg}
+% \end{center}
+\clearpage
+
+% ==========================================
+% PAGE 8: CORE SERVICES (BUILDING)
+% ==========================================
+\section{Core Services: Building \& Engineering}
+\addcontentsline{toc}{section}{Core Services: Building \& Engineering}
+
+\subsection*{General Building}
+Construction of residential and commercial buildings, low-income housing developments, and high-quality solid brickwork structures.
+
+\vspace{0.5cm}
+\subsection*{Electrical \& Mechanical Engineering}
+Installations, power systems, HVAC setups, and mechanical building systems tailored for efficiency and reliability.
+
+\vspace{0.5cm}
+\subsection*{Plumbing \& Project Management}
+Comprehensive plumbing services and full project lifecycle management from conception to final handover.
+
+\vspace{1cm}
+% Uncomment when image is uploaded
+% \begin{center}
+% \includegraphics[width=0.8\textwidth]{images/projects/buildingconstruction/makhaswa (49).jpeg}
+% \end{center}
+\clearpage
+
+% ==========================================
+% PAGE 9: PROJECT PORTFOLIO 1
+% ==========================================
+\section{Featured Projects Portfolio}
+\addcontentsline{toc}{section}{Featured Projects Portfolio}
+
+A glimpse into our expansive portfolio showcasing civil engineering, road surfacing, and large-scale infrastructural development.
+
+\vspace{1cm}
+\begin{center}
+% Placeholders for gallery 1
+% \includegraphics[width=0.45\textwidth]{images/projects/earthworks/makhaswa (4).jpeg} \hfill
+% \includegraphics[width=0.45\textwidth]{images/projects/civilworks/makhaswa (23).jpeg} 
+
+\vspace{0.5cm}
+
+% \includegraphics[width=0.45\textwidth]{images/projects/roadsandsurfacing/makhaswa (60).jpeg} \hfill
+% \includegraphics[width=0.45\textwidth]{images/projects/roadsandsurfacing/makhaswa (33).jpeg} 
+\end{center}
+
+\clearpage
+
+% ==========================================
+% PAGE 10: PROJECT PORTFOLIO 2
+% ==========================================
+\section{Featured Projects Portfolio}
+
+Continuing our gallery of excellence across the nation.
+
+\vspace{1cm}
+\begin{center}
+% Placeholders for gallery 2
+% \includegraphics[width=0.45\textwidth]{images/projects/buildingconstruction/makhaswa (23).jpeg} \hfill
+% \includegraphics[width=0.45\textwidth]{images/projects/civilworks/makhaswa (5).jpeg} 
+
+\vspace{0.5cm}
+
+% \includegraphics[width=0.45\textwidth]{images/projects/roadsandsurfacing/makhaswa (41).jpeg} \hfill
+% \includegraphics[width=0.45\textwidth]{images/projects/buildingconstruction/makhaswa (49).jpeg} 
+\end{center}
+\clearpage
+
+% ==========================================
+% PAGE 11: COMMUNITY IMPACT
+% ==========================================
+\section{Community Impact (CSI)}
+\addcontentsline{toc}{section}{Community Impact (CSI)}
+
+Building communities through infrastructure development.
+
+\vspace{1cm}
+\begin{tcolorbox}[colback=white, colframe=mhgold, boxrule=2pt, arc=4pt, title={\color{mhprimary}\textbf{Better Housing}}, coltitle=white, colbacktitle=mhoffwhite]
+Affordable, durable residential solutions including low- and middle-income housing developments that serve South African communities with quality and dignity.
+\end{tcolorbox}
+
+\vspace{0.5cm}
+\begin{tcolorbox}[colback=white, colframe=mhgold, boxrule=2pt, arc=4pt, title={\color{mhprimary}\textbf{Safer Roads \& Transport}}, coltitle=white, colbacktitle=mhoffwhite]
+Enhanced mobility and infrastructure through road construction, maintenance, rehabilitation, and asphalt surfacing that connects communities safely.
+\end{tcolorbox}
+
+\vspace{0.5cm}
+\begin{tcolorbox}[colback=white, colframe=mhgold, boxrule=2pt, arc=4pt, title={\color{mhprimary}\textbf{Reliable Services \& Growth}}, coltitle=white, colbacktitle=mhoffwhite]
+Efficient drainage, sanitation, utilities, and environmentally responsible construction practices that support long-term community development and economic growth across the region.
+\end{tcolorbox}
+\clearpage
+
+% ==========================================
+% PAGE 12: BACK COVER & CONTACT
+% ==========================================
+\pagecolor{mhprimary}
+\color{white}
+
+\begin{center}
+\vspace*{3cm}
+\textcolor{mhgold}{\Huge \textbf{CONTACT US}} \\[1cm]
+
+\large
+\textbf{PRETORIA OFFICE} \\
+869 Patryshond Street, Garsfontein, Pretoria, 0042 \\
+012 944 1702
+\vspace{0.8cm}
+
+\textbf{MIDRAND OFFICE} \\
+Riversands Incubation Hub, Riverside View Ext 15, Midrand, 2189 \\
+011 568 0938
+\vspace{0.8cm}
+
+\textbf{LIMPOPO OFFICE} \\
+197 Dudu Madisha Drive, Chroompark, Mokopane, 0656
+\vspace{0.8cm}
+
+\textbf{DURBAN OFFICE} \\
+71 Bertha Mkhize Street, Durban Central, Durban, 4001
+\vspace{1.5cm}
+
+\textcolor{mhgold}{\hrule height 1pt}
+\vspace{0.5cm}
+\textbf{Email:} info@makhaswaholdings.co.za \\
+\textbf{WhatsApp:} +27 81 359 8003 \\
+\textbf{Website:} www.makhaswaholdings.co.za \\
+\vspace{0.5cm}
+\textcolor{mhgold}{\hrule height 1pt}
+
+\end{center}
+
+\end{document}
