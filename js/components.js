@@ -41,11 +41,11 @@ const SITE_CONFIG = {
         { label: 'About Us', href: 'about.html' },
         { label: 'Our Services', href: 'services.html' },
         { label: 'Projects', href: 'projects.html' },
-        { label: 'Company Profile (PDF)', href: 'documents/Makhaswa_Holdings_Company_Profile.pdf' },
         { label: 'Careers', href: 'careers.html' },
         { label: 'Contact Us', href: 'contact.html' },
         { label: 'FAQs', href: 'faq.html' },
         { label: 'Terms & Conditions', href: 'terms.html' },
+        { label: 'Company Profile (PDF)', href: 'documents/Makhaswa_Holdings_Company_Profile.pdf' },
     ],
 
     capabilities: [
