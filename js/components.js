@@ -45,7 +45,8 @@ const SITE_CONFIG = {
         { label: 'Contact Us', href: 'contact.html' },
         { label: 'FAQs', href: 'faq.html' },
         { label: 'Terms & Conditions', href: 'terms.html' },
-        { label: 'Company Profile (PDF)', href: 'documents/Makhaswa_Holdings_Company_Profile.pdf' },
+        { label: 'Company Profile (Interactive)', href: 'profile-brochure.html' },
+        { label: 'Company Profile (PDF)', href: 'documents/makhaswa-holdings-company-profile.pdf' },
     ],
 
     capabilities: [
@@ -188,8 +189,11 @@ function buildFooter() {
     const quickLinksHtml = cfg.quickLinks.map(link => {
         const href = link.href.startsWith('http') ? link.href : prefix + link.href;
         const isPdf = link.href.endsWith('.pdf');
-        const extraAttr = isPdf ? ' target="_blank" download' : '';
-        const iconName = isPdf ? 'file-text' : 'chevron-right';
+        const isProfileViewer = link.href.includes('profile-brochure.html');
+        const extraAttr = isPdf 
+            ? ' target="_blank" download="Makhaswa-Holdings-Company-Profile.pdf"' 
+            : (isProfileViewer ? ' target="_blank"' : '');
+        const iconName = isPdf ? 'file-text' : (isProfileViewer ? 'book-open' : 'chevron-right');
         return `<li><i data-lucide="${iconName}" width="14" height="14" class="footer-icon"></i><a href="${href}"${extraAttr}>${link.label}</a></li>`;
     }).join('\n                    ');
 

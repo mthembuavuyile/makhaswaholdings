@@ -1,3 +1,3 @@
 Place official PDF documents here.
-The website expects:
-- Makhaswa_Holdings_Company_Profile.pdf
+Official Active Documents:
+- makhaswa-holdings-company-profile.pdf (Official Corporate Profile & Tender Compliance Pack)
