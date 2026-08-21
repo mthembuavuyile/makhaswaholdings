@@ -78,12 +78,16 @@
 \pagecolor{white}
 \color{mhtext}
 
-% Hyperlink configuration
+% Hyperlink configuration with enhanced PDF metadata
 \hypersetup{
     colorlinks=true,
     linkcolor=mhnavy,
-    urlcolor=mhnavy,
-    citecolor=mhblue
+    urlcolor=mhblue,
+    citecolor=mhblue,
+    pdftitle={Makhaswa Holdings - Comprehensive Corporate Record \& Profile 2026},
+    pdfauthor={Makhaswa Holdings (Pty) Ltd},
+    pdfsubject={CIDB Grade 8 CE PE / 8 ME PE Corporate Profile \& Tender Pack},
+    pdfkeywords={Civil Engineering, Mechanical Engineering, CIDB Grade 8, Level 1 B-BBEE, South Africa}
 }
 
 % Top Header Section Banner (Fixed Absolute Alignment)
@@ -99,21 +103,23 @@
             {\footnotesize\bfseries\color{mhbluelight} \MakeUppercase{#2}}
         };
 
-        % Logo Box (Centered vertically to match the title)
+        % Logo Box (Clickable back to Table of Contents)
         \node[anchor=east, inner sep=0pt] at ([xshift=-1.2cm, yshift=-1.75cm]current page.north east) {
-            \begin{tcolorbox}[
-                enhanced,
-                colback=white,
-                colframe=mhlightgray,
-                boxrule=0.8pt,
-                arc=3pt,
-                boxsep=2pt,
-                left=4pt, right=4pt, top=3pt, bottom=3pt,
-                width=3.2cm,
-                halign=center
-            ]
-                \includegraphics[height=1.0cm, keepaspectratio]{images/logo.jpeg}
-            \end{tcolorbox}
+            \hyperlink{sec:toc}{%
+                \begin{tcolorbox}[
+                    enhanced,
+                    colback=white,
+                    colframe=mhlightgray,
+                    boxrule=0.8pt,
+                    arc=3pt,
+                    boxsep=2pt,
+                    left=4pt, right=4pt, top=3pt, bottom=3pt,
+                    width=3.2cm,
+                    halign=center
+                ]
+                    \includegraphics[height=1.0cm, keepaspectratio]{images/logo.jpeg}
+                \end{tcolorbox}%
+            }%
         };
     \end{tikzpicture}%
     \vspace*{3.8cm}% Clears the 3.5cm banner cleanly before body content starts
@@ -146,7 +152,7 @@
 }
 
 % =================================================
-% FOOTER CONFIGURATION
+% FOOTER CONFIGURATION (With Clickable Return to Contents)
 % =================================================
 \pagestyle{fancy}
 \fancyhf{}
@@ -157,7 +163,7 @@
 }
 \fancyfoot[R]{
     \fontsize{8pt}{10pt}\selectfont\color{mhnavy}
-    \textbf{\thepage}
+    \textbf{\thepage} \ \ $\bullet$ \ \ \hyperlink{sec:toc}{{\fontsize{7.5pt}{9pt}\selectfont\color{mhblue}\faListUl\ Contents}}
 }
 
 \begin{document}
@@ -256,6 +262,7 @@
 % PAGE 2 --- CONTENTS + SPLIT FULL-BLEED IMAGE
 % =========================================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{sec:toc}{}\pdfbookmark[1]{Table of Contents}{sec:toc}
 
 \begin{tikzpicture}[remember picture, overlay]
     % ----------------------------------------------------
@@ -271,18 +278,18 @@
             \fontsize{8.2pt}{13.8pt}\selectfont
 
             \noindent
-            {\bfseries\color{mhblue}01\ \ Executive Summary \& National Footprint} \dotfill {\bfseries\color{mhnavy}1}\\[2pt]
-            {\bfseries\color{mhblue}02\ \ Governance, Leadership \& CR Appointments} \dotfill {\bfseries\color{mhnavy}2}\\[2pt]
-            {\bfseries\color{mhblue}03\ \ Statutory Registrations \& CIDB Matrix} \dotfill {\bfseries\color{mhnavy}3}\\[2pt]
-            {\bfseries\color{mhblue}04\ \ Our Journey \& Strategic Milestones} \dotfill {\bfseries\color{mhnavy}4}\\[2pt]
-            {\bfseries\color{mhblue}05\ \ Core Engineering Disciplines \& Capabilities} \dotfill {\bfseries\color{mhnavy}5}\\[2pt]
-            {\bfseries\color{mhblue}06\ \ Plant, Fleet \& Technical Software Capacity} \dotfill {\bfseries\color{mhnavy}6}\\[2pt]
-            {\bfseries\color{mhblue}07\ \ SHEQ Policy, ISO Alignment \& Lab Testing} \dotfill {\bfseries\color{mhnavy}7}\\[2pt]
-            {\bfseries\color{mhblue}08\ \ Project Portfolio: Civil Infrastructure \& Roads} \dotfill {\bfseries\color{mhnavy}8}\\[2pt]
-            {\bfseries\color{mhblue}09\ \ Project Portfolio: Buildings, Water \& Reticulation} \dotfill {\bfseries\color{mhnavy}9}\\[2pt]
-            {\bfseries\color{mhblue}10\ \ CSI \& Socio-Economic Transformation} \dotfill {\bfseries\color{mhnavy}10}\\[2pt]
-            {\bfseries\color{mhblue}11\ \ Contactable References Directory} \dotfill {\bfseries\color{mhnavy}11}\\[2pt]
-            {\bfseries\color{mhblue}12\ \ Tender Due Diligence, Warranties \& Contacts} \dotfill {\bfseries\color{mhnavy}12}
+            \hyperlink{sec:overview}{{\bfseries\color{mhblue}01\ \ Executive Summary \& National Footprint} \dotfill {\bfseries\color{mhnavy}1}}\\[2pt]
+            \hyperlink{sec:leadership}{{\bfseries\color{mhblue}02\ \ Governance, Leadership \& CR Appointments} \dotfill {\bfseries\color{mhnavy}2}}\\[2pt]
+            \hyperlink{sec:accreditations}{{\bfseries\color{mhblue}03\ \ Statutory Registrations \& CIDB Matrix} \dotfill {\bfseries\color{mhnavy}3}}\\[2pt]
+            \hyperlink{sec:journey}{{\bfseries\color{mhblue}04\ \ Our Journey \& Strategic Milestones} \dotfill {\bfseries\color{mhnavy}4}}\\[2pt]
+            \hyperlink{sec:capabilities}{{\bfseries\color{mhblue}05\ \ Core Engineering Disciplines \& Capabilities} \dotfill {\bfseries\color{mhnavy}5}}\\[2pt]
+            \hyperlink{sec:plant}{{\bfseries\color{mhblue}06\ \ Plant, Fleet \& Technical Software Capacity} \dotfill {\bfseries\color{mhnavy}6}}\\[2pt]
+            \hyperlink{sec:sheq}{{\bfseries\color{mhblue}07\ \ SHEQ Policy, ISO Alignment \& Lab Testing} \dotfill {\bfseries\color{mhnavy}7}}\\[2pt]
+            \hyperlink{sec:civilprojects}{{\bfseries\color{mhblue}08\ \ Project Portfolio: Civil Infrastructure \& Roads} \dotfill {\bfseries\color{mhnavy}8}}\\[2pt]
+            \hyperlink{sec:buildingprojects}{{\bfseries\color{mhblue}09\ \ Project Portfolio: Buildings, Water \& Reticulation} \dotfill {\bfseries\color{mhnavy}9}}\\[2pt]
+            \hyperlink{sec:csi}{{\bfseries\color{mhblue}10\ \ CSI \& Socio-Economic Transformation} \dotfill {\bfseries\color{mhnavy}10}}\\[2pt]
+            \hyperlink{sec:references}{{\bfseries\color{mhblue}11\ \ Contactable References Directory} \dotfill {\bfseries\color{mhnavy}11}}\\[2pt]
+            \hyperlink{sec:tenderpack}{{\bfseries\color{mhblue}12\ \ Tender Due Diligence, Warranties \& Contacts} \dotfill {\bfseries\color{mhnavy}12}}
 
             \vspace{0.4cm}
             \textcolor{mhlightgray}{\rule{\linewidth}{0.8pt}}
@@ -315,7 +322,7 @@
 % =================================================
 % PAGE 4 (CONTENT p.1) --- EXECUTIVE SUMMARY & NATIONAL FOOTPRINT
 % =================================================
-
+\phantomsection\hypertarget{sec:overview}{}\pdfbookmark[1]{01. Executive Overview \& Footprint}{sec:overview}
 \sectionbanner{EXECUTIVE OVERVIEW}{Corporate Identity, Strategic Vision \& National Footprint}
 
 \noindent
@@ -442,7 +449,7 @@
 % =================================================
 % PAGE 5 (CONTENT p.2) --- GOVERNANCE, LEADERSHIP & STATUTORY APPOINTMENTS
 % =================================================
-
+\phantomsection\hypertarget{sec:leadership}{}\pdfbookmark[1]{02. Governance \& Leadership}{sec:leadership}
 \sectionbanner{GOVERNANCE \& LEADERSHIP}{Executive Management \& Statutory CR Appointments}
 
 \noindent
@@ -495,7 +502,7 @@ All site and executive operations are strictly structured in full compliance wit
 {\color{white}\bfseries\fontsize{8pt}{10pt}\selectfont Primary Operational Responsibility} \\
 \rowcolor{mhbluelight}
 \fontsize{7.8pt}{9.5pt}\selectfont\bfseries Lucas Dinga & \fontsize{7.8pt}{9.5pt}\selectfont Chief Executive Officer & \fontsize{7.8pt}{9.5pt}\selectfont CR 7(19c) & \fontsize{7.8pt}{9.5pt}\selectfont Corporate leadership, commercial sign-off, tender bids \\
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Elphas Goodman Mdaka & \fontsize{7.8pt}{9.5pt}\selectfont Project \& Contracts Manager & \fontsize{7.8pt}{9.5pt}\selectfont CR 16.2 \& 8.1 & \fontsize{7.8pt}{9.5pt}\selectfont Contractual administration, client liaison (074 481 0520) \\
+\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Elphas Goodman Mdaka & \fontsize{7.8pt}{9.5pt}\selectfont Project \& Contracts Manager & \fontsize{7.8pt}{9.5pt}\selectfont CR 16.2 \& 8.1 & \fontsize{7.8pt}{9.5pt}\selectfont Contractual administration, client liaison (\href{tel:0744810520}{074 481 0520}) \\
 \rowcolor{mhbluelight}
 \fontsize{7.8pt}{9.5pt}\selectfont\bfseries Peter Makwela & \fontsize{7.8pt}{9.5pt}\selectfont Construction Manager & \fontsize{7.8pt}{9.5pt}\selectfont CR 16.2 \& 8.1 & \fontsize{7.8pt}{9.5pt}\selectfont Multi-site programming, fleet dispatch \& logistics \\
 \fontsize{7.8pt}{9.5pt}\selectfont\bfseries Sfiso Knowledge Nkabinde & \fontsize{7.8pt}{9.5pt}\selectfont Construction Manager / Site Agent & \fontsize{7.8pt}{9.5pt}\selectfont CR 8.1 & \fontsize{7.8pt}{9.5pt}\selectfont Day-to-day site management, resource execution \\
@@ -528,7 +535,7 @@ All site and executive operations are strictly structured in full compliance wit
 % =================================================
 % PAGE 6 (CONTENT p.3) --- STATUTORY REGISTRATIONS, ACCREDITATIONS & CIDB MATRIX
 % =================================================
-
+\phantomsection\hypertarget{sec:accreditations}{}\pdfbookmark[1]{03. Accreditations \& CIDB Matrix}{sec:accreditations}
 \sectionbanner{ACCREDITATIONS}{CIDB Grading Matrix, Statutory Registrations \& Banking}
 
 \noindent
@@ -647,7 +654,7 @@ Makhaswa Holdings maintains full statutory and professional compliance across ev
 % =================================================
 % PAGE 7 (CONTENT p.4) --- OUR JOURNEY (KEY MILESTONES & STRATEGIC TRAJECTORY)
 % =================================================
-
+\phantomsection\hypertarget{sec:journey}{}\pdfbookmark[1]{04. Our Journey \& Milestones}{sec:journey}
 \sectionbanner{OUR JOURNEY}{Strategic Growth, Key Milestones \& Track Record}
 
 \noindent
@@ -776,7 +783,7 @@ Makhaswa Holdings maintains full statutory and professional compliance across ev
 % =================================================
 % PAGE 8 (CONTENT p.5) --- CORE ENGINEERING DISCIPLINES & CAPABILITIES
 % =================================================
-
+\phantomsection\hypertarget{sec:capabilities}{}\pdfbookmark[1]{05. Core Engineering Disciplines}{sec:capabilities}
 \sectionbanner{OUR SERVICES}{Core Engineering Disciplines \& Technical Capabilities}
 
 \noindent
@@ -846,7 +853,7 @@ Makhaswa Holdings maintains full statutory and professional compliance across ev
 % =================================================
 % PAGE 9 (CONTENT p.6) --- PLANT, FLEET & OPERATIONAL CAPACITY
 % =================================================
-
+\phantomsection\hypertarget{sec:plant}{}\pdfbookmark[1]{06. Plant, Fleet \& Technical Capacity}{sec:plant}
 \sectionbanner{OPERATIONAL CAPACITY}{Plant, Fleet, Equipment \& Technical Software}
 
 \noindent
@@ -910,7 +917,7 @@ Makhaswa Holdings manages a comprehensive plant fleet, transport logistics, and 
 % =================================================
 % PAGE 10 (CONTENT p.7) --- SHEQ POLICY, ISO ALIGNMENT & LAB TESTING
 % =================================================
-
+\phantomsection\hypertarget{sec:sheq}{}\pdfbookmark[1]{07. SHEQ Framework \& Quality Testing}{sec:sheq}
 \sectionbanner{SHEQ FRAMEWORK}{Safety, Health, Environment \& Quality Governance}
 
 \noindent
@@ -996,7 +1003,7 @@ Makhaswa Holdings manages a comprehensive plant fleet, transport logistics, and 
 % =================================================
 % PAGE 11 (CONTENT p.8) --- FLAGSHIP PROJECT PORTFOLIO: CIVIL INFRASTRUCTURE & ROADS
 % =================================================
-
+\phantomsection\hypertarget{sec:civilprojects}{}\pdfbookmark[1]{08. Portfolio: Civil \& Roads}{sec:civilprojects}
 \sectionbanner{PROJECT PORTFOLIO}{Civil Infrastructure, Roads \& Stormwater Schemes}
 
 \noindent
@@ -1066,7 +1073,7 @@ All listed projects are backed by client-signed practical completion certificate
 % =================================================
 % PAGE 12 (CONTENT p.9) --- FLAGSHIP PROJECT PORTFOLIO: BUILDING, WATER & BRIDGES
 % =================================================
-
+\phantomsection\hypertarget{sec:buildingprojects}{}\pdfbookmark[1]{09. Portfolio: Buildings \& Water}{sec:buildingprojects}
 \sectionbanner{PROJECT PORTFOLIO}{Building, Water Reticulation \& Bridge Works}
 
 \noindent
@@ -1135,7 +1142,7 @@ All listed projects are backed by client-signed practical completion certificate
 % =================================================
 % PAGE 13 (CONTENT p.10) --- CSI & SOCIO-ECONOMIC TRANSFORMATION
 % =================================================
-
+\phantomsection\hypertarget{sec:csi}{}\pdfbookmark[1]{10. CSI \& Transformation}{sec:csi}
 \sectionbanner{SOCIAL IMPACT}{Corporate Social Investment \& Socio-Economic Transformation}
 
 \noindent
@@ -1186,7 +1193,7 @@ All listed projects are backed by client-signed practical completion certificate
 % =================================================
 % PAGE 14 (CONTENT p.11) --- VERIFIED CLIENT REFERENCES & PROJECT DIRECTORY
 % =================================================
-
+\phantomsection\hypertarget{sec:references}{}\pdfbookmark[1]{11. Contactable References Directory}{sec:references}
 \sectionbanner{CLIENT REFERENCES}{Contactable Client References \& Project Verification Directory}
 
 \noindent
@@ -1222,29 +1229,29 @@ All listed projects are backed by client-signed practical completion certificate
 \vspace{0.15cm}
 
 \renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\textwidth}{@{}p{3.8cm} p{2.8cm} p{3.2cm} X@{}}
+\begin{tabularx}{\textwidth}{@{}p{3.8cm} p{2.8cm} p{3.4cm} X@{}}
 \rowcolor{mhnavy}
 {\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Organization} &
 {\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Contact Person} &
 {\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Telephone / Email} &
 {\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Reference Project} \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Civtek / Civplant Civils & \fontsize{7.5pt}{9pt}\selectfont Paul Bowyer (Site Mgr) & \fontsize{7.5pt}{9pt}\selectfont 012 666 0900 / 082 564 0237 $\bullet$ admin@civtek.co.za & \fontsize{7.5pt}{9pt}\selectfont Tanganani Ext 51, DRT23 Rehab, Bridge Recon \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Tarcron Projects & \fontsize{7.5pt}{9pt}\selectfont Mr. Makhoshi (Contracts Mgr) & \fontsize{7.5pt}{9pt}\selectfont 015 298 8049 & \fontsize{7.5pt}{9pt}\selectfont RAL/T1171/2021 Road D2702 Dwaalboom \\
+\fontsize{7.5pt}{9pt}\selectfont\bfseries Civtek / Civplant Civils & \fontsize{7.5pt}{9pt}\selectfont Paul Bowyer (Site Mgr) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0126660900}{012 666 0900} / \href{tel:0825640237}{082 564 0237} $\bullet$ \href{mailto:admin@civtek.co.za}{admin@civtek.co.za} & \fontsize{7.5pt}{9pt}\selectfont Tanganani Ext 51, DRT23 Rehab, Bridge Recon \\
+\fontsize{7.5pt}{9pt}\selectfont\bfseries Tarcron Projects & \fontsize{7.5pt}{9pt}\selectfont Mr. Makhoshi (Contracts Mgr) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0152988049}{015 298 8049} & \fontsize{7.5pt}{9pt}\selectfont RAL/T1171/2021 Road D2702 Dwaalboom \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Anvisda Plant \& Civils & \fontsize{7.5pt}{9pt}\selectfont Mr. Omen Metani (Site Mgr) & \fontsize{7.5pt}{9pt}\selectfont 071 704 1876 & \fontsize{7.5pt}{9pt}\selectfont JRA/21/59 Diepsloot Ext 11 Phase 4 \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Baithusi Trading & \fontsize{7.5pt}{9pt}\selectfont Mr. Bophelo Lesia (Site Mgr) & \fontsize{7.5pt}{9pt}\selectfont 068 003 4790 $\bullet$ admin@baithusitrading.co.za & \fontsize{7.5pt}{9pt}\selectfont JRA/22/83 Diepsloot Phase 4 Zeph Mothopeng \\
+\fontsize{7.5pt}{9pt}\selectfont\bfseries Anvisda Plant \& Civils & \fontsize{7.5pt}{9pt}\selectfont Mr. Omen Metani (Site Mgr) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0717041876}{071 704 1876} & \fontsize{7.5pt}{9pt}\selectfont JRA/21/59 Diepsloot Ext 11 Phase 4 \\
+\fontsize{7.5pt}{9pt}\selectfont\bfseries Baithusi Trading & \fontsize{7.5pt}{9pt}\selectfont Mr. Bophelo Lesia (Site Mgr) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0680034790}{068 003 4790} $\bullet$ \href{mailto:admin@baithusitrading.co.za}{admin@baithusitrading.co.za} & \fontsize{7.5pt}{9pt}\selectfont JRA/22/83 Diepsloot Phase 4 Zeph Mothopeng \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Johannesburg Roads Agency & \fontsize{7.5pt}{9pt}\selectfont Mr. TB Siboza (Site Agent) & \fontsize{7.5pt}{9pt}\selectfont 011 979 5329 & \fontsize{7.5pt}{9pt}\selectfont JRA/21/157 Kaalfontein Phase 3B \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries SR Construction & \fontsize{7.5pt}{9pt}\selectfont Mr. Sydney Mello (Manager) & \fontsize{7.5pt}{9pt}\selectfont 084 055 7742 & \fontsize{7.5pt}{9pt}\selectfont JRA/19/214 Diepsloot Ext 06 \\
+\fontsize{7.5pt}{9pt}\selectfont\bfseries Johannesburg Roads Agency & \fontsize{7.5pt}{9pt}\selectfont Mr. TB Siboza (Site Agent) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0119795329}{011 979 5329} & \fontsize{7.5pt}{9pt}\selectfont JRA/21/157 Kaalfontein Phase 3B \\
+\fontsize{7.5pt}{9pt}\selectfont\bfseries SR Construction & \fontsize{7.5pt}{9pt}\selectfont Mr. Sydney Mello (Manager) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0840557742}{084 055 7742} & \fontsize{7.5pt}{9pt}\selectfont JRA/19/214 Diepsloot Ext 06 \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Moses Kotane Municipality & \fontsize{7.5pt}{9pt}\selectfont Mogotsi Kgosiemang (PM) & \fontsize{7.5pt}{9pt}\selectfont 071 395 9004 & \fontsize{7.5pt}{9pt}\selectfont 014/MKLM/2022/2023 Lerome Water Supply \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Sedtrade (Pty) Ltd & \fontsize{7.5pt}{9pt}\selectfont Mr. Sheeven Bemram & \fontsize{7.5pt}{9pt}\selectfont 071 871 0820 $\bullet$ sheeven@sedtrade.co.za & \fontsize{7.5pt}{9pt}\selectfont Commercial House Facility -- Samrand \\
+\fontsize{7.5pt}{9pt}\selectfont\bfseries Moses Kotane Municipality & \fontsize{7.5pt}{9pt}\selectfont Mogotsi Kgosiemang (PM) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0713959004}{071 395 9004} & \fontsize{7.5pt}{9pt}\selectfont 014/MKLM/2022/2023 Lerome Water Supply \\
+\fontsize{7.5pt}{9pt}\selectfont\bfseries Sedtrade (Pty) Ltd & \fontsize{7.5pt}{9pt}\selectfont Mr. Sheeven Bemram & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0718710820}{071 871 0820} $\bullet$ \href{mailto:sheeven@sedtrade.co.za}{sheeven@sedtrade.co.za} & \fontsize{7.5pt}{9pt}\selectfont Commercial House Facility -- Samrand \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Pikitup SOC Ltd & \fontsize{7.5pt}{9pt}\selectfont Patrick Mavuso (Site Mgr) & \fontsize{7.5pt}{9pt}\selectfont 012 567 7831 & \fontsize{7.5pt}{9pt}\selectfont PIK 28/2021-22 Midrand Depot Park Homes \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Diepsloot West Secondary & \fontsize{7.5pt}{9pt}\selectfont Tshilidzi Singo (Principal) & \fontsize{7.5pt}{9pt}\selectfont 010 541 0670 & \fontsize{7.5pt}{9pt}\selectfont 4 Classrooms with Furniture Build \\
+\fontsize{7.5pt}{9pt}\selectfont\bfseries Pikitup SOC Ltd & \fontsize{7.5pt}{9pt}\selectfont Patrick Mavuso (Site Mgr) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0125677831}{012 567 7831} & \fontsize{7.5pt}{9pt}\selectfont PIK 28/2021-22 Midrand Depot Park Homes \\
+\fontsize{7.5pt}{9pt}\selectfont\bfseries Diepsloot West Secondary & \fontsize{7.5pt}{9pt}\selectfont Tshilidzi Singo (Principal) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0105410670}{010 541 0670} & \fontsize{7.5pt}{9pt}\selectfont 4 Classrooms with Furniture Build \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Rhiza Babalo NGO & \fontsize{7.5pt}{9pt}\selectfont Thambulo Mabuke (Lead) & \fontsize{7.5pt}{9pt}\selectfont 011 464 5100 & \fontsize{7.5pt}{9pt}\selectfont Construction of Rhiza Community Clinic \\
+\fontsize{7.5pt}{9pt}\selectfont\bfseries Rhiza Babalo NGO & \fontsize{7.5pt}{9pt}\selectfont Thambulo Mabuke (Lead) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0114645100}{011 464 5100} & \fontsize{7.5pt}{9pt}\selectfont Construction of Rhiza Community Clinic \\
 \end{tabularx}
 \renewcommand{\arraystretch}{1}
 
@@ -1254,6 +1261,7 @@ All listed projects are backed by client-signed practical completion certificate
 % PAGE 15 (CONTENT p.12) --- TENDER DUE DILIGENCE, WARRANTIES & BACK COVER
 % =================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{sec:tenderpack}{}\pdfbookmark[1]{12. Tender Compliance \& Contact Matrix}{sec:tenderpack}
 
 \begin{tikzpicture}[remember picture, overlay]
     \fill[mhnavy] (current page.north west) rectangle (current page.south east);
@@ -1263,13 +1271,15 @@ All listed projects are backed by client-signed practical completion certificate
 
     % Header Logo Box (Compact & Shifted Upwards with Clean Clearance)
     \node[anchor=north, inner sep=0pt] at ([yshift=-1.0cm]current page.north) {
-        \begin{tcolorbox}[
-            enhanced, colback=white, colframe=white, boxrule=0pt, arc=4pt,
-            left=6pt, right=6pt, top=4pt, bottom=4pt, width=3.8cm, halign=center,
-            drop shadow=black!30
-        ]
-            \includegraphics[width=3.2cm, keepaspectratio]{images/logo.jpeg}
-        \end{tcolorbox}
+        \hyperlink{sec:toc}{%
+            \begin{tcolorbox}[
+                enhanced, colback=white, colframe=white, boxrule=0pt, arc=4pt,
+                left=6pt, right=6pt, top=4pt, bottom=4pt, width=3.8cm, halign=center,
+                drop shadow=black!30
+            ]
+                \includegraphics[width=3.2cm, keepaspectratio]{images/logo.jpeg}
+            \end{tcolorbox}%
+        }%
     };
 
     % Title & Subtitle (Positioned with clear vertical separation below logo)
@@ -1326,10 +1336,10 @@ All listed projects are backed by client-signed practical completion certificate
 \textbf{\color{mhbluelight}\faMapMarkerAlt\ Midrand Logistics Hub} & Riversands Incubation Hub, 8--12 Incubation Dr, Riverside View \\
 \textbf{\color{mhbluelight}\faMapMarkerAlt\ Limpopo Regional Hub} & 197 Dudu Madisha Drive, Chroompark, Mokopane, 0656 \\
 \textbf{\color{mhbluelight}\faMapMarkerAlt\ KZN Regional Hub} & 71 Bertha Mkhize Street, Durban Central, Durban, 4001 \\
-\textbf{\color{mhbluelight}\faPhoneAlt\ Head Office / Tender Desk} & 012 944 1702 \ $\bullet$ \ \textbf{Midrand Ops:} 011 568 0938 \\
-\textbf{\color{mhbluelight}\faWhatsapp\ WhatsApp Direct Hotline} & +27 81 359 8003 (24/7 Site Support) \\
-\textbf{\color{mhbluelight}\faEnvelope\ Tenders \& RFQs Email} & tenders@makhaswaholdings.co.za \\
-\textbf{\color{mhbluelight}\faEnvelope\ General Inquiries \& Admin} & info@makhaswaholdings.co.za \ $\bullet$ \ admin@makhaswaholdings.co.za \\
+\textbf{\color{mhbluelight}\faPhoneAlt\ Head Office / Tender Desk} & \href{tel:0129441702}{\color{white}012 944 1702} \ $\bullet$ \ \textbf{Midrand Ops:} \href{tel:0115680938}{\color{white}011 568 0938} \\
+\textbf{\color{mhbluelight}\faWhatsapp\ WhatsApp Direct Hotline} & \href{https://wa.me/27813598003}{\color{white}+27 81 359 8003} (24/7 Site Support) \\
+\textbf{\color{mhbluelight}\faEnvelope\ Tenders \& RFQs Email} & \href{mailto:tenders@makhaswaholdings.co.za}{\color{mhgold}\textbf{tenders@makhaswaholdings.co.za}} \\
+\textbf{\color{mhbluelight}\faEnvelope\ General Inquiries \& Admin} & \href{mailto:info@makhaswaholdings.co.za}{\color{white}info@makhaswaholdings.co.za} \ $\bullet$ \ \href{mailto:admin@makhaswaholdings.co.za}{\color{white}admin@makhaswaholdings.co.za} \\
 \textbf{\color{mhbluelight}\faGlobe\ Official Corporate Website} & \href{https://www.makhaswaholdings.co.za}{\color{mhgold}\underline{www.makhaswaholdings.co.za}} \\
 \end{tabularx}
         \end{tcolorbox}

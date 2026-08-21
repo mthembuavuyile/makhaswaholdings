@@ -69,15 +69,21 @@
 \definecolor{mhtextmuted}{HTML}{64748B}   % Slate Gray Secondary Text
 \definecolor{mhgold}{HTML}{C8A951}        % Accent Gold
 
+% Hyperlink configuration with complete PDF metadata
 \hypersetup{
     colorlinks=true,
-    linkcolor=mhblue,
-    urlcolor=mhblue
+    linkcolor=mhnavy,
+    urlcolor=mhblue,
+    citecolor=mhblue,
+    pdftitle={Makhaswa Holdings - Corporate Brochure 2026},
+    pdfauthor={Makhaswa Holdings (Pty) Ltd},
+    pdfsubject={Executive Corporate Profile \& Tender Pack},
+    pdfkeywords={Civil Engineering, Mechanical Engineering, CIDB Grade 8, Level 1 B-BBEE, South Africa}
 }
 
 \pagestyle{empty}
 
-% Helper for circular page badge in bottom right corner (Mathematically & Optically Centered)
+% Helper for circular page badge in bottom right corner (Clickable back to Table of Contents)
 \newcommand{\pagebadgeright}[1]{%
     \begin{tikzpicture}[remember picture, overlay]
         \node[
@@ -89,7 +95,7 @@
             anchor=south east,
             align=center
         ] at ([xshift=-1.2cm, yshift=0.8cm]current page.south east) {%
-            {\fontsize{8.5pt}{8.5pt}\selectfont\bfseries\vphantom{0}#1}%
+            \hyperlink{page.toc}{{\fontsize{8.5pt}{8.5pt}\selectfont\bfseries\color{white}\vphantom{0}#1}}%
         };
     \end{tikzpicture}%
 }
@@ -108,16 +114,18 @@
     \end{minipage}%
 }
 
-% Small top-right header logo
+% Small top-right header logo (Clickable back to Table of Contents)
 \newcommand{\toprightlogo}{%
     \begin{tikzpicture}[remember picture, overlay]
         \node[anchor=north east, inner sep=0pt] at ([xshift=-1.2cm, yshift=-0.8cm]current page.north east) {
-            \begin{tcolorbox}[
-                enhanced, colback=white, colframe=mhlightgray, boxrule=0.5pt, arc=2pt,
-                left=2pt, right=2pt, top=2pt, bottom=2pt, width=1.4cm, halign=center
-            ]
-                \includegraphics[width=1.0cm, keepaspectratio]{images/logo.jpeg}
-            \end{tcolorbox}
+            \hyperlink{page.toc}{%
+                \begin{tcolorbox}[
+                    enhanced, colback=white, colframe=mhlightgray, boxrule=0.5pt, arc=2pt,
+                    left=2pt, right=2pt, top=2pt, bottom=2pt, width=1.4cm, halign=center
+                ]
+                    \includegraphics[width=1.0cm, keepaspectratio]{images/logo.jpeg}
+                \end{tcolorbox}%
+            }%
         };
     \end{tikzpicture}%
 }
@@ -128,6 +136,7 @@
 % PAGE 1 --- MINIMALIST COVER PAGE
 % =========================================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{page.cover}{}\pdfbookmark[1]{Cover Page}{page.cover}
 
 \begin{tikzpicture}[remember picture, overlay]
     % Clean Pure White Canvas
@@ -217,6 +226,7 @@
 % PAGE 2 --- CONTENTS + SPLIT FULL-BLEED IMAGE
 % =========================================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{page.toc}{}\pdfbookmark[1]{Table of Contents}{page.toc}
 
 \begin{tikzpicture}[remember picture, overlay]
     % ----------------------------------------------------
@@ -233,39 +243,39 @@
 
             % Section: About Us
             \noindent
-            {\bfseries\color{mhblue}About Us} \dotfill {\bfseries\color{mhtext}3}\\[1pt]
-            \hspace*{0.4cm}{\color{mhtext}Our Journey} \dotfill {\color{mhtextmuted}4}\\[1pt]
-            \hspace*{0.4cm}{\color{mhtext}Our Values, Vision \& Services} \dotfill {\color{mhtextmuted}5}\\[1pt]
-            \hspace*{0.4cm}{\color{mhtext}Leadership \& Executive Directors} \dotfill {\color{mhtextmuted}6}\\[1pt]
-            \hspace*{0.4cm}{\color{mhtext}Our Staff \& Workforce Capacity} \dotfill {\color{mhtextmuted}7}\\[1pt]
-            \hspace*{0.4cm}{\color{mhtext}Health \& Safety (SHEQ) \ \& \ Plant Fleet} \dotfill {\color{mhtextmuted}8}\\[1pt]
-            \hspace*{0.4cm}{\color{mhtext}Safety Standards \& MBA North Compliance} \dotfill {\color{mhtextmuted}9}\\[1pt]
-            \hspace*{0.4cm}{\color{mhtext}Key Statistics} \dotfill {\color{mhtextmuted}10}
+            \hyperlink{page.about}{{\bfseries\color{mhblue}About Us} \dotfill {\bfseries\color{mhtext}3}}\\[1pt]
+            \hyperlink{page.journey}{\hspace*{0.4cm}{\color{mhtext}Our Journey} \dotfill {\color{mhtextmuted}4}}\\[1pt]
+            \hyperlink{page.values}{\hspace*{0.4cm}{\color{mhtext}Our Values, Vision \& Services} \dotfill {\color{mhtextmuted}5}}\\[1pt]
+            \hyperlink{page.leadership}{\hspace*{0.4cm}{\color{mhtext}Leadership \& Executive Directors} \dotfill {\color{mhtextmuted}6}}\\[1pt]
+            \hyperlink{page.staff}{\hspace*{0.4cm}{\color{mhtext}Our Staff \& Workforce Capacity} \dotfill {\color{mhtextmuted}7}}\\[1pt]
+            \hyperlink{page.sheq}{\hspace*{0.4cm}{\color{mhtext}Health \& Safety (SHEQ) \ \& \ Plant Fleet} \dotfill {\color{mhtextmuted}8}}\\[1pt]
+            \hyperlink{page.standards}{\hspace*{0.4cm}{\color{mhtext}Safety Standards \& MBA North Compliance} \dotfill {\color{mhtextmuted}9}}\\[1pt]
+            \hyperlink{page.stats}{\hspace*{0.4cm}{\color{mhtext}Key Statistics} \dotfill {\color{mhtextmuted}10}}
 
             \vspace{0.35cm}
 
             % Section: Social Responsibility
             \noindent
-            {\bfseries\color{mhblue}Social Responsibility} \dotfill {\bfseries\color{mhtext}11}\\[1pt]
-            \hspace*{0.4cm}{\color{mhtext}Transformation \& B-BBEE Level 1} \dotfill {\color{mhtextmuted}11}\\[1pt]
-            \hspace*{0.4cm}{\color{mhtext}Training \& Skills Development} \dotfill {\color{mhtextmuted}11}\\[1pt]
-            \hspace*{0.4cm}{\color{mhtext}Investment in Communities (CSI)} \dotfill {\color{mhtextmuted}11}
+            \hyperlink{page.csi}{{\bfseries\color{mhblue}Social Responsibility} \dotfill {\bfseries\color{mhtext}11}}\\[1pt]
+            \hyperlink{page.csi}{\hspace*{0.4cm}{\color{mhtext}Transformation \& B-BBEE Level 1} \dotfill {\color{mhtextmuted}11}}\\[1pt]
+            \hyperlink{page.csi}{\hspace*{0.4cm}{\color{mhtext}Training \& Skills Development} \dotfill {\color{mhtextmuted}11}}\\[1pt]
+            \hyperlink{page.csi}{\hspace*{0.4cm}{\color{mhtext}Investment in Communities (CSI)} \dotfill {\color{mhtextmuted}11}}
 
             \vspace{0.35cm}
 
             % Section: Projects
             \noindent
-            {\bfseries\color{mhblue}Featured Projects} \dotfill {\bfseries\color{mhtext}12}\\[1pt]
-            \hspace*{0.4cm}{\color{mhtext}Healthcare Builds (Rhiza Community Clinic)} \dotfill {\color{mhtextmuted}12}\\[1pt]
-            \hspace*{0.4cm}{\color{mhtext}Educational Facilities (4-Classroom Block)} \dotfill {\color{mhtextmuted}12}\\[1pt]
-            \hspace*{0.4cm}{\color{mhtext}Residential Housing (Double-Storey Multi-Unit)} \dotfill {\color{mhtextmuted}12}\\[1pt]
-            \hspace*{0.4cm}{\color{mhtext}Municipal Bulk Water (Lerome Reticulation)} \dotfill {\color{mhtextmuted}12}
+            \hyperlink{page.projects}{{\bfseries\color{mhblue}Featured Projects} \dotfill {\bfseries\color{mhtext}12}}\\[1pt]
+            \hyperlink{page.projects}{\hspace*{0.4cm}{\color{mhtext}Healthcare Builds (Rhiza Community Clinic)} \dotfill {\color{mhtextmuted}12}}\\[1pt]
+            \hyperlink{page.projects}{\hspace*{0.4cm}{\color{mhtext}Educational Facilities (4-Classroom Block)} \dotfill {\color{mhtextmuted}12}}\\[1pt]
+            \hyperlink{page.projects}{\hspace*{0.4cm}{\color{mhtext}Residential Housing (Double-Storey Multi-Unit)} \dotfill {\color{mhtextmuted}12}}\\[1pt]
+            \hyperlink{page.projects}{\hspace*{0.4cm}{\color{mhtext}Municipal Bulk Water (Lerome Reticulation)} \dotfill {\color{mhtextmuted}12}}
 
             \vspace{0.35cm}
 
             % Section: Contact Us
             \noindent
-            {\bfseries\color{mhblue}Compliance Matrix \& Contact Us} \dotfill {\bfseries\color{mhtext}13}
+            \hyperlink{page.contact}{{\bfseries\color{mhblue}Compliance Matrix \& Contact Us} \dotfill {\bfseries\color{mhtext}13}}
         \end{minipage}
     };
 
@@ -295,6 +305,7 @@
 % PAGE 3 --- SECTION DIVIDER: ABOUT US
 % =========================================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{page.about}{}\pdfbookmark[1]{About Us}{page.about}
 
 \begin{tikzpicture}[remember picture, overlay]
     % Clean Pure White Canvas
@@ -357,6 +368,7 @@
 % PAGE 4 --- OUR JOURNEY VERTICAL TIMELINE
 % =========================================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{page.journey}{}\pdfbookmark[1]{Our Journey \& Milestones}{page.journey}
 \toprightlogo
 
 \noindent
@@ -476,6 +488,7 @@ Established in 2017, Makhaswa Holdings (Pty) Ltd is a 100\% Black-Owned, Level 1
 % PAGE 5 --- OUR VALUES, OUR VISION & OUR SERVICES
 % =========================================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{page.values}{}\pdfbookmark[1]{Our Values, Vision \& Services}{page.values}
 \toprightlogo
 
 \noindent
@@ -551,6 +564,7 @@ Established in 2017, Makhaswa Holdings (Pty) Ltd is a 100\% Black-Owned, Level 1
 % PAGE 6 --- LEADERSHIP
 % =========================================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{page.leadership}{}\pdfbookmark[1]{Leadership \& Governance}{page.leadership}
 \toprightlogo
 
 \noindent
@@ -694,6 +708,7 @@ Established in 2017, Makhaswa Holdings (Pty) Ltd is a 100\% Black-Owned, Level 1
 % PAGE 7 --- OUR STAFF
 % =========================================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{page.staff}{}\pdfbookmark[1]{Our Staff \& Human Capital}{page.staff}
 \toprightlogo
 
 \noindent
@@ -735,6 +750,7 @@ We recognise the immense value of our human capital and create lasting value thr
 % PAGE 8 --- HEALTH & SAFETY | PLANT & EQUIPMENT
 % =========================================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{page.sheq}{}\pdfbookmark[1]{Health \& Safety \& Plant Fleet}{page.sheq}
 \toprightlogo
 
 \noindent
@@ -832,6 +848,7 @@ We recognise the immense value of our human capital and create lasting value thr
 % PAGE 9 --- SAFETY GOVERNANCE & MBA NORTH / INDUSTRY RECOGNITION
 % =========================================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{page.standards}{}\pdfbookmark[1]{Safety Standards \& Compliance}{page.standards}
 \toprightlogo
 
 \noindent
@@ -906,6 +923,7 @@ Makhaswa Holdings prioritises Health, Safety, Environmental, and Quality (SHEQ) 
 % PAGE 10 --- KEY STATISTICS (Circular Cards Grid matching reference)
 % =========================================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{page.stats}{}\pdfbookmark[1]{Key Statistics}{page.stats}
 \toprightlogo
 
 \noindent
@@ -969,6 +987,7 @@ Makhaswa Holdings prioritises Health, Safety, Environmental, and Quality (SHEQ) 
 % PAGE 11 --- SOCIAL RESPONSIBILITY & TRANSFORMATION
 % =========================================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{page.csi}{}\pdfbookmark[1]{Social Responsibility \& B-BBEE}{page.csi}
 \toprightlogo
 
 \noindent
@@ -1030,6 +1049,7 @@ At Makhaswa Holdings, socio-economic transformation is embedded into every civil
 % PAGE 12 --- PROJECT SHOWCASE: HEALTHCARE & EDUCATIONAL INFRASTRUCTURE
 % =========================================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{page.projects}{}\pdfbookmark[1]{Featured Projects Showcase}{page.projects}
 \toprightlogo
 
 \noindent
@@ -1108,19 +1128,22 @@ At Makhaswa Holdings, socio-economic transformation is embedded into every civil
 % PAGE 13 --- CONTACT US & COMPLIANCE MATRIX (Back Cover - Minimalist White Theme)
 % =========================================================================
 \thispagestyle{empty}
+\phantomsection\hypertarget{page.contact}{}\pdfbookmark[1]{Compliance Matrix \& Contact Us}{page.contact}
 
 \begin{tikzpicture}[remember picture, overlay]
     % Clean Pure White Canvas
     \fill[white] (current page.north west) rectangle (current page.south east);
 
-    % Logo Container
+    % Logo Container (Clickable back to Table of Contents)
     \node[anchor=north, inner sep=0pt] at ([yshift=-1.2cm]current page.north) {
-        \begin{tcolorbox}[
-            enhanced, colback=white, colframe=mhlightgray, boxrule=0.6pt, arc=3pt,
-            left=6pt, right=6pt, top=4pt, bottom=4pt, width=4.0cm, halign=center
-        ]
-            \includegraphics[width=3.5cm, keepaspectratio]{images/logo.jpeg}
-        \end{tcolorbox}
+        \hyperlink{page.toc}{%
+            \begin{tcolorbox}[
+                enhanced, colback=white, colframe=mhlightgray, boxrule=0.6pt, arc=3pt,
+                left=6pt, right=6pt, top=4pt, bottom=4pt, width=4.0cm, halign=center
+            ]
+                \includegraphics[width=3.5cm, keepaspectratio]{images/logo.jpeg}
+            \end{tcolorbox}%
+        }%
     };
 
     % Title
@@ -1182,9 +1205,9 @@ At Makhaswa Holdings, socio-economic transformation is embedded into every civil
             \textbf{\color{mhnavy}\faMapMarker*\ Midrand Logistics Hub} & {\color{mhtext}Riversands Incubation Hub, Riverside View, Midrand} \\
             \textbf{\color{mhnavy}\faMapMarker*\ Limpopo Regional Hub} & {\color{mhtext}197 Dudu Madisha Drive, Mokopane, 0656} \\
             \textbf{\color{mhnavy}\faMapMarker*\ KZN Regional Hub} & {\color{mhtext}71 Bertha Mkhize Street, Durban Central, 4001} \\
-            \textbf{\color{mhnavy}\faPhone*\ Telephone Desk} & {\color{mhtext}012 944 1702 \ $\bullet$ \ \textbf{Midrand:} 011 568 0938} \\
-            \textbf{\color{mhnavy}\faWhatsapp\ WhatsApp Direct} & {\color{mhtext}+27 81 359 8003 (24/7 Field Support)} \\
-            \textbf{\color{mhnavy}\faEnvelope\ Email RFQs / Tenders} & \textbf{\color{mhblue}tenders@makhaswaholdings.co.za} \\
+            \textbf{\color{mhnavy}\faPhone*\ Telephone Desk} & {\color{mhtext}\href{tel:0129441702}{012 944 1702} \ $\bullet$ \ \textbf{Midrand:} \href{tel:0115680938}{011 568 0938}} \\
+            \textbf{\color{mhnavy}\faWhatsapp\ WhatsApp Direct} & {\color{mhtext}\href{https://wa.me/27813598003}{+27 81 359 8003} (24/7 Field Support)} \\
+            \textbf{\color{mhnavy}\faEnvelope\ Email RFQs / Tenders} & \textbf{\href{mailto:tenders@makhaswaholdings.co.za}{\color{mhblue}tenders@makhaswaholdings.co.za}} \\
             \textbf{\color{mhnavy}\faGlobe\ Official Website} & \href{https://www.makhaswaholdings.co.za}{\textbf{\color{mhblue}\underline{www.makhaswaholdings.co.za}}}
             \end{tabularx}
         \end{tcolorbox}
