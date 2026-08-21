@@ -963,8 +963,8 @@
             </button>
 
             <select id="selectZoom" class="zoom-select" aria-label="Zoom Level">
-                <option value="fit-width" selected>Fit Width</option>
-                <option value="fit-page">Fit Page</option>
+                <option value="fit-width">Fit Width</option>
+                <option value="fit-page" selected>Fit Page</option>
                 <option value="0.75">75%</option>
                 <option value="1.0">100%</option>
                 <option value="1.25">125%</option>
@@ -1095,13 +1095,14 @@
             const urlParams = new URLSearchParams(window.location.search);
             const PDF_URL = urlParams.get('file') || 'documents/makhaswa-holdings-company-profile.pdf';
             const INITIAL_PAGE = parseInt(urlParams.get('page'), 10) || 1;
+            const INITIAL_ZOOM = urlParams.get('zoom') || 'fit-page';
 
             // 3. State Management
             const state = {
                 pdfDoc: null,
                 totalPages: 0,
                 currentPage: INITIAL_PAGE,
-                zoomMode: 'fit-width',
+                zoomMode: INITIAL_ZOOM,
                 customScale: 1.0,
                 currentScale: 1.0,
                 viewMode: 'scroll',
@@ -1164,6 +1165,7 @@
                     el.labelTotalPages.textContent = state.totalPages;
                     el.inputPage.max = state.totalPages;
                     el.inputPage.value = state.currentPage;
+                    if (el.selectZoom) el.selectZoom.value = state.zoomMode;
 
                     setupPageNodes();
                     calculateScaleAndRenderAll();
