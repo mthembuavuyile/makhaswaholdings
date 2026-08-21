@@ -618,27 +618,59 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: #1e293b;
-            border: 1px solid rgba(239, 68, 68, 0.4);
-            border-radius: 10px;
-            padding: 28px;
-            max-width: 440px;
+            background: #0f172a;
+            border: 1px solid rgba(239, 68, 68, 0.35);
+            border-radius: 12px;
+            padding: 32px 28px;
+            max-width: 460px;
             text-align: center;
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6);
             z-index: 110;
         }
 
         .viewer-error-card h3 {
             font-family: var(--font-head);
+            font-size: 1.1rem;
             color: #f87171;
             margin-bottom: 8px;
         }
 
         .viewer-error-card p {
-            font-size: 0.85rem;
-            color: var(--mh-text-muted);
-            margin-bottom: 18px;
-            line-height: 1.5;
+            font-size: 0.88rem;
+            color: #94a3b8;
+            margin-bottom: 22px;
+            line-height: 1.6;
+        }
+
+        .error-card-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .retry-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-family: var(--font-head);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 8px 18px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            backdrop-filter: blur(4px);
+        }
+
+        .retry-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffffff;
+            transform: translateY(-1px);
         }
 
         /* Presentation Nav Chevrons */
@@ -1051,16 +1083,19 @@
 
             <!-- Error Card Fallback -->
             <div class="viewer-error-card" id="viewerErrorCard">
-                <i data-lucide="alert-triangle" width="32" height="32" color="#f87171"
-                    style="margin:0 auto 10px auto;"></i>
+                <i data-lucide="alert-triangle" width="36" height="36" color="#f87171"
+                    style="margin:0 auto 12px auto; display: block;"></i>
                 <h3>Unable to Render Document</h3>
-                <p>The corporate profile could not be rendered in this browser session. You can download the PDF file
-                    directly.</p>
-                <a href="documents/makhaswa-holdings-company-profile.pdf"
-                    download="Makhaswa-Holdings-Company-Profile.pdf" class="download-cta-btn"
-                    style="display:inline-flex; justify-content:center;">
-                    <i data-lucide="download" width="15" height="15"></i> Download PDF Directly
-                </a>
+                <p>The corporate profile could not be rendered in this browser session. You can retry loading or download the PDF file directly.</p>
+                <div class="error-card-actions">
+                    <button type="button" id="btnRetryLoad" class="retry-btn">
+                        <i data-lucide="rotate-cw" width="15" height="15"></i> Retry Loading
+                    </button>
+                    <a href="documents/makhaswa-holdings-company-profile.pdf"
+                        download="Makhaswa-Holdings-Company-Profile.pdf" class="download-cta-btn">
+                        <i data-lucide="download" width="15" height="15"></i> Download PDF
+                    </a>
+                </div>
             </div>
 
             <!-- Presentation Navigation Chevrons -->
@@ -1142,7 +1177,8 @@
                 btnToggleSidebar: document.getElementById('btnToggleSidebar'),
                 btnCloseSidebar: document.getElementById('btnCloseSidebar'),
                 btnFullscreen: document.getElementById('btnFullscreen'),
-                btnPrint: document.getElementById('btnPrint')
+                btnPrint: document.getElementById('btnPrint'),
+                btnRetry: document.getElementById('btnRetryLoad')
             };
 
             // Initialize Lucide Icons
@@ -1193,6 +1229,7 @@
                     console.error('Error loading PDF document:', err);
                     el.loader.style.display = 'none';
                     el.errorCard.style.display = 'block';
+                    lucide.createIcons();
                 }
             }
 
@@ -1483,6 +1520,7 @@
             el.btnNext.onclick = () => goToPage(state.currentPage + 1);
             if (el.btnPresPrev) el.btnPresPrev.onclick = () => goToPage(state.currentPage - 1);
             if (el.btnPresNext) el.btnPresNext.onclick = () => goToPage(state.currentPage + 1);
+            if (el.btnRetry) el.btnRetry.onclick = () => loadPdfDocument();
 
             el.inputPage.addEventListener('change', (e) => {
                 const val = parseInt(e.target.value, 10);
