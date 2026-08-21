@@ -1217,7 +1217,7 @@
         .flipbook-page-wrapper {
             position: relative;
             transform-style: preserve-3d;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+            overflow: hidden;
         }
 
         /* Slide transition classes */
@@ -1457,27 +1457,52 @@
         /* --- Responsive Flipbook --- */
         @media screen and (max-width: 860px) {
             .flipbook-nav {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
+                width: 38px;
+                height: 38px;
+                font-size: 0.95rem;
+                background: rgba(8, 45, 90, 0.9);
             }
-            .flipbook-nav-prev { left: 8px; }
-            .flipbook-nav-next { right: 8px; }
-            .flipbook-dots { gap: 6px; }
+            .flipbook-nav-prev { left: 6px; }
+            .flipbook-nav-next { right: 6px; }
+            .flipbook-dots { gap: 5px; }
             .flipbook-dot { width: 8px; height: 8px; }
             .flipbook-page-info { font-size: 0.75rem; }
+            .flipbook-controls { padding: 8px 12px 12px; gap: 6px; }
         }
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 600px) {
+            /* Move arrows to overlay the page edges so they don't eat horizontal space */
             .flipbook-nav {
-                width: 36px;
-                height: 36px;
-                font-size: 0.85rem;
+                width: 34px;
+                height: 34px;
+                font-size: 0.8rem;
+                opacity: 0.8;
+                z-index: 920;
             }
             .flipbook-nav-prev { left: 4px; }
             .flipbook-nav-next { right: 4px; }
-            .flipbook-controls { padding: 8px 10px 12px; gap: 6px; }
-            .flipbook-dots { gap: 5px; }
+            .flipbook-controls { padding: 6px 8px 10px; gap: 4px; }
+            .flipbook-dots { gap: 4px; }
             .flipbook-dot { width: 7px; height: 7px; }
+            .flipbook-page-info { font-size: 0.7rem; letter-spacing: 0.5px; }
+            .flipbook-page-info .page-current { font-size: 0.9rem; }
+            .flipbook-transition-toggle label { font-size: 0.65rem; }
+            .flipbook-transition-toggle select { font-size: 0.65rem; padding: 2px 6px; }
+            /* Compact toolbar in flipbook mode */
+            body.flipbook-active .viewer-toolbar {
+                min-height: 40px;
+                padding: 4px 8px;
+                gap: 4px;
+            }
+            body.flipbook-active .toolbar-btn {
+                padding: 4px 7px;
+                font-size: 0.68rem;
+            }
+            body.flipbook-active .toolbar-brand img {
+                height: 22px;
+            }
+            body.flipbook-active .btn-lbl {
+                display: none;
+            }
         }
 
     </style>
@@ -2948,15 +2973,27 @@
             // Available viewport (minus toolbar height and controls bar)
             const toolbarH = document.querySelector('.viewer-toolbar')?.offsetHeight || 54;
             const controlsH = document.querySelector('.flipbook-controls')?.offsetHeight || 70;
-            const availW = window.innerWidth - 140; // padding for arrows
-            const availH = window.innerHeight - toolbarH - controlsH - 20;
+
+            // On mobile (<600px), arrows overlay the page, so use minimal padding
+            const vw = window.innerWidth;
+            const arrowPad = vw <= 600 ? 16 : (vw <= 860 ? 60 : 140);
+
+            const availW = vw - arrowPad;
+            const availH = window.innerHeight - toolbarH - controlsH - 10;
 
             const scale = Math.min(availW / pageW, availH / pageH, 1);
 
-            wrapper.style.width = pageW + 'px';
-            wrapper.style.height = pageH + 'px';
-            wrapper.style.transform = 'scale(' + scale + ')';
-            wrapper.style.transformOrigin = 'center center';
+            // Set wrapper to the SCALED size so flexbox can center it properly
+            const scaledW = Math.round(pageW * scale);
+            const scaledH = Math.round(pageH * scale);
+            wrapper.style.width = scaledW + 'px';
+            wrapper.style.height = scaledH + 'px';
+
+            // Scale the inner page clone (transform-origin top-left fits inside the wrapper)
+            pageClone.style.transform = 'scale(' + scale + ')';
+            pageClone.style.transformOrigin = 'top left';
+            pageClone.style.width = pageW + 'px';
+            pageClone.style.height = pageH + 'px';
         }
 
         function updateControls(index) {
