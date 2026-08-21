@@ -1263,26 +1263,28 @@
                 try {
                     const page = await state.pdfDoc.getPage(pageNum);
                     const pixelRatio = window.devicePixelRatio || 1;
-                    const viewport = page.getViewport({ scale: scale });
+                    
+                    // Pass the true high-DPI scale into getViewport to prevent PDF.js viewport clipping
+                    const viewport = page.getViewport({ scale: scale * pixelRatio });
 
-                    pageNode.style.width = `${Math.floor(viewport.width)}px`;
-                    pageNode.style.height = `${Math.floor(viewport.height)}px`;
+                    const cssWidth = Math.floor(viewport.width / pixelRatio);
+                    const cssHeight = Math.floor(viewport.height / pixelRatio);
 
-                    canvas.width = Math.floor(viewport.width * pixelRatio);
-                    canvas.height = Math.floor(viewport.height * pixelRatio);
-                    canvas.style.width = `${Math.floor(viewport.width)}px`;
-                    canvas.style.height = `${Math.floor(viewport.height)}px`;
+                    pageNode.style.width = `${cssWidth}px`;
+                    pageNode.style.height = `${cssHeight}px`;
+
+                    canvas.width = Math.floor(viewport.width);
+                    canvas.height = Math.floor(viewport.height);
+                    canvas.style.width = `${cssWidth}px`;
+                    canvas.style.height = `${cssHeight}px`;
 
                     const ctx = canvas.getContext('2d', { alpha: false });
                     ctx.imageSmoothingEnabled = true;
                     ctx.imageSmoothingQuality = 'high';
 
-                    const transform = pixelRatio !== 1 ? [pixelRatio, 0, 0, pixelRatio, 0, 0] : null;
-
                     const renderContext = {
                         canvasContext: ctx,
-                        viewport: viewport,
-                        transform: transform
+                        viewport: viewport
                     };
 
                     if (state.renderedPages.has(pageNum)) {
@@ -1297,16 +1299,17 @@
 
                     await renderTask.promise;
 
-                    // Render Text Layer
+                    // Render Text Layer (in CSS scale)
                     textLayerDiv.innerHTML = '';
-                    textLayerDiv.style.width = `${Math.floor(viewport.width)}px`;
-                    textLayerDiv.style.height = `${Math.floor(viewport.height)}px`;
+                    textLayerDiv.style.width = `${cssWidth}px`;
+                    textLayerDiv.style.height = `${cssHeight}px`;
 
+                    const textViewport = page.getViewport({ scale: scale });
                     const textContent = await page.getTextContent();
                     pdfjsLib.renderTextLayer({
                         textContent: textContent,
                         container: textLayerDiv,
-                        viewport: viewport,
+                        viewport: textViewport,
                         textDivs: []
                     });
 
@@ -1317,9 +1320,9 @@
                 }
             }
 
-            function renderAllPages(scale) {
+            async function renderAllPages(scale) {
                 for (let i = 1; i <= state.totalPages; i++) {
-                    renderPage(i, scale);
+                    await renderPage(i, scale);
                 }
             }
 
@@ -1371,10 +1374,14 @@
             async function renderThumbnail(pageNum, canvas) {
                 try {
                     const page = await state.pdfDoc.getPage(pageNum);
-                    const viewport = page.getViewport({ scale: 0.22 });
+                    const pixelRatio = window.devicePixelRatio || 1;
+                    const viewport = page.getViewport({ scale: 0.22 * pixelRatio });
 
-                    canvas.width = viewport.width;
-                    canvas.height = viewport.height;
+                    canvas.width = Math.floor(viewport.width);
+                    canvas.height = Math.floor(viewport.height);
+                    canvas.style.width = `${Math.floor(viewport.width / pixelRatio)}px`;
+                    canvas.style.height = `${Math.floor(viewport.height / pixelRatio)}px`;
+
                     const ctx = canvas.getContext('2d');
 
                     await page.render({
