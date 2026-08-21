@@ -44,9 +44,8 @@ const SITE_CONFIG = {
         { label: 'Careers', href: 'careers.html' },
         { label: 'Contact Us', href: 'contact.html' },
         { label: 'FAQs', href: 'faq.html' },
-        { label: 'Terms & Conditions', href: 'terms.html' },
-        { label: 'Company Profile (Interactive)', href: 'profile-brochure.html' },
-        { label: 'Company Profile (PDF)', href: 'documents/makhaswa-holdings-company-profile.pdf' },
+        { label: 'Company Profile (Interactive Viewer)', href: 'company-profile-viewer.html' },
+        { label: 'Company Profile (Download PDF)', href: 'documents/makhaswa-holdings-company-profile.pdf' },
     ],
 
     capabilities: [
@@ -189,7 +188,7 @@ function buildFooter() {
     const quickLinksHtml = cfg.quickLinks.map(link => {
         const href = link.href.startsWith('http') ? link.href : prefix + link.href;
         const isPdf = link.href.endsWith('.pdf');
-        const isProfileViewer = link.href.includes('profile-brochure.html');
+        const isProfileViewer = link.href.includes('company-profile-viewer.html') || link.href.includes('profile-brochure.html');
         const extraAttr = isPdf 
             ? ' target="_blank" download="Makhaswa-Holdings-Company-Profile.pdf"' 
             : (isProfileViewer ? ' target="_blank"' : '');
