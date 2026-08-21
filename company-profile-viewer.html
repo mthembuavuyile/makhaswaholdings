@@ -761,6 +761,162 @@
                 font-size: 0.78rem;
             }
         }
+
+        /* ==========================================================================
+           5. HIGH-DPI PDF PRINT ENGINE & PREPARATION MODAL
+           ========================================================================== */
+        #printServiceContainer {
+            display: none;
+        }
+
+        .print-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 26, 54, 0.88);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            padding: 20px;
+            animation: fadeInModal 0.2s ease-out;
+        }
+
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .print-modal-card {
+            background: linear-gradient(180deg, #082d5a 0%, #051a36 100%);
+            border: 1.5px solid var(--mh-gold);
+            border-radius: 12px;
+            padding: 32px 36px;
+            max-width: 440px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .print-modal-title {
+            font-family: var(--font-head);
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+        }
+
+        .print-modal-status {
+            font-family: var(--font-head);
+            font-size: 0.9rem;
+            color: var(--mh-gold);
+            font-weight: 700;
+        }
+
+        .print-modal-sub {
+            font-size: 0.78rem;
+            color: var(--mh-text-muted);
+            line-height: 1.4;
+        }
+
+        .print-cancel-btn {
+            margin-top: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            font-family: var(--font-head);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 6px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+        }
+
+        .print-cancel-btn:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: #ef4444;
+            color: #fca5a5;
+        }
+
+        /* Pure Document Print Output */
+        @media print {
+            *, *::before, *::after {
+                background: transparent !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+
+            html, body {
+                width: 100% !important;
+                height: auto !important;
+                min-height: 100% !important;
+                overflow: visible !important;
+                background: #ffffff !important;
+                color: #000000 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            /* Hide all web application chrome */
+            .viewer-header,
+            .thumbnails-sidebar,
+            .document-viewport,
+            .pres-nav-btn,
+            .viewer-loader,
+            .viewer-error-card,
+            .print-modal-overlay {
+                display: none !important;
+            }
+
+            /* Display only clean multi-page PDF container */
+            #printServiceContainer {
+                display: block !important;
+                position: static !important;
+                left: 0 !important;
+                top: 0 !important;
+                width: 100% !important;
+                height: auto !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                background: #ffffff !important;
+            }
+
+            .print-page-sheet {
+                position: relative !important;
+                width: 100% !important;
+                height: auto !important;
+                page-break-after: always !important;
+                break-after: page !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                display: block !important;
+                background: #ffffff !important;
+            }
+
+            .print-page-sheet img,
+            .print-page-sheet canvas {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100% !important;
+                display: block !important;
+                margin: 0 auto !important;
+            }
+
+            @page {
+                margin: 0;
+                size: auto;
+            }
+        }
     </style>
 </head>
 
@@ -910,6 +1066,20 @@
             </div>
         </div>
     </main>
+
+    <!-- Dedicated Full-PDF Print Container (Visible exclusively during @media print) -->
+    <div id="printServiceContainer" aria-hidden="true"></div>
+
+    <!-- High-DPI Print Preparation Modal Overlay -->
+    <div class="print-modal-overlay" id="printModalOverlay" style="display: none;" role="dialog" aria-modal="true" aria-label="Preparing Document for Print">
+        <div class="print-modal-card">
+            <div class="spinner"></div>
+            <div class="print-modal-title">Preparing Official Corporate Profile</div>
+            <div class="print-modal-status" id="printModalStatus">Rendering page 1 of 14...</div>
+            <div class="print-modal-sub">Generating high-fidelity vector pages without website toolbar</div>
+            <button type="button" class="print-cancel-btn" id="btnCancelPrint">Cancel</button>
+        </div>
+    </div>
 
     <!-- ==========================================================================
          PDF VIEWER ENGINE SCRIPT
@@ -1368,13 +1538,129 @@
                 };
             }
 
+            // ==========================================================================
+            // TRUE PDF PRINT ENGINE (Prints Pure Multi-Page Vector PDF Without UI)
+            // ==========================================================================
+            let isPrintCancelled = false;
+            let isPrintingInProgress = false;
+
+            async function printActualPdf() {
+                if (isPrintingInProgress) return;
+
+                if (!state.pdfDoc || state.totalPages < 1) {
+                    // Fallback to direct raw PDF file download / viewer if document not yet parsed
+                    window.open(PDF_URL, '_blank');
+                    return;
+                }
+
+                const overlay = document.getElementById('printModalOverlay');
+                const statusText = document.getElementById('printModalStatus');
+                const printContainer = document.getElementById('printServiceContainer');
+                const cancelBtn = document.getElementById('btnCancelPrint');
+
+                isPrintCancelled = false;
+                isPrintingInProgress = true;
+
+                if (overlay) overlay.style.display = 'flex';
+                if (printContainer) printContainer.innerHTML = '';
+
+                if (cancelBtn) {
+                    cancelBtn.onclick = () => {
+                        isPrintCancelled = true;
+                        isPrintingInProgress = false;
+                        if (overlay) overlay.style.display = 'none';
+                        if (printContainer) printContainer.innerHTML = '';
+                    };
+                }
+
+                try {
+                    const totalPages = state.totalPages;
+                    // High-quality print scale (2.0 scale provides crisp ~150-200 DPI vector output)
+                    const printScale = 2.0;
+
+                    for (let i = 1; i <= totalPages; i++) {
+                        if (isPrintCancelled) return;
+
+                        if (statusText) {
+                            statusText.textContent = `Rendering page ${i} of ${totalPages}...`;
+                        }
+
+                        const page = await state.pdfDoc.getPage(i);
+                        const viewport = page.getViewport({ scale: printScale });
+
+                        const printCanvas = document.createElement('canvas');
+                        printCanvas.width = Math.floor(viewport.width);
+                        printCanvas.height = Math.floor(viewport.height);
+
+                        const ctx = printCanvas.getContext('2d', { alpha: false });
+                        ctx.imageSmoothingEnabled = true;
+                        ctx.imageSmoothingQuality = 'high';
+
+                        await page.render({
+                            canvasContext: ctx,
+                            viewport: viewport
+                        }).promise;
+
+                        if (isPrintCancelled) return;
+
+                        const pageSheet = document.createElement('div');
+                        pageSheet.className = 'print-page-sheet';
+
+                        const img = document.createElement('img');
+                        img.alt = `Makhaswa Holdings Company Profile - Page ${i}`;
+                        img.src = printCanvas.toDataURL('image/png');
+
+                        pageSheet.appendChild(img);
+                        printContainer.appendChild(pageSheet);
+                    }
+
+                    if (isPrintCancelled) return;
+
+                    if (overlay) overlay.style.display = 'none';
+                    isPrintingInProgress = false;
+
+                    // Allow DOM layout to complete before calling window.print()
+                    setTimeout(() => {
+                        window.print();
+                    }, 150);
+
+                } catch (err) {
+                    console.error('Error preparing PDF for print:', err);
+                    isPrintingInProgress = false;
+                    if (overlay) overlay.style.display = 'none';
+                    // Fallback to opening the PDF directly
+                    window.open(PDF_URL, '_blank');
+                }
+            }
+
+            // Cleanup after print dialog closes to free memory
+            window.addEventListener('afterprint', () => {
+                const printContainer = document.getElementById('printServiceContainer');
+                if (printContainer) {
+                    printContainer.innerHTML = '';
+                }
+                isPrintingInProgress = false;
+                const overlay = document.getElementById('printModalOverlay');
+                if (overlay) overlay.style.display = 'none';
+            });
+
             // Print
             if (el.btnPrint) {
-                el.btnPrint.onclick = () => window.print();
+                el.btnPrint.onclick = (e) => {
+                    e.preventDefault();
+                    printActualPdf();
+                };
             }
 
             // Keyboard Shortcuts (Desktop)
             window.addEventListener('keydown', (e) => {
+                // Intercept Ctrl+P / Cmd+P to print the actual PDF document
+                if ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'P')) {
+                    e.preventDefault();
+                    printActualPdf();
+                    return;
+                }
+
                 if (document.activeElement === el.inputPage) return;
                 switch (e.key) {
                     case 'ArrowRight':
