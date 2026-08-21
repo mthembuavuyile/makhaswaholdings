@@ -41,6 +41,7 @@ const SITE_CONFIG = {
         { label: 'About Us', href: 'about.html' },
         { label: 'Our Services', href: 'services.html' },
         { label: 'Projects', href: 'projects.html' },
+        { label: 'Company Profile (PDF)', href: 'documents/Makhaswa_Holdings_Company_Profile.pdf' },
         { label: 'Careers', href: 'careers.html' },
         { label: 'Contact Us', href: 'contact.html' },
         { label: 'FAQs', href: 'faq.html' },
@@ -186,7 +187,10 @@ function buildFooter() {
     /* Quick Links list items */
     const quickLinksHtml = cfg.quickLinks.map(link => {
         const href = link.href.startsWith('http') ? link.href : prefix + link.href;
-        return `<li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i><a href="${href}">${link.label}</a></li>`;
+        const isPdf = link.href.endsWith('.pdf');
+        const extraAttr = isPdf ? ' target="_blank" download' : '';
+        const iconName = isPdf ? 'file-text' : 'chevron-right';
+        return `<li><i data-lucide="${iconName}" width="14" height="14" class="footer-icon"></i><a href="${href}"${extraAttr}>${link.label}</a></li>`;
     }).join('\n                    ');
 
     /* Capabilities list items */

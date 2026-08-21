@@ -1,0 +1,21 @@
+========================================================================
+MAKHASWA HOLDINGS (PTY) LTD — OFFICIAL COMPANY PROFILE (PDF PLACEHOLDER)
+========================================================================
+
+This file serves as a placeholder for the compiled company profile PDF.
+
+INSTRUCTIONS:
+1. Compile 'company-profile/makhaswa_company_profile_v1.tex' (e.g. via Overleaf or TeX compiler).
+2. Download the resulting PDF file.
+3. Rename the PDF to:
+   Makhaswa_Holdings_Company_Profile.pdf
+4. Place it inside this 'documents/' folder so the path is:
+   documents/Makhaswa_Holdings_Company_Profile.pdf
+5. Commit and push to GitHub repository.
+
+Once pushed to GitHub Pages, the download links across the website:
+- Home Hero CTA: 'Download Profile (PDF)'
+- About Us Tender Compliance Section
+- Site-Wide Footer 'Quick Links'
+will automatically download the official PDF.
+========================================================================
