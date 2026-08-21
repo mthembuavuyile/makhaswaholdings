@@ -5,8 +5,8 @@
     left=1.2cm,
     right=1.2cm,
     top=0cm,
-    bottom=1.5cm,
-    footskip=1.0cm
+    bottom=1.4cm,
+    footskip=0.9cm
 ]{geometry}
 
 \usepackage{helvet}
@@ -52,11 +52,11 @@
 % When compiling online on Overleaf or TexPage (https://texpage.com/):
 %   - Upload your images into the 'images/' directory in the online project.
 % When compiling or editing locally:
-%   - Images reside in 'company-profile-images/' and 'images/'.
-% The \graphicspath below searches both directories seamlessly.
+%   - Images reside in the 'images/' directory.
+% The \graphicspath below searches the images directories seamlessly.
 % All \includegraphics commands reference 'images/<filename>' or '<filename>'.
 % =========================================================================
-\graphicspath{{images/}{./images/}{../images/}{company-profile-images/}{../company-profile-images/}{./}{../}}
+\graphicspath{{images/}{./images/}{../images/}{./}{../}}
 
 
 % =================================================
@@ -122,7 +122,7 @@
             }%
         };
     \end{tikzpicture}%
-    \vspace*{3.8cm}% Clears the 3.5cm banner cleanly before body content starts
+    \vspace*{3.6cm}% Clears the 3.5cm banner cleanly before body content starts
     \noindent
 }
 
@@ -130,12 +130,12 @@
 \newcommand{\statcard}[4][0pt]{%
     \begin{tcolorbox}[
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        left=2pt, right=2pt, top=7pt, bottom=7pt, halign=center,
+        left=3pt, right=3pt, top=8pt, bottom=8pt, halign=center,
         enlarge top by=#1,
-        borderline north={2.2pt}{0pt}{#2}
+        borderline north={2.4pt}{0pt}{#2}
     ]
-        {\fontsize{17pt}{19pt}\selectfont\bfseries\color{#2} #3}\\[2pt]
-        {\fontsize{7pt}{9pt}\selectfont\color{mhtextmuted}\MakeUppercase{#4}}
+        {\fontsize{18pt}{20pt}\selectfont\bfseries\color{#2} #3}\\[2.5pt]
+        {\fontsize{7.5pt}{9.5pt}\selectfont\color{mhtextmuted}\MakeUppercase{#4}}
     \end{tcolorbox}%
 }
 
@@ -143,11 +143,11 @@
 \newcommand{\servicecard}[2]{%
     \begin{tcolorbox}[
         enhanced, colback=mhoffwhite, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        left=8pt, right=8pt, top=7pt, bottom=7pt,
-        borderline west={2.6pt}{0pt}{mhblue}
+        left=8pt, right=8pt, top=8pt, bottom=8pt,
+        borderline west={2.8pt}{0pt}{mhblue}
     ]
-        {\fontsize{10pt}{12pt}\selectfont\bfseries\color{mhnavy} #1}\\[2.5pt]
-        {\fontsize{8.2pt}{11pt}\selectfont\color{mhtext} #2}
+        {\fontsize{10.2pt}{12.5pt}\selectfont\bfseries\color{mhnavy} #1}\\[3pt]
+        {\fontsize{8.6pt}{12pt}\selectfont\color{mhtext} #2}
     \end{tcolorbox}%
 }
 
@@ -158,12 +158,12 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[L]{
-    \fontsize{8pt}{10pt}\selectfont\color{mhtextmuted}
+    \fontsize{8.2pt}{10.5pt}\selectfont\color{mhtextmuted}
     \textbf{Makhaswa Holdings (Pty) Ltd} \ $\bullet$ \ CIDB Grade 8 CE PE / 8 ME PE \ $\bullet$ \ Reg: K2017/307900/07
 }
 \fancyfoot[R]{
-    \fontsize{8pt}{10pt}\selectfont\color{mhnavy}
-    \textbf{\thepage} \ \ $\bullet$ \ \ \hyperlink{sec:toc}{{\fontsize{7.5pt}{9pt}\selectfont\color{mhblue}\faListUl\ Contents}}
+    \fontsize{8.2pt}{10.5pt}\selectfont\color{mhnavy}
+    \textbf{\thepage} \ \ $\bullet$ \ \ \hyperlink{sec:toc}{{\fontsize{7.8pt}{9.5pt}\selectfont\color{mhblue}\faListUl\ Contents}}
 }
 
 \begin{document}
@@ -210,7 +210,7 @@
                     {\fontsize{19pt}{23pt}\selectfont\bfseries\color{mhblue}\makebox[\width][s]{HOLDINGS}}
                 };
 
-                % EST. 2017 Circular Seal (Overlayed on Right so it does not affect horizontal centering)
+                % EST. 2017 Circular Seal (Overlayed on Right)
                 \coordinate (estcenter) at ([xshift=1.25cm, yshift=0.06cm]name.east);
                 \fill[mhteal, overlay] (estcenter) circle (0.84cm);
                 \draw[white, line width=1.4pt, overlay] (estcenter) circle (0.74cm);
@@ -273,29 +273,29 @@
     \node[anchor=north west, inner sep=0pt] at ([xshift=1.2cm, yshift=-1.5cm]current page.north west) {
         \begin{minipage}{0.42\paperwidth}
             {\fontsize{24pt}{28pt}\selectfont\bfseries\color{mhblue}Contents}
-            \vspace{0.5cm}
+            \vspace{0.6cm}
 
-            \fontsize{8.2pt}{13.8pt}\selectfont
+            \fontsize{8.6pt}{14.5pt}\selectfont
 
             \noindent
-            \hyperlink{sec:overview}{{\bfseries\color{mhblue}01\ \ Executive Summary \& National Footprint} \dotfill {\bfseries\color{mhnavy}1}}\\[2pt]
-            \hyperlink{sec:leadership}{{\bfseries\color{mhblue}02\ \ Governance, Leadership \& CR Appointments} \dotfill {\bfseries\color{mhnavy}2}}\\[2pt]
-            \hyperlink{sec:accreditations}{{\bfseries\color{mhblue}03\ \ Statutory Registrations \& CIDB Matrix} \dotfill {\bfseries\color{mhnavy}3}}\\[2pt]
-            \hyperlink{sec:journey}{{\bfseries\color{mhblue}04\ \ Our Journey \& Strategic Milestones} \dotfill {\bfseries\color{mhnavy}4}}\\[2pt]
-            \hyperlink{sec:capabilities}{{\bfseries\color{mhblue}05\ \ Core Engineering Disciplines \& Capabilities} \dotfill {\bfseries\color{mhnavy}5}}\\[2pt]
-            \hyperlink{sec:plant}{{\bfseries\color{mhblue}06\ \ Plant, Fleet \& Technical Software Capacity} \dotfill {\bfseries\color{mhnavy}6}}\\[2pt]
-            \hyperlink{sec:sheq}{{\bfseries\color{mhblue}07\ \ SHEQ Policy, ISO Alignment \& Lab Testing} \dotfill {\bfseries\color{mhnavy}7}}\\[2pt]
-            \hyperlink{sec:civilprojects}{{\bfseries\color{mhblue}08\ \ Project Portfolio: Civil Infrastructure \& Roads} \dotfill {\bfseries\color{mhnavy}8}}\\[2pt]
-            \hyperlink{sec:buildingprojects}{{\bfseries\color{mhblue}09\ \ Project Portfolio: Buildings, Water \& Reticulation} \dotfill {\bfseries\color{mhnavy}9}}\\[2pt]
-            \hyperlink{sec:csi}{{\bfseries\color{mhblue}10\ \ CSI \& Socio-Economic Transformation} \dotfill {\bfseries\color{mhnavy}10}}\\[2pt]
-            \hyperlink{sec:references}{{\bfseries\color{mhblue}11\ \ Contactable References Directory} \dotfill {\bfseries\color{mhnavy}11}}\\[2pt]
-            \hyperlink{sec:tenderpack}{{\bfseries\color{mhblue}12\ \ Tender Due Diligence, Warranties \& Contacts} \dotfill {\bfseries\color{mhnavy}12}}
+            \hyperlink{sec:overview}{{\bfseries\color{mhblue}01\ \ Executive Summary \& National Footprint} \dotfill {\bfseries\color{mhnavy}1}}\\[3pt]
+            \hyperlink{sec:leadership}{{\bfseries\color{mhblue}02\ \ Governance, Leadership \& CR Appointments} \dotfill {\bfseries\color{mhnavy}2}}\\[3pt]
+            \hyperlink{sec:accreditations}{{\bfseries\color{mhblue}03\ \ Statutory Registrations \& CIDB Matrix} \dotfill {\bfseries\color{mhnavy}3}}\\[3pt]
+            \hyperlink{sec:journey}{{\bfseries\color{mhblue}04\ \ Our Journey \& Strategic Milestones} \dotfill {\bfseries\color{mhnavy}4}}\\[3pt]
+            \hyperlink{sec:capabilities}{{\bfseries\color{mhblue}05\ \ Core Engineering Disciplines \& Capabilities} \dotfill {\bfseries\color{mhnavy}5}}\\[3pt]
+            \hyperlink{sec:plant}{{\bfseries\color{mhblue}06\ \ Plant, Fleet \& Technical Software Capacity} \dotfill {\bfseries\color{mhnavy}6}}\\[3pt]
+            \hyperlink{sec:sheq}{{\bfseries\color{mhblue}07\ \ SHEQ Policy, ISO Alignment \& Lab Testing} \dotfill {\bfseries\color{mhnavy}7}}\\[3pt]
+            \hyperlink{sec:civilprojects}{{\bfseries\color{mhblue}08\ \ Project Portfolio: Civil Infrastructure \& Roads} \dotfill {\bfseries\color{mhnavy}8}}\\[3pt]
+            \hyperlink{sec:buildingprojects}{{\bfseries\color{mhblue}09\ \ Project Portfolio: Buildings, Water \& Reticulation} \dotfill {\bfseries\color{mhnavy}9}}\\[3pt]
+            \hyperlink{sec:csi}{{\bfseries\color{mhblue}10\ \ CSI \& Socio-Economic Transformation} \dotfill {\bfseries\color{mhnavy}10}}\\[3pt]
+            \hyperlink{sec:references}{{\bfseries\color{mhblue}11\ \ Contactable References Directory} \dotfill {\bfseries\color{mhnavy}11}}\\[3pt]
+            \hyperlink{sec:tenderpack}{{\bfseries\color{mhblue}12\ \ Statutory Compliance \& Contact Matrix} \dotfill {\bfseries\color{mhnavy}12}}
 
-            \vspace{0.4cm}
+            \vspace{0.6cm}
             \textcolor{mhlightgray}{\rule{\linewidth}{0.8pt}}
-            \vspace{0.25cm}
+            \vspace{0.35cm}
 
-            {\fontsize{7.5pt}{10.5pt}\selectfont\color{mhtextmuted}
+            {\fontsize{7.8pt}{11pt}\selectfont\color{mhtextmuted}
             \textbf{Makhaswa Holdings (Pty) Ltd} $\bullet$ Reg: 2017/307900/07\\
             CIDB Grade 8 CE PE / 8 ME PE $\bullet$ Level 1 B-BBEE
             }
@@ -330,19 +330,19 @@
     {\large\bfseries\color{mhnavy} Who We Are}
     \vspace{0.15cm}
 
-    {\fontsize{9pt}{12.8pt}\selectfont\color{mhtext}
+    {\fontsize{9.2pt}{13.2pt}\selectfont\color{mhtext}
     \textbf{Makhaswa Holdings (Pty) Ltd} is a premier, 100\% Black-Owned, Level 1 B-BBEE multi-disciplinary civil engineering, infrastructure development, mechanical, and general building construction enterprise headquartered in Pretoria, Gauteng. The company was officially incorporated with the Companies and Intellectual Property Commission (CIPC) on \textbf{17 July 2017} (Registration: \textbf{2017/307900/07}).
     }
 
     \vspace{0.25cm}
 
-    {\fontsize{9pt}{12.8pt}\selectfont\color{mhtext}
+    {\fontsize{9.2pt}{13.2pt}\selectfont\color{mhtext}
     Through continuous capital investment and flawless project execution, Makhaswa Holdings has scaled into an elite contractor holding top-tier \textbf{CIDB Grade 8 CE PE} (Civil Engineering) and \textbf{8 ME PE} (Mechanical Engineering) ratings, alongside active accreditations in Specialist Building (7SB PE), Electrical Infrastructure (7EB PE), and General Building (6GB PE).
     }
 
     \vspace{0.25cm}
 
-    {\fontsize{9pt}{12.8pt}\selectfont\color{mhtext}
+    {\fontsize{9.2pt}{13.2pt}\selectfont\color{mhtext}
     We execute public infrastructure tenders, municipal framework contracts, commercial facilities, and bulk reticulation schemes across Gauteng, Limpopo, KwaZulu-Natal, and North West.
     }
 \end{minipage}
@@ -357,9 +357,9 @@
         arc=4pt,
         title={\bfseries\color{white} Key Accreditations},
         colbacktitle=mhnavy,
-        left=7pt, right=7pt, top=6pt, bottom=6pt
+        left=8pt, right=8pt, top=7pt, bottom=7pt
     ]
-        \fontsize{8pt}{11pt}\selectfont
+        \fontsize{8.5pt}{12.2pt}\selectfont
         \textcolor{mhnavy}{\rule{4pt}{4pt}}\hspace{4pt}\textbf{CIDB Grade 8 CE PE / 8 ME PE}\\
         \textcolor{mhnavy}{\rule{4pt}{4pt}}\hspace{4pt}\textbf{CIDB 7SB PE / 7EB PE / 6GB PE}\\
         \textcolor{mhnavy}{\rule{4pt}{4pt}}\hspace{4pt}\textbf{Level 1 B-BBEE (135\% Recognition)}\\
@@ -367,21 +367,21 @@
         \textcolor{mhnavy}{\rule{4pt}{4pt}}\hspace{4pt}\textbf{ISO 9001 $\bullet$ 14001 $\bullet$ 45001}
     \end{tcolorbox}
 
-    \vspace{0.25cm}
+    \vspace{0.3cm}
 
     \begin{tcolorbox}[
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        left=6pt, right=6pt, top=6pt, bottom=6pt, halign=center
+        left=6pt, right=6pt, top=7pt, bottom=7pt, halign=center
     ]
-        {\fontsize{18pt}{20pt}\selectfont\bfseries\color{mhblue} 2017}\\[1pt]
-        {\fontsize{7.5pt}{9pt}\selectfont\color{mhtextmuted}\MakeUppercase{Incorporated July 2017}}\\[4pt]
-        \textcolor{mhlightgray}{\rule{3.2cm}{0.6pt}}\\[4pt]
-        {\fontsize{18pt}{20pt}\selectfont\bfseries\color{mhblue} 100\%}\\[1pt]
-        {\fontsize{7.5pt}{9pt}\selectfont\color{mhtextmuted}\MakeUppercase{Black Owned / 50\% Female}}
+        {\fontsize{19pt}{21pt}\selectfont\bfseries\color{mhblue} 2017}\\[2pt]
+        {\fontsize{7.8pt}{9.5pt}\selectfont\color{mhtextmuted}\MakeUppercase{Incorporated July 2017}}\\[5pt]
+        \textcolor{mhlightgray}{\rule{3.2cm}{0.6pt}}\\[5pt]
+        {\fontsize{19pt}{21pt}\selectfont\bfseries\color{mhblue} 100\%}\\[2pt]
+        {\fontsize{7.8pt}{9.5pt}\selectfont\color{mhtextmuted}\MakeUppercase{Black Owned / 50\% Female}}
     \end{tcolorbox}
 \end{minipage}
 
-\vspace{0.3cm}
+\vfill
 
 % Vision & Mission Split Cards
 \noindent
@@ -390,10 +390,10 @@
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
         title={\bfseries\color{mhnavy} Our Vision},
         colbacktitle=mhoffwhite, coltitle=mhnavy, fonttitle=\bfseries\small,
-        left=8pt, right=8pt, top=7pt, bottom=7pt,
+        left=9pt, right=9pt, top=8pt, bottom=8pt,
         borderline west={3pt}{0pt}{mhnavy}
     ]
-        {\fontsize{8.5pt}{11.5pt}\selectfont\color{mhtext}
+        {\fontsize{8.8pt}{12.2pt}\selectfont\color{mhtext}
         To be a leading African infrastructure and engineering contractor recognized for execution excellence, innovative engineering solutions, uncompromised safety standards, and sustainable socio-economic development.
         }
     \end{tcolorbox}
@@ -404,16 +404,16 @@
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
         title={\bfseries\color{mhnavy} Our Mission},
         colbacktitle=mhoffwhite, coltitle=mhnavy, fonttitle=\bfseries\small,
-        left=8pt, right=8pt, top=7pt, bottom=7pt,
+        left=9pt, right=9pt, top=8pt, bottom=8pt,
         borderline west={3pt}{0pt}{mhblue}
     ]
-        {\fontsize{8.5pt}{11.5pt}\selectfont\color{mhtext}
+        {\fontsize{8.8pt}{12.2pt}\selectfont\color{mhtext}
         To procure and execute construction projects at competitive pricing, provide safe working environments, deliver quality infrastructure on time and within budget, and empower local communities through skills transfer.
         }
     \end{tcolorbox}
 \end{minipage}
 
-\vspace{0.25cm}
+\vfill
 
 % Core Values Strip
 \noindent
@@ -428,15 +428,15 @@
 \begin{minipage}[t]{0.155\textwidth}\statcard{mhblue}{05}{Sustainability}\end{minipage}\hfill
 \begin{minipage}[t]{0.155\textwidth}\statcard[10pt]{mhnavy}{06}{Governance}\end{minipage}
 
-\vspace{0.25cm}
+\vfill
 
 % National Regional Footprint Mini Strip
 \noindent
 \begin{tcolorbox}[
     enhanced, colback=mhoffwhite, colframe=mhlightgray, boxrule=0.7pt, arc=4pt,
-    left=8pt, right=8pt, top=6pt, bottom=6pt
+    left=9pt, right=9pt, top=7pt, bottom=7pt
 ]
-    \fontsize{8pt}{10.5pt}\selectfont
+    \fontsize{8.5pt}{11.5pt}\selectfont
     \textbf{\color{mhnavy}Regional Operational Footprint:} \
     \textbf{Pretoria HQ:} 869 Patryshond St, Garsfontein \ $\bullet$ \
     \textbf{Midrand Logistics:} Riversands Incubation Hub \ $\bullet$ \
@@ -456,12 +456,12 @@
 \begin{minipage}[t]{0.485\textwidth}
     \begin{tcolorbox}[
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        left=8pt, right=8pt, top=8pt, bottom=8pt,
+        left=9pt, right=9pt, top=9pt, bottom=9pt,
         borderline west={3.5pt}{0pt}{mhnavy}
     ]
-        {\fontsize{10pt}{12pt}\selectfont\bfseries\color{mhnavy}Lucas Dinga} \ \ {\fontsize{8pt}{10pt}\selectfont\color{mhtextmuted}(CEO / Authorized Signatory)}\\[2pt]
-        {\fontsize{7.8pt}{9.5pt}\selectfont\bfseries\color{mhblue}Statutory CR 7(19c) Appointee}\\[4pt]
-        {\fontsize{8.2pt}{11pt}\selectfont\color{mhtext}
+        {\fontsize{10.5pt}{12.5pt}\selectfont\bfseries\color{mhnavy}Lucas Dinga} \ \ {\fontsize{8.2pt}{10pt}\selectfont\color{mhtextmuted}(CEO / Authorized Signatory)}\\[2pt]
+        {\fontsize{8pt}{10pt}\selectfont\bfseries\color{mhblue}Statutory CR 7(19c) Appointee}\\[4pt]
+        {\fontsize{8.6pt}{11.6pt}\selectfont\color{mhtext}
         Oversees corporate strategy, commercial expansion, tender procurement, joint ventures, and client relations. Brings over 10 years of specialised experience in civil engineering, road works, and major building contracts. Sole designated signatory for legal contracts and financial operations.
         }
     \end{tcolorbox}
@@ -470,63 +470,63 @@
 \begin{minipage}[t]{0.485\textwidth}
     \begin{tcolorbox}[
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        left=8pt, right=8pt, top=8pt, bottom=8pt,
+        left=9pt, right=9pt, top=9pt, bottom=9pt,
         borderline west={3.5pt}{0pt}{mhblue}
     ]
-        {\fontsize{10pt}{12pt}\selectfont\bfseries\color{mhnavy}Nelly Motswapong (Ms. Nelly)} \ \ {\fontsize{8pt}{10pt}\selectfont\color{mhtextmuted}(Director / Co-Owner)}\\[2pt]
-        {\fontsize{7.8pt}{9.5pt}\selectfont\bfseries\color{mhblue}50\% Black Female Ownership Equity}\\[4pt]
-        {\fontsize{8.2pt}{11pt}\selectfont\color{mhtext}
+        {\fontsize{10.5pt}{12.5pt}\selectfont\bfseries\color{mhnavy}Nelly Motswapong (Ms. Nelly)} \ \ {\fontsize{8.2pt}{10pt}\selectfont\color{mhtextmuted}(Director / Co-Owner)}\\[2pt]
+        {\fontsize{8pt}{10pt}\selectfont\bfseries\color{mhblue}50\% Black Female Ownership Equity}\\[4pt]
+        {\fontsize{8.6pt}{11.6pt}\selectfont\color{mhtext}
         Directs corporate governance, human capital development, broad-based enterprise transformation, CSI initiatives, and operational administration. Ensures that all site operations adhere strictly to employment equity and community upliftment mandates.
         }
     \end{tcolorbox}
 \end{minipage}
 
-\vspace{0.25cm}
+\vfill
 
 {\large\bfseries\color{mhnavy} Statutory Appointments (OHS Act 85 of 1993 \& Construction Regulations 2014)}
-\vspace{0.15cm}
+\vspace{0.12cm}
 
 \noindent
-{\fontsize{8.2pt}{10.8pt}\selectfont\color{mhtext}
+{\fontsize{8.5pt}{11.5pt}\selectfont\color{mhtext}
 All site and executive operations are strictly structured in full compliance with the Occupational Health and Safety Act and the Construction Regulations 2014, backed by certified professional personnel:
 }
 
-\vspace{0.2cm}
+\vspace{0.18cm}
 
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.42}
 \begin{tabularx}{\textwidth}{@{}p{3.8cm} p{3.4cm} p{2.2cm} X@{}}
 \rowcolor{mhnavy}
-{\color{white}\bfseries\fontsize{8pt}{10pt}\selectfont Key Personnel} &
-{\color{white}\bfseries\fontsize{8pt}{10pt}\selectfont Designation} &
-{\color{white}\bfseries\fontsize{8pt}{10pt}\selectfont Statutory Ref} &
-{\color{white}\bfseries\fontsize{8pt}{10pt}\selectfont Primary Operational Responsibility} \\
+{\color{white}\bfseries\fontsize{8.5pt}{10.5pt}\selectfont Key Personnel} &
+{\color{white}\bfseries\fontsize{8.5pt}{10.5pt}\selectfont Designation} &
+{\color{white}\bfseries\fontsize{8.5pt}{10.5pt}\selectfont Statutory Ref} &
+{\color{white}\bfseries\fontsize{8.5pt}{10.5pt}\selectfont Primary Operational Responsibility} \\
 \rowcolor{mhbluelight}
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Lucas Dinga & \fontsize{7.8pt}{9.5pt}\selectfont Chief Executive Officer & \fontsize{7.8pt}{9.5pt}\selectfont CR 7(19c) & \fontsize{7.8pt}{9.5pt}\selectfont Corporate leadership, commercial sign-off, tender bids \\
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Elphas Goodman Mdaka & \fontsize{7.8pt}{9.5pt}\selectfont Project \& Contracts Manager & \fontsize{7.8pt}{9.5pt}\selectfont CR 16.2 \& 8.1 & \fontsize{7.8pt}{9.5pt}\selectfont Contractual administration, client liaison (\href{tel:0744810520}{074 481 0520}) \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Lucas Dinga & \fontsize{8.2pt}{10.2pt}\selectfont Chief Executive Officer & \fontsize{8.2pt}{10.2pt}\selectfont CR 7(19c) & \fontsize{8.2pt}{10.2pt}\selectfont Corporate leadership, commercial sign-off, tender bids \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Elphas Goodman Mdaka & \fontsize{8.2pt}{10.2pt}\selectfont Project \& Contracts Manager & \fontsize{8.2pt}{10.2pt}\selectfont CR 16.2 \& 8.1 & \fontsize{8.2pt}{10.2pt}\selectfont Contractual administration, client liaison (\href{tel:0744810520}{074 481 0520}) \\
 \rowcolor{mhbluelight}
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Peter Makwela & \fontsize{7.8pt}{9.5pt}\selectfont Construction Manager & \fontsize{7.8pt}{9.5pt}\selectfont CR 16.2 \& 8.1 & \fontsize{7.8pt}{9.5pt}\selectfont Multi-site programming, fleet dispatch \& logistics \\
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Sfiso Knowledge Nkabinde & \fontsize{7.8pt}{9.5pt}\selectfont Construction Manager / Site Agent & \fontsize{7.8pt}{9.5pt}\selectfont CR 8.1 & \fontsize{7.8pt}{9.5pt}\selectfont Day-to-day site management, resource execution \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Peter Makwela & \fontsize{8.2pt}{10.2pt}\selectfont Construction Manager & \fontsize{8.2pt}{10.2pt}\selectfont CR 16.2 \& 8.1 & \fontsize{8.2pt}{10.2pt}\selectfont Multi-site programming, fleet dispatch \& logistics \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Sfiso Knowledge Nkabinde & \fontsize{8.2pt}{10.2pt}\selectfont Construction Manager / Site Agent & \fontsize{8.2pt}{10.2pt}\selectfont CR 8.1 & \fontsize{8.2pt}{10.2pt}\selectfont Day-to-day site management, resource execution \\
 \rowcolor{mhbluelight}
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Lindelani Shangase & \fontsize{7.8pt}{9.5pt}\selectfont SHEQ Officer & \fontsize{7.8pt}{9.5pt}\selectfont CR 8.5 (Pr.OHS) & \fontsize{7.8pt}{9.5pt}\selectfont Health \& Safety audits, environmental compliance \\
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Hendrick Chauke & \fontsize{7.8pt}{9.5pt}\selectfont Quality Controller (QC) & \fontsize{7.8pt}{9.5pt}\selectfont CR 8.38 & \fontsize{7.8pt}{9.5pt}\selectfont ITPs, slump tests, concrete 28-day cube crushing \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Lindelani Shangase & \fontsize{8.2pt}{10.2pt}\selectfont SHEQ Officer & \fontsize{8.2pt}{10.2pt}\selectfont CR 8.5 (Pr.OHS) & \fontsize{8.2pt}{10.2pt}\selectfont Health \& Safety audits, environmental compliance \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Hendrick Chauke & \fontsize{8.2pt}{10.2pt}\selectfont Quality Controller (QC) & \fontsize{8.2pt}{10.2pt}\selectfont CR 8.38 & \fontsize{8.2pt}{10.2pt}\selectfont ITPs, slump tests, concrete 28-day cube crushing \\
 \rowcolor{mhbluelight}
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Henry Chauke & \fontsize{7.8pt}{9.5pt}\selectfont Section Supervisor & \fontsize{7.8pt}{9.5pt}\selectfont CR 8.8 & \fontsize{7.8pt}{9.5pt}\selectfont Section layerworks, pipelaying, structural builds \\
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Fulufhelo Shidade & \fontsize{7.8pt}{9.5pt}\selectfont Assistant Supervisor / Foreman & \fontsize{7.8pt}{9.5pt}\selectfont CR 8.7 & \fontsize{7.8pt}{9.5pt}\selectfont Front-line task supervision, artisan gang coordination \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Henry Chauke & \fontsize{8.2pt}{10.2pt}\selectfont Section Supervisor & \fontsize{8.2pt}{10.2pt}\selectfont CR 8.8 & \fontsize{8.2pt}{10.2pt}\selectfont Section layerworks, pipelaying, structural builds \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Fulufhelo Shidade & \fontsize{8.2pt}{10.2pt}\selectfont Assistant Supervisor / Foreman & \fontsize{8.2pt}{10.2pt}\selectfont CR 8.7 & \fontsize{8.2pt}{10.2pt}\selectfont Front-line task supervision, artisan gang coordination \\
 \rowcolor{mhbluelight}
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Thabiso Paul Mabetoa & \fontsize{7.8pt}{9.5pt}\selectfont Safety Representative & \fontsize{7.8pt}{9.5pt}\selectfont CR 17.1 & \fontsize{7.8pt}{9.5pt}\selectfont Daily toolbox talks, PPE enforcement, hazard logs \\
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries C. Mazarura & \fontsize{7.8pt}{9.5pt}\selectfont Professional Land Surveyor & \fontsize{7.8pt}{9.5pt}\selectfont Pr.L.S. & \fontsize{7.8pt}{9.5pt}\selectfont Setting out, GPS road profiling, as-built coordinates \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Thabiso Paul Mabetoa & \fontsize{8.2pt}{10.2pt}\selectfont Safety Representative & \fontsize{8.2pt}{10.2pt}\selectfont CR 17.1 & \fontsize{8.2pt}{10.2pt}\selectfont Daily toolbox talks, PPE enforcement, hazard logs \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries C. Mazarura & \fontsize{8.2pt}{10.2pt}\selectfont Professional Land Surveyor & \fontsize{8.2pt}{10.2pt}\selectfont Pr.L.S. & \fontsize{8.2pt}{10.2pt}\selectfont Setting out, GPS road profiling, as-built coordinates \\
 \end{tabularx}
 \renewcommand{\arraystretch}{1}
 
-\vspace{0.25cm}
+\vfill
 
 % Workforce Capacity Card
 \noindent
 \begin{tcolorbox}[
     enhanced, colback=mhoffwhite, colframe=mhnavy, boxrule=0.9pt, arc=4pt,
-    left=9pt, right=9pt, top=6pt, bottom=6pt
+    left=10pt, right=10pt, top=8pt, bottom=8pt
 ]
-    \fontsize{8pt}{11pt}\selectfont\color{mhtext}
+    \fontsize{8.6pt}{12pt}\selectfont\color{mhtext}
     \textbf{\color{mhnavy}Workforce Capacity \& Scalability:} Makhaswa Holdings maintains a core permanent workforce of civil engineers, project managers, survey technicians, certified machine operators, and skilled artisans, scaling to \textbf{100 -- 200 personnel} across active project teams with structured local community labour recruitment.
 \end{tcolorbox}
 
@@ -539,7 +539,7 @@ All site and executive operations are strictly structured in full compliance wit
 \sectionbanner{ACCREDITATIONS}{CIDB Grading Matrix, Statutory Registrations \& Banking}
 
 \noindent
-{\fontsize{9pt}{12.5pt}\selectfont\color{mhtext}
+{\fontsize{9.2pt}{13pt}\selectfont\color{mhtext}
 Makhaswa Holdings maintains full statutory and professional compliance across every regulatory authority governing South African construction. All registrations are active and verifiable for tender due diligence:
 }
 
@@ -550,98 +550,98 @@ Makhaswa Holdings maintains full statutory and professional compliance across ev
 \begin{minipage}[t]{0.185\textwidth}
     \begin{tcolorbox}[
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        halign=center, valign=center, left=2pt, right=2pt, top=3pt, bottom=3pt, height=2.2cm
+        halign=center, valign=center, left=2pt, right=2pt, top=4pt, bottom=4pt, height=2.4cm
     ]
-        \includegraphics[width=\linewidth, height=1.15cm, keepaspectratio]{images/cidb-logo.png}\\[1pt]
-        {\fontsize{7pt}{8pt}\selectfont\bfseries\color{mhnavy}CIDB Grade 8}
+        \includegraphics[width=\linewidth, height=1.3cm, keepaspectratio]{images/cidb-logo.png}\\[2pt]
+        {\fontsize{7.5pt}{8.5pt}\selectfont\bfseries\color{mhnavy}CIDB Grade 8}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.185\textwidth}
     \begin{tcolorbox}[
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        halign=center, valign=center, left=2pt, right=2pt, top=3pt, bottom=3pt, height=2.2cm
+        halign=center, valign=center, left=2pt, right=2pt, top=4pt, bottom=4pt, height=2.4cm
     ]
-        \includegraphics[width=\linewidth, height=1.15cm, keepaspectratio]{images/bbbee-logo.png}\\[1pt]
-        {\fontsize{7pt}{8pt}\selectfont\bfseries\color{mhnavy}Level 1 B-BBEE}
+        \includegraphics[width=\linewidth, height=1.3cm, keepaspectratio]{images/bbbee-logo.png}\\[2pt]
+        {\fontsize{7.5pt}{8.5pt}\selectfont\bfseries\color{mhnavy}Level 1 B-BBEE}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.185\textwidth}
     \begin{tcolorbox}[
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        halign=center, valign=center, left=2pt, right=2pt, top=3pt, bottom=3pt, height=2.2cm
+        halign=center, valign=center, left=2pt, right=2pt, top=4pt, bottom=4pt, height=2.4cm
     ]
-        \includegraphics[width=\linewidth, height=1.15cm, keepaspectratio]{images/iso-logo.png}\\[1pt]
-        {\fontsize{7pt}{8pt}\selectfont\bfseries\color{mhnavy}ISO 9001/14001/45001}
+        \includegraphics[width=\linewidth, height=1.3cm, keepaspectratio]{images/iso-logo.png}\\[2pt]
+        {\fontsize{7.5pt}{8.5pt}\selectfont\bfseries\color{mhnavy}ISO 9001/14001/45001}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.185\textwidth}
     \begin{tcolorbox}[
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        halign=center, valign=center, left=2pt, right=2pt, top=3pt, bottom=3pt, height=2.2cm
+        halign=center, valign=center, left=2pt, right=2pt, top=4pt, bottom=4pt, height=2.4cm
     ]
-        \includegraphics[width=\linewidth, height=1.15cm, keepaspectratio]{images/nhbrc-logo.png}\\[1pt]
-        {\fontsize{7pt}{8pt}\selectfont\bfseries\color{mhnavy}NHBRC Class 5}
+        \includegraphics[width=\linewidth, height=1.3cm, keepaspectratio]{images/nhbrc-logo.png}\\[2pt]
+        {\fontsize{7.5pt}{8.5pt}\selectfont\bfseries\color{mhnavy}NHBRC Class 5}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.185\textwidth}
     \begin{tcolorbox}[
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        halign=center, valign=center, left=2pt, right=2pt, top=3pt, bottom=3pt, height=2.2cm
+        halign=center, valign=center, left=2pt, right=2pt, top=4pt, bottom=4pt, height=2.4cm
     ]
-        \includegraphics[width=\linewidth, height=1.15cm, keepaspectratio]{images/sheq-logo.png}\\[1pt]
-        {\fontsize{7pt}{8pt}\selectfont\bfseries\color{mhnavy}SHEQ Framework}
+        \includegraphics[width=\linewidth, height=1.3cm, keepaspectratio]{images/sheq-logo.png}\\[2pt]
+        {\fontsize{7.5pt}{8.5pt}\selectfont\bfseries\color{mhnavy}SHEQ Framework}
     \end{tcolorbox}
 \end{minipage}
 
-\vspace{0.25cm}
+\vfill
 
 % CIDB Grading Matrix Table
 {\large\bfseries\color{mhnavy} CIDB Multi-Disciplinary Grading Matrix (CRS No: 10153817)}
 \vspace{0.15cm}
 
-\renewcommand{\arraystretch}{1.25}
+\renewcommand{\arraystretch}{1.36}
 \begin{tabularx}{\textwidth}{@{}p{2.5cm} p{7.0cm} X@{}}
 \rowcolor{mhnavy}
-{\color{white}\bfseries\fontsize{8pt}{10pt}\selectfont CIDB Grade} &
-{\color{white}\bfseries\fontsize{8pt}{10pt}\selectfont Engineering Class / Discipline} &
-{\color{white}\bfseries\fontsize{8pt}{10pt}\selectfont Tender Value Capability} \\
+{\color{white}\bfseries\fontsize{8.5pt}{10.5pt}\selectfont CIDB Grade} &
+{\color{white}\bfseries\fontsize{8.5pt}{10.5pt}\selectfont Engineering Class / Discipline} &
+{\color{white}\bfseries\fontsize{8.5pt}{10.5pt}\selectfont Tender Value Capability} \\
 \rowcolor{mhbluelight}
-\fontsize{8pt}{10pt}\selectfont\bfseries 8 CE PE & \fontsize{8pt}{10pt}\selectfont Civil Engineering Works (Potentially Emerging) & \fontsize{8pt}{10pt}\selectfont\bfseries Up to R200 Million \\
-\fontsize{8pt}{10pt}\selectfont\bfseries 8 ME PE & \fontsize{8pt}{10pt}\selectfont Mechanical Engineering Infrastructure & \fontsize{8pt}{10pt}\selectfont\bfseries Up to R200 Million \\
+\fontsize{8.2pt}{10.5pt}\selectfont\bfseries 8 CE PE & \fontsize{8.2pt}{10.5pt}\selectfont Civil Engineering Works (Potentially Emerging) & \fontsize{8.2pt}{10.5pt}\selectfont\bfseries Up to R200 Million \\
+\fontsize{8.2pt}{10.5pt}\selectfont\bfseries 8 ME PE & \fontsize{8.2pt}{10.5pt}\selectfont Mechanical Engineering Infrastructure & \fontsize{8.2pt}{10.5pt}\selectfont\bfseries Up to R200 Million \\
 \rowcolor{mhbluelight}
-\fontsize{8pt}{10pt}\selectfont\bfseries 7 SB PE & \fontsize{8pt}{10pt}\selectfont Specialist Building Works & \fontsize{8pt}{10pt}\selectfont\bfseries Up to R60 Million \\
-\fontsize{8pt}{10pt}\selectfont\bfseries 7 EB PE & \fontsize{8pt}{10pt}\selectfont Electrical Engineering Works (Building) & \fontsize{8pt}{10pt}\selectfont\bfseries Up to R60 Million \\
+\fontsize{8.2pt}{10.5pt}\selectfont\bfseries 7 SB PE & \fontsize{8.2pt}{10.5pt}\selectfont Specialist Building Works & \fontsize{8.2pt}{10.5pt}\selectfont\bfseries Up to R60 Million \\
+\fontsize{8.2pt}{10.5pt}\selectfont\bfseries 7 EB PE & \fontsize{8.2pt}{10.5pt}\selectfont Electrical Engineering Works (Building) & \fontsize{8.2pt}{10.5pt}\selectfont\bfseries Up to R60 Million \\
 \rowcolor{mhbluelight}
-\fontsize{8pt}{10pt}\selectfont\bfseries 6 GB PE & \fontsize{8pt}{10pt}\selectfont General Building Works & \fontsize{8pt}{10pt}\selectfont\bfseries Up to R30 Million \\
+\fontsize{8.2pt}{10.5pt}\selectfont\bfseries 6 GB PE & \fontsize{8.2pt}{10.5pt}\selectfont General Building Works & \fontsize{8.2pt}{10.5pt}\selectfont\bfseries Up to R30 Million \\
 \end{tabularx}
 \renewcommand{\arraystretch}{1}
 
-\vspace{0.25cm}
+\vfill
 
 % Full Statutory Registrations Table
 {\large\bfseries\color{mhnavy} Statutory Compliance \& Vendor Registrations}
 \vspace{0.15cm}
 
-\renewcommand{\arraystretch}{1.2}
+\renewcommand{\arraystretch}{1.32}
 \begin{tabularx}{\textwidth}{@{}p{4.8cm} X@{}}
 \rowcolor{mhnavy}
-{\color{white}\bfseries\fontsize{8pt}{10pt}\selectfont Compliance Parameter} & {\color{white}\bfseries\fontsize{8pt}{10pt}\selectfont Official Corporate Record} \\
+{\color{white}\bfseries\fontsize{8.5pt}{10.5pt}\selectfont Compliance Parameter} & {\color{white}\bfseries\fontsize{8.5pt}{10.5pt}\selectfont Official Corporate Record} \\
 \rowcolor{mhbluelight}
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries CIPC Registration Number & \fontsize{7.8pt}{9.5pt}\selectfont 2017/307900/07 (Incorporated 17 July 2017) \\
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries B-BBEE Contributor Status & \fontsize{7.8pt}{9.5pt}\selectfont Level 1 Contributor (135\% Procurement Recognition $\bullet$ 100\% Black Owned) \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries CIPC Registration Number & \fontsize{8.2pt}{10.2pt}\selectfont 2017/307900/07 (Incorporated 17 July 2017) \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries B-BBEE Contributor Status & \fontsize{8.2pt}{10.2pt}\selectfont Level 1 Contributor (135\% Procurement Recognition $\bullet$ 100\% Black Owned) \\
 \rowcolor{mhbluelight}
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries National Treasury CSD Supplier No. & \fontsize{7.8pt}{9.5pt}\selectfont MAAA0584716 (Master Supplier Database Verified) \\
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries NHBRC Home Builder Number & \fontsize{7.8pt}{9.5pt}\selectfont 4000006217 (Provisional Class 5 Registered Home Builder) \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries National Treasury CSD Supplier No. & \fontsize{8.2pt}{10.2pt}\selectfont MAAA0584716 (Master Supplier Database Verified) \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries NHBRC Home Builder Number & \fontsize{8.2pt}{10.2pt}\selectfont 4000006217 (Provisional Class 5 Registered Home Builder) \\
 \rowcolor{mhbluelight}
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries SARS Tax Numbers & \fontsize{7.8pt}{9.5pt}\selectfont Income Tax: 9670117176 \ $\bullet$ \ VAT Registration: 4840286027 \\
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries COIDA \& UIF Numbers & \fontsize{7.8pt}{9.5pt}\selectfont COIDA: 990001157115 (Letter of Good Standing) \ $\bullet$ \ UIF: 2577464/8 \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries SARS Tax Numbers & \fontsize{8.2pt}{10.2pt}\selectfont Income Tax: 9670117176 \ $\bullet$ \ VAT Registration: 4840286027 \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries COIDA \& UIF Numbers & \fontsize{8.2pt}{10.2pt}\selectfont COIDA: 990001157115 (Letter of Good Standing) \ $\bullet$ \ UIF: 2577464/8 \\
 \rowcolor{mhbluelight}
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Municipal Vendor Numbers & \fontsize{7.8pt}{9.5pt}\selectfont City of Johannesburg (CoJ): 125166 \ $\bullet$ \ Gauteng Province (GPG): 11000148444 \\
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Verified Corporate Banking & \fontsize{7.8pt}{9.5pt}\selectfont First National Bank (FNB) | Cheque Acc: 62763534445 | Branch: 251445 \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Municipal Vendor Numbers & \fontsize{8.2pt}{10.2pt}\selectfont City of Johannesburg (CoJ): 125166 \ $\bullet$ \ Gauteng Province (GPG): 11000148444 \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Verified Corporate Banking & \fontsize{8.2pt}{10.2pt}\selectfont First National Bank (FNB) | Cheque Acc: 62763534445 | Branch: 251445 \\
 \end{tabularx}
 \renewcommand{\arraystretch}{1}
 
-\vspace{0.25cm}
+\vfill
 
 \noindent
 \begin{minipage}[t]{0.235\textwidth}\statcard{mhnavy}{L1}{B-BBEE Level}\end{minipage}\hfill
@@ -658,11 +658,11 @@ Makhaswa Holdings maintains full statutory and professional compliance across ev
 \sectionbanner{OUR JOURNEY}{Strategic Growth, Key Milestones \& Track Record}
 
 \noindent
-{\fontsize{9.2pt}{13pt}\selectfont\color{mhtext}
+{\fontsize{9.2pt}{13.2pt}\selectfont\color{mhtext}
 \textbf{Established in 2017}, Makhaswa Holdings (Pty) Ltd has charted an exponential growth trajectory from early civils in Gauteng to a nationally active, Tier-1 contractor executing mega-infrastructure across four provinces:
 }
 
-\vspace{0.25cm}
+\vfill
 
 % =========================================================
 % ALTERNATING LEFT-RIGHT TIMELINE ROADMAP
@@ -670,7 +670,7 @@ Makhaswa Holdings maintains full statutory and professional compliance across ev
 \begin{center}
 \begin{tikzpicture}[x=1cm, y=1cm]
     % Central Spine Line
-    \draw[color=mhnavy!25, line width=2pt] (0, 0.3) -- (0, -11.2);
+    \draw[color=mhnavy!25, line width=2pt] (0, 0.4) -- (0, -12.4);
 
     % ----------------------------------------------------
     % 2017 --- LEFT SIDE (Company Establishment)
@@ -682,11 +682,11 @@ Makhaswa Holdings maintains full statutory and professional compliance across ev
         \begin{minipage}{8.4cm}
             \begin{tcolorbox}[
                 enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-                left=7pt, right=7pt, top=5pt, bottom=5pt,
-                borderline west={3pt}{0pt}{mhnavy}, drop shadow=black!6
+                left=8pt, right=8pt, top=6pt, bottom=6pt,
+                borderline west={3.2pt}{0pt}{mhnavy}, drop shadow=black!6
             ]
-                {\fontsize{10pt}{12pt}\selectfont\bfseries\color{mhnavy}2017 \ \ $\bullet$ \ \ \fontsize{8.5pt}{10pt}\selectfont Company Establishment}\\[2pt]
-                {\fontsize{7.8pt}{10.5pt}\selectfont\color{mhtext}Makhaswa Holdings incorporated on 17 July 2017. Entry into road surfacing, earthworks, and residential builds across Gauteng.}
+                {\fontsize{10.2pt}{12pt}\selectfont\bfseries\color{mhnavy}2017 \ \ $\bullet$ \ \ \fontsize{8.8pt}{10.5pt}\selectfont Company Establishment}\\[3pt]
+                {\fontsize{8.4pt}{11.2pt}\selectfont\color{mhtext}Makhaswa Holdings incorporated on 17 July 2017. Entry into road surfacing, earthworks, and residential builds across Gauteng.}
             \end{tcolorbox}
         \end{minipage}
     };
@@ -694,18 +694,18 @@ Makhaswa Holdings maintains full statutory and professional compliance across ev
     % ----------------------------------------------------
     % 2019 --- RIGHT SIDE (Public Sector & Fleet Expansion)
     % ----------------------------------------------------
-    \draw[color=mhblue, line width=1.5pt] (0, -2.7) -- (0.5, -2.7);
-    \fill[mhblue] (0, -2.7) circle (5.5pt);
-    \fill[white] (0, -2.7) circle (2.5pt);
-    \node[anchor=west, inner sep=0pt] at (0.5, -2.7) {
+    \draw[color=mhblue, line width=1.5pt] (0, -3.0) -- (0.5, -3.0);
+    \fill[mhblue] (0, -3.0) circle (5.5pt);
+    \fill[white] (0, -3.0) circle (2.5pt);
+    \node[anchor=west, inner sep=0pt] at (0.5, -3.0) {
         \begin{minipage}{8.4cm}
             \begin{tcolorbox}[
                 enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-                left=7pt, right=7pt, top=5pt, bottom=5pt,
-                borderline west={3pt}{0pt}{mhblue}, drop shadow=black!6
+                left=8pt, right=8pt, top=6pt, bottom=6pt,
+                borderline west={3.2pt}{0pt}{mhblue}, drop shadow=black!6
             ]
-                {\fontsize{10pt}{12pt}\selectfont\bfseries\color{mhblue}2019 \ \ $\bullet$ \ \ \fontsize{8.5pt}{10pt}\selectfont Public Sector \& Fleet Growth}\\[2pt]
-                {\fontsize{7.8pt}{10.5pt}\selectfont\color{mhtext}Awarded first major municipal road frameworks (JRA Diepsloot Ext 06). Acquired dedicated heavy yellow-metal fleet.}
+                {\fontsize{10.2pt}{12pt}\selectfont\bfseries\color{mhblue}2019 \ \ $\bullet$ \ \ \fontsize{8.8pt}{10.5pt}\selectfont Public Sector \& Fleet Growth}\\[3pt]
+                {\fontsize{8.4pt}{11.2pt}\selectfont\color{mhtext}Awarded first major municipal road frameworks (JRA Diepsloot Ext 06). Acquired dedicated heavy yellow-metal fleet.}
             \end{tcolorbox}
         \end{minipage}
     };
@@ -713,18 +713,18 @@ Makhaswa Holdings maintains full statutory and professional compliance across ev
     % ----------------------------------------------------
     % 2021 --- LEFT SIDE (Major Reticulation & Healthcare)
     % ----------------------------------------------------
-    \draw[color=mhbluebright, line width=1.5pt] (-0.5, -5.4) -- (0, -5.4);
-    \fill[mhbluebright] (0, -5.4) circle (5.5pt);
-    \fill[mhgold] (0, -5.4) circle (2.5pt);
-    \node[anchor=east, inner sep=0pt] at (-0.5, -5.4) {
+    \draw[color=mhbluebright, line width=1.5pt] (-0.5, -6.0) -- (0, -6.0);
+    \fill[mhbluebright] (0, -6.0) circle (5.5pt);
+    \fill[mhgold] (0, -6.0) circle (2.5pt);
+    \node[anchor=east, inner sep=0pt] at (-0.5, -6.0) {
         \begin{minipage}{8.4cm}
             \begin{tcolorbox}[
                 enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-                left=7pt, right=7pt, top=5pt, bottom=5pt,
-                borderline west={3pt}{0pt}{mhbluebright}, drop shadow=black!6
+                left=8pt, right=8pt, top=6pt, bottom=6pt,
+                borderline west={3.2pt}{0pt}{mhbluebright}, drop shadow=black!6
             ]
-                {\fontsize{10pt}{12pt}\selectfont\bfseries\color{mhbluebright}2021 \ \ $\bullet$ \ \ \fontsize{8.5pt}{10pt}\selectfont Major Reticulation \& Health Builds}\\[2pt]
-                {\fontsize{7.8pt}{10.5pt}\selectfont\color{mhtext}Delivered Road D2702 (Dwaalboom RAL) and Rhiza Community Clinic. Expanded into deep municipal stormwater networks.}
+                {\fontsize{10.2pt}{12pt}\selectfont\bfseries\color{mhbluebright}2021 \ \ $\bullet$ \ \ \fontsize{8.8pt}{10.5pt}\selectfont Major Reticulation \& Health Builds}\\[3pt]
+                {\fontsize{8.4pt}{11.2pt}\selectfont\color{mhtext}Delivered Road D2702 (Dwaalboom RAL) and Rhiza Community Clinic. Expanded into deep municipal stormwater networks.}
             \end{tcolorbox}
         \end{minipage}
     };
@@ -732,18 +732,18 @@ Makhaswa Holdings maintains full statutory and professional compliance across ev
     % ----------------------------------------------------
     % 2022 --- RIGHT SIDE (B-BBEE Level 1 & Multi-Hubs)
     % ----------------------------------------------------
-    \draw[color=mhnavy3, line width=1.5pt] (0, -8.1) -- (0.5, -8.1);
-    \fill[mhnavy3] (0, -8.1) circle (5.5pt);
-    \fill[white] (0, -8.1) circle (2.5pt);
-    \node[anchor=west, inner sep=0pt] at (0.5, -8.1) {
+    \draw[color=mhnavy3, line width=1.5pt] (0, -9.0) -- (0.5, -9.0);
+    \fill[mhnavy3] (0, -9.0) circle (5.5pt);
+    \fill[white] (0, -9.0) circle (2.5pt);
+    \node[anchor=west, inner sep=0pt] at (0.5, -9.0) {
         \begin{minipage}{8.4cm}
             \begin{tcolorbox}[
                 enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-                left=7pt, right=7pt, top=5pt, bottom=5pt,
-                borderline west={3pt}{0pt}{mhnavy3}, drop shadow=black!6
+                left=8pt, right=8pt, top=6pt, bottom=6pt,
+                borderline west={3.2pt}{0pt}{mhnavy3}, drop shadow=black!6
             ]
-                {\fontsize{10pt}{12pt}\selectfont\bfseries\color{mhnavy3}2022 \ \ $\bullet$ \ \ \fontsize{8.5pt}{10pt}\selectfont B-BBEE Level 1 \& Hub Growth}\\[2pt]
-                {\fontsize{7.8pt}{10.5pt}\selectfont\color{mhtext}Certified Level 1 B-BBEE contributor (135\% recognition). Established operational hubs in Midrand, Mokopane, and Durban.}
+                {\fontsize{10.2pt}{12pt}\selectfont\bfseries\color{mhnavy3}2022 \ \ $\bullet$ \ \ \fontsize{8.8pt}{10.5pt}\selectfont B-BBEE Level 1 \& Hub Growth}\\[3pt]
+                {\fontsize{8.4pt}{11.2pt}\selectfont\color{mhtext}Certified Level 1 B-BBEE contributor (135\% recognition). Established operational hubs in Midrand, Mokopane, and Durban.}
             \end{tcolorbox}
         \end{minipage}
     };
@@ -751,25 +751,25 @@ Makhaswa Holdings maintains full statutory and professional compliance across ev
     % ----------------------------------------------------
     % PRESENT --- LEFT SIDE (CIDB Grade 8 & Megaprojects)
     % ----------------------------------------------------
-    \draw[color=mhgold, line width=1.5pt] (-0.5, -10.8) -- (0, -10.8);
-    \fill[mhgold] (0, -10.8) circle (5.5pt);
-    \fill[mhnavy] (0, -10.8) circle (2.5pt);
-    \node[anchor=east, inner sep=0pt] at (-0.5, -10.8) {
+    \draw[color=mhgold, line width=1.5pt] (-0.5, -12.0) -- (0, -12.0);
+    \fill[mhgold] (0, -12.0) circle (5.5pt);
+    \fill[mhnavy] (0, -12.0) circle (2.5pt);
+    \node[anchor=east, inner sep=0pt] at (-0.5, -12.0) {
         \begin{minipage}{8.4cm}
             \begin{tcolorbox}[
                 enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-                left=7pt, right=7pt, top=5pt, bottom=5pt,
-                borderline west={3pt}{0pt}{mhgold}, drop shadow=black!6
+                left=8pt, right=8pt, top=6pt, bottom=6pt,
+                borderline west={3.2pt}{0pt}{mhgold}, drop shadow=black!6
             ]
-                {\fontsize{10pt}{12pt}\selectfont\bfseries\color{mhnavy}Present \ \ $\bullet$ \ \ \fontsize{8.5pt}{10pt}\selectfont CIDB Grade 8 \& Megaprojects}\\[2pt]
-                {\fontsize{7.8pt}{10.5pt}\selectfont\color{mhtext}Holding elite Grade 8 CE PE \& 8 ME PE ratings. Active partner in City of Tshwane JV SEG 41 and major national frameworks.}
+                {\fontsize{10.2pt}{12pt}\selectfont\bfseries\color{mhnavy}Present \ \ $\bullet$ \ \ \fontsize{8.8pt}{10.5pt}\selectfont CIDB Grade 8 \& Megaprojects}\\[3pt]
+                {\fontsize{8.4pt}{11.2pt}\selectfont\color{mhtext}Holding elite Grade 8 CE PE \& 8 ME PE ratings. Active partner in City of Tshwane JV SEG 41 and major national frameworks.}
             \end{tcolorbox}
         \end{minipage}
     };
 \end{tikzpicture}
 \end{center}
 
-\vspace{0.1cm}
+\vfill
 
 % Bottom Milestone Stats Strip
 \noindent
@@ -789,54 +789,54 @@ Makhaswa Holdings maintains full statutory and professional compliance across ev
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard{01. Bulk Earthworks \& Ground Engineering}{Clearing, 300mm topsoil stripping, cut-to-fill balancing, mass terrace preparation, basement excavation, subgrade ripping to 90\%--93\% Mod AASHTO, lime/cement stabilization, and dump rock filling for wet ground.}
-    \vspace{0.18cm}
+    \vspace{0.22cm}
     \servicecard{02. Road Construction, Layerworks \& Surfacing}{Imported dump rock subgrade, selected G7/G5, stabilized C3/C4 sub-base, and G1/G2 base compacted to 98\%--102\% Mod AASHTO. Continuous-graded asphalt, slurry seals, chip-and-spray, and 60mm/80mm Type SA paving.}
-    \vspace{0.18cm}
+    \vspace{0.22cm}
     \servicecard{03. Civil Stormwater \& Drainage Infrastructure}{Supply and laying of 450mm--1200mm spigot and socket concrete pipes, Class 100D Ogee pipes, portal box culverts, in-situ concrete/brick manholes, JRA kerb inlets (JRA-SD-SW-020--024), and 110mm Kaytech subsoil pipes.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard{04. Potable Water \& Gravity Sewer Reticulation}{Excavation, bedding, laying of uPVC, mPVC, HDPE, and ductile iron pipelines, pressure testing, disinfection, individual erf meter connections, gravity sewer outfalls, pump stations, and reservoirs.}
-    \vspace{0.18cm}
+    \vspace{0.22cm}
     \servicecard{05. General Building \& Structural Facilities}{NHBRC Class 5 registered builder. Turnkey delivery of commercial office parks, municipal depots, health clinics, school classroom blocks, ablution facilities, and residential estates from foundations to final finishes.}
-    \vspace{0.18cm}
+    \vspace{0.22cm}
     \servicecard{06. Electrical Reticulation \& High-Mast Lighting}{Excavation and casting of structural plinths, high-mast lighting pole erection, luminaire mounting, cabling, LV/MV reticulation, and perimeter security fencing (palisade and weldmesh).}
 \end{minipage}
 
-\vspace{0.25cm}
+\vfill
 
 % Discipline Images Strip
 \noindent
 \begin{minipage}[t]{0.235\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.6pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.2cm, keepaspectratio=false]{images/bulk-trenching-earthworks-1.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhnavy}Bulk Earthworks}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=2.7cm, keepaspectratio=false]{images/bulk-trenching-earthworks-1.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}Bulk Earthworks}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.235\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.6pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.2cm, keepaspectratio=false]{images/asphalt-photos-1.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhnavy}Roads \& Layerworks}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=2.7cm, keepaspectratio=false]{images/asphalt-photos-1.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}Roads \& Layerworks}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.235\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.6pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.2cm, keepaspectratio=false]{images/pumphouse-steel-pipe-works-1.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhnavy}Water Reticulation}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=2.7cm, keepaspectratio=false]{images/pumphouse-steel-pipe-works-1.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}Water Reticulation}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.235\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.6pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.2cm, keepaspectratio=false]{images/building-construction-commercial.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhnavy}General Building}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=2.7cm, keepaspectratio=false]{images/building-construction-commercial.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}General Building}
     \end{tcolorbox}
 \end{minipage}
 
-\vspace{0.25cm}
+\vfill
 
 {\large\bfseries\color{mhnavy} Five-Stage Project Delivery Methodology}
 \vspace{0.15cm}
@@ -857,55 +857,55 @@ Makhaswa Holdings maintains full statutory and professional compliance across ev
 \sectionbanner{OPERATIONAL CAPACITY}{Plant, Fleet, Equipment \& Technical Software}
 
 \noindent
-{\fontsize{9pt}{12.8pt}\selectfont\color{mhtext}
+{\fontsize{9.2pt}{13pt}\selectfont\color{mhtext}
 Makhaswa Holdings manages a comprehensive plant fleet, transport logistics, and precision survey instrumentation through company-owned machinery and preferred commercial plant-hire partnerships, ensuring rapid mobilization:
 }
 
-\vspace{0.25cm}
+\vspace{0.22cm}
 
-\renewcommand{\arraystretch}{1.22}
-\begin{tabularx}{\textwidth}{@{}p{4.2cm} p{2.5cm} X@{}}
+\renewcommand{\arraystretch}{1.38}
+\begin{tabularx}{\textwidth}{@{}p{4.2cm} p{2.6cm} X@{}}
 \rowcolor{mhnavy}
-{\color{white}\bfseries\fontsize{8pt}{10pt}\selectfont Machinery Category} & {\color{white}\bfseries\fontsize{8pt}{10pt}\selectfont Operational Status} & {\color{white}\bfseries\fontsize{8pt}{10pt}\selectfont Specified Fleet \& Instrumentation Capacity} \\
+{\color{white}\bfseries\fontsize{8.5pt}{10.5pt}\selectfont Machinery Category} & {\color{white}\bfseries\fontsize{8.5pt}{10.5pt}\selectfont Operational Status} & {\color{white}\bfseries\fontsize{8.5pt}{10.5pt}\selectfont Specified Fleet \& Instrumentation Capacity} \\
 \rowcolor{mhbluelight}
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Earthmoving \& Excavation & \fontsize{7.8pt}{9.5pt}\selectfont Core Fleet / Hired & \fontsize{7.8pt}{9.5pt}\selectfont 20t--30t Tracked Excavators, 4x4 Heavy TLBs, 140K/140H Motor Graders, D6/D7 Dozers \\
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Compaction \& Surfacing & \fontsize{7.8pt}{9.5pt}\selectfont Core Fleet / Hired & \fontsize{7.8pt}{9.5pt}\selectfont 10t--12t Smooth-Drum Rollers, Padfoot Compactors, Bitumen Asphalt Pavers, Walk-behind Rollers \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Earthmoving \& Excavation & \fontsize{8.2pt}{10.2pt}\selectfont Core Fleet / Hired & \fontsize{8.2pt}{10.2pt}\selectfont 20t--30t Tracked Excavators, 4x4 Heavy TLBs, 140K/140H Motor Graders, D6/D7 Dozers \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Compaction \& Surfacing & \fontsize{8.2pt}{10.2pt}\selectfont Core Fleet / Hired & \fontsize{8.2pt}{10.2pt}\selectfont 10t--12t Smooth-Drum Rollers, Padfoot Compactors, Bitumen Asphalt Pavers, Walk-behind Rollers \\
 \rowcolor{mhbluelight}
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Haulage \& Logistics & \fontsize{7.8pt}{9.5pt}\selectfont Core Fleet / Hired & \fontsize{7.8pt}{9.5pt}\selectfont 10m$^3$--15m$^3$ Tipper Trucks, 30t Low-Bed Horses \& Trailers, 10,000L--16,000L Water Tankers \\
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Survey \& Testing Instruments & \fontsize{7.8pt}{9.5pt}\selectfont Company-Owned & \fontsize{7.8pt}{9.5pt}\selectfont Leica/Topcon Total Stations, RTK Dual-Frequency GPS, Troxler Gauges, Slump \& Cube Kits \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Haulage \& Logistics & \fontsize{8.2pt}{10.2pt}\selectfont Core Fleet / Hired & \fontsize{8.2pt}{10.2pt}\selectfont 10m$^3$--15m$^3$ Tipper Trucks, 30t Low-Bed Horses \& Trailers, 10,000L--16,000L Water Tankers \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Survey \& Testing Instruments & \fontsize{8.2pt}{10.2pt}\selectfont Company-Owned & \fontsize{8.2pt}{10.2pt}\selectfont Leica/Topcon Total Stations, RTK Dual-Frequency GPS, Troxler Gauges, Slump \& Cube Kits \\
 \rowcolor{mhbluelight}
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Site Utilities \& Power & \fontsize{7.8pt}{9.5pt}\selectfont Company-Owned & \fontsize{7.8pt}{9.5pt}\selectfont 50kVA--150kVA Mobile Generators, High-pressure Air Compressors, Mobile Site Offices \& Ablutions \\
-\fontsize{7.8pt}{9.5pt}\selectfont\bfseries Technical \& Project Software & \fontsize{7.8pt}{9.5pt}\selectfont Licensed & \fontsize{7.8pt}{9.5pt}\selectfont AutoCAD 2024, AutoCAD Civil 3D, MS Project, Primavera P6, Model Maker, CCS Candy \& WinQS \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Site Utilities \& Power & \fontsize{8.2pt}{10.2pt}\selectfont Company-Owned & \fontsize{8.2pt}{10.2pt}\selectfont 50kVA--150kVA Mobile Generators, High-pressure Air Compressors, Mobile Site Offices \& Ablutions \\
+\fontsize{8.2pt}{10.2pt}\selectfont\bfseries Technical \& Project Software & \fontsize{8.2pt}{10.2pt}\selectfont Licensed & \fontsize{8.2pt}{10.2pt}\selectfont AutoCAD 2024, AutoCAD Civil 3D, MS Project, Primavera P6, Model Maker, CCS Candy \& WinQS \\
 \end{tabularx}
 \renewcommand{\arraystretch}{1}
 
-\vspace{0.3cm}
+\vfill
 
 % Fleet in Action Showcase
 \noindent
 \begin{minipage}[t]{0.315\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.6cm, keepaspectratio=false]{images/plant-and-equipment-fleet.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhnavy}Yellow Metal \& Earthmoving Fleet}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=3.1cm, keepaspectratio=false]{images/plant-and-equipment-fleet.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}Yellow Metal \& Earthmoving Fleet}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.315\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.6cm, keepaspectratio=false]{images/asphalt-photos-2.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhnavy}Asphalt Pavers \& Surfacing Fleet}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=3.1cm, keepaspectratio=false]{images/asphalt-photos-2.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}Asphalt Pavers \& Surfacing Fleet}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.315\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.6cm, keepaspectratio=false]{images/bulk-trenching-earthworks-1.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhnavy}Heavy Trenching \& Excavators}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=3.1cm, keepaspectratio=false]{images/bulk-trenching-earthworks-1.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}Heavy Trenching \& Excavators}
     \end{tcolorbox}
 \end{minipage}
 
-\vspace{0.3cm}
+\vfill
 
 \noindent
 \begin{minipage}[t]{0.315\textwidth}\statcard{mhnavy}{Multi-Fleet}{Deployment Logistics}\end{minipage}\hfill
@@ -926,9 +926,9 @@ Makhaswa Holdings manages a comprehensive plant fleet, transport logistics, and 
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
         title={\bfseries\color{white} Occupational Health \& Safety},
         colbacktitle=mhnavy, fonttitle=\bfseries\small,
-        left=8pt, right=8pt, top=8pt, bottom=8pt, height=6.0cm
+        left=9pt, right=9pt, top=9pt, bottom=9pt, height=6.6cm
     ]
-        {\fontsize{8pt}{11pt}\selectfont\color{mhtext}
+        {\fontsize{8.6pt}{12.2pt}\selectfont\color{mhtext}
         \textbf{Zero Harm Commitment:} Strict adherence to the OHS Act (Act 85 of 1993) and Construction Regulations 2014. Mandatory daily toolbox talks, SABS-approved PPE enforcement, appointed SHEQ Officers (Pr.OHS), continuous hazard logs, and full OHS site compliance.
         }
     \end{tcolorbox}
@@ -939,9 +939,9 @@ Makhaswa Holdings manages a comprehensive plant fleet, transport logistics, and 
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
         title={\bfseries\color{white} Quality Assurance \& Testing},
         colbacktitle=mhblue, fonttitle=\bfseries\small,
-        left=8pt, right=8pt, top=8pt, bottom=8pt, height=6.0cm
+        left=9pt, right=9pt, top=9pt, bottom=9pt, height=6.6cm
     ]
-        {\fontsize{8pt}{11pt}\selectfont\color{mhtext}
+        {\fontsize{8.6pt}{12.2pt}\selectfont\color{mhtext}
         \textbf{ISO 9001:2015 Alignment:} Documented Inspection and Test Plans (ITPs). Compaction verification via Troxler nuclear density gauges, concrete slump testing, and 150mm cube sampling with 7-, 14-, and 28-day compression crushing at SANAS-accredited testing laboratories.
         }
     \end{tcolorbox}
@@ -952,42 +952,42 @@ Makhaswa Holdings manages a comprehensive plant fleet, transport logistics, and 
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
         title={\bfseries\color{white} Environmental Management},
         colbacktitle=mhbluebright, fonttitle=\bfseries\small,
-        left=8pt, right=8pt, top=8pt, bottom=8pt, height=6.0cm
+        left=9pt, right=9pt, top=9pt, bottom=9pt, height=6.6cm
     ]
-        {\fontsize{8pt}{11pt}\selectfont\color{mhtext}
+        {\fontsize{8.6pt}{12.2pt}\selectfont\color{mhtext}
         \textbf{ISO 14001:2015 Alignment:} Proactive silt trapping, runoff control berms, bunded hazardous fuel/chemical storage areas, certified waste disposal, topsoil stripping and stockpiling for complete post-construction landscape rehabilitation.
         }
     \end{tcolorbox}
 \end{minipage}
 
-\vspace{0.35cm}
+\vfill
 
 % SHEQ Visual Accents
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
-    \begin{tcolorbox}[enhanced, colback=mhoffwhite, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=8pt, right=8pt, top=6pt, bottom=6pt]
-        \begin{minipage}[c]{0.3\textwidth}
-            \includegraphics[width=\linewidth, height=1.4cm, keepaspectratio]{images/sheq-logo.png}
+    \begin{tcolorbox}[enhanced, colback=mhoffwhite, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=9pt, right=9pt, top=8pt, bottom=8pt]
+        \begin{minipage}[c]{0.28\textwidth}
+            \includegraphics[width=\linewidth, height=1.5cm, keepaspectratio]{images/sheq-logo.png}
         \end{minipage}\hfill
-        \begin{minipage}[c]{0.65\textwidth}
-            {\fontsize{8.5pt}{11pt}\selectfont\bfseries\color{mhnavy}Integrated SHEQ Protocols}\\[2pt]
-            {\fontsize{7.5pt}{9.8pt}\selectfont\color{mhtextmuted}Daily safety checks, risk logs, and complete site compliance auditing.}
+        \begin{minipage}[c]{0.68\textwidth}
+            {\fontsize{9pt}{11.5pt}\selectfont\bfseries\color{mhnavy}Integrated SHEQ Protocols}\\[3pt]
+            {\fontsize{8pt}{10.5pt}\selectfont\color{mhtextmuted}Daily safety checks, risk logs, and complete site compliance auditing.}
         \end{minipage}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\textwidth}
-    \begin{tcolorbox}[enhanced, colback=mhoffwhite, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=8pt, right=8pt, top=6pt, bottom=6pt]
-        \begin{minipage}[c]{0.3\textwidth}
-            \includegraphics[width=\linewidth, height=1.4cm, keepaspectratio]{images/iso-logo.png}
+    \begin{tcolorbox}[enhanced, colback=mhoffwhite, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=9pt, right=9pt, top=8pt, bottom=8pt]
+        \begin{minipage}[c]{0.28\textwidth}
+            \includegraphics[width=\linewidth, height=1.5cm, keepaspectratio]{images/iso-logo.png}
         \end{minipage}\hfill
-        \begin{minipage}[c]{0.65\textwidth}
-            {\fontsize{8.5pt}{11pt}\selectfont\bfseries\color{mhnavy}ISO System Framework Alignment}\\[2pt]
-            {\fontsize{7.5pt}{9.8pt}\selectfont\color{mhtextmuted}ISO 9001 (Quality), ISO 14001 (Environment), ISO 45001 (OH\&S).}
+        \begin{minipage}[c]{0.68\textwidth}
+            {\fontsize{9pt}{11.5pt}\selectfont\bfseries\color{mhnavy}ISO System Framework Alignment}\\[3pt]
+            {\fontsize{8pt}{10.5pt}\selectfont\color{mhtextmuted}ISO 9001 (Quality), ISO 14001 (Environment), ISO 45001 (OH\&S).}
         \end{minipage}
     \end{tcolorbox}
 \end{minipage}
 
-\vspace{0.35cm}
+\vfill
 
 {\large\bfseries\color{mhnavy} Our SHEQ Commitment in Numbers}
 \vspace{0.15cm}
@@ -1008,64 +1008,66 @@ Makhaswa Holdings manages a comprehensive plant fleet, transport logistics, and 
 
 \noindent
 \begin{minipage}[t]{0.235\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.4cm, keepaspectratio=false]{images/concrete-bridges-1.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7pt}{8pt}\selectfont\bfseries\color{mhtextmuted}CIVIL INFRASTRUCTURE}\\[1pt]
-        {\fontsize{7.5pt}{9pt}\selectfont\bfseries\color{mhnavy}Concrete Bridges \& Culverts}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=2.7cm, keepaspectratio=false]{images/concrete-bridges-1.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhtextmuted}CIVIL INFRASTRUCTURE}\\[1pt]
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}Concrete Bridges \& Culverts}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.235\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.4cm, keepaspectratio=false]{images/road-roundabout.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7pt}{8pt}\selectfont\bfseries\color{mhtextmuted}ROADS \& SURFACING}\\[1pt]
-        {\fontsize{7.5pt}{9pt}\selectfont\bfseries\color{mhnavy}Municipal Roundabouts}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=2.7cm, keepaspectratio=false]{images/road-roundabout.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhtextmuted}ROADS \& SURFACING}\\[1pt]
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}Municipal Roundabouts}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.235\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.4cm, keepaspectratio=false]{images/culvert-civil-storm-sewer-pipe.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7pt}{8pt}\selectfont\bfseries\color{mhnavy}Bulk Pipe Reticulation}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=2.7cm, keepaspectratio=false]{images/culvert-civil-storm-sewer-pipe.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhtextmuted}DRAINAGE}\\[1pt]
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}Bulk Pipe Reticulation}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.235\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.4cm, keepaspectratio=false]{images/asphalt-photos-1.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7pt}{8pt}\selectfont\bfseries\color{mhtextmuted}LAYERWORKS}\\[1pt]
-        {\fontsize{7.5pt}{9pt}\selectfont\bfseries\color{mhnavy}G1 Base \& Asphalt Inlays}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=2.7cm, keepaspectratio=false]{images/asphalt-photos-1.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhtextmuted}LAYERWORKS}\\[1pt]
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}G1 Base \& Asphalt Inlays}
     \end{tcolorbox}
 \end{minipage}
 
-\vspace{0.25cm}
+\vfill
 
 {\large\bfseries\color{mhnavy} Verified Civil Engineering \& Road Infrastructure Record}
 \vspace{0.15cm}
 
-\renewcommand{\arraystretch}{1.25}
+\renewcommand{\arraystretch}{1.36}
 \begin{tabularx}{\textwidth}{@{}p{3.8cm} p{3.2cm} p{1.8cm} X@{}}
 \rowcolor{mhnavy}
-{\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Project \& Contract No.} &
-{\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Client / Primary Partner} &
-{\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Period} &
-{\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Verified Scope of Works Executed} \\
+{\color{white}\bfseries\fontsize{8.2pt}{10pt}\selectfont Project \& Contract No.} &
+{\color{white}\bfseries\fontsize{8.2pt}{10pt}\selectfont Client / Primary Partner} &
+{\color{white}\bfseries\fontsize{8.2pt}{10pt}\selectfont Period} &
+{\color{white}\bfseries\fontsize{8.2pt}{10pt}\selectfont Verified Scope of Works Executed} \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Kaalfontein Phase 3B (JRA/21/157) & \fontsize{7.5pt}{9pt}\selectfont Johannesburg Roads Agency (JRA) & \fontsize{7.5pt}{9pt}\selectfont 2023 -- 2024 & \fontsize{7.5pt}{9pt}\selectfont Dump rock stabilization, sub-base \& base layerworks (1,090m x 6.1m), 600mm stormwater pipelines \& manholes at Reed Fish St. \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Road D2702 Dwaalboom (RAL/T1171/2021) & \fontsize{7.5pt}{9pt}\selectfont Roads Agency Limpopo / Tarcron Projects & \fontsize{7.5pt}{9pt}\selectfont 2021 -- 2023 & \fontsize{7.5pt}{9pt}\selectfont Heavy pavement layer repairs, asphalt overlay, crack routing, hot-pour bitumen sealing, chip-and-spray \& road markings. \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Kaalfontein Phase 3B (JRA/21/157) & \fontsize{7.8pt}{9.6pt}\selectfont Johannesburg Roads Agency (JRA) & \fontsize{7.8pt}{9.6pt}\selectfont 2023 -- 2024 & \fontsize{7.8pt}{9.6pt}\selectfont Dump rock stabilization, sub-base \& base layerworks (1,090m x 6.1m), 600mm stormwater pipelines \& manholes at Reed Fish St. \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Road D2702 Dwaalboom (RAL/T1171/2021) & \fontsize{7.8pt}{9.6pt}\selectfont Roads Agency Limpopo / Tarcron & \fontsize{7.8pt}{9.6pt}\selectfont 2021 -- 2023 & \fontsize{7.8pt}{9.6pt}\selectfont Heavy pavement layer repairs, asphalt overlay, crack routing, hot-pour bitumen sealing, chip-and-spray \& road markings. \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Diepsloot Ext 11 Phase 4 (JRA/21/59) & \fontsize{7.5pt}{9pt}\selectfont JRA / Anvisda Plant \& Civils & \fontsize{7.5pt}{9pt}\selectfont 2021 -- 2022 & \fontsize{7.5pt}{9pt}\selectfont Bulk earthworks, subsoil drains, 675mm--1200mm concrete stormwater pipes, roadbed compaction, asphalt surfacing \& paving. \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Diepsloot Ext 06 Roads (JRA/19/214) & \fontsize{7.5pt}{9pt}\selectfont JRA / SR Construction & \fontsize{7.5pt}{9pt}\selectfont 2019 & \fontsize{7.5pt}{9pt}\selectfont 450mm--1200mm stormwater pipes, catchpits, retaining walls, C4 stabilized layerworks, Figures 8/8C/12 kerbing \& 80mm paving. \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Diepsloot Ext 11 Phase 4 (JRA/21/59) & \fontsize{7.8pt}{9.6pt}\selectfont JRA / Anvisda Plant \& Civils & \fontsize{7.8pt}{9.6pt}\selectfont 2021 -- 2022 & \fontsize{7.8pt}{9.6pt}\selectfont Bulk earthworks, subsoil drains, 675mm--1200mm concrete stormwater pipes, roadbed compaction, asphalt surfacing \& paving. \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Diepsloot Ext 06 Roads (JRA/19/214) & \fontsize{7.8pt}{9.6pt}\selectfont JRA / SR Construction & \fontsize{7.8pt}{9.6pt}\selectfont 2019 & \fontsize{7.8pt}{9.6pt}\selectfont 450mm--1200mm stormwater pipes, catchpits, retaining walls, C4 stabilized layerworks, Figures 8/8C/12 kerbing \& 80mm paving. \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Diepsloot Phase 4 Zeph Mothopeng (JRA/22/83) & \fontsize{7.5pt}{9pt}\selectfont JRA / Baithusi Trading & \fontsize{7.5pt}{9pt}\selectfont 2023 -- 2024 & \fontsize{7.5pt}{9pt}\selectfont Roadbed prep, cement-stabilized sub-base, G1 crushed base (551m x 5.5m), 600mm concrete pipes, sidewalks \& kerbs. \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Provincial Road Rehab (DRT23/05/2016) & \fontsize{7.5pt}{9pt}\selectfont Gauteng DRT / Civtek & \fontsize{7.5pt}{9pt}\selectfont Completed & \fontsize{7.5pt}{9pt}\selectfont Kerb inlets with Type 2A covers, cold milling, asphalt patching, concrete driveways, medium-graded surfacing \& bus bays. \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Diepsloot Phase 4 Zeph Mothopeng (JRA/22/83) & \fontsize{7.8pt}{9.6pt}\selectfont JRA / Baithusi Trading & \fontsize{7.8pt}{9.6pt}\selectfont 2023 -- 2024 & \fontsize{7.8pt}{9.6pt}\selectfont Roadbed prep, cement-stabilized sub-base, G1 crushed base (551m x 5.5m), 600mm concrete pipes, sidewalks \& kerbs. \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Provincial Road Rehab (DRT23/05/2016) & \fontsize{7.8pt}{9.6pt}\selectfont Gauteng DRT / Civtek & \fontsize{7.8pt}{9.6pt}\selectfont Completed & \fontsize{7.8pt}{9.6pt}\selectfont Kerb inlets with Type 2A covers, cold milling, asphalt patching, concrete driveways, medium-graded surfacing \& bus bays. \\
 \end{tabularx}
 \renewcommand{\arraystretch}{1}
 
-\vspace{0.15cm}
-{\fontsize{7.2pt}{9pt}\selectfont\color{mhtextmuted}
-All listed projects are backed by client-signed practical completion certificates and verified contactable engineering references.
+\vfill
+
+{\fontsize{7.5pt}{9.5pt}\selectfont\color{mhtextmuted}
+\faCheckCircle\ All listed projects are backed by client-signed practical completion certificates and verified contactable engineering references.
 }
 
 \clearpage
@@ -1078,62 +1080,62 @@ All listed projects are backed by client-signed practical completion certificate
 
 \noindent
 \begin{minipage}[t]{0.235\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.4cm, keepaspectratio=false]{images/clinic.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7pt}{8pt}\selectfont\bfseries\color{mhtextmuted}HEALTHCARE BUILDS}\\[1pt]
-        {\fontsize{7.5pt}{9pt}\selectfont\bfseries\color{mhnavy}Rhiza Community Clinic}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=2.6cm, keepaspectratio=false]{images/clinic.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhtextmuted}HEALTHCARE BUILDS}\\[1pt]
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}Rhiza Community Clinic}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.235\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.4cm, keepaspectratio=false]{images/school.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7pt}{8pt}\selectfont\bfseries\color{mhtextmuted}EDUCATIONAL BUILDS}\\[1pt]
-        {\fontsize{7.5pt}{9pt}\selectfont\bfseries\color{mhnavy}Classroom Facilities}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=2.6cm, keepaspectratio=false]{images/school.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhtextmuted}EDUCATIONAL BUILDS}\\[1pt]
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}Classroom Facilities}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.235\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.4cm, keepaspectratio=false]{images/house.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7pt}{8pt}\selectfont\bfseries\color{mhtextmuted}RESIDENTIAL HOUSING}\\[1pt]
-        {\fontsize{7.5pt}{9pt}\selectfont\bfseries\color{mhnavy}Double-Storey Builds}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=2.6cm, keepaspectratio=false]{images/house.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhtextmuted}RESIDENTIAL HOUSING}\\[1pt]
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}Double-Storey Builds}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.235\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=2.4cm, keepaspectratio=false]{images/pumphouse-steel-pipe-works-2.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7pt}{8pt}\selectfont\bfseries\color{mhtextmuted}WATER RETICULATION}\\[1pt]
-        {\fontsize{7.5pt}{9pt}\selectfont\bfseries\color{mhnavy}Pump Stations \& Valves}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=2.6cm, keepaspectratio=false]{images/pumphouse-steel-pipe-works-2.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{7.2pt}{8.5pt}\selectfont\bfseries\color{mhtextmuted}WATER RETICULATION}\\[1pt]
+        {\fontsize{7.8pt}{9.2pt}\selectfont\bfseries\color{mhnavy}Pump Stations \& Valves}
     \end{tcolorbox}
 \end{minipage}
 
-\vspace{0.25cm}
+\vfill
 
 {\large\bfseries\color{mhnavy} Verified Building, Water Reticulation \& Bridge Infrastructure Record}
 \vspace{0.15cm}
 
-\renewcommand{\arraystretch}{1.25}
+\renewcommand{\arraystretch}{1.28}
 \begin{tabularx}{\textwidth}{@{}p{3.8cm} p{3.2cm} p{1.8cm} X@{}}
 \rowcolor{mhnavy}
-{\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Project \& Contract No.} &
-{\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Client / Primary Partner} &
-{\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Period} &
-{\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Verified Scope of Works Executed} \\
+{\color{white}\bfseries\fontsize{8pt}{9.8pt}\selectfont Project \& Contract No.} &
+{\color{white}\bfseries\fontsize{8pt}{9.8pt}\selectfont Client / Primary Partner} &
+{\color{white}\bfseries\fontsize{8pt}{9.8pt}\selectfont Period} &
+{\color{white}\bfseries\fontsize{8pt}{9.8pt}\selectfont Verified Scope of Works Executed} \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Lerome Water Reticulation (014/MKLM/2022/2023) & \fontsize{7.5pt}{9pt}\selectfont Moses Kotane Local Municipality & \fontsize{7.5pt}{9pt}\selectfont 2023 -- 2024 & \fontsize{7.5pt}{9pt}\selectfont Mass rock trenching, uPVC/HDPE bulk potable water pipelines, hydrostatic testing, disinfection \& individual household erf connections. \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Rhiza Community Clinic Construction & \fontsize{7.5pt}{9pt}\selectfont Rhiza Babalo NGO Healthcare Partner & \fontsize{7.5pt}{9pt}\selectfont 2021 & \fontsize{7.5pt}{9pt}\selectfont Turnkey health clinic: reinforced concrete slab, brickwork, roof trusses, Rhinolite plaster, clinical plumbing, LED wiring \& joinery. \\
+\fontsize{7.6pt}{9.4pt}\selectfont\bfseries Lerome Water Reticulation (014/MKLM/2022/2023) & \fontsize{7.6pt}{9.4pt}\selectfont Moses Kotane Local Municipality & \fontsize{7.6pt}{9.4pt}\selectfont 2023 -- 2024 & \fontsize{7.6pt}{9.4pt}\selectfont Mass rock trenching, uPVC/HDPE bulk potable water pipelines, hydrostatic testing, disinfection \& individual household erf connections. \\
+\fontsize{7.6pt}{9.4pt}\selectfont\bfseries Rhiza Community Clinic Construction & \fontsize{7.6pt}{9.4pt}\selectfont Rhiza Babalo NGO Healthcare Partner & \fontsize{7.6pt}{9.4pt}\selectfont 2021 & \fontsize{7.6pt}{9.4pt}\selectfont Turnkey health clinic: reinforced concrete slab, brickwork, roof trusses, Rhinolite plaster, clinical plumbing, LED wiring \& joinery. \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Midrand Depot Park Homes (PIK 28/2021-22) & \fontsize{7.5pt}{9pt}\selectfont Pikitup SOC Ltd / City of Johannesburg & \fontsize{7.5pt}{9pt}\selectfont 2022 & \fontsize{7.5pt}{9pt}\selectfont Office plinths, guardhouses, security fencing, complete male/female ablution blocks, bulk water/sewer ties \& waste fleet platforms. \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Double-Storey Residential -- Samrand & \fontsize{7.5pt}{9pt}\selectfont Sedtrade (Pty) Ltd / Private Developer & \fontsize{7.5pt}{9pt}\selectfont 2022 -- 2023 & \fontsize{7.5pt}{9pt}\selectfont Reinforced concrete foundations, multi-level brick superstructure, suspended slabs, timber roof, plastering, plumbing \& electrical. \\
+\fontsize{7.6pt}{9.4pt}\selectfont\bfseries Midrand Depot Park Homes (PIK 28/2021-22) & \fontsize{7.6pt}{9.4pt}\selectfont Pikitup SOC Ltd / City of Jhb & \fontsize{7.6pt}{9.4pt}\selectfont 2022 & \fontsize{7.6pt}{9.4pt}\selectfont Office plinths, guardhouses, security fencing, complete male/female ablution blocks, bulk water/sewer ties \& waste fleet platforms. \\
+\fontsize{7.6pt}{9.4pt}\selectfont\bfseries Double-Storey Residential -- Samrand & \fontsize{7.6pt}{9.4pt}\selectfont Sedtrade (Pty) Ltd / Private Dev & \fontsize{7.6pt}{9.4pt}\selectfont 2022 -- 2023 & \fontsize{7.6pt}{9.4pt}\selectfont Reinforced concrete foundations, multi-level brick superstructure, suspended slabs, timber roof, plastering, plumbing \& electrical. \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries 4 Classrooms \& Furniture -- Diepsloot West & \fontsize{7.5pt}{9pt}\selectfont Department of Basic Education / SGB & \fontsize{7.5pt}{9pt}\selectfont 2023 & \fontsize{7.5pt}{9pt}\selectfont Turnkey classroom block: reinforced slab, superstructure brickwork, IBR roof, security gates, ceramic tiling, ceilings \& full furniture. \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Tanganani Ext 51 Civil Works -- Diepsloot & \fontsize{7.5pt}{9pt}\selectfont Civplant Civils / Civtek & \fontsize{7.5pt}{9pt}\selectfont Active & \fontsize{7.5pt}{9pt}\selectfont Class 100D Ogee pipes (450mm--1050mm), 110mm Kaytech subsoil pipes, stepped drop manholes \& standard JRA kerb inlets. \\
+\fontsize{7.6pt}{9.4pt}\selectfont\bfseries 4 Classrooms \& Furniture -- Diepsloot West & \fontsize{7.6pt}{9.4pt}\selectfont Dept of Basic Education / SGB & \fontsize{7.6pt}{9.4pt}\selectfont 2023 & \fontsize{7.6pt}{9.4pt}\selectfont Turnkey classroom block: reinforced slab, superstructure brickwork, IBR roof, security gates, ceramic tiling, ceilings \& full furniture. \\
+\fontsize{7.6pt}{9.4pt}\selectfont\bfseries Tanganani Ext 51 Civil Works -- Diepsloot & \fontsize{7.6pt}{9.4pt}\selectfont Civplant Civils / Civtek & \fontsize{7.6pt}{9.4pt}\selectfont Active & \fontsize{7.6pt}{9.4pt}\selectfont Class 100D Ogee pipes (450mm--1050mm), 110mm Kaytech subsoil pipes, stepped drop manholes \& standard JRA kerb inlets. \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Ext 14--19 Access Road \& Bridge (14-2024/25) & \fontsize{7.5pt}{9pt}\selectfont Municipal Infrastructure / Civtek & \fontsize{7.5pt}{9pt}\selectfont Active & \fontsize{7.5pt}{9pt}\selectfont Bridge demolition, portal box culverts, in-situ reinforced concrete bridge deck, abutment wingwalls, road approaches \& kerbing. \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries City of Tshwane Infrastructure JV & \fontsize{7.5pt}{9pt}\selectfont City of Tshwane Metro & \fontsize{7.5pt}{9pt}\selectfont Active & \fontsize{7.5pt}{9pt}\selectfont Joint Venture SEG 41 execution for municipal civil infrastructure upgrades, bulk pipe reticulation, and road surfacing. \\
+\fontsize{7.6pt}{9.4pt}\selectfont\bfseries Ext 14--19 Access Road \& Bridge (14-2024/25) & \fontsize{7.6pt}{9.4pt}\selectfont Municipal Infrastructure / Civtek & \fontsize{7.6pt}{9.4pt}\selectfont Active & \fontsize{7.6pt}{9.4pt}\selectfont Bridge demolition, portal box culverts, in-situ reinforced concrete bridge deck, abutment wingwalls, road approaches \& kerbing. \\
+\fontsize{7.6pt}{9.4pt}\selectfont\bfseries City of Tshwane Infrastructure JV & \fontsize{7.6pt}{9.4pt}\selectfont City of Tshwane Metro & \fontsize{7.6pt}{9.4pt}\selectfont Active & \fontsize{7.6pt}{9.4pt}\selectfont Joint Venture SEG 41 execution for municipal civil infrastructure upgrades, bulk pipe reticulation, and road surfacing. \\
 \end{tabularx}
 \renewcommand{\arraystretch}{1}
 
@@ -1148,42 +1150,42 @@ All listed projects are backed by client-signed practical completion certificate
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard{Local Economic Development (LED)}{Prioritised recruitment of 30\% to 50\% local labour from project host communities, combined with structured on-the-job training in layerworks, pipe laying, concrete shuttering, and machine operations.}
-    \vspace{0.22cm}
+    \vspace{0.25cm}
     \servicecard{Enterprise \& Supplier Development (ESD)}{Ring-fencing specialized trade packages (paving, kerbing, painting, fencing, security) for local emerging SMMEs, paired with practical mentorship in pricing, health and safety, and quality delivery.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard{Youth \& Women Empowerment}{Targeted inclusion of female and youth artisans across technical and supervisory site roles, providing certified learnerships, apprenticeship development, and career advancement paths.}
-    \vspace{0.22cm}
+    \vspace{0.25cm}
     \servicecard{Community Infrastructure Aid}{Direct sponsorship of local school facilities (e.g. Diepsloot West Secondary School), community sports tournaments, and donation of building materials for vulnerable community centers.}
 \end{minipage}
 
-\vspace{0.35cm}
+\vfill
 
 % Local Skills Transfer Imagery
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=3.0cm, keepaspectratio=false]{images/wall-bricklaying.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7.8pt}{9.5pt}\selectfont\bfseries\color{mhnavy}Local Craftsmanship \& Structural Skills Transfer}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=3.5cm, keepaspectratio=false]{images/wall-bricklaying.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{8.2pt}{10pt}\selectfont\bfseries\color{mhnavy}Local Craftsmanship \& Structural Skills Transfer}
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=3pt, left=0pt, right=0pt, top=0pt, bottom=3pt]
-        \includegraphics[width=\linewidth, height=3.0cm, keepaspectratio=false]{images/palisade-fencing-1.jpeg}
-        \centering\vspace{2pt}
-        {\fontsize{7.8pt}{9.5pt}\selectfont\bfseries\color{mhnavy}Security Fencing \& Community Infrastructure}
+    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=0pt, right=0pt, top=0pt, bottom=4pt]
+        \includegraphics[width=\linewidth, height=3.5cm, keepaspectratio=false]{images/palisade-fencing-1.jpeg}
+        \centering\vspace{3pt}
+        {\fontsize{8.2pt}{10pt}\selectfont\bfseries\color{mhnavy}Security Fencing \& Community Infrastructure}
     \end{tcolorbox}
 \end{minipage}
 
-\vspace{0.35cm}
+\vfill
 
 \begin{tcolorbox}[
     enhanced, colback=mhoffwhite, colframe=mhnavy, boxrule=1pt, arc=4pt,
-    left=12pt, right=12pt, top=8pt, bottom=8pt
+    left=12pt, right=12pt, top=9pt, bottom=9pt
 ]
-    {\fontsize{8.8pt}{12.5pt}\selectfont\color{mhtext}
+    {\fontsize{9.2pt}{13.2pt}\selectfont\color{mhtext}
     \textbf{\color{mhnavy}Our Shared-Value Philosophy:} At Makhaswa Holdings, every contract is treated as a catalyst for sustainable community transformation. Beyond delivering durable infrastructure, we measure our success by the local jobs created, the SMMEs developed, and the technical capabilities left behind in host communities long after practical completion.
     }
 \end{tcolorbox}
@@ -1200,11 +1202,11 @@ All listed projects are backed by client-signed practical completion certificate
 \begin{minipage}[t]{0.485\textwidth}
     \begin{tcolorbox}[
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        left=10pt, right=10pt, top=8pt, bottom=8pt,
+        left=10pt, right=10pt, top=9pt, bottom=9pt,
         borderline west={3pt}{0pt}{mhnavy}
     ]
-        {\fontsize{9.5pt}{11.5pt}\selectfont\bfseries\color{mhnavy}\faCheckCircle\ Practical Completion \& QA Sign-Off}\\[3pt]
-        {\fontsize{8pt}{11pt}\selectfont\color{mhtext}
+        {\fontsize{9.8pt}{12pt}\selectfont\bfseries\color{mhnavy}\faCheckCircle\ Practical Completion \& QA Sign-Off}\\[3pt]
+        {\fontsize{8.5pt}{11.5pt}\selectfont\color{mhtext}
         All completed works undergo structured quality assurance sign-offs, including SANAS laboratory concrete compressive strength testing, SANS/AASHTO roadbed compaction verification, and hydrostatic pressure testing on bulk water infrastructure.
         }
     \end{tcolorbox}
@@ -1213,45 +1215,45 @@ All listed projects are backed by client-signed practical completion certificate
 \begin{minipage}[t]{0.485\textwidth}
     \begin{tcolorbox}[
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        left=10pt, right=10pt, top=8pt, bottom=8pt,
+        left=10pt, right=10pt, top=9pt, bottom=9pt,
         borderline west={3pt}{0pt}{mhgold}
     ]
-        {\fontsize{9.5pt}{11.5pt}\selectfont\bfseries\color{mhnavy}\faFileContract\ Official Tender Due Diligence Directory}\\[3pt]
-        {\fontsize{8pt}{11pt}\selectfont\color{mhtext}
+        {\fontsize{9.8pt}{12pt}\selectfont\bfseries\color{mhnavy}\faFileContract\ Official Tender Due Diligence Directory}\\[3pt]
+        {\fontsize{8.5pt}{11.5pt}\selectfont\color{mhtext}
         Makhaswa Holdings maintains a verified record of compliant project delivery across municipal, provincial, and private clients. Contactable client references, joint venture partners, and site agents are listed below for official tender evaluation:
         }
     \end{tcolorbox}
 \end{minipage}
 
-\vspace{0.3cm}
+\vfill
 
 {\large\bfseries\color{mhnavy} Contactable Client \& Engineering References}
 \vspace{0.15cm}
 
-\renewcommand{\arraystretch}{1.25}
+\renewcommand{\arraystretch}{1.34}
 \begin{tabularx}{\textwidth}{@{}p{3.8cm} p{2.8cm} p{3.4cm} X@{}}
 \rowcolor{mhnavy}
-{\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Organization} &
-{\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Contact Person} &
-{\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Telephone / Email} &
-{\color{white}\bfseries\fontsize{7.8pt}{9.5pt}\selectfont Reference Project} \\
+{\color{white}\bfseries\fontsize{8.2pt}{10pt}\selectfont Organization} &
+{\color{white}\bfseries\fontsize{8.2pt}{10pt}\selectfont Contact Person} &
+{\color{white}\bfseries\fontsize{8.2pt}{10pt}\selectfont Telephone / Email} &
+{\color{white}\bfseries\fontsize{8.2pt}{10pt}\selectfont Reference Project} \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Civtek / Civplant Civils & \fontsize{7.5pt}{9pt}\selectfont Paul Bowyer (Site Mgr) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0126660900}{012 666 0900} / \href{tel:0825640237}{082 564 0237} $\bullet$ \href{mailto:admin@civtek.co.za}{admin@civtek.co.za} & \fontsize{7.5pt}{9pt}\selectfont Tanganani Ext 51, DRT23 Rehab, Bridge Recon \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Tarcron Projects & \fontsize{7.5pt}{9pt}\selectfont Mr. Makhoshi (Contracts Mgr) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0152988049}{015 298 8049} & \fontsize{7.5pt}{9pt}\selectfont RAL/T1171/2021 Road D2702 Dwaalboom \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Civtek / Civplant Civils & \fontsize{7.8pt}{9.6pt}\selectfont Paul Bowyer (Site Mgr) & \fontsize{7.8pt}{9.6pt}\selectfont \href{tel:0126660900}{012 666 0900} / \href{tel:0825640237}{082 564 0237} $\bullet$ \href{mailto:admin@civtek.co.za}{admin@civtek.co.za} & \fontsize{7.8pt}{9.6pt}\selectfont Tanganani Ext 51, DRT23 Rehab, Bridge Recon \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Tarcron Projects & \fontsize{7.8pt}{9.6pt}\selectfont Mr. Makhoshi (Contracts Mgr) & \fontsize{7.8pt}{9.6pt}\selectfont \href{tel:0152988049}{015 298 8049} & \fontsize{7.8pt}{9.6pt}\selectfont RAL/T1171/2021 Road D2702 Dwaalboom \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Anvisda Plant \& Civils & \fontsize{7.5pt}{9pt}\selectfont Mr. Omen Metani (Site Mgr) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0717041876}{071 704 1876} & \fontsize{7.5pt}{9pt}\selectfont JRA/21/59 Diepsloot Ext 11 Phase 4 \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Baithusi Trading & \fontsize{7.5pt}{9pt}\selectfont Mr. Bophelo Lesia (Site Mgr) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0680034790}{068 003 4790} $\bullet$ \href{mailto:admin@baithusitrading.co.za}{admin@baithusitrading.co.za} & \fontsize{7.5pt}{9pt}\selectfont JRA/22/83 Diepsloot Phase 4 Zeph Mothopeng \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Anvisda Plant \& Civils & \fontsize{7.8pt}{9.6pt}\selectfont Mr. Omen Metani (Site Mgr) & \fontsize{7.8pt}{9.6pt}\selectfont \href{tel:0717041876}{071 704 1876} & \fontsize{7.8pt}{9.6pt}\selectfont JRA/21/59 Diepsloot Ext 11 Phase 4 \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Baithusi Trading & \fontsize{7.8pt}{9.6pt}\selectfont Mr. Bophelo Lesia (Site Mgr) & \fontsize{7.8pt}{9.6pt}\selectfont \href{tel:0680034790}{068 003 4790} $\bullet$ \href{mailto:admin@baithusitrading.co.za}{admin@baithusitrading.co.za} & \fontsize{7.8pt}{9.6pt}\selectfont JRA/22/83 Diepsloot Phase 4 Zeph Mothopeng \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Johannesburg Roads Agency & \fontsize{7.5pt}{9pt}\selectfont Mr. TB Siboza (Site Agent) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0119795329}{011 979 5329} & \fontsize{7.5pt}{9pt}\selectfont JRA/21/157 Kaalfontein Phase 3B \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries SR Construction & \fontsize{7.5pt}{9pt}\selectfont Mr. Sydney Mello (Manager) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0840557742}{084 055 7742} & \fontsize{7.5pt}{9pt}\selectfont JRA/19/214 Diepsloot Ext 06 \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Johannesburg Roads Agency & \fontsize{7.8pt}{9.6pt}\selectfont Mr. TB Siboza (Site Agent) & \fontsize{7.8pt}{9.6pt}\selectfont \href{tel:0119795329}{011 979 5329} & \fontsize{7.8pt}{9.6pt}\selectfont JRA/21/157 Kaalfontein Phase 3B \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries SR Construction & \fontsize{7.8pt}{9.6pt}\selectfont Mr. Sydney Mello (Manager) & \fontsize{7.8pt}{9.6pt}\selectfont \href{tel:0840557742}{084 055 7742} & \fontsize{7.8pt}{9.6pt}\selectfont JRA/19/214 Diepsloot Ext 06 \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Moses Kotane Municipality & \fontsize{7.5pt}{9pt}\selectfont Mogotsi Kgosiemang (PM) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0713959004}{071 395 9004} & \fontsize{7.5pt}{9pt}\selectfont 014/MKLM/2022/2023 Lerome Water Supply \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Sedtrade (Pty) Ltd & \fontsize{7.5pt}{9pt}\selectfont Mr. Sheeven Bemram & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0718710820}{071 871 0820} $\bullet$ \href{mailto:sheeven@sedtrade.co.za}{sheeven@sedtrade.co.za} & \fontsize{7.5pt}{9pt}\selectfont Commercial House Facility -- Samrand \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Moses Kotane Municipality & \fontsize{7.8pt}{9.6pt}\selectfont Mogotsi Kgosiemang (PM) & \fontsize{7.8pt}{9.6pt}\selectfont \href{tel:0713959004}{071 395 9004} & \fontsize{7.8pt}{9.6pt}\selectfont 014/MKLM/2022/2023 Lerome Water Supply \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Sedtrade (Pty) Ltd & \fontsize{7.8pt}{9.6pt}\selectfont Mr. Sheeven Bemram & \fontsize{7.8pt}{9.6pt}\selectfont \href{tel:0718710820}{071 871 0820} $\bullet$ \href{mailto:sheeven@sedtrade.co.za}{sheeven@sedtrade.co.za} & \fontsize{7.8pt}{9.6pt}\selectfont Commercial House Facility -- Samrand \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Pikitup SOC Ltd & \fontsize{7.5pt}{9pt}\selectfont Patrick Mavuso (Site Mgr) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0125677831}{012 567 7831} & \fontsize{7.5pt}{9pt}\selectfont PIK 28/2021-22 Midrand Depot Park Homes \\
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Diepsloot West Secondary & \fontsize{7.5pt}{9pt}\selectfont Tshilidzi Singo (Principal) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0105410670}{010 541 0670} & \fontsize{7.5pt}{9pt}\selectfont 4 Classrooms with Furniture Build \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Pikitup SOC Ltd & \fontsize{7.8pt}{9.6pt}\selectfont Patrick Mavuso (Site Mgr) & \fontsize{7.8pt}{9.6pt}\selectfont \href{tel:0125677831}{012 567 7831} & \fontsize{7.8pt}{9.6pt}\selectfont PIK 28/2021-22 Midrand Depot Park Homes \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Diepsloot West Secondary & \fontsize{7.8pt}{9.6pt}\selectfont Tshilidzi Singo (Principal) & \fontsize{7.8pt}{9.6pt}\selectfont \href{tel:0105410670}{010 541 0670} & \fontsize{7.8pt}{9.6pt}\selectfont 4 Classrooms with Furniture Build \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9pt}\selectfont\bfseries Rhiza Babalo NGO & \fontsize{7.5pt}{9pt}\selectfont Thambulo Mabuke (Lead) & \fontsize{7.5pt}{9pt}\selectfont \href{tel:0114645100}{011 464 5100} & \fontsize{7.5pt}{9pt}\selectfont Construction of Rhiza Community Clinic \\
+\fontsize{7.8pt}{9.6pt}\selectfont\bfseries Rhiza Babalo NGO & \fontsize{7.8pt}{9.6pt}\selectfont Thambulo Mabuke (Lead) & \fontsize{7.8pt}{9.6pt}\selectfont \href{tel:0114645100}{011 464 5100} & \fontsize{7.8pt}{9.6pt}\selectfont Construction of Rhiza Community Clinic \\
 \end{tabularx}
 \renewcommand{\arraystretch}{1}
 
@@ -1284,22 +1286,22 @@ All listed projects are backed by client-signed practical completion certificate
 
     % Title & Subtitle (Positioned with clear vertical separation below logo)
     \node[anchor=north, inner sep=0pt] at ([yshift=-4.3cm]current page.north) {
-        {\fontsize{18pt}{21pt}\selectfont\bfseries\color{white} TENDER COMPLIANCE \& CONTACT MATRIX}
+        {\fontsize{18pt}{21pt}\selectfont\bfseries\color{white} STATUTORY COMPLIANCE \& CONTACT MATRIX}
     };
     \node[anchor=north, inner sep=0pt] at ([yshift=-5.1cm]current page.north) {
         {\fontsize{8.5pt}{11pt}\selectfont\color{mhbluelight}\MakeUppercase{Vendor Due Diligence, Guarantees \& Regional Directory}}
     };
 
     % Due Diligence & Warranties Split Box
-    \node[anchor=north] at ([yshift=-5.9cm]current page.north) {
+    \node[anchor=north] at ([yshift=-5.8cm]current page.north) {
         \begin{minipage}{0.88\paperwidth}
         \begin{tcolorbox}[
             enhanced, colback=white!6!mhnavy, colframe=white!20!mhnavy, boxrule=0.7pt, arc=4pt,
-            left=10pt, right=10pt, top=7pt, bottom=7pt
+            left=10pt, right=10pt, top=8pt, bottom=8pt
         ]
-            \fontsize{7.2pt}{10.2pt}\selectfont\color{white}
+            \fontsize{7.8pt}{11.2pt}\selectfont\color{white}
             \begin{minipage}[t]{0.48\linewidth}
-                {\fontsize{8pt}{10pt}\selectfont\bfseries\color{mhgold}\faCheckDouble\ Statutory Compliance \& Credentials:}\\[2pt]
+                {\fontsize{8.5pt}{10.5pt}\selectfont\bfseries\color{mhgold}\faCheckDouble\ Statutory Compliance \& Credentials:}\\[3pt]
                 \textcolor{mhgold}{\faCheckCircle}\ CIPC Certificate (K2017/307900/07)\\
                 \textcolor{mhgold}{\faCheckCircle}\ Valid SARS TCS PIN (Tax: 9670117176 / VAT: 4840286027)\\
                 \textcolor{mhgold}{\faCheckCircle}\ Level 1 B-BBEE SANAS Certificate (135\% Recognition)\\
@@ -1310,7 +1312,7 @@ All listed projects are backed by client-signed practical completion certificate
             \end{minipage}
             \hfill
             \begin{minipage}[t]{0.48\linewidth}
-                {\fontsize{8pt}{10pt}\selectfont\bfseries\color{mhgold}\faShieldAlt\ Warranties \& Governance Guarantees:}\\[2pt]
+                {\fontsize{8.5pt}{10.5pt}\selectfont\bfseries\color{mhgold}\faShieldAlt\ Warranties \& Governance Guarantees:}\\[3pt]
                 $\bullet$ \textbf{Defects Liability Period:} Standard 12-Month DLP\\
                 $\bullet$ \textbf{Performance Bonds:} GCC 2015 / JBCC / FIDIC compliant\\
                 $\bullet$ \textbf{NHBRC Housing:} 5-Yr Major Structural / 1-Yr Roof\\
@@ -1324,13 +1326,13 @@ All listed projects are backed by client-signed practical completion certificate
     };
 
     % Contact detail cards
-    \node[anchor=north] at ([yshift=-11.3cm]current page.north) {
+    \node[anchor=north] at ([yshift=-11.8cm]current page.north) {
         \begin{minipage}{0.88\paperwidth}
         \begin{tcolorbox}[
             enhanced, colback=white!9!mhnavy, colframe=white!25!mhnavy, boxrule=0.7pt, arc=4pt,
-            left=12pt, right=12pt, top=8pt, bottom=8pt
+            left=12pt, right=12pt, top=9pt, bottom=9pt
         ]
-            \fontsize{8.5pt}{13.5pt}\selectfont\color{white}
+            \fontsize{8.8pt}{14pt}\selectfont\color{white}
 \begin{tabularx}{\linewidth}{@{}p{4.2cm} X@{}}
 \textbf{\color{mhbluelight}\faMapMarkerAlt\ Pretoria Head Office} & 869 Patryshond Street, Garsfontein, Pretoria, 0042 \\
 \textbf{\color{mhbluelight}\faMapMarkerAlt\ Midrand Logistics Hub} & Riversands Incubation Hub, 8--12 Incubation Dr, Riverside View \\
@@ -1348,7 +1350,7 @@ All listed projects are backed by client-signed practical completion certificate
 
     % Footer credentials strip
     \node[anchor=south, inner sep=0pt] at ([yshift=0.8cm]current page.south) {
-        {\fontsize{7.5pt}{9.5pt}\selectfont\color{white!75}
+        {\fontsize{7.8pt}{9.8pt}\selectfont\color{white!75}
         Makhaswa Holdings (Pty) Ltd \ $\bullet$ \ CIDB Grade 8 CE PE / 8 ME PE \ $\bullet$ \ Level 1 B-BBEE (135\%) \ $\bullet$ \ Reg: 2017/307900/07}
     };
 \end{tikzpicture}
