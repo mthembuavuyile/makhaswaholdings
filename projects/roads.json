@@ -67,6 +67,14 @@
       "date": "2024-08-01"
     },
     {
+      "id": "roadsandsurfacing-20",
+      "src": "images/projects/roadsandsurfacing/makhaswa (6).jpeg",
+      "alt": "Compacted road base course layer with installed concrete kerbing ready for asphalt paving",
+      "title": "Compacted Base Course & Kerbing",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
       "id": "roadsandsurfacing-4",
       "src": "images/projects/roadsandsurfacing/road-markings-2.jpeg",
       "alt": "Freshly painted STOP sign road markings.",
@@ -151,14 +159,6 @@
       "src": "images/projects/roadsandsurfacing/makhaswa (1).jpeg",
       "alt": "Makhaswa road crew laying base layer gravel on an active roadbed development site",
       "title": "Roadbed Base Layering",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "roadsandsurfacing-20",
-      "src": "images/projects/roadsandsurfacing/makhaswa (6).jpeg",
-      "alt": "Newly completed tarred roadway showing clean shoulders and painted markings",
-      "title": "Completed Tarred Roadway",
       "featured": false,
       "date": "2024-08-01"
     },

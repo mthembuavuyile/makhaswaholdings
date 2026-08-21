@@ -67,6 +67,14 @@
       "date": "2024-08-01"
     },
     {
+      "id": "civilworks-9",
+      "src": "images/aigenerated/concrete-panels.jpeg",
+      "alt": "Precast concrete panel construction",
+      "title": "Precast Concrete Panel Construction",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
       "id": "civilworks-7",
       "src": "images/projects/civilworks/pumphouse-steel-pipe-works-5.jpeg",
       "alt": "Long section of steel pipe installed in a deep trench.",
@@ -79,14 +87,6 @@
       "src": "images/projects/civilworks/pumphouse-steel-pipe-works-6.jpeg",
       "alt": "Pipeline installation in trench.",
       "title": "Pumphouse Steel Pipe Works",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "civilworks-9",
-      "src": "images/aigenerated/concrete-panels.jpeg",
-      "alt": "Precast concrete panel construction",
-      "title": "Precast Concrete Panel Construction",
       "featured": false,
       "date": "2024-08-01"
     },
