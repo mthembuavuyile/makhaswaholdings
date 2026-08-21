@@ -44,6 +44,9 @@ const SITE_CONFIG = {
         { label: 'Careers', href: 'careers.html' },
         { label: 'Contact Us', href: 'contact.html' },
         { label: 'FAQs', href: 'faq.html' },
+    ],
+
+    downloads: [
         { label: 'Company Profile (Interactive Viewer)', href: 'company-profile-viewer.html' },
         { label: 'Company Profile (Download PDF)', href: 'documents/makhaswa-holdings-company-profile.pdf' },
     ],
@@ -187,12 +190,18 @@ function buildFooter() {
     /* Quick Links list items */
     const quickLinksHtml = cfg.quickLinks.map(link => {
         const href = link.href.startsWith('http') ? link.href : prefix + link.href;
+        return `<li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i><a href="${href}">${link.label}</a></li>`;
+    }).join('\n                    ');
+
+    /* Downloads list items */
+    const downloadsHtml = cfg.downloads.map(link => {
+        const href = link.href.startsWith('http') ? link.href : prefix + link.href;
         const isPdf = link.href.endsWith('.pdf');
         const isProfileViewer = link.href.includes('company-profile-viewer.html') || link.href.includes('profile-brochure.html');
         const extraAttr = isPdf 
             ? ' target="_blank" download="Makhaswa-Holdings-Company-Profile.pdf"' 
             : (isProfileViewer ? ' target="_blank"' : '');
-        const iconName = isPdf ? 'file-text' : (isProfileViewer ? 'book-open' : 'chevron-right');
+        const iconName = isPdf ? 'file-text' : (isProfileViewer ? 'book-open' : 'download');
         return `<li><i data-lucide="${iconName}" width="14" height="14" class="footer-icon"></i><a href="${href}"${extraAttr}>${link.label}</a></li>`;
     }).join('\n                    ');
 
@@ -237,11 +246,15 @@ function buildFooter() {
                 </div>
             </div>
 
-            <!-- Col 2: Quick Links -->
+            <!-- Col 2: Quick Links & Downloads -->
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
                     ${quickLinksHtml}
+                </ul>
+                <h4 style="margin-top: 24px;">Downloads</h4>
+                <ul>
+                    ${downloadsHtml}
                 </ul>
             </div>
 

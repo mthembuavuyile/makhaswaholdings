@@ -40,19 +40,19 @@
            1. DESIGN SYSTEM & CSS VARIABLES
            ========================================================================== */
         :root {
-            --mh-navy-dark: #051a36;
-            --mh-navy: #082d5a;
-            --mh-navy-mid: #0c3a6d;
+            --mh-navy-dark: #05162d;
+            --mh-navy: #071933;
+            --mh-navy-mid: #0c2d58;
             --mh-navy-light: #154c8a;
             --mh-gold: #c8a951;
             --mh-gold-hover: #dfca7d;
             --mh-gold-subtle: #fdf9ee;
             --mh-gold-dark: #9e7f2b;
 
-            --mh-bg-canvas: #1e2430;
+            --mh-bg-canvas: #121824;
             --mh-bg-page: #ffffff;
-            --mh-panel-bg: rgba(8, 45, 90, 0.95);
-            --mh-panel-border: rgba(200, 169, 81, 0.35);
+            --mh-panel-bg: rgba(7, 25, 51, 0.95);
+            --mh-panel-border: rgba(255, 255, 255, 0.12);
 
             --mh-text-light: #f8fafc;
             --mh-text-muted: #94a3b8;
@@ -64,7 +64,7 @@
             --toolbar-height: 60px;
             --sidebar-width: 250px;
             --transition-smooth: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-            --shadow-elevation: 0 12px 32px rgba(0, 0, 0, 0.45);
+            --shadow-elevation: 0 12px 36px rgba(0, 0, 0, 0.5);
         }
 
         *,
@@ -87,7 +87,7 @@
         }
 
         /* ==========================================================================
-           2. STREAMLINED EXECUTIVE TOOLBAR (LOGO-FIRST)
+           2. STREAMLINED EXECUTIVE TOOLBAR (MODERN CLEAN HYBRID)
            ========================================================================== */
         .viewer-header {
             position: fixed;
@@ -95,15 +95,16 @@
             left: 0;
             right: 0;
             height: var(--toolbar-height);
-            background: var(--mh-navy-dark);
-            background: linear-gradient(180deg, #05162d 0%, #082d5a 100%);
-            border-bottom: 2px solid var(--mh-gold);
+            background: rgba(7, 25, 51, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 16px;
             z-index: 1000;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
             gap: 12px;
         }
 
@@ -118,22 +119,24 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            color: var(--mh-gold);
+            color: #f8fafc;
             text-decoration: none;
             font-family: var(--font-head);
             font-size: 0.8rem;
-            font-weight: 700;
-            padding: 6px 10px;
+            font-weight: 600;
+            padding: 7px 12px;
             border-radius: 6px;
-            background: rgba(200, 169, 81, 0.12);
-            border: 1px solid rgba(200, 169, 81, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(4px);
             transition: all var(--transition-smooth);
             white-space: nowrap;
         }
 
         .back-link:hover {
-            background: var(--mh-gold);
-            color: var(--mh-navy-dark);
+            background: rgba(255, 255, 255, 0.16);
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #ffffff;
             transform: translateX(-2px);
         }
 
@@ -144,7 +147,7 @@
             padding: 3px 8px;
             border-radius: 5px;
             height: 38px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             text-decoration: none;
         }
 
@@ -160,8 +163,10 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            background: rgba(5, 26, 54, 0.7);
+            background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             padding: 4px 10px;
             border-radius: 30px;
         }
@@ -181,9 +186,9 @@
         }
 
         .ctrl-btn:hover:not(:disabled) {
-            background: rgba(255, 255, 255, 0.15);
-            color: var(--mh-gold);
-            border-color: rgba(200, 169, 81, 0.3);
+            background: rgba(255, 255, 255, 0.14);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.25);
         }
 
         .ctrl-btn:disabled {
@@ -204,8 +209,8 @@
         .page-input {
             width: 42px;
             height: 26px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             color: #ffffff;
             text-align: center;
             font-family: var(--font-head);
@@ -213,12 +218,12 @@
             font-weight: 700;
             border-radius: 4px;
             outline: none;
-            transition: border-color 0.2s;
+            transition: border-color 0.2s, background 0.2s;
         }
 
         .page-input:focus {
             border-color: var(--mh-gold);
-            background: rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.16);
         }
 
         .v-sep {
@@ -229,8 +234,8 @@
         }
 
         .zoom-select {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             color: #ffffff;
             font-family: var(--font-body);
             font-size: 0.78rem;
@@ -239,10 +244,16 @@
             border-radius: 4px;
             cursor: pointer;
             outline: none;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .zoom-select:focus {
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.14);
         }
 
         .zoom-select option {
-            background: var(--mh-navy-dark);
+            background: #071933;
             color: #ffffff;
         }
 
@@ -254,12 +265,12 @@
         }
 
         .mode-toggle-btn {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #ffffff;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            color: #f8fafc;
             font-family: var(--font-head);
             font-size: 0.75rem;
-            font-weight: 700;
+            font-weight: 600;
             padding: 5px 10px;
             border-radius: 4px;
             display: flex;
@@ -271,13 +282,13 @@
         }
 
         .mode-toggle-btn:hover {
-            border-color: var(--mh-gold);
-            color: var(--mh-gold);
-            background: rgba(200, 169, 81, 0.1);
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.14);
         }
 
         .mode-toggle-btn.active {
-            background: var(--mh-navy-light);
+            background: rgba(200, 169, 81, 0.18);
             border-color: var(--mh-gold);
             color: var(--mh-gold-hover);
         }
@@ -290,9 +301,9 @@
         }
 
         .icon-action-btn {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #ffffff;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            color: #f8fafc;
             width: 34px;
             height: 34px;
             border-radius: 6px;
@@ -304,9 +315,9 @@
         }
 
         .icon-action-btn:hover {
-            background: rgba(255, 255, 255, 0.18);
-            border-color: var(--mh-gold);
-            color: var(--mh-gold);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #ffffff;
         }
 
         .download-cta-btn {
@@ -314,7 +325,7 @@
             align-items: center;
             gap: 8px;
             background: linear-gradient(135deg, #c8a951 0%, #dfca7d 100%);
-            color: var(--mh-navy-dark);
+            color: #05162d;
             font-family: var(--font-head);
             font-size: 0.82rem;
             font-weight: 800;
@@ -331,7 +342,7 @@
         .download-cta-btn:hover {
             transform: translateY(-1px);
             box-shadow: 0 6px 18px rgba(200, 169, 81, 0.5);
-            filter: brightness(1.05);
+            filter: brightness(1.06);
         }
 
         .download-cta-btn span.meta {
