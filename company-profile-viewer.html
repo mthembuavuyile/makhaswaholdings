@@ -845,8 +845,13 @@
         }
 
         @keyframes fadeInModal {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .print-modal-card {
@@ -907,13 +912,17 @@
 
         /* Pure Document Print Output */
         @media print {
-            *, *::before, *::after {
+
+            *,
+            *::before,
+            *::after {
                 background: transparent !important;
                 box-shadow: none !important;
                 text-shadow: none !important;
             }
 
-            html, body {
+            html,
+            body {
                 width: 100% !important;
                 height: auto !important;
                 min-height: 100% !important;
@@ -1104,7 +1113,8 @@
                 <i data-lucide="alert-triangle" width="36" height="36" color="#f87171"
                     style="margin:0 auto 12px auto; display: block;"></i>
                 <h3>Unable to Render Document</h3>
-                <p>The company profile could not be loaded in this browser window. You can retry or download the PDF directly.</p>
+                <p>The company profile could not be loaded in this browser window. You can retry or download the PDF
+                    directly.</p>
                 <div class="error-card-actions">
                     <button type="button" id="btnRetryLoad" class="retry-btn">
                         <i data-lucide="rotate-cw" width="15" height="15"></i> Retry Loading
@@ -1135,11 +1145,12 @@
     <div id="printServiceContainer" aria-hidden="true"></div>
 
     <!-- Print Preparation Modal Overlay -->
-    <div class="print-modal-overlay" id="printModalOverlay" style="display: none;" role="dialog" aria-modal="true" aria-label="Preparing Document for Print">
+    <div class="print-modal-overlay" id="printModalOverlay" style="display: none;" role="dialog" aria-modal="true"
+        aria-label="Preparing Document for Print">
         <div class="print-modal-card">
             <div class="spinner"></div>
             <div class="print-modal-title">Preparing Document for Print</div>
-            <div class="print-modal-status" id="printModalStatus">Rendering page 1 of 14...</div>
+            <div class="print-modal-status" id="printModalStatus">Preparing pages for print...</div>
             <div class="print-modal-sub">Formatting pages for printer output</div>
             <button type="button" class="print-cancel-btn" id="btnCancelPrint">Cancel</button>
         </div>
@@ -1331,7 +1342,7 @@
                 try {
                     const page = await state.pdfDoc.getPage(pageNum);
                     const pixelRatio = window.devicePixelRatio || 1;
-                    
+
                     // Pass the true high-DPI scale into getViewport to prevent PDF.js viewport clipping
                     const viewport = page.getViewport({ scale: scale * pixelRatio });
 
