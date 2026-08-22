@@ -194,23 +194,47 @@
         }
 
         @media print {
+            html,
             body {
-                background: var(--mh-white);
-                padding: 0;
-                margin: 0;
+                background: var(--mh-white) !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                width: 210mm !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
 
-            .viewer-toolbar {
+            .viewer-toolbar,
+            .flipbook-overlay {
                 display: none !important;
+            }
+
+            body.flipbook-active > .page,
+            body.flipbook-active > section.page {
+                display: flex !important;
             }
 
             .page {
                 margin: 0 !important;
+                padding: 0 !important;
                 box-shadow: none !important;
                 page-break-after: always !important;
                 break-after: page !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
                 width: 210mm !important;
                 height: 297mm !important;
+                max-height: 297mm !important;
+                min-height: 297mm !important;
+                overflow: hidden !important;
+                box-sizing: border-box !important;
+                display: flex !important;
+            }
+
+            .page:last-of-type,
+            .page:last-child {
+                page-break-after: auto !important;
+                break-after: auto !important;
             }
 
             @page {
