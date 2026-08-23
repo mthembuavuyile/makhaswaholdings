@@ -1,0 +1,386 @@
+%% ============================================================
+%%  AWEN (Pty) Ltd — Minimalist Company Profile
+%%  Compile with: pdflatex (two passes for TOC)
+%% ============================================================
+
+\documentclass[a4paper,11pt]{article}
+
+%% ── Packages ─────────────────────────────────────────────────
+\usepackage[a4paper, top=30mm, bottom=30mm, left=20mm, right=20mm, footskip=15mm]{geometry}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[sfdefault]{roboto} % Modern, clean sans-serif font
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage[most]{tcolorbox}
+\usepackage{longtable}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\usetikzlibrary{shadows, calc, positioning}
+
+%% ── Brand Colours ────────────────────────────────────────────
+\definecolor{awenMaroon}    {RGB}{139,  26,  26}  % Primary
+\definecolor{awenDarkMaroon}{RGB}{ 90,  10,  10}  % Dark shade
+\definecolor{awenGold}      {RGB}{192, 145,  29}  % Accent
+\definecolor{awenLightGrey} {RGB}{248, 248, 248}  % Backgrounds
+\definecolor{awenMidGrey}   {RGB}{220, 220, 220}  % Borders
+\definecolor{awenDarkGrey}  {RGB}{ 80,  80,  80}  % Text
+\definecolor{awenWhite}     {RGB}{255, 255, 255}
+
+%% ── Hyperlinks ───────────────────────────────────────────────
+\hypersetup{
+    colorlinks=true,
+    linkcolor=awenMaroon,
+    urlcolor=awenMaroon,
+    pdfauthor={AWEN (Pty) Ltd},
+    pdftitle={COMPANY PROFILE},
+}
+
+%% ── Column Helpers ───────────────────────────────────────────
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+%% ── Minimalist Cover Page ────────────────────────────────────
+\newcommand{\CoverPage}{%
+  \thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Maroon background for the lower 65% of the page
+    \fill[awenMaroon] (current page.south west) rectangle ([yshift=0.65\paperheight]current page.north east);
+    
+    % Clean white top background for the top 35%
+    \fill[awenWhite] (current page.north west) rectangle ([yshift=0.65\paperheight]current page.south east);
+    
+    % Thin Gold accent line separating the two
+    \fill[awenGold] ([yshift=0.65\paperheight]current page.south west) rectangle ([yshift=0.65\paperheight+3pt]current page.south east);
+
+    % Logo centered perfectly in the white banner
+    \node at ([yshift=0.825\paperheight]current page.south) {%
+      \includegraphics[width=9cm]{awen-logo-transparent}%
+    };
+
+    % Company Title in Maroon block
+    \node[text=awenWhite, font=\fontsize{38}{46}\selectfont\bfseries, align=center]
+      at ([yshift=0.48\paperheight]current page.south) {COMPANY PROFILE};
+
+    % Full Name
+    \node[text=awenGold, font=\fontsize{15}{20}\selectfont, align=center, tracking=1.5]
+      at ([yshift=0.40\paperheight]current page.south) {\MakeUppercase{African Wealth Empowerment Network}};
+
+    % Bottom Meta Data
+    \node[text=awenWhite, font=\footnotesize, align=center, opacity=0.7]
+      at ([yshift=20mm]current page.south)
+      {Reg No: 2014/146827/07 \quad$\vert$\quad BEE Level 1 \quad$\vert$\quad CIDB Grading: 4GB, 1CE, 1SF, 1SO, 1SN \quad$\vert$\quad awen.tenders@gmail.com};
+  \end{tikzpicture}%
+  \newpage
+}
+
+%% ── Section Heading Styling ──────────────────────────────────
+\titleformat{\section}
+  {\color{awenMaroon}\LARGE\bfseries}
+  {\thesection.}{0.5em}{}
+  [\vspace{-0.3cm}\color{awenGold}\titlerule\vspace{0.2cm}]
+\titlespacing*{\section}{0pt}{24pt}{12pt}
+
+\titleformat{\subsection}
+  {\color{awenDarkMaroon}\Large\bfseries}
+  {\thesubsection.}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{16pt}{8pt}
+
+%% ── Header / Footer ──────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{} % Clear all headers and footers
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Footer
+\fancyfoot[C]{%
+  \color{awenDarkGrey}\footnotesize
+  \rule{\textwidth}{0.4pt}\\[1ex]
+  \begin{tabularx}{\textwidth}{@{} X >{\centering\arraybackslash}X >{\raggedleft\arraybackslash}X @{}}
+    \includegraphics[height=0.8cm]{awen-logo-transparent} & 
+    \textcolor{awenMaroon}{\textbf{AWEN}} & 
+    \textbf{Page \thepage}
+  \end{tabularx}
+}
+
+%% ══════════════════════════════════════════════════════════════
+\begin{document}
+\pagenumbering{gobble}
+
+%% ── COVER ────────────────────────────────────────────────────
+\CoverPage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%% ── TABLE OF CONTENTS ────────────────────────────────────────
+{\hypersetup{linkcolor=awenDarkGrey}
+\tableofcontents
+}
+\vspace{1cm}
+
+%% ═══════════════════════════════════════════════════
+\section{Introduction}
+%% ═══════════════════════════════════════════════════
+
+\begin{tcolorbox}[
+  enhanced, colback=awenLightGrey, colframe=awenMaroon, 
+  boxrule=0pt, leftrule=4pt, arc=0pt, 
+  top=15pt, bottom=15pt, left=15pt, right=15pt
+]
+\color{awenDarkGrey}\large
+African Wealth Empowerment Network (AWEN) (Pty) Ltd is a progressive,
+established business that provides various construction services.
+
+\vspace{0.5cm}\normalsize
+Our Construction \& Consulting solutions are project tailored to suit client
+needs, with attention on \textcolor{awenMaroon}{\textbf{quality product}},
+\textcolor{awenMaroon}{\textbf{professional management}}, and \textcolor{awenMaroon}{\textbf{sound advice}}.
+\end{tcolorbox}
+
+\vspace{1cm}
+
+%% ═══════════════════════════════════════════════════
+\section{Vision}
+%% ═══════════════════════════════════════════════════
+
+\begin{tcolorbox}[colback=awenWhite, colframe=awenGold, boxrule=1pt, top=15pt, bottom=15pt, arc=4pt]
+\color{awenDarkGrey}
+To become a leading and household name for various clients in Construction services.
+\end{tcolorbox}
+
+\vspace{1cm}
+
+%% ═══════════════════════════════════════════════════
+\section{Mission Statement}
+%% ═══════════════════════════════════════════════════
+
+\begin{itemize}[label=\textcolor{awenGold}{\textbullet}, itemsep=8pt, font=\color{awenDarkGrey}]
+  \item To provide our clients with professional, quality and affordable Construction services by utilizing experienced and continuously developing employees.
+  \item Keeping up to date with the ever-changing technology by attending contractor/consulting and refresher training courses.
+\end{itemize}
+
+\vspace{1cm}
+
+%% ═══════════════════════════════════════════════════
+\section{Field of Expertise}
+%% ═══════════════════════════════════════════════════
+
+\subsection{Construction Services}
+
+\color{awenDarkGrey}
+General construction/building/repairs and renovations of the following:
+
+\vspace{0.8cm}
+
+%% Clean Service Grid
+\begin{center}
+\begin{tikzpicture}[
+    service/.style={
+        draw=awenMidGrey, rounded corners=6pt, fill=awenLightGrey,
+        minimum width=3.5cm, minimum height=1.5cm, align=center,
+        font=\bfseries\color{awenMaroon}
+    },
+    node distance=0.8cm and 0.8cm
+]
+  \node[service] (s1) {Fencing};
+  \node[service, right=of s1] (s2) {Building works};
+  \node[service, right=of s2] (s3) {Concrete works};
+  \node[service, right=of s3] (s4) {Tiling};
+  
+  \node[service, below=of s1] (s5) {Roofing};
+  \node[service, right=of s5] (s6) {Painting};
+  \node[service, right=of s6] (s7) {Carpentry};
+  \node[service, right=of s7] (s8) {Plumbing};
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+%% ═══════════════════════════════════════════════════
+\section{Equipment}
+%% ═══════════════════════════════════════════════════
+
+\begin{itemize}[label=\textcolor{awenGold}{\textbullet}, itemsep=8pt, font=\color{awenDarkGrey}]
+  \item 2x Bakkies
+  \item 2x Laptops, 1x Trimble GPS, 3x Trimble M3 Total Station, 2x Dumpy Levels
+  \item Labor workers tools / Plant Hire Tools
+  \item AutoCAD (2018 version), ArchiCAD
+  \item Model Maker
+  \item Power tools \& handheld
+\end{itemize}
+
+\vspace{1cm}
+
+%% ═══════════════════════════════════════════════════
+\section{Management Structure}
+%% ═══════════════════════════════════════════════════
+
+{\color{awenDarkGrey}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{@{} L{4cm} L{3.5cm} X @{}}
+  \toprule
+  \rowcolor{awenLightGrey}
+  \textcolor{awenMaroon}{\bfseries Name} & 
+  \textcolor{awenMaroon}{\bfseries Role} & 
+  \textcolor{awenMaroon}{\bfseries Qualification} \\
+  \midrule
+  Scelo Meyiwa      & Director & ISSD – Information Systems Software development \newline Ndp (Business Management) \\
+  Sihle Khumalo     & Site Agent & National Diploma Civil \\
+  Sethu Vilakazi    & Foreman & National Diploma Building \\
+  Anele Tembe       & SHE Rep & National Diploma Human Resources \\
+  Siyabonga Msomi   & Engineer & National Diploma in Civil Engineering \\
+  Sibongiseni Magwaza & Project Manager \newline Contracts Manager & BSC Quantity Surveying Degree \newline Professional Quantity Surveyor \newline SACPCMP \\
+  Ayanda Mhlongo    & Health And Safety Officer & SACPCMP \newline Professional Constructions Health and Safety \\
+  \bottomrule
+\end{tabularx}
+}
+
+\newpage
+
+%% ═══════════════════════════════════════════════════
+\section{Work Experience}
+%% ═══════════════════════════════════════════════════
+
+{\color{awenDarkGrey}\scriptsize
+\renewcommand{\arraystretch}{1.4}
+\begin{longtable}{@{} p{2.5cm} p{4.5cm} p{1.8cm} L{0.8cm} p{2cm} p{3.5cm} @{}}
+  \toprule
+  \rowcolor{awenLightGrey}
+  \textcolor{awenMaroon}{\bfseries CLIENT} & 
+  \textcolor{awenMaroon}{\bfseries PROJECT NAME} & 
+  \textcolor{awenMaroon}{\bfseries VALUE} & 
+  \textcolor{awenMaroon}{\bfseries DATE} &
+  \textcolor{awenMaroon}{\bfseries STATUS} &
+  \textcolor{awenMaroon}{\bfseries CONTACT PERSON} \\
+  \midrule
+  \endfirsthead
+
+  \toprule
+  \rowcolor{awenLightGrey}
+  \textcolor{awenMaroon}{\bfseries CLIENT} & 
+  \textcolor{awenMaroon}{\bfseries PROJECT NAME} & 
+  \textcolor{awenMaroon}{\bfseries VALUE} & 
+  \textcolor{awenMaroon}{\bfseries DATE} &
+  \textcolor{awenMaroon}{\bfseries STATUS} &
+  \textcolor{awenMaroon}{\bfseries CONTACT PERSON} \\
+  \midrule
+  \endhead
+  
+  Human Settlement & Housing Project (Sub contractor for the construction of concrete slabs) & R55 million & 2018 & Complete & Mr G Ntaka 076 745 1766 \\
+  \midrule
+  Department of Education & Maintenance programme for Nomvuywa Primary School & R393 390.87 & 2014 & Complete & Mr S Towani (033) 345 5694/6/8 \\
+  \midrule
+  Department of Water and Sanitation & Water harvesting program – Supply and installation of 15 water for beneficiaries & R357 000 & 2014 & Complete & T2 – Tech Consulting Engineers David Ayisi 083 567 3736 \\
+  \midrule
+  Thobile M Construction & Setting out and Installation of concrete fence and clearVu & R 486 420.00 & 2015 & Complete & Mr R Ndlovu (073) 453 0561 \\
+  \midrule
+  Mangosuthu University of Technology & Renovation And Reconfiguration Of Procurement Office At Mangosuthu University Of Technology & R 275 436 .05 & 2019 & Complete & Mr Lindo Mzolo 031 819 9310 \\
+  \midrule
+  Department of Transport & Replace 10x roofs and Paint – Rti winklespruit & R223 580.00 & 2016 & Complete & Sally 031 916 4588 \\
+  \midrule
+  EDC – Experience Delivery Company & Painting Works in Block E 2nd Floor at DTI campus & R197 920.50 & 2015 & Complete & Farai Mandebvu 012 341 6007/8 \\
+  \midrule
+  Public Works & Devon Prison – Renovations to Devon Prison & R349 586 & 2016 & & SM Venter 076 589 5530 \\
+  \midrule
+  Mangosuthu University of Technology & Paving at Mangosuthu University of Technology & R 456 265 & 2019 & Complete & Mr Lindo Mzolo 031 819 9310 \\
+  \midrule
+  Zikhulise Group & Mangidini Housing Project Nkandla – Construction of Wallplate to & & 2019 & Project on hold & Mr Nzimande 082 363 4358 \\
+  \midrule
+  Ndwedwe Local Municipality & Installation Of Galvanised Steel Carports At The Ndwedwe Civic Centre Parking Area & R757 873 & 2019 & Complete & David Ayisi 031 303 2470 \\
+  \midrule
+  Department of Health KZN & Refurbishment of Nseleni CHC & R465 888 & 2021 & Complete & Ms K Kuboni 035 457 1236 \\
+  \midrule
+  Umhlathuze Municipality & Supply and Deliver Electrical items & R196 824.00 & 2021 & & Thabani Ndlovu 035 907 5974 / 5908 \\
+  \midrule
+  Department Of Public Works KZN & Maintenance Works At Umlazi U Clinic & R855 460.00 & 2021 & Complete & Z Malunga 031 203 2163 \\
+  \midrule
+  Department of Health KZN & Design, Fabricate And Install Steel Shelters To Walkways & R681 909.83 & 2023 & Complete & S.B Dlamini 035 831 7048 \\
+  \midrule
+  Atom Gate & Alterations and renovations of new officers & R179 400 & 2022 & Complete & Makgabo Morema 071 168 0946 \\
+  \midrule
+  Logico & Reconfiguration of Logico office space & R589 950.43 & 2023 & & Lephoi Maduna 074 966 7824 \\
+  \midrule
+  Department Of Public Works KZN & Supply Of New Prefabricated Ablutions Including Three Water Tanks And Electrical Pumps & R865,549 & 2023 & Complete & Nhlonipho Msomi 035 – 874 3419 \\
+  \midrule
+  IDT & General Minor Repairs And Maintenace For The Department Of Education Kwazulu Natal Province At Umfolozi High School & R589 990 & 2024 & Complete & Thobile Mnebele (Paradox Young - Consultant) 076 873 3139 \\
+  \midrule
+  Transnet & Refurbishment of the Berthing Services Building & R1 666,860.85 & 2024 & Complete & N Mkhwanazi 031 361 3312 \\
+  \midrule
+  KZN Growth Fund & White Boxing KZN Growth Fund Offices & R448 380 & 2024 & Complete & Nqubeko Madondo 031 372 3720 \\
+  \midrule
+  KZN Growth Fund & Re-Instatement of Ceilings & R348 750 & 2024 & Complete & Nqubeko Madondo 031 372 3720 \\
+  \midrule
+  The Playhouse Company & Installation of new Front House Canopy & R912 240 & 2025 & Complete & Clinton Hiralil 031 208 2272 \\
+  \midrule
+  UKZN Howard College & Upgrade toilets in EECE North ground floor to 5th floor & R775 950 & 2025 & Complete & Tumelo Phethlo 031 260 1806 \\
+  \midrule
+  Kzn Health Prince Mshiyeni Hospital & painting of ward C1,C2 and upgrading of nurses DUY rooms & R199 750 & 2025 & Complete & Hloniphani Ngcobo 031 907 8214 \\
+  \midrule
+  UKZN Howard College & Renovation Of Student Discipline -Installing New Carpets, New Office, Repainting, New Windows, New Cabinets & R555 214 & 2025 & Complete & Shiven Maharaj \\
+  \midrule
+  CSIR & & & & & \\
+  \midrule
+  NEF – National Empowerment Fund & & & & & \\
+  \bottomrule
+\end{longtable}
+}
+
+\newpage
+
+%% ═══════════════════════════════════════════════════
+\section{Company Details}
+%% ═══════════════════════════════════════════════════
+
+{\color{awenDarkGrey}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\textwidth}{@{} >{\bfseries}L{5cm} X @{}}
+  \toprule
+  Registered Name     & AWEN \\
+  Trading Name        & AWEN \\
+  Registration Number & 2014/ 146827/07 \\
+  BEE Status          & level 1 \\
+  CSD number          & MAAA0023374 \\
+  CIDB CRS No.        & 10065323 \\
+  Grading             & 4GB, 1CE, 1SF, 1SO, 1SN \\
+  Address             & 24 Carmichael Place, Woodlands, Durban, 4004 \\
+  Email               & \href{mailto:awen.tenders@gmail.com}{awen.tenders@gmail.com} \\
+  \bottomrule
+\end{tabularx}
+}
+
+\vspace{1.5cm}
+
+%% ═══════════════════════════════════════════════════
+\section{Contact us}
+%% ═══════════════════════════════════════════════════
+
+\begin{center}
+\begin{tcolorbox}[
+    enhanced, colback=awenLightGrey, colframe=awenMaroon, 
+    boxrule=1pt, arc=8pt, width=0.85\textwidth,
+    title={\large\bfseries GET IN TOUCH},
+    coltitle=awenWhite, titlerule=0pt,
+    top=20pt, bottom=20pt, left=20pt, right=20pt,
+    fontupper=\color{awenDarkGrey}
+]
+  \begin{center}
+    \begin{tabular}{r l}
+      \textcolor{awenMaroon}{\textbf{Contact Person:}} & Sicelo Meyiwa \\[5pt]
+      \textcolor{awenMaroon}{\textbf{Contact Number:}} & 071 926 8316 \\[5pt] % Left as 9 digits to match original text
+      \textcolor{awenMaroon}{\textbf{Email:}} & \href{mailto:meyiwasicelo@gmail.com}{meyiwasicelo@gmail.com} \\
+    \end{tabular}
+  \end{center}
+\end{tcolorbox}
+\end{center}
+
+\end{document}
