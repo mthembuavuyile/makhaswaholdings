@@ -15,7 +15,7 @@
       "src": "images/projects/buildingconstruction/building-photos-1.jpeg",
       "alt": "Completed multi-story residential housing development.",
       "title": "Multi-Story Residential Complex",
-      "featured": false,
+      "featured": true,
       "date": "2024-08-01"
     },
     {
@@ -40,7 +40,7 @@
       "src": "images/projects/buildingconstruction/makhaswa (49).jpeg",
       "alt": "Workers constructing a red brick wall using scaffolding on a construction site",
       "title": "Brick Wall Construction",
-      "featured": true,
+      "featured": false,
       "date": "2024-08-01"
     },
     {
@@ -80,7 +80,7 @@
       "src": "images/projects/buildingconstruction/clinic.jpeg",
       "alt": "Rhiza Babuyile Clinic",
       "title": "Rhiza Babuyile Clinic",
-      "featured": false,
+      "featured": true,
       "date": "2024-08-01"
     },
     {
