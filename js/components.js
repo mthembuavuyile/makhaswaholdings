@@ -47,7 +47,11 @@ const SITE_CONFIG = {
     ],
 
     downloads: [
-        { label: 'Company Profile (Under Revision — Request Copy)', href: 'mailto:info@makhaswaholdings.co.za?subject=Company%20Profile%20Request%20-%20Makhaswa%20Holdings' },
+        { label: 'Makhaswa Company Profile', href: 'mailto:info@makhaswaholdings.co.za?subject=Company%20Profile%20Request%20-%20Makhaswa%20Holdings', icon: 'file-text' },
+        { label: 'B-BBEE Certificate — Level 1', href: 'mailto:info@makhaswaholdings.co.za?subject=B-BBEE%20Certificate%20Request%20-%20Makhaswa%20Holdings', icon: 'file-check' },
+        { label: 'Tax Clearance Certificate', href: 'mailto:info@makhaswaholdings.co.za?subject=Tax%20Clearance%20Certificate%20Request%20-%20Makhaswa%20Holdings', icon: 'file-check' },
+        { label: 'ISO 45001 & Safety Compliance', href: 'mailto:info@makhaswaholdings.co.za?subject=Compliance%20Pack%20Request%20-%20Makhaswa%20Holdings', icon: 'shield-check' },
+        { label: 'Vendor Application Forms', href: 'mailto:tenders@makhaswaholdings.co.za?subject=Vendor%20Application%20Form%20Request%20-%20Makhaswa%20Holdings', icon: 'archive' },
     ],
 
     capabilities: [
@@ -201,8 +205,9 @@ function buildFooter() {
         const extraAttr = isPdf 
             ? ' target="_blank" download="Makhaswa-Holdings-Company-Profile.pdf"' 
             : (isProfileViewer ? ' target="_blank"' : '');
-        const iconName = isMailto ? 'mail' : (isPdf ? 'file-text' : (isProfileViewer ? 'book-open' : 'download'));
-        return `<li><i data-lucide="${iconName}" width="14" height="14" class="footer-icon"></i><a href="${href}"${extraAttr}>${link.label}</a></li>`;
+        const titleAttr = isMailto ? ' title="Request copy via email"' : '';
+        const iconName = link.icon || (isMailto ? 'mail' : (isPdf ? 'file-text' : (isProfileViewer ? 'book-open' : 'download')));
+        return `<li><i data-lucide="${iconName}" width="14" height="14" class="footer-icon"></i><a href="${href}"${extraAttr}${titleAttr}>${link.label}</a></li>`;
     }).join('\n                    ');
 
     /* Capabilities list items */
@@ -252,7 +257,7 @@ function buildFooter() {
                 <ul>
                     ${quickLinksHtml}
                 </ul>
-                <h4 style="margin-top: 24px;">Downloads</h4>
+                <h4 style="margin-top: 24px;">Downloads &amp; Documents</h4>
                 <ul>
                     ${downloadsHtml}
                 </ul>
