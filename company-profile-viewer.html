@@ -1083,12 +1083,12 @@
                 <i data-lucide="maximize" width="16" height="16"></i>
             </button>
 
-            <!-- Direct Download CTA (Always Visible) -->
-            <a id="btnDownload" href="documents/makhaswa-holdings-company-profile.pdf"
-                download="Makhaswa-Holdings-Company-Profile.pdf" class="download-cta-btn"
-                title="Download Official PDF Document" aria-label="Download Official Corporate Profile PDF">
-                <i data-lucide="download" width="15" height="15"></i>
-                <span class="btn-text">Download <span class="meta">(3.1 MB)</span></span>
+            <!-- Direct Request CTA -->
+            <a id="btnDownload" href="mailto:info@makhaswaholdings.co.za?subject=Company%20Profile%20Request%20-%20Makhaswa%20Holdings"
+                class="download-cta-btn"
+                title="Request Official Corporate Profile" aria-label="Request Official Corporate Profile">
+                <i data-lucide="mail" width="15" height="15"></i>
+                <span class="btn-text">Request Profile</span>
             </a>
         </div>
     </header>
@@ -1121,20 +1121,21 @@
                 <div class="loader-subtext">Please wait</div>
             </div>
 
-            <!-- Error Card Fallback -->
-            <div class="viewer-error-card" id="viewerErrorCard">
-                <i data-lucide="alert-triangle" width="36" height="36" color="#f87171"
-                    style="margin:0 auto 12px auto; display: block;"></i>
-                <h3>Unable to Render Document</h3>
-                <p>The company profile could not be loaded in this browser window. You can retry or download the PDF
-                    directly.</p>
-                <div class="error-card-actions">
-                    <button type="button" id="btnRetryLoad" class="retry-btn">
-                        <i data-lucide="rotate-cw" width="15" height="15"></i> Retry Loading
-                    </button>
-                    <a href="documents/makhaswa-holdings-company-profile.pdf"
-                        download="Makhaswa-Holdings-Company-Profile.pdf" class="download-cta-btn">
-                        <i data-lucide="download" width="15" height="15"></i> Download PDF
+            <!-- Under Scheduled Revision Status Card -->
+            <div class="viewer-error-card" id="viewerErrorCard" style="max-width: 580px; padding: 40px 32px; text-align: center; border: 1px solid rgba(200, 169, 81, 0.4); box-shadow: 0 16px 40px rgba(0,0,0,0.5);">
+                <i data-lucide="clock" width="44" height="44" color="#C8A951"
+                    style="margin:0 auto 16px auto; display: block;"></i>
+                <h3 style="font-size: 1.35rem; color: #ffffff; margin-bottom: 12px; font-weight: 700;">Profile Under Scheduled Revision</h3>
+                <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">
+                    Our comprehensive corporate profile is currently undergoing its annual update to incorporate our latest completed civil engineering and infrastructure projects. In the interim, our verified credentials pack and tender schedules are available directly upon request.
+                </p>
+                <div class="error-card-actions" style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                    <a href="mailto:info@makhaswaholdings.co.za?subject=Company%20Profile%20Request%20-%20Makhaswa%20Holdings"
+                        class="download-cta-btn" style="text-decoration: none; padding: 12px 20px;">
+                        <i data-lucide="mail" width="16" height="16"></i> Request Profile via Email
+                    </a>
+                    <a href="index.html" class="retry-btn" style="text-decoration: none; padding: 12px 20px;">
+                        <i data-lucide="home" width="16" height="16"></i> Return to Homepage
                     </a>
                 </div>
             </div>

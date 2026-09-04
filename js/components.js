@@ -47,8 +47,7 @@ const SITE_CONFIG = {
     ],
 
     downloads: [
-        { label: 'Company Profile (Interactive Viewer)', href: 'company-profile-viewer.html' },
-        { label: 'Company Profile (Download PDF)', href: 'documents/makhaswa-holdings-company-profile.pdf' },
+        { label: 'Company Profile (Under Revision — Request Copy)', href: 'mailto:info@makhaswaholdings.co.za?subject=Company%20Profile%20Request%20-%20Makhaswa%20Holdings' },
     ],
 
     capabilities: [
@@ -195,13 +194,14 @@ function buildFooter() {
 
     /* Downloads list items */
     const downloadsHtml = cfg.downloads.map(link => {
-        const href = link.href.startsWith('http') ? link.href : prefix + link.href;
+        const isMailto = link.href.startsWith('mailto:');
+        const href = (link.href.startsWith('http') || isMailto) ? link.href : prefix + link.href;
         const isPdf = link.href.endsWith('.pdf');
         const isProfileViewer = link.href.includes('company-profile-viewer.html') || link.href.includes('profile-brochure.html');
         const extraAttr = isPdf 
             ? ' target="_blank" download="Makhaswa-Holdings-Company-Profile.pdf"' 
             : (isProfileViewer ? ' target="_blank"' : '');
-        const iconName = isPdf ? 'file-text' : (isProfileViewer ? 'book-open' : 'download');
+        const iconName = isMailto ? 'mail' : (isPdf ? 'file-text' : (isProfileViewer ? 'book-open' : 'download'));
         return `<li><i data-lucide="${iconName}" width="14" height="14" class="footer-icon"></i><a href="${href}"${extraAttr}>${link.label}</a></li>`;
     }).join('\n                    ');
 
