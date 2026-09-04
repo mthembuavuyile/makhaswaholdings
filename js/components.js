@@ -47,11 +47,8 @@ const SITE_CONFIG = {
     ],
 
     downloads: [
-        { label: 'Makhaswa Company Profile', href: 'mailto:info@makhaswaholdings.co.za?subject=Company%20Profile%20Request%20-%20Makhaswa%20Holdings', icon: 'file-text' },
-        { label: 'B-BBEE Certificate — Level 1', href: 'mailto:info@makhaswaholdings.co.za?subject=B-BBEE%20Certificate%20Request%20-%20Makhaswa%20Holdings', icon: 'file-check' },
-        { label: 'Tax Clearance Certificate', href: 'mailto:info@makhaswaholdings.co.za?subject=Tax%20Clearance%20Certificate%20Request%20-%20Makhaswa%20Holdings', icon: 'file-check' },
-        { label: 'ISO 45001 & Safety Compliance', href: 'mailto:info@makhaswaholdings.co.za?subject=Compliance%20Pack%20Request%20-%20Makhaswa%20Holdings', icon: 'shield-check' },
-        { label: 'Vendor Application Forms', href: 'mailto:tenders@makhaswaholdings.co.za?subject=Vendor%20Application%20Form%20Request%20-%20Makhaswa%20Holdings', icon: 'archive' },
+        { label: 'Company Profile', href: 'mailto:info@makhaswaholdings.co.za?subject=Company%20Profile%20Request%20-%20Makhaswa%20Holdings', icon: 'file-text' },
+        { label: 'B-BBEE Certificate', href: 'mailto:info@makhaswaholdings.co.za?subject=B-BBEE%20Certificate%20Request%20-%20Makhaswa%20Holdings', icon: 'file-check' },
     ],
 
     capabilities: [
@@ -257,7 +254,7 @@ function buildFooter() {
                 <ul>
                     ${quickLinksHtml}
                 </ul>
-                <h4 style="margin-top: 24px;">Downloads &amp; Documents</h4>
+                <h4 style="margin-top: 24px;">Downloads</h4>
                 <ul>
                     ${downloadsHtml}
                 </ul>
