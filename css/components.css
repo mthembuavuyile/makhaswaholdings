@@ -902,7 +902,7 @@ nav a.nav-contact-btn:hover {
    ===================================================== */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 20px;
     text-align: center;
 }
@@ -1733,7 +1733,7 @@ nav a.nav-contact-btn:hover {
    ===================================================== */
 @media (max-width: 960px) {
     .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .bbee-grid {
