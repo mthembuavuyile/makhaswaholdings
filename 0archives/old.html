@@ -1,14 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Makhaswa Holdings (Pty) Ltd | Building The Future</title>
-    <meta name="description" content="Makhaswa Holdings (Pty) Ltd is a multi-disciplined, 100% Black-owned construction and engineering firm dedicated to excellence, innovation, and sustainable infrastructure in South Africa.">
+    <meta name="description"
+        content="Makhaswa Holdings (Pty) Ltd is a multi-disciplined, 100% Black-owned construction and engineering firm dedicated to excellence, innovation, and sustainable infrastructure in South Africa.">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet">
 
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -18,29 +21,37 @@
            CSS CUSTOM PROPERTIES
         ===================================================== */
         :root {
-            --primary:      #082d5a;
-            --primary-mid:  #0c3a6d;
-            --accent:       #1a3668;
-            --white:        #ffffff;
-            --off-white:    #f4f6f8;
-            --text:         #333333;
-            --text-light:   #666666;
-            --text-muted:   #999999;
-            --border:       #e0e0e0;
-            --font:         'Montserrat', sans-serif;
-            --header-h:     72px;
-            --transition:   0.25s ease;
-            --shadow-sm:    0 2px 8px rgba(0,0,0,0.06);
-            --shadow-md:    0 4px 20px rgba(0,0,0,0.10);
-            --gold:         #c8a951;
+            --primary: #082d5a;
+            --primary-mid: #0c3a6d;
+            --accent: #1a3668;
+            --white: #ffffff;
+            --off-white: #f4f6f8;
+            --text: #333333;
+            --text-light: #666666;
+            --text-muted: #999999;
+            --border: #e0e0e0;
+            --font: 'Montserrat', sans-serif;
+            --header-h: 72px;
+            --transition: 0.25s ease;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.10);
+            --gold: #c8a951;
         }
 
         /* =====================================================
            RESET & BASE
         ===================================================== */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: var(--font);
@@ -50,9 +61,20 @@
             overflow-x: hidden;
         }
 
-        img { display: block; max-width: 100%; height: auto; }
-        a   { text-decoration: none; color: inherit; }
-        ul  { list-style: none; }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
 
         /* =====================================================
            TYPOGRAPHY HELPERS
@@ -107,7 +129,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 40px;
-            box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
         }
 
         /* Logo */
@@ -169,8 +191,13 @@
             transition: width var(--transition);
         }
 
-        nav a:hover::after { width: 100%; }
-        nav a:hover { color: #0056b3; }
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: #0056b3;
+        }
 
         /* Burger Button (hidden on desktop) */
         .burger {
@@ -197,7 +224,9 @@
             overflow-y: auto;
         }
 
-        .mobile-nav.open { display: flex; }
+        .mobile-nav.open {
+            display: flex;
+        }
 
         .mobile-nav a {
             color: var(--primary);
@@ -210,7 +239,9 @@
             transition: color var(--transition);
         }
 
-        .mobile-nav a:hover { color: #0056b3; }
+        .mobile-nav a:hover {
+            color: #0056b3;
+        }
 
         /* =====================================================
            HERO
@@ -226,7 +257,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(8,45,90,0.55) 0%, rgba(8,45,90,0.3) 50%, rgba(8,45,90,0.7) 100%);
+            background: linear-gradient(to bottom, rgba(8, 45, 90, 0.55) 0%, rgba(8, 45, 90, 0.3) 50%, rgba(8, 45, 90, 0.7) 100%);
         }
 
         .hero-content {
@@ -390,8 +421,15 @@
             padding: 10px 44px 32px;
         }
 
-        .timeline-item.left  { left: 0;   text-align: right; }
-        .timeline-item.right { left: 50%; text-align: left;  }
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+            text-align: left;
+        }
 
         /* Dot */
         .timeline-item::after {
@@ -405,8 +443,13 @@
             z-index: 1;
         }
 
-        .timeline-item.left::after  { right: -7px; }
-        .timeline-item.right::after { left: -6px;  }
+        .timeline-item.left::after {
+            right: -7px;
+        }
+
+        .timeline-item.right::after {
+            left: -6px;
+        }
 
         .year {
             font-size: 22px;
@@ -426,7 +469,9 @@
         /* =====================================================
            TEAM
         ===================================================== */
-        .team-section { background: var(--off-white); }
+        .team-section {
+            background: var(--off-white);
+        }
 
         .team-grid {
             display: grid;
@@ -455,7 +500,9 @@
             transition: filter var(--transition);
         }
 
-        .team-member:hover img { filter: grayscale(40%); }
+        .team-member:hover img {
+            filter: grayscale(40%);
+        }
 
         .team-member h4 {
             color: var(--primary);
@@ -517,7 +564,9 @@
         /* =====================================================
            SERVICES
         ===================================================== */
-        .services-section { background: var(--off-white); }
+        .services-section {
+            background: var(--off-white);
+        }
 
         .services-split {
             display: grid;
@@ -544,7 +593,10 @@
             color: var(--text);
         }
 
-        .services-list li i { flex-shrink: 0; color: var(--primary); }
+        .services-list li i {
+            flex-shrink: 0;
+            color: var(--primary);
+        }
 
         .services-grid {
             display: grid;
@@ -560,7 +612,9 @@
             transition: transform 0.35s ease;
         }
 
-        .services-grid img:hover { transform: scale(1.05); }
+        .services-grid img:hover {
+            transform: scale(1.05);
+        }
 
         .showcase-intro {
             font-size: 13.5px;
@@ -637,7 +691,11 @@
             text-align: center;
         }
 
-        .stat-item { display: flex; flex-direction: column; align-items: center; }
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
         .stat-icon {
             width: 56px;
@@ -669,7 +727,9 @@
         /* =====================================================
            B-BBEE / TRANSFORMATION
         ===================================================== */
-        .bbee-section { background: var(--off-white); }
+        .bbee-section {
+            background: var(--off-white);
+        }
 
         .bbee-grid {
             display: grid;
@@ -687,7 +747,9 @@
             transition: transform var(--transition);
         }
 
-        .bbee-card:hover { transform: translateY(-4px); }
+        .bbee-card:hover {
+            transform: translateY(-4px);
+        }
 
         .bbee-card .bbee-value {
             font-size: 28px;
@@ -727,12 +789,14 @@
             transition: transform 0.5s ease;
         }
 
-        .project-card:hover img { transform: scale(1.08); }
+        .project-card:hover img {
+            transform: scale(1.08);
+        }
 
         .project-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(8,45,90,0.9) 0%, rgba(8,45,90,0.3) 50%, transparent 100%);
+            background: linear-gradient(to top, rgba(8, 45, 90, 0.9) 0%, rgba(8, 45, 90, 0.3) 50%, transparent 100%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -791,7 +855,9 @@
         /* =====================================================
            NEWS
         ===================================================== */
-        .news-section { background: var(--off-white); }
+        .news-section {
+            background: var(--off-white);
+        }
 
         .news-grid {
             display: grid;
@@ -824,7 +890,9 @@
             transition: transform 0.4s ease;
         }
 
-        .news-card:hover .news-card-img img { transform: scale(1.04); }
+        .news-card:hover .news-card-img img {
+            transform: scale(1.04);
+        }
 
         .news-date {
             font-size: 10.5px;
@@ -846,7 +914,9 @@
             margin: 8px 16px 0;
         }
 
-        .news-card-body { padding: 12px 16px 20px; }
+        .news-card-body {
+            padding: 12px 16px 20px;
+        }
 
         .news-card-body h4 {
             font-size: 14px;
@@ -873,7 +943,9 @@
             transition: color var(--transition);
         }
 
-        .news-card-body .read-more:hover { color: #0056b3; }
+        .news-card-body .read-more:hover {
+            color: #0056b3;
+        }
 
         .btn-view-all {
             display: inline-block;
@@ -892,7 +964,9 @@
             transform: translateY(-2px);
         }
 
-        .news-actions { text-align: center; }
+        .news-actions {
+            text-align: center;
+        }
 
         /* =====================================================
            AFFILIATIONS
@@ -949,7 +1023,10 @@
             transform: translateY(-2px);
         }
 
-        .download-item i { color: var(--primary); flex-shrink: 0; }
+        .download-item i {
+            color: var(--primary);
+            flex-shrink: 0;
+        }
 
         .download-item span {
             font-size: 12px;
@@ -986,7 +1063,11 @@
             line-height: 1.6;
         }
 
-        .contact-info li i { flex-shrink: 0; color: var(--primary); margin-top: 2px; }
+        .contact-info li i {
+            flex-shrink: 0;
+            color: var(--primary);
+            margin-top: 2px;
+        }
 
         .contact-form label {
             display: block;
@@ -1013,9 +1094,14 @@
 
         .contact-form input:focus,
         .contact-form textarea:focus,
-        .contact-form select:focus { border-color: var(--primary); }
+        .contact-form select:focus {
+            border-color: var(--primary);
+        }
 
-        .contact-form textarea { resize: vertical; min-height: 100px; }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
 
         .contact-form button {
             background: var(--primary);
@@ -1075,9 +1161,14 @@
             transition: color var(--transition);
         }
 
-        .footer-col ul li a:hover { color: var(--white); }
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
 
-        .footer-icon { flex-shrink: 0; opacity: 0.7; }
+        .footer-icon {
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
 
         .footer-map {
             width: 100%;
@@ -1088,13 +1179,15 @@
             transition: filter var(--transition);
         }
 
-        .footer-map:hover { filter: grayscale(0%) contrast(1); }
+        .footer-map:hover {
+            filter: grayscale(0%) contrast(1);
+        }
 
         .footer-bottom {
             max-width: 1200px;
             margin: 40px auto 0;
             padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -1113,34 +1206,70 @@
            RESPONSIVE
         ===================================================== */
         @media (max-width: 960px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .bbee-grid  { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bbee-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
+
             /* Header */
-            header { padding: 0 20px; }
-            nav    { display: none; }
-            .burger { display: flex; }
+            header {
+                padding: 0 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .burger {
+                display: flex;
+            }
 
             /* Containers */
-            .container { padding: 44px 20px; }
-            footer     { padding: 44px 20px 24px; }
+            .container {
+                padding: 44px 20px;
+            }
+
+            footer {
+                padding: 44px 20px 24px;
+            }
 
             /* Hero */
-            .hero { height: clamp(260px, 60vw, 400px); }
-            .hero-content { padding: 32px 20px; }
-            .hero-content h1 { font-size: clamp(22px, 5vw, 32px); }
+            .hero {
+                height: clamp(260px, 60vw, 400px);
+            }
+
+            .hero-content {
+                padding: 32px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: clamp(22px, 5vw, 32px);
+            }
 
             /* Timeline: single column left-aligned */
-            .timeline::before { left: 16px; transform: none; }
+            .timeline::before {
+                left: 16px;
+                transform: none;
+            }
+
             .timeline-item {
                 width: 100%;
                 left: 0 !important;
                 text-align: left;
                 padding: 10px 20px 28px 48px;
             }
-            .timeline-item::after { left: 10px !important; right: auto !important; top: 16px; }
+
+            .timeline-item::after {
+                left: 10px !important;
+                right: auto !important;
+                top: 16px;
+            }
 
             /* Grids → 1 column */
             .about-split,
@@ -1148,27 +1277,56 @@
             .contact-split,
             .csi-split,
             .plant-section,
-            .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
 
-            .team-grid   { grid-template-columns: 1fr; }
-            .news-grid   { grid-template-columns: 1fr; }
-            .values-grid { grid-template-columns: 1fr; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .bbee-grid   { grid-template-columns: 1fr; }
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bbee-grid {
+                grid-template-columns: 1fr;
+            }
 
             /* Stats */
-            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
 
             /* Services image grid */
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 480px) {
-            .hero-banner { font-size: 10px; letter-spacing: 1.2px; }
-            .stats-grid  { grid-template-columns: repeat(2, 1fr); }
+            .hero-banner {
+                font-size: 10px;
+                letter-spacing: 1.2px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- =====================================================
@@ -1216,7 +1374,8 @@
     <div class="hero" id="hero" role="img" aria-label="Makhaswa Holdings construction site">
         <div class="hero-content">
             <h1>Building The Future</h1>
-            <p>Makhaswa Holdings (Pty) Ltd is a multi-disciplined, reputable construction and engineering firm dedicated to excellence, innovation, and sustainable infrastructure.</p>
+            <p>Makhaswa Holdings (Pty) Ltd is a multi-disciplined, reputable construction and engineering firm dedicated
+                to excellence, innovation, and sustainable infrastructure.</p>
             <a href="#projects" class="hero-cta">Explore Our Projects</a>
         </div>
     </div>
@@ -1227,15 +1386,21 @@
     <!-- =====================================================
          ABOUT US
     ===================================================== -->
-    <div class="section-banner" id="about">About Us — Discover our roots, our vision for tomorrow, and the core values that drive our daily operations.</div>
+    <div class="section-banner" id="about">About Us — Discover our roots, our vision for tomorrow, and the core values
+        that drive our daily operations.</div>
 
     <div class="container">
         <div class="about-split">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&h=600&q=80" alt="Makhaswa Holdings Engineer on Site" class="about-img">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&h=600&q=80"
+                alt="Makhaswa Holdings Engineer on Site" class="about-img">
             <div class="about-text">
                 <h2 class="section-title" style="text-align:left;">Who We Are</h2>
-                <p>Makhaswa Holdings (Pty) Ltd is a private, 100% Black-owned, management-driven business. Established with a commitment to transforming the construction landscape, we have grown into a highly capable organization delivering large-scale infrastructure, commercial, and residential projects.</p>
-                <p>Our multidisciplinary approach allows us to manage end-to-end project lifecycles, ensuring safety, quality, and timely delivery. We pride ourselves on building lasting relationships with clients across both the public and private sectors.</p>
+                <p>Makhaswa Holdings (Pty) Ltd is a private, 100% Black-owned, management-driven business. Established
+                    with a commitment to transforming the construction landscape, we have grown into a highly capable
+                    organization delivering large-scale infrastructure, commercial, and residential projects.</p>
+                <p>Our multidisciplinary approach allows us to manage end-to-end project lifecycles, ensuring safety,
+                    quality, and timely delivery. We pride ourselves on building lasting relationships with clients
+                    across both the public and private sectors.</p>
             </div>
         </div>
     </div>
@@ -1248,7 +1413,8 @@
     <div class="container">
         <div class="vision-content">
             <h2 class="section-title">Our Vision</h2>
-            <p>To be the leading, most trusted indigenous construction and infrastructure development company in the region, recognized for our unwavering commitment to quality, safety, and community empowerment.</p>
+            <p>To be the leading, most trusted indigenous construction and infrastructure development company in the
+                region, recognized for our unwavering commitment to quality, safety, and community empowerment.</p>
         </div>
     </div>
 
@@ -1279,71 +1445,87 @@
          OUR JOURNEY
     ===================================================== -->
     <section class="journey-section">
-    <h2 class="section-title">Our Journey</h2>
-    <p class="journey-intro">
-        Established in 2017, Makhaswa Holdings is a private, management-owned business that has grown into a sustainable, multi-disciplined, and reputable construction company.
-    </p>
+        <h2 class="section-title">Our Journey</h2>
+        <p class="journey-intro">
+            Established in 2017, Makhaswa Holdings is a private, management-owned business that has grown into a
+            sustainable, multi-disciplined, and reputable construction company.
+        </p>
 
-    <div class="timeline">
-        <div class="timeline-item left">
-            <div class="year">2017</div>
-            <div class="tl-content">Makhaswa Holdings founded. Entry into residential and small-scale civil works.</div>
-        </div>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="year">2017</div>
+                <div class="tl-content">Makhaswa Holdings founded. Entry into residential and small-scale civil works.
+                </div>
+            </div>
 
-        <div class="timeline-item right">
-            <div class="year">2019</div>
-            <div class="tl-content">Awarded first major government infrastructure contract. Expanded plant &amp; equipment fleet.</div>
-        </div>
+            <div class="timeline-item right">
+                <div class="year">2019</div>
+                <div class="tl-content">Awarded first major government infrastructure contract. Expanded plant &amp;
+                    equipment fleet.</div>
+            </div>
 
-        <div class="timeline-item left">
-            <div class="year">2022</div>
-            <div class="tl-content">Achieved Level 1 B-BBEE status and ISO certifications for Health &amp; Safety standards.</div>
-        </div>
+            <div class="timeline-item left">
+                <div class="year">2022</div>
+                <div class="tl-content">Achieved Level 1 B-BBEE status and ISO certifications for Health &amp; Safety
+                    standards.</div>
+            </div>
 
-        <div class="timeline-item right">
-            <div class="year">2024</div>
-            <div class="tl-content">Improved procurement capacity and expanded partnerships across multiple sectors.</div>
-        </div>
+            <div class="timeline-item right">
+                <div class="year">2024</div>
+                <div class="tl-content">Improved procurement capacity and expanded partnerships across multiple sectors.
+                </div>
+            </div>
 
-        <div class="timeline-item left">
-            <div class="year">Present</div>
-            <div class="tl-content">Operating nationally across commercial, civil, and sustainable energy projects.</div>
+            <div class="timeline-item left">
+                <div class="year">Present</div>
+                <div class="tl-content">Operating nationally across commercial, civil, and sustainable energy projects.
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- =====================================================
          BOARD OF DIRECTORS
     ===================================================== -->
-    <div class="section-banner">Leadership &amp; Staff — Guided by an experienced Board of Directors and powered by a highly skilled workforce.</div>
+    <div class="section-banner">Leadership &amp; Staff — Guided by an experienced Board of Directors and powered by a
+        highly skilled workforce.</div>
 
     <section class="team-section">
         <div class="container">
             <h2 class="section-title" style="text-align:center;">Board of Directors</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&h=400&q=80" alt="Sipho Makhaswa, Chairman & Founder">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&h=400&q=80"
+                        alt="Sipho Makhaswa, Chairman & Founder">
                     <h4>Sipho Makhaswa</h4>
                     <p class="role">Chairman &amp; Founder</p>
-                    <p>Visionary leader with deep roots in construction and infrastructure development, driving the company's strategic direction.</p>
+                    <p>Visionary leader with deep roots in construction and infrastructure development, driving the
+                        company's strategic direction.</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&h=400&q=80" alt="Lerato Mokoena, CEO">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&h=400&q=80"
+                        alt="Lerato Mokoena, CEO">
                     <h4>Lerato Mokoena</h4>
                     <p class="role">Chief Executive Officer</p>
-                    <p>Results-driven executive overseeing daily operations, client relationships, and sustainable growth strategies.</p>
+                    <p>Results-driven executive overseeing daily operations, client relationships, and sustainable
+                        growth strategies.</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&h=400&q=80" alt="David Van Wyk, Operations Director">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&h=400&q=80"
+                        alt="David Van Wyk, Operations Director">
                     <h4>David Van Wyk</h4>
                     <p class="role">Operations Director</p>
-                    <p>Seasoned operations specialist ensuring project timelines, safety standards, and quality benchmarks are consistently met.</p>
+                    <p>Seasoned operations specialist ensuring project timelines, safety standards, and quality
+                        benchmarks are consistently met.</p>
                 </div>
             </div>
 
             <div class="staff-note">
-                <h4><i data-lucide="users" width="18" height="18" style="vertical-align: middle; margin-right: 6px;"></i> Our Staff</h4>
-                <p>Our workforce is our greatest asset. Makhaswa Holdings employs over 1,500 dedicated professionals, ranging from seasoned engineers and project managers to skilled artisans. We foster a culture of continuous learning, mutual respect, and absolute safety.</p>
+                <h4><i data-lucide="users" width="18" height="18"
+                        style="vertical-align: middle; margin-right: 6px;"></i> Our Staff</h4>
+                <p>Our workforce is our greatest asset. Makhaswa Holdings employs over 1,500 dedicated professionals,
+                    ranging from seasoned engineers and project managers to skilled artisans. We foster a culture of
+                    continuous learning, mutual respect, and absolute safety.</p>
             </div>
         </div>
     </section>
@@ -1359,24 +1541,36 @@
                 <div>
                     <h3>Core Disciplines</h3>
                     <ul class="services-list">
-                        <li><i data-lucide="building-2" width="16" height="16"></i> General Building &amp; Commercial</li>
-                        <li><i data-lucide="layers" width="16" height="16"></i> Civil Engineering &amp; Infrastructure</li>
+                        <li><i data-lucide="building-2" width="16" height="16"></i> General Building &amp; Commercial
+                        </li>
+                        <li><i data-lucide="layers" width="16" height="16"></i> Civil Engineering &amp; Infrastructure
+                        </li>
                         <li><i data-lucide="leaf" width="16" height="16"></i> Turnkey &amp; Sustainable Solutions</li>
                         <li><i data-lucide="drafting-compass" width="16" height="16"></i> Engineering Consulting</li>
-                        <li><i data-lucide="clipboard-list" width="16" height="16"></i> Project Planning &amp; Management</li>
+                        <li><i data-lucide="clipboard-list" width="16" height="16"></i> Project Planning &amp;
+                            Management</li>
                         <li><i data-lucide="home" width="16" height="16"></i> Property Development</li>
                     </ul>
                 </div>
                 <div>
                     <h3>What We Deliver</h3>
-                    <p class="showcase-intro">Construction of office parks, shopping malls, hospitals, and high-density residential developments. Roads, earthworks, bulk water reticulation, storm-water drainage, and bridge construction. Green building initiatives, design-and-build models, and renewable energy infrastructure.</p>
+                    <p class="showcase-intro">Construction of office parks, shopping malls, hospitals, and high-density
+                        residential developments. Roads, earthworks, bulk water reticulation, storm-water drainage, and
+                        bridge construction. Green building initiatives, design-and-build models, and renewable energy
+                        infrastructure.</p>
                     <div class="services-grid">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=300&h=200&q=80" alt="Construction site">
-                        <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=300&h=200&q=80" alt="Road works">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=300&h=200&q=80" alt="Civil engineering">
-                        <img src="https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?auto=format&fit=crop&w=300&h=200&q=80" alt="Building development">
-                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=300&h=200&q=80" alt="Infrastructure">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=300&h=200&q=80" alt="Sustainable building">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=300&h=200&q=80"
+                            alt="Construction site">
+                        <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=300&h=200&q=80"
+                            alt="Road works">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=300&h=200&q=80"
+                            alt="Civil engineering">
+                        <img src="https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?auto=format&fit=crop&w=300&h=200&q=80"
+                            alt="Building development">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=300&h=200&q=80"
+                            alt="Infrastructure">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=300&h=200&q=80"
+                            alt="Sustainable building">
                     </div>
                 </div>
             </div>
@@ -1390,18 +1584,25 @@
 
     <div class="container">
         <div class="plant-section">
-            <img src="https://images.unsplash.com/photo-1580901368919-7738efb0f79e?auto=format&fit=crop&w=600&h=400&q=80" alt="Excavators and Plant Machinery">
+            <img src="https://images.unsplash.com/photo-1580901368919-7738efb0f79e?auto=format&fit=crop&w=600&h=400&q=80"
+                alt="Excavators and Plant Machinery">
             <div class="plant-text">
                 <h3>Plant &amp; Equipment</h3>
-                <p>Makhaswa Holdings owns and maintains a vast, state-of-the-art fleet of yellow plant and construction machinery. This internal capability reduces our reliance on third-party hires, ensuring project timelines are strictly adhered to.</p>
-                <p>Our fleet includes excavators, graders, TLBs, rollers, dump trucks, and specialized earth-moving equipment — all serviced and maintained by a dedicated in-house workshop.</p>
+                <p>Makhaswa Holdings owns and maintains a vast, state-of-the-art fleet of yellow plant and construction
+                    machinery. This internal capability reduces our reliance on third-party hires, ensuring project
+                    timelines are strictly adhered to.</p>
+                <p>Our fleet includes excavators, graders, TLBs, rollers, dump trucks, and specialized earth-moving
+                    equipment — all serviced and maintained by a dedicated in-house workshop.</p>
             </div>
         </div>
     </div>
 
     <div class="safety-banner">
-        <h3><i data-lucide="hard-hat" width="24" height="24" style="vertical-align: middle; margin-right: 8px;"></i> Zero Harm Policy</h3>
-        <p>Health and Safety is non-negotiable at Makhaswa. We strictly adhere to the Occupational Health and Safety Act (OHSA) and hold ISO 45001 certification. Our robust safety management systems protect our employees, sub-contractors, clients, and the public on every site.</p>
+        <h3><i data-lucide="hard-hat" width="24" height="24" style="vertical-align: middle; margin-right: 8px;"></i>
+            Zero Harm Policy</h3>
+        <p>Health and Safety is non-negotiable at Makhaswa. We strictly adhere to the Occupational Health and Safety Act
+            (OHSA) and hold ISO 45001 certification. Our robust safety management systems protect our employees,
+            sub-contractors, clients, and the public on every site.</p>
     </div>
 
     <!-- =====================================================
@@ -1442,7 +1643,9 @@
     <section class="bbee-section">
         <div class="container">
             <h2 class="section-title" style="text-align:center;">Economic Transformation</h2>
-            <p class="section-subtitle" style="text-align:center; margin: 0 auto 12px;">As a proud South African corporate citizen, Makhaswa Holdings is fiercely committed to economic transformation, diversity, and inclusion.</p>
+            <p class="section-subtitle" style="text-align:center; margin: 0 auto 12px;">As a proud South African
+                corporate citizen, Makhaswa Holdings is fiercely committed to economic transformation, diversity, and
+                inclusion.</p>
             <div class="bbee-grid">
                 <div class="bbee-card">
                     <div class="bbee-value">Level 1</div>
@@ -1461,55 +1664,64 @@
                     <div class="bbee-label">Procurement Recognition</div>
                 </div>
             </div>
-            <p class="section-subtitle" style="text-align:center; margin: 28px auto 0; font-size: 13px;">Dedicated Enterprise &amp; Supplier Development (ESD) programs actively develop small businesses in our supply chain.</p>
+            <p class="section-subtitle" style="text-align:center; margin: 28px auto 0; font-size: 13px;">Dedicated
+                Enterprise &amp; Supplier Development (ESD) programs actively develop small businesses in our supply
+                chain.</p>
         </div>
     </section>
 
     <!-- =====================================================
          FEATURED PROJECTS
     ===================================================== -->
-    <div class="section-banner" id="projects">Featured Projects — A glimpse into our portfolio of landmark developments.</div>
+    <div class="section-banner" id="projects">Featured Projects — A glimpse into our portfolio of landmark developments.
+    </div>
 
     <div class="container">
         <h2 class="section-title" style="text-align:center;">Featured Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80" alt="Sandton Commercial Hub">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80"
+                    alt="Sandton Commercial Hub">
                 <div class="project-overlay">
                     <span>General Building &amp; Earthworks</span>
                     <h4>Sandton Commercial Hub</h4>
                 </div>
             </div>
             <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1515861461231-6d44f1dc8f5f?auto=format&fit=crop&w=500&q=80" alt="N3 Highway Expansion">
+                <img src="../images/projects/roadsandsurfacing/makhaswa (21).jpeg"
+                    alt="Interlocking Paving Block Sidewalks">
                 <div class="project-overlay">
                     <span>Civil Engineering &amp; Roads</span>
-                    <h4>N3 Highway Expansion</h4>
+                    <h4>Interlocking Paving Block Sidewalks</h4>
                 </div>
             </div>
             <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=500&q=80" alt="Mamelodi Bulk Water Pipeline">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=500&q=80"
+                    alt="Mamelodi Bulk Water Pipeline">
                 <div class="project-overlay">
                     <span>Infrastructure &amp; Utilities</span>
                     <h4>Mamelodi Bulk Water Pipeline</h4>
                 </div>
             </div>
             <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=500&q=80" alt="Ekhaya Social Housing">
+                <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=500&q=80"
+                    alt="Ekhaya Social Housing">
                 <div class="project-overlay">
                     <span>Residential Development</span>
                     <h4>Ekhaya Social Housing</h4>
                 </div>
             </div>
             <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=500&q=80" alt="Solar Farm Civil Works">
+                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=500&q=80"
+                    alt="Solar Farm Civil Works">
                 <div class="project-overlay">
                     <span>Renewable Energy Infrastructure</span>
                     <h4>Solar Farm Civil Works</h4>
                 </div>
             </div>
             <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=500&q=80" alt="City General Hospital Upgrade">
+                <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=500&q=80"
+                    alt="City General Hospital Upgrade">
                 <div class="project-overlay">
                     <span>Healthcare Facilities</span>
                     <h4>City General Hospital Upgrade</h4>
@@ -1524,18 +1736,23 @@
     <!-- =====================================================
          SOCIAL RESPONSIBILITY
     ===================================================== -->
-    <div class="section-banner" id="csi">Social Responsibility — We build communities as much as we build infrastructure.</div>
+    <div class="section-banner" id="csi">Social Responsibility — We build communities as much as we build
+        infrastructure.</div>
 
     <div class="container">
         <h2 class="section-title" style="text-align:center;">Social Responsibility</h2>
         <div class="csi-split">
             <div class="csi-card">
                 <h4><i data-lucide="heart" width="18" height="18"></i> Investment in Communities</h4>
-                <p>Through our CSI initiatives, Makhaswa Holdings actively funds and builds local schools, community centers, and sports facilities in the regions we operate. We source materials locally and mandate minimum employment targets for local community members on every project site.</p>
+                <p>Through our CSI initiatives, Makhaswa Holdings actively funds and builds local schools, community
+                    centers, and sports facilities in the regions we operate. We source materials locally and mandate
+                    minimum employment targets for local community members on every project site.</p>
             </div>
             <div class="csi-card">
                 <h4><i data-lucide="graduation-cap" width="18" height="18"></i> Training &amp; Skills Development</h4>
-                <p>We bridge the skills gap in the construction sector by providing bursaries to university engineering students and running comprehensive apprenticeship programs for artisans (bricklaying, plumbing, carpentry). Internal staff undergo continuous CPD training.</p>
+                <p>We bridge the skills gap in the construction sector by providing bursaries to university engineering
+                    students and running comprehensive apprenticeship programs for artisans (bricklaying, plumbing,
+                    carpentry). Internal staff undergo continuous CPD training.</p>
             </div>
         </div>
     </div>
@@ -1551,37 +1768,43 @@
             <div class="news-grid">
                 <div class="news-card">
                     <div class="news-card-img">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=500&q=80" alt="Makhaswa Awarded Mega Water Project">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=500&q=80"
+                            alt="Makhaswa Awarded Mega Water Project">
                     </div>
-                    <div class="news-date">October 12, 2024</div>
+                    <div class="news-date">October 12, 2025</div>
                     <span class="news-label">Press Release</span>
                     <div class="news-card-body">
                         <h4>Makhaswa Awarded Mega Water Project</h4>
-                        <p>We are proud to announce our selection as the main contractor for the new provincial bulk water pipeline...</p>
+                        <p>We are proud to announce our selection as the main contractor for the new provincial bulk
+                            water pipeline...</p>
                         <a href="#" class="read-more">Read More →</a>
                     </div>
                 </div>
                 <div class="news-card">
                     <div class="news-card-img">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=500&q=80" alt="Annual Safety Awards 2024 Winners">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=500&q=80"
+                            alt="Annual Safety Awards 2024 Winners">
                     </div>
-                    <div class="news-date">September 05, 2024</div>
+                    <div class="news-date">September 05, 2025</div>
                     <span class="news-label">Company Update</span>
                     <div class="news-card-body">
                         <h4>Annual Safety Awards 2024 Winners</h4>
-                        <p>Celebrating 2 million LTI-free hours across all active sites. Congratulations to the H&amp;S management team...</p>
+                        <p>Celebrating 2 million LTI-free hours across all active sites. Congratulations to the H&amp;S
+                            management team...</p>
                         <a href="#" class="read-more">Read More →</a>
                     </div>
                 </div>
                 <div class="news-card">
                     <div class="news-card-img">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=500&q=80" alt="New Apprenticeship Intake Launched">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=500&q=80"
+                            alt="New Apprenticeship Intake Launched">
                     </div>
                     <div class="news-date">August 21, 2024</div>
                     <span class="news-label">Youth Development</span>
                     <div class="news-card-body">
                         <h4>New Apprenticeship Intake Launched</h4>
-                        <p>Welcoming 50 new youth apprentices into our civil and building division to begin their 3-year artisan journey...</p>
+                        <p>Welcoming 50 new youth apprentices into our civil and building division to begin their 3-year
+                            artisan journey...</p>
                         <a href="#" class="read-more">Read More →</a>
                     </div>
                 </div>
@@ -1613,11 +1836,12 @@
 
     <div class="container">
         <h2 class="section-title" style="text-align:center;">Downloads &amp; Documents</h2>
-        <p class="section-subtitle" style="text-align:center; margin: -16px auto 32px;">Access our public corporate documents, compliance certificates, and brochures.</p>
+        <p class="section-subtitle" style="text-align:center; margin: -16px auto 32px;">Access our public corporate
+            documents, compliance certificates, and brochures.</p>
         <div class="downloads-grid">
             <a href="#" class="download-item">
                 <i data-lucide="file-text" width="20" height="20"></i>
-                <span>Makhaswa Company Profile 2024</span>
+                <span>Makhaswa Company Profile 2025</span>
             </a>
             <a href="#" class="download-item">
                 <i data-lucide="file-check" width="20" height="20"></i>
@@ -1641,7 +1865,8 @@
     <!-- =====================================================
          CONTACT
     ===================================================== -->
-    <div class="section-banner" id="contact">Contact Us — Get in touch for project inquiries, tenders, or corporate relations.</div>
+    <div class="section-banner" id="contact">Contact Us — Get in touch for project inquiries, tenders, or corporate
+        relations.</div>
 
     <div class="container">
         <h2 class="section-title" style="text-align:center;">Contact Us</h2>
@@ -1649,7 +1874,8 @@
             <div class="contact-info">
                 <h3>Head Office</h3>
                 <ul>
-                    <li><i data-lucide="map-pin" width="16" height="16"></i> 869 Patryshond Street, Garsfontein, 0042, South Africa</li>
+                    <li><i data-lucide="map-pin" width="16" height="16"></i> 869 Patryshond Street, Garsfontein, 0042,
+                        South Africa</li>
                     <li><i data-lucide="phone" width="16" height="16"></i> +27 81 359 8003</li>
                     <li><i data-lucide="mail" width="16" height="16"></i> info@makhaswaholdings.co.za</li>
                     <li><i data-lucide="mail" width="16" height="16"></i> tenders@makhaswaholdings.co.za</li>
@@ -1657,7 +1883,8 @@
                 </ul>
             </div>
             <div>
-                <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for your message. We will be in touch shortly.');">
+                <form class="contact-form"
+                    onsubmit="event.preventDefault(); alert('Thank you for your message. We will be in touch shortly.');">
                     <label for="c-name">Your Name</label>
                     <input type="text" id="c-name" placeholder="Full Name" required>
 
@@ -1691,7 +1918,7 @@
     <!-- =====================================================
          FOOTER
     ===================================================== -->
-        <footer>
+    <footer>
         <div class="footer-inner">
 
             <!-- Col 1: Brand -->
@@ -1795,16 +2022,22 @@
 
 
                     <div class="map-item" style="margin-bottom: 12px;">
-                        <span class="map-title" style="font-size: 11px; color: #aec4db; display: block; margin-bottom: 4px;">Garsfontein – 869 Patryshond St</span>
-                        <iframe class="footer-map" style="height: 100px; margin-top: 0;" src="https://maps.google.com/maps?q=869%20Patryshond%20St%2C%20Garsfontein&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"
-                            title="Garsfontein Office" allowfullscreen="">
+                        <span class="map-title"
+                            style="font-size: 11px; color: #aec4db; display: block; margin-bottom: 4px;">Garsfontein –
+                            869 Patryshond St</span>
+                        <iframe class="footer-map" style="height: 100px; margin-top: 0;"
+                            src="https://maps.google.com/maps?q=869%20Patryshond%20St%2C%20Garsfontein&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            loading="lazy" title="Garsfontein Office" allowfullscreen="">
                         </iframe>
                     </div>
 
                     <div class="map-item">
-                        <span class="map-title" style="font-size: 11px; color: #aec4db; display: block; margin-bottom: 4px;">Midrand – Riversands Incubation Hub</span>
-                        <iframe class="footer-map" style="height: 100px; margin-top: 0;" src="https://maps.google.com/maps?q=Riversands%20Incubation%20Hub&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"
-                            title="Midrand Office" allowfullscreen="">
+                        <span class="map-title"
+                            style="font-size: 11px; color: #aec4db; display: block; margin-bottom: 4px;">Midrand –
+                            Riversands Incubation Hub</span>
+                        <iframe class="footer-map" style="height: 100px; margin-top: 0;"
+                            src="https://maps.google.com/maps?q=Riversands%20Incubation%20Hub&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            loading="lazy" title="Midrand Office" allowfullscreen="">
                         </iframe>
                     </div>
 
@@ -1830,9 +2063,9 @@
         lucide.createIcons();
 
         // Burger menu toggle
-        const burgerBtn   = document.getElementById('burger-btn');
-        const mobileNav   = document.getElementById('mobile-nav');
-        const burgerIcon  = burgerBtn.querySelector('i');
+        const burgerBtn = document.getElementById('burger-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const burgerIcon = burgerBtn.querySelector('i');
 
         function openMobileNav() {
             mobileNav.classList.add('open');
@@ -1861,7 +2094,7 @@
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     e.preventDefault();
@@ -1922,4 +2155,5 @@
         });
     </script>
 </body>
+
 </html>
