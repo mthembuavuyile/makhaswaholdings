@@ -1,8 +1,9 @@
 # robots.txt - Makhaswa Holdings (Pty) Ltd
 # For SEO and AI chatbot indexing
 
-# Allow all search engine and AI crawlers
+# Allow all search engine and AI crawlers, but keep internal signature portal private
 User-agent: *
+Disallow: /signature.html
 Allow: /
 
 # Reference the XML Sitemap
