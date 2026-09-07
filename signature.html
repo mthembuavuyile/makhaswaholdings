@@ -39,17 +39,18 @@
            ===================================================== */
         
         .portal-section {
-            padding: 48px 0 64px 0;
+            padding: 36px 0 64px 0;
         }
 
-        /* Quick Select Dropdown (Mobile-first & Desktop) */
+        /* Profile Selection: Mobile Dropdown (Active on <= 768px) */
         .emp-quick-select-wrap {
-            margin: 24px 0 20px 0;
+            margin: 0 0 24px 0;
             background: var(--white);
             border: 1px solid var(--border);
             border-left: 4px solid var(--gold);
             padding: 14px 18px;
             box-shadow: var(--shadow-sm);
+            display: none; /* Shown only on mobile via media query */
         }
 
         .emp-quick-select-label {
@@ -103,19 +104,19 @@
             align-items: center;
         }
 
-        /* Employee Selection Grid */
+        /* Profile Selection: Desktop Grid (Active on > 768px) */
         .emp-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            margin: 20px 0 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 14px;
+            margin: 20px 0 32px 0;
         }
 
         .emp-card {
             background: var(--white);
             border: 1px solid var(--border);
             border-top: 3px solid transparent;
-            padding: 20px 18px;
+            padding: 18px 16px;
             cursor: pointer;
             transition: all var(--transition);
             text-align: left;
@@ -137,7 +138,7 @@
 
         .emp-card-name {
             font-family: var(--font);
-            font-size: 15px;
+            font-size: 14.5px;
             font-weight: 700;
             color: var(--primary);
             line-height: 1.3;
@@ -152,58 +153,56 @@
             text-transform: uppercase;
             letter-spacing: 0.8px;
             line-height: 1.3;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .emp-card-email {
-            font-size: 12px;
+            font-size: 11.5px;
             color: var(--text-light);
             word-break: break-all;
         }
 
-        /* Preview Toolbar */
-        .preview-toolbar {
+        /* Preview Header Bar */
+        .preview-header-bar {
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 16px;
-            margin-bottom: 16px;
+            gap: 14px;
+            margin-bottom: 10px;
             padding-bottom: 12px;
             border-bottom: 1px solid var(--border);
         }
 
         .preview-heading {
             font-family: var(--font);
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .toolbar-actions {
-            display: flex;
+        /* Format Mode Toggle */
+        .format-toggle-wrap {
+            display: inline-flex;
             align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
         }
 
-        /* View Mode Toggle */
         .view-mode-toggle {
             display: inline-flex;
             border: 1px solid var(--border);
-            background: var(--off-white);
+            background: #f1f5f9;
             padding: 3px;
         }
 
         .view-mode-btn {
             border: none;
             background: transparent;
-            padding: 7px 14px;
+            padding: 6px 14px;
             font-family: var(--font);
             font-size: 11px;
             font-weight: 600;
@@ -221,20 +220,67 @@
             background: var(--white);
             color: var(--primary);
             font-weight: 700;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-        /* Action Buttons */
+        .format-hint-text {
+            font-size: 12px;
+            color: var(--text-light);
+            background: #f8fafc;
+            border-left: 3px solid var(--gold);
+            padding: 8px 12px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.45;
+        }
+
+        /* Signature Display Card */
+        .signature-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--primary);
+            padding: 28px 24px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 20px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .signature-render-area {
+            display: inline-block;
+            max-width: 100%;
+            transition: opacity 0.18s ease, transform 0.18s ease;
+        }
+
+        .signature-render-area.fade-out {
+            opacity: 0.2;
+            transform: scale(0.99);
+        }
+
+        /* Action Buttons Bar */
+        .signature-actions-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 10px 18px;
+            padding: 12px 22px;
             font-family: var(--font);
-            font-size: 11.5px;
+            font-size: 12px;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
             cursor: pointer;
             transition: all var(--transition);
@@ -253,6 +299,7 @@
             background: var(--primary-mid);
             border-color: var(--primary-mid);
             transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(8, 45, 90, 0.2);
         }
 
         .btn-secondary {
@@ -264,128 +311,6 @@
         .btn-secondary:hover {
             background: var(--off-white);
             border-color: var(--primary);
-        }
-
-        /* Signature Navigation Bar (Carousel Controls) */
-        .sig-nav-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #f8fafc;
-            border: 1px solid var(--border);
-            border-bottom: none;
-            padding: 10px 16px;
-            gap: 12px;
-            user-select: none;
-        }
-
-        .sig-nav-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .sig-nav-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 34px;
-            height: 34px;
-            border: 1px solid var(--border);
-            background: var(--white);
-            color: var(--primary);
-            cursor: pointer;
-            transition: all 0.2s ease;
-            border-radius: 0;
-        }
-
-        .sig-nav-btn:hover {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-
-        .sig-nav-btn:active {
-            transform: scale(0.94);
-        }
-
-        .sig-nav-counter {
-            font-family: var(--font);
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--primary);
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-        }
-
-        .sig-nav-dots {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .sig-nav-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #cbd5e1;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            transition: all 0.2s ease;
-        }
-
-        .sig-nav-dot:hover {
-            background: var(--primary-mid);
-        }
-
-        .sig-nav-dot.active {
-            background: var(--gold);
-            transform: scale(1.3);
-        }
-
-        .sig-swipe-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--text-light);
-            background: var(--white);
-            padding: 4px 10px;
-            border: 1px dashed var(--border);
-            letter-spacing: 0.3px;
-        }
-
-        /* Signature Display Card */
-        .signature-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-top: 3px solid var(--primary);
-            padding: 36px;
-            box-shadow: var(--shadow-sm);
-            margin-bottom: 40px;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            transition: max-width 0.3s ease, margin 0.3s ease;
-            touch-action: pan-y pinch-zoom;
-        }
-
-        .signature-card.mode-mobile-preview {
-            max-width: 440px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .signature-render-area {
-            display: inline-block;
-            min-width: 100%;
-            transition: opacity 0.18s ease, transform 0.18s ease;
-        }
-
-        .signature-render-area.fade-out {
-            opacity: 0.2;
-            transform: scale(0.99);
         }
 
         /* Raw HTML Drawer */
@@ -439,8 +364,10 @@
 
         /* Setup Guide Section */
         .guide-section {
-            margin-top: 48px;
+            margin-top: 24px;
             margin-bottom: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
         }
 
         .guide-grid {
@@ -454,7 +381,7 @@
             background: var(--white);
             border: 1px solid var(--border);
             border-top: 3px solid var(--primary);
-            padding: 24px 20px;
+            padding: 22px 18px;
             box-shadow: var(--shadow-sm);
             transition: transform var(--transition), box-shadow var(--transition);
         }
@@ -521,69 +448,70 @@
             flex-shrink: 0;
         }
 
+        /* Mobile Viewport Optimizations */
         @media (max-width: 768px) {
-            /* Horizontal Swipeable Track for Employee Cards */
+            .page-hero {
+                padding: 32px 16px;
+            }
+
+            .page-hero h1 {
+                font-size: 22px;
+            }
+
+            .portal-section {
+                padding: 20px 0 36px 0;
+            }
+
+            /* Show single clean dropdown, hide redundant grid */
+            .emp-quick-select-wrap {
+                display: block;
+                margin-top: 12px;
+                margin-bottom: 18px;
+                padding: 12px 14px;
+            }
+
             .emp-grid {
-                display: flex;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
-                gap: 12px;
-                margin: 16px -16px 24px -16px;
-                padding: 6px 16px 16px 16px;
-                scrollbar-width: thin;
-                scrollbar-color: var(--gold) #f1f5f9;
+                display: none;
             }
 
-            .emp-grid::-webkit-scrollbar {
-                height: 4px;
+            .preview-header-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                margin-bottom: 8px;
             }
 
-            .emp-grid::-webkit-scrollbar-track {
-                background: #f1f5f9;
-            }
-
-            .emp-grid::-webkit-scrollbar-thumb {
-                background: var(--gold);
-            }
-
-            .emp-card {
-                flex: 0 0 240px;
-                scroll-snap-align: start;
-                scroll-snap-stop: normal;
-                padding: 16px 14px;
-            }
-
-            .sig-nav-bar {
-                padding: 8px 12px;
-                flex-wrap: wrap;
-                gap: 8px;
-            }
-
-            .sig-swipe-badge {
-                order: 3;
+            .format-toggle-wrap {
                 width: 100%;
+            }
+
+            .view-mode-toggle {
+                width: 100%;
+                display: flex;
+            }
+
+            .view-mode-btn {
+                flex: 1;
                 justify-content: center;
+                padding: 8px 10px;
                 font-size: 10.5px;
-                padding: 4px 8px;
             }
 
             .signature-card {
-                padding: 20px 14px;
-                border-top: none; /* Smoothly connects with the nav bar above */
+                padding: 16px 12px;
+                justify-content: flex-start;
+                margin-bottom: 16px;
             }
 
-            .preview-toolbar {
+            .signature-actions-bar {
                 flex-direction: column;
-                align-items: flex-start;
+                gap: 10px;
+                margin-bottom: 32px;
             }
 
-            .toolbar-actions {
+            .signature-actions-bar .btn {
                 width: 100%;
-            }
-
-            .toolbar-actions .btn {
-                flex: 1;
+                padding: 13px 16px;
             }
 
             .toast {
@@ -632,17 +560,17 @@
          ===================================================== -->
     <div class="container portal-section">
 
-        <!-- 1. Employee Profile Selector (5 Official Profiles) -->
-        <h2 class="section-title text-center">Select Employee Profile</h2>
+        <!-- 1. Employee Profile Selector -->
+        <h2 class="section-title text-center">Corporate Email Signatures</h2>
         <p class="section-subtitle section-subtitle--spaced text-center">
-            Select a profile below to generate and preview the standardized company email signature.
+            Select a verified team profile below to preview and copy the official company email signature.
         </p>
 
-        <!-- Quick Select Dropdown -->
+        <!-- Mobile Profile Dropdown (Active on <= 768px) -->
         <div class="emp-quick-select-wrap">
             <label class="emp-quick-select-label" for="emp-select-dropdown">
-                <i data-lucide="user-check" width="14" height="14" style="color: var(--gold);"></i>
-                Quick Select Profile
+                <i data-lucide="user-check" width="15" height="15" style="color: var(--gold);"></i>
+                Select Employee Profile
             </label>
             <div class="emp-select-box">
                 <select class="emp-select-dropdown" id="emp-select-dropdown" onchange="selectEmployee(parseInt(this.value, 10))" aria-label="Select Employee Profile">
@@ -654,66 +582,53 @@
             </div>
         </div>
 
+        <!-- Desktop Employee Selection Grid (Active on > 768px) -->
         <div class="emp-grid" id="emp-selector-grid">
             <!-- Populated dynamically via JavaScript -->
         </div>
 
-        <!-- 2. Preview Toolbar & Signature Display Card -->
-        <div class="preview-toolbar">
+        <!-- 2. Preview Header & Format Toggle -->
+        <div class="preview-header-bar">
             <div class="preview-heading">
                 <i data-lucide="mail-check" width="18" height="18" style="color: var(--gold);"></i>
                 <span id="preview-title-text">Signature Preview</span>
             </div>
 
-            <div class="toolbar-actions">
-                <div class="view-mode-toggle">
-                    <button class="view-mode-btn active" id="btn-mode-desktop" onclick="setViewMode('desktop')">
-                        <i data-lucide="monitor" width="13" height="13"></i> Desktop
+            <div class="format-toggle-wrap">
+                <div class="view-mode-toggle" role="tablist" aria-label="Signature Format">
+                    <button class="view-mode-btn active" id="btn-mode-desktop" onclick="setViewMode('desktop')" role="tab" aria-selected="true">
+                        <i data-lucide="layout" width="13" height="13"></i> Universal (Recommended)
                     </button>
-                    <button class="view-mode-btn" id="btn-mode-mobile" onclick="setViewMode('mobile')">
-                        <i data-lucide="smartphone" width="13" height="13"></i> Mobile
+                    <button class="view-mode-btn" id="btn-mode-mobile" onclick="setViewMode('mobile')" role="tab" aria-selected="false">
+                        <i data-lucide="smartphone" width="13" height="13"></i> Compact (Mobile App)
                     </button>
                 </div>
-
-                <button class="btn btn-primary" onclick="copyFormattedSignature()">
-                    <i data-lucide="copy" width="15" height="15"></i>
-                    <span>Copy Formatted Signature</span>
-                </button>
-
-                <button class="btn btn-secondary" onclick="toggleRawHtml()">
-                    <i data-lucide="code" width="15" height="15"></i>
-                    <span>View HTML Code</span>
-                </button>
             </div>
         </div>
 
-        <!-- Signature Navigation Bar (Carousel Controls) -->
-        <div class="sig-nav-bar" id="sig-nav-bar">
-            <div class="sig-nav-group">
-                <button class="sig-nav-btn" id="btn-prev-sig" onclick="prevSignature()" title="Previous Profile (Left Arrow)" aria-label="Previous Profile">
-                    <i data-lucide="chevron-left" width="18" height="18"></i>
-                </button>
-                <span class="sig-nav-counter" id="sig-nav-counter">Profile 1 of 5</span>
-                <button class="sig-nav-btn" id="btn-next-sig" onclick="nextSignature()" title="Next Profile (Right Arrow)" aria-label="Next Profile">
-                    <i data-lucide="chevron-right" width="18" height="18"></i>
-                </button>
-            </div>
-
-            <div class="sig-nav-dots" id="sig-nav-dots" role="tablist" aria-label="Profile Indicators">
-                <!-- Populated dynamically via JavaScript -->
-            </div>
-
-            <div class="sig-swipe-badge">
-                <i data-lucide="chevrons-left-right" width="14" height="14" style="color: var(--gold);"></i>
-                <span>Swipe card left/right</span>
-            </div>
+        <div class="format-hint-text" id="format-hint">
+            <i data-lucide="info" width="14" height="14" style="color: var(--gold); flex-shrink: 0; margin-top: 1px;"></i>
+            <span id="format-hint-text-content"><strong>Universal Format:</strong> Engineered with a fluid ~440px layout that renders perfectly across both desktop Outlook and smartphone screens.</span>
         </div>
 
-        <!-- Rendered Email Signature Card -->
+        <!-- Live Rendered Email Signature Card -->
         <div class="signature-card" id="signature-preview-card">
             <div class="signature-render-area" id="signature-container">
                 <!-- HTML Table signature rendered here -->
             </div>
+        </div>
+
+        <!-- 3. Primary Action Buttons (Directly below signature card) -->
+        <div class="signature-actions-bar">
+            <button class="btn btn-primary" onclick="copyFormattedSignature()" id="btn-copy-main">
+                <i data-lucide="copy" width="16" height="16"></i>
+                <span>Copy Formatted Signature</span>
+            </button>
+
+            <button class="btn btn-secondary" onclick="toggleRawHtml()">
+                <i data-lucide="code" width="16" height="16"></i>
+                <span>View HTML Code</span>
+            </button>
         </div>
 
         <!-- 3. Raw HTML Drawer (Collapsible) -->
@@ -938,45 +853,45 @@
             }
 
             if (isMobileLayout) {
-                // Stacked Compact Layout (Optimized for Mobile Email Readers)
+                // Stacked Compact Layout (Optimized for Mobile Mail App Drafting)
                 return `
-<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 13px; color: #333333; line-height: 1.4; width: 100%; max-width: 380px; background-color: #ffffff;">
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 12px; color: #333333; line-height: 1.4; width: 100%; max-width: 360px; background-color: #ffffff;">
     <tr>
-        <td style="padding-bottom: 12px; text-align: left;">
+        <td style="padding-bottom: 10px; text-align: left;">
             <a href="${emp.websiteUrl}" target="_blank" style="text-decoration: none; display: inline-block;">
-                <img src="${logoUrl}" alt="${emp.company}" width="125" style="display: block; width: 125px; max-width: 125px; height: auto; border: 0;" />
+                <img src="${logoUrl}" alt="${emp.company}" width="115" style="display: block; width: 115px; max-width: 115px; height: auto; border: 0;" />
             </a>
         </td>
     </tr>
     <tr>
-        <td style="border-top: 2px solid #c8a951; padding-top: 12px;">
-            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #082d5a; line-height: 1.25; margin: 0 0 3px 0; letter-spacing: -0.2px;">
+        <td style="border-top: 2px solid #c8a951; padding-top: 10px;">
+            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 15px; font-weight: 700; color: #082d5a; line-height: 1.25; margin: 0 0 2px 0;">
                 ${emp.fullName}
             </div>
-            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11.5px; font-weight: 600; color: #c8a951; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 6px 0;">
+            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; color: #c8a951; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 5px 0;">
                 ${emp.role}
             </div>
-            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11.5px; font-weight: 700; color: #0c3a6d; margin: 0 0 10px 0;">
+            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 700; color: #0c3a6d; margin: 0 0 8px 0;">
                 ${emp.company}
             </div>
 
-            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 12px; color: #4b5563; line-height: 1.55; width: 100%;">
+            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11.5px; color: #4b5563; line-height: 1.55; width: 100%;">
                 ${phoneRow}
                 <tr>
-                    <td style="padding: 2px 6px 2px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">E:</td>
-                    <td style="padding: 2px 0; vertical-align: top;">
+                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">E:</td>
+                    <td style="padding: 1px 0; vertical-align: top;">
                         <a href="mailto:${emp.email}" style="color: #082d5a; text-decoration: none; font-weight: 600; word-break: break-all;">${emp.email}</a>
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding: 2px 6px 2px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">W:</td>
-                    <td style="padding: 2px 0; vertical-align: top;">
+                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">W:</td>
+                    <td style="padding: 1px 0; vertical-align: top;">
                         <a href="${emp.websiteUrl}" target="_blank" style="color: #082d5a; text-decoration: none; font-weight: 600;">${emp.website}</a>
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding: 2px 6px 2px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">A:</td>
-                    <td style="padding: 2px 0; vertical-align: top; color: #64748b; font-size: 11.5px;">
+                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">A:</td>
+                    <td style="padding: 1px 0; vertical-align: top; color: #64748b; font-size: 11px;">
                         ${emp.address}
                     </td>
                 </tr>
@@ -992,7 +907,7 @@
         </td>
     </tr>
     <tr>
-        <td style="padding-top: 14px;">
+        <td style="padding-top: 12px;">
             <p style="font-family: Arial, Helvetica, sans-serif; font-size: 8.5px; color: #94a3b8; line-height: 1.4; margin: 0; text-align: left;">
                 <strong>Confidentiality Notice:</strong> The contents of this email message and any attachments are confidential, legally privileged, and intended solely for the use of the intended recipient. If you have received this communication in error, please immediately notify the sender and delete all copies. Any unauthorized copying, disclosure, or distribution is strictly prohibited. Makhaswa Holdings (Pty) Ltd.
             </p>
@@ -1001,14 +916,14 @@
 </table>`.trim();
             }
 
-            // Standard Desktop 2-Column Layout (Outlook Desktop & Web Compatible)
+            // Universal Hybrid 2-Column Layout (~450px fluid, Outlook Desktop & Mobile Recipient Compatible)
             return `
-<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 13px; color: #333333; line-height: 1.4; max-width: 620px; width: 100%; background-color: #ffffff;">
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 12px; color: #333333; line-height: 1.4; max-width: 450px; width: 100%; background-color: #ffffff;">
     <tr>
         <!-- Brand Logo Column -->
-        <td style="vertical-align: middle; padding-right: 20px; text-align: center; width: 140px;" valign="middle">
+        <td style="vertical-align: middle; padding-right: 16px; text-align: center; width: 115px;" valign="middle">
             <a href="${emp.websiteUrl}" target="_blank" style="text-decoration: none; display: block;">
-                <img src="${logoUrl}" alt="${emp.company}" width="135" style="display: block; width: 135px; max-width: 135px; height: auto; border: 0;" />
+                <img src="${logoUrl}" alt="${emp.company}" width="110" style="display: block; width: 110px; max-width: 110px; height: auto; border: 0;" />
             </a>
         </td>
 
@@ -1016,25 +931,25 @@
         <td style="border-left: 2px solid #c8a951; width: 2px; padding: 0; font-size: 0; line-height: 0;">&nbsp;</td>
 
         <!-- Personnel & Corporate Details Column -->
-        <td style="vertical-align: top; padding-left: 20px;" valign="top">
-            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 17px; font-weight: 700; color: #082d5a; line-height: 1.2; margin: 0 0 3px 0; letter-spacing: -0.2px;">
+        <td style="vertical-align: top; padding-left: 16px;" valign="top">
+            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 15.5px; font-weight: 700; color: #082d5a; line-height: 1.2; margin: 0 0 2px 0; letter-spacing: -0.2px;">
                 ${emp.fullName}
             </div>
 
-            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 600; color: #c8a951; text-transform: uppercase; letter-spacing: 1.2px; margin: 0 0 8px 0;">
+            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; color: #c8a951; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 6px 0;">
                 ${emp.role}
             </div>
 
-            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #0c3a6d; margin: 0 0 10px 0;">
+            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 700; color: #0c3a6d; margin: 0 0 8px 0;">
                 ${emp.company}
             </div>
 
-            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 12px; color: #4b5563; line-height: 1.6;">
+            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11.5px; color: #4b5563; line-height: 1.55;">
                 ${phoneRow}
                 <tr>
                     <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">E:</td>
                     <td style="padding: 1px 0; vertical-align: top;">
-                        <a href="mailto:${emp.email}" style="color: #082d5a; text-decoration: none; font-weight: 600;">${emp.email}</a>
+                        <a href="mailto:${emp.email}" style="color: #082d5a; text-decoration: none; font-weight: 600; word-break: break-all;">${emp.email}</a>
                     </td>
                 </tr>
                 <tr>
@@ -1045,18 +960,18 @@
                 </tr>
                 <tr>
                     <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">A:</td>
-                    <td style="padding: 1px 0; vertical-align: top; color: #64748b;">
+                    <td style="padding: 1px 0; vertical-align: top; color: #64748b; font-size: 11px;">
                         ${emp.address}
                     </td>
                 </tr>
             </table>
 
             <!-- Verified Accreditations Strip -->
-            <div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #e5e7eb; font-size: 11px; line-height: 1.4;">
+            <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #e5e7eb; font-size: 10.5px; line-height: 1.4;">
                 <span style="font-weight: 700; color: #082d5a;">CIDB Grade 8 CE PE</span>
-                <span style="color: #c8a951; margin: 0 5px;">&bull;</span>
+                <span style="color: #c8a951; margin: 0 4px;">&bull;</span>
                 <span style="font-weight: 600; color: #1e293b;">Level 1 B-BBEE</span>
-                <span style="color: #c8a951; margin: 0 5px;">&bull;</span>
+                <span style="color: #c8a951; margin: 0 4px;">&bull;</span>
                 <span style="color: #64748b;">NHBRC Registered</span>
             </div>
         </td>
@@ -1064,8 +979,8 @@
 
     <!-- Corporate Confidentiality Disclaimer -->
     <tr>
-        <td colspan="3" style="padding-top: 18px;">
-            <p style="font-family: Arial, Helvetica, sans-serif; font-size: 9px; color: #94a3b8; line-height: 1.45; margin: 0; text-align: justify;">
+        <td colspan="3" style="padding-top: 14px;">
+            <p style="font-family: Arial, Helvetica, sans-serif; font-size: 8.5px; color: #94a3b8; line-height: 1.4; margin: 0; text-align: justify;">
                 <strong>Confidentiality Notice:</strong> The contents of this email message and any attachments are confidential, legally privileged, and intended solely for the use of the intended recipient. If you have received this communication in error, please immediately notify the sender by reply email and permanently delete all copies. Any unauthorized copying, disclosure, or distribution is strictly prohibited. Makhaswa Holdings (Pty) Ltd.
             </p>
         </td>
@@ -1101,7 +1016,7 @@
             const emp = EMPLOYEES[currentEmpIndex];
             const isMobile = currentViewMode === 'mobile';
 
-            // 1. Update selection state on cards & dropdown
+            // 1. Synchronize selection state on cards & dropdown
             EMPLOYEES.forEach((_, idx) => {
                 const card = document.getElementById(`emp-card-${idx}`);
                 if (card) {
@@ -1118,48 +1033,36 @@
                 dropdown.value = currentEmpIndex;
             }
 
-            // Auto-scroll active card into view in horizontal track on mobile
-            const activeCard = document.getElementById(`emp-card-${currentEmpIndex}`);
-            if (activeCard && window.innerWidth <= 768) {
-                activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-            }
-
-            // 2. Update navigation counter and dots
-            const counterEl = document.getElementById('sig-nav-counter');
-            if (counterEl) {
-                counterEl.textContent = `Profile ${currentEmpIndex + 1} of ${EMPLOYEES.length}`;
-            }
-
-            const dotsEl = document.getElementById('sig-nav-dots');
-            if (dotsEl) {
-                dotsEl.innerHTML = EMPLOYEES.map((e, idx) => {
-                    const isActive = idx === currentEmpIndex ? ' active' : '';
-                    return `<button class="sig-nav-dot${isActive}" onclick="selectEmployee(${idx})" title="${e.fullName}" aria-label="Select ${e.fullName}"></button>`;
-                }).join('');
-            }
-
-            // 3. Update preview header title
+            // 2. Update preview header title
             const titleEl = document.getElementById('preview-title-text');
             if (titleEl) {
                 titleEl.textContent = `Signature Preview: ${emp.fullName}`;
             }
 
-            // 4. Update view toggle buttons & card mode
-            const previewCard = document.getElementById('signature-preview-card');
+            // 3. Update view toggle buttons & helper hint
             const btnDesktop = document.getElementById('btn-mode-desktop');
             const btnMobile = document.getElementById('btn-mode-mobile');
+            const hintContent = document.getElementById('format-hint-text-content');
 
             if (isMobile) {
-                previewCard.classList.add('mode-mobile-preview');
                 btnMobile.classList.add('active');
+                btnMobile.setAttribute('aria-selected', 'true');
                 btnDesktop.classList.remove('active');
+                btnDesktop.setAttribute('aria-selected', 'false');
+                if (hintContent) {
+                    hintContent.innerHTML = '<strong>Compact Format:</strong> Vertically stacked layout designed for drafting on mobile mail apps (e.g. Outlook Mobile on iOS/Android).';
+                }
             } else {
-                previewCard.classList.remove('mode-mobile-preview');
                 btnDesktop.classList.add('active');
+                btnDesktop.setAttribute('aria-selected', 'true');
                 btnMobile.classList.remove('active');
+                btnMobile.setAttribute('aria-selected', 'false');
+                if (hintContent) {
+                    hintContent.innerHTML = '<strong>Universal Format:</strong> Engineered with a fluid ~440px layout that renders perfectly across both desktop Outlook and smartphone screens.';
+                }
             }
 
-            // 5. Render HTML Signature in container with smooth transition
+            // 4. Render HTML Signature in container with smooth transition
             const sigHTML = generateSignatureHTML(emp, isMobile);
             const sigContainer = document.getElementById('signature-container');
             if (sigContainer) {
@@ -1170,27 +1073,16 @@
                 }, 80);
             }
 
-            // 6. Update raw HTML textarea
+            // 5. Update raw HTML textarea
             const htmlTextarea = document.getElementById('html-code-area');
             if (htmlTextarea) {
                 htmlTextarea.value = sigHTML;
             }
 
-            // 7. Refresh Lucide icons
+            // 6. Refresh Lucide icons
             if (window.lucide) {
                 lucide.createIcons();
             }
-        }
-
-        // Navigation helpers: Next and Previous
-        function nextSignature() {
-            const nextIdx = (currentEmpIndex + 1) % EMPLOYEES.length;
-            selectEmployee(nextIdx);
-        }
-
-        function prevSignature() {
-            const prevIdx = (currentEmpIndex - 1 + EMPLOYEES.length) % EMPLOYEES.length;
-            selectEmployee(prevIdx);
         }
 
         // Handler: select employee
@@ -1203,55 +1095,6 @@
         function setViewMode(mode) {
             currentViewMode = mode;
             updateDisplay();
-        }
-
-        // Touch Swipe Gesture Detection on Signature Card
-        let touchStartX = 0;
-        let touchStartY = 0;
-        let touchStartTime = 0;
-
-        function initSwipeGestures() {
-            const previewCard = document.getElementById('signature-preview-card');
-            if (!previewCard) return;
-
-            previewCard.addEventListener('touchstart', (e) => {
-                if (e.touches.length === 1) {
-                    touchStartX = e.touches[0].clientX;
-                    touchStartY = e.touches[0].clientY;
-                    touchStartTime = Date.now();
-                }
-            }, { passive: true });
-
-            previewCard.addEventListener('touchend', (e) => {
-                if (e.changedTouches.length === 1) {
-                    const touchEndX = e.changedTouches[0].clientX;
-                    const touchEndY = e.changedTouches[0].clientY;
-                    const deltaX = touchEndX - touchStartX;
-                    const deltaY = touchEndY - touchStartY;
-                    const duration = Date.now() - touchStartTime;
-
-                    // Swipe threshold: min 40px horizontal, predominantly horizontal, within 600ms
-                    if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY) * 1.3 && duration < 600) {
-                        if (deltaX < 0) {
-                            nextSignature(); // Swiped left -> Next
-                        } else {
-                            prevSignature(); // Swiped right -> Prev
-                        }
-                    }
-                }
-            }, { passive: true });
-        }
-
-        // Keyboard navigation (ArrowLeft & ArrowRight)
-        function initKeyboardNav() {
-            window.addEventListener('keydown', (e) => {
-                if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
-                if (e.key === 'ArrowRight') {
-                    nextSignature();
-                } else if (e.key === 'ArrowLeft') {
-                    prevSignature();
-                }
-            });
         }
 
         // Copy Rich Formatted Signature
@@ -1322,8 +1165,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             buildEmployeeGrid();
             updateDisplay();
-            initSwipeGestures();
-            initKeyboardNav();
             if (window.lucide) {
                 lucide.createIcons();
             }
