@@ -494,6 +494,7 @@
 % PAGE 4 (CONTENT p.2) --- GOVERNANCE, LEADERSHIP & CORPORATE ORGANOGRAM
 % =========================================================================
 \phantomsection\hypertarget{sec:leadership}{}\pdfbookmark[1]{02. Governance \& Leadership}{sec:leadership}
+\enlargethispage{2.5cm}
 \sectionbanner{GOVERNANCE \& LEADERSHIP}{Executive Management, Organogram \& Statutory Appointments}
 
 \noindent
@@ -525,13 +526,13 @@
     \end{tcolorbox}
 \end{minipage}
 
-\vspace{0.25cm}
+\vspace{0.18cm}
 
 {\large\bfseries\color{mhnavy} Statutory Appointments (OHS Act 85 of 1993 \& Construction Regulations 2014)}
-\vspace{0.10cm}
+\vspace{0.08cm}
 
 \noindent
-\renewcommand{\arraystretch}{1.22}
+\renewcommand{\arraystretch}{1.18}
 \begin{tabularx}{\textwidth}{@{}p{3.8cm} p{3.4cm} p{2.2cm} X@{}}
 \rowcolor{mhnavy}
 {\color{white}\bfseries\fontsize{8pt}{9.8pt}\selectfont Key Personnel} &
@@ -552,7 +553,8 @@
 \end{tabularx}
 \renewcommand{\arraystretch}{1}
 
-\vspace{0.25cm}
+\vspace{0.20cm}
+\nopagebreak
 
 % =========================================================================
 % HIGH-END TIKZ CORPORATE ORGANIZATIONAL & SITE SUPERVISORY STRUCTURE
@@ -560,88 +562,93 @@
 \noindent
 \begin{tcolorbox}[
     enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-    left=6pt, right=6pt, top=6pt, bottom=6pt, drop shadow=black!4
+    left=6pt, right=6pt, top=7pt, bottom=7pt, drop shadow=black!4
 ]
     \centering
-    {\fontsize{8.8pt}{10.8pt}\selectfont\bfseries\color{mhnavy}\faSitemap\ \ Corporate Organizational \& Site Supervisory Structure}\\[5pt]
+    {\fontsize{9.2pt}{11.2pt}\selectfont\bfseries\color{mhnavy}\faSitemap\ \ Corporate Organizational \& Site Supervisory Structure}\\[6pt]
     \begin{tikzpicture}[
-        scale=0.96, transform shape,
+        scale=1.0, transform shape,
         topbox/.style={
-            rectangle, draw=mhnavy, fill=mhnavy, rounded corners=3pt,
-            font=\fontsize{7.2pt}{8.8pt}\selectfont\bfseries, align=center, inner sep=3.8pt, text=white,
-            line width=0.8pt, drop shadow={opacity=0.12, shadow xshift=0.5pt, shadow yshift=-0.5pt}
+            rectangle, draw=mhnavy, fill=mhnavy, rounded corners=3.5pt,
+            font=\fontsize{7.6pt}{9.2pt}\selectfont\bfseries, align=center, inner sep=4.5pt, text=white,
+            line width=0.9pt, drop shadow={opacity=0.15, shadow xshift=0.5pt, shadow yshift=-0.5pt}
         },
         midbox/.style={
-            rectangle, draw=mhnavy2, fill=mhnavy2!95, rounded corners=3pt,
-            font=\fontsize{7.0pt}{8.5pt}\selectfont\bfseries, align=center, inner sep=3.5pt, text=white,
-            line width=0.7pt, drop shadow={opacity=0.10, shadow xshift=0.5pt, shadow yshift=-0.5pt}
+            rectangle, draw=mhnavy2, fill=mhnavy2, rounded corners=3.5pt,
+            font=\fontsize{7.4pt}{9.0pt}\selectfont\bfseries, align=center, inner sep=4.0pt, text=white,
+            line width=0.8pt, drop shadow={opacity=0.12, shadow xshift=0.5pt, shadow yshift=-0.5pt}
         },
         pillbox/.style={
-            rectangle, draw=mhnavy3, fill=mhoffwhite, rounded corners=3pt,
-            font=\fontsize{6.6pt}{8.0pt}\selectfont, align=center, inner sep=3.2pt, text=mhnavy,
+            rectangle, draw=mhnavy3, fill=mhbluelight!70, rounded corners=3.5pt,
+            font=\fontsize{7.0pt}{8.4pt}\selectfont, align=center, inner sep=3.8pt, text=mhnavy,
+            line width=0.8pt, drop shadow={opacity=0.08, shadow xshift=0.4pt, shadow yshift=-0.4pt}
+        },
+        subpillbox/.style={
+            rectangle, draw=mhnavy3!70, fill=white, rounded corners=3.5pt,
+            font=\fontsize{6.8pt}{8.2pt}\selectfont, align=center, inner sep=3.6pt, text=mhnavy,
             line width=0.7pt
         },
         botbox/.style={
-            rectangle, draw=mhnavy, fill=mhbluelight!75, rounded corners=3pt,
-            font=\fontsize{6.8pt}{8.5pt}\selectfont\bfseries, align=center, inner sep=4pt, text=mhnavy,
-            line width=0.8pt
+            rectangle, draw=mhnavy, fill=mhbluelight!90, rounded corners=3.5pt,
+            font=\fontsize{7.2pt}{8.8pt}\selectfont\bfseries, align=center, inner sep=4.5pt, text=mhnavy,
+            line width=0.9pt, drop shadow={opacity=0.10, shadow xshift=0.5pt, shadow yshift=-0.5pt}
         },
-        busline/.style={draw=mhnavy3, line width=0.9pt},
-        arrline/.style={draw=mhnavy3, -{Stealth[length=3.5pt, width=3pt]}, line width=0.8pt}
+        busline/.style={draw=mhnavy3, line width=1.0pt},
+        arrline/.style={draw=mhnavy3, -{Stealth[length=4.0pt, width=3.2pt]}, line width=0.9pt}
     ]
         % Level 1: Board & Executive Leadership
-        \node[topbox, text width=12.2cm] (exec) at (0, 0) {
-            {\color{mhgold}\faCrown}\ \ \textbf{Board of Directors \& Executive Leadership}\\
-            {\normalfont\fontsize{6.4pt}{7.6pt}\selectfont Lucas Dinga \textbf{(CEO / CR 7(19c) Designated Signatory)} \ $\bullet$ \ Nelly Motswapong \textbf{(Director / Co-Owner)}}
+        \node[topbox, text width=12.8cm] (exec) at (0, 0) {
+            {\color{mhgold}\faCrown}\ \ \textbf{Board of Directors \& Executive Leadership}\\[1.5pt]
+            {\normalfont\fontsize{6.8pt}{8.0pt}\selectfont Lucas Dinga \textbf{(CEO / CR 7(19c) Designated Signatory)} \ $\bullet$ \ Nelly Motswapong \textbf{(Director / Co-Owner)}}
         };
 
         % Level 2: Contracts & Project Management
-        \node[midbox, text width=10.2cm] (cm) at (0, -0.92) {
-            \faBriefcase\ \ \textbf{Contracts, Project \& Construction Management (CR 16.2 / 8.1)}\\
-            {\normalfont\fontsize{6.5pt}{7.8pt}\selectfont Elphas Goodman Mdaka \textbf{(Contracts Mgr)}}
+        \node[midbox, text width=10.8cm] (cm) at (0, -1.18) {
+            \faBriefcase\ \ \textbf{Contracts, Project \& Construction Management (CR 16.2 / 8.1)}\\[1.5pt]
+            {\normalfont\fontsize{6.8pt}{8.0pt}\selectfont Elphas Goodman Mdaka \textbf{(Contracts Mgr)}}
         };
         \draw[arrline] (exec.south) -- (cm.north);
 
-        % Level 3: Three Operational Pillars (Symmetrical: -5.6cm, 0.0cm, +5.6cm)
-        \node[pillbox, text width=5.2cm] (site) at (-5.6, -2.05) {
-            \textbf{\color{mhnavy}\faHardHat\ Site Execution \& Delivery}\\[1.5pt]
-            {\fontsize{6.2pt}{7.4pt}\selectfont\textbf{Sfiso Knowledge Nkabinde} (CR 8.1)\\Construction Manager / Site Agent}
+        % Level 3: Three Operational Pillars (Symmetrical: -5.7cm, 0.0cm, +5.7cm)
+        \node[pillbox, text width=5.25cm] (site) at (-5.7, -2.75) {
+            \textbf{\color{mhnavy}\faHardHat\ Site Execution \& Delivery}\\[2pt]
+            {\fontsize{6.6pt}{7.8pt}\selectfont\textbf{Sfiso Knowledge Nkabinde} (CR 8.1)\\Construction Manager / Site Agent}
         };
 
-        \node[pillbox, text width=5.2cm] (sheq) at (0, -2.05) {
-            \textbf{\color{mhnavy}\faShieldAlt\ SHEQ Governance \& QC Lab}\\[1.5pt]
-            {\fontsize{6.2pt}{7.4pt}\selectfont\textbf{Lindelani Shangase} (CR 8.5 Pr.OHS)\\
+        \node[pillbox, text width=5.25cm] (sheq) at (0, -2.75) {
+            \textbf{\color{mhnavy}\faShieldAlt\ SHEQ Governance \& QC Lab}\\[2pt]
+            {\fontsize{6.6pt}{7.8pt}\selectfont\textbf{Lindelani Shangase} (CR 8.5 Pr.OHS)\\
             \textbf{Hendrick Chauke} (CR 8.38 QC Testing)}
         };
 
-        \node[pillbox, text width=5.2cm] (surv) at (5.6, -2.05) {
-            \textbf{\color{mhnavy}\faDraftingCompass\ Survey \& Geomatics}\\[1.5pt]
-            {\fontsize{6.2pt}{7.4pt}\selectfont\textbf{C. Mazarura} (Pr.L.S.)\\
+        \node[pillbox, text width=5.25cm] (surv) at (5.7, -2.75) {
+            \textbf{\color{mhnavy}\faDraftingCompass\ Survey \& Geomatics}\\[2pt]
+            {\fontsize{6.6pt}{7.8pt}\selectfont\textbf{C. Mazarura} (Pr.L.S.)\\
             Setting Out, GPS Profiling \& As-Builts}
         };
 
         % Level 2 to Level 3 Connector Bus
-        \coordinate (busL2) at (0, -1.38);
+        \coordinate (busL2) at (0, -1.85);
         \draw[busline] (cm.south) -- (busL2);
-        \draw[busline] (-5.6, -1.38) -- (5.6, -1.38);
-        \draw[arrline] (-5.6, -1.38) -- (site.north);
-        \draw[arrline] (0, -1.38) -- (sheq.north);
-        \draw[arrline] (5.6, -1.38) -- (surv.north);
+        \draw[busline] (-5.7, -1.85) -- (5.7, -1.85);
+        \draw[arrline] (-5.7, -1.85) -- (site.north);
+        \draw[arrline] (0, -1.85) -- (sheq.north);
+        \draw[arrline] (5.7, -1.85) -- (surv.north);
 
         % Level 4: Section Supervision Tier
-        \node[pillbox, text width=5.2cm] (subsite) at (-5.6, -3.05) {
-            \textbf{\color{mhnavy}\faUsersCog\ Section Supervisors (CR 8.8)}\\[1.5pt]
-            {\fontsize{6.2pt}{7.4pt}\selectfont\textbf{Henry Chauke} (Section Supervisor)\\Pipelaying, Layerworks \& Structures}
+        \node[subpillbox, text width=5.25cm] (subsite) at (-5.7, -4.35) {
+            \textbf{\color{mhnavy}\faUsersCog\ Section Supervisors (CR 8.8)}\\[1.8pt]
+            {\fontsize{6.5pt}{7.6pt}\selectfont\textbf{Henry Chauke} (Section Supervisor)\\Pipelaying, Layerworks \& Structures}
         };
 
-        \node[pillbox, text width=5.2cm] (subsheq) at (0, -3.05) {
-            \textbf{\color{mhnavy}\faClipboardCheck\ Site Safety \& Lab Sampling}\\[1.5pt]
-            {\fontsize{6.2pt}{7.4pt}\selectfont Daily Toolbox Talks $\bullet$ Troxler Density\\Cube Crushing \& Slump Verification}
+        \node[subpillbox, text width=5.25cm] (subsheq) at (0, -4.35) {
+            \textbf{\color{mhnavy}\faClipboardCheck\ Site Safety \& Lab Sampling}\\[1.8pt]
+            {\fontsize{6.5pt}{7.6pt}\selectfont Daily Toolbox Talks $\bullet$ Troxler Density\\Cube Crushing \& Slump Verification}
         };
 
-        \node[pillbox, text width=5.2cm] (subsurv) at (5.6, -3.05) {
-            \textbf{\color{mhnavy}\faMapMarkedAlt\ Field Setting Out}\\[1.5pt]
-            {\fontsize{6.2pt}{7.4pt}\selectfont Leica / Topcon Total Station Teams\\Precision Grade Pegging \& Inverts}
+        \node[subpillbox, text width=5.25cm] (subsurv) at (5.7, -4.35) {
+            \textbf{\color{mhnavy}\faMapMarkedAlt\ Field Setting Out}\\[1.8pt]
+            {\fontsize{6.5pt}{7.6pt}\selectfont Leica / Topcon Total Station Teams\\Precision Grade Pegging \& Inverts}
         };
 
         \draw[arrline] (site.south) -- (subsite.north);
@@ -649,18 +656,18 @@
         \draw[arrline] (surv.south) -- (subsurv.north);
 
         % Level 5: Direct Execution & Community Workforce
-        \node[botbox, text width=17.2cm] (workforce) at (0, -4.02) {
-            \faTools\ \ \textbf{Site Operations, Certified Trades \& Host Community Labour Force}\\
-            {\normalfont\fontsize{6.3pt}{7.6pt}\selectfont\textbf{Certified Heavy Machine Operators} (Excavators, Graders, Rollers, TLBs, Pavers) \ $\bullet$ \ \textbf{Skilled Artisans} (Pipefitters, Welders, Steel-fixers, Bricklayers) \ $\bullet$ \ \textbf{Local Community Labour (100--200 Personnel)} (30\%--50\% LED Target)}
+        \node[botbox, text width=17.2cm] (workforce) at (0, -6.00) {
+            \faTools\ \ \textbf{Site Operations, Certified Trades \& Host Community Labour Force}\\[1.5pt]
+            {\normalfont\fontsize{6.6pt}{7.8pt}\selectfont\textbf{Certified Heavy Machine Operators} (Excavators, Graders, Rollers, TLBs, Pavers) \ $\bullet$ \ \textbf{Skilled Artisans} (Pipefitters, Welders, Steel-fixers, Bricklayers) \ $\bullet$ \ \textbf{Local Community Labour (100--200 Personnel)} (30\%--50\% LED Target)}
         };
 
         % Connectors to bottom box
-        \coordinate (busL4) at (0, -3.60);
-        \draw[busline] (-5.6, -3.48) -- (-5.6, -3.60);
-        \draw[busline] (0, -3.48) -- (0, -3.60);
-        \draw[busline] (5.6, -3.48) -- (5.6, -3.60);
-        \draw[busline] (-5.6, -3.60) -- (5.6, -3.60);
-        \draw[arrline] (0, -3.60) -- (workforce.north);
+        \coordinate (busL4) at (0, -5.20);
+        \draw[busline] (subsite.south) -- (-5.7, -5.20);
+        \draw[busline] (subsheq.south) -- (0, -5.20);
+        \draw[busline] (subsurv.south) -- (5.7, -5.20);
+        \draw[busline] (-5.7, -5.20) -- (5.7, -5.20);
+        \draw[arrline] (0, -5.20) -- (workforce.north);
     \end{tikzpicture}
 \end{tcolorbox}
 
@@ -1587,6 +1594,5 @@ Makhaswa Holdings manages a comprehensive plant fleet, transport logistics, and 
         Makhaswa Holdings (Pty) Ltd \ $\bullet$ \ CIDB Grade 8 CE PE / 8 ME PE \ $\bullet$ \ Level 1 B-BBEE (135\%) \ $\bullet$ \ Reg: 2017/307900/07}
     };
 \end{tikzpicture}
-\clearpage
 
 \end{document}
