@@ -183,8 +183,8 @@ All site and executive operations are strictly structured in full compliance wit
        |                                                                 |
 +------+-------------------------------+                 +---------------+---------------+
 |    PROJECT & CONSTRUCTION MANAGER    |                 |         SHEQ OFFICER          |
-|    Elphas Goodman Mdaka /            |                 |    Lindelani Shangase         |
-|    Peter Makwela [CR 16.2 & 8.1]     |                 |    (Pr.OHS) [CR 8.5]          |
+|    Elphas Goodman Mdaka              |                 |    Lindelani Shangase         |
+|    [CR 16.2 & 8.1]                   |                 |    (Pr.OHS) [CR 8.5]          |
 +----------------------+---------------+                 +---------------+---------------+
                        |                                                 |
 +----------------------+---------------+                 +---------------+---------------+
@@ -198,7 +198,7 @@ All site and executive operations are strictly structured in full compliance wit
 +------+-----------------------+ +-----+-----------------------+ +-----+-----------------------+
 |  ASSISTANT SUPERVISOR /      | |  SECTION SUPERVISORS        | |  QUALITY CONTROLLER (QC)    |
 |  FOREMAN                     | |  Henry Chauke [CR 8.8]      | |  Hendrick Chauke [CR 8.38]  |
-|  Fulufhelo Shidade [CR 8.7]  | |                             | |                             |
+|                              | |                             | |                             |
 +------------------------------+ +-----------------------------+ +-----------------------------+
                                        |
                        +---------------+---------------+
@@ -220,9 +220,7 @@ All site and executive operations are strictly structured in full compliance wit
 | :--- | :--- | :--- | :--- |
 | **Lucas Dinga** | Chief Executive Officer | CR 7(19c) | Strategic leadership, business development, client relations, commercial signatory |
 | **Elphas Goodman Mdaka** | Project & Contracts Manager | CR 16.2 & 8.1 | High-level project planning, contractual administration, client liaison (074 481 0520) |
-| **Peter Makwela** | Construction Manager | CR 16.2 & 8.1 | Multi-site operational programming, plant dispatch, progress monitoring |
 | **Sfiso Knowledge Nkabinde** | Construction Manager / Site Agent | CR 8.1 | Day-to-day site management, resource allocation, progress execution |
-| **Fulufhelo Shidade** | Assistant Supervisor / Foreman | CR 8.7 | Direct workforce coordination, task distribution, front-line supervision |
 | **Lindelani Shangase** | SHEQ Officer | CR 8.5 (Pr.OHS) | Health & Safety system auditing, environmental compliance, hazard management |
 | **Henry Chauke** | Section Supervisor | CR 8.8 | Specific section layerworks, pipe laying, and structural supervision |
 | **Hendrick Chauke** | Quality Controller (QC) | CR 8.38 | Inspection and Test Plans (ITPs), material testing, concrete slump/cube tests |

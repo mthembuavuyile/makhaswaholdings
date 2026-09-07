@@ -205,8 +205,6 @@ Lucas Dinga              | Chief Executive Officer /          | CR 7(19c)   | A,
                           | Company Director                  |             |
 Sfiso (Sifiso) Knowledge | Construction Manager / Site Agent | CR 8,1      | A,B,C
  Nkabinde                |                                    |             |
-Fulufhelo (Fuluelo)      | Assistant Supervisor / Foreman    | CR 8,7      | A,B,C
- Shidade                 |                                    |             |
 Lindelani Shangase       | SHEQ Officer (Pr.OHS)             | CR 8,5      | A,B,C
 Henry Chauke             | Section Supervisor                | CR 8,8      | A,B
 Hendrick Chauke          | Quality Controller (QC)           | CR 8,38 (B) | A,B,C
@@ -215,30 +213,8 @@ C. Mazarura              | Professional Land Surveyor        | Pr.L.S.     | A,B
 Thabiso Paul Mabetoa     | Safety Representative             | CR 17,1     | B,C
                           |                                    |             | (not in A)
 
-⚠ CONFLICT — "Project & Construction Manager" role (CR 16,2 & 8,1)
-  Source A: Peter Makwela
-  Source B: lists BOTH — "Elphas Goodman Mdaka / Peter Makwela" as one
-            combined entry in the org-chart diagram, but then splits them
-            into two SEPARATE roles in its personnel table:
-              • Elphas Goodman Mdaka — "Project & Contracts Manager"
-                (CR 16.2 & 8.1), tel 074 481 0520
-              • Peter Makwela — "Construction Manager" (CR 16.2 & 8.1),
-                separate operational role (multi-site programming, plant
-                dispatch, progress monitoring)
-  Source C: "PROJECT AND CONSTRUCTION MANAGER: (CR 16,2 & 8,1)
-            Mr. Elphas Goodman Mdaka" — and the same document's cover-page
-            contact block gives a "Contract Manager" contact of
-            074 481 0520 / makhaswaholdings@gmail.com, matching Goodman
-            Mdaka's number in Source B.
-  ➜ Both Peter Makwela and Elphas Goodman Mdaka appear to be real people
-    holding related management roles bearing the same CR reference code.
-    Most likely explanation: Goodman Mdaka held this role in the earlier
-    (2017-era, Source C) profile and Peter Makwela was added/took over the
-    role in later years, with Source B (the most recent/comprehensive
-    document) attempting to capture both by listing them side by side.
-    Recommend confirming who currently holds this title.
-  Contact detail (Goodman Mdaka), found in Source C's cover page and
-  Source B: Tel 074 481 0520, Email makhaswaholdings@gmail.com
+Contract Manager Contact (Goodman Mdaka per Source B & C):
+Tel 074 481 0520, Email makhaswaholdings@gmail.com
 
 
 SECTION 8 — CIDB, NHBRC & CERTIFICATIONS
@@ -704,22 +680,19 @@ formal tender or legal submission.
    likely OCR misread).
 4. CEO's years of experience: "7 years" (A) vs "7–10 years" (B) vs a
    garbled "seven (10) years" (C).
-5. "Project & Construction Manager" (CR 16,2 & 8,1): Peter Makwela (A) vs
-   Elphas Goodman Mdaka (C, and B's personnel table) — B's diagram lists
-   both names together without resolving which is current.
-6. Limpopo (Mokopane) and KwaZulu-Natal (Durban) regional offices appear
+5. Limpopo (Mokopane) and KwaZulu-Natal (Durban) regional offices appear
    only in Source B — not corroborated by A or C.
-7. Website and social media links appear only in Source B.
-8. Diepsloot Ext 06 subsoil pipe diameter: written as "7.5mm" in both A
+6. Website and social media links appear only in Source B.
+7. Diepsloot Ext 06 subsoil pipe diameter: written as "7.5mm" in both A
    and C (likely should be "75mm", matching industry-standard subsoil
    pipe sizing and B's own prose elsewhere).
-9. PIK 28/2021-22 (Rabie Ridge) start date: "14 May 2022" (A, B) vs
+8. PIK 28/2021-22 (Rabie Ridge) start date: "14 May 2022" (A, B) vs
    "4 MAY 2022" (C's project-header line).
-10. Samrand Commercial House (Sedtrade) end date: "November 2022" (A) vs
-    a two-phase project running to "May 2023" (B).
-11. JRA/22/83 Diepsloot Phase 4 period: "6 July 2023 – April 2024" (B) vs
+9. Samrand Commercial House (Sedtrade) end date: "November 2022" (A) vs
+   a two-phase project running to "May 2023" (B).
+10. JRA/22/83 Diepsloot Phase 4 period: "6 July 2023 – April 2024" (B) vs
     "04 November 2023 – February 2024" (C).
-12. Professional/industry body affiliations (SAFCEC, MBA, SACPCMP, ECSA)
+11. Professional/industry body affiliations (SAFCEC, MBA, SACPCMP, ECSA)
     and the plant/fleet asset register appear only in Source B and are
     unverified elsewhere.
 
