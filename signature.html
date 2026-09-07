@@ -451,22 +451,41 @@
         /* Mobile Viewport Optimizations */
         @media (max-width: 768px) {
             .page-hero {
-                padding: 32px 16px;
+                padding: 22px 16px;
             }
 
             .page-hero h1 {
-                font-size: 22px;
+                font-size: 20px;
+                margin-bottom: 4px;
+            }
+
+            .page-hero p {
+                font-size: 12px;
+                line-height: 1.4;
+                margin-bottom: 0;
+            }
+
+            .section-banner {
+                display: none;
             }
 
             .portal-section {
-                padding: 20px 0 36px 0;
+                padding: 14px 0 32px 0;
+            }
+
+            .portal-section .section-title {
+                display: none;
+            }
+
+            .portal-section .section-subtitle {
+                display: none;
             }
 
             /* Show single clean dropdown, hide redundant grid */
             .emp-quick-select-wrap {
                 display: block;
-                margin-top: 12px;
-                margin-bottom: 18px;
+                margin-top: 4px;
+                margin-bottom: 16px;
                 padding: 12px 14px;
             }
 
@@ -561,7 +580,7 @@
     <div class="container portal-section">
 
         <!-- 1. Employee Profile Selector -->
-        <h2 class="section-title text-center">Corporate Email Signatures</h2>
+        <h2 class="section-title text-center">Select Employee Profile</h2>
         <p class="section-subtitle section-subtitle--spaced text-center">
             Select a verified team profile below to preview and copy the official company email signature.
         </p>
@@ -778,9 +797,9 @@
                 phonePrimary: "060 420 5336",
                 phonePrimaryTel: "+27604205336",
                 phonePrimaryLabel: "M",
-                phoneSecondary: "012 944 1702",
-                phoneSecondaryTel: "+27129441702",
-                phoneSecondaryLabel: "T",
+                phoneSecondary: "064 421 7485",
+                phoneSecondaryTel: "+27644217485",
+                phoneSecondaryLabel: "M",
                 email: "nnguluvhe@makhaswaholdings.co.za",
                 website: "www.makhaswaholdings.co.za",
                 websiteUrl: "https://makhaswaholdings.co.za",
@@ -792,8 +811,8 @@
                 fullName: "Lucas Dinga",
                 role: "Chief Executive Officer",
                 company: "Makhaswa Holdings (Pty) Ltd",
-                phonePrimary: "074 481 0520",
-                phonePrimaryTel: "+27744810520",
+                phonePrimary: "081 359 8003",
+                phonePrimaryTel: "+27813598003",
                 phonePrimaryLabel: "M",
                 phoneSecondary: "012 944 1702",
                 phoneSecondaryTel: "+27129441702",
@@ -838,8 +857,7 @@
                     <td style="padding: 1px 0; vertical-align: top;">
                         <a href="tel:${emp.phonePrimaryTel}" style="color: #1f2937; text-decoration: none; font-weight: 600;">${emp.phonePrimary}</a>
                         <span style="color: #cbd5e1; margin: 0 6px;">|</span>
-                        <span style="color: #64748b; font-size: 11px;">${emp.phoneSecondaryLabel}:</span>
-                        <a href="tel:${emp.phoneSecondaryTel}" style="color: #4b5563; text-decoration: none;">${emp.phoneSecondary}</a>
+                        <span style="color: #082d5a; font-weight: 700; margin-right: 4px;">${emp.phoneSecondaryLabel}:</span><a href="tel:${emp.phoneSecondaryTel}" style="color: #1f2937; text-decoration: none; font-weight: 600;">${emp.phoneSecondary}</a>
                     </td>
                 </tr>`;
             } else {
