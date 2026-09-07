@@ -1105,24 +1105,39 @@
         // Render HTML email signature string for selected profile
         function generateSignatureHTML(emp, isMobileLayout) {
             const logoUrl = "https://makhaswaholdings.co.za/images/transparent-logo.png";
+            const iconBase = "https://makhaswaholdings.co.za/images/icons";
+            const iconPhone = `${iconBase}/icon-phone.png`;
+            const iconMobile = `${iconBase}/icon-mobile.png`;
+            const iconEmail = `${iconBase}/icon-email.png`;
+            const iconGlobe = `${iconBase}/icon-globe.png`;
+            const iconLocation = `${iconBase}/icon-location.png`;
 
-            // Phone row formatting
+            // Phone row formatting (Primary & Secondary numbers)
+            const primaryPhoneIcon = emp.phonePrimaryLabel === 'M' ? iconMobile : iconPhone;
+            const primaryPhoneLocal = emp.phonePrimaryLabel === 'M' ? 'images/icons/icon-mobile.png' : 'images/icons/icon-phone.png';
+            const primaryPhoneAlt = emp.phonePrimaryLabel === 'M' ? 'M:' : 'Tel:';
+
             let phoneRow = '';
             if (emp.phoneSecondary) {
+                const secLabel = emp.phoneSecondaryLabel ? `${emp.phoneSecondaryLabel}: ` : '';
                 phoneRow = `
                 <tr>
-                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">${emp.phonePrimaryLabel}:</td>
-                    <td style="padding: 1px 0; vertical-align: top;">
+                    <td style="padding: 2px 7px 2px 0; vertical-align: middle; width: 16px;">
+                        <img src="${primaryPhoneIcon}" onerror="this.onerror=null;this.src='${primaryPhoneLocal}';" alt="${primaryPhoneAlt}" width="14" height="14" style="display: block; width: 14px; height: 14px; border: 0;" />
+                    </td>
+                    <td style="padding: 2px 0; vertical-align: middle;">
                         <a href="tel:${emp.phonePrimaryTel}" style="color: #1f2937; text-decoration: none; font-weight: 600;">${emp.phonePrimary}</a>
                         <span style="color: #cbd5e1; margin: 0 6px;">|</span>
-                        <span style="color: #082d5a; font-weight: 700; margin-right: 4px;">${emp.phoneSecondaryLabel}:</span><a href="tel:${emp.phoneSecondaryTel}" style="color: #1f2937; text-decoration: none; font-weight: 600;">${emp.phoneSecondary}</a>
+                        <span style="color: #082d5a; font-weight: 700; font-size: 11px; margin-right: 3px;">${secLabel}</span><a href="tel:${emp.phoneSecondaryTel}" style="color: #1f2937; text-decoration: none; font-weight: 600;">${emp.phoneSecondary}</a>
                     </td>
                 </tr>`;
             } else {
                 phoneRow = `
                 <tr>
-                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">${emp.phonePrimaryLabel}:</td>
-                    <td style="padding: 1px 0; vertical-align: top;">
+                    <td style="padding: 2px 7px 2px 0; vertical-align: middle; width: 16px;">
+                        <img src="${primaryPhoneIcon}" onerror="this.onerror=null;this.src='${primaryPhoneLocal}';" alt="${primaryPhoneAlt}" width="14" height="14" style="display: block; width: 14px; height: 14px; border: 0;" />
+                    </td>
+                    <td style="padding: 2px 0; vertical-align: middle;">
                         <a href="tel:${emp.phonePrimaryTel}" style="color: #1f2937; text-decoration: none; font-weight: 600;">${emp.phonePrimary}</a>
                     </td>
                 </tr>`;
@@ -1135,7 +1150,7 @@
     <tr>
         <td style="padding-bottom: 10px; text-align: left;">
             <a href="${emp.websiteUrl}" target="_blank" style="text-decoration: none; display: inline-block;">
-                <img src="${logoUrl}" alt="${emp.company}" width="115" style="display: block; width: 115px; max-width: 115px; height: auto; border: 0; filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.85));" />
+                <img src="${logoUrl}" onerror="this.onerror=null;this.src='images/transparent-logo.png';" alt="${emp.company}" width="115" style="display: block; width: 115px; max-width: 115px; height: auto; border: 0; filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.85));" />
             </a>
         </td>
     </tr>
@@ -1154,20 +1169,26 @@
             <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11.5px; color: #4b5563; line-height: 1.55; width: 100%;">
                 ${phoneRow}
                 <tr>
-                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">E:</td>
-                    <td style="padding: 1px 0; vertical-align: top;">
+                    <td style="padding: 2px 7px 2px 0; vertical-align: middle; width: 16px;">
+                        <img src="${iconEmail}" onerror="this.onerror=null;this.src='images/icons/icon-email.png';" alt="E:" width="14" height="14" style="display: block; width: 14px; height: 14px; border: 0;" />
+                    </td>
+                    <td style="padding: 2px 0; vertical-align: middle;">
                         <a href="mailto:${emp.email}" style="color: #082d5a; text-decoration: none; font-weight: 600; word-break: break-all;">${emp.email}</a>
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">W:</td>
-                    <td style="padding: 1px 0; vertical-align: top;">
+                    <td style="padding: 2px 7px 2px 0; vertical-align: middle; width: 16px;">
+                        <img src="${iconGlobe}" onerror="this.onerror=null;this.src='images/icons/icon-globe.png';" alt="W:" width="14" height="14" style="display: block; width: 14px; height: 14px; border: 0;" />
+                    </td>
+                    <td style="padding: 2px 0; vertical-align: middle;">
                         <a href="${emp.websiteUrl}" target="_blank" style="color: #082d5a; text-decoration: none; font-weight: 600;">${emp.website}</a>
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">A:</td>
-                    <td style="padding: 1px 0; vertical-align: top; color: #64748b; font-size: 11px;">
+                    <td style="padding: 2px 7px 2px 0; vertical-align: top; width: 16px; padding-top: 3px;">
+                        <img src="${iconLocation}" onerror="this.onerror=null;this.src='images/icons/icon-location.png';" alt="A:" width="14" height="14" style="display: block; width: 14px; height: 14px; border: 0;" />
+                    </td>
+                    <td style="padding: 2px 0; vertical-align: top; color: #64748b; font-size: 11px;">
                         ${emp.address}
                     </td>
                 </tr>
@@ -1199,7 +1220,7 @@
         <!-- Brand Logo Column -->
         <td style="vertical-align: middle; padding-right: 16px; text-align: center; width: 115px;" valign="middle">
             <a href="${emp.websiteUrl}" target="_blank" style="text-decoration: none; display: block;">
-                <img src="${logoUrl}" alt="${emp.company}" width="110" style="display: block; width: 110px; max-width: 110px; height: auto; border: 0; filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.85));" />
+                <img src="${logoUrl}" onerror="this.onerror=null;this.src='images/transparent-logo.png';" alt="${emp.company}" width="110" style="display: block; width: 110px; max-width: 110px; height: auto; border: 0; filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.85));" />
             </a>
         </td>
 
@@ -1223,20 +1244,26 @@
             <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11.5px; color: #4b5563; line-height: 1.55;">
                 ${phoneRow}
                 <tr>
-                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">E:</td>
-                    <td style="padding: 1px 0; vertical-align: top;">
+                    <td style="padding: 2px 7px 2px 0; vertical-align: middle; width: 16px;">
+                        <img src="${iconEmail}" onerror="this.onerror=null;this.src='images/icons/icon-email.png';" alt="E:" width="14" height="14" style="display: block; width: 14px; height: 14px; border: 0;" />
+                    </td>
+                    <td style="padding: 2px 0; vertical-align: middle;">
                         <a href="mailto:${emp.email}" style="color: #082d5a; text-decoration: none; font-weight: 600; word-break: break-all;">${emp.email}</a>
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">W:</td>
-                    <td style="padding: 1px 0; vertical-align: top;">
+                    <td style="padding: 2px 7px 2px 0; vertical-align: middle; width: 16px;">
+                        <img src="${iconGlobe}" onerror="this.onerror=null;this.src='images/icons/icon-globe.png';" alt="W:" width="14" height="14" style="display: block; width: 14px; height: 14px; border: 0;" />
+                    </td>
+                    <td style="padding: 2px 0; vertical-align: middle;">
                         <a href="${emp.websiteUrl}" target="_blank" style="color: #082d5a; text-decoration: none; font-weight: 600;">${emp.website}</a>
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">A:</td>
-                    <td style="padding: 1px 0; vertical-align: top; color: #64748b; font-size: 11px;">
+                    <td style="padding: 2px 7px 2px 0; vertical-align: top; width: 16px; padding-top: 3px;">
+                        <img src="${iconLocation}" onerror="this.onerror=null;this.src='images/icons/icon-location.png';" alt="A:" width="14" height="14" style="display: block; width: 14px; height: 14px; border: 0;" />
+                    </td>
+                    <td style="padding: 2px 0; vertical-align: top; color: #64748b; font-size: 11px;">
                         ${emp.address}
                     </td>
                 </tr>
