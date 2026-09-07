@@ -186,6 +186,44 @@
             gap: 8px;
         }
 
+        /* Preview Toolbar Controls & Theme Test */
+        .preview-toolbar-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-theme-test {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            font-family: var(--font);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--primary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 4px;
+        }
+
+        .btn-theme-test:hover {
+            border-color: var(--gold);
+            background: #f8fafc;
+        }
+
+        .btn-theme-test.active {
+            background: #0f172a;
+            color: #f1c40f;
+            border-color: #0f172a;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        }
+
         /* Format Mode Toggle */
         .format-toggle-wrap {
             display: inline-flex;
@@ -197,6 +235,7 @@
             border: 1px solid var(--border);
             background: #f1f5f9;
             padding: 3px;
+            border-radius: 4px;
         }
 
         .view-mode-btn {
@@ -214,6 +253,7 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            border-radius: 2px;
         }
 
         .view-mode-btn.active {
@@ -249,6 +289,49 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        /* Dark Mode Simulation for Signature Card */
+        .signature-card.mode-dark-preview {
+            background: #1e242b !important;
+            border-color: #334155 !important;
+            border-top-color: var(--gold) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .signature-card.mode-dark-preview table {
+            background-color: transparent !important;
+        }
+
+        .signature-card.mode-dark-preview div[style*="color: #082d5a"] {
+            color: #ffffff !important;
+        }
+
+        .signature-card.mode-dark-preview div[style*="color: #0c3a6d"] {
+            color: #93c5fd !important;
+        }
+
+        .signature-card.mode-dark-preview td[style*="color: #082d5a"],
+        .signature-card.mode-dark-preview span[style*="color: #082d5a"] {
+            color: #f1c40f !important;
+        }
+
+        .signature-card.mode-dark-preview a[style*="color: #1f2937"],
+        .signature-card.mode-dark-preview a[style*="color: #082d5a"] {
+            color: #e2e8f0 !important;
+        }
+
+        .signature-card.mode-dark-preview td[style*="color: #64748b"] {
+            color: #94a3b8 !important;
+        }
+
+        .signature-card.mode-dark-preview span[style*="color: #1e293b"] {
+            color: #cbd5e1 !important;
+        }
+
+        .signature-card.mode-dark-preview p[style*="color: #94a3b8"] {
+            color: #64748b !important;
         }
 
         .signature-render-area {
@@ -613,14 +696,22 @@
                 <span id="preview-title-text">Signature Preview</span>
             </div>
 
-            <div class="format-toggle-wrap">
-                <div class="view-mode-toggle" role="tablist" aria-label="Signature Format">
-                    <button class="view-mode-btn active" id="btn-mode-desktop" onclick="setViewMode('desktop')" role="tab" aria-selected="true">
-                        <i data-lucide="layout" width="13" height="13"></i> Universal (Recommended)
-                    </button>
-                    <button class="view-mode-btn" id="btn-mode-mobile" onclick="setViewMode('mobile')" role="tab" aria-selected="false">
-                        <i data-lucide="smartphone" width="13" height="13"></i> Compact (Mobile App)
-                    </button>
+            <div class="preview-toolbar-controls">
+                <!-- Dark Mode Simulation Toggle -->
+                <button class="btn-theme-test" id="btn-theme-test" onclick="toggleDarkPreview()" title="Simulate Dark Mode Email Client" aria-label="Toggle Dark Mode Preview">
+                    <i data-lucide="moon" width="13" height="13"></i>
+                    <span id="theme-test-text">Dark Mode Preview</span>
+                </button>
+
+                <div class="format-toggle-wrap">
+                    <div class="view-mode-toggle" role="tablist" aria-label="Signature Format">
+                        <button class="view-mode-btn active" id="btn-mode-desktop" onclick="setViewMode('desktop')" role="tab" aria-selected="true">
+                            <i data-lucide="layout" width="13" height="13"></i> Universal (Recommended)
+                        </button>
+                        <button class="view-mode-btn" id="btn-mode-mobile" onclick="setViewMode('mobile')" role="tab" aria-selected="false">
+                            <i data-lucide="smartphone" width="13" height="13"></i> Compact (Mobile App)
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -877,7 +968,7 @@
     <tr>
         <td style="padding-bottom: 10px; text-align: left;">
             <a href="${emp.websiteUrl}" target="_blank" style="text-decoration: none; display: inline-block;">
-                <img src="${logoUrl}" alt="${emp.company}" width="115" style="display: block; width: 115px; max-width: 115px; height: auto; border: 0;" />
+                <img src="${logoUrl}" alt="${emp.company}" width="115" style="display: block; width: 115px; max-width: 115px; height: auto; border: 0; filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.85));" />
             </a>
         </td>
     </tr>
@@ -941,7 +1032,7 @@
         <!-- Brand Logo Column -->
         <td style="vertical-align: middle; padding-right: 16px; text-align: center; width: 115px;" valign="middle">
             <a href="${emp.websiteUrl}" target="_blank" style="text-decoration: none; display: block;">
-                <img src="${logoUrl}" alt="${emp.company}" width="110" style="display: block; width: 110px; max-width: 110px; height: auto; border: 0;" />
+                <img src="${logoUrl}" alt="${emp.company}" width="110" style="display: block; width: 110px; max-width: 110px; height: auto; border: 0; filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.85));" />
             </a>
         </td>
 
@@ -1113,6 +1204,29 @@
         function setViewMode(mode) {
             currentViewMode = mode;
             updateDisplay();
+        }
+
+        // Toggle Dark Mode Preview Simulation
+        let isDarkPreview = false;
+        function toggleDarkPreview() {
+            isDarkPreview = !isDarkPreview;
+            const card = document.getElementById('signature-preview-card');
+            const btn = document.getElementById('btn-theme-test');
+            const text = document.getElementById('theme-test-text');
+            if (card && btn) {
+                if (isDarkPreview) {
+                    card.classList.add('mode-dark-preview');
+                    btn.classList.add('active');
+                    if (text) text.textContent = 'Light Mode View';
+                } else {
+                    card.classList.remove('mode-dark-preview');
+                    btn.classList.remove('active');
+                    if (text) text.textContent = 'Dark Mode Preview';
+                }
+            }
+            if (window.lucide) {
+                lucide.createIcons();
+            }
         }
 
         // Copy Rich Formatted Signature
