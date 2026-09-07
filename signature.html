@@ -415,8 +415,9 @@
         .signature-actions-bar {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 12px;
-            margin-bottom: 48px;
+            margin-bottom: 44px;
             flex-wrap: wrap;
         }
 
@@ -462,45 +463,84 @@
             border-color: var(--primary);
         }
 
-        /* Raw HTML Drawer */
-        .raw-html-drawer {
-            display: none;
+        /* Admin / IT Source Code Section (Tucked at Bottom) */
+        .admin-source-section {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px dashed var(--border);
+        }
+
+        .admin-source-details {
             background: var(--white);
             border: 1px solid var(--border);
-            border-top: 3px solid var(--gold);
-            padding: 24px;
-            margin-bottom: 40px;
+            border-left: 3px solid var(--gold);
+            padding: 0;
+            transition: all var(--transition);
+        }
+
+        .admin-source-details[open] {
             box-shadow: var(--shadow-sm);
         }
 
-        .raw-html-drawer.active {
-            display: block;
-        }
-
-        .raw-html-drawer h3 {
+        .admin-source-summary {
+            padding: 13px 18px;
             font-family: var(--font);
-            font-size: 14px;
+            font-size: 12.5px;
             font-weight: 700;
             color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-bottom: 8px;
+            cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: space-between;
+            user-select: none;
+            outline: none;
+            background: #f8fafc;
+            list-style: none;
         }
 
-        .raw-html-drawer p {
-            font-size: 13px;
+        .admin-source-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .admin-source-summary-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .admin-source-chevron {
             color: var(--text-light);
+            transition: transform 0.25s ease;
+        }
+
+        .admin-source-details[open] .admin-source-chevron {
+            transform: rotate(180deg);
+        }
+
+        .admin-source-content {
+            padding: 18px 20px 22px 20px;
+            border-top: 1px solid var(--border);
+            background: var(--white);
+        }
+
+        .admin-source-content p {
+            font-size: 12.5px;
+            color: var(--text-light);
+            line-height: 1.5;
             margin-bottom: 12px;
+        }
+
+        .admin-source-actions {
+            display: flex;
+            gap: 10px;
         }
 
         .raw-html-textarea {
             width: 100%;
             height: 180px;
             font-family: 'Consolas', 'Courier New', monospace;
-            font-size: 12px;
+            font-size: 11.5px;
             line-height: 1.5;
             padding: 14px;
             border: 1px solid var(--border);
@@ -860,34 +900,12 @@
             </div>
         </div>
 
-        <!-- 3. Primary Action Buttons (Directly below signature card) -->
+        <!-- 3. Primary Action Button (Directly below signature card) -->
         <div class="signature-actions-bar">
             <button class="btn btn-primary" onclick="copyFormattedSignature()" id="btn-copy-main">
                 <i data-lucide="copy" width="16" height="16"></i>
                 <span>Copy Formatted Signature</span>
             </button>
-
-            <button class="btn btn-secondary" onclick="toggleRawHtml()">
-                <i data-lucide="code" width="16" height="16"></i>
-                <span>View HTML Code</span>
-            </button>
-        </div>
-
-        <!-- 3. Raw HTML Drawer (Collapsible) -->
-        <div class="raw-html-drawer" id="raw-html-box">
-            <h3><i data-lucide="code" width="16" height="16" style="color: var(--gold);"></i> Raw HTML Signature Source</h3>
-            <p>
-                Use this raw HTML code if your webmail client (such as Office 365 Web App or custom HTML editor) accepts direct HTML code.
-            </p>
-            <textarea class="raw-html-textarea" id="html-code-area" readonly></textarea>
-            <div style="display: flex; gap: 10px;">
-                <button class="btn btn-primary" onclick="copyRawHtmlCode()">
-                    <i data-lucide="clipboard-copy" width="15" height="15"></i> Copy HTML Source
-                </button>
-                <button class="btn btn-secondary" onclick="toggleRawHtml()">
-                    <i data-lucide="x" width="15" height="15"></i> Close
-                </button>
-            </div>
         </div>
 
         <!-- 4. Client Setup Instructions -->
@@ -945,6 +963,31 @@
                     </ol>
                 </div>
             </div>
+        </div>
+
+        <!-- 5. For IT Administrators: Raw HTML Source (Collapsible) -->
+        <div class="admin-source-section">
+            <details class="admin-source-details" id="admin-source-details">
+                <summary class="admin-source-summary">
+                    <span class="admin-source-summary-title">
+                        <i data-lucide="terminal" width="16" height="16" style="color: var(--gold);"></i>
+                        For IT Administrators: View Raw HTML Source
+                    </span>
+                    <i data-lucide="chevron-down" class="admin-source-chevron" width="16" height="16"></i>
+                </summary>
+                <div class="admin-source-content">
+                    <p>
+                        Use this raw HTML code for central server-side deployment (e.g. Microsoft 365 / Exchange transport rules, Exclaimer, CodeTwo) or CRMs (HubSpot, Salesforce) that require raw HTML source code.
+                    </p>
+                    <textarea class="raw-html-textarea" id="html-code-area" readonly aria-label="Raw HTML signature source code"></textarea>
+                    <div class="admin-source-actions">
+                        <button class="btn btn-secondary" onclick="copyRawHtmlCode()">
+                            <i data-lucide="clipboard-copy" width="15" height="15"></i>
+                            <span>Copy Raw HTML Code</span>
+                        </button>
+                    </div>
+                </div>
+            </details>
         </div>
 
     </div>
@@ -1384,13 +1427,13 @@
             }
         }
 
-        // Toggle Raw HTML Drawer
+        // Toggle Raw HTML Drawer (for programmatic calls if needed)
         function toggleRawHtml() {
-            const box = document.getElementById('raw-html-box');
-            if (!box) return;
-            box.classList.toggle('active');
-            if (box.classList.contains('active')) {
-                box.scrollIntoView({ behavior: 'smooth' });
+            const details = document.getElementById('admin-source-details');
+            if (!details) return;
+            details.open = !details.open;
+            if (details.open) {
+                details.scrollIntoView({ behavior: 'smooth' });
             }
         }
 
