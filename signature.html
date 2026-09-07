@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Official Email Signatures | Makhaswa Holdings (Pty) Ltd</title>
     <meta name="description"
-        content="Official corporate email signatures and deployment instructions for Makhaswa Holdings (Pty) Ltd personnel.">
+        content="Official corporate email signatures and deployment instructions for Makhaswa Holdings (Pty) Ltd personnel and corporate mailboxes.">
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
     <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
     <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
@@ -648,7 +648,7 @@
     <div class="page-hero page-hero-about" role="img" aria-label="Makhaswa Holdings Corporate Signatures">
         <div class="hero-content">
             <h1>Corporate Email Signatures</h1>
-            <p>Standardized corporate email signatures and setup guidelines for Makhaswa Holdings personnel.</p>
+            <p>Standardized corporate email signatures and setup guidelines for Makhaswa Holdings personnel and corporate mailboxes.</p>
         </div>
     </div>
     <div class="hero-banner">
@@ -662,20 +662,20 @@
          ===================================================== -->
     <div class="container portal-section">
 
-        <!-- 1. Employee Profile Selector -->
-        <h2 class="section-title text-center">Select Employee Profile</h2>
+        <!-- 1. Signature Profile Selector -->
+        <h2 class="section-title text-center">Select Signature Profile</h2>
         <p class="section-subtitle section-subtitle--spaced text-center">
-            Select a verified team profile below to preview and copy the official company email signature.
+            Select a verified profile or corporate mailbox below to preview and copy the official company email signature.
         </p>
 
         <!-- Mobile Profile Dropdown (Active on <= 768px) -->
         <div class="emp-quick-select-wrap">
             <label class="emp-quick-select-label" for="emp-select-dropdown">
                 <i data-lucide="user-check" width="15" height="15" style="color: var(--gold);"></i>
-                Select Employee Profile
+                Select Signature Profile
             </label>
             <div class="emp-select-box">
-                <select class="emp-select-dropdown" id="emp-select-dropdown" onchange="selectEmployee(parseInt(this.value, 10))" aria-label="Select Employee Profile">
+                <select class="emp-select-dropdown" id="emp-select-dropdown" onchange="selectEmployee(parseInt(this.value, 10))" aria-label="Select Signature Profile">
                     <!-- Populated dynamically via JavaScript -->
                 </select>
                 <div class="emp-select-icon">
@@ -684,7 +684,7 @@
             </div>
         </div>
 
-        <!-- Desktop Employee Selection Grid (Active on > 768px) -->
+        <!-- Desktop Signature Profile Selection Grid (Active on > 768px) -->
         <div class="emp-grid" id="emp-selector-grid">
             <!-- Populated dynamically via JavaScript -->
         </div>
@@ -843,7 +843,7 @@
     <script src="js/app.js"></script>
 
     <script>
-        // Official verified employee directory
+        // Official verified directory (leadership, team & corporate mailboxes)
         const EMPLOYEES = [
             {
                 id: 0,
@@ -935,7 +935,7 @@
         let currentEmpIndex = 0;
         let currentViewMode = 'desktop'; // 'desktop' or 'mobile'
 
-        // Render HTML email signature string for selected employee
+        // Render HTML email signature string for selected profile
         function generateSignatureHTML(emp, isMobileLayout) {
             const logoUrl = "https://makhaswaholdings.co.za/images/transparent-logo.png";
 
@@ -1097,7 +1097,7 @@
 </table>`.trim();
         }
 
-        // Render employee selector cards & populate dropdown
+        // Render signature profile selector cards & populate dropdown
         function buildEmployeeGrid() {
             const grid = document.getElementById('emp-selector-grid');
             if (grid) {
@@ -1120,7 +1120,7 @@
             }
         }
 
-        // Update display on employee or view mode change
+        // Update display on profile or view mode change
         function updateDisplay() {
             const emp = EMPLOYEES[currentEmpIndex];
             const isMobile = currentViewMode === 'mobile';
@@ -1194,7 +1194,7 @@
             }
         }
 
-        // Handler: select employee
+        // Handler: select profile
         function selectEmployee(index) {
             currentEmpIndex = index;
             updateDisplay();
