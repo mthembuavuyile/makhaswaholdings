@@ -280,6 +280,7 @@ four-category framework, with nothing omitted.
   • Road traffic signage, guardrails with terminal ends
   • Thermoplastic retro-reflective road markings, road studs
   • Traffic-calming speed humps
+  • Traffic lights and traffic signals (intersection signalization, control cabling, and road ancillaries)
 
 9.2 ENVIRONMENTAL & SUPPORT SERVICES (Earthworks)
 ------------------------

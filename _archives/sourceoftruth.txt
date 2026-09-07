@@ -287,6 +287,7 @@ Makhaswa Holdings executes all works under documented management systems aligned
 | • Site Clearance     | • Stormwater Drainage    | • Asphalt Surfacing           |
 | • Bulk Excavation    | • Sewer Reticulation     | • Layerworks (G1-G7, C1-C4)   |
 | • Cut & Fill         | • Water Supply Pipelines | • Interlocking Paving         |
+| • Ground Engineering | • Gabions & Outfalls     | • Traffic Signals & Inlays    |
 +----------------------+--------------------------+-------------------------------+
 | 04. GENERAL BUILDING | 05. MECHANICAL & WATER   | 06. ELECTRICAL & LIGHTING     |
 | • Commercial Builds  | • Pump Stations          | • High-Mast Lighting          |
@@ -313,7 +314,7 @@ Makhaswa Holdings executes all works under documented management systems aligned
 * **Road Maintenance & Rehabilitation:** Surface failure patching, pothole deep repairs, crack routing and hot elastomeric bituminous sealing, edge break rehabilitation, and road profiling.
 * **Kerbing & Channeling:** Supply and machine/manual installation of precast concrete kerbing (Figure 8, Figure 8C mountable, Figure 7 semi-mountable, Figure 12 barrier kerb, Figure 3 barrier), concrete haunching, and in-situ cast channels.
 * **Interlocking Block Paving:** Heavy-duty grey Type SA precast interlocking paving blocks (60mm for pedestrian sidewalks, 80mm for roadways, intersections, and bus rapid transit loading bays) laid on 20mm river sand bed with joint plaster sand broomed and compacted.
-* **Road Ancillaries:** Road traffic signage, guardrails with terminal ends, thermoplastic retro-reflective road markings, road studs, and traffic calming speed humps.
+* **Road Ancillaries & Traffic Signals:** Traffic signal installations (traffic lights and signalized intersection ducting/cabling), road traffic signage, guardrails with terminal ends, thermoplastic retro-reflective road markings, road studs, and traffic calming speed humps.
 
 ### 6.4 Water Supply & Sewer Reticulation Networks
 * **Potable Water Reticulation:** Excavation, flexible bedding, pipeline installation (uPVC, mPVC, HDPE, ductile iron, and welded carbon steel pipes), pressure testing, disinfection, and chlorination.
