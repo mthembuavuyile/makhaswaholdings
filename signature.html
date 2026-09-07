@@ -3,12 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Signature Preview | Makhaswa Holdings (Pty) Ltd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Official Email Signatures | Makhaswa Holdings (Pty) Ltd</title>
+    <meta name="description" content="Official corporate email signatures and deployment portal for Makhaswa Holdings (Pty) Ltd. Mobile and desktop friendly.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -22,74 +23,113 @@
         :root {
             --primary: #082d5a;
             --primary-mid: #0c3a6d;
+            --primary-light: #eef3f9;
             --accent: #1a3668;
             --gold: #c8a951;
+            --gold-light: #faf5e8;
+            --gold-border: #e6d396;
             --white: #ffffff;
-            --bg: #f3f5f8;
+            --bg: #f4f6fa;
             --card-bg: #ffffff;
             --border: #e2e8f0;
-            --text-dark: #1e293b;
+            --border-subtle: #edf2f7;
+            --text-dark: #0f172a;
+            --text-body: #334155;
             --text-muted: #64748b;
             --success: #10b981;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 6px 20px rgba(8, 45, 90, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 12px 36px rgba(8, 45, 90, 0.09), 0 2px 6px rgba(0, 0, 0, 0.04);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg);
             color: var(--text-dark);
             line-height: 1.5;
-            padding: 30px 20px;
+            padding: 24px 16px 80px 16px;
         }
 
         .container {
-            max-width: 960px;
+            max-width: 980px;
             margin: 0 auto;
         }
 
-        /* Top Header */
+        /* Top Brand Header */
         .page-header {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 16px;
-            margin-bottom: 24px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border);
         }
 
         .brand-title {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
         }
 
-        .brand-title img {
-            height: 38px;
+        .brand-logo-img {
+            height: 44px;
             width: auto;
+            max-width: 140px;
+            object-fit: contain;
+            display: block;
         }
 
-        .brand-title h1 {
+        .brand-text h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 700;
             color: var(--primary);
-            letter-spacing: -0.2px;
+            letter-spacing: -0.3px;
+            line-height: 1.25;
         }
 
-        .brand-title p {
+        .brand-text p {
             font-size: 13px;
             color: var(--text-muted);
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
         }
 
+        .badge-verified {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--gold-light);
+            color: #8b6b19;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 999px;
+            border: 1px solid var(--gold-border);
+        }
+
+        /* Header Quick Actions */
         .header-actions {
             display: flex;
+            align-items: center;
             gap: 10px;
             flex-wrap: wrap;
         }
@@ -97,46 +137,222 @@
         .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             padding: 10px 18px;
-            font-size: 13px;
+            font-size: 13.5px;
             font-weight: 600;
-            border-radius: 6px;
+            border-radius: var(--radius-sm);
             border: 1px solid transparent;
             cursor: pointer;
             transition: all 0.2s ease;
             text-decoration: none;
+            white-space: nowrap;
         }
 
         .btn-primary {
             background-color: var(--primary);
             color: #ffffff;
+            box-shadow: 0 2px 6px rgba(8, 45, 90, 0.25);
         }
 
-        .btn-primary:hover {
+        .btn-primary:hover,
+        .btn-primary:active {
             background-color: var(--primary-mid);
             transform: translateY(-1px);
         }
 
         .btn-secondary {
-            background-color: #ffffff;
+            background-color: var(--white);
             color: var(--primary);
             border-color: var(--border);
         }
 
-        .btn-secondary:hover {
+        .btn-secondary:hover,
+        .btn-secondary:active {
             background-color: #f8fafc;
             border-color: #cbd5e1;
         }
 
-        /* Email Mockup Window */
+        /* Control Bar: Employee Selector & View Mode Switcher */
+        .control-bar {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 18px 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .control-section-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Employee Pill Tabs */
+        .employee-tabs-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .employee-tabs-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .emp-pill {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            background: #f8fafc;
+            border: 1.5px solid var(--border);
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        .emp-pill:hover {
+            border-color: var(--primary-mid);
+            background: var(--primary-light);
+        }
+
+        .emp-pill.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(8, 45, 90, 0.22);
+        }
+
+        .emp-avatar {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+        }
+
+        .emp-pill.active .emp-avatar {
+            background: #ffffff;
+            color: var(--primary);
+        }
+
+        .emp-info-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .emp-name {
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .emp-pill.active .emp-name {
+            color: #ffffff;
+        }
+
+        .emp-role {
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.2;
+        }
+
+        .emp-pill.active .emp-role {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* View Mode Segmented Control */
+        .controls-sub-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .view-mode-toggle {
+            display: inline-flex;
+            background: #f1f5f9;
+            padding: 4px;
+            border-radius: var(--radius-sm);
+            gap: 4px;
+        }
+
+        .view-mode-btn {
+            border: none;
+            background: transparent;
+            padding: 6px 14px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .view-mode-btn.active {
+            background: #ffffff;
+            color: var(--primary);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .quick-hint {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Mockup Window Wrapper */
+        .mockup-wrapper {
+            margin-bottom: 24px;
+            transition: max-width 0.3s ease, margin 0.3s ease;
+        }
+
+        /* When Mobile Preview mode is toggled */
+        .mockup-wrapper.mode-mobile {
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .email-mockup {
             background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.05);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
             border: 1px solid var(--border);
             overflow: hidden;
-            margin-bottom: 30px;
         }
 
         .email-titlebar {
@@ -146,11 +362,13 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 12px;
         }
 
         .window-dots {
             display: flex;
             gap: 6px;
+            flex-shrink: 0;
         }
 
         .dot {
@@ -159,34 +377,43 @@
             border-radius: 50%;
         }
 
-        .dot-red {
-            background: #ff5f56;
-        }
-
-        .dot-yellow {
-            background: #ffbd2e;
-        }
-
-        .dot-green {
-            background: #27c93f;
-        }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
 
         .window-title {
             font-size: 12.5px;
             font-weight: 500;
             color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+            flex: 1;
         }
 
+        .window-badge {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 3px 8px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        /* Email Metadata Header */
         .email-meta {
-            padding: 20px 24px;
+            padding: 16px 22px;
             background: #ffffff;
             border-bottom: 1px solid #f1f5f9;
+            font-size: 13px;
         }
 
         .meta-row {
             display: flex;
-            font-size: 13.5px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            line-height: 1.4;
         }
 
         .meta-row:last-child {
@@ -194,92 +421,127 @@
         }
 
         .meta-label {
-            width: 70px;
+            width: 65px;
             color: var(--text-muted);
             font-weight: 500;
+            flex-shrink: 0;
         }
 
-        .meta-value {
+        .meta-value-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 8px;
             color: var(--text-dark);
-            font-weight: 500;
+            font-weight: 600;
+            word-break: break-word;
         }
 
-        .meta-email {
+        .meta-email-pill {
             color: var(--text-muted);
             font-weight: 400;
-            font-size: 13px;
+            font-size: 12.5px;
         }
 
+        /* Simulated Email Message Body */
         .email-body {
-            padding: 28px 24px;
-            font-size: 14.5px;
-            line-height: 1.7;
-            color: #334155;
+            padding: 24px 22px;
+            font-size: 14px;
+            line-height: 1.65;
+            color: var(--text-body);
         }
 
         .email-body p {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .email-body p:last-of-type {
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .email-divider {
             height: 1px;
             background: #e2e8f0;
-            margin: 24px 0 28px 0;
+            margin: 20px 0 24px 0;
         }
 
-        /* Signature Container */
+        /* Signature Container & Scroll wrapper */
+        .signature-scroll-container {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 8px;
+            border-radius: 6px;
+        }
+
         .signature-render-area {
             background: #ffffff;
-            padding: 10px 0;
-            border-radius: 4px;
+            display: inline-block;
+            min-width: 100%;
         }
 
-        /* Instructions & Copy Section */
+        /* Mobile Scroll Notice */
+        .mobile-scroll-hint {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 11.5px;
+            color: var(--text-muted);
+            background: #f8fafc;
+            padding: 6px 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+            border: 1px dashed var(--border);
+        }
+
+        /* Instructions & Feature Cards */
         .tabs-card {
-            background: #ffffff;
-            border-radius: 12px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
             border: 1px solid var(--border);
             padding: 24px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 24px;
         }
 
         .tabs-card h2 {
             font-family: 'Montserrat', sans-serif;
             font-size: 17px;
             color: var(--primary);
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .guide-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 16px;
-            margin-top: 16px;
+            margin-top: 18px;
         }
 
         .guide-card {
             background: #f8fafc;
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             padding: 16px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .guide-card:hover {
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
         }
 
         .guide-card h3 {
             font-size: 13.5px;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
 
         .guide-card ol {
@@ -289,9 +551,12 @@
             line-height: 1.6;
         }
 
+        .guide-card ol li {
+            margin-bottom: 4px;
+        }
+
         /* Raw HTML Drawer */
         .raw-html-section {
-            margin-top: 20px;
             display: none;
         }
 
@@ -301,58 +566,162 @@
 
         .raw-html-textarea {
             width: 100%;
-            height: 160px;
-            font-family: monospace;
+            height: 180px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
             font-size: 12px;
-            padding: 12px;
-            border-radius: 6px;
+            line-height: 1.5;
+            padding: 14px;
+            border-radius: var(--radius-sm);
             border: 1px solid var(--border);
-            background: #f8fafc;
+            background: #0f172a;
+            color: #e2e8f0;
             resize: vertical;
         }
 
         /* Toast notification */
         .toast {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 24px;
+            left: 50%;
+            transform: translate(-50%, 20px);
             background: #0f172a;
             color: #ffffff;
             padding: 12px 20px;
-            border-radius: 8px;
+            border-radius: 999px;
             font-size: 13.5px;
             font-weight: 500;
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
             opacity: 0;
-            transform: translateY(15px);
-            transition: all 0.25s ease;
             pointer-events: none;
-            z-index: 1000;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 9999;
+            width: auto;
+            max-width: calc(100% - 32px);
+            text-align: center;
+            justify-content: center;
         }
 
         .toast.show {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate(-50%, 0);
         }
 
         .toast-icon {
             color: var(--gold);
+            flex-shrink: 0;
         }
 
-        @media (max-width: 650px) {
+        /* Sticky Mobile Floating Action Bar */
+        .mobile-action-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border);
+            padding: 10px 16px 14px 16px;
+            z-index: 100;
+            box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .mobile-action-bar .btn {
+            width: 100%;
+            padding: 12px 18px;
+            font-size: 14px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px 90px 12px;
+            }
+
             .page-header {
-                flex-direction: column;
-                align-items: flex-start;
+                padding: 16px;
+                gap: 14px;
+            }
+
+            .brand-title {
+                gap: 12px;
+                width: 100%;
+            }
+
+            .brand-logo-img {
+                height: 38px;
+            }
+
+            .brand-text h1 {
+                font-size: 17px;
             }
 
             .header-actions {
                 width: 100%;
+                display: flex;
+                gap: 8px;
             }
 
-            .btn {
+            .header-actions .btn {
+                flex: 1;
+                padding: 10px 12px;
+                font-size: 12.5px;
+            }
+
+            .control-bar {
+                padding: 14px;
+                gap: 14px;
+            }
+
+            .email-meta {
+                padding: 14px 16px;
+            }
+
+            .email-body {
+                padding: 18px 16px;
+                font-size: 13.5px;
+            }
+
+            .mobile-scroll-hint {
+                display: flex;
+            }
+
+            .mobile-action-bar {
+                display: block;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tabs-card {
+                padding: 18px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-actions {
+                flex-direction: column;
+            }
+
+            .header-actions .btn {
+                width: 100%;
+            }
+
+            .controls-sub-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .view-mode-toggle {
+                width: 100%;
+            }
+
+            .view-mode-btn {
                 flex: 1;
                 justify-content: center;
             }
@@ -364,169 +733,168 @@
 
     <div class="container">
 
-        <!-- Top Header & Actions -->
+        <!-- Top Header & Brand Bar -->
         <header class="page-header">
             <div class="brand-title">
-                <img src="images/transparent-logo.png" alt="Makhaswa Holdings Logo">
-                <div>
-                    <h1>Official Email Signature Preview</h1>
-                    <p>Designed for Makhaswa Holdings (Pty) Ltd</p>
+                <img src="images/transparent-logo.png" alt="Makhaswa Holdings Logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <h1>Corporate Email Signatures</h1>
+                    <p>
+                        <span>Makhaswa Holdings (Pty) Ltd</span>
+                        <span class="badge-verified"><i data-lucide="shield-check" width="12" height="12"></i> Tender & POPIA Ready</span>
+                    </p>
                 </div>
             </div>
 
             <div class="header-actions">
-                <button class="btn btn-primary" onclick="copySignatureVisual('signature-container')" id="copy-btn">
+                <button class="btn btn-primary" onclick="copyActiveSignature()" id="copy-btn-header">
                     <i data-lucide="copy" width="16" height="16"></i>
-                    Copy Formatted Signature
+                    <span>Copy Formatted Signature</span>
                 </button>
                 <button class="btn btn-secondary" onclick="toggleRawHtml()">
                     <i data-lucide="code" width="16" height="16"></i>
-                    View / Copy HTML
+                    <span>View / Copy HTML</span>
                 </button>
             </div>
         </header>
 
-        <!-- Email Mockup Window -->
-        <div class="email-mockup">
-            <!-- Window Bar -->
-            <div class="email-titlebar">
-                <div class="window-dots">
-                    <span class="dot dot-red"></span>
-                    <span class="dot dot-yellow"></span>
-                    <span class="dot dot-green"></span>
+        <!-- Employee Selector & View Controls -->
+        <section class="control-bar">
+            <!-- 1. Employee Selector Tabs (All 3 Employee Signatures) -->
+            <div>
+                <div class="control-section-label">
+                    <i data-lucide="users" width="14" height="14"></i> Select Employee Signature (3 Profiles Available)
                 </div>
-                <div class="window-title">New Message &bull; Tender Documentation Enquiry</div>
-                <div style="width: 40px;"></div>
+                <div class="employee-tabs-row" id="employee-tabs">
+                    <!-- Nicole Nguluvhe -->
+                    <div class="emp-pill active" onclick="selectEmployee(0)" id="emp-tab-0">
+                        <div class="emp-avatar">NN</div>
+                        <div class="emp-info-text">
+                            <span class="emp-name">Nakisani Nicole Nguluvhe</span>
+                            <span class="emp-role">Office Administrator</span>
+                        </div>
+                    </div>
+
+                    <!-- Lucas Dinga -->
+                    <div class="emp-pill" onclick="selectEmployee(1)" id="emp-tab-1">
+                        <div class="emp-avatar">LD</div>
+                        <div class="emp-info-text">
+                            <span class="emp-name">Lucas Dinga</span>
+                            <span class="emp-role">Chief Executive Officer</span>
+                        </div>
+                    </div>
+
+                    <!-- Nelly Motswapong -->
+                    <div class="emp-pill" onclick="selectEmployee(2)" id="emp-tab-2">
+                        <div class="emp-avatar">NM</div>
+                        <div class="emp-info-text">
+                            <span class="emp-name">Nelly Motswapong</span>
+                            <span class="emp-role">Director / Co-Owner</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Email Meta Headers -->
-            <div class="email-meta">
-                <div class="meta-row">
-                    <span class="meta-label">From:</span>
-                    <span class="meta-value">Nakisani Nicole Nguluvhe <span class="meta-email">&lt;nnguluvhe@makhaswaholdings.co.za&gt;</span></span>
+            <!-- 2. UI Layout Mode & Quick Instructions -->
+            <div class="controls-sub-row">
+                <div class="view-mode-toggle">
+                    <button class="view-mode-btn active" id="btn-view-desktop" onclick="setViewMode('desktop')">
+                        <i data-lucide="monitor" width="14" height="14"></i> Desktop Email View
+                    </button>
+                    <button class="view-mode-btn" id="btn-view-mobile" onclick="setViewMode('mobile')">
+                        <i data-lucide="smartphone" width="14" height="14"></i> Mobile Phone View
+                    </button>
                 </div>
-                <div class="meta-row">
-                    <span class="meta-label">To:</span>
-                    <span class="meta-value">Client Services <span class="meta-email">&lt;enquiries@client-procurement.co.za&gt;</span></span>
-                </div>
-                <div class="meta-row">
-                    <span class="meta-label">Subject:</span>
-                    <span class="meta-value" style="font-weight: 600; color: var(--primary);">Re: Infrastructure Project Tender &bull; Makhaswa Holdings Capabilities</span>
+
+                <div class="quick-hint">
+                    <i data-lucide="info" width="14" height="14" style="color: var(--gold);"></i>
+                    <span>Works in Outlook Desktop, Office 365 Web, Gmail & Apple Mail</span>
                 </div>
             </div>
+        </section>
 
-            <!-- Email Body Content -->
-            <div class="email-body">
-                <p>Dear Sir / Madam,</p>
-
-                <p>Thank you for reaching out regarding Makhaswa Holdings. Please find our complete company credentials, CIDB Grade 8 certification, and recent civil and building project documentation attached for your consideration.</p>
-
-                <p>Should you require any additional compliance information or tender submissions, please do not hesitate to contact our office directly.</p>
-
-                <p>Kind regards,</p>
-
-                <div class="email-divider"></div>
-
-                <!-- =====================================================
-                     LIVE EMAIL SIGNATURE (HTML Table for Email Clients)
-                ===================================================== -->
-                <div class="signature-render-area" id="signature-container">
-                    <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 13px; color: #333333; line-height: 1.4; max-width: 620px; background-color: #ffffff;">
-                        <tr>
-                            <!-- Brand Logo Column -->
-                            <td style="vertical-align: middle; padding-right: 20px; text-align: center; width: 140px;">
-                                <a href="https://makhaswaholdings.co.za" target="_blank" style="text-decoration: none; display: block;">
-                                    <img src="https://makhaswaholdings.co.za/images/transparent-logo.png" alt="Makhaswa Holdings (Pty) Ltd" width="135" style="display: block; width: 135px; max-width: 135px; height: auto; border: 0;" />
-                                </a>
-                            </td>
-
-                            <!-- Vertical Gold Accent Divider Line -->
-                            <td style="border-left: 2px solid #c8a951; width: 2px; padding: 0; font-size: 0; line-height: 0;">&nbsp;</td>
-
-                            <!-- Person & Corporate Details Column -->
-                            <td style="vertical-align: top; padding-left: 20px;">
-                                <!-- Full Name -->
-                                <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 17px; font-weight: 700; color: #082d5a; line-height: 1.2; margin: 0 0 3px 0; letter-spacing: -0.2px;">
-                                    Nakisani Nicole Nguluvhe
-                                </div>
-
-                                <!-- Designation / Role -->
-                                <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 600; color: #c8a951; text-transform: uppercase; letter-spacing: 1.2px; margin: 0 0 10px 0;">
-                                    Office Administrator
-                                </div>
-
-                                <!-- Company Name -->
-                                <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #0c3a6d; margin: 0 0 10px 0;">
-                                    Makhaswa Holdings (Pty) Ltd
-                                </div>
-
-                                <!-- Contact Details Table -->
-                                <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 12px; color: #4b5563; line-height: 1.6;">
-                                    <tr>
-                                        <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 20px;">M:</td>
-                                        <td style="padding: 1px 0; vertical-align: top;">
-                                            <a href="tel:0604205336" style="color: #1f2937; text-decoration: none; font-weight: 500;">060 420 5336</a>
-                                            <span style="color: #cbd5e1; margin: 0 6px;">|</span>
-                                            <a href="tel:+27604205336" style="color: #64748b; text-decoration: none;">+27 60 420 5336</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top;">E:</td>
-                                        <td style="padding: 1px 0; vertical-align: top;">
-                                            <a href="mailto:nnguluvhe@makhaswaholdings.co.za" style="color: #082d5a; text-decoration: none; font-weight: 600;">nnguluvhe@makhaswaholdings.co.za</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top;">W:</td>
-                                        <td style="padding: 1px 0; vertical-align: top;">
-                                            <a href="https://makhaswaholdings.co.za" target="_blank" style="color: #082d5a; text-decoration: none; font-weight: 600;">www.makhaswaholdings.co.za</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top;">A:</td>
-                                        <td style="padding: 1px 0; vertical-align: top; color: #64748b;">
-                                            869 Patryshond Street, Garsfontein, Pretoria, 0042
-                                        </td>
-                                    </tr>
-                                </table>
-
-                                <!-- Key Accreditations & Compliance Strip -->
-                                <div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #e5e7eb; font-size: 11px; line-height: 1.4;">
-                                    <span style="font-weight: 700; color: #082d5a;">CIDB Grade 8 CE PE</span>
-                                    <span style="color: #c8a951; margin: 0 5px;">&bull;</span>
-                                    <span style="font-weight: 600; color: #1e293b;">Level 1 B-BBEE (135% Recognition)</span>
-                                    <span style="color: #c8a951; margin: 0 5px;">&bull;</span>
-                                    <span style="color: #64748b;">ISO 9001 &bull; ISO 14001 &bull; ISO 45001</span>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <!-- Standard Corporate Confidentiality Notice -->
-                        <tr>
-                            <td colspan="3" style="padding-top: 18px;">
-                                <p style="font-family: Arial, Helvetica, sans-serif; font-size: 9px; color: #94a3b8; line-height: 1.45; margin: 0; text-align: justify;">
-                                    <strong>Confidentiality Notice:</strong> The contents of this email message and any attachments are confidential, legally privileged, and intended solely for the addressee. If you have received this transmission in error, please immediately notify the sender by reply email and permanently delete this email and any attachments. Any unauthorized use, dissemination, distribution, or copying of this communication is strictly prohibited. Makhaswa Holdings (Pty) Ltd accepts no liability for any loss or damage arising from viruses or malicious code transmitted with this message.
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
+        <!-- Simulated Email Client Mockup -->
+        <div class="mockup-wrapper" id="mockup-wrapper">
+            <div class="email-mockup">
+                <!-- Titlebar -->
+                <div class="email-titlebar">
+                    <div class="window-dots">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                    </div>
+                    <div class="window-title" id="mockup-title">New Message &bull; Infrastructure Tender Inquiry</div>
+                    <div class="window-badge" id="view-badge">Desktop Preview</div>
                 </div>
-                <!-- =====================================================
-                     END EMAIL SIGNATURE
-                ===================================================== -->
+
+                <!-- Email Meta Headers -->
+                <div class="email-meta">
+                    <div class="meta-row">
+                        <span class="meta-label">From:</span>
+                        <div class="meta-value-wrap">
+                            <span id="meta-from-name">Nakisani Nicole Nguluvhe</span>
+                            <span class="meta-email-pill" id="meta-from-email">&lt;nnguluvhe@makhaswaholdings.co.za&gt;</span>
+                        </div>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">To:</span>
+                        <div class="meta-value-wrap">
+                            <span>Client Procurement Committee</span>
+                            <span class="meta-email-pill">&lt;tenders@procurement-board.gov.za&gt;</span>
+                        </div>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">Subject:</span>
+                        <div class="meta-value-wrap" style="color: var(--primary);">
+                            <span id="meta-subject">Re: Civil Infrastructure Tender &bull; Makhaswa Holdings CIDB Grade 8 Credentials</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Message Body -->
+                <div class="email-body">
+                    <p>Dear Sir / Madam,</p>
+
+                    <p id="mockup-body-text">Thank you for reaching out regarding Makhaswa Holdings. Please find our complete company credentials, CIDB Grade 8 CE PE certification, and recent civil and building project documentation attached for your consideration.</p>
+
+                    <p>Should you require any additional statutory compliance documentation or tender clarification, please feel free to reach out to our office directly.</p>
+
+                    <p>Kind regards,</p>
+
+                    <div class="email-divider"></div>
+
+                    <!-- =====================================================
+                         LIVE EMAIL SIGNATURE RENDER AREA (HTML Table)
+                    ===================================================== -->
+                    <div class="signature-scroll-container">
+                        <div class="signature-render-area" id="signature-container">
+                            <!-- Populated dynamically via JS to match selected employee & view mode -->
+                        </div>
+                    </div>
+
+                    <!-- Mobile Scroll indicator (visible on small mobile screens) -->
+                    <div class="mobile-scroll-hint">
+                        <i data-lucide="move-horizontal" width="14" height="14"></i>
+                        <span>Swipe horizontally to view complete signature details</span>
+                    </div>
+
+                </div>
             </div>
         </div>
 
         <!-- Raw HTML Viewer (Collapsible) -->
         <div class="tabs-card raw-html-section" id="raw-html-box">
-            <h2><i data-lucide="code" width="18" height="18"></i> Raw HTML Code (for Outlook Web / Custom HTML Editors)</h2>
+            <h2><i data-lucide="code" width="18" height="18"></i> Raw HTML Signature Code</h2>
             <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
-                You can copy this raw HTML directly if your mail client has an HTML/source signature editor.
+                Use this raw HTML code if your email system (such as Outlook Web / Office 365 HTML editor) allows inserting direct source code.
             </p>
             <textarea class="raw-html-textarea" id="html-code-area" readonly></textarea>
-            <div style="margin-top: 12px;">
+            <div style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap;">
                 <button class="btn btn-secondary" onclick="copyRawHtmlCode()">
-                    <i data-lucide="clipboard-copy" width="14" height="14"></i> Copy Raw HTML Code
+                    <i data-lucide="clipboard-copy" width="14" height="14"></i> Copy HTML Source
+                </button>
+                <button class="btn btn-secondary" onclick="toggleRawHtml()">
+                    <i data-lucide="x" width="14" height="14"></i> Close
                 </button>
             </div>
         </div>
@@ -535,35 +903,35 @@
         <div class="tabs-card">
             <h2><i data-lucide="help-circle" width="18" height="18"></i> How to Add This Signature to Your Mail Client</h2>
             <p style="font-size: 13.5px; color: #475569;">
-                Click the <strong>"Copy Formatted Signature"</strong> button at the top, then follow the quick instructions below for your email app:
+                Select the employee above, click <strong>"Copy Formatted Signature"</strong>, and follow the quick setup steps for your email platform:
             </p>
 
             <div class="guide-grid">
-                <!-- Outlook Desktop -->
+                <!-- Microsoft Outlook Desktop -->
                 <div class="guide-card">
                     <h3><i data-lucide="mail" width="16" height="16"></i> Microsoft Outlook (Desktop)</h3>
                     <ol>
                         <li>Click <strong>Copy Formatted Signature</strong> above.</li>
-                        <li>Open Outlook and go to <strong>File &rarr; Options &rarr; Mail &rarr; Signatures</strong>.</li>
-                        <li>Click <strong>New</strong>, give it a name (e.g., <em>Makhaswa Official</em>).</li>
+                        <li>In Outlook, go to <strong>File &rarr; Options &rarr; Mail &rarr; Signatures</strong>.</li>
+                        <li>Click <strong>New</strong> and type a name (e.g. <em>Makhaswa Official</em>).</li>
                         <li>Click inside the signature edit box and press <strong>Ctrl + V</strong> (Paste).</li>
-                        <li>Click <strong>Save</strong> and <strong>OK</strong>.</li>
+                        <li>Under <em>Default Signature</em>, select it for New Messages and Replies, then click <strong>Save</strong>.</li>
                     </ol>
                 </div>
 
-                <!-- Outlook Web (Office 365) -->
+                <!-- Outlook Web / Office 365 -->
                 <div class="guide-card">
                     <h3><i data-lucide="globe" width="16" height="16"></i> Outlook Web (Office 365)</h3>
                     <ol>
                         <li>Click <strong>Copy Formatted Signature</strong> above.</li>
-                        <li>Open Outlook Web and click the <strong>Settings (Gear icon)</strong> at top right.</li>
-                        <li>Search for <strong>"Signature"</strong> &rarr; <strong>Email signature</strong>.</li>
-                        <li>Click <strong>New Signature</strong>, paste with <strong>Ctrl + V</strong>.</li>
+                        <li>Log into <strong>outlook.office.com</strong> and click the <strong>Settings (Gear)</strong> icon at top right.</li>
+                        <li>Go to <strong>Mail &rarr; Compose and reply &rarr; Email signature</strong>.</li>
+                        <li>Click <strong>+ New signature</strong>, then press <strong>Ctrl + V</strong>.</li>
                         <li>Set as default for new messages and click <strong>Save</strong>.</li>
                     </ol>
                 </div>
 
-                <!-- Gmail -->
+                <!-- Gmail & Google Workspace -->
                 <div class="guide-card">
                     <h3><i data-lucide="mail-check" width="16" height="16"></i> Gmail / Google Workspace</h3>
                     <ol>
@@ -571,18 +939,16 @@
                         <li>In Gmail, click <strong>Settings (Gear) &rarr; See all settings</strong>.</li>
                         <li>Scroll down to the <strong>Signature</strong> section.</li>
                         <li>Click <strong>Create new</strong> and paste with <strong>Ctrl + V</strong>.</li>
-                        <li>Select it under <em>Signature defaults</em> and click <strong>Save Changes</strong> at the bottom.</li>
+                        <li>Set it under <em>Signature defaults</em> and click <strong>Save Changes</strong> at the bottom.</li>
                     </ol>
                 </div>
 
-                <!-- Apple Mail -->
+                <!-- Apple Mail & Mobile (iOS / Mac) -->
                 <div class="guide-card">
-                    <h3><i data-lucide="laptop" width="16" height="16"></i> Apple Mail (Mac)</h3>
+                    <h3><i data-lucide="smartphone" width="16" height="16"></i> Apple Mail & iPhone</h3>
                     <ol>
-                        <li>Click <strong>Copy Formatted Signature</strong> above.</li>
-                        <li>Open Mail &rarr; <strong>Settings &rarr; Signatures</strong>.</li>
-                        <li>Click <strong>+</strong>, uncheck <em>"Always match my default message font"</em>.</li>
-                        <li>Paste into the signature window with <strong>Cmd + V</strong>.</li>
+                        <li><strong>Mac:</strong> Mail &rarr; <strong>Settings &rarr; Signatures</strong> &rarr; Add new &rarr; uncheck <em>"Always match my default font"</em> &rarr; <strong>Cmd + V</strong>.</li>
+                        <li><strong>iPhone:</strong> Copy signature &rarr; open <strong>Settings &rarr; Mail &rarr; Signature</strong> &rarr; paste &rarr; gently shake phone to choose <em>"Undo Change Attributes"</em> to keep original fonts and colors.</li>
                     </ol>
                 </div>
             </div>
@@ -590,29 +956,309 @@
 
     </div>
 
-    <!-- Toast Notification -->
+    <!-- Sticky Mobile Action Bar -->
+    <div class="mobile-action-bar">
+        <button class="btn btn-primary" onclick="copyActiveSignature()" id="copy-btn-mobile">
+            <i data-lucide="copy" width="16" height="16"></i>
+            <span>Copy Signature for <span id="mobile-btn-name">Nicole</span></span>
+        </button>
+    </div>
+
+    <!-- Toast Feedback Notification -->
     <div class="toast" id="toast-notification">
-        <i data-lucide="check-circle" class="toast-icon" width="18" height="18"></i>
+        <i data-lucide="check-circle-2" class="toast-icon" width="18" height="18"></i>
         <span id="toast-message">Signature copied to clipboard! Ready to paste.</span>
     </div>
 
+    <!-- Script Logic -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (window.lucide) {
-                lucide.createIcons();
+        // Employee database verified per repository source of truth
+        const EMPLOYEES = [
+            {
+                id: 0,
+                shortName: "Nicole",
+                fullName: "Nakisani Nicole Nguluvhe",
+                role: "Office Administrator",
+                company: "Makhaswa Holdings (Pty) Ltd",
+                mobileDisplay: "060 420 5336",
+                mobileTel: "+27604205336",
+                altMobileDisplay: "+27 60 420 5336",
+                altMobileTel: "+27604205336",
+                email: "nnguluvhe@makhaswaholdings.co.za",
+                website: "www.makhaswaholdings.co.za",
+                websiteUrl: "https://makhaswaholdings.co.za",
+                address: "869 Patryshond Street, Garsfontein, Pretoria, 0042",
+                subject: "Re: Civil Infrastructure Tender \u2022 Makhaswa Holdings CIDB Grade 8 Credentials",
+                messageIntro: "Thank you for reaching out regarding Makhaswa Holdings. Please find our complete company credentials, CIDB Grade 8 CE PE certification, and recent civil and building project documentation attached for your consideration."
+            },
+            {
+                id: 1,
+                shortName: "Lucas",
+                fullName: "Lucas Dinga",
+                role: "Chief Executive Officer",
+                company: "Makhaswa Holdings (Pty) Ltd",
+                mobileDisplay: "074 481 0520",
+                mobileTel: "+27744810520",
+                altMobileDisplay: "+27 74 481 0520",
+                altMobileTel: "+27744810520",
+                email: "info@makhaswaholdings.co.za",
+                website: "www.makhaswaholdings.co.za",
+                websiteUrl: "https://makhaswaholdings.co.za",
+                address: "869 Patryshond Street, Garsfontein, Pretoria, 0042",
+                subject: "Executive Notice \u2022 Joint Venture & Infrastructure Project Overview",
+                messageIntro: "Thank you for contacting executive management at Makhaswa Holdings. Our senior engineering and commercial team is prepared to review project specifications, joint ventures, and municipal tender requirements."
+            },
+            {
+                id: 2,
+                shortName: "Nelly",
+                fullName: "Nelly Motswapong",
+                role: "Director / Co-Owner",
+                company: "Makhaswa Holdings (Pty) Ltd",
+                mobileDisplay: "074 481 0520",
+                mobileTel: "+27744810520",
+                altMobileDisplay: "+27 74 481 0520",
+                altMobileTel: "+27744810520",
+                email: "admin@makhaswaholdings.co.za",
+                website: "www.makhaswaholdings.co.za",
+                websiteUrl: "https://makhaswaholdings.co.za",
+                address: "869 Patryshond Street, Garsfontein, Pretoria, 0042",
+                subject: "Corporate Compliance \u2022 Level 1 B-BBEE & Enterprise Transformation Overview",
+                messageIntro: "Thank you for your correspondence. As a 100% Black-owned, Level 1 B-BBEE certified civil enterprise, Makhaswa Holdings remains fully committed to statutory compliance, skills development, and operational excellence."
+            }
+        ];
+
+        let currentEmpIndex = 0;
+        let currentViewMode = 'desktop'; // 'desktop' or 'mobile'
+
+        // Render HTML email signature string based on selected employee and mode
+        function generateSignatureHTML(emp, isMobileLayout) {
+            const logoUrl = "https://makhaswaholdings.co.za/images/transparent-logo.png";
+            
+            if (isMobileLayout) {
+                // Mobile-friendly stacked layout (ideal for smartphone screens & mobile email clients)
+                return `
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 13px; color: #333333; line-height: 1.4; width: 100%; max-width: 380px; background-color: #ffffff;">
+    <tr>
+        <td style="padding-bottom: 12px; text-align: left;">
+            <a href="${emp.websiteUrl}" target="_blank" style="text-decoration: none; display: inline-block;">
+                <img src="${logoUrl}" alt="${emp.company}" width="125" style="display: block; width: 125px; max-width: 125px; height: auto; border: 0;" />
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td style="border-top: 2px solid #c8a951; padding-top: 12px;">
+            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #082d5a; line-height: 1.25; margin: 0 0 3px 0; letter-spacing: -0.2px;">
+                ${emp.fullName}
+            </div>
+            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11.5px; font-weight: 600; color: #c8a951; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 6px 0;">
+                ${emp.role}
+            </div>
+            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11.5px; font-weight: 700; color: #0c3a6d; margin: 0 0 10px 0;">
+                ${emp.company}
+            </div>
+
+            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 12px; color: #4b5563; line-height: 1.55; width: 100%;">
+                <tr>
+                    <td style="padding: 2px 6px 2px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 22px;">M:</td>
+                    <td style="padding: 2px 0; vertical-align: top;">
+                        <a href="tel:${emp.mobileTel}" style="color: #1f2937; text-decoration: none; font-weight: 600;">${emp.mobileDisplay}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px 6px 2px 0; font-weight: 700; color: #082d5a; vertical-align: top;">E:</td>
+                    <td style="padding: 2px 0; vertical-align: top;">
+                        <a href="mailto:${emp.email}" style="color: #082d5a; text-decoration: none; font-weight: 600; word-break: break-all;">${emp.email}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px 6px 2px 0; font-weight: 700; color: #082d5a; vertical-align: top;">W:</td>
+                    <td style="padding: 2px 0; vertical-align: top;">
+                        <a href="${emp.websiteUrl}" target="_blank" style="color: #082d5a; text-decoration: none; font-weight: 600;">${emp.website}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px 6px 2px 0; font-weight: 700; color: #082d5a; vertical-align: top;">A:</td>
+                    <td style="padding: 2px 0; vertical-align: top; color: #64748b; font-size: 11.5px;">
+                        ${emp.address}
+                    </td>
+                </tr>
+            </table>
+
+            <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #e5e7eb; font-size: 10.5px; line-height: 1.4;">
+                <span style="font-weight: 700; color: #082d5a;">CIDB Grade 8 CE PE</span>
+                <span style="color: #c8a951; margin: 0 4px;">&bull;</span>
+                <span style="font-weight: 600; color: #1e293b;">Level 1 B-BBEE</span>
+                <span style="color: #c8a951; margin: 0 4px;">&bull;</span>
+                <span style="color: #64748b;">ISO 9001 / 14001 / 45001</span>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-top: 14px;">
+            <p style="font-family: Arial, Helvetica, sans-serif; font-size: 8.5px; color: #94a3b8; line-height: 1.4; margin: 0; text-align: left;">
+                <strong>Confidentiality Notice:</strong> The contents of this email message and any attachments are confidential, legally privileged, and intended solely for the addressee. Any unauthorized review, use, or distribution is prohibited.
+            </p>
+        </td>
+    </tr>
+</table>
+                `.trim();
             }
 
-            // Populate raw HTML code
-            const signatureContainer = document.getElementById('signature-container');
+            // Standard Desktop Horizontal Layout (Classic 2-Column Table for Outlook Desktop & Web)
+            return `
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 13px; color: #333333; line-height: 1.4; max-width: 620px; width: 100%; background-color: #ffffff;">
+    <tr>
+        <!-- Brand Logo Column -->
+        <td style="vertical-align: middle; padding-right: 20px; text-align: center; width: 140px;" valign="middle">
+            <a href="${emp.websiteUrl}" target="_blank" style="text-decoration: none; display: block;">
+                <img src="${logoUrl}" alt="${emp.company}" width="135" style="display: block; width: 135px; max-width: 135px; height: auto; border: 0;" />
+            </a>
+        </td>
+
+        <!-- Vertical Gold Accent Divider Line -->
+        <td style="border-left: 2px solid #c8a951; width: 2px; padding: 0; font-size: 0; line-height: 0;">&nbsp;</td>
+
+        <!-- Person & Corporate Details Column -->
+        <td style="vertical-align: top; padding-left: 20px;" valign="top">
+            <!-- Full Name -->
+            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 17px; font-weight: 700; color: #082d5a; line-height: 1.2; margin: 0 0 3px 0; letter-spacing: -0.2px;">
+                ${emp.fullName}
+            </div>
+
+            <!-- Designation / Role -->
+            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 600; color: #c8a951; text-transform: uppercase; letter-spacing: 1.2px; margin: 0 0 10px 0;">
+                ${emp.role}
+            </div>
+
+            <!-- Company Name -->
+            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #0c3a6d; margin: 0 0 10px 0;">
+                ${emp.company}
+            </div>
+
+            <!-- Contact Details Table -->
+            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 12px; color: #4b5563; line-height: 1.6;">
+                <tr>
+                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top; width: 20px;">M:</td>
+                    <td style="padding: 1px 0; vertical-align: top;">
+                        <a href="tel:${emp.mobileTel}" style="color: #1f2937; text-decoration: none; font-weight: 500;">${emp.mobileDisplay}</a>
+                        <span style="color: #cbd5e1; margin: 0 6px;">|</span>
+                        <a href="tel:${emp.altMobileTel}" style="color: #64748b; text-decoration: none;">${emp.altMobileDisplay}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top;">E:</td>
+                    <td style="padding: 1px 0; vertical-align: top;">
+                        <a href="mailto:${emp.email}" style="color: #082d5a; text-decoration: none; font-weight: 600;">${emp.email}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top;">W:</td>
+                    <td style="padding: 1px 0; vertical-align: top;">
+                        <a href="${emp.websiteUrl}" target="_blank" style="color: #082d5a; text-decoration: none; font-weight: 600;">${emp.website}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 1px 6px 1px 0; font-weight: 700; color: #082d5a; vertical-align: top;">A:</td>
+                    <td style="padding: 1px 0; vertical-align: top; color: #64748b;">
+                        ${emp.address}
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Key Accreditations & Compliance Strip -->
+            <div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #e5e7eb; font-size: 11px; line-height: 1.4;">
+                <span style="font-weight: 700; color: #082d5a;">CIDB Grade 8 CE PE</span>
+                <span style="color: #c8a951; margin: 0 5px;">&bull;</span>
+                <span style="font-weight: 600; color: #1e293b;">Level 1 B-BBEE (135% Recognition)</span>
+                <span style="color: #c8a951; margin: 0 5px;">&bull;</span>
+                <span style="color: #64748b;">ISO 9001 &bull; ISO 14001 &bull; ISO 45001</span>
+            </div>
+        </td>
+    </tr>
+
+    <!-- Standard Corporate Confidentiality Notice -->
+    <tr>
+        <td colspan="3" style="padding-top: 18px;">
+            <p style="font-family: Arial, Helvetica, sans-serif; font-size: 9px; color: #94a3b8; line-height: 1.45; margin: 0; text-align: justify;">
+                <strong>Confidentiality Notice:</strong> The contents of this email message and any attachments are confidential, legally privileged, and intended solely for the addressee. If you have received this transmission in error, please immediately notify the sender by reply email and permanently delete this email and any attachments. Any unauthorized use, dissemination, distribution, or copying of this communication is strictly prohibited. Makhaswa Holdings (Pty) Ltd accepts no liability for any loss or damage arising from viruses or malicious code transmitted with this message.
+            </p>
+        </td>
+    </tr>
+</table>
+            `.trim();
+        }
+
+        // Update UI when switching employee or view mode
+        function updateDisplay() {
+            const emp = EMPLOYEES[currentEmpIndex];
+            const isMobile = currentViewMode === 'mobile';
+
+            // 1. Update pills
+            EMPLOYEES.forEach((e, idx) => {
+                const tab = document.getElementById(`emp-tab-${idx}`);
+                if (tab) {
+                    if (idx === currentEmpIndex) {
+                        tab.classList.add('active');
+                    } else {
+                        tab.classList.remove('active');
+                    }
+                }
+            });
+
+            // 2. Update mockup header and meta
+            document.getElementById('meta-from-name').textContent = emp.fullName;
+            document.getElementById('meta-from-email').textContent = `<${emp.email}>`;
+            document.getElementById('meta-subject').textContent = emp.subject;
+            document.getElementById('mockup-body-text').textContent = emp.messageIntro;
+            document.getElementById('mockup-title').textContent = `New Message \u2022 ${emp.fullName} Signature`;
+            document.getElementById('mobile-btn-name').textContent = emp.shortName;
+
+            // 3. Update view buttons & mockup container mode
+            const wrapper = document.getElementById('mockup-wrapper');
+            const btnDesktop = document.getElementById('btn-view-desktop');
+            const btnMobile = document.getElementById('btn-view-mobile');
+            const viewBadge = document.getElementById('view-badge');
+
+            if (isMobile) {
+                wrapper.classList.add('mode-mobile');
+                btnMobile.classList.add('active');
+                btnDesktop.classList.remove('active');
+                viewBadge.textContent = 'Mobile Preview';
+            } else {
+                wrapper.classList.remove('mode-mobile');
+                btnDesktop.classList.add('active');
+                btnMobile.classList.remove('active');
+                viewBadge.textContent = 'Desktop Preview';
+            }
+
+            // 4. Render HTML Signature inside container
+            const sigHTML = generateSignatureHTML(emp, isMobile);
+            const sigContainer = document.getElementById('signature-container');
+            sigContainer.innerHTML = sigHTML;
+
+            // 5. Update raw HTML textarea
             const htmlTextarea = document.getElementById('html-code-area');
-            if (signatureContainer && htmlTextarea) {
-                htmlTextarea.value = signatureContainer.innerHTML.trim();
+            if (htmlTextarea) {
+                htmlTextarea.value = sigHTML;
             }
-        });
+        }
 
-        // Copy Visual Rich HTML to Clipboard (for pasting into Outlook/Gmail)
-        async function copySignatureVisual(containerId) {
-            const el = document.getElementById(containerId);
+        // Handler for switching employee
+        function selectEmployee(index) {
+            currentEmpIndex = index;
+            updateDisplay();
+        }
+
+        // Handler for toggling View Mode
+        function setViewMode(mode) {
+            currentViewMode = mode;
+            updateDisplay();
+        }
+
+        // Copy Visual Rich HTML to Clipboard (for pasting into Outlook / Gmail / Apple Mail)
+        async function copyActiveSignature() {
+            const el = document.getElementById('signature-container');
+            const emp = EMPLOYEES[currentEmpIndex];
             if (!el) return;
 
             try {
@@ -623,9 +1269,9 @@
                     'text/plain': textBlob
                 });
                 await navigator.clipboard.write([item]);
-                showToast('Formatted signature copied! Paste directly into Outlook or Gmail.');
+                showToast(`Signature for ${emp.fullName} copied! Ready to paste into your mail app.`);
             } catch (err) {
-                // Fallback for older browsers or restricted contexts
+                // Fallback for older browsers or restricted mobile contexts
                 const range = document.createRange();
                 range.selectNodeContents(el);
                 const selection = window.getSelection();
@@ -633,7 +1279,7 @@
                 selection.addRange(range);
                 document.execCommand('copy');
                 selection.removeAllRanges();
-                showToast('Signature copied to clipboard!');
+                showToast(`Signature for ${emp.fullName} copied to clipboard!`);
             }
         }
 
@@ -670,6 +1316,14 @@
                 toast.classList.remove('show');
             }, 3500);
         }
+
+        // Initialize on DOM Ready
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+            updateDisplay();
+        });
     </script>
 </body>
 
