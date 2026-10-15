@@ -1560,7 +1560,7 @@ nav a.nav-contact-btn:hover {
 /* Locations Section */
 .locations-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 48px;
     margin-top: 40px;
 }

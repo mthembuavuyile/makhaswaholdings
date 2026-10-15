@@ -71,11 +71,7 @@ const SITE_CONFIG = {
         },
         johannesburg: {
             label: 'Johannesburg',
-            address: 'Riversands Incubation Hub, Midrand, Johannesburg, 2189',
             phone: '011 568 0938',
-            mapQuery: 'Riversands%20Incubation%20Hub',
-            mapTitle: 'Midrand Office',
-            mapLabel: 'Midrand \u2013 Riversands Incubation Hub',
         },
         limpopo: {
             label: 'Limpopo (Mokopane)',
@@ -284,13 +280,6 @@ function buildFooter() {
                     <li style="align-items: flex-start;">
                         <i data-lucide="map-pin" width="14" height="14" class="footer-icon" style="margin-top: 4px;"></i>
                         <div>
-                            ${jhb.label}:<br>
-                            <a href="https://maps.google.com/?q=${jhb.mapQuery}" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; display: inline-block; margin-top: 4px;">${jhb.address}</a>
-                        </div>
-                    </li>
-                    <li style="align-items: flex-start;">
-                        <i data-lucide="map-pin" width="14" height="14" class="footer-icon" style="margin-top: 4px;"></i>
-                        <div>
                             ${lmp.label}:<br>
                             <a href="https://maps.google.com/?q=${lmp.mapQuery}" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; display: inline-block; margin-top: 4px;">${lmp.address}</a>
                         </div>
@@ -336,10 +325,10 @@ function buildFooter() {
                         </iframe>
                     </div>
                     <div class="map-item map-item--spaced">
-                        <span class="map-title">${jhb.mapLabel}</span>
+                        <span class="map-title">${lmp.mapLabel}</span>
                         <iframe class="footer-map"
-                            src="https://maps.google.com/maps?q=${jhb.mapQuery}&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                            loading="lazy" title="${jhb.mapTitle}" allowfullscreen="">
+                            src="https://maps.google.com/maps?q=${lmp.mapQuery}&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            loading="lazy" title="${lmp.mapTitle}" allowfullscreen="">
                         </iframe>
                     </div>
                     <div class="map-item">

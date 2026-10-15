@@ -127,11 +127,11 @@ Makhaswa Holdings maintains a nationwide presence with physical corporate and re
 * **Operational Scope:** Corporate Administration, Executive Leadership, Estimating, Finance, Commercial Tendering, and Technical Design.
 
 ### 3.2 Midrand Office — Johannesburg (Gauteng)
-* **Physical Address:** No. 19 Riversands Incubation Hub, 8–12 Incubation Drive, Riverside View Ext 15, Midrand, Gauteng, 2189, South Africa  
+* **Physical Address:** *[Temporarily unlisted / removed from active publication per corporate directive]*  
 * **Local Municipality:** City of Johannesburg Metropolitan Municipality  
 * **Telephone:** 011 568 0938  
-* **Google Maps Location:** [Riversands Incubation Hub, Midrand](https://maps.google.com/?q=Riversands%20Incubation%20Hub)  
-* **Operational Scope:** Plant Dispatch, Central Logistics, Materials Management, Project Management, and Johannesburg Municipal Contracts.
+* **Operational Scope:** Plant Dispatch, Central Logistics, Materials Management, Project Management, and Johannesburg Municipal Contracts.  
+* **Archived Address / Note:** Johannesburg:[Riversands Incubation Hub, Midrand, Johannesburg, 2189](https://maps.google.com/?q=Riversands%20Incubation%20Hub) — Address removed everywhere from active public profiles/website per corporate instruction for now; retained in archive notes.
 
 ### 3.3 Limpopo Regional Office (Mokopane)
 * **Physical Address:** 197 Dudu Madisha Drive, Chroompark, Mokopane, Limpopo, 0656, South Africa  
@@ -692,7 +692,7 @@ Below is the verified, deduplicated technical record of major projects executed 
 
 ### Q1: What geographic areas does Makhaswa Holdings operate in?
 Makhaswa Holdings operates nationwide across South Africa. Primary operations and regional operational offices are anchored in:
-* **Gauteng:** Pretoria (Garsfontein) and Johannesburg (Midrand / Riversands).
+* **Gauteng:** Pretoria (Garsfontein) and Johannesburg (Midrand).
 * **Limpopo:** Mokopane (Chroompark) and the broader Waterberg District.
 * **KwaZulu-Natal:** Durban Central and eThekwini Metropolitan Area.
 * Active project capacity also extends to North West and Mpumalanga.
