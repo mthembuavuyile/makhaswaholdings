@@ -106,8 +106,8 @@ const SITE_CONFIG = {
    HELPER: Determine the active page and path prefix
    ===================================================== */
 function getPathPrefix() {
-    const path = window.location.pathname;
-    if (path.toLowerCase().includes('/projects/')) {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('/projects/') || path.includes('/services/')) {
         return '../';
     }
     return '';
@@ -127,9 +127,11 @@ function buildHeader() {
     const activePage = getActivePage();
     const cfg = SITE_CONFIG;
     const prefix = getPathPrefix();
+    const isServicesFolder = window.location.pathname.toLowerCase().includes('/services/');
 
     const navLinksDesktop = cfg.nav.map(link => {
-        const isActive = activePage === link.href || (activePage === '' && link.href === 'index.html');
+        const isServicesActive = link.href === 'services.html' && isServicesFolder;
+        const isActive = activePage === link.href || (activePage === '' && link.href === 'index.html') || isServicesActive;
         let classes = isActive ? 'active' : '';
         if (link.label === 'Contact' || link.label === 'Contact Us') {
             classes += (classes ? ' ' : '') + 'nav-contact-btn';

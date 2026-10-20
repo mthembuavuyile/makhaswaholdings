@@ -16,8 +16,44 @@
   </url>
   <url>
        <loc>https://makhaswaholdings.co.za/services.html</loc>
-       <lastmod>2026-08-04T20:14:25+00:00</lastmod>
-       <changefreq>daily</changefreq>
+       <lastmod>2026-10-20T19:00:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8500</priority>
+  </url>
+  <url>
+       <loc>https://makhaswaholdings.co.za/services/road-construction.html</loc>
+       <lastmod>2026-10-20T19:00:00+00:00</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://makhaswaholdings.co.za/services/civil-works.html</loc>
+       <lastmod>2026-10-20T19:00:00+00:00</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://makhaswaholdings.co.za/services/earthworks.html</loc>
+       <lastmod>2026-10-20T19:00:00+00:00</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://makhaswaholdings.co.za/services/general-building.html</loc>
+       <lastmod>2026-10-20T19:00:00+00:00</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://makhaswaholdings.co.za/services/mechanical-engineering.html</loc>
+       <lastmod>2026-10-20T19:00:00+00:00</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://makhaswaholdings.co.za/services/electrical-engineering.html</loc>
+       <lastmod>2026-10-20T19:00:00+00:00</lastmod>
+       <changefreq>monthly</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>

@@ -2534,3 +2534,206 @@ nav a.nav-contact-btn:hover {
         min-width: unset;
     }
 }
+
+/* =====================================================
+   DEDICATED SERVICE PAGES — MINIMAL SIMPLICITY
+   Aligned with Makhaswa corporate design system
+   ===================================================== */
+.service-breadcrumbs-bar {
+    background: var(--off-white);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 40px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.service-breadcrumbs-bar a {
+    color: var(--primary);
+    transition: color var(--transition);
+}
+
+.service-breadcrumbs-bar a:hover {
+    color: var(--gold);
+}
+
+.service-breadcrumbs-bar span {
+    color: var(--text);
+}
+
+/* Minimal Scope Columns (No boxes/cards) */
+.service-scope-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    margin: 32px 0 10px;
+}
+
+.service-scope-col h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary);
+}
+
+.service-scope-col p {
+    font-size: 13.5px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.service-scope-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-scope-col ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text);
+    padding: 6px 0;
+    line-height: 1.5;
+}
+
+.service-scope-col ul li i {
+    color: var(--primary);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* Minimal Project Photo Grid */
+.service-simple-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.service-gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    box-shadow: var(--shadow-sm);
+}
+
+.service-gallery-item h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+.service-gallery-item p {
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* Minimal Tender & Action Area */
+.service-tender-action {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.service-tender-action p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.service-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.service-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary);
+    color: var(--white);
+    padding: 12px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background var(--transition);
+}
+
+.service-cta-btn:hover {
+    background: var(--primary-mid);
+    color: var(--white);
+}
+
+.service-cta-btn--outline {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.service-cta-btn--outline:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* Minimal Cross-Discipline Nav Strip */
+.service-footer-nav {
+    background: var(--off-white);
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    font-size: 11.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.service-footer-nav a {
+    color: var(--primary);
+    font-weight: 600;
+    margin: 0 8px;
+    transition: color var(--transition);
+}
+
+.service-footer-nav a:hover {
+    color: var(--gold);
+}
+
+@media (max-width: 768px) {
+    .service-breadcrumbs-bar {
+        padding: 12px 20px;
+    }
+    .service-scope-columns {
+        gap: 28px;
+    }
+    .service-cta-buttons {
+        flex-direction: column;
+    }
+    .service-cta-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
