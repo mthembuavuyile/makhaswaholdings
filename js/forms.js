@@ -6,13 +6,14 @@
 */
 
 // Split Web3Forms API Keys and Endpoint to prevent false positive antivirus detections (e.g. Trojan:HTML/FakeLogin)
-// Contact & General Enquiries Key
-const KEY_PART1 = '6c3cc842';
-const KEY_PART2 = '8262-4cd0-9510';
-const KEY_PART3 = '466f761b9a94';
-const WEB3FORMS_ACCESS_KEY = [KEY_PART1, KEY_PART2, KEY_PART3].join('-');
+// 1. General & Contact Enquiries Key (routes to info@makhaswaholdings.co.za)
+const CONTACT_KEY_PART1 = '6c3cc842';
+const CONTACT_KEY_PART2 = '8262-4cd0-9510';
+const CONTACT_KEY_PART3 = '466f761b9a94';
+const CONTACT_ACCESS_KEY = [CONTACT_KEY_PART1, CONTACT_KEY_PART2, CONTACT_KEY_PART3].join('-');
+const WEB3FORMS_ACCESS_KEY = CONTACT_ACCESS_KEY; // alias
 
-// Careers Application Form Key (routes to careers@makhaswaholdings.co.za)
+// 2. Careers Application Form Key (routes to careers@makhaswaholdings.co.za)
 const CAREERS_KEY_PART1 = '8a7f8f4c';
 const CAREERS_KEY_PART2 = '1097-4507-a7e2';
 const CAREERS_KEY_PART3 = 'd6eace641684';
@@ -84,7 +85,7 @@ function initContactForm() {
 
         // Build JSON payload
         const data = {
-            access_key: WEB3FORMS_ACCESS_KEY,
+            access_key: CONTACT_ACCESS_KEY,
             subject: `[Makhaswa Holdings] New Enquiry – ${subjectVal || 'General'}`,
             from_name: 'Makhaswa Holdings Website',
             name: nameVal,
@@ -395,7 +396,7 @@ function initHomeContactForm() {
         const botcheckVal = elements.botcheck ? elements.botcheck.checked : false;
 
         const data = {
-            access_key: WEB3FORMS_ACCESS_KEY,
+            access_key: CONTACT_ACCESS_KEY,
             subject: subjectVal
                 ? `[Makhaswa Holdings] Website Enquiry – ${subjectVal}`
                 : '[Makhaswa Holdings] New Website Enquiry',
