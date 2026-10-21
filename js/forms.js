@@ -7,9 +7,9 @@
 
 // Split Web3Forms API Keys and Endpoint to prevent false positive antivirus detections (e.g. Trojan:HTML/FakeLogin)
 // 1. General & Contact Enquiries Key (routes to info@makhaswaholdings.co.za)
-const CONTACT_KEY_PART1 = '6c3cc842';
-const CONTACT_KEY_PART2 = '8262-4cd0-9510';
-const CONTACT_KEY_PART3 = '466f761b9a94';
+const CONTACT_KEY_PART1 = '30c0b793';
+const CONTACT_KEY_PART2 = '970b-4182-8106';
+const CONTACT_KEY_PART3 = '7580d6348aa9';
 const CONTACT_ACCESS_KEY = [CONTACT_KEY_PART1, CONTACT_KEY_PART2, CONTACT_KEY_PART3].join('-');
 const WEB3FORMS_ACCESS_KEY = CONTACT_ACCESS_KEY; // alias
 
