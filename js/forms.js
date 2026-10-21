@@ -106,6 +106,7 @@ function initContactForm() {
             });
 
             const result = await response.json();
+            console.log('[Contact Form] Response:', { status: response.status, ok: response.ok, result });
 
             if (response.ok && result.success) {
                 setStatus(statusEl, 'success',
@@ -343,6 +344,7 @@ function initCareersForm() {
             });
 
             const result = await response.json();
+            console.log('[Careers Form] Response:', { status: response.status, ok: response.ok, result });
 
             if (response.ok && result.success) {
                 setStatus(statusEl, 'success',
@@ -418,6 +420,7 @@ function initHomeContactForm() {
             });
 
             const result = await response.json();
+            console.log('[Home Contact Form] Response:', { status: response.status, ok: response.ok, result });
 
             if (response.ok && result.success) {
                 setStatus(statusEl, 'success',
