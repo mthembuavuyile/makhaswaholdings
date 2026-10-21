@@ -757,6 +757,9 @@ nav a.nav-contact-btn:hover {
 }
 
 .service-detail-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -786,6 +789,9 @@ nav a.nav-contact-btn:hover {
 
 .service-detail-body {
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .service-badge {
@@ -823,6 +829,7 @@ nav a.nav-contact-btn:hover {
 
 .service-detail-body ul {
     list-style: none;
+    margin-bottom: 18px;
 }
 
 .service-detail-body ul li {
@@ -837,6 +844,57 @@ nav a.nav-contact-btn:hover {
 .service-detail-body ul li i {
     flex-shrink: 0;
     color: var(--primary);
+}
+
+.service-card-actions {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.service-card-actions .btn-service-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    padding: 8px 0;
+    transition: color var(--transition);
+}
+
+.service-card-actions .btn-service-primary:hover {
+    color: var(--gold);
+}
+
+.service-card-actions .btn-service-primary i,
+.service-card-actions .btn-service-primary svg {
+    transition: transform var(--transition);
+}
+
+.service-card-actions .btn-service-primary:hover i,
+.service-card-actions .btn-service-primary:hover svg {
+    transform: translateX(3px);
+}
+
+.service-card-actions .btn-service-outline {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: color var(--transition);
+}
+
+.service-card-actions .btn-service-outline:hover {
+    color: var(--gold);
 }
 
 /* =====================================================
