@@ -5,11 +5,18 @@
      - Careers form  (#careers-form)
 */
 
-// Split Web3Forms API Key and Endpoint to prevent false positive antivirus detections (e.g. Trojan:HTML/FakeLogin)
+// Split Web3Forms API Keys and Endpoint to prevent false positive antivirus detections (e.g. Trojan:HTML/FakeLogin)
+// Contact & General Enquiries Key
 const KEY_PART1 = '6c3cc842';
 const KEY_PART2 = '8262-4cd0-9510';
 const KEY_PART3 = '466f761b9a94';
 const WEB3FORMS_ACCESS_KEY = [KEY_PART1, KEY_PART2, KEY_PART3].join('-');
+
+// Careers Application Form Key (routes to careers@makhaswaholdings.co.za)
+const CAREERS_KEY_PART1 = '8a7f8f4c';
+const CAREERS_KEY_PART2 = '1097-4507-a7e2';
+const CAREERS_KEY_PART3 = 'd6eace641684';
+const CAREERS_ACCESS_KEY = [CAREERS_KEY_PART1, CAREERS_KEY_PART2, CAREERS_KEY_PART3].join('-');
 
 const API_SCHEME = 'https://';
 const API_HOST = 'api.web3forms.com';
@@ -307,7 +314,7 @@ function initCareersForm() {
 
         // Build JSON payload
         const data = {
-            access_key: WEB3FORMS_ACCESS_KEY,
+            access_key: CAREERS_ACCESS_KEY,
             subject: `[Makhaswa Holdings] Job Application: ${posVal} (${nameVal})`,
             from_name: 'Makhaswa Careers Portal',
             name: nameVal,
