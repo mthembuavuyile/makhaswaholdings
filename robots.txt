@@ -4,6 +4,7 @@
 # Allow all search engine and AI crawlers, but keep internal signature portal private
 User-agent: *
 Disallow: /signature.html
+Disallow: /signatures/
 Allow: /
 
 # Reference the XML Sitemap

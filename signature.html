@@ -159,6 +159,31 @@
             align-items: center;
         }
 
+        /* Group Headings inside Profile Grid */
+        .profile-group-wrap {
+            grid-column: 1 / -1;
+            margin-top: 10px;
+            margin-bottom: -4px;
+        }
+
+        .profile-group-wrap:first-child {
+            margin-top: 0;
+        }
+
+        .profile-group-label {
+            font-family: var(--font);
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid var(--gold);
+        }
+
         /* Profile Selection: Desktop Grid (Active on > 768px) */
         .emp-grid {
             display: grid;
@@ -865,7 +890,7 @@
                     <i data-lucide="mail-check" width="18" height="18" style="color: var(--gold);"></i>
                     <span>Signature Preview:</span>
                 </span>
-                <span class="preview-heading-name" id="preview-heading-name">Felicety Maruping</span>
+                <span class="preview-heading-name" id="preview-heading-name">Tenders &amp; Procurement</span>
             </div>
 
             <div class="preview-toolbar-controls">
@@ -1014,9 +1039,10 @@
         const EMPLOYEES = [
             {
                 id: 0,
-                shortName: "Felicety",
-                fullName: "Felicety Maruping",
-                role: "Senior Quantity Surveyor",
+                shortName: "Tenders",
+                fullName: "Tenders & Procurement",
+                role: "",
+                group: "department",
                 company: "Makhaswa Holdings (Pty) Ltd",
                 phonePrimary: "012 944 1702",
                 phonePrimaryTel: "+27129441702",
@@ -1024,16 +1050,17 @@
                 phoneSecondary: "011 568 0938",
                 phoneSecondaryTel: "+27115680938",
                 phoneSecondaryLabel: "T",
-                email: "fmaruping@makhaswaholdings.co.za",
+                email: "tenders@makhaswaholdings.co.za",
                 website: "www.makhaswaholdings.co.za",
                 websiteUrl: "https://makhaswaholdings.co.za",
                 address: "869 Patryshond Street, Garsfontein, Pretoria, 0042"
             },
             {
                 id: 1,
-                shortName: "Losani",
-                fullName: "Losani Manyisi",
-                role: "Office Administrator",
+                shortName: "Careers",
+                fullName: "Careers & Recruitment",
+                role: "",
+                group: "department",
                 company: "Makhaswa Holdings (Pty) Ltd",
                 phonePrimary: "012 944 1702",
                 phonePrimaryTel: "+27129441702",
@@ -1041,24 +1068,25 @@
                 phoneSecondary: "011 568 0938",
                 phoneSecondaryTel: "+27115680938",
                 phoneSecondaryLabel: "T",
-                email: "lmanyisi@makhaswaholdings.co.za",
+                email: "careers@makhaswaholdings.co.za",
                 website: "www.makhaswaholdings.co.za",
                 websiteUrl: "https://makhaswaholdings.co.za",
                 address: "869 Patryshond Street, Garsfontein, Pretoria, 0042"
             },
             {
                 id: 2,
-                shortName: "Nakisani",
-                fullName: "Nakisani Nicole Nguluvhe",
-                role: "Junior Quantity Surveyor",
-                company: "Makhaswa Holdings (Pty) Ltd",
-                phonePrimary: "060 420 5336",
-                phonePrimaryTel: "+27604205336",
-                phonePrimaryLabel: "M",
-                phoneSecondary: "064 421 7485",
-                phoneSecondaryTel: "+27644217485",
-                phoneSecondaryLabel: "M",
-                email: "nnguluvhe@makhaswaholdings.co.za",
+                shortName: "General Enquiries",
+                fullName: "General Enquiries",
+                role: "",
+                group: "department",
+                company: "Makhaswa Holdings | Head Office",
+                phonePrimary: "012 944 1702",
+                phonePrimaryTel: "+27129441702",
+                phonePrimaryLabel: "T",
+                phoneSecondary: "011 568 0938",
+                phoneSecondaryTel: "+27115680938",
+                phoneSecondaryLabel: "T",
+                email: "info@makhaswaholdings.co.za",
                 website: "www.makhaswaholdings.co.za",
                 websiteUrl: "https://makhaswaholdings.co.za",
                 address: "869 Patryshond Street, Garsfontein, Pretoria, 0042"
@@ -1068,6 +1096,7 @@
                 shortName: "Lucas",
                 fullName: "Lucas Dinga",
                 role: "Chief Executive Officer",
+                group: "personnel",
                 company: "Makhaswa Holdings (Pty) Ltd",
                 phonePrimary: "081 359 8003",
                 phonePrimaryTel: "+27813598003",
@@ -1082,9 +1111,10 @@
             },
             {
                 id: 4,
-                shortName: "Head Office",
-                fullName: "Makhaswa Holdings",
-                role: "General Enquiries & Tenders",
+                shortName: "Felicety",
+                fullName: "Felicety Maruping",
+                role: "Senior Quantity Surveyor",
+                group: "personnel",
                 company: "Makhaswa Holdings (Pty) Ltd",
                 phonePrimary: "012 944 1702",
                 phonePrimaryTel: "+27129441702",
@@ -1092,7 +1122,43 @@
                 phoneSecondary: "011 568 0938",
                 phoneSecondaryTel: "+27115680938",
                 phoneSecondaryLabel: "T",
-                email: "info@makhaswaholdings.co.za",
+                email: "fmaruping@makhaswaholdings.co.za",
+                website: "www.makhaswaholdings.co.za",
+                websiteUrl: "https://makhaswaholdings.co.za",
+                address: "869 Patryshond Street, Garsfontein, Pretoria, 0042"
+            },
+            {
+                id: 5,
+                shortName: "Losani",
+                fullName: "Losani Manyisi",
+                role: "Office Administrator",
+                group: "personnel",
+                company: "Makhaswa Holdings (Pty) Ltd",
+                phonePrimary: "012 944 1702",
+                phonePrimaryTel: "+27129441702",
+                phonePrimaryLabel: "T",
+                phoneSecondary: "011 568 0938",
+                phoneSecondaryTel: "+27115680938",
+                phoneSecondaryLabel: "T",
+                email: "lmanyisi@makhaswaholdings.co.za",
+                website: "www.makhaswaholdings.co.za",
+                websiteUrl: "https://makhaswaholdings.co.za",
+                address: "869 Patryshond Street, Garsfontein, Pretoria, 0042"
+            },
+            {
+                id: 6,
+                shortName: "Nakisani",
+                fullName: "Nakisani Nicole Nguluvhe",
+                role: "Junior Quantity Surveyor",
+                group: "personnel",
+                company: "Makhaswa Holdings (Pty) Ltd",
+                phonePrimary: "060 420 5336",
+                phonePrimaryTel: "+27604205336",
+                phonePrimaryLabel: "M",
+                phoneSecondary: "064 421 7485",
+                phoneSecondaryTel: "+27644217485",
+                phoneSecondaryLabel: "M",
+                email: "nnguluvhe@makhaswaholdings.co.za",
                 website: "www.makhaswaholdings.co.za",
                 websiteUrl: "https://makhaswaholdings.co.za",
                 address: "869 Patryshond Street, Garsfontein, Pretoria, 0042"
@@ -1159,9 +1225,7 @@
             <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 15px; font-weight: 700; color: #082d5a; line-height: 1.25; margin: 0 0 2px 0;">
                 ${emp.fullName}
             </div>
-            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; color: #c8a951; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 5px 0;">
-                ${emp.role}
-            </div>
+            ${emp.role ? `<div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; color: #c8a951; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 5px 0;">${emp.role}</div>` : ''}
             <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 700; color: #0c3a6d; margin: 0 0 8px 0;">
                 ${emp.company}
             </div>
@@ -1233,9 +1297,7 @@
                 ${emp.fullName}
             </div>
 
-            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; color: #c8a951; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 6px 0;">
-                ${emp.role}
-            </div>
+            ${emp.role ? `<div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; color: #c8a951; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 6px 0;">${emp.role}</div>` : ''}
 
             <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 700; color: #0c3a6d; margin: 0 0 8px 0;">
                 ${emp.company}
@@ -1295,22 +1357,71 @@
         function buildEmployeeGrid() {
             const grid = document.getElementById('emp-selector-grid');
             if (grid) {
-                grid.innerHTML = EMPLOYEES.map((emp, index) => {
-                    const isActive = index === currentEmpIndex ? ' active' : '';
-                    return `
-                    <div class="emp-card${isActive}" onclick="selectEmployee(${index})" id="emp-card-${index}">
+                const departments = EMPLOYEES.filter(e => e.group === 'department');
+                const personnel = EMPLOYEES.filter(e => e.group === 'personnel');
+
+                let html = `
+                <div class="profile-group-wrap">
+                    <span class="profile-group-label">
+                        <i data-lucide="mail" width="14" height="14" style="color: var(--gold);"></i>
+                        Corporate Email Contacts
+                    </span>
+                </div>`;
+
+                departments.forEach(emp => {
+                    const idx = EMPLOYEES.indexOf(emp);
+                    const isActive = idx === currentEmpIndex ? ' active' : '';
+                    html += `
+                    <div class="emp-card${isActive}" onclick="selectEmployee(${idx})" id="emp-card-${idx}">
                         <div class="emp-card-name">${emp.fullName}</div>
-                        <div class="emp-card-role">${emp.role}</div>
+                        ${emp.role ? `<div class="emp-card-role">${emp.role}</div>` : ''}
                         <div class="emp-card-email">${emp.email}</div>
                     </div>`;
-                }).join('');
+                });
+
+                html += `
+                <div class="profile-group-wrap" style="margin-top: 14px;">
+                    <span class="profile-group-label">
+                        <i data-lucide="users" width="14" height="14" style="color: var(--gold);"></i>
+                        Team Members
+                    </span>
+                </div>`;
+
+                personnel.forEach(emp => {
+                    const idx = EMPLOYEES.indexOf(emp);
+                    const isActive = idx === currentEmpIndex ? ' active' : '';
+                    html += `
+                    <div class="emp-card${isActive}" onclick="selectEmployee(${idx})" id="emp-card-${idx}">
+                        <div class="emp-card-name">${emp.fullName}</div>
+                        ${emp.role ? `<div class="emp-card-role">${emp.role}</div>` : ''}
+                        <div class="emp-card-email">${emp.email}</div>
+                    </div>`;
+                });
+
+                grid.innerHTML = html;
             }
 
             const dropdown = document.getElementById('emp-select-dropdown');
             if (dropdown) {
-                dropdown.innerHTML = EMPLOYEES.map((emp, index) => {
-                    return `<option value="${index}">${emp.fullName} &mdash; ${emp.role}</option>`;
-                }).join('');
+                const departments = EMPLOYEES.filter(e => e.group === 'department');
+                const personnel = EMPLOYEES.filter(e => e.group === 'personnel');
+
+                let optHtml = `<optgroup label="Corporate Email Contacts">`;
+                departments.forEach(emp => {
+                    const idx = EMPLOYEES.indexOf(emp);
+                    optHtml += `<option value="${idx}">${emp.fullName}</option>`;
+                });
+                optHtml += `</optgroup><optgroup label="Team Members">`;
+                personnel.forEach(emp => {
+                    const idx = EMPLOYEES.indexOf(emp);
+                    optHtml += `<option value="${idx}">${emp.fullName} &mdash; ${emp.role}</option>`;
+                });
+                optHtml += `</optgroup>`;
+                dropdown.innerHTML = optHtml;
+            }
+
+            if (window.lucide) {
+                lucide.createIcons();
             }
         }
 
@@ -1491,8 +1602,36 @@
             }, 3500);
         }
 
+        // Parse URL query parameter (e.g. ?profile=tenders, ?profile=careers, ?profile=lucas)
+        function checkUrlProfile() {
+            try {
+                const params = new URLSearchParams(window.location.search);
+                const query = (params.get('profile') || params.get('mailbox') || params.get('user') || params.get('id') || '').trim().toLowerCase();
+                if (!query) return;
+
+                const num = parseInt(query, 10);
+                if (!isNaN(num) && num >= 0 && num < EMPLOYEES.length) {
+                    currentEmpIndex = num;
+                    return;
+                }
+
+                const matchIndex = EMPLOYEES.findIndex(e =>
+                    e.shortName.toLowerCase() === query ||
+                    e.shortName.toLowerCase().includes(query) ||
+                    e.email.toLowerCase().includes(query) ||
+                    e.fullName.toLowerCase().includes(query)
+                );
+                if (matchIndex !== -1) {
+                    currentEmpIndex = matchIndex;
+                }
+            } catch (e) {
+                console.warn("URL query parse error:", e);
+            }
+        }
+
         // Initialization
         document.addEventListener('DOMContentLoaded', () => {
+            checkUrlProfile();
             buildEmployeeGrid();
             updateDisplay();
             const yearEl = document.getElementById('sig-copyright-year');

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenders & Procurement Email Signature | Makhaswa Holdings</title>
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.js" defer></script>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .sig-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-top: 4px solid #c8a951;
+            padding: 32px 28px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+        }
+        .sig-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e2e8f0;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .sig-title h1 {
+            font-size: 18px;
+            color: #082d5a;
+            margin: 0 0 4px 0;
+            font-weight: 700;
+        }
+        .sig-title p {
+            font-size: 12px;
+            color: #64748b;
+            margin: 0;
+        }
+        .portal-link {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #082d5a;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .portal-link:hover {
+            color: #c8a951;
+            text-decoration: underline;
+        }
+        .preview-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 24px 20px;
+            margin-bottom: 24px;
+            overflow-x: auto;
+            display: flex;
+            justify-content: center;
+        }
+        .actions-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        .btn-copy {
+            background: #082d5a;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s;
+        }
+        .btn-copy:hover {
+            background: #0c3a6d;
+        }
+        .btn-outline {
+            background: #ffffff;
+            color: #082d5a;
+            border: 1.5px solid #cbd5e1;
+        }
+        .btn-outline:hover {
+            border-color: #082d5a;
+            background: #f8fafc;
+        }
+        .setup-steps {
+            background: #f8fafc;
+            border-left: 3px solid #082d5a;
+            padding: 18px 20px;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #334155;
+        }
+        .setup-steps h3 {
+            font-size: 13px;
+            color: #082d5a;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .setup-steps ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .setup-steps li {
+            margin-bottom: 6px;
+        }
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #082d5a;
+            color: #ffffff;
+            padding: 12px 20px;
+            border-left: 4px solid #c8a951;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+            font-size: 12px;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: all 0.25s ease;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sig-container">
+        <div class="sig-header">
+            <div class="sig-title">
+                <h1>Tenders &amp; Procurement Signature</h1>
+                <p>Official corporate mailbox signature for tenders@makhaswaholdings.co.za</p>
+            </div>
+            <a href="../signature.html?profile=tenders" class="portal-link">
+                <i data-lucide="arrow-left" width="14" height="14"></i>
+                Back to All Signatures
+            </a>
+        </div>
+
+        <div class="preview-box">
+            <div id="signature-render-area">
+                <!-- Signature Table -->
+                <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 12px; color: #333333; line-height: 1.4; max-width: 450px; width: 100%; background-color: #ffffff;">
+                    <tr>
+                        <!-- Brand Logo Column -->
+                        <td style="vertical-align: middle; padding-right: 16px; text-align: center; width: 115px;" valign="middle">
+                            <a href="https://makhaswaholdings.co.za" target="_blank" style="text-decoration: none; display: block;">
+                                <img src="https://makhaswaholdings.co.za/images/transparent-logo.png" onerror="this.onerror=null;this.src='../images/transparent-logo.png';" alt="Makhaswa Holdings" width="110" style="display: block; width: 110px; max-width: 110px; height: auto; border: 0; filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.85));" />
+                            </a>
+                        </td>
+
+                        <!-- Vertical Gold Accent Line -->
+                        <td style="border-left: 2px solid #c8a951; width: 2px; padding: 0; font-size: 0; line-height: 0;">&nbsp;</td>
+
+                        <!-- Personnel & Corporate Details Column -->
+                        <td style="vertical-align: top; padding-left: 16px;" valign="top">
+                            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 15.5px; font-weight: 700; color: #082d5a; line-height: 1.2; margin: 0 0 4px 0; letter-spacing: -0.2px;">
+                                Tenders &amp; Procurement
+                            </div>
+
+                            <div style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 700; color: #0c3a6d; margin: 0 0 8px 0;">
+                                Makhaswa Holdings (Pty) Ltd
+                            </div>
+
+                            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; font-family: 'Montserrat', Arial, Helvetica, sans-serif; font-size: 11.5px; color: #4b5563; line-height: 1.55;">
+                                <tr>
+                                    <td style="padding: 2px 7px 2px 0; vertical-align: middle; width: 16px;">
+                                        <img src="https://makhaswaholdings.co.za/images/icons/icon-phone.png" onerror="this.onerror=null;this.src='../images/icons/icon-phone.png';" alt="Tel:" width="14" height="14" style="display: block; width: 14px; height: 14px; border: 0;" />
+                                    </td>
+                                    <td style="padding: 2px 0; vertical-align: middle;">
+                                        <a href="tel:+27129441702" style="color: #1f2937; text-decoration: none; font-weight: 600;">012 944 1702</a>
+                                        <span style="color: #cbd5e1; margin: 0 6px;">|</span>
+                                        <span style="color: #082d5a; font-weight: 700; font-size: 11px; margin-right: 3px;">T: </span><a href="tel:+27115680938" style="color: #1f2937; text-decoration: none; font-weight: 600;">011 568 0938</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 2px 7px 2px 0; vertical-align: middle; width: 16px;">
+                                        <img src="https://makhaswaholdings.co.za/images/icons/icon-email.png" onerror="this.onerror=null;this.src='../images/icons/icon-email.png';" alt="E:" width="14" height="14" style="display: block; width: 14px; height: 14px; border: 0;" />
+                                    </td>
+                                    <td style="padding: 2px 0; vertical-align: middle;">
+                                        <a href="mailto:tenders@makhaswaholdings.co.za" style="color: #082d5a; text-decoration: none; font-weight: 600; word-break: break-all;">tenders@makhaswaholdings.co.za</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 2px 7px 2px 0; vertical-align: middle; width: 16px;">
+                                        <img src="https://makhaswaholdings.co.za/images/icons/icon-globe.png" onerror="this.onerror=null;this.src='../images/icons/icon-globe.png';" alt="W:" width="14" height="14" style="display: block; width: 14px; height: 14px; border: 0;" />
+                                    </td>
+                                    <td style="padding: 2px 0; vertical-align: middle;">
+                                        <a href="https://makhaswaholdings.co.za" target="_blank" style="color: #082d5a; text-decoration: none; font-weight: 600;">www.makhaswaholdings.co.za</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 2px 7px 2px 0; vertical-align: top; width: 16px; padding-top: 3px;">
+                                        <img src="https://makhaswaholdings.co.za/images/icons/icon-location.png" onerror="this.onerror=null;this.src='../images/icons/icon-location.png';" alt="A:" width="14" height="14" style="display: block; width: 14px; height: 14px; border: 0;" />
+                                    </td>
+                                    <td style="padding: 2px 0; vertical-align: top; color: #64748b; font-size: 11px;">
+                                        869 Patryshond Street, Garsfontein, Pretoria, 0042
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Accreditations Strip -->
+                            <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #e5e7eb; font-size: 10.5px; line-height: 1.4;">
+                                <span style="font-weight: 700; color: #082d5a;">CIDB Grade 8 CE PE</span>
+                                <span style="color: #c8a951; margin: 0 4px;">&bull;</span>
+                                <span style="font-weight: 600; color: #1e293b;">Level 1 B-BBEE</span>
+                                <span style="color: #c8a951; margin: 0 4px;">&bull;</span>
+                                <span style="color: #64748b;">NHBRC Registered</span>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Confidentiality Notice -->
+                    <tr>
+                        <td colspan="3" style="padding-top: 14px;">
+                            <p style="font-family: Arial, Helvetica, sans-serif; font-size: 8.5px; color: #94a3b8; line-height: 1.4; margin: 0; text-align: justify;">
+                                <strong>Confidentiality Notice:</strong> The contents of this email message and any attachments are confidential, legally privileged, and intended solely for the use of the intended recipient. If you have received this communication in error, please immediately notify the sender by reply email and permanently delete all copies. Any unauthorized copying, disclosure, or distribution is strictly prohibited. Makhaswa Holdings (Pty) Ltd.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="actions-row">
+            <button class="btn-copy" onclick="copySignature()">
+                <i data-lucide="copy" width="16" height="16"></i>
+                Copy Formatted Signature
+            </button>
+            <button class="btn-copy btn-outline" onclick="copyRawCode()">
+                <i data-lucide="code" width="16" height="16"></i>
+                Copy HTML Source
+            </button>
+        </div>
+
+        <div class="setup-steps">
+            <h3>Quick Setup in Outlook / Gmail</h3>
+            <ol>
+                <li>Click <strong>Copy Formatted Signature</strong> above.</li>
+                <li>In Outlook, go to <strong>File &rarr; Options &rarr; Mail &rarr; Signatures</strong> (or Gmail <strong>Settings &rarr; See all settings &rarr; Signature</strong>).</li>
+                <li>Create a new signature, click into the editor box, and press <strong>Ctrl + V</strong> (Paste).</li>
+                <li>Set as your default for new messages and replies, then click <strong>Save</strong>.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">Signature copied! Ready to paste.</div>
+
+    <script>
+        async function copySignature() {
+            const el = document.getElementById('signature-render-area');
+            if (!el) return;
+            try {
+                const htmlBlob = new Blob([el.innerHTML], { type: 'text/html' });
+                const textBlob = new Blob([el.innerText], { type: 'text/plain' });
+                const item = new ClipboardItem({
+                    'text/html': htmlBlob,
+                    'text/plain': textBlob
+                });
+                await navigator.clipboard.write([item]);
+                showToast('Formatted signature copied! Ready to paste into Outlook/Gmail.');
+            } catch (err) {
+                const range = document.createRange();
+                range.selectNodeContents(el);
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                document.execCommand('copy');
+                selection.removeAllRanges();
+                showToast('Signature copied!');
+            }
+        }
+
+        async function copyRawCode() {
+            const el = document.getElementById('signature-render-area');
+            if (!el) return;
+            try {
+                await navigator.clipboard.writeText(el.innerHTML.trim());
+                showToast('Raw HTML source code copied to clipboard!');
+            } catch (err) {
+                showToast('Failed to copy HTML code.');
+            }
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
