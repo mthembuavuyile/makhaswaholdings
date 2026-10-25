@@ -51,6 +51,19 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileNav.classList.contains('open') ? closeMobileNav() : openMobileNav();
         });
 
+        // Mobile collapsible submenu toggle
+        const servicesToggle = document.getElementById('mobile-services-toggle');
+        const servicesSubmenu = document.getElementById('mobile-services-submenu');
+        if (servicesToggle && servicesSubmenu) {
+            servicesToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const isOpen = servicesSubmenu.classList.toggle('open');
+                servicesToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                servicesToggle.classList.toggle('active', isOpen);
+            });
+        }
+
         // Close on link click (mobile)
         mobileNav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', closeMobileNav);

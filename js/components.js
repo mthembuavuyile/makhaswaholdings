@@ -30,7 +30,19 @@ const SITE_CONFIG = {
     nav: [
         { label: 'Home', href: 'index.html' },
         { label: 'About Us', href: 'about.html' },
-        { label: 'Services', href: 'services.html' },
+        { 
+            label: 'Services', 
+            href: 'services.html',
+            sublinks: [
+                { label: 'All Services Overview', href: 'services.html' },
+                { label: 'Civil Infrastructure & Pipelines', href: 'services/civil-works.html' },
+                { label: 'Road Construction & Surfacing', href: 'services/road-construction.html' },
+                { label: 'Bulk Earthworks & Site Prep', href: 'services/earthworks.html' },
+                { label: 'General Building Construction', href: 'services/general-building.html' },
+                { label: 'Mechanical Engineering', href: 'services/mechanical-engineering.html' },
+                { label: 'Electrical Engineering', href: 'services/electrical-engineering.html' },
+            ]
+        },
         { label: 'Projects', href: 'projects.html' },
         { label: 'Careers', href: 'careers.html' },
         { label: 'Contact', href: 'contact.html' },
@@ -52,12 +64,12 @@ const SITE_CONFIG = {
     ],
 
     capabilities: [
-        'Earthworks & Site Prep',
-        'Civil Works & Infrastructure',
-        'Road Construction & Surfacing',
-        'Commercial & Public Buildings',
-        'Residential Housing Developments',
-        'Project Management',
+        { label: 'Civil Infrastructure & Pipelines', href: 'services/civil-works.html' },
+        { label: 'Road Construction & Surfacing', href: 'services/road-construction.html' },
+        { label: 'Bulk Earthworks & Site Prep', href: 'services/earthworks.html' },
+        { label: 'General Building Construction', href: 'services/general-building.html' },
+        { label: 'Mechanical Engineering', href: 'services/mechanical-engineering.html' },
+        { label: 'Electrical Engineering', href: 'services/electrical-engineering.html' },
     ],
 
     offices: {
@@ -128,22 +140,68 @@ function buildHeader() {
     const cfg = SITE_CONFIG;
     const prefix = getPathPrefix();
     const isServicesFolder = window.location.pathname.toLowerCase().includes('/services/');
+    const isServicesActive = isServicesFolder || activePage === 'services.html';
 
     const navLinksDesktop = cfg.nav.map(link => {
-        const isServicesActive = link.href === 'services.html' && isServicesFolder;
-        const isActive = activePage === link.href || (activePage === '' && link.href === 'index.html') || isServicesActive;
-        let classes = isActive ? 'active' : '';
+        const isServicesLink = link.href === 'services.html';
+        const isCurrentActive = isServicesLink ? isServicesActive : (activePage === link.href || (activePage === '' && link.href === 'index.html'));
+        let classes = isCurrentActive ? 'active' : '';
         if (link.label === 'Contact' || link.label === 'Contact Us') {
             classes += (classes ? ' ' : '') + 'nav-contact-btn';
         }
         const classAttr = classes ? ` class="${classes}"` : '';
         const href = link.href.startsWith('http') ? link.href : prefix + link.href;
+
+        if (link.sublinks && link.sublinks.length > 0) {
+            const dropdownItemsHtml = link.sublinks.map(sub => {
+                const subHref = sub.href.startsWith('http') ? sub.href : prefix + sub.href;
+                const isSubActive = activePage === sub.href.replace('services/', '') || (activePage === 'services.html' && sub.href === 'services.html');
+                const subClass = isSubActive ? 'nav-dropdown-item active' : 'nav-dropdown-item';
+                return `<a href="${subHref}" class="${subClass}" role="menuitem">${sub.label}</a>`;
+            }).join('\n                    ');
+
+            return `
+            <div class="nav-item nav-item--dropdown">
+                <a href="${href}"${classAttr} class="${classes} nav-link--with-dropdown" aria-haspopup="true" aria-expanded="false">
+                    ${link.label}
+                    <i data-lucide="chevron-down" width="12" height="12" class="dropdown-chevron"></i>
+                </a>
+                <div class="nav-dropdown-menu" role="menu">
+                    ${dropdownItemsHtml}
+                </div>
+            </div>`;
+        }
+
         return `<a href="${href}"${classAttr}>${link.label}</a>`;
     }).join('\n            ');
 
     const navLinksMobile = cfg.nav.map(link => {
         const href = link.href.startsWith('http') ? link.href : prefix + link.href;
-        return `<a href="${href}">${link.label}</a>`;
+
+        if (link.sublinks && link.sublinks.length > 0) {
+            const sublinksMobileHtml = link.sublinks.map(sub => {
+                const subHref = sub.href.startsWith('http') ? sub.href : prefix + sub.href;
+                const isSubActive = activePage === sub.href.replace('services/', '') || (activePage === 'services.html' && sub.href === 'services.html');
+                const subActiveClass = isSubActive ? ' active' : '';
+                return `<a href="${subHref}" class="mobile-sublink${subActiveClass}">${sub.label}</a>`;
+            }).join('\n                ');
+
+            return `
+        <div class="mobile-nav-group">
+            <div class="mobile-nav-header">
+                <a href="${href}" class="mobile-nav-title${isServicesActive ? ' active' : ''}">${link.label}</a>
+                <button type="button" class="mobile-collapse-btn${isServicesActive ? ' active' : ''}" id="mobile-services-toggle" aria-expanded="${isServicesActive ? 'true' : 'false'}" aria-label="Toggle ${link.label} menu">
+                    <i data-lucide="chevron-down" width="18" height="18"></i>
+                </button>
+            </div>
+            <div class="mobile-submenu${isServicesActive ? ' open' : ''}" id="mobile-services-submenu">
+                ${sublinksMobileHtml}
+            </div>
+        </div>`;
+        }
+
+        const isActive = activePage === link.href || (activePage === '' && link.href === 'index.html');
+        return `<a href="${href}" class="${isActive ? 'active' : ''}">${link.label}</a>`;
     }).join('\n        ');
 
     return `
@@ -206,9 +264,13 @@ function buildFooter() {
     }).join('\n                    ');
 
     /* Capabilities list items */
-    const capabilitiesHtml = cfg.capabilities.map(cap =>
-        `<li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i>${cap}</li>`
-    ).join('\n                    ');
+    const capabilitiesHtml = cfg.capabilities.map(cap => {
+        if (typeof cap === 'object' && cap.href) {
+            const href = cap.href.startsWith('http') ? cap.href : prefix + cap.href;
+            return `<li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i><a href="${href}">${cap.label}</a></li>`;
+        }
+        return `<li><i data-lucide="chevron-right" width="14" height="14" class="footer-icon"></i>${cap}</li>`;
+    }).join('\n                    ');
 
     /* Emails list items */
     const emailsHtml = cfg.contact.emails.map(email =>
