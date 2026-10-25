@@ -189,12 +189,12 @@ function buildHeader() {
             return `
         <div class="mobile-nav-group">
             <div class="mobile-nav-header">
-                <a href="${href}" class="mobile-nav-title${isServicesActive ? ' active' : ''}">${link.label}</a>
-                <button type="button" class="mobile-collapse-btn${isServicesActive ? ' active' : ''}" id="mobile-services-toggle" aria-expanded="${isServicesActive ? 'true' : 'false'}" aria-label="Toggle ${link.label} menu">
+                <a href="${href}" class="mobile-nav-title">${link.label}</a>
+                <button type="button" class="mobile-collapse-btn" id="mobile-services-toggle" aria-expanded="false" aria-label="Toggle ${link.label} menu">
                     <i data-lucide="chevron-down" width="18" height="18"></i>
                 </button>
             </div>
-            <div class="mobile-submenu${isServicesActive ? ' open' : ''}" id="mobile-services-submenu">
+            <div class="mobile-submenu" id="mobile-services-submenu">
                 ${sublinksMobileHtml}
             </div>
         </div>`;
