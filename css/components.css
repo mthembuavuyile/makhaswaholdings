@@ -288,7 +288,7 @@
 }
 
 /* Nav Contact Button Highlight */
-nav a.nav-contact-btn {
+#desktop-nav a.nav-contact-btn {
     background-color: var(--primary);
     color: var(--white);
     padding: 10px 20px;
@@ -296,7 +296,7 @@ nav a.nav-contact-btn {
     /* Rectangle highlight */
 }
 
-nav a.nav-contact-btn::after {
+#desktop-nav a.nav-contact-btn::after {
     display: none;
     /* Hide the underline effect */
 }
@@ -1814,12 +1814,12 @@ nav a.nav-contact-btn:hover {
         padding: 0 20px;
     }
 
-    nav {
-        display: none;
+    #desktop-nav {
+        display: none !important;
     }
 
     .burger {
-        display: flex;
+        display: flex !important;
     }
 
     /* Containers */

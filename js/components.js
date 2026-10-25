@@ -187,13 +187,11 @@ function buildHeader() {
             }).join('\n                ');
 
             return `
-        <div class="mobile-nav-group">
-            <div class="mobile-nav-header">
-                <a href="${href}" class="mobile-nav-title">${link.label}</a>
-                <button type="button" class="mobile-collapse-btn" id="mobile-services-toggle" aria-expanded="false" aria-label="Toggle ${link.label} menu">
-                    <i data-lucide="chevron-down" width="18" height="18"></i>
-                </button>
-            </div>
+        <div class="mobile-nav-item mobile-nav-item--accordion">
+            <button type="button" class="mobile-accordion-toggle" id="mobile-services-toggle" aria-expanded="false">
+                <span>${link.label}</span>
+                <i data-lucide="chevron-down" width="18" height="18" class="mobile-chevron"></i>
+            </button>
             <div class="mobile-submenu" id="mobile-services-submenu">
                 ${sublinksMobileHtml}
             </div>
@@ -201,7 +199,7 @@ function buildHeader() {
         }
 
         const isActive = activePage === link.href || (activePage === '' && link.href === 'index.html');
-        return `<a href="${href}" class="${isActive ? 'active' : ''}">${link.label}</a>`;
+        return `<a href="${href}" class="mobile-nav-link${isActive ? ' active' : ''}">${link.label}</a>`;
     }).join('\n        ');
 
     return `
