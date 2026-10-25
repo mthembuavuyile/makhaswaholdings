@@ -25,25 +25,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileNav = document.getElementById('mobile-nav');
 
     if (burgerBtn && mobileNav) {
-        const burgerIcon = burgerBtn.querySelector('i');
-
         function openMobileNav() {
             mobileNav.classList.add('open');
+            burgerBtn.classList.add('open');
             burgerBtn.setAttribute('aria-expanded', 'true');
-            if (burgerIcon) {
-                burgerIcon.setAttribute('data-lucide', 'x');
-                lucide.createIcons();
-            }
             document.body.style.overflow = 'hidden';
         }
 
         function closeMobileNav() {
             mobileNav.classList.remove('open');
+            burgerBtn.classList.remove('open');
             burgerBtn.setAttribute('aria-expanded', 'false');
-            if (burgerIcon) {
-                burgerIcon.setAttribute('data-lucide', 'menu');
-                lucide.createIcons();
-            }
             document.body.style.overflow = '';
         }
 

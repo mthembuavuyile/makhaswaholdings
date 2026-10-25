@@ -219,7 +219,9 @@ function buildHeader() {
 
         <!-- Burger Button -->
         <button class="burger" id="burger-btn" aria-label="Toggle menu" aria-expanded="false">
-            <i data-lucide="menu" width="26" height="26"></i>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
         </button>
     </header>
 
