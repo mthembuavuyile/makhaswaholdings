@@ -80,6 +80,8 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
             transition: all var(--transition);
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .portal-header-link:hover {
@@ -854,16 +856,46 @@
             }
 
             header.signature-header {
-                padding: 10px 16px;
-                height: auto;
+                padding: 0 16px;
+                height: 60px;
                 min-height: 60px;
-                justify-content: center;
             }
 
             .signature-header-inner {
                 justify-content: space-between;
-                gap: 10px;
-                flex-wrap: wrap;
+                align-items: center;
+                gap: 8px;
+                flex-wrap: nowrap;
+            }
+
+            .signature-header .logo {
+                min-width: 0;
+                gap: 8px;
+            }
+
+            .signature-header .logo img {
+                height: 38px;
+                width: auto;
+                flex-shrink: 0;
+            }
+
+            .signature-header .logo-text {
+                font-size: 13.5px;
+                letter-spacing: 1px;
+                white-space: nowrap;
+            }
+
+            .signature-header .logo-text small {
+                font-size: 8px;
+                letter-spacing: 0.8px;
+            }
+
+            .portal-header-link {
+                padding: 6px 12px;
+                font-size: 11px;
+                gap: 5px;
+                white-space: nowrap;
+                flex-shrink: 0;
             }
 
             footer.signature-footer {
@@ -969,6 +1001,30 @@
                 justify-content: center;
             }
         }
+
+        @media (max-width: 360px) {
+            header.signature-header {
+                padding: 0 10px;
+            }
+
+            .signature-header .logo img {
+                height: 32px;
+            }
+
+            .signature-header .logo-text {
+                font-size: 12px;
+            }
+
+            .signature-header .logo-text small {
+                font-size: 7.5px;
+            }
+
+            .portal-header-link {
+                padding: 5px 8px;
+                font-size: 10px;
+                gap: 4px;
+            }
+        }
     </style>
 </head>
 
@@ -981,9 +1037,9 @@
                 <img src="images/transparent-logo.png" alt="Makhaswa Holdings Logo">
                 <div class="logo-text">Makhaswa<small>Holdings (Pty) Ltd</small></div>
             </a>
-            <a href="https://secureserver.titan.email/mail/" target="_blank" rel="noopener noreferrer" class="portal-header-link" title="Open Titan Webmail (secureserver.titan.email)">
-                <i data-lucide="external-link" width="14" height="14"></i>
-                <span>Open Titan Webmail</span>
+            <a href="index.html" class="portal-header-link" title="Return to Makhaswa Holdings Home">
+                <i data-lucide="home" width="14" height="14"></i>
+                <span>Home</span>
             </a>
         </div>
     </header>
@@ -1087,10 +1143,6 @@
                 <i data-lucide="code" width="16" height="16"></i>
                 <span>Copy HTML Source</span>
             </button>
-            <a href="https://secureserver.titan.email/mail/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="btn-open-titan" title="Open Titan Webmail in a new tab">
-                <i data-lucide="external-link" width="16" height="16"></i>
-                <span>Open Titan Webmail</span>
-            </a>
         </div>
 
         <!-- 4. Client Setup Instructions -->
@@ -1168,19 +1220,16 @@
 
             <h3 class="section-title text-center" style="font-size: 15px; margin-top: 36px; margin-bottom: 8px;">Step-by-Step by Email Client</h3>
             <p class="section-subtitle section-subtitle--spaced text-center" style="margin-bottom: 20px;">
-                Detailed menu navigation for Titan Webmail, Outlook, Gmail, and Apple Mail:
+                Detailed menu navigation for Webmail, Outlook, Gmail, and Apple Mail:
             </p>
 
             <div class="guide-grid">
-                <!-- Titan Webmail (secureserver.titan.email) - Official Corporate Mailbox -->
-                <div class="guide-card" style="border-top: 3px solid var(--gold); background: linear-gradient(180deg, rgba(200, 169, 81, 0.05) 0%, var(--white) 100%);">
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-                        <h3 style="margin: 0; color: #082d5a;"><i data-lucide="mail" width="16" height="16" style="color: var(--gold);"></i> Titan Webmail</h3>
-                        <span style="background: rgba(200, 169, 81, 0.15); color: #8a7029; font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 7px; border: 1px solid rgba(200, 169, 81, 0.35);">Official</span>
-                    </div>
+                <!-- Webmail (Titan) -->
+                <div class="guide-card">
+                    <h3><i data-lucide="mail" width="16" height="16" style="color: var(--primary);"></i> Webmail (Titan)</h3>
                     <ol>
                         <li>Click <strong>Copy Formatted Signature</strong> (or <strong>Copy HTML Source</strong>) above.</li>
-                        <li>Log in to <a href="https://secureserver.titan.email/mail/" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 700; text-decoration: underline;">Titan Webmail</a>.</li>
+                        <li>Log in to your webmail account.</li>
                         <li>In the sidebar next to your email address, click the <strong>3 dots (&vellip;) options &rarr; Account settings</strong>.</li>
                         <li>In the settings sidebar, scroll down to <strong>Signatures</strong>.</li>
                         <li>Click <strong>Create custom signature</strong>, enter your signature name (e.g. <em>Makhaswa Official</em>).</li>
@@ -1251,7 +1300,7 @@
                 </summary>
                 <div class="admin-source-content">
                     <p>
-                        Use this raw HTML code if pasting the formatted signature into Titan Webmail or your mail client requires HTML mode, or for central server-side deployment (Exchange transport rules, Exclaimer, CodeTwo) and CRMs.
+                        Use this raw HTML code if pasting the formatted signature into your email client requires HTML mode, or for central server-side deployment (Exchange transport rules, Exclaimer, CodeTwo) and CRMs.
                     </p>
                     <textarea class="raw-html-textarea" id="html-code-area" readonly aria-label="Raw HTML signature source code"></textarea>
                     <div class="admin-source-actions">
@@ -1269,7 +1318,7 @@
     <!-- Minimal Footer (Copyright & Developer Reference) -->
     <footer class="signature-footer">
         <div class="signature-footer-inner">
-            <p>&copy; <span id="sig-copyright-year">2025</span> Makhaswa Holdings (Pty) Ltd. All Rights Reserved. | <a href="https://secureserver.titan.email/mail/" target="_blank" rel="noopener noreferrer">Titan Webmail</a> | Developed by <a href="https://vylex.co.za" target="_blank" rel="noopener noreferrer">Vylex</a></p>
+            <p>&copy; <span id="sig-copyright-year">2025</span> Makhaswa Holdings (Pty) Ltd. All Rights Reserved. | Developed by <a href="https://vylex.co.za" target="_blank" rel="noopener noreferrer">Vylex</a></p>
         </div>
     </footer>
 
