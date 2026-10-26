@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makhaswa Mobile Navigation</title>
+    <style>
+        :root {
+            --navy: #073b78;
+            --navy-dark: #062f61;
+            --ink: #18324f;
+            --muted: #53677d;
+            --line: #e4e9ef;
+            --surface: #f7f9fc;
+            --active: #eaf2fb;
+            --white: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 28px;
+            background: #34373d;
+            color: var(--ink);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .demo {
+            width: min(100%, 340px);
+        }
+
+        .demo-label {
+            color: #e8edf4;
+            font-size: 12px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin: 0 0 12px 2px;
+        }
+
+        .menu-panel {
+            width: 100%;
+            min-height: 620px;
+            background: var(--white);
+            box-shadow: 0 16px 42px rgba(0, 0, 0, .22);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-header {
+            min-height: 62px;
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--line);
+            gap: 12px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        .brand-mark {
+            width: 26px;
+            height: 30px;
+            display: grid;
+            place-items: center;
+            color: #1688b8;
+            font-size: 25px;
+            font-weight: 700;
+            transform: rotate(-12deg);
+        }
+
+        .brand-name {
+            color: var(--navy);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            line-height: 1.2;
+        }
+
+        .brand-subtitle {
+            color: #7b8794;
+            display: block;
+            font-size: 7px;
+            font-weight: 500;
+            letter-spacing: .11em;
+            margin-top: 2px;
+        }
+
+        .close-btn {
+            width: 40px;
+            height: 44px;
+            border: 0;
+            background: transparent;
+            color: #42617f;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            border-radius: 8px;
+        }
+
+        .close-btn:hover {
+            background: var(--surface);
+        }
+
+        .close-btn svg {
+            width: 19px;
+            height: 19px;
+        }
+
+        nav {
+            padding: 0;
+        }
+
+        .nav-link,
+        .section-toggle {
+            min-height: 44px;
+            width: 100%;
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border: 0;
+            border-bottom: 1px solid #edf0f4;
+            background: #fff;
+            color: var(--navy);
+            text-align: left;
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .055em;
+            cursor: pointer;
+        }
+
+        .nav-link:hover,
+        .section-toggle:hover {
+            background: #f8fafc;
+        }
+
+        .section-toggle .toggle-icon {
+            width: 16px;
+            height: 16px;
+            flex: 0 0 16px;
+            display: grid;
+            place-items: center;
+            color: #42617f;
+            transition: transform .18s ease;
+        }
+
+        .section-toggle[aria-expanded="false"] .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .toggle-icon svg {
+            width: 13px;
+            height: 13px;
+        }
+
+        .subnav {
+            background: var(--surface);
+            padding: 3px 0 7px;
+            border-bottom: 1px solid #e8edf3;
+        }
+
+        .subnav[hidden] {
+            display: none;
+        }
+
+        .sub-link {
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            padding: 8px 14px 8px 32px;
+            border-left: 3px solid transparent;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 11px;
+            line-height: 1.35;
+            font-weight: 400;
+            letter-spacing: 0;
+            transition: background .15s ease, color .15s ease, border-color .15s ease;
+        }
+
+        .sub-link:hover {
+            color: var(--navy);
+            background: #eef3f9;
+        }
+
+        .sub-link[aria-current="page"] {
+            border-left-color: var(--navy);
+            background: var(--active);
+            color: var(--navy-dark);
+            font-weight: 700;
+        }
+
+        .nav-footer {
+            margin-top: auto;
+            min-height: 44px;
+            border-top: 1px solid var(--line);
+            color: #8492a2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            letter-spacing: .08em;
+        }
+
+        .status {
+            color: #e8edf4;
+            font-size: 12px;
+            line-height: 1.5;
+            margin: 14px 2px 0;
+        }
+
+        .status strong {
+            color: white;
+        }
+
+        @media (max-width: 420px) {
+            body {
+                padding: 12px;
+            }
+
+            .menu-panel {
+                min-height: min(86vh, 700px);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="demo">
+        <p class="demo-label">Makhaswa · mobile menu concept</p>
+
+        <section class="menu-panel" aria-label="Mobile navigation preview">
+            <header class="menu-header">
+                <div class="brand" aria-label="Makhaswa Holdings Proprietary Limited">
+                    <span class="brand-mark" aria-hidden="true">◉</span>
+                    <span class="brand-name">MAKHASWA
+                        <span class="brand-subtitle">HOLDINGS (PTY) LTD</span>
+                    </span>
+                </div>
+                <button class="close-btn" type="button" aria-label="Close services menu" id="closeMenu">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" />
+                    </svg>
+                </button>
+            </header>
+
+            <nav aria-label="Main navigation" id="mainNav">
+                <a class="nav-link" href="#home">HOME</a>
+                <a class="nav-link" href="#about">ABOUT US</a>
+
+                <button class="section-toggle" type="button" aria-expanded="true" aria-controls="servicesSubnav"
+                    id="servicesToggle">
+                    <span>SERVICES</span>
+                    <span class="toggle-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="subnav" id="servicesSubnav">
+                    <a class="sub-link" href="#services" data-page="services">All Services Overview</a>
+                    <a class="sub-link" href="#civil-infrastructure" data-page="civil-infrastructure">Civil
+                        Infrastructure &amp; Pipelines</a>
+                    <a class="sub-link" href="#road-construction" data-page="road-construction" aria-current="page">Road
+                        Construction &amp; Surfacing</a>
+                    <a class="sub-link" href="#bulk-earthworks" data-page="bulk-earthworks">Bulk Earthworks &amp; Site
+                        Prep</a>
+                    <a class="sub-link" href="#general-building" data-page="general-building">General Building
+                        Construction</a>
+                    <a class="sub-link" href="#mechanical-engineering" data-page="mechanical-engineering">Mechanical
+                        Engineering</a>
+                    <a class="sub-link" href="#electrical-engineering" data-page="electrical-engineering">Electrical
+                        Engineering</a>
+                </div>
+
+                <a class="nav-link" href="#projects">PROJECTS</a>
+                <a class="nav-link" href="#careers">CAREERS</a>
+                <a class="nav-link" href="#contact">CONTACT</a>
+            </nav>
+
+            <footer class="nav-footer">MAKHASWA HOLDINGS</footer>
+        </section>
+
+        <p class="status" id="status" aria-live="polite">
+            <strong>Preview:</strong> Services is expanded. Select a service to preview its active state, or use the
+            section toggle to collapse the list.
+        </p>
+    </main>
+
+    <script>
+        const servicesToggle = document.getElementById('servicesToggle');
+        const servicesSubnav = document.getElementById('servicesSubnav');
+        const status = document.getElementById('status');
+        const closeMenu = document.getElementById('closeMenu');
+
+        servicesToggle.addEventListener('click', () => {
+            const expanded = servicesToggle.getAttribute('aria-expanded') === 'true';
+            servicesToggle.setAttribute('aria-expanded', String(!expanded));
+            servicesSubnav.hidden = expanded;
+            status.innerHTML = expanded
+                ? '<strong>Services collapsed.</strong> Tap SERVICES to reveal the service links.'
+                : '<strong>Services expanded.</strong> Choose a service below.';
+        });
+
+        document.querySelectorAll('.sub-link').forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                document.querySelectorAll('.sub-link').forEach(item => item.removeAttribute('aria-current'));
+                link.setAttribute('aria-current', 'page');
+                status.innerHTML = '<strong>Active page:</strong> ' + link.textContent.trim() + '. The highlighted row uses a left accent bar instead of timeline nodes.';
+            });
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                status.innerHTML = '<strong>Selected:</strong> ' + link.textContent.trim() + '. Connect this link to its real page URL in your website.';
+            });
+        });
+
+        closeMenu.addEventListener('click', () => {
+            const expanded = servicesToggle.getAttribute('aria-expanded') === 'true';
+            servicesToggle.setAttribute('aria-expanded', String(!expanded));
+            servicesSubnav.hidden = expanded;
+            status.innerHTML = expanded
+                ? '<strong>Menu preview:</strong> The service list has been collapsed. In a real mobile drawer, this button would close the drawer.'
+                : '<strong>Menu preview:</strong> The service list has been expanded. In a real mobile drawer, this button would close the drawer.';
+        });
+    </script>
+</body>
+
+</html>
