@@ -2600,28 +2600,64 @@ nav a.nav-contact-btn:hover {
 .service-breadcrumbs-bar {
     background: var(--off-white);
     border-bottom: 1px solid var(--border);
-    padding: 12px 40px;
+    padding: 10px 40px;
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.1px;
     color: var(--text-muted);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.service-breadcrumbs-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.breadcrumb-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
     gap: 8px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    font-size: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    color: inherit;
 }
 
-.service-breadcrumbs-bar a {
+.breadcrumb-list li {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.service-breadcrumbs-bar a,
+.breadcrumb-list a {
     color: var(--primary);
+    text-decoration: none;
     transition: color var(--transition);
 }
 
-.service-breadcrumbs-bar a:hover {
+.service-breadcrumbs-bar a:hover,
+.breadcrumb-list a:hover {
     color: var(--gold);
 }
 
-.service-breadcrumbs-bar span {
+.breadcrumb-separator {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-muted);
+    line-height: 1;
+}
+
+.service-breadcrumbs-bar span,
+.breadcrumb-list [aria-current="page"] span {
     color: var(--text);
 }
 
@@ -2782,7 +2818,17 @@ nav a.nav-contact-btn:hover {
 
 @media (max-width: 768px) {
     .service-breadcrumbs-bar {
-        padding: 12px 20px;
+        padding: 9px 16px;
+        font-size: 10px;
+        letter-spacing: 0.6px;
+    }
+    .breadcrumb-list {
+        gap: 6px;
+    }
+    .breadcrumb-separator i,
+    .breadcrumb-separator svg {
+        width: 10px;
+        height: 10px;
     }
     .service-scope-columns {
         gap: 28px;
@@ -2793,5 +2839,21 @@ nav a.nav-contact-btn:hover {
     .service-cta-btn {
         width: 100%;
         justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .service-breadcrumbs-bar {
+        padding: 8px 12px;
+        font-size: 9.2px;
+        letter-spacing: 0.3px;
+    }
+    .breadcrumb-list {
+        gap: 4px;
+    }
+    .breadcrumb-separator i,
+    .breadcrumb-separator svg {
+        width: 9px;
+        height: 9px;
     }
 }
