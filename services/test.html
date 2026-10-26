@@ -36,11 +36,11 @@
     <link rel="stylesheet" href="../css/layout.css">
     <link rel="stylesheet" href="../css/components.css">
 
-    <!-- Real Website Motion Integration: Autonomous Hero Traversal (One Pass, Disappears, No Clutter) -->
+    <!-- Real Website Motion Integration: Autonomous Rover (Moves once, disappears, zero embellishment) -->
     <style>
         .page-hero-earthworks-concept {
             position: relative;
-            min-height: clamp(300px, 36vw, 390px);
+            min-height: clamp(260px, 40vw, 400px);
             display: flex;
             align-items: flex-end;
             background-image: url('../images/projects/earthworks/makhaswa-4.jpeg');
@@ -62,12 +62,12 @@
         .page-hero-earthworks-concept .hero-content {
             position: relative;
             z-index: 5;
-            padding: 36px 40px 36px;
-            max-width: 740px;
+            padding: 40px;
+            max-width: 760px;
         }
 
         .page-hero-earthworks-concept .hero-content h1 {
-            font-size: clamp(24px, 3.6vw, 40px);
+            font-size: clamp(26px, 4vw, 44px);
             font-weight: 800;
             color: #ffffff;
             margin-bottom: 12px;
@@ -75,54 +75,28 @@
         }
 
         .page-hero-earthworks-concept .hero-content p {
-            font-size: 14px;
+            font-size: 14.5px;
             line-height: 1.6;
             color: #e2e8f0;
             margin-bottom: 0;
         }
 
-        /* Datum Track across the bottom */
-        .hero-datum-track {
+        /* Rover Track: completely invisible boundary, clips strictly inside hero */
+        .hero-rover-track {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 290px;
+            inset: 0;
             overflow: hidden;
             pointer-events: none;
             z-index: 3;
         }
 
-        .hero-datum-line {
-            position: absolute;
-            bottom: 22px;
-            left: 0;
-            right: 0;
-            height: 1.5px;
-            border-bottom: 1.5px dashed rgba(255, 255, 255, 0.3);
-        }
-
-        .datum-tag-label {
-            position: absolute;
-            bottom: 8px;
-            left: 40px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: rgba(255, 255, 255, 0.45);
-            text-transform: uppercase;
-            pointer-events: none;
-            z-index: 4;
-        }
-
-        /* Autonomous Excavator Rover: Drives across once in 7.5s, then disappears */
+        /* Autonomous Excavator Rover: Moves once across from right to left, then disappears */
         .excavator-rover {
             position: absolute;
-            bottom: -13px; /* Aligns track line at y=316 perfectly on the 22px datum line */
-            width: 480px;
-            height: 288px;
-            animation: traverseAcrossHero 7.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s 1 forwards;
+            bottom: -16px;
+            width: 460px;
+            height: 276px;
+            animation: traverseAcrossHero 7s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s 1 forwards;
             will-change: transform, opacity;
         }
 
@@ -132,13 +106,13 @@
                 opacity: 0;
             }
             4% {
-                opacity: 1;
+                opacity: 0.95;
             }
             88% {
-                opacity: 1;
+                opacity: 0.95;
             }
             100% {
-                transform: translate3d(-540px, 0, 0);
+                transform: translate3d(-520px, 0, 0);
                 opacity: 0;
                 visibility: hidden;
             }
@@ -147,7 +121,7 @@
         /* Continuous Sprocket Rotation during forward drive */
         .rover-sprocket-left,
         .rover-sprocket-right {
-            animation: rollSprocket 0.9s linear 8 forwards;
+            animation: rollSprocket 0.85s linear 9 forwards;
         }
 
         .rover-sprocket-left {
@@ -170,17 +144,17 @@
         /* Hydraulic Arm Kinematics during drive */
         .rover-boom {
             transform-origin: 320px 220px;
-            animation: cycleBoom 3.6s ease-in-out 2 forwards;
+            animation: cycleBoom 3.5s ease-in-out 2 forwards;
         }
 
         .rover-stick {
             transform-origin: 140px 122px;
-            animation: cycleStick 3.6s ease-in-out 2 forwards;
+            animation: cycleStick 3.5s ease-in-out 2 forwards;
         }
 
         .rover-bucket {
             transform-origin: 118px 290px;
-            animation: cycleBucket 3.6s ease-in-out 2 forwards;
+            animation: cycleBucket 3.5s ease-in-out 2 forwards;
         }
 
         @keyframes cycleBoom {
@@ -209,39 +183,30 @@
 
         @media (max-width: 768px) {
             .page-hero-earthworks-concept {
-                min-height: 320px;
+                min-height: 280px;
             }
             .page-hero-earthworks-concept .hero-content {
-                padding: 28px 20px 24px;
-            }
-            .hero-datum-track {
-                height: 190px;
-            }
-            .hero-datum-line {
-                bottom: 16px;
-            }
-            .datum-tag-label {
-                left: 20px;
+                padding: 24px 20px;
             }
             .excavator-rover {
-                width: 320px;
-                height: 192px;
-                bottom: -9px;
-                animation-duration: 6.2s;
+                width: 300px;
+                height: 180px;
+                bottom: -10px;
+                animation-duration: 6s;
             }
             @keyframes traverseAcrossHero {
                 0% {
-                    transform: translate3d(calc(100% + 30px), 0, 0);
+                    transform: translate3d(calc(100% + 20px), 0, 0);
                     opacity: 0;
                 }
                 4% {
-                    opacity: 1;
+                    opacity: 0.95;
                 }
                 88% {
-                    opacity: 1;
+                    opacity: 0.95;
                 }
                 100% {
-                    transform: translate3d(-360px, 0, 0);
+                    transform: translate3d(-340px, 0, 0);
                     opacity: 0;
                     visibility: hidden;
                 }
@@ -286,8 +251,8 @@
             <p>Transforming raw terrain into engineered building platforms. Makhaswa Holdings deploys heavy earthmoving fleets for mass excavation, cut-to-fill balancing, site clearance, and controlled demolition across South Africa.</p>
         </div>
 
-        <!-- Autonomous Machine Rover across the Datum -->
-        <div class="hero-datum-track" aria-hidden="true">
+        <!-- Autonomous Machine Rover (Traverses across once, then disappears) -->
+        <div class="hero-rover-track" aria-hidden="true">
             <div class="excavator-rover">
                 <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -407,8 +372,6 @@
                 </svg>
             </div>
         </div>
-
-        <div class="datum-tag-label">DATUM ELEVATION [RL +142.300] &bull; SANS 1200D</div>
     </div>
 
     <!-- Authentic Makhaswa Banner -->
