@@ -213,7 +213,7 @@ function buildHeader() {
         </a>
 
         <!-- Desktop Navigation -->
-        <nav id="desktop-nav">
+        <nav id="desktop-nav" aria-label="Primary navigation">
             ${navLinksDesktop}
         </nav>
 
