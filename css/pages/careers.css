@@ -53,9 +53,40 @@
 }
 
 /* ── Extracted from base.css ── */
+/* Equal Opportunity & Empowerment callout on careers */
+.eeo-callout {
+    margin-top: 32px;
+    padding: 20px;
+    background: var(--off-white);
+    border-left: 3px solid var(--gold);
+}
+
+.eeo-callout h4 {
+    font-size: 13px;
+    color: var(--primary);
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.eeo-callout h4 i {
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.eeo-callout p {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
 /* Fraud warning callout on careers */
 .fraud-callout {
-    margin-top: 32px;
+    margin-top: 20px;
     padding: 20px;
     background: var(--off-white);
     border-left: 3px solid var(--primary);
