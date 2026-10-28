@@ -8,7 +8,7 @@
 - **Full Address Details:**
   No. 19 Riversands Incubation Hub, 8–12 Incubation Drive, Riverside View Ext 15, Midrand, Gauteng, 2189, South Africa
 - **Action Taken:**
-  Removed from active public circulation, website locations, footer maps, JSON-LD structured schemas, and active LaTeX company profiles for now per corporate instructions.
+  Removed from active website locations, footer maps, and JSON-LD structured schemas per corporate instructions; retained on the LaTeX Company Profile (makhaswa_company_profile_v1.tex) under regional locations.
 - **Telephone / Desk Line Status:**
   Johannesburg operations desk landline (011 568 0938) remains active for client, municipal, and site communications.
 - **Official Registered & Head Office Address:**
