@@ -647,6 +647,30 @@ Status:        Active Registered Project Partner / Joint Venture
 Scope: Municipal civil infrastructure upgrades, bulk pipe reticulation,
 and roads (Source B).
 
+--------------------------------------------------------------------------------
+PROJECT 15 - Reconstruction and Upgrading of Garstfontein Road (K50) Retaining Walls
+--------------------------------------------------------------------------------
+Client:        Sedtrade (Pty) Ltd
+Period:        2024 - 8 August 2026 (Completion Certificate Issued)
+Scope:         Construction of retaining walls as part of the reconstruction
+               and upgrading of Garstfontein Road (K50) between Loristo and
+               Anton van Wouw Streets, including Solomon Mahlangu Drive between
+               K50 and Gilda/Delfi Road.
+Contract Value: R12,477,889.13 (excluding VAT), subject to remeasurement.
+Status:        Completion certificate issued, subject to final engineering approval.
+
+--------------------------------------------------------------------------------
+PROJECT 16 - Construction of Road K46-AS (DRT 40/11/2014) Subcontract
+--------------------------------------------------------------------------------
+Contract:      DRT 40/11/2014
+Client:        Slim Construction / Gauteng Department of Roads and Transport
+Period:        10 November 2023 - 8 September 2024 (Completion Certificate Provided)
+Scope:         Construction of Road K46-AS under an as-and-when-required contract:
+               construction, supply and installation of kerbing, stormwater
+               infrastructure, gabion baskets, stone pitching and subsoil drainage.
+Contract Value: R16,412,154.17 (including VAT).
+Status:        Certificate of completion provided, subject to final inspection/snags.
+
 
 SECTION 16 — CONTACTABLE REFERENCES DIRECTORY (CONSOLIDATED)
 ================================================================================
@@ -660,7 +684,8 @@ Baithusi Trading            | Mr. Bophelo Lesia          | Site Manager  | 068 0
 Johannesburg Roads Agency   | Mr. TB Siboza              | Site Agent    | 011 979 5329                             | Project 08
 SR Construction              | Mr. Sydney Mello           | Contractor Mgr| 084 055 7742                             | Project 01
 Moses Kotane Municipality   | Mogotsi Obed Kgosiemang    | Project Mgr   | 071 395 9004                             | Project 09
-Sedtrade (Pty) Ltd          | Mr. Sheeven Bemram         | Sponsor       | 071 871 0820 sheeven@sedtrade.co.za      | Project 06
+Sedtrade (Pty) Ltd          | Mr. Sheeven Bemram         | Sponsor       | 071 871 0820 sheeven@sedtrade.co.za      | Projects 06, 15
+Slim Construction           | Site Representative       | Contractor    | Project Management Team                  | Project 16
 Pikitup SOC Ltd              | Patrick Mavuso             | Site Manager  | 012 567 7831                             | Project 05
 Diepsloot West Secondary    | Tshilidzi Albert Singo     | Principal     | 010 541 0670                             | Project 07
 Rhiza Babalo NGO             | Thambulo Abraham Mabuke    | Project Lead  | 011 464 5100                             | Project 04
