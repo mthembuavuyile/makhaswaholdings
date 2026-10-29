@@ -35,3 +35,8 @@ When updates are made to company capabilities, personnel, or services, maintain 
 1. **Source of Truth Documents:** `_archives/sourceoftruth.txt` and `_archives/sourceoftruthv2.txt`.
 2. **Website:** `index.html`, `services.html`, `about.html`, `projects.html`, and relevant JSON data files.
 3. **LaTeX Company Profiles:** `company-profile/makhaswa_company_profile_v1.tex` and `company-profile/makhaswa_company_profile_v2.tex`.
+
+---
+
+## 5. Anti-Embellishment & AI Editing Charter
+All agents must strictly read and adhere to `AI_EDITING_STANDARDS.md` ("There is no shame in where we are — do not try to always make more"). Never add artificial '+' to CIDB thresholds, never claim proprietary ownership of specialized plant/testing gear without logbooks, and never overwrite office landlines with unverified numbers.
