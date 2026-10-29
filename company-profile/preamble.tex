@@ -202,16 +202,23 @@
 }
 
 % =========================================================================
-% FOOTER CONFIGURATION (With Clickable Return to Contents)
+% ENHANCED FOOTER CONFIGURATION (Running Document Footer)
 % =========================================================================
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{mhlightgray}\leaders\hrule height \footrulewidth\hfill}}
+
 \fancyfoot[L]{%
-    \fontsize{8.2pt}{10.5pt}\selectfont\color{mhtextmuted}%
-    \textbf{Makhaswa Holdings (Pty) Ltd} \ $\bullet$ \ CIDB 8 CE PE / 8 ME PE \ $\bullet$ \ Reg: K2017/307900/07%
+    \fontsize{7.8pt}{10.0pt}\selectfont\color{mhtextmuted}%
+    \textbf{\color{mhnavy}Makhaswa Holdings (Pty) Ltd} \ $\bullet$ \ CIDB Grade 8 CE PE / 8 ME PE \ $\bullet$ \ Reg: 2017/307900/07%
+}
+\fancyfoot[C]{%
+    \fontsize{7.4pt}{9.6pt}\selectfont\color{mhtextmuted}%
+    \faPhone\ \href{tel:0875373898}{\color{mhtextmuted}087 537 3898} \ $\bullet$ \ \faEnvelope\ \href{mailto:admin@makhaswa.co.za}{\color{mhtextmuted}admin@makhaswa.co.za} \ $\bullet$ \ \faGlobe\ \href{https://www.makhaswa.co.za}{\color{mhtextmuted}makhaswa.co.za}%
 }
 \fancyfoot[R]{%
-    \fontsize{8.2pt}{10.5pt}\selectfont\color{mhnavy}%
-    \textbf{\thepage} \ \ $\bullet$ \ \ \hyperlink{sec:toc}{{\fontsize{7.8pt}{9.5pt}\selectfont\color{mhblue}\faListUl\ Contents}}%
+    \fontsize{7.8pt}{10.0pt}\selectfont%
+    \hyperlink{sec:toc}{{\color{mhblue}\faListUl\ Contents}} \ $\bullet$ \ {\bfseries\color{mhnavy}\thepage}%
 }
