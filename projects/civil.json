@@ -1,7 +1,71 @@
 {
   "title": "Civil Works & Infrastructure",
-  "description": "Stormwater drainage networks, sewer reticulation, culverts, and concrete foundations.",
+  "description": "Stormwater drainage networks, sewer reticulation, culverts, gabions, stone pitching, and concrete foundations.",
   "images": [
+    {
+      "id": "civilworks-gabion-1",
+      "src": "images/projects/civilworks/gabion_mesh_retaining_wall_grass.jpg",
+      "alt": "Wire mesh gabion basket retaining wall installation with geotextile backing for embankment stabilization.",
+      "title": "Gabion Basket Retaining Wall",
+      "featured": true,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "civilworks-gabion-2",
+      "src": "images/projects/civilworks/gabion_retaining_wall_arch_bridge.jpg",
+      "alt": "Stepped gabion basket retaining wall and scour protection around multi-barrel corrugated steel arch culverts with workers hand-packing rock fill.",
+      "title": "Gabion Scour Protection at Multi-Barrel Culvert",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "civilworks-gabion-3",
+      "src": "images/projects/civilworks/gabion_rock_wall_construction.jpg",
+      "alt": "Multi-tier gabion retaining wall on steep embankment with precast concrete manholes and crushed stone stockpile on active civil works site.",
+      "title": "Gabion Retaining Wall & Drainage Infrastructure",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "civilworks-stone-pitching-1",
+      "src": "images/projects/civilworks/stone-pitching-1.jpeg",
+      "alt": "Worker in V-shaped drainage channel with timber formwork and reinforcing steel set for cast-in-situ concrete side drain lining along road embankment.",
+      "title": "Concrete Side Drain & Channel Construction",
+      "featured": true,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "civilworks-stone-pitching-2",
+      "src": "images/projects/civilworks/stone-pitching-2.jpeg",
+      "alt": "Workers hand-packing stone and preparing formwork for V-shaped concrete lined drainage channel with stone pitching along road infrastructure corridor.",
+      "title": "Stone Pitching & Side Drain Channel Works",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "civilworks-stone-pitching-3",
+      "src": "images/projects/civilworks/stone-pitching-3.jpeg",
+      "alt": "Grouted stone pitching panels installed along road embankment drainage channel adjacent to multi-lane highway with workers continuing pitching operations.",
+      "title": "Road Embankment Stone Pitching & Side Drains",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "civilworks-culvert-bridge-1",
+      "src": "images/projects/civilworks/culvert-bridge.jpeg",
+      "alt": "Multi-barrel precast concrete culvert bridge installation with wingwalls and scour protection.",
+      "title": "Precast Concrete Culvert Bridge",
+      "featured": false,
+      "date": "2024-08-01"
+    },
+    {
+      "id": "civilworks-culvert-pipe-1",
+      "src": "images/projects/civilworks/culvert-civil-storm-sewer-pipe.jpeg",
+      "alt": "Heavy concrete stormwater pipes and culverts installed in trench with bedding.",
+      "title": "Concrete Stormwater Pipe & Culvert Installation",
+      "featured": false,
+      "date": "2024-08-01"
+    },
     {
       "id": "civilworks-highmast-1",
       "src": "images/projects/civilworks/high-mast-electrical-1.jpeg",
