@@ -211,30 +211,6 @@
       "date": "2024-08-01"
     },
     {
-      "id": "civilworks-29",
-      "src": "images/projects/civilworks/foundation-work-20.jpeg",
-      "alt": "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation.",
-      "title": "Concrete Slab Pouring & Formwork",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "civilworks-31",
-      "src": "images/projects/civilworks/foundation-work-18.jpeg",
-      "alt": "Civil engineering team pouring ready-mix concrete into foundation formwork and using mechanical vibrators for structural slab consolidation.",
-      "title": "Concrete Slab Pouring & Formwork",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "civilworks-32",
-      "src": "images/projects/civilworks/foundation-work-17.jpeg",
-      "alt": "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site.",
-      "title": "Slab Leveling & Power Floating",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
       "id": "civilworks-33",
       "src": "images/projects/civilworks/foundation-work-16.jpeg",
       "alt": "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site.",
@@ -253,14 +229,6 @@
     {
       "id": "civilworks-35",
       "src": "images/projects/civilworks/foundation-work-14.jpeg",
-      "alt": "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site.",
-      "title": "Slab Leveling & Power Floating",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "civilworks-37",
-      "src": "images/projects/civilworks/foundation-work-12.jpeg",
       "alt": "Precision leveling, surface floating, and finishing of the structural concrete floor slab on site.",
       "title": "Slab Leveling & Power Floating",
       "featured": false,
@@ -291,14 +259,6 @@
       "date": "2024-08-01"
     },
     {
-      "id": "civilworks-45",
-      "src": "images/projects/civilworks/foundation-work-4.jpeg",
-      "alt": "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance.",
-      "title": "Concrete Curing & Quality Inspection",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
       "id": "civilworks-46",
       "src": "images/projects/civilworks/foundation-work-3.jpeg",
       "alt": "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance.",
@@ -311,14 +271,6 @@
       "src": "images/projects/civilworks/foundation-work-2.jpeg",
       "alt": "Curing structural concrete foundation plinth and inspecting load-bearing slab dimensions for compliance.",
       "title": "Concrete Curing & Quality Inspection",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "civilworks-49",
-      "src": "images/projects/civilworks/foundation-work-38.jpeg",
-      "alt": "Foundation Surface Bed Preparation - High-quality civil engineering and construction.",
-      "title": "Foundation Surface Bed Preparation",
       "featured": false,
       "date": "2024-08-01"
     },
@@ -395,30 +347,6 @@
       "date": "2024-08-01"
     },
     {
-      "id": "civilworks-67",
-      "src": "images/projects/civilworks/foundation-work-20.jpeg",
-      "alt": "Steel Mesh Reinforcement for Concrete Slab - High-quality civil engineering and construction.",
-      "title": "Steel Mesh Reinforcement for Concrete Slab",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "civilworks-69",
-      "src": "images/projects/civilworks/foundation-work-18.jpeg",
-      "alt": "Foundation Surface Bed Preparation - High-quality civil engineering and construction.",
-      "title": "Foundation Surface Bed Preparation",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "civilworks-70",
-      "src": "images/projects/civilworks/foundation-work-17.jpeg",
-      "alt": "Damp Proof Membrane (DPM) Installation - High-quality civil engineering and construction.",
-      "title": "Damp Proof Membrane (DPM) Installation",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
       "id": "civilworks-71",
       "src": "images/projects/civilworks/foundation-work-16.jpeg",
       "alt": "Steel Mesh Reinforcement for Concrete Slab - High-quality civil engineering and construction.",
@@ -439,14 +367,6 @@
       "src": "images/projects/civilworks/foundation-work-14.jpeg",
       "alt": "Foundation Surface Bed Preparation - High-quality civil engineering and construction.",
       "title": "Foundation Surface Bed Preparation",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "civilworks-75",
-      "src": "images/projects/civilworks/foundation-work-12.jpeg",
-      "alt": "Steel Mesh Reinforcement for Concrete Slab - High-quality civil engineering and construction.",
-      "title": "Steel Mesh Reinforcement for Concrete Slab",
       "featured": false,
       "date": "2024-08-01"
     },
@@ -475,14 +395,6 @@
       "date": "2024-08-01"
     },
     {
-      "id": "civilworks-83",
-      "src": "images/projects/civilworks/foundation-work-4.jpeg",
-      "alt": "Steel Mesh Reinforcement for Concrete Slab - High-quality civil engineering and construction.",
-      "title": "Steel Mesh Reinforcement for Concrete Slab",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
       "id": "civilworks-84",
       "src": "images/projects/civilworks/foundation-work-3.jpeg",
       "alt": "Residential Housing Foundation Prep - High-quality civil engineering and construction.",
@@ -495,22 +407,6 @@
       "src": "images/projects/civilworks/foundation-work-2.jpeg",
       "alt": "Foundation Surface Bed Preparation - High-quality civil engineering and construction.",
       "title": "Foundation Surface Bed Preparation",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "civilworks-87",
-      "src": "images/projects/civilworks/foundation-work-18.jpeg",
-      "alt": "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery.",
-      "title": "Bulk Excavation & Site Clearance",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "civilworks-88",
-      "src": "images/projects/civilworks/foundation-work-17.jpeg",
-      "alt": "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery.",
-      "title": "Bulk Excavation & Site Clearance",
       "featured": false,
       "date": "2024-08-01"
     },
@@ -539,14 +435,6 @@
       "date": "2024-08-01"
     },
     {
-      "id": "civilworks-93",
-      "src": "images/projects/civilworks/foundation-work-12.jpeg",
-      "alt": "Bulk excavation, site clearing, and vegetation removal using heavy earthmoving machinery.",
-      "title": "Bulk Excavation & Site Clearance",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
       "id": "civilworks-95",
       "src": "images/projects/civilworks/foundation-work-10.jpeg",
       "alt": "Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes.",
@@ -567,14 +455,6 @@
       "src": "images/projects/civilworks/foundation-work-6.jpeg",
       "alt": "Mechanical subgrade soil compaction and leveling to prepare a stable building platform to civil codes.",
       "title": "Subgrade Compaction & Platform Prep",
-      "featured": false,
-      "date": "2024-08-01"
-    },
-    {
-      "id": "civilworks-101",
-      "src": "images/projects/civilworks/foundation-work-4.jpeg",
-      "alt": "Excavated foundation trenches with structural profiles and line markings set up for geotechnical survey.",
-      "title": "Foundation Trench Excavation",
       "featured": false,
       "date": "2024-08-01"
     },
