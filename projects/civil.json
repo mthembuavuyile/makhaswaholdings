@@ -124,7 +124,7 @@
     },
     {
       "id": "civilworks-6",
-      "src": "images/projects/civilworks/pipe-laying/pumphouse-steel-pipe-works-5.jpeg",
+      "src": "images/projects/civilworks/pipe-laying/steel-drainage-pipeline-installation.jpeg",
       "alt": "Worker laying pumphouse pipes in an excavated trench.",
       "title": "Pumphouse Steel Pipe Works",
       "date": "2024-08-01",
@@ -156,11 +156,11 @@
     },
     {
       "id": "civilworks-10",
-      "src": "images/projects/earthworks/makhaswa-5.jpeg",
+      "src": "images/projects/civilworks/bridges/culvert-bridge2.jpeg",
       "alt": "Completed multi-barrel concrete culvert bridge structure set into an embankment on a rural road",
       "title": "Culvert Bridge Construction",
       "date": "2024-08-01",
-      "subdiscipline": "bulk-earthworks"
+      "subdiscipline": "bridges"
     },
     {
       "id": "civilworks-11",
@@ -237,8 +237,8 @@
     {
       "id": "civilworks-20",
       "src": "images/projects/civilworks/retaining-walls/makhaswa-1.jpeg",
-      "alt": "Completed multi-cell precast concrete culvert bridge over a stream bed",
-      "title": "Stormwater Culvert Bridge",
+      "alt": "Workers in PPE installing and inspecting dense steel rebar reinforcement for a concrete retaining wall footing along a deep excavated embankment",
+      "title": "Retaining Wall Footing & Steel Reinforcement",
       "date": "2024-08-01",
       "subdiscipline": "retaining-walls"
     },
