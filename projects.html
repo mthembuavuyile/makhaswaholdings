@@ -129,6 +129,17 @@
         <p class="section-subtitle section-subtitle--spaced">From bulk earthworks to complete housing developments and
             infrastructure, explore our portfolio of successfully completed public and private sector projects.</p>
 
+        <!-- Project Search Bar -->
+        <div class="project-search-container">
+            <div class="project-search-box">
+                <i data-lucide="search" class="project-search-icon"></i>
+                <input type="search" id="project-search-input" placeholder="Search projects by keyword (e.g. culvert, asphalt, paving)..." autocomplete="off" spellcheck="false" aria-label="Search projects by keyword">
+                <button type="button" id="project-search-clear" class="project-search-clear" aria-label="Clear search" style="display: none;">
+                    <i data-lucide="x" class="project-search-clear-icon"></i>
+                </button>
+            </div>
+        </div>
+
         <!-- Category Filters -->
         <div class="portfolio-filter-wrapper" role="tablist" aria-label="Filter projects by discipline">
             <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Projects</button>

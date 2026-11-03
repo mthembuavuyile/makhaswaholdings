@@ -11,16 +11,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const ITEMS_PER_PAGE = 15;
 
     // State variables
-    let allImages = [];       // Complete consolidated dataset
-    let currentDataset = [];  // Filtered subset currently active
-    let renderedCount = 0;    // Number of images currently rendered in grid
-    let lightboxIndex = 0;    // Current active index in the lightbox
+    let allImages = [];          // Complete consolidated dataset
+    let currentDataset = [];     // Filtered subset currently active
+    let renderedCount = 0;       // Number of images currently rendered in grid
+    let lightboxIndex = 0;       // Current active index in the lightbox
+    let currentCategory = 'all'; // Currently active category filter
+    let currentSearchQuery = ''; // Currently active keyword search
 
     // DOM Elements
     const grid = document.getElementById('projects-grid');
     const paginationContainer = document.getElementById('projects-pagination');
     const countLabel = document.getElementById('projects-count');
     const filterWrapper = document.querySelector('.portfolio-filter-wrapper');
+    const searchInput = document.getElementById('project-search-input');
+    const searchClearBtn = document.getElementById('project-search-clear');
 
     // Lightbox DOM Elements
     let lightbox = null;
@@ -56,10 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     cat.images.forEach(img => {
                         allImages.push({
                             src: img.src,
-                            alt: img.alt,
-                            title: img.title,
+                            alt: img.alt || '',
+                            title: img.title || '',
+                            subdiscipline: img.subdiscipline || '',
                             categoryId: catId,
-                            categoryName: cat.title
+                            categoryName: cat.title || ''
                         });
                     });
                 }
@@ -71,8 +76,15 @@ document.addEventListener("DOMContentLoaded", () => {
             // Setup components
             setupLightbox();
             setupFilters();
-            checkURLFilter();
-            renderNextBatch();
+            setupSearch();
+            const hasURLFilter = checkURLFilter();
+            if (!hasURLFilter) {
+                renderNextBatch();
+            }
+
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
         })
         .catch(err => {
             console.error('Error loading portfolio:', err);
@@ -171,7 +183,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Handle empty state
         if (totalItems === 0) {
-            grid.innerHTML = '<div class="portfolio-empty-message" style="grid-column: 1/-1; text-align: center; padding: 48px; color: var(--text-light); font-weight: 600;">No projects found in this category.</div>';
+            const hasQuery = Boolean(currentSearchQuery.trim());
+            const escapedQuery = currentSearchQuery.trim().replace(/"/g, '&quot;');
+            grid.innerHTML = `
+                <div class="portfolio-empty-message" style="grid-column: 1/-1; text-align: center; padding: 48px 20px; color: var(--text-light);">
+                    <p style="font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 8px;">
+                        ${hasQuery ? `No projects found matching "${escapedQuery}"` : 'No projects found in this category.'}
+                    </p>
+                    <p style="font-size: 14px; margin-bottom: 20px;">
+                        ${hasQuery ? 'Try checking your spelling, using broader terms, or selecting "All Projects".' : 'Please check back soon or browse other disciplines.'}
+                    </p>
+                    ${hasQuery ? '<button type="button" id="btn-clear-empty-search" class="btn-clear-search-filter" style="background: var(--primary); color: #ffffff; border: none; padding: 10px 22px; font-family: var(--font); font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; border-radius: 4px; cursor: pointer;">Clear Search</button>' : ''}
+                </div>
+            `;
+            const clearEmptyBtn = document.getElementById('btn-clear-empty-search');
+            if (clearEmptyBtn && searchInput) {
+                clearEmptyBtn.addEventListener('click', () => {
+                    searchInput.value = '';
+                    currentSearchQuery = '';
+                    if (searchClearBtn) searchClearBtn.style.display = 'none';
+                    applyFilters(false);
+                    searchInput.focus();
+                });
+            }
             if (countLabel) countLabel.textContent = '';
             updatePaginationControls();
             return;
@@ -224,7 +258,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Update count label
         if (countLabel) {
-            countLabel.textContent = `Showing 1–${renderedCount} of ${totalItems} projects`;
+            if (currentSearchQuery.trim()) {
+                countLabel.textContent = `Showing 1–${renderedCount} of ${totalItems} projects matching "${currentSearchQuery.trim()}"`;
+            } else {
+                countLabel.textContent = `Showing 1–${renderedCount} of ${totalItems} projects`;
+            }
         }
 
         updatePaginationControls();
@@ -261,8 +299,78 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (currentDataset.length > 0) {
             const msg = document.createElement('div');
             msg.className = 'journal-end-message';
-            msg.textContent = 'You have viewed all projects in this category.';
+            msg.textContent = currentSearchQuery.trim()
+                ? 'You have viewed all matching projects.'
+                : 'You have viewed all projects in this category.';
             paginationContainer.appendChild(msg);
+        }
+    }
+
+    // Filter application helper
+    function applyFilters(scrollToTop = false) {
+        const query = currentSearchQuery.trim().toLowerCase();
+
+        currentDataset = allImages.filter(img => {
+            const matchesCat = (currentCategory === 'all' || img.categoryId === currentCategory);
+            if (!matchesCat) return false;
+
+            if (!query) return true;
+
+            const title = (img.title || '').toLowerCase();
+            const alt = (img.alt || '').toLowerCase();
+            const catName = (img.categoryName || '').toLowerCase();
+            const sub = (img.subdiscipline || '').toLowerCase();
+
+            return title.includes(query) || alt.includes(query) || catName.includes(query) || sub.includes(query);
+        });
+
+        // Reset grid & count
+        if (grid) {
+            grid.innerHTML = '';
+        }
+        renderedCount = 0;
+        renderNextBatch();
+
+        // Smooth scroll to top of grid
+        if (scrollToTop && grid) {
+            const headerOffset = 120;
+            const elementPosition = grid.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    // Live search input logic
+    function setupSearch() {
+        if (!searchInput) return;
+
+        const handleInput = () => {
+            currentSearchQuery = searchInput.value;
+            if (searchClearBtn) {
+                searchClearBtn.style.display = currentSearchQuery ? 'inline-flex' : 'none';
+            }
+            applyFilters(false);
+        };
+
+        searchInput.addEventListener('input', handleInput);
+
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                searchInput.value = '';
+                handleInput();
+            }
+        });
+
+        if (searchClearBtn) {
+            searchClearBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                handleInput();
+                searchInput.focus();
+            });
         }
     }
 
@@ -284,47 +392,48 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.setAttribute('aria-selected', 'true');
 
             // Apply filter value
-            const filterValue = btn.getAttribute('data-filter');
-
-            if (filterValue === 'all') {
-                currentDataset = allImages;
-            } else {
-                currentDataset = allImages.filter(img => img.categoryId === filterValue);
-            }
-
-            // Reset grid & count
-            if (grid) {
-                grid.innerHTML = '';
-            }
-            renderedCount = 0;
-            renderNextBatch();
-
-            // Smooth scroll to top of grid
-            if (grid) {
-                const headerOffset = 120;
-                const elementPosition = grid.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
+            currentCategory = btn.getAttribute('data-filter') || 'all';
+            applyFilters(true);
         });
     }
 
-    // Check for '?filter=' in the URL
+    // Check for '?filter=' or '?search=' in the URL
     function checkURLFilter() {
         const urlParams = new URLSearchParams(window.location.search);
         const filterParam = urlParams.get('filter');
+        const searchParam = urlParams.get('search');
+
+        let shouldFilter = false;
+
+        if (searchParam && searchInput) {
+            searchInput.value = searchParam;
+            currentSearchQuery = searchParam;
+            if (searchClearBtn) {
+                searchClearBtn.style.display = 'inline-flex';
+            }
+            shouldFilter = true;
+        }
+
         if (filterParam && filterWrapper) {
             const targetBtn = filterWrapper.querySelector(`.filter-btn[data-filter="${filterParam}"]`);
             if (targetBtn) {
-                setTimeout(() => {
-                    targetBtn.click();
-                }, 100);
+                const buttons = filterWrapper.querySelectorAll('.filter-btn');
+                buttons.forEach(b => {
+                    b.classList.remove('active');
+                    b.removeAttribute('aria-selected');
+                });
+                targetBtn.classList.add('active');
+                targetBtn.setAttribute('aria-selected', 'true');
+                currentCategory = filterParam;
+                shouldFilter = true;
             }
         }
+
+        if (shouldFilter) {
+            applyFilters(false);
+            return true;
+        }
+        return false;
     }
 
     function setupLightbox() {
