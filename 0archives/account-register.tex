@@ -1,0 +1,176 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.6cm,right=1.6cm,top=1.1cm,bottom=1.5cm,footskip=0.7cm]{geometry}
+\usepackage{tabularx,booktabs,array,xcolor,parskip,helvet,titlesec,fancyhdr,hyperref}
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\ttdefault}{pcr}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.12}
+\definecolor{navy}{HTML}{051B38}
+\definecolor{orange}{HTML}{FBA919}
+\definecolor{muted}{HTML}{596575}
+\definecolor{pale}{HTML}{F3F6F9}
+\definecolor{due}{HTML}{9D2942}
+\definecolor{paid}{HTML}{1E7E48}
+\hypersetup{colorlinks=true,urlcolor=navy,pdftitle={Makhaswa Holdings - Client Account Register},pdfauthor={Avuyile Mthembu}}
+\titleformat{\section}{\normalsize\bfseries\color{navy}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{8pt}{3pt}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcommand{\money}[1]{\mbox{R#1}}
+\newcommand{\brandrule}{\par{\color{orange}\rule{\textwidth}{1.5pt}}\par}
+\newcommand{\labeltext}[1]{{\footnotesize\bfseries\color{muted}#1}}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\fancyfoot[L]{\footnotesize\color{muted}VYLEX\enspace|\enspace MH-2026-001}
+\fancyfoot[R]{\footnotesize\color{muted}Page \thepage\ of 2}
+
+\begin{document}
+
+\begin{tabularx}{\textwidth}{@{}L r@{}}
+{\fontsize{25}{29}\selectfont\bfseries\color{navy}VYLEX}
+& {\large\bfseries\color{navy}CLIENT ACCOUNT REGISTER}\\
+{\small\color{muted}vylex.co.za\enspace|\enspace Software Development}
+& {\small Account Ref: MH-2026-001}
+\end{tabularx}
+\brandrule
+\begin{tabularx}{\textwidth}{@{}L r@{}}
+\textbf{Makhaswa Holdings} & \textbf{07 November 2026}\\
+\labeltext{ACCOUNT HOLDER} & \labeltext{STATEMENT DATE}
+\end{tabularx}
+
+\vspace{2pt}
+\begingroup
+\setlength{\fboxsep}{6pt}
+\noindent\colorbox{pale}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
+\begin{tabularx}{\linewidth}{@{}L L@{}}
+\labeltext{TOTAL CHARGES} & \labeltext{TOTAL REPAYMENTS RECEIVED}\\[5pt]
+{\fontsize{20}{23}\selectfont\bfseries\color{navy}\money{11,850.00}}
+& {\fontsize{20}{23}\selectfont\bfseries\color{paid}\money{9,050.00}}\\
+\end{tabularx}}}
+\endgroup
+
+\section*{Account details}
+{\small
+\begin{tabularx}{\textwidth}{@{}L L@{}}
+\textbf{\color{navy}SERVICE PROVIDER} & \textbf{\color{navy}CLIENT}\\
+\textbf{Vylex} & \textbf{Makhaswa Holdings}\\
+Avuyile Mthembu (Founder \& Full-Stack Developer) & Lucas Dinga (Owner)\\
+\href{mailto:info@vylex.co.za}{info@vylex.co.za} & \href{mailto:info@makhaswaholdings.co.za}{info@makhaswaholdings.co.za}\\
++27 64 878 4287 & 012 944 1702\enspace|\enspace 011 568 0938\\
+Pretoria, South Africa & 869 Patryshond Street, Garsfontein, Pretoria, Gauteng, 0042
+\end{tabularx}}
+
+\section*{Amount outstanding}
+\begingroup
+\setlength{\fboxsep}{6pt}
+\noindent\colorbox{pale}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
+\begin{tabularx}{\linewidth}{@{}L L L@{}}
+\labeltext{TOTAL DUE} & \labeltext{PROFILE + PDF VIEWER} & \labeltext{WEBSITE UPDATES}\\[5pt]
+{\fontsize{20}{23}\selectfont\bfseries\color{due}\money{2,800.00}}
+& {\large\bfseries\color{navy}\money{1,300.00}}
+& {\large\bfseries\color{navy}\money{1,500.00}}\\[3pt]
+{\footnotesize Remaining account balance} & {\footnotesize R1,000 profile + R300 viewer} & {\footnotesize Six service pages and updates}
+\end{tabularx}}}
+\endgroup
+
+{\small\textbf{Latest payment:} \textbf{\color{paid}\money{1,500.00}} received from MH on 07 November 2026 for company profile progress.}
+
+\section*{Current services}
+{\small
+\begin{tabularx}{\textwidth}{@{}L r r r@{}}
+\toprule
+\textbf{Service} & \textbf{Charge} & \textbf{Paid} & \textbf{Balance}\\
+\midrule
+Expanded company profile & \money{3,500.00} & \money{2,500.00} & \money{1,000.00}\\[3pt]
+PDF viewer \& website integration & \money{300.00} & \money{0.00} & \money{300.00}\\[3pt]
+Additional website pages \& updates & \money{1,500.00} & \money{0.00} & \money{1,500.00}\\
+\midrule
+\textbf{Total} & \textbf{\money{5,300.00}} & \textbf{\color{paid}\money{2,500.00}} & \textbf{\color{due}\money{2,800.00}}\\
+\bottomrule
+\end{tabularx}}
+
+{\small
+\textbf{Company profile:} Original 14-page profile (R2,200) plus agreed additional work (R1,300): expanded trade/service sections, improved descriptions and writing, and new images including Gabions and Stone Pitching.
+
+\textbf{PDF viewer \& integration:} Confirmed website integration for visitors to access, view and download the company profile. (R300)
+
+\textbf{Website pages \& updates:} Six SEO service pages (R1,200) plus updates (R300): remove the Midrand address; set up \texttt{tenders@} and \texttt{careers@} emails with signatures; configure form routing. Quoted 21 October 2026 and confirmed.}
+
+\section*{Payment details}
+{\small
+\begin{tabularx}{\textwidth}{@{}L L@{}}
+\textbf{\color{navy}Standard Bank} & \textbf{\color{navy}Capitec Bank}\\
+Account number: 1017 126 3314 & Account number: 2020 648 500
+\end{tabularx}
+\textbf{PayShap:} 064 878 4287\enspace|\enspace\textbf{Payment reference:} Makhaswa Holdings / Any recognisable reference}
+
+\newpage
+
+\begin{tabularx}{\textwidth}{@{}L r@{}}
+{\large\bfseries\color{navy}VYLEX\enspace|\enspace PAYMENT RECORD}
+& {\small\color{muted}07 November 2026}\\
+{\small Makhaswa Holdings} & {\small Account Ref: MH-2026-001}
+\end{tabularx}
+\brandrule
+
+\section*{Payments received --- all projects}
+\begin{tabularx}{\textwidth}{@{}l L r@{}}
+\toprule
+\textbf{Date} & \textbf{Allocation} & \textbf{Amount}\\
+\midrule
+17 April 2026 & Website development: initial deposit & \money{1,500.00}\\[7pt]
+11 May 2026 & Website development: progress payment & \money{2,000.00}\\[7pt]
+22 June 2026 & Website development: milestone payment & \money{1,400.00}\\[7pt]
+05 August 2026 & Website development: final balance & \money{1,400.00}\\[7pt]
+01 September 2026 & Company profile: deposit & \money{1,000.00}\\[7pt]
+11 September 2026 & Five employee email signatures & \money{250.00}\\[7pt]
+07 November 2026 & Company profile: progress payment & \money{1,500.00}\\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Total payments received}} & \textbf{\color{paid}\money{9,050.00}}\\
+\bottomrule
+\end{tabularx}
+
+\section*{Settled services}
+\begin{tabularx}{\textwidth}{@{}L r@{}}
+\textbf{Historical website development} & \textbf{\color{paid}PAID IN FULL}\\
+Payments received: \money{6,300.00} & Balance: \money{0.00}
+\end{tabularx}
+
+{\small Scope: final development milestone, website deployment, approved enhancements, email account setup, Google Business Profile transfer and verification, email routing updates, and final review.}
+
+\vspace{5pt}
+\begin{tabularx}{\textwidth}{@{}L r@{}}
+\textbf{Five employee email signatures} & \textbf{\color{paid}PAID IN FULL}\\
+Payment received: \money{250.00} on 11 September 2026 & Balance: \money{0.00}
+\end{tabularx}
+
+\section*{Account reconciliation}
+\begin{tabularx}{\textwidth}{@{}L r@{}}
+\toprule
+Historical website development & \money{6,300.00}\\[4pt]
+Five employee email signatures & \money{250.00}\\[4pt]
+Current services (page 1) & \money{5,300.00}\\
+\midrule
+\textbf{Total charges --- all projects} & \textbf{\money{11,850.00}}\\[4pt]
+Less: total payments received & (\money{9,050.00})\\
+\midrule
+\textbf{\color{due}TOTAL DUE} & \textbf{\color{due}\money{2,800.00}}\\
+\bottomrule
+\end{tabularx}
+
+\section*{Account notes}
+{\small
+Settled services are excluded from the outstanding balance. Payments are allocated to the services shown in the record above.
+
+Please verify banking details with the service provider before making a transfer. This account register does not replace a formal tax invoice.}
+
+\vspace{12pt}
+{\small\textbf{Prepared by Avuyile Mthembu}\\
+\href{mailto:info@vylex.co.za}{info@vylex.co.za}\enspace|\enspace +27 64 878 4287\enspace|\enspace\href{https://vylex.co.za}{vylex.co.za}}
+
+\end{document}
