@@ -171,4 +171,20 @@
     <priority>0.3000</priority>
   </url>
 
+  <!-- 15. Company Profile Viewer -->
+  <url>
+    <loc>https://makhaswaholdings.co.za/company-profile-viewer.html</loc>
+    <lastmod>2026-11-11T20:00:00+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7000</priority>
+  </url>
+
+  <!-- 16. HTML Sitemap -->
+  <url>
+    <loc>https://makhaswaholdings.co.za/sitemap.html</loc>
+    <lastmod>2026-11-11T20:00:00+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5000</priority>
+  </url>
+
 </urlset>

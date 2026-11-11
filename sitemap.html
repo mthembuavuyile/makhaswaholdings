@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap | Makhaswa Holdings (Pty) Ltd</title>
+    <meta name="description"
+        content="Complete HTML sitemap for Makhaswa Holdings (Pty) Ltd. Navigate all public civil engineering, building construction, mechanical, electrical, and corporate pages.">
+
+    <!-- SEO & Canonical -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Makhaswa Holdings (Pty) Ltd">
+    <meta name="theme-color" content="#082d5a">
+    <link rel="canonical" href="https://makhaswaholdings.co.za/sitemap.html">
+
+    <!-- Favicons & App Icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Open Graph / Facebook / LinkedIn Link Previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://makhaswaholdings.co.za/sitemap.html">
+    <meta property="og:title" content="Sitemap | Makhaswa Holdings (Pty) Ltd">
+    <meta property="og:description"
+        content="Complete directory of all public pages, civil engineering disciplines, and project resources for Makhaswa Holdings.">
+    <meta property="og:image" content="https://makhaswaholdings.co.za/images/logo.jpeg">
+
+    <!-- Twitter Link Previews -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://makhaswaholdings.co.za/sitemap.html">
+    <meta name="twitter:title" content="Sitemap | Makhaswa Holdings (Pty) Ltd">
+    <meta name="twitter:description"
+        content="Complete directory of all public pages, civil engineering disciplines, and project resources for Makhaswa Holdings.">
+    <meta name="twitter:image" content="https://makhaswaholdings.co.za/images/logo.jpeg">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.js" defer></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Structured Data (JSON-LD) — Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://makhaswaholdings.co.za/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Sitemap",
+          "item": "https://makhaswaholdings.co.za/sitemap.html"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .page-hero-sitemap {
+            background-image: url('images/hero/makhaswa-building.jpeg');
+            background-position: center 40%;
+        }
+
+        .sitemap-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 24px 80px;
+        }
+
+        .sitemap-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding: 20px 24px;
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .sitemap-jump-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .sitemap-jump-nav span {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 6px;
+        }
+
+        .jump-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            transition: all var(--transition);
+        }
+
+        .jump-pill:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .sitemap-search-wrap {
+            position: relative;
+            min-width: 260px;
+            max-width: 340px;
+            width: 100%;
+        }
+
+        .sitemap-search-wrap i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .sitemap-search-input {
+            width: 100%;
+            padding: 10px 14px 10px 38px;
+            font-size: 13px;
+            font-family: var(--font);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--white);
+            color: var(--text);
+            outline: none;
+            transition: border-color var(--transition);
+        }
+
+        .sitemap-search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(8, 45, 90, 0.1);
+        }
+
+        .sitemap-group {
+            margin-bottom: 50px;
+            scroll-margin-top: 100px;
+        }
+
+        .sitemap-group-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 14px;
+            margin-bottom: 24px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .sitemap-group-header i {
+            color: var(--primary);
+        }
+
+        .sitemap-group-header h2 {
+            font-size: clamp(18px, 2.2vw, 24px);
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .sitemap-group-count {
+            margin-left: auto;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--primary);
+            background: rgba(8, 45, 90, 0.08);
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .sitemap-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+            position: relative;
+        }
+
+        .sitemap-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-mid);
+        }
+
+        .sitemap-card-top {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .sitemap-icon-badge {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            background: rgba(8, 45, 90, 0.06);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background var(--transition), color var(--transition);
+        }
+
+        .sitemap-card:hover .sitemap-icon-badge {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .sitemap-card-title-wrap {
+            flex: 1;
+        }
+
+        .sitemap-card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+
+        .sitemap-card-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .sitemap-card-title a:hover {
+            color: var(--primary-mid);
+            text-decoration: underline;
+        }
+
+        .sitemap-card-path {
+            display: inline-block;
+            font-size: 11px;
+            font-family: monospace;
+            color: var(--text-muted);
+            background: var(--off-white);
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid #e8e8e8;
+        }
+
+        .sitemap-card-desc {
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--text-light);
+            margin-bottom: 18px;
+            flex-grow: 1;
+        }
+
+        .sitemap-card-footer {
+            margin-top: auto;
+            padding-top: 14px;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sitemap-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+            transition: gap var(--transition), color var(--transition);
+        }
+
+        .sitemap-card-link:hover {
+            color: var(--gold);
+            gap: 10px;
+        }
+
+        .sitemap-no-results {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--off-white);
+            border: 1px dashed var(--border);
+            border-radius: 8px;
+            color: var(--text-muted);
+        }
+
+        .sitemap-no-results.visible {
+            display: block;
+        }
+
+        .sitemap-xml-notice {
+            margin-top: 60px;
+            padding: 24px;
+            background: rgba(8, 45, 90, 0.03);
+            border: 1px solid rgba(8, 45, 90, 0.12);
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .sitemap-xml-text h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .sitemap-xml-text p {
+            font-size: 13px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .sitemap-xml-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 6px;
+            transition: background var(--transition);
+        }
+
+        .sitemap-xml-btn:hover {
+            background: var(--primary-mid);
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .sitemap-toolbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .sitemap-search-wrap {
+                max-width: 100%;
+            }
+
+            .sitemap-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Shared Header (injected by components.js) -->
+    <div id="site-header">
+        <noscript>
+            <nav aria-label="Navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </noscript>
+    </div>
+
+    <!-- =====================================================
+         PAGE HERO
+    ===================================================== -->
+    <div class="page-hero page-hero-sitemap" role="img" aria-label="Makhaswa Holdings Headquarters and Construction Fleet">
+        <div class="hero-content">
+            <h1>Website Sitemap</h1>
+            <p>Comprehensive navigation directory of all public pages, civil engineering disciplines, project portfolios, and corporate compliance records.</p>
+        </div>
+    </div>
+
+    <!-- Section banner -->
+    <div class="section-banner">Site Architecture &amp; Public Index</div>
+
+    <!-- =====================================================
+         MAIN SITEMAP CONTENT
+    ===================================================== -->
+    <main class="sitemap-container" id="main-content">
+
+        <!-- Toolbar: Quick Jump & Instant Filter -->
+        <div class="sitemap-toolbar">
+            <div class="sitemap-jump-nav" aria-label="Quick jump to sitemap categories">
+                <span>Jump to:</span>
+                <a href="#core-pages" class="jump-pill">
+                    <i data-lucide="building" width="14" height="14"></i>
+                    Core Pages
+                </a>
+                <a href="#engineering-services" class="jump-pill">
+                    <i data-lucide="hard-hat" width="14" height="14"></i>
+                    Services &amp; Capabilities
+                </a>
+                <a href="#projects-careers" class="jump-pill">
+                    <i data-lucide="folder-git-2" width="14" height="14"></i>
+                    Projects &amp; Careers
+                </a>
+                <a href="#compliance-legal" class="jump-pill">
+                    <i data-lucide="shield-check" width="14" height="14"></i>
+                    Compliance &amp; Contact
+                </a>
+            </div>
+
+            <div class="sitemap-search-wrap">
+                <i data-lucide="search" width="16" height="16"></i>
+                <input type="text" id="sitemapFilter" class="sitemap-search-input"
+                    placeholder="Search pages, disciplines..." aria-label="Filter sitemap pages">
+            </div>
+        </div>
+
+        <div id="noResults" class="sitemap-no-results">
+            <p><strong>No matching pages found.</strong></p>
+            <p>Try searching with another keyword such as civil, road, earthworks, building, or contact.</p>
+        </div>
+
+        <!-- GROUP 1: CORE PAGES -->
+        <section class="sitemap-group" id="core-pages" aria-labelledby="heading-core">
+            <div class="sitemap-group-header">
+                <i data-lucide="building" width="22" height="22"></i>
+                <h2 id="heading-core">Core Corporate Pages</h2>
+                <span class="sitemap-group-count">3 Pages</span>
+            </div>
+
+            <div class="sitemap-grid">
+                <!-- Home -->
+                <article class="sitemap-card" data-keywords="home homepage index civil engineering construction cidb grade 8 level 1 bbbee pretoria makhaswa">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="home" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="index.html">Home</a></h3>
+                            <span class="sitemap-card-path">index.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">The primary landing portal for Makhaswa Holdings (Pty) Ltd. Highlights our Level 1 B-BBEE accreditation, CIDB Grade 8 accreditations, core capabilities, corporate mission, and nationwide footprint.</p>
+                    <div class="sitemap-card-footer">
+                        <a href="index.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- About Us -->
+                <article class="sitemap-card" data-keywords="about us corporate background leadership mission vision values safety sheq transformation governance cipc registration">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="users" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="about.html">About Us</a></h3>
+                            <span class="sitemap-card-path">about.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">Detailed corporate background, incorporation history (est. 2017), executive leadership, corporate values, occupational health and safety (SHEQ) standards, and community socio-economic transformation commitments.</p>
+                    <div class="sitemap-card-footer">
+                        <a href="about.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Company Profile Viewer -->
+                <article class="sitemap-card" data-keywords="company profile viewer brochure interactive pdf credentials cidb grades statutory records certifications download">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="book-open" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="company-profile-viewer.html">Company Profile Viewer</a></h3>
+                            <span class="sitemap-card-path">company-profile-viewer.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">Interactive in-browser reader for the official Makhaswa Holdings corporate company profile, showcasing tender track records, CIDB registrations, organizational capacity, and fleet details.</p>
+                    <div class="sitemap-card-footer">
+                        <a href="company-profile-viewer.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- GROUP 2: ENGINEERING SERVICES -->
+        <section class="sitemap-group" id="engineering-services" aria-labelledby="heading-services">
+            <div class="sitemap-group-header">
+                <i data-lucide="hard-hat" width="22" height="22"></i>
+                <h2 id="heading-services">Services &amp; Engineering Disciplines</h2>
+                <span class="sitemap-group-count">7 Pages</span>
+            </div>
+
+            <div class="sitemap-grid">
+                <!-- Services Hub -->
+                <article class="sitemap-card" data-keywords="services overview all disciplines civil mechanical electrical general building earthworks roads tender procurement">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="layers" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="services.html">Services Overview</a></h3>
+                            <span class="sitemap-card-path">services.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">Comprehensive overview hub of all multi-disciplinary contracting capabilities, engineering management practices, statutory compliance ratings, and construction methodologies.</p>
+                    <div class="sitemap-card-footer">
+                        <a href="services.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Civil Infrastructure & Pipelines -->
+                <article class="sitemap-card" data-keywords="civil works infrastructure pipelines bulk water stormwater sewer drainage culverts concrete retaining walls municipal cidb 8ce">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="droplet" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="services/civil-works.html">Civil Infrastructure &amp; Pipelines</a></h3>
+                            <span class="sitemap-card-path">services/civil-works.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">Specialized civil infrastructure execution including bulk water reticulation, sewer networks, stormwater canals, retaining systems, concrete reservoirs, and municipal pipeline systems (CIDB Grade 8CE PE).</p>
+                    <div class="sitemap-card-footer">
+                        <a href="services/civil-works.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Road Construction & Surfacing -->
+                <article class="sitemap-card" data-keywords="road construction surfacing asphalt paving inlays overlays rehabilitation kerbing stormwater chip seal highways sanral municipal">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="route" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="services/road-construction.html">Road Construction &amp; Surfacing</a></h3>
+                            <span class="sitemap-card-path">services/road-construction.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">Comprehensive roadway engineering spanning asphalt surfacing, premix overlays, road rehabilitation, kerbing, traffic calming, aggregate base courses, and municipal street networks.</p>
+                    <div class="sitemap-card-footer">
+                        <a href="services/road-construction.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Bulk Earthworks & Site Prep -->
+                <article class="sitemap-card" data-keywords="bulk earthworks site prep excavation platform terracing land clearing soil compaction grading demolition yellow plant">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="truck" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="services/earthworks.html">Bulk Earthworks &amp; Site Prep</a></h3>
+                            <span class="sitemap-card-path">services/earthworks.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">Large-scale mass excavation, commercial and industrial platform terracing, controlled structural demolition, cut-and-fill operations, subgrade stabilization, and heavy equipment plant deployment.</p>
+                    <div class="sitemap-card-footer">
+                        <a href="services/earthworks.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- General Building Construction -->
+                <article class="sitemap-card" data-keywords="general building construction commercial residential nhbrc registered industrial schools clinics hospitals 6gb pe 7sb pe">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="building-2" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="services/general-building.html">General Building Construction</a></h3>
+                            <span class="sitemap-card-path">services/general-building.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">Turnkey building construction covering commercial complexes, educational and health facilities, industrial warehouses, and NHBRC-regulated residential developments (Registration: 4000006217).</p>
+                    <div class="sitemap-card-footer">
+                        <a href="services/general-building.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Mechanical Engineering -->
+                <article class="sitemap-card" data-keywords="mechanical engineering pump stations industrial pumps manifolds valves booster storage tanks treatment works cidb 8me">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="cog" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="services/mechanical-engineering.html">Mechanical Engineering</a></h3>
+                            <span class="sitemap-card-path">services/mechanical-engineering.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">High-capacity water and wastewater pump stations, pipeline manifold fabrication, industrial valve integration, booster pump systems, and steel storage reservoirs (CIDB Grade 8ME PE).</p>
+                    <div class="sitemap-card-footer">
+                        <a href="services/mechanical-engineering.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Electrical Engineering -->
+                <article class="sitemap-card" data-keywords="electrical engineering high mast lighting municipal reticulation cabling transformers substations electrification 7eb pe">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="zap" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="services/electrical-engineering.html">Electrical Engineering</a></h3>
+                            <span class="sitemap-card-path">services/electrical-engineering.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">Medium and low-voltage electrification, high-mast public lighting systems, underground cabling networks, substation infrastructure, and municipal electrical reticulation (CIDB Grade 7EB PE).</p>
+                    <div class="sitemap-card-footer">
+                        <a href="services/electrical-engineering.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- GROUP 3: PROJECTS & CAREERS -->
+        <section class="sitemap-group" id="projects-careers" aria-labelledby="heading-projects">
+            <div class="sitemap-group-header">
+                <i data-lucide="folder-git-2" width="22" height="22"></i>
+                <h2 id="heading-projects">Projects &amp; Careers</h2>
+                <span class="sitemap-group-count">2 Pages</span>
+            </div>
+
+            <div class="sitemap-grid">
+                <!-- Projects -->
+                <article class="sitemap-card" data-keywords="projects portfolio track record case studies photo gallery civil earthworks road building pretoria limpopo kzn gauteng">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="briefcase" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="projects.html">Projects Portfolio</a></h3>
+                            <span class="sitemap-card-path">projects.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">Interactive portfolio of completed and ongoing civil works, road construction, earthmoving, and building projects across South Africa, accompanied by high-resolution site photography.</p>
+                    <div class="sitemap-card-footer">
+                        <a href="projects.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Careers -->
+                <article class="sitemap-card" data-keywords="careers employment jobs engineering vacancies graduate programme internships artisan training hiring apply">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="user-plus" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="careers.html">Careers</a></h3>
+                            <span class="sitemap-card-path">careers.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">Professional opportunities at Makhaswa Holdings. Explore current engineering, project management, and site artisan vacancies, as well as graduate development and internship pathways.</p>
+                    <div class="sitemap-card-footer">
+                        <a href="careers.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- GROUP 4: COMPLIANCE, CONTACT & LEGAL -->
+        <section class="sitemap-group" id="compliance-legal" aria-labelledby="heading-compliance">
+            <div class="sitemap-group-header">
+                <i data-lucide="shield-check" width="22" height="22"></i>
+                <h2 id="heading-compliance">Contact, Support &amp; Legal</h2>
+                <span class="sitemap-group-count">3 Pages</span>
+            </div>
+
+            <div class="sitemap-grid">
+                <!-- Contact Us -->
+                <article class="sitemap-card" data-keywords="contact us office locations pretoria garsfontein mokopane durban johannesburg phone email tenders address map">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="map-pin" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="contact.html">Contact Us</a></h3>
+                            <span class="sitemap-card-path">contact.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">Direct contact channels, office addresses in Pretoria (Head Office), Mokopane (Limpopo), Durban (KZN), and Johannesburg, telephone numbers, and structured tender inquiry forms.</p>
+                    <div class="sitemap-card-footer">
+                        <a href="contact.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- FAQs -->
+                <article class="sitemap-card" data-keywords="faq frequently asked questions cidb questions b-bbee rating tenders nhbrc registration safety compliance">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="help-circle" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="faq.html">Frequently Asked Questions</a></h3>
+                            <span class="sitemap-card-path">faq.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">Detailed answers regarding our CIDB grades, Level 1 B-BBEE status, procurement tender procedures, NHBRC residential compliance, and regional operational capabilities.</p>
+                    <div class="sitemap-card-footer">
+                        <a href="faq.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Terms & Conditions -->
+                <article class="sitemap-card" data-keywords="terms and conditions legal policy intellectual property disclaimer liability jurisdiction south africa cipc">
+                    <div class="sitemap-card-top">
+                        <div class="sitemap-icon-badge">
+                            <i data-lucide="file-text" width="22" height="22"></i>
+                        </div>
+                        <div class="sitemap-card-title-wrap">
+                            <h3 class="sitemap-card-title"><a href="terms.html">Terms &amp; Conditions</a></h3>
+                            <span class="sitemap-card-path">terms.html</span>
+                        </div>
+                    </div>
+                    <p class="sitemap-card-desc">Official terms of website use, intellectual property protection, service quotation disclaimers, limitation of liability, and governing South African legal jurisdiction.</p>
+                    <div class="sitemap-card-footer">
+                        <a href="terms.html" class="sitemap-card-link">
+                            Explore Page <i data-lucide="arrow-right" width="14" height="14"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Machine-Readable XML Sitemap Box -->
+        <div class="sitemap-xml-notice">
+            <div class="sitemap-xml-text">
+                <h3>Looking for the Machine-Readable XML Feed?</h3>
+                <p>Search engines, crawlers, and automated indexing bots can access the official Sitemaps.org XML protocol feed.</p>
+            </div>
+            <a href="sitemap.xml" target="_blank" class="sitemap-xml-btn">
+                <i data-lucide="code" width="16" height="16"></i>
+                View XML Sitemap
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Shared Footer (injected by components.js) -->
+    <div id="site-footer">
+        <noscript>
+            <nav aria-label="Footer Navigation">
+                <a href="index.html">Home</a> |
+                <a href="about.html">About Us</a> |
+                <a href="services.html">Services</a> |
+                <a href="projects.html">Projects</a> |
+                <a href="careers.html">Careers</a> |
+                <a href="contact.html">Contact Us</a> |
+                <a href="faq.html">FAQs</a> |
+                <a href="terms.html">Terms &amp; Conditions</a> |
+                <a href="sitemap.html">Sitemap</a>
+            </nav>
+        </noscript>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Client-Side Instant Filtering Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterInput = document.getElementById('sitemapFilter');
+            const cards = document.querySelectorAll('.sitemap-card');
+            const groups = document.querySelectorAll('.sitemap-group');
+            const noResults = document.getElementById('noResults');
+
+            if (filterInput) {
+                filterInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase().trim();
+                    let totalVisible = 0;
+
+                    groups.forEach(group => {
+                        const groupCards = group.querySelectorAll('.sitemap-card');
+                        let groupVisible = 0;
+
+                        groupCards.forEach(card => {
+                            const title = card.querySelector('.sitemap-card-title').textContent.toLowerCase();
+                            const path = card.querySelector('.sitemap-card-path').textContent.toLowerCase();
+                            const desc = card.querySelector('.sitemap-card-desc').textContent.toLowerCase();
+                            const keywords = card.getAttribute('data-keywords') || '';
+
+                            const matches = title.includes(query) ||
+                                            path.includes(query) ||
+                                            desc.includes(query) ||
+                                            keywords.includes(query);
+
+                            if (matches) {
+                                card.style.display = 'flex';
+                                groupVisible++;
+                                totalVisible++;
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+
+                        group.style.display = groupVisible > 0 ? 'block' : 'none';
+                    });
+
+                    if (noResults) {
+                        if (totalVisible === 0) {
+                            noResults.classList.add('visible');
+                        } else {
+                            noResults.classList.remove('visible');
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
+

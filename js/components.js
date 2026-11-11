@@ -56,6 +56,8 @@ const SITE_CONFIG = {
         { label: 'Careers', href: 'careers.html' },
         { label: 'Contact Us', href: 'contact.html' },
         { label: 'FAQs', href: 'faq.html' },
+        { label: 'Terms & Conditions', href: 'terms.html' },
+        { label: 'Sitemap', href: 'sitemap.html' },
     ],
 
     downloads: [
