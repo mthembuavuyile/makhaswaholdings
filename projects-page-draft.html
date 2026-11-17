@@ -547,6 +547,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const registerSection = document.getElementById('project-register');
+            const projectsGrid = document.getElementById('projects-grid');
             const tabBtns = document.querySelectorAll('[data-register-tab]');
             const panels = {
                 'municipal': document.getElementById('panel-municipal'),
@@ -556,6 +557,27 @@
                 'municipal': '#municipal-projects',
                 'civil-building': '#civil-register'
             };
+
+            function isRegisterHash(hash) {
+                return [
+                    '#project-register',
+                    '#municipal-projects',
+                    '#panel-municipal',
+                    '#civil-register',
+                    '#panel-civil-building'
+                ].includes(hash);
+            }
+
+            function scrollToRegister(smooth) {
+                if (!registerSection) return;
+                const header = document.querySelector('header, .site-header');
+                const headerOffset = header ? header.offsetHeight : 72;
+                const y = registerSection.getBoundingClientRect().top + window.scrollY - headerOffset - 12;
+                window.scrollTo({
+                    top: Math.max(0, y),
+                    behavior: smooth ? 'smooth' : 'auto'
+                });
+            }
 
             function activateTab(target, updateUrl) {
                 if (!panels[target]) return;
@@ -574,21 +596,20 @@
                 }
             }
 
-            function handleHash(shouldScroll) {
+            function handleHash(shouldScroll, smooth) {
                 const hash = window.location.hash.toLowerCase();
+                if (!isRegisterHash(hash)) return false;
+
                 if (hash === '#civil-register' || hash === '#panel-civil-building') {
                     activateTab('civil-building', false);
-                    if (shouldScroll && registerSection) {
-                        registerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
                 } else if (hash === '#municipal-projects' || hash === '#panel-municipal') {
                     activateTab('municipal', false);
-                    if (shouldScroll && registerSection) {
-                        registerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                } else if (hash === '#project-register' && shouldScroll && registerSection) {
-                    registerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
+
+                if (shouldScroll) {
+                    scrollToRegister(smooth);
+                }
+                return true;
             }
 
             tabBtns.forEach(btn => {
@@ -597,8 +618,34 @@
                 });
             });
 
-            handleHash(true);
-            window.addEventListener('hashchange', () => handleHash(true));
+            const hasInitialHash = handleHash(true, false);
+
+            // Re-align scroll after portfolio.js asynchronously renders #projects-grid above #project-register
+            if (hasInitialHash && projectsGrid) {
+                let userInteracted = false;
+                const stopAutoScroll = () => { userInteracted = true; };
+                window.addEventListener('touchstart', stopAutoScroll, { once: true, passive: true });
+                window.addEventListener('wheel', stopAutoScroll, { once: true, passive: true });
+
+                const observer = new MutationObserver(() => {
+                    if (!userInteracted && projectsGrid.children.length > 0) {
+                        requestAnimationFrame(() => scrollToRegister(false));
+                        observer.disconnect();
+                    }
+                });
+                observer.observe(projectsGrid, { childList: true });
+
+                window.addEventListener('load', () => {
+                    if (!userInteracted) {
+                        setTimeout(() => {
+                            if (!userInteracted) scrollToRegister(false);
+                        }, 150);
+                    }
+                    setTimeout(() => observer.disconnect(), 4000);
+                });
+            }
+
+            window.addEventListener('hashchange', () => handleHash(true, true));
         });
     </script>
 </body>
