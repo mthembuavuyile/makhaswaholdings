@@ -833,7 +833,9 @@
 .register-jump-link {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
+    max-width: 100%;
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
@@ -856,6 +858,7 @@
 .register-jump-link svg {
     width: 15px;
     height: 15px;
+    flex-shrink: 0;
 }
 
 .register-tabs {
@@ -1091,5 +1094,15 @@
     .register-tab-btn {
         width: 100%;
         justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-jump-link {
+        width: 100%;
+        font-size: 11px;
+        letter-spacing: 0.4px;
+        gap: 6px;
+        padding: 10px 14px;
     }
 }
