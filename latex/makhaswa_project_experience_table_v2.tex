@@ -1,0 +1,181 @@
+
+\documentclass[a4paper,landscape,10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[
+    a4paper,
+    landscape,
+    top=1.6cm,
+    bottom=1.7cm,
+    left=1.35cm,
+    right=1.35cm
+]{geometry}
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[table]{xcolor}
+\usepackage{array,tabularx}
+\usepackage{microtype}
+
+% Corporate colours
+\definecolor{MHNavy}{HTML}{082D5A}
+\definecolor{MHGold}{HTML}{C8A951}
+\definecolor{MHLight}{HTML}{F0F4FA}
+\definecolor{MHText}{HTML}{243247}
+\definecolor{MHMuted}{HTML}{56657A}
+\definecolor{MHRule}{HTML}{DCE4ED}
+
+% Document formatting
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.65}
+\color{MHText}
+
+\begin{document}
+
+% Corporate heading
+\noindent
+\colorbox{MHNavy}{%
+  \parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
+    \vspace{0.38cm}\hspace{0.37cm}%
+    {\Large\bfseries\color{white}
+    MAKHASWA HOLDINGS (PTY) LTD}\\[5pt]
+    \hspace{0.37cm}%
+    {\normalsize\color{white}
+    PROJECT EXPERIENCE \& TRACK RECORD}%
+    \vspace{0.35cm}%
+  }%
+}
+
+\vspace{0.10cm}
+\noindent
+\color{MHGold}\rule{\textwidth}{1.5pt}
+
+\vspace{0.62cm}
+
+{\large\bfseries\color{MHNavy}
+Completed Municipal Infrastructure Projects}\par
+
+\vspace{0.16cm}
+
+{\small\color{MHMuted}
+Water supply, reservoirs, wastewater treatment
+and water reticulation}\par
+
+\vspace{0.43cm}
+
+% Project experience table
+\begingroup
+
+\fontsize{9.0pt}{11.8pt}\selectfont
+\color{MHText}
+\renewcommand{\arraystretch}{1.65}
+
+\begin{tabularx}{\textwidth}{@{}
+  >{\centering\arraybackslash}p{0.65cm}
+  >{\raggedright\arraybackslash}p{3.50cm}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{2.90cm}
+  >{\raggedleft\arraybackslash}p{2.85cm}
+  >{\raggedright\arraybackslash}p{2.45cm}
+  >{\raggedright\arraybackslash}p{2.60cm}
+@{}}
+
+% Table headings
+\rowcolor{MHNavy}
+
+{\color{white}\bfseries No.} &
+{\color{white}\bfseries Client / Employer} &
+{\color{white}\bfseries Project Description} &
+{\color{white}\bfseries Contract Number} &
+{\color{white}\bfseries Value (Incl. VAT)} &
+{\color{white}\bfseries Commencement} &
+{\color{white}\bfseries Completion} \\
+
+% Project 01
+\rowcolor{MHLight}
+
+\textbf{01} &
+Emakhazeni Local Municipality &
+Construction of 11.4 ML Reservoir and
+Refurbishment of WWT Plant in Enkanini
+Ward 4 &
+ELM14/04/23 &
+\textbf{R44,785,234.10} &
+27 Nov 2023 &
+04 Dec 2024 \\
+
+\arrayrulecolor{MHRule}\hline
+
+% Project 02
+\textbf{02} &
+Nquthu Local Municipality &
+Construction of Ntuthuko 12.1 ML Reservoir
+and 0.8 km Water Reticulation -- Ward 03 &
+NQULM12/2021-2022 &
+\textbf{R32,412,154.17} &
+01 May 2021 &
+07 Feb 2022\newline
+{\scriptsize\color{MHMuted}} \\
+
+\arrayrulecolor{MHRule}\hline
+
+% Project 03 - Joint venture
+\rowcolor{MHLight}
+
+\textbf{03} &
+uMkhanyakude District Municipality &
+Greater Ingwavuma Water Supply:
+Jozini/Shemula Pipeline -- Construction of
+12.5 ML Siweni Reservoir and 4.73 km of
+300 mm Diameter Steel Pipe to the
+Shemula Bulk Rising Main &
+SCMU 009/2022/2023 &
+\textbf{R55,459,580.00} &
+Not specified &
+21 Jun 2024 \\
+
+\arrayrulecolor{MHRule}\hline
+
+% Project 04
+\textbf{04} &
+eDumbe Local Municipality &
+Construction of New 13 ML Bathethwa
+Concrete Reservoir &
+DLM-79/02/2020 &
+\textbf{R28,482,365.12} &
+15 Apr 2021 &
+06 Feb 2022 \\
+
+\arrayrulecolor{MHRule}\hline
+
+% Contract value total
+\rowcolor{MHNavy}
+
+\multicolumn{4}{@{}l}{
+\hspace{6pt}\color{white}\bfseries
+TOTAL LISTED CONTRACT VALUE
+} &
+{\color{white}\bfseries R161,139,333.39} &
+\multicolumn{2}{l@{}}{} \\
+
+\end{tabularx}
+
+\endgroup
+
+\vspace{0.4cm}
+
+% Joint venture disclosure
+{\footnotesize\color{MHMuted}
+\textbf{Joint venture disclosure:}
+The uMkhanyakude District Municipality contract
+was awarded to Makhaswa Holdings JV Masiqhame
+Trading 789. The value shown is the full joint
+venture contract amount, not Makhaswa Holdings'
+individual share.
+}
+
+\end{document}
