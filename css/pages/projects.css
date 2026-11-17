@@ -817,3 +817,275 @@
 .lightbox-error-container .lightbox-retry:hover svg {
     transform: rotate(180deg);
 }
+
+/* =====================================================
+   VERIFIED PROJECT REGISTER TABLES & TABS
+   ===================================================== */
+.register-jump-wrap {
+    text-align: center;
+    margin: -12px auto 28px;
+}
+
+.register-jump-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--primary);
+    background: #f0f4fa;
+    border: 1px solid #dce4ed;
+    padding: 8px 18px;
+    border-radius: 999px;
+    transition: background var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.register-jump-link:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+    transform: translateY(-1px);
+}
+
+.register-jump-link svg {
+    width: 15px;
+    height: 15px;
+}
+
+.register-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.register-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 22px;
+    font-family: var(--font);
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--primary);
+    background: var(--white);
+    border: 1.5px solid #dce4ed;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.register-tab-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.register-tab-btn:hover {
+    border-color: var(--primary);
+    background: #f0f4fa;
+}
+
+.register-tab-btn.active {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+    box-shadow: 0 4px 14px rgba(8, 45, 90, 0.16);
+}
+
+.register-panel {
+    display: none;
+}
+
+.register-panel.active {
+    display: block;
+}
+
+.register-panel-intro {
+    font-size: 13.5px;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.register-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #dce4ed;
+    border-radius: 8px;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.register-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 820px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.register-table thead th {
+    background: var(--primary);
+    color: var(--white);
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    text-align: left;
+    padding: 13px 14px;
+    border-bottom: 2px solid var(--gold);
+    white-space: nowrap;
+}
+
+.register-table tbody td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e6ecf2;
+    vertical-align: top;
+}
+
+.register-table tbody tr:nth-child(even) {
+    background: #f0f4fa;
+}
+
+.register-table tbody tr:hover {
+    background: #e8eff8;
+}
+
+.register-table .col-num {
+    width: 52px;
+    text-align: center;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.register-table .col-val,
+.register-table thead th.col-val {
+    text-align: right;
+    white-space: nowrap;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.register-table thead th.col-val {
+    color: var(--white);
+}
+
+.register-table .col-date {
+    white-space: nowrap;
+}
+
+.register-table .col-ref {
+    font-weight: 700;
+    color: var(--primary);
+    white-space: nowrap;
+}
+
+.register-table tfoot td {
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 13px 14px;
+    border-top: 2px solid var(--gold);
+}
+
+.register-table tfoot td.col-val {
+    text-align: right;
+    color: var(--white);
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+.role-badge--main {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.role-badge--sub {
+    background: #e6eef8;
+    color: #1a56a0;
+}
+
+.role-badge--jv {
+    background: #e0f2f1;
+    color: #00695c;
+}
+
+.register-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.register-stat-card {
+    background: var(--white);
+    border: 1px solid #dce4ed;
+    border-top: 3px solid var(--primary);
+    border-radius: 6px;
+    padding: 16px 14px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.register-stat-card--accent {
+    border-top-color: var(--gold);
+}
+
+.register-stat-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1.2;
+}
+
+.register-stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-light);
+    margin-top: 6px;
+}
+
+.register-disclosure {
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border: 1px solid #dce4ed;
+    border-left: 4px solid var(--gold);
+    border-radius: 6px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.register-disclosure strong {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .register-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .register-tab-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
