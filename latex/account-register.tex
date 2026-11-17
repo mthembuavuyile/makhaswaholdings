@@ -1,14 +1,14 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[a4paper,left=1.6cm,right=1.6cm,top=1.1cm,bottom=1.5cm,footskip=0.7cm]{geometry}
+\usepackage[a4paper,left=1.6cm,right=1.6cm,top=1.0cm,bottom=1.35cm,footskip=0.65cm]{geometry}
 \usepackage{tabularx,booktabs,array,xcolor,parskip,helvet,titlesec,fancyhdr,hyperref}
 \renewcommand{\familydefault}{\sfdefault}
 \renewcommand{\ttdefault}{pcr}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
+\setlength{\parskip}{2.5pt}
 \setlength{\tabcolsep}{5pt}
-\renewcommand{\arraystretch}{1.12}
+\renewcommand{\arraystretch}{1.08}
 \definecolor{navy}{HTML}{051B38}
 \definecolor{orange}{HTML}{FBA919}
 \definecolor{muted}{HTML}{596575}
@@ -17,7 +17,7 @@
 \definecolor{paid}{HTML}{1E7E48}
 \hypersetup{colorlinks=true,urlcolor=navy,pdftitle={Makhaswa Holdings - Client Account Register},pdfauthor={Avuyile Mthembu}}
 \titleformat{\section}{\normalsize\bfseries\color{navy}}{}{0pt}{}
-\titlespacing*{\section}{0pt}{8pt}{3pt}
+\titlespacing*{\section}{0pt}{6pt}{2.5pt}
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcommand{\money}[1]{\mbox{R#1}}
 \newcommand{\brandrule}{\par{\color{orange}\rule{\textwidth}{1.5pt}}\par}
@@ -39,17 +39,17 @@
 \end{tabularx}
 \brandrule
 \begin{tabularx}{\textwidth}{@{}L r@{}}
-\textbf{Makhaswa Holdings} & \textbf{07 November 2026}\\
+\textbf{Makhaswa Holdings} & \textbf{17 November 2026}\\
 \labeltext{ACCOUNT HOLDER} & \labeltext{STATEMENT DATE}
 \end{tabularx}
 
 \vspace{2pt}
 \begingroup
-\setlength{\fboxsep}{6pt}
+\setlength{\fboxsep}{5pt}
 \noindent\colorbox{pale}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
 \begin{tabularx}{\linewidth}{@{}L L@{}}
 \labeltext{TOTAL CHARGES} & \labeltext{TOTAL REPAYMENTS RECEIVED}\\[5pt]
-{\fontsize{20}{23}\selectfont\bfseries\color{navy}\money{11,850.00}}
+{\fontsize{20}{23}\selectfont\bfseries\color{navy}\money{12,550.00}}
 & {\fontsize{20}{23}\selectfont\bfseries\color{paid}\money{9,050.00}}\\
 \end{tabularx}}}
 \endgroup
@@ -67,14 +67,15 @@ Pretoria, South Africa & 869 Patryshond Street, Garsfontein, Pretoria, Gauteng, 
 
 \section*{Amount outstanding}
 \begingroup
-\setlength{\fboxsep}{6pt}
+\setlength{\fboxsep}{5pt}
 \noindent\colorbox{pale}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
-\begin{tabularx}{\linewidth}{@{}L L L@{}}
-\labeltext{TOTAL DUE} & \labeltext{PROFILE + PDF VIEWER} & \labeltext{WEBSITE UPDATES}\\[5pt]
-{\fontsize{20}{23}\selectfont\bfseries\color{due}\money{2,800.00}}
+\begin{tabularx}{\linewidth}{@{}L L L L@{}}
+\labeltext{TOTAL DUE} & \labeltext{PROFILE + VIEWER} & \labeltext{WEBSITE UPDATES} & \labeltext{PROJECTS BUNDLE}\\[4pt]
+{\fontsize{20}{23}\selectfont\bfseries\color{due}\money{3,500.00}}
 & {\large\bfseries\color{navy}\money{1,300.00}}
-& {\large\bfseries\color{navy}\money{1,500.00}}\\[3pt]
-{\footnotesize Remaining account balance} & {\footnotesize R1,000 profile + R300 viewer} & {\footnotesize Six service pages and updates}
+& {\large\bfseries\color{navy}\money{1,500.00}}
+& {\large\bfseries\color{navy}\money{700.00}}\\[3pt]
+{\footnotesize Remaining balance} & {\footnotesize R1,000 + R300 viewer} & {\footnotesize Six pages \& updates} & {\footnotesize R500 bundle discount}
 \end{tabularx}}}
 \endgroup
 
@@ -86,20 +87,23 @@ Pretoria, South Africa & 869 Patryshond Street, Garsfontein, Pretoria, Gauteng, 
 \toprule
 \textbf{Service} & \textbf{Charge} & \textbf{Paid} & \textbf{Balance}\\
 \midrule
-Expanded company profile & \money{3,500.00} & \money{2,500.00} & \money{1,000.00}\\[3pt]
-PDF viewer \& website integration & \money{300.00} & \money{0.00} & \money{300.00}\\[3pt]
-Additional website pages \& updates & \money{1,500.00} & \money{0.00} & \money{1,500.00}\\
+Expanded company profile & \money{3,500.00} & \money{2,500.00} & \money{1,000.00}\\[2pt]
+PDF viewer \& website integration & \money{300.00} & \money{0.00} & \money{300.00}\\[2pt]
+Additional website pages \& updates & \money{1,500.00} & \money{0.00} & \money{1,500.00}\\[2pt]
+Project records bundle (profile + website) & \money{700.00} & \money{0.00} & \money{700.00}\\
 \midrule
-\textbf{Total} & \textbf{\money{5,300.00}} & \textbf{\color{paid}\money{2,500.00}} & \textbf{\color{due}\money{2,800.00}}\\
+\textbf{Total} & \textbf{\money{6,000.00}} & \textbf{\color{paid}\money{2,500.00}} & \textbf{\color{due}\money{3,500.00}}\\
 \bottomrule
 \end{tabularx}}
 
 {\small
-\textbf{Company profile:} Original 14-page profile (R2,200) plus agreed additional work (R1,300): expanded trade/service sections, improved descriptions and writing, and new images including Gabions and Stone Pitching.
+\textbf{Company profile:} Original 14-page profile (R2,200) plus agreed additional work (R1,300): expanded trade/service sections, improved descriptions, and new images including Gabions and Stone Pitching specifications.
 
-\textbf{PDF viewer \& integration:} Confirmed website integration for visitors to access, view and download the company profile. (R300)
+\textbf{PDF viewer \& integration:} Website integration to view and download the company profile online. (R300)
 
-\textbf{Website pages \& updates:} Six SEO service pages (R1,200) plus updates (R300): remove the Midrand address; set up \texttt{tenders@} and \texttt{careers@} emails with signatures; configure form routing. Quoted 21 October 2026 and confirmed.}
+\textbf{Website pages \& updates:} Six SEO service pages (R1,200) \& updates (R300): remove Midrand address; set up \texttt{tenders@} and \texttt{careers@} emails with signatures; configure form routing (quoted 21 Oct 2026).
+
+\textbf{Project records bundle:} Bundled at R700 (R500 discount off R1,200: R700 profile + R500 website). Covers integrating five project records into the company profile and preparing the draft Projects page (\texttt{projects-page-draft.html}) with tabbed register, search and quick-jump link.}
 
 \section*{Payment details}
 {\small
@@ -113,7 +117,7 @@ Account number: 1017 126 3314 & Account number: 2020 648 500
 
 \begin{tabularx}{\textwidth}{@{}L r@{}}
 {\large\bfseries\color{navy}VYLEX\enspace|\enspace PAYMENT RECORD}
-& {\small\color{muted}07 November 2026}\\
+& {\small\color{muted}17 November 2026}\\
 {\small Makhaswa Holdings} & {\small Account Ref: MH-2026-001}
 \end{tabularx}
 \brandrule
@@ -154,12 +158,12 @@ Payment received: \money{250.00} on 11 September 2026 & Balance: \money{0.00}
 \toprule
 Historical website development & \money{6,300.00}\\[4pt]
 Five employee email signatures & \money{250.00}\\[4pt]
-Current services (page 1) & \money{5,300.00}\\
+Current services (page 1) & \money{6,000.00}\\
 \midrule
-\textbf{Total charges --- all projects} & \textbf{\money{11,850.00}}\\[4pt]
+\textbf{Total charges --- all projects} & \textbf{\money{12,550.00}}\\[4pt]
 Less: total payments received & (\money{9,050.00})\\
 \midrule
-\textbf{\color{due}TOTAL DUE} & \textbf{\color{due}\money{2,800.00}}\\
+\textbf{\color{due}TOTAL DUE} & \textbf{\color{due}\money{3,500.00}}\\
 \bottomrule
 \end{tabularx}
 
