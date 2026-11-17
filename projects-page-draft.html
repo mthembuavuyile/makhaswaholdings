@@ -132,7 +132,7 @@
         <div class="register-jump-wrap">
             <a href="#project-register" class="register-jump-link">
                 <i data-lucide="clipboard-list"></i>
-                <span>View Verified Contract Register (21 Projects)</span>
+                <span>View Contract Register (21 Projects)</span>
             </a>
         </div>
 
@@ -176,16 +176,16 @@
     </div>
 
     <!-- =====================================================
-         VERIFIED PROJECT EXPERIENCE REGISTER
+         PROJECT EXPERIENCE REGISTER
     ===================================================== -->
-    <div class="section-banner" id="project-register" style="margin-top: 72px;">Verified Project Experience Register &bull;
+    <div class="section-banner" id="project-register" style="margin-top: 72px;">Project Experience Register &bull;
         Completed &amp; Active Contracts.</div>
 
     <div class="container container--pt-flush">
         <h2 class="section-title text-center">Project Experience &amp; Track Record</h2>
-        <p class="section-subtitle section-subtitle--spaced">Structured record of verified public and private sector
-            contracts, separating our completed municipal water and sanitation schedule from our civil, roadworks,
-            and building register.</p>
+        <p class="section-subtitle section-subtitle--spaced">Schedule of completed and active public and private sector
+            contracts, separating our municipal water and sanitation schedule from our civil, roadworks, and building
+            register.</p>
 
         <!-- Register Tabs -->
         <div class="register-tabs" role="tablist" aria-label="Project register schedules">
@@ -307,9 +307,8 @@
         <!-- Panel 2: 16 Civil, Roads, Bridges & Building Contracts -->
         <div class="register-panel" id="panel-civil-building" role="tabpanel">
             <p class="register-panel-intro">
-                Consolidated record of 16 verified contracts across roads, stormwater, bridges, retaining walls, water
-                reticulation, and general building works, distinguishing Main Contractor, Subcontractor, and Joint
-                Venture appointments.
+                Schedule of 16 contracts across roads, stormwater, bridges, retaining walls, water reticulation, and
+                general building works, distinguishing Main Contractor, Subcontractor, and Joint Venture appointments.
             </p>
 
             <div class="register-table-wrap">
@@ -321,7 +320,7 @@
                             <th>Employer / Principal</th>
                             <th>Role</th>
                             <th>Period &amp; Status</th>
-                            <th>Verified Scope of Works &amp; Value</th>
+                            <th>Scope of Works &amp; Value</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -504,10 +503,10 @@
             </div>
 
             <div class="register-disclosure">
-                <strong>Scope &amp; Tender Verification Note:</strong> On subcontracted packages, scopes listed reflect
-                only the specific trade and civil packages executed by Makhaswa Holdings under the appointing principal
-                contractor, not the entire employer head contract. Contract values are stated only where explicitly
-                documented in verified corporate records (*Road K46-AS and K50 completion certificates issued subject to
+                <strong>Scope &amp; Contract Note:</strong> On subcontracted packages, scopes listed reflect only the
+                specific trade and civil packages executed by Makhaswa Holdings under the appointing principal
+                contractor, not the entire employer head contract. Contract values are stated where recorded in
+                appointment or completion documentation (*Road K46-AS and K50 completion certificates issued subject to
                 final engineering inspection, snag remediation, and closeout approval).
             </div>
         </div>
@@ -547,27 +546,59 @@
     <script src="js/portfolio.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const registerSection = document.getElementById('project-register');
             const tabBtns = document.querySelectorAll('[data-register-tab]');
             const panels = {
                 'municipal': document.getElementById('panel-municipal'),
                 'civil-building': document.getElementById('panel-civil-building')
             };
+            const tabHashes = {
+                'municipal': '#municipal-projects',
+                'civil-building': '#civil-register'
+            };
+
+            function activateTab(target, updateUrl) {
+                if (!panels[target]) return;
+                tabBtns.forEach(b => {
+                    const isActive = b.getAttribute('data-register-tab') === target;
+                    b.classList.toggle('active', isActive);
+                    b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+                Object.keys(panels).forEach(key => {
+                    if (panels[key]) {
+                        panels[key].classList.toggle('active', key === target);
+                    }
+                });
+                if (updateUrl && tabHashes[target]) {
+                    history.replaceState(null, '', tabHashes[target]);
+                }
+            }
+
+            function handleHash(shouldScroll) {
+                const hash = window.location.hash.toLowerCase();
+                if (hash === '#civil-register' || hash === '#panel-civil-building') {
+                    activateTab('civil-building', false);
+                    if (shouldScroll && registerSection) {
+                        registerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                } else if (hash === '#municipal-projects' || hash === '#panel-municipal') {
+                    activateTab('municipal', false);
+                    if (shouldScroll && registerSection) {
+                        registerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                } else if (hash === '#project-register' && shouldScroll && registerSection) {
+                    registerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
 
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const target = btn.getAttribute('data-register-tab');
-                    tabBtns.forEach(b => {
-                        const isActive = b === btn;
-                        b.classList.toggle('active', isActive);
-                        b.setAttribute('aria-selected', isActive ? 'true' : 'false');
-                    });
-                    Object.keys(panels).forEach(key => {
-                        if (panels[key]) {
-                            panels[key].classList.toggle('active', key === target);
-                        }
-                    });
+                    activateTab(btn.getAttribute('data-register-tab'), true);
                 });
             });
+
+            handleHash(true);
+            window.addEventListener('hashchange', () => handleHash(true));
         });
     </script>
 </body>

@@ -819,8 +819,12 @@
 }
 
 /* =====================================================
-   VERIFIED PROJECT REGISTER TABLES & TABS
+   PROJECT EXPERIENCE REGISTER TABLES & TABS
    ===================================================== */
+#project-register {
+    scroll-margin-top: calc(var(--header-h) + 12px);
+}
+
 .register-jump-wrap {
     text-align: center;
     margin: -12px auto 28px;
