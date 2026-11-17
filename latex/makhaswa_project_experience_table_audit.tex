@@ -1,334 +1,110 @@
-% =========================================================================
-% MAKHASWA HOLDINGS (PTY) LTD
-% Project Experience & Track Record (Bulk Water, Reservoirs & Sanitation)
-% Overleaf-Ready Standalone LaTeX Document
-% =========================================================================
 \documentclass[a4paper,landscape,10pt]{article}
 
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[
     a4paper,
     landscape,
-    left=1.2cm,
-    right=1.2cm,
-    top=0cm,
-    bottom=1.4cm,
-    footskip=0.8cm
+    top=1.35cm,
+    bottom=1.35cm,
+    left=1.35cm,
+    right=1.35cm
 ]{geometry}
 
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
-\usepackage[T1]{fontenc}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{anyfontsize}
-\usepackage{tikz}
-\usetikzlibrary{calc,positioning,shapes.geometric,shadows}
-\usepackage[most]{tcolorbox}
-\usepackage{enumitem}
-\usepackage{fancyhdr}
-\usepackage{tabularx}
-\usepackage{colortbl}
-\usepackage{hyperref}
-\usepackage{array}
-\usepackage{fontawesome5}
 
-% =========================================================================
-% COMPATIBILITY FALLBACKS FOR FONTAWESOME5 ICONS
-% =========================================================================
-\providecommand{\faShieldAlt}{\faShield*}
-\providecommand{\faAward}{\faCertificate}
-\providecommand{\faFileContract}{\faFile*}
-\providecommand{\faClipboardCheck}{\faCheckSquare}
-\providecommand{\faClipboardList}{\faList}
-\providecommand{\faExclamationTriangle}{\faExclamationCircle}
-\providecommand{\faCheckCircle}{\faCheck}
-\providecommand{\faHandshake}{\faHands*}
+\usepackage[table]{xcolor}
+\usepackage{array,tabularx}
+\usepackage{microtype}
 
-% =========================================================================
-% GRAPHICS PATH CONFIGURATION (Overleaf / Local)
-% =========================================================================
-\graphicspath{{images/}{./images/}{../images/}{../company-profile/images/}{./}{../}}
+% Corporate colours
+\definecolor{MHNavy}{HTML}{082D5A}
+\definecolor{MHGold}{HTML}{C8A951}
+\definecolor{MHLight}{HTML}{F0F4FA}
+\definecolor{MHText}{HTML}{243247}
+\definecolor{MHMuted}{HTML}{56657A}
+\definecolor{MHRule}{HTML}{DCE4ED}
 
-% =========================================================================
-% MAKHASWA CORPORATE BRAND PALETTE (Matched to Company Profile)
-% =========================================================================
-\definecolor{mhnavy}{HTML}{082D5A}        % Primary Brand Deep Navy
-\definecolor{mhnavy2}{HTML}{0C3A6D}       % Mid Corporate Navy
-\definecolor{mhnavy3}{HTML}{124884}       % Accent Navy
-\definecolor{mhblue}{HTML}{1A56A0}        % Crisp Corporate Blue
-\definecolor{mhbluebright}{HTML}{0066CC}  % Bright Blue Accent
-\definecolor{mhbluelight}{HTML}{F0F4FA}   % Soft Light Blue Alternating Row
-\definecolor{mhteal}{HTML}{008080}        % JV / Badge Teal
-\definecolor{mhgold}{HTML}{C8A951}        % Subtle Gold Keyline
-\definecolor{mhgolddark}{HTML}{A68226}    % Deep Gold Accent
-\definecolor{mhoffwhite}{HTML}{F8FAFC}    % Clean Slate Off-White
-\definecolor{mhlightgray}{HTML}{E2E8F0}   % Clean Minimal Border
-\definecolor{mhtext}{HTML}{1E293B}        % Charcoal Dark Body Text
-\definecolor{mhtextmuted}{HTML}{64748B}   % Slate Gray Subtitle Text
-\definecolor{mhamber}{HTML}{B45309}       % Verification Warning Accent
-\definecolor{mhamberbg}{HTML}{FFFBEB}     % Soft Amber Background
-
-\pagecolor{white}
-\color{mhtext}
-
-\hypersetup{
-    colorlinks=true,
-    linkcolor=mhnavy,
-    urlcolor=mhblue,
-    citecolor=mhblue,
-    pdftitle={Makhaswa Holdings (Pty) Ltd - Project Experience and Track Record},
-    pdfauthor={Makhaswa Holdings (Pty) Ltd},
-    pdfsubject={Verified Project Experience & Track Record Schedule},
-    pdfkeywords={Makhaswa Holdings, Project Experience, Track Record, Reservoirs, Bulk Water, Civil Engineering, CIDB Grade 8 CE PE}
-}
-
-% =========================================================================
-% REUSABLE STYLED MACROS & BANNERS (From Company Profile)
-% =========================================================================
-\newcommand{\sectionbanner}[2]{%
-    \begin{tikzpicture}[remember picture, overlay]
-        \fill[mhnavy] (current page.north west) rectangle ([yshift=-2.8cm]current page.north east);
-        \fill[mhgold] ([yshift=-2.8cm]current page.north west) rectangle ([yshift=-2.68cm]current page.north east);
-        \node[anchor=west, inner sep=0pt, text width=0.72\paperwidth] at ([xshift=1.2cm, yshift=-1.4cm]current page.north west) {
-            {\fontsize{18pt}{22pt}\selectfont\bfseries\color{white} #1}\\[0.15cm]
-            {\footnotesize\bfseries\color{mhbluelight} \MakeUppercase{#2}}
-        };
-        \node[anchor=east, inner sep=0pt] at ([xshift=-1.2cm, yshift=-1.4cm]current page.north east) {
-            \begin{tcolorbox}[
-                enhanced,
-                colback=white,
-                colframe=mhlightgray,
-                boxrule=0.8pt,
-                arc=3pt,
-                boxsep=2pt,
-                left=6pt, right=6pt, top=4pt, bottom=4pt,
-                width=3.8cm,
-                halign=center,
-                drop shadow=black!15
-            ]
-                \IfFileExists{logo.jpeg}{%
-                    \includegraphics[height=0.85cm, keepaspectratio]{logo.jpeg}%
-                }{%
-                    {\fontsize{11pt}{12pt}\selectfont\bfseries\color{mhnavy}MAKHASWA}\\[-1pt]
-                    {\fontsize{7pt}{8pt}\selectfont\bfseries\color{mhblue}HOLDINGS (PTY) LTD}%
-                }
-            \end{tcolorbox}%
-        };
-    \end{tikzpicture}%
-    \vspace*{2.95cm}%
-    \noindent
-}
-
-\newcommand{\statcard}[4]{%
-    \begin{tcolorbox}[
-        enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        left=6pt, right=6pt, top=6pt, bottom=6pt, halign=center,
-        borderline north={2.6pt}{0pt}{#1},
-        drop shadow=black!4
-    ]
-        {\fontsize{7.0pt}{8.5pt}\selectfont\bfseries\color{mhtextmuted}\MakeUppercase{#2}}\\[2pt]
-        {\fontsize{13.5pt}{15.5pt}\selectfont\bfseries\color{#1} #3}\\[2pt]
-        {\fontsize{6.8pt}{8.4pt}\selectfont\color{mhtextmuted}#4}
-    \end{tcolorbox}%
-}
-
-\newcommand{\statusbadge}[2]{%
-    {\setlength{\fboxsep}{2.4pt}\colorbox{#1}{\fontsize{6.6pt}{8.0pt}\selectfont\bfseries\color{white}\MakeUppercase{#2}}}%
-}
-
-% =========================================================================
-% RUNNING DOCUMENT FOOTER CONFIGURATION
-% =========================================================================
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0.5pt}
-\renewcommand{\footrule}{\hbox to\headwidth{\color{mhlightgray}\leaders\hrule height \footrulewidth\hfill}}
-
-\fancyfoot[L]{%
-    \fontsize{7.6pt}{9.5pt}\selectfont\color{mhtextmuted}%
-    \textbf{\color{mhnavy}Makhaswa Holdings (Pty) Ltd} \ $\bullet$ \ CIDB Grade 8 CE PE / 8 ME PE \ $\bullet$ \ Reg: 2017/307900/07 \ $\bullet$ \ CRS: 10153817%
-}
-\fancyfoot[C]{}
-\fancyfoot[R]{%
-    \fontsize{7.6pt}{9.5pt}\selectfont\color{mhtextmuted}%
-    Project Experience \& Track Record Schedule \ $\bullet$ \ \textbf{\color{mhnavy}Page \thepage\ of 2}%
-}
+% Document formatting
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{5.5pt}
+\renewcommand{\arraystretch}{1.48}
+\color{MHText}
 
 \begin{document}
 
-% =========================================================================
-% PAGE 1: CORRECTED & DOCUMENT-SUPPORTED PROJECT EXPERIENCE SCHEDULE
-% =========================================================================
-\sectionbanner{MAKHASWA HOLDINGS (PTY) LTD}{Project Experience \& Track Record --- Document-Supported Municipal Water \& Reservoir Contracts}
-
+% Corporate heading
 \noindent
-{\fontsize{8.5pt}{11.8pt}\selectfont\color{mhtext}
-Document-supported schedule of completed municipal bulk water supply, concrete reservoir construction, wastewater treatment plant refurbishment, and pipeline reticulation contracts. Original reference numbers (\textbf{01, 03, 04, 05}) are retained per the documentary verification register; Project \textbf{02} is excluded from Makhaswa Holdings' confirmed track record pending contractor attribution verification (see Page 2 for full documentary audit notes).
+\colorbox{MHNavy}{%
+  \parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
+    \vspace{0.32cm}\hspace{0.35cm}%
+    {\Large\bfseries\color{white}
+    MAKHASWA HOLDINGS (PTY) LTD}\hfill
+    {\footnotesize\color{white}
+    INTERNAL GOVERNANCE \& AUDIT RECORD\hspace{0.35cm}}\\[4pt]
+    \hspace{0.35cm}%
+    {\normalsize\color{white}
+    PROJECT EXPERIENCE RECONCILIATION \& STATIC DISCREPANCY REGISTER}%
+    \hfill
+    {\footnotesize\color{white}
+    Source: \texttt{makhaswa-projects (2)(2).pdf}\hspace{0.35cm}}%
+    \vspace{0.30cm}%
+  }%
 }
 
-\vspace{0.22cm}
-
-% -------------------------------------------------------------------------
-% TABLE 1: CORRECTED 4-PROJECT VERIFIED TRACK RECORD
-% -------------------------------------------------------------------------
-{\fontsize{8.0pt}{10.5pt}\selectfont
-\renewcommand{\arraystretch}{1.55}
+\vspace{0.08cm}
 \noindent
+\color{MHGold}\rule{\textwidth}{1.5pt}
+
+\vspace{0.32cm}
+
+{\normalsize\bfseries\color{MHNavy}
+Documentary Audit Schedule (All 5 Portfolio Projects)}\par
+
+\vspace{0.10cm}
+
+{\footnotesize\color{MHMuted}
+Cross-reference of scheduled project details against source appointment letters and completion certificates, recording static certificate anomalies and client confirmation.}\par
+
+\vspace{0.25cm}
+
+% Audit table
+\begingroup
+
+\fontsize{8.2pt}{10.6pt}\selectfont
+\color{MHText}
+\renewcommand{\arraystretch}{1.48}
+
 \begin{tabularx}{\textwidth}{@{}
-    >{\centering\arraybackslash}p{0.85cm}
-    >{\raggedright\arraybackslash}p{3.9cm}
-    >{\raggedright\arraybackslash}X
-    >{\raggedright\arraybackslash}p{3.0cm}
-    >{\raggedleft\arraybackslash}p{3.1cm}
-    >{\raggedright\arraybackslash}p{2.9cm}
-    >{\raggedright\arraybackslash}p{3.1cm}
-    >{\raggedright\arraybackslash}p{3.0cm}
+  >{\centering\arraybackslash}p{0.55cm}
+  >{\raggedright\arraybackslash}p{2.85cm}
+  >{\raggedright\arraybackslash}p{4.80cm}
+  >{\raggedright\arraybackslash}p{2.35cm}
+  >{\raggedleft\arraybackslash}p{2.45cm}
+  >{\raggedright\arraybackslash}p{1.95cm}
+  >{\raggedright\arraybackslash}p{1.95cm}
+  >{\raggedright\arraybackslash}p{2.80cm}
+  >{\raggedright\arraybackslash}X
 @{}}
-\rowcolor{mhnavy}
+
+% Table headings
+\rowcolor{MHNavy}
+
 {\color{white}\bfseries No.} &
 {\color{white}\bfseries Client / Employer} &
-{\color{white}\bfseries Project Name / Description} &
-{\color{white}\bfseries Contract Number} &
-{\color{white}\bfseries Contract Value\newline (Incl. VAT)} &
-{\color{white}\bfseries Commencement\newline Date} &
-{\color{white}\bfseries Completion\newline Date} &
-{\color{white}\bfseries Status} \\
-
-% Row 01
-\rowcolor{mhbluelight}
-\textbf{\color{mhnavy}01} &
-\textbf{Emakhazeni Local Municipality} &
-Construction of 11.4 ML Reservoir and Refurbishment of WWT Plant in Enkanini Ward 4 &
-\textbf{ELM14/04/23} &
-\textbf{\color{mhnavy}R44,785,234.10} &
-27 Nov 2023 &
-04 Dec 2024 &
-\statusbadge{mhnavy}{Completed} \\
-
-% Row 03
-\textbf{\color{mhnavy}03} &
-\textbf{Nquthu Local Municipality} &
-Construction of Ntuthuko 12.1 ML Reservoir and 0.8 km Water Reticulation -- Ward 03 &
-\textbf{NQULM12/2021-2022} &
-\textbf{\color{mhnavy}R32,412,154.17} &
-01 May 2021\newline {\fontsize{6.8pt}{8.2pt}\selectfont\color{mhtextmuted}(appointment letter)} &
-07 Feb 2022\newline {\fontsize{6.8pt}{8.2pt}\selectfont\color{mhtextmuted}(certificate / inspection date)} &
-\statusbadge{mhnavy}{Completed} \\
-
-% Row 04
-\rowcolor{mhbluelight}
-\textbf{\color{mhnavy}04} &
-\textbf{uMkhanyakude District Municipality} &
-Greater Ingwavuma Water Supply: Jozini/Shemula Pipeline -- Construction of 12.5 ML Siweni Reservoir and 4.73 km of 300 mm Diameter Steel Pipe to the Shemula Bulk Rising Main &
-\textbf{SCMU 009/2022/2023} &
-\textbf{\color{mhnavy}R55,459,580.00} &
-Not stated\newline {\fontsize{6.8pt}{8.2pt}\selectfont\color{mhtextmuted}(appointment dated 14 Jun 2023)} &
-21 Jun 2024\newline {\fontsize{6.8pt}{8.2pt}\selectfont\color{mhtextmuted}(certificate date)} &
-\statusbadge{mhteal}{Completed -- JV} \\
-
-% Row 05
-\textbf{\color{mhnavy}05} &
-\textbf{eDumbe Local Municipality} &
-Construction of New 13 ML Bathethwa Concrete Reservoir &
-\textbf{DLM-79/02/2020} &
-\textbf{\color{mhnavy}R28,482,365.12} &
-15 Apr 2021 &
-06 Feb 2022 &
-\statusbadge{mhnavy}{Completed} \\
-
-% Totals Row
-\rowcolor{mhnavy}
-\multicolumn{4}{@{}l}{\color{white}\bfseries\fontsize{8.2pt}{10.5pt}\selectfont\hspace{4pt}COMBINED VALUE OF FOUR DOCUMENTED CONTRACTS (PROJECTS 01, 03, 04 \& 05)} &
-{\color{mhgold}\bfseries\fontsize{8.8pt}{10.8pt}\selectfont R161,139,333.39} &
-\multicolumn{3}{l@{}}{\color{mhbluelight}\fontsize{7.0pt}{8.8pt}\selectfont\textit{Includes full JV contract value on Project 04 (see notes below)}} \\
-\end{tabularx}
-\renewcommand{\arraystretch}{1}
-}
-
-\vspace{0.35cm}
-
-% -------------------------------------------------------------------------
-% FINANCIAL SUMMARY CARDS (3-COLUMN BREAKDOWN)
-% -------------------------------------------------------------------------
-\noindent
-\begin{minipage}[t]{0.32\textwidth}
-    \statcard{mhnavy}{Three Direct Makhaswa Contracts}{R105,679,753.39}{Projects 01, 03 \& 05 (Sole / Direct Appointments)}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \statcard{mhteal}{Full Joint Venture Contract Value}{R55,459,580.00}{Project 04: Makhaswa Holdings JV Masiqhame Trading 789}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \statcard{mhblue}{Combined Documented Value (4 Projects)}{R161,139,333.39}{Sum of Listed Values (Incl. Full JV Contract Amount)}
-\end{minipage}
-
-\vfill
-
-% -------------------------------------------------------------------------
-% TENDER VERIFICATION & ATTRIBUTION DISCLOSURE BOX
-% -------------------------------------------------------------------------
-\noindent
-\begin{tcolorbox}[
-    enhanced, colback=mhoffwhite, colframe=mhnavy, boxrule=0.8pt, arc=3.5pt,
-    left=8pt, right=8pt, top=6pt, bottom=6pt,
-    borderline west={3.2pt}{0pt}{mhgold},
-    drop shadow=black!3
-]
-    {\fontsize{8.2pt}{10.2pt}\selectfont\bfseries\color{mhnavy}\faClipboardCheck\ \ Documentary Verification \& Tender Compliance Disclosure}\\[3pt]
-    {\fontsize{7.5pt}{10.2pt}\selectfont\color{mhtext}
-    \textbf{1. Documentary Support:} Projects \textbf{01, 03, 04, and 05} are supported by the respective municipal appointment letters and completion certificates on pages 1--3 and 6--15 of the verified portfolio file (\texttt{makhaswa-projects (2)(2).pdf}). On Project \textbf{01}, the project description strictly follows the completion certificate wording (\textit{``Enkanini Ward 4''}). On Project \textbf{03}, \textbf{07 Feb 2022} reflects the certificate and inspection date stated on the document.\\
-    \textbf{2. Joint Venture Attribution (Project 04):} Both the appointment letter and completion certificate under contract \textbf{SCMU 009/2022/2023} identify the contractor as \textbf{Makhaswa Holdings JV Masiqhame Trading 789}. The stated amount of \textbf{R55,459,580.00} represents the full joint venture contract value; no documented percentage split attributable to Makhaswa Holdings alone is stated in the supplied PDF. Consequently, the combined total of \textbf{R161,139,333.39} represents the sum of listed contract values and does not establish Makhaswa's individual JV share or standalone turnover.\\
-    \textbf{3. Exclusion of Project 02:} Project \textbf{02} (\textbf{ELM14/04/22} --- \textbf{R1,106,230.76}) is excluded from this confirmed table because the completion certificate on PDF page 5 identifies \textbf{Mbusi Woman Plant Hire \& Construction}, not Makhaswa Holdings. See Page 2 for the complete five-project audit register and discrepancy breakdown.
-    }
-\end{tcolorbox}
-
-\clearpage
-
-% =========================================================================
-% PAGE 2: COMPLETE 5-PROJECT AUDIT SCHEDULE & DISCREPANCY VERIFICATION LOG
-% =========================================================================
-\sectionbanner{DOCUMENTARY AUDIT \& VERIFICATION}{Complete 5-Project Reference Schedule, Certificate Cross-Check \& Discrepancy Log}
-
-\noindent
-{\fontsize{8.3pt}{11.4pt}\selectfont\color{mhtext}
-For internal audit completeness and cross-referencing against the 15-page source PDF (\texttt{makhaswa-projects (2)(2).pdf}), the table below records all five originally listed projects (totalling \textbf{R162,245,564.15} across all five items, or \textbf{R161,139,333.39} excluding Project 02), together with item-by-item documentary verification findings.
-}
-
-\vspace{0.16cm}
-
-% -------------------------------------------------------------------------
-% TABLE 2: FULL 5-PROJECT SCHEDULE WITH VERIFICATION FINDINGS
-% -------------------------------------------------------------------------
-{\fontsize{7.4pt}{9.5pt}\selectfont
-\renewcommand{\arraystretch}{1.38}
-\noindent
-\begin{tabularx}{\textwidth}{@{}
-    >{\centering\arraybackslash}p{0.65cm}
-    >{\raggedright\arraybackslash}p{3.0cm}
-    >{\raggedright\arraybackslash}p{5.3cm}
-    >{\raggedright\arraybackslash}p{2.35cm}
-    >{\raggedleft\arraybackslash}p{2.45cm}
-    >{\raggedright\arraybackslash}p{2.2cm}
-    >{\raggedright\arraybackslash}p{2.3cm}
-    >{\raggedright\arraybackslash}p{2.35cm}
-    >{\raggedright\arraybackslash}X
-@{}}
-\rowcolor{mhnavy}
-{\color{white}\bfseries No.} &
-{\color{white}\bfseries Client / Employer} &
-{\color{white}\bfseries Project Name / Description} &
+{\color{white}\bfseries Project Description} &
 {\color{white}\bfseries Contract No.} &
 {\color{white}\bfseries Value (Incl. VAT)} &
 {\color{white}\bfseries Commence} &
 {\color{white}\bfseries Completion} &
-{\color{white}\bfseries Verification} &
-{\color{white}\bfseries Documentary Audit Finding} \\
+{\color{white}\bfseries Entity on Certificate} &
+{\color{white}\bfseries Static Audit \& Source Notes} \\
 
-% Audit Row 01
-\rowcolor{mhbluelight}
+% Project 01
+\rowcolor{MHLight}
+
 \textbf{01} &
 Emakhazeni Local Municipality &
 Construction of 11.4 ML Reservoir and Refurbishment of WWT Plant in Enkanini Ward 4 &
@@ -336,46 +112,55 @@ ELM14/04/23 &
 \textbf{R44,785,234.10} &
 27 Nov 2023 &
 04 Dec 2024 &
-\statusbadge{mhnavy}{Confirmed} &
-Contract value, commencement and actual completion dates match source documents (PDF pp.\ 1--3). Description follows completion certificate (\textit{``Enkanini Ward 4''}). \\
+Makhaswa Holdings (Pty) Ltd &
+PDF pp.\ 1--3. Value and dates match source records. Wording follows completion certificate (\textit{Enkanini Ward 4}). \\
 
-% Audit Row 02 (Flagged Discrepancy)
-\rowcolor{mhamberbg}
-\textbf{\color{mhamber}02} &
-\textbf{\color{mhamber}Emakhazeni Local Municipality} &
+\arrayrulecolor{MHRule}\hline
+
+% Project 02
+\textbf{02} &
+Emakhazeni Local Municipality &
 Emthonjeni Extension 4 \& Enkanini Township -- Provision of Water-Borne Sanitation for 800 Stands, Phase 1 (114 Stands) &
 ELM14/04/22 &
-\textbf{\color{mhamber}R1,106,230.76} &
+\textbf{R1,106,230.76} &
 07 Nov 2014 &
-04 Aug 2015\newline {\fontsize{6.4pt}{7.6pt}\selectfont\color{mhamber}(verify date)} &
-\statusbadge{mhamber}{Discrepancy} &
-\textbf{\color{mhamber}Exclude pending verification:} Certificate (PDF p.\ 5) names \textbf{Mbusi Woman Plant Hire \& Construction}, not Makhaswa. Also has date \& R0.06 arithmetic anomalies. \\
+04 Aug 2015 &
+Mbusi Woman Plant Hire \& Construction &
+PDF pp.\ 4--5. Included per client confirmation (17 Nov 2026). Certificate names Mbusi Woman Plant Hire; \textit{Issued On} states 04 Aug 2014 vs 04 Aug 2015 completion; works (R885,522.41) + fees (R220,708.29) = R1,106,230.70 (R0.06 difference). \\
 
-% Audit Row 03
-\rowcolor{mhbluelight}
+\arrayrulecolor{MHRule}\hline
+
+% Project 03
+\rowcolor{MHLight}
+
 \textbf{03} &
 Nquthu Local Municipality &
 Construction of Ntuthuko 12.1 ML Reservoir and 0.8 km Water Reticulation -- Ward 03 &
 NQULM12/\newline 2021-2022 &
 \textbf{R32,412,154.17} &
-01 May 2021\newline {\fontsize{6.4pt}{7.6pt}\selectfont\color{mhtextmuted}(appt. letter)} &
-07 Feb 2022\newline {\fontsize{6.4pt}{7.6pt}\selectfont\color{mhtextmuted}(cert. date)} &
-\statusbadge{mhnavy}{Confirmed} &
-Contract details match source documents. Note that 07 Feb 2022 is the certificate and inspection date, not a separately specified actual completion date. \\
+01 May 2021 &
+07 Feb 2022 &
+Makhaswa Holdings (Pty) Ltd &
+PDF pp.\ 6--7. 01 May 2021 is appointment letter date; 07 Feb 2022 is certificate / site inspection date. \\
 
-% Audit Row 04
+\arrayrulecolor{MHRule}\hline
+
+% Project 04 - Joint venture
 \textbf{04} &
 uMkhanyakude District Municipality &
-Greater Ingwavuma Water Supply: Jozini/Shemula Pipeline -- 12.5 ML Siweni Reservoir \& 4.73 km of 300 mm Steel Pipe to Shemula Bulk Rising Main &
+Greater Ingwavuma Water Supply: Jozini/Shemula Pipeline -- 12.5 ML Siweni Reservoir and 4.73 km of 300 mm Steel Pipe to Shemula Bulk Rising Main &
 SCMU 009/\newline 2022/2023 &
 \textbf{R55,459,580.00} &
-Not stated\newline {\fontsize{6.4pt}{7.6pt}\selectfont\color{mhtextmuted}(appt. 14 Jun 2023)} &
-21 Jun 2024\newline {\fontsize{6.4pt}{7.6pt}\selectfont\color{mhtextmuted}(cert. date)} &
-\statusbadge{mhteal}{Confirmed JV} &
-Documented under \textbf{Makhaswa Holdings JV Masiqhame Trading 789}. Value is full JV contract amount; commencement date is not stated on certificate. \\
+Not specified &
+21 Jun 2024 &
+Makhaswa Holdings JV Masiqhame Trading 789 &
+PDF pp.\ 8--15. Full JV value shown (percentage split not stated in PDF). Appointment letter dated 14 Jun 2023; clause 11 contains a municipal clerical reference to \textit{Moses Kotane LM}. \\
 
-% Audit Row 05
-\rowcolor{mhbluelight}
+\arrayrulecolor{MHRule}\hline
+
+% Project 05
+\rowcolor{MHLight}
+
 \textbf{05} &
 eDumbe Local Municipality &
 Construction of New 13 ML Bathethwa Concrete Reservoir &
@@ -383,68 +168,40 @@ DLM-79/02/2020 &
 \textbf{R28,482,365.12} &
 15 Apr 2021 &
 06 Feb 2022 &
-\statusbadge{mhnavy}{Confirmed} &
-Contract value and dates match source documents. Actual completion date is confirmed as 06 February 2022. \\
+Makhaswa Holdings (Pty) Ltd &
+PDF pp.\ 12--15. Value, commencement date, and actual completion date (06 Feb 2022) match source certificate. \\
 
-% Unadjusted 5-Project Sum Row
-\rowcolor{mhlightgray}
-\multicolumn{4}{@{}l}{\textbf{\color{mhnavy}\hspace{4pt}UNADJUSTED 5-PROJECT ARITHMETIC TOTAL (INCLUDING PROJECT 02)}} &
-\textbf{\color{mhnavy}R162,245,564.15} &
-\multicolumn{4}{l@{}}{\fontsize{6.9pt}{8.4pt}\selectfont\color{mhtext}\textit{Arithmetically correct sum of all 5 rows, but not a verified total for Makhaswa Holdings alone.}} \\
+\arrayrulecolor{MHRule}\hline
 
-% Verified 4-Project Sum Row
-\rowcolor{mhnavy}
-\multicolumn{4}{@{}l}{\textbf{\color{white}\hspace{4pt}VERIFIED 4-PROJECT TOTAL ASSOCIATED WITH MAKHASWA (EXCLUDING PROJECT 02)}} &
-\textbf{\color{mhgold}R161,139,333.39} &
-\multicolumn{4}{l@{}}{\fontsize{6.9pt}{8.4pt}\selectfont\color{mhbluelight}\textit{Comprises R105,679,753.39 (3 direct contracts: 01, 03, 05) + R55,459,580.00 (full JV contract: 04).}} \\
+% Total row
+\rowcolor{MHNavy}
+
+\multicolumn{4}{@{}l}{
+\hspace{6pt}\color{white}\bfseries
+TOTAL 5-PROJECT PORTFOLIO VALUE
+} &
+{\color{white}\bfseries R162,245,564.15} &
+\multicolumn{4}{l@{}}{
+\hspace{4pt}\color{white}\scriptsize
+Comprises R105,679,753.39 (Projects 01, 03, 05) + R55,459,580.00 (Project 04 full JV) + R1,106,230.76 (Project 02)
+} \\
+
 \end{tabularx}
-\renewcommand{\arraystretch}{1}
+
+\endgroup
+
+\vspace{0.32cm}
+
+% Governance & Audit Trail Notes
+{\footnotesize\color{MHText}
+\textbf{\color{MHNavy}Governance \& Audit Trail Notes}\\[4pt]
+\color{MHMuted}
+\textbf{1. Client Instruction on Project 02 (ELM14/04/22):}
+The contractor attribution on PDF page 5 (\textit{Mbusi Woman Plant Hire \& Construction}) was queried with management on 17 November 2026. Mr.\ Malwandla Manyisi confirmed that Project 02 is to be included in the schedule and integrated into the main company profile and website. For formal public tenders requiring strict CIPC/CIDB entity matching on completion certificates, verify whether supporting subcontract, cession, or group entity documentation is required by the tender returnable.\\[3pt]
+\textbf{2. Joint Venture Value Attribution (Project 04 -- SCMU 009/2022/2023):}
+Both the appointment letter and completion certificate identify the contractor as \textit{Makhaswa Holdings JV Masiqhame Trading 789}. The listed amount of R55,459,580.00 is the full joint venture contract sum; where a tender schedule requires Makhaswa Holdings' individual percentage share or standalone turnover, reference the executed Joint Venture Agreement.\\[3pt]
+\textbf{3. Portfolio Value Reconciliation:}
+All 5 projects (01--05) = \textbf{R162,245,564.15} \ $|$ \ 4 projects excluding Project 02 (01, 03, 04, 05) = \textbf{R161,139,333.39} \ $|$ \ 3 direct sole appointments (01, 03, 05) = \textbf{R105,679,753.39}.
 }
 
-\vspace{0.24cm}
-
-% -------------------------------------------------------------------------
-% DETAILED DISCREPANCY ANALYSIS BOXES (TWO-COLUMN SPLIT)
-% -------------------------------------------------------------------------
-\noindent
-\begin{minipage}[t]{0.49\textwidth}
-    \begin{tcolorbox}[
-        enhanced, colback=mhamberbg, colframe=mhamber, boxrule=0.8pt, arc=4pt,
-        title={\bfseries\color{white}\faExclamationTriangle\ \ Discrepancy 1: Project 02 (ELM14/04/22) --- Exclude Pending Verification},
-        colbacktitle=mhamber, fonttitle=\fontsize{8.0pt}{10.0pt}\selectfont\bfseries,
-        left=7pt, right=7pt, top=6pt, bottom=6pt,
-        drop shadow=black!3
-    ]
-        {\fontsize{7.4pt}{9.9pt}\selectfont\color{mhtext}
-        \textbf{Contractor Attribution Mismatch:} The practical completion certificate on PDF page 5 identifies the contractor as \textbf{Mbusi Woman Plant Hire \& Construction}, rather than Makhaswa Holdings (Pty) Ltd. Until Makhaswa's legal involvement (e.g., cession, subcontract, or prior entity link) is independently established, Project 02 must not be presented as Makhaswa's confirmed experience in tender submissions.\\[3pt]
-        \textbf{Internal Certificate Inconsistencies (Source Document Errors):}
-        \begin{itemize}[leftmargin=12pt, itemsep=1.5pt, topsep=2pt, parsep=0pt]
-            \item \textbf{Date Anomaly:} The certificate's \textit{Issued On} field states \textbf{04 August 2014}, whereas commencement is \textbf{07 November 2014} and actual completion is \textbf{04 August 2015}.
-            \item \textbf{R0.06 Arithmetic Difference:} Stated construction works of \textbf{R885,522.41} plus professional fees of \textbf{R220,708.29} equal \textbf{R1,106,230.70}, whereas the stated total project value is \textbf{R1,106,230.76}.
-        \end{itemize}
-        }
-    \end{tcolorbox}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.49\textwidth}
-    \begin{tcolorbox}[
-        enhanced, colback=white, colframe=mhnavy, boxrule=0.8pt, arc=4pt,
-        title={\bfseries\color{white}\faHandshake\ \ Discrepancy 2: Project 04 (SCMU 009/2022/2023) --- JV Attribution \& Notes},
-        colbacktitle=mhnavy, fonttitle=\fontsize{8.0pt}{10.0pt}\selectfont\bfseries,
-        left=7pt, right=7pt, top=6pt, bottom=6pt,
-        drop shadow=black!3
-    ]
-        {\fontsize{7.4pt}{9.9pt}\selectfont\color{mhtext}
-        \textbf{Joint Venture Entity Identification:} Both the appointment letter and completion certificate identify the appointed contractor as \textbf{Makhaswa Holdings JV Masiqhame Trading 789}.\\[3pt]
-        \textbf{Key Tender Qualifications on Project 04:}
-        \begin{itemize}[leftmargin=12pt, itemsep=1.5pt, topsep=2pt, parsep=0pt]
-            \item \textbf{Full JV Contract Value:} The listed value of \textbf{R55,459,580.00} is the full joint venture contract sum. No documented percentage participation split attributable to Makhaswa Holdings alone appears in the supplied 15-page PDF.
-            \item \textbf{Commencement Date:} The actual commencement date is not stated on the completion certificate; the appointment letter is dated \textbf{14 June 2023} and the certificate completion date is \textbf{21 June 2024}.
-            \item \textbf{Source Letter Clause 11 Note:} The appointment letter refers to \textit{Moses Kotane Local Municipality} in clause 11 despite being issued on the letterhead of \textbf{uMkhanyakude District Municipality} (an administrative drafting error in the original municipal letter).
-        \end{itemize}
-        }
-    \end{tcolorbox}
-\end{minipage}
-
 \end{document}
-
