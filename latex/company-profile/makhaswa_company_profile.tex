@@ -97,44 +97,88 @@
 }
 
 % =========================================================================
-% ASPECT-RATIO-SAFE IMAGE LOADER MACRO (Zero Stretching / Distortion)
+% UNIFORM OBJECT-FIT: CONTAIN IMAGE CONTAINER MACROS (Zero Cropping / Distortion)
 % =========================================================================
+\newlength{\mhimgboxw}
+\newlength{\mhimgboxh}
+\newlength{\mhimgmaxw}
+\newlength{\mhimgmaxh}
+\newcommand{\photocardimgheight}{3.1cm}
+
+\newcommand{\mhimageframe}[4][draw=mhlightgray, line width=0.5pt]{%
+    \setlength{\mhimgboxw}{\linewidth}%
+    \setlength{\mhimgboxh}{#3}%
+    \setlength{\mhimgmaxw}{\dimexpr\mhimgboxw - 4pt\relax}%
+    \setlength{\mhimgmaxh}{\dimexpr\mhimgboxh - 4pt\relax}%
+    \noindent\begin{tikzpicture}
+        \path[use as bounding box] (0,0) rectangle (\mhimgboxw, \mhimgboxh);
+        \path[fill=#2, #1, rounded corners=2.5pt]
+            (0.25pt, 0.25pt) rectangle (\the\dimexpr\mhimgboxw-0.25pt\relax, \the\dimexpr\mhimgboxh-0.25pt\relax);
+        \node[anchor=center, inner sep=0pt] at (\the\dimexpr\mhimgboxw/2\relax, \the\dimexpr\mhimgboxh/2\relax) {#4};
+    \end{tikzpicture}%
+}
+
 \newcommand{\tradeimage}[2]{%
     \IfFileExists{images/#1}{%
-        {\setlength{\fboxsep}{0pt}\colorbox{mhoffwhite}{%
-            \parbox[c][#2][c]{\linewidth}{%
-                \centering
-                \includegraphics[width=\linewidth, height=#2, keepaspectratio]{images/#1}%
-            }%
-        }}%
+        \mhimageframe{mhoffwhite}{#2}{%
+            \includegraphics[width=\mhimgmaxw, height=\mhimgmaxh, keepaspectratio]{images/#1}%
+        }%
     }{%
         \IfFileExists{#1}{%
-            {\setlength{\fboxsep}{0pt}\colorbox{mhoffwhite}{%
-                \parbox[c][#2][c]{\linewidth}{%
-                    \centering
-                    \includegraphics[width=\linewidth, height=#2, keepaspectratio]{#1}%
-                }%
-            }}%
+            \mhimageframe{mhoffwhite}{#2}{%
+                \includegraphics[width=\mhimgmaxw, height=\mhimgmaxh, keepaspectratio]{#1}%
+            }%
         }{%
-            \fcolorbox{mhlightgray}{mhbluelight}{%
-                \parbox[c][#2][c]{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
-                    \centering\fontsize{7pt}{8.5pt}\selectfont\color{mhtextmuted}%
-                    \faImage\ Site Photograph:\\ #1}}%
+            \mhimageframe{mhbluelight}{#2}{%
+                \parbox{\mhimgmaxw}{\centering\fontsize{7pt}{8.5pt}\selectfont\color{mhtextmuted}%
+                \faImage\ Site Photograph:\\ \detokenize{#1}}%
+            }%
         }%
     }%
 }
 \newcommand{\gabimage}[2]{\tradeimage{#1}{#2}}
 \newcommand{\earthimage}[2]{\tradeimage{#1}{#2}}
 
-\newcommand{\photocard}[4]{%
+\newcommand{\photocard}[5][]{%
     \begin{tcolorbox}[
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        left=0pt, right=0pt, top=0pt, bottom=5pt, drop shadow=black!4
+        boxsep=0pt, left=3.5pt, right=3.5pt, top=3.5pt, bottom=5pt,
+        valign=top, nobeforeafter, before upper=\setlength{\parskip}{0pt},
+        drop shadow=black!4, #1
     ]
-        \tradeimage{#1}{#2}
-        \par\centering\vspace{3pt}
-        {\fontsize{7.9pt}{9.6pt}\selectfont\bfseries\color{mhnavy}#3}\\[1pt]
-        {\fontsize{6.9pt}{8.3pt}\selectfont\color{mhtextmuted}#4}
+        \tradeimage{#2}{#3}%
+        \par\vspace{4pt}%
+        {\centering
+            {\fontsize{7.9pt}{9.6pt}\selectfont\bfseries\color{mhnavy}#4\par}%
+            \vspace{1.5pt}%
+            {\fontsize{6.9pt}{8.3pt}\selectfont\color{mhtextmuted}#5\par}%
+        }%
+    \end{tcolorbox}%
+}
+
+\newcommand{\showcasecard}[3]{%
+    \begin{tcolorbox}[
+        enhanced, colback=white, colframe=white!25!mhnavy, boxrule=0.6pt, arc=3pt,
+        boxsep=0pt, left=3.5pt, right=3.5pt, top=3.5pt, bottom=4.5pt,
+        valign=top, before upper=\setlength{\parskip}{0pt},
+        equal height group=tocshowcase
+    ]
+        \tradeimage{#1}{#2}%
+        \par\vspace{3pt}%
+        {\centering{\fontsize{7.2pt}{8.8pt}\selectfont\bfseries\color{mhnavy}#3\par}}%
+    \end{tcolorbox}%
+}
+
+\newcommand{\certlogocard}[2]{%
+    \begin{tcolorbox}[
+        enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt,
+        boxsep=0pt, left=3pt, right=3pt, top=4pt, bottom=4pt,
+        valign=top, nobeforeafter, before upper=\setlength{\parskip}{0pt},
+        equal height group=certstrip, drop shadow=black!3
+    ]
+        \mhimageframe[draw=none]{white}{1.05cm}{\includegraphics[width=\mhimgmaxw, height=\mhimgmaxh, keepaspectratio]{#1}}%
+        \par\vspace{2.5pt}%
+        {\centering{\fontsize{6.9pt}{8.0pt}\selectfont\bfseries\color{mhnavy}#2\par}}%
     \end{tcolorbox}%
 }
 
@@ -229,19 +273,19 @@
     \end{tcolorbox}%
 }
 
-\newcommand{\projectcard}[7]{%
+\newcommand{\projectcard}[8][]{%
     \begin{tcolorbox}[
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
         left=8pt, right=8pt, top=6pt, bottom=6pt,
-        borderline north={2.4pt}{0pt}{#2},
-        drop shadow=black!4
+        borderline north={2.4pt}{0pt}{#3},
+        valign=top, drop shadow=black!4, #1
     ]
-        \noindent{\fontsize{7.3pt}{9.0pt}\selectfont\bfseries\color{#2}#1}\hfill
-        {\setlength{\fboxsep}{2.2pt}\colorbox{#2}{\fontsize{6.5pt}{8.0pt}\selectfont\bfseries\color{white}\MakeUppercase{#3}}}\\[2.5pt]
-        {\fontsize{8.8pt}{10.8pt}\selectfont\bfseries\color{mhnavy}#4}\\[2pt]
-        {\fontsize{7.3pt}{9.4pt}\selectfont\color{mhtextmuted}#5}\\[3pt]
-        {\fontsize{7.6pt}{10.1pt}\selectfont\color{mhtext}#6}\\[2.5pt]
-        {\fontsize{7.2pt}{9.0pt}\selectfont\bfseries\color{mhnavy}#7}
+        \noindent{\fontsize{7.3pt}{9.0pt}\selectfont\bfseries\color{#3}#2}\hfill
+        {\setlength{\fboxsep}{2.2pt}\colorbox{#3}{\fontsize{6.5pt}{8.0pt}\selectfont\bfseries\color{white}\MakeUppercase{#4}}}\\[2.5pt]
+        {\fontsize{8.8pt}{10.8pt}\selectfont\bfseries\color{mhnavy}#5}\\[2pt]
+        {\fontsize{7.3pt}{9.4pt}\selectfont\color{mhtextmuted}#6}\\[3pt]
+        {\fontsize{7.6pt}{10.1pt}\selectfont\color{mhtext}#7}\\[2.5pt]
+        {\fontsize{7.2pt}{9.0pt}\selectfont\bfseries\color{mhnavy}#8}
     \end{tcolorbox}%
 }
 
@@ -427,27 +471,15 @@
             \centering
             {\fontsize{8.0pt}{10.0pt}\selectfont\bfseries\color{mhgold}\MakeUppercase{Delivered Site Works}}\\[0.30cm]
 
-            \begin{tcolorbox}[enhanced, colback=white, colframe=white!25!mhnavy, boxrule=0.6pt, arc=3pt, left=3pt, right=3pt, top=3pt, bottom=4pt]
-                \tradeimage{concrete-bridges-3.jpeg}{4.7cm}
-                \par\centering\vspace{2pt}
-                {\fontsize{7.2pt}{8.8pt}\selectfont\bfseries\color{mhnavy}Bridge \& Portal Culvert Reconstruction}
-            \end{tcolorbox}
+            \showcasecard{concrete-bridges-3.jpeg}{4.7cm}{Bridge \& Portal Culvert Reconstruction}
 
             \vspace{0.28cm}
 
-            \begin{tcolorbox}[enhanced, colback=white, colframe=white!25!mhnavy, boxrule=0.6pt, arc=3pt, left=3pt, right=3pt, top=3pt, bottom=4pt]
-                \tradeimage{roundabout-apron-paving.jpeg}{4.7cm}
-                \par\centering\vspace{2pt}
-                {\fontsize{7.2pt}{8.8pt}\selectfont\bfseries\color{mhnavy}Municipal Roads, Kerbing \& Block Paving}
-            \end{tcolorbox}
+            \showcasecard{roundabout-apron-paving.jpeg}{4.7cm}{Municipal Roads, Kerbing \& Block Paving}
 
             \vspace{0.28cm}
 
-            \begin{tcolorbox}[enhanced, colback=white, colframe=white!25!mhnavy, boxrule=0.6pt, arc=3pt, left=3pt, right=3pt, top=3pt, bottom=4pt]
-                \tradeimage{house.jpeg}{4.7cm}
-                \par\centering\vspace{2pt}
-                {\fontsize{7.2pt}{8.8pt}\selectfont\bfseries\color{mhnavy}Institutional \& Residential Building Works}
-            \end{tcolorbox}
+            \showcasecard{house.jpeg}{4.7cm}{Institutional \& Residential Building Works}
 
             \vspace{0.25cm}
             {\fontsize{8.5pt}{10.5pt}\selectfont\itshape\color{mhbluelight}``Live Beyond Measures''}
@@ -905,28 +937,16 @@
 % Compliance Logo Strip (4 Logos)
 \noindent
 \begin{minipage}[t]{0.238\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=2pt, right=2pt, top=4pt, bottom=4pt, halign=center, drop shadow=black!3]
-        \includegraphics[height=1.0cm, keepaspectratio]{images/cidb-logo.png}\\[2pt]
-        {\fontsize{6.9pt}{8.0pt}\selectfont\bfseries\color{mhnavy}CIDB 8 CE PE / 8 ME PE}
-    \end{tcolorbox}
+    \certlogocard{images/cidb-logo.png}{CIDB 8 CE PE / 8 ME PE}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.238\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=2pt, right=2pt, top=4pt, bottom=4pt, halign=center, drop shadow=black!3]
-        \includegraphics[height=1.0cm, keepaspectratio]{images/bbbee-logo.png}\\[2pt]
-        {\fontsize{6.9pt}{8.0pt}\selectfont\bfseries\color{mhnavy}Level 1 B-BBEE (135\%)}
-    \end{tcolorbox}
+    \certlogocard{images/bbbee-logo.png}{Level 1 B-BBEE (135\%)}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.238\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=2pt, right=2pt, top=4pt, bottom=4pt, halign=center, drop shadow=black!3]
-        \includegraphics[height=1.0cm, keepaspectratio]{images/nhbrc-logo.png}\\[2pt]
-        {\fontsize{6.9pt}{8.0pt}\selectfont\bfseries\color{mhnavy}NHBRC Provisional Class 5}
-    \end{tcolorbox}
+    \certlogocard{images/nhbrc-logo.png}{NHBRC Provisional Class 5}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.238\textwidth}
-    \begin{tcolorbox}[enhanced, colback=white, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=2pt, right=2pt, top=4pt, bottom=4pt, halign=center, drop shadow=black!3]
-        \includegraphics[height=1.0cm, keepaspectratio]{images/iso-logo.png}\\[2pt]
-        {\fontsize{6.9pt}{8.0pt}\selectfont\bfseries\color{mhnavy}ISO 9001/14001/45001 Aligned}
-    \end{tcolorbox}
+    \certlogocard{images/iso-logo.png}{ISO 9001/14001/45001 Aligned}
 \end{minipage}
 
 \clearpage
@@ -1053,13 +1073,13 @@
 
 \noindent
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{earthworks-platform-roller.jpeg}{3.1cm}{Platform Compaction}{Engineered Terrace \& Site Establishment}
+    \photocard[equal height group=pc-p7]{earthworks-platform-roller.jpeg}{\photocardimgheight}{Platform Compaction}{Engineered Terrace \& Site Establishment}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{earthworks-bulk-terrace.jpeg}{3.1cm}{Bulk Cut-to-Fill Formation}{Heavy Earthworks Platform Shaping}
+    \photocard[equal height group=pc-p7]{earthworks-bulk-terrace.jpeg}{\photocardimgheight}{Bulk Cut-to-Fill Formation}{Heavy Earthworks Platform Shaping}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{bulk-trenching-earthworks-1.jpeg}{3.1cm}{Corridor Trenching}{Pipeline \& Drainage Excavation}
+    \photocard[equal height group=pc-p7]{bulk-trenching-earthworks-1.jpeg}{\photocardimgheight}{Corridor Trenching}{Pipeline \& Drainage Excavation}
 \end{minipage}
 
 \vfill
@@ -1146,13 +1166,13 @@
 
 \noindent
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{road-roundabout.jpeg}{3.1cm}{Base Layer Compaction}{Crushed Stone Base \& Kerb Alignment}
+    \photocard[equal height group=pc-p8]{road-roundabout.jpeg}{\photocardimgheight}{Base Layer Compaction}{Crushed Stone Base \& Kerb Alignment}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{earthworks-surfacing-watertruck.jpeg}{3.1cm}{Moisture Conditioning}{Water Bowser \& Pavement Layer Prep}
+    \photocard[equal height group=pc-p8]{earthworks-surfacing-watertruck.jpeg}{\photocardimgheight}{Moisture Conditioning}{Water Bowser \& Pavement Layer Prep}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{road-roundabout-completed.jpeg}{3.1cm}{Completed Urban Intersection}{Surfaced Carriageway \& Splitter Islands}
+    \photocard[equal height group=pc-p8]{road-roundabout-completed.jpeg}{\photocardimgheight}{Completed Urban Intersection}{Surfaced Carriageway \& Splitter Islands}
 \end{minipage}
 
 \vfill
@@ -1238,13 +1258,13 @@
 
 \noindent
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{asphalt-photos-2.jpeg}{3.2cm}{Paver Laydown}{Hot-Mix Asphalt Wearing Course}
+    \photocard[equal height group=pc-p9]{asphalt-photos-2.jpeg}{\photocardimgheight}{Paver Laydown}{Hot-Mix Asphalt Wearing Course}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{asphalt-photos-1.jpeg}{3.2cm}{Mat Finishing \& Joints}{Longitudinal \& Kerb Edge Tie-In}
+    \photocard[equal height group=pc-p9]{asphalt-photos-1.jpeg}{\photocardimgheight}{Mat Finishing \& Joints}{Longitudinal \& Kerb Edge Tie-In}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{asphalt-photos-3.jpeg}{3.2cm}{Rolling Train}{PTR \& Steel-Drum Roller Compaction}
+    \photocard[equal height group=pc-p9]{asphalt-photos-3.jpeg}{\photocardimgheight}{Rolling Train}{PTR \& Steel-Drum Roller Compaction}
 \end{minipage}
 
 \vfill
@@ -1330,13 +1350,13 @@
 
 \noindent
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{kerbing-paving-island.jpeg}{3.1cm}{Kerbing \& Splitter Island}{Precast Barrier Kerbs \& Block Apron}
+    \photocard[equal height group=pc-p10]{kerbing-paving-island.jpeg}{\photocardimgheight}{Kerbing \& Splitter Island}{Precast Barrier Kerbs \& Block Apron}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{interlocking-road-paving.jpeg}{3.1cm}{Segmental Block Paving}{Interlocking Paved Roadway \& Channel}
+    \photocard[equal height group=pc-p10]{interlocking-road-paving.jpeg}{\photocardimgheight}{Segmental Block Paving}{Interlocking Paved Roadway \& Channel}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{road-markings-application.jpeg}{3.1cm}{Road Markings}{Corridor Line Marking \& Delineation}
+    \photocard[equal height group=pc-p10]{road-markings-application.jpeg}{\photocardimgheight}{Road Markings}{Corridor Line Marking \& Delineation}
 \end{minipage}
 
 \vfill
@@ -1423,13 +1443,13 @@
 
 \noindent
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{culvert-civil-storm-sewer-pipe.jpeg}{3.1cm}{Stormwater Pipe Laying}{Precast Concrete Culvert Alignment}
+    \photocard[equal height group=pc-p11]{culvert-civil-storm-sewer-pipe.jpeg}{\photocardimgheight}{Stormwater Pipe Laying}{Precast Concrete Culvert Alignment}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{stormwater-manhole-chamber.jpeg}{3.1cm}{Chamber \& Inlet Works}{Brickwork / Concrete Catchpit Construction}
+    \photocard[equal height group=pc-p11]{stormwater-manhole-chamber.jpeg}{\photocardimgheight}{Chamber \& Inlet Works}{Brickwork / Concrete Catchpit Construction}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{pipeline-trench-jcb.jpeg}{3.1cm}{Trench Bedding \& Handling}{Mechanical Lowering \& Haunch Compaction}
+    \photocard[equal height group=pc-p11]{pipeline-trench-jcb.jpeg}{\photocardimgheight}{Trench Bedding \& Handling}{Mechanical Lowering \& Haunch Compaction}
 \end{minipage}
 
 \vfill
@@ -1516,13 +1536,13 @@
 
 \noindent
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{concrete-bridges-1.jpeg}{3.1cm}{Bridge Falsework \& Piers}{Multi-Span Reinforced Concrete Crossing}
+    \photocard[equal height group=pc-p12]{concrete-bridges-1.jpeg}{\photocardimgheight}{Bridge Falsework \& Piers}{Multi-Span Reinforced Concrete Crossing}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{concrete-bridges-2.jpeg}{3.1cm}{Abutments \& Wingwalls}{River Channel Substructure \& Approaches}
+    \photocard[equal height group=pc-p12]{concrete-bridges-2.jpeg}{\photocardimgheight}{Abutments \& Wingwalls}{River Channel Substructure \& Approaches}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{precast-box-culvert.jpeg}{3.1cm}{Portal Box Culverts}{Twin Precast Culvert Barrel Installation}
+    \photocard[equal height group=pc-p12]{precast-box-culvert.jpeg}{\photocardimgheight}{Portal Box Culverts}{Twin Precast Culvert Barrel Installation}
 \end{minipage}
 
 \vfill
@@ -1608,13 +1628,13 @@
 
 \noindent
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{gabion_retaining_wall_arch_bridge.jpg}{3.1cm}{Bridge Approach Gabions}{Stepped Gravity Retaining Structure}
+    \photocard[equal height group=pc-p13]{gabion_retaining_wall_arch_bridge.jpg}{\photocardimgheight}{Bridge Approach Gabions}{Stepped Gravity Retaining Structure}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{gabion_mesh_retaining_wall_grass.jpg}{3.1cm}{Embankment Stabilisation}{Terraced Corridor Slope Protection}
+    \photocard[equal height group=pc-p13]{gabion_mesh_retaining_wall_grass.jpg}{\photocardimgheight}{Embankment Stabilisation}{Terraced Corridor Slope Protection}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{gabion_rock_wall_construction.jpg}{3.1cm}{Basket Rock Packing}{Hand-Faced Quarry Stone Placement}
+    \photocard[equal height group=pc-p13]{gabion_rock_wall_construction.jpg}{\photocardimgheight}{Basket Rock Packing}{Hand-Faced Quarry Stone Placement}
 \end{minipage}
 
 \vfill
@@ -1728,16 +1748,16 @@
 
 \noindent
 \begin{minipage}[t]{0.238\textwidth}
-    \photocard{stone-pitching-1.jpeg}{2.9cm}{01. Batter Trimming}{Subgrade Shaping \& Toe Trench}
+    \photocard[equal height group=pc-p15]{stone-pitching-1.jpeg}{\photocardimgheight}{01. Batter Trimming}{Subgrade Shaping \& Toe Trench}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.238\textwidth}
-    \photocard{stone-pitching-2.jpeg}{2.9cm}{02. Stone Packing}{Hand-Interlocked Quarry Spalls}
+    \photocard[equal height group=pc-p15]{stone-pitching-2.jpeg}{\photocardimgheight}{02. Stone Packing}{Hand-Interlocked Quarry Spalls}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.238\textwidth}
-    \photocard{stone-pitching-4.jpeg}{2.9cm}{03. Mortar Grouting}{Joint Filling \& Recessed Pointing}
+    \photocard[equal height group=pc-p15]{stone-pitching-4.jpeg}{\photocardimgheight}{03. Mortar Grouting}{Joint Filling \& Recessed Pointing}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.238\textwidth}
-    \photocard{stone-pitching-6.jpeg}{2.9cm}{04. Completed Apron}{Cured Hydraulic Slope Lining}
+    \photocard[equal height group=pc-p15]{stone-pitching-6.jpeg}{\photocardimgheight}{04. Completed Apron}{Cured Hydraulic Slope Lining}
 \end{minipage}
 
 \vfill
@@ -1822,10 +1842,10 @@
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard{water-steel-pipe-chamber.jpeg}{3.2cm}{Bulk Pipeline \& Chamber Tie-In}{Flanged Steel Spool \& Trench Bedding}
+    \photocard[equal height group=pc-p16]{water-steel-pipe-chamber.jpeg}{\photocardimgheight}{Bulk Pipeline \& Chamber Tie-In}{Flanged Steel Spool \& Trench Bedding}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard{valves-and-groundwater-tanks-1.jpeg}{3.2cm}{Valve Chamber Assembly}{Isolation Valve \& Flanged Coupling Works}
+    \photocard[equal height group=pc-p16]{valves-and-groundwater-tanks-1.jpeg}{\photocardimgheight}{Valve Chamber Assembly}{Isolation Valve \& Flanged Coupling Works}
 \end{minipage}
 
 \vfill
@@ -1911,10 +1931,10 @@
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard{sewer-collector-trench.jpeg}{3.2cm}{Deep Collector Trench}{Graded Bedding \& Concrete Pipeline Alignment}
+    \photocard[equal height group=pc-p17]{sewer-collector-trench.jpeg}{\photocardimgheight}{Deep Collector Trench}{Graded Bedding \& Concrete Pipeline Alignment}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard{sewer-outfall-pipeline.jpeg}{3.2cm}{Outfall \& Chamber Interface}{Pipeline Connection \& Trench Protection}
+    \photocard[equal height group=pc-p17]{sewer-outfall-pipeline.jpeg}{\photocardimgheight}{Outfall \& Chamber Interface}{Pipeline Connection \& Trench Protection}
 \end{minipage}
 
 \vfill
@@ -2000,13 +2020,13 @@
 
 \noindent
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{pumphouse-steel-pipe-works-2.jpeg}{3.1cm}{Pump Manifold Pipework}{Flanged Steel Delivery Spools}
+    \photocard[equal height group=pc-p18]{pumphouse-steel-pipe-works-2.jpeg}{\photocardimgheight}{Pump Manifold Pipework}{Flanged Steel Delivery Spools}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{pumphouse-steel-pipe-works-1.jpeg}{3.1cm}{Pumphouse Mechanicals}{Suction Header \& Valve Installation}
+    \photocard[equal height group=pc-p18]{pumphouse-steel-pipe-works-1.jpeg}{\photocardimgheight}{Pumphouse Mechanicals}{Suction Header \& Valve Installation}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{valves-and-groundwater-tanks-2.jpeg}{3.1cm}{Control Gate Valve \& Hoist}{Pump Station Rising Main Assembly}
+    \photocard[equal height group=pc-p18]{valves-and-groundwater-tanks-2.jpeg}{\photocardimgheight}{Control Gate Valve \& Hoist}{Pump Station Rising Main Assembly}
 \end{minipage}
 
 \vfill
@@ -2092,13 +2112,13 @@
 
 \noindent
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{clinic.jpeg}{3.1cm}{Healthcare Facility}{Turnkey Community Clinic Construction}
+    \photocard[equal height group=pc-p19]{clinic.jpeg}{\photocardimgheight}{Healthcare Facility}{Turnkey Community Clinic Construction}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{school.jpeg}{3.1cm}{Educational Infrastructure}{Classroom Block \& Finishes}
+    \photocard[equal height group=pc-p19]{school.jpeg}{\photocardimgheight}{Educational Infrastructure}{Classroom Block \& Finishes}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{building-construction-commercial.jpeg}{3.1cm}{Commercial Building}{Superstructure Brickwork \& Roof Works}
+    \photocard[equal height group=pc-p19]{building-construction-commercial.jpeg}{\photocardimgheight}{Commercial Building}{Superstructure Brickwork \& Roof Works}
 \end{minipage}
 
 \vfill
@@ -2185,13 +2205,13 @@
 
 \noindent
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{high-mast-electrical-1.jpeg}{3.1cm}{Area \& Canopy Lighting}{Elevated Luminaire Installation \& Maintenance}
+    \photocard[equal height group=pc-p20]{high-mast-electrical-1.jpeg}{\photocardimgheight}{Area \& Canopy Lighting}{Elevated Luminaire Installation \& Maintenance}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{building-electrical-kiosk.jpeg}{3.1cm}{Feeder Distribution Kiosk}{External Building Kiosk \& Armoured Cabling}
+    \photocard[equal height group=pc-p20]{building-electrical-kiosk.jpeg}{\photocardimgheight}{Feeder Distribution Kiosk}{External Building Kiosk \& Armoured Cabling}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}
-    \photocard{palisade-fencing-1.jpeg}{3.1cm}{Perimeter Security Works}{Galvanised Palisade Fencing \& Plinths}
+    \photocard[equal height group=pc-p20]{palisade-fencing-1.jpeg}{\photocardimgheight}{Perimeter Security Works}{Galvanised Palisade Fencing \& Plinths}
 \end{minipage}
 
 \vfill
@@ -2238,7 +2258,7 @@ Makhaswa Holdings demonstrates its capability through delivered public and priva
 
 \noindent
 \begin{minipage}[t]{0.488\textwidth}
-    \projectcard{Contract Ref: JRA/21/157}{mhnavy}{Main Contractor}
+    \projectcard[equal height group=proj-p21-r1]{Contract Ref: JRA/21/157}{mhnavy}{Main Contractor}
     {Kaalfontein Phase 3B Roads \& Stormwater}
     {Employer: Johannesburg Roads Agency (JRA) $\bullet$ Ward 92, Gauteng $\bullet$ 2023--2024}
     {Imported dump rock pioneer layer, roadbed preparation, stabilised sub-base and crushed-stone base layerworks (1,090m $\times$ 6.1m on Reed Fish Street), 600mm concrete stormwater pipelines, manholes, catchpits \& kerb inlets.}
@@ -2246,7 +2266,7 @@ Makhaswa Holdings demonstrates its capability through delivered public and priva
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.488\textwidth}
-    \projectcard{Contract Ref: 014/MKLM/2022/2023}{mhnavy}{Main Contractor}
+    \projectcard[equal height group=proj-p21-r1]{Contract Ref: 014/MKLM/2022/2023}{mhnavy}{Main Contractor}
     {Lerome (Thabeng) Water Supply \& Reticulation}
     {Employer: Moses Kotane Local Municipality $\bullet$ North West $\bullet$ Jul 2023--Apr 2024}
     {Mass trenching across soft, intermediate and hard rock strata, sand bedding, uPVC/HDPE bulk potable water pipelines, mechanical couplings, hydrostatic testing, disinfection \& metered household erf connections.}
@@ -2257,7 +2277,7 @@ Makhaswa Holdings demonstrates its capability through delivered public and priva
 
 \noindent
 \begin{minipage}[t]{0.488\textwidth}
-    \projectcard{Contract Ref: DRT 40/11/2014}{mhblue}{Subcontractor}
+    \projectcard[equal height group=proj-p21-r2]{Contract Ref: DRT 40/11/2014}{mhblue}{Subcontractor}
     {Construction of Road K46-AS Subcontract Works}
     {Principal: Slim Construction (Gauteng DRT) $\bullet$ Gauteng $\bullet$ Nov 2023--Sep 2024}
     {Supply and installation of precast kerbing, stormwater drainage infrastructure, gabion baskets, stone pitching, and subsoil drainage under an as-and-when-required provincial road contract.}
@@ -2265,7 +2285,7 @@ Makhaswa Holdings demonstrates its capability through delivered public and priva
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.488\textwidth}
-    \projectcard{K50 Dualisation Corridor}{mhblue}{Subcontractor}
+    \projectcard[equal height group=proj-p21-r2]{K50 Dualisation Corridor}{mhblue}{Subcontractor}
     {Garstfontein Road (K50) Retaining Walls}
     {Principal: Sedtrade (Pty) Ltd $\bullet$ Pretoria, Gauteng $\bullet$ 2024--Aug 2026}
     {Construction of retaining walls, including gabion retaining structures and embankment protection, along Garstfontein Road (K50) and Solomon Mahlangu Drive upgrade sections.}
@@ -2276,7 +2296,7 @@ Makhaswa Holdings demonstrates its capability through delivered public and priva
 
 \noindent
 \begin{minipage}[t]{0.488\textwidth}
-    \projectcard{Contract Ref: RAL/T1171/2021}{mhblue}{Subcontractor}
+    \projectcard[equal height group=proj-p21-r3]{Contract Ref: RAL/T1171/2021}{mhblue}{Subcontractor}
     {Rehabilitation of Road D2702 (PPC to Dwaalboom)}
     {Principal: Tarcron Projects (Roads Agency Limpopo) $\bullet$ Limpopo $\bullet$ 2021--2023}
     {Heavy pavement layer repairs, asphalt overlay, structural pothole and edge-break rehabilitation, slurry seal, single chip-and-spray seal, hot-pour crack sealing \& thermoplastic road markings.}
@@ -2284,7 +2304,7 @@ Makhaswa Holdings demonstrates its capability through delivered public and priva
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.488\textwidth}
-    \projectcard{Contract Ref: 14-2024/25}{mhblue}{Subcontractor}
+    \projectcard[equal height group=proj-p21-r3]{Contract Ref: 14-2024/25}{mhblue}{Subcontractor}
     {Ext 14--19 Access Road \& Bridge Reconstruction}
     {Principal: Civtek / Municipal Infrastructure $\bullet$ Mahabaneng--Matebeleng $\bullet$ 2024--2025}
     {Bridge demolition, abutment excavation, precast concrete portal box culverts, in-situ RC bridge deck \& wingwalls, Class 100D Ogee stormwater pipes (450--1,050mm), subsoil drains, kerbing \& paving.}
@@ -2295,10 +2315,10 @@ Makhaswa Holdings demonstrates its capability through delivered public and priva
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard{retaining-wall-rebar-footing.jpeg}{2.7cm}{Corridor Retaining Wall Footing}{Reinforced Concrete Footing \& Starter Rebar}
+    \photocard[equal height group=pc-p21]{retaining-wall-rebar-footing.jpeg}{\photocardimgheight}{Corridor Retaining Wall Footing}{Reinforced Concrete Footing \& Starter Rebar}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard{retaining-wall-corridor.jpeg}{2.7cm}{Retaining Wall Construction}{Masonry \& Concrete Embankment Retention}
+    \photocard[equal height group=pc-p21]{retaining-wall-corridor.jpeg}{\photocardimgheight}{Retaining Wall Construction}{Masonry \& Concrete Embankment Retention}
 \end{minipage}
 
 \vspace{0.04cm}
@@ -2323,7 +2343,7 @@ Alongside civil and road infrastructure, Makhaswa Holdings has completed turnkey
 
 \noindent
 \begin{minipage}[t]{0.488\textwidth}
-    \projectcard{Turnkey Healthcare Build}{mhnavy}{Main Contractor}
+    \projectcard[equal height group=proj-p22-r1]{Turnkey Healthcare Build}{mhnavy}{Main Contractor}
     {Rhiza Babuyile Community Clinic}
     {Client: Rhiza Babalo NGO $\bullet$ Diepsloot, Gauteng $\bullet$ Sep 2021--Dec 2021}
     {Turnkey clinic construction from site clearance and RC floor slabs through face-brick and plaster masonry, roof trusses and waterproofing, Rhinolite skimming, tiling, aluminium glazing, ceilings, electrical LED wiring \& clinical plumbing.}
@@ -2331,7 +2351,7 @@ Alongside civil and road infrastructure, Makhaswa Holdings has completed turnkey
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.488\textwidth}
-    \projectcard{DBE / SGB Education Build}{mhnavy}{Main Contractor}
+    \projectcard[equal height group=proj-p22-r1]{DBE / SGB Education Build}{mhnavy}{Main Contractor}
     {Diepsloot West Secondary --- 4 Classrooms}
     {Client: Dept. of Basic Education / SGB $\bullet$ Diepsloot, Gauteng $\bullet$ Sep--Dec 2023}
     {Turnkey construction of four classrooms: RC floor slab, brickwork, timber trusses \& IBR roof sheeting, waterproofing, security gates, ceramic tiling, suspended ceilings, acoustic partitions \& full classroom furniture.}
@@ -2342,7 +2362,7 @@ Alongside civil and road infrastructure, Makhaswa Holdings has completed turnkey
 
 \noindent
 \begin{minipage}[t]{0.488\textwidth}
-    \projectcard{Contract Ref: PIK 28/2021-22}{mhnavy}{Main Contractor}
+    \projectcard[equal height group=proj-p22-r2]{Contract Ref: PIK 28/2021-22}{mhnavy}{Main Contractor}
     {Rabie Ridge Midrand Depot \& Park Homes}
     {Employer: Pikitup SOC Ltd (City of Johannesburg) $\bullet$ Midrand $\bullet$ May--Nov 2022}
     {Office foundations and plinths for mobile park homes, permanent guardhouse, boundary security fencing, male/female ablution blocks, bulk water/sewer connections, and heavy-duty waste-truck parking platform.}
@@ -2350,7 +2370,7 @@ Alongside civil and road infrastructure, Makhaswa Holdings has completed turnkey
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.488\textwidth}
-    \projectcard{Commercial Building (Phases 1 \& 2)}{mhnavy}{Main Contractor}
+    \projectcard[equal height group=proj-p22-r2]{Commercial Building (Phases 1 \& 2)}{mhnavy}{Main Contractor}
     {Samrand Commercial House / Office Facility}
     {Client: Sedtrade (Pty) Ltd $\bullet$ Samrand, Centurion $\bullet$ May 2022--May 2023}
     {Foundation trenching in variable ground, steel reinforcement footings, structural brickwork, damp-proofing, perimeter subsurface drainage, structural steelwork, timber scotch roof \& sheeting, solid doors \& commercial glazing.}
@@ -2361,7 +2381,7 @@ Alongside civil and road infrastructure, Makhaswa Holdings has completed turnkey
 
 \noindent
 \begin{minipage}[t]{0.488\textwidth}
-    \projectcard{Township Civil Infrastructure}{mhblue}{Subcontractor}
+    \projectcard[equal height group=proj-p22-r3]{Township Civil Infrastructure}{mhblue}{Subcontractor}
     {Tanganani Extension 51 Civil Works}
     {Principal: Civplant Civils / Civtek $\bullet$ Diepsloot, Gauteng $\bullet$ Feb 2025--Present}
     {Clearing, 300mm topsoil stripping, roadbed compaction, Class 100D Ogee concrete stormwater culverts (450--1,050mm), 110mm Kaytech subsoil drains, Type 4A/stepped manholes, JRA Type 2A kerb inlets, kerbing \& 60/80mm paving.}
@@ -2369,7 +2389,7 @@ Alongside civil and road infrastructure, Makhaswa Holdings has completed turnkey
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.488\textwidth}
-    \projectcard{Tender Ref: JV SEG 41}{mhteal}{Joint Venture Partner}
+    \projectcard[equal height group=proj-p22-r3]{Tender Ref: JV SEG 41}{mhteal}{Joint Venture Partner}
     {City of Tshwane Municipal Infrastructure JV}
     {Employer: City of Tshwane Metropolitan Municipality $\bullet$ Gauteng $\bullet$ Active}
     {Registered joint venture partner executing municipal civil infrastructure upgrades, bulk pipeline reticulation works, and urban road construction packages within the City of Tshwane jurisdiction.}
@@ -2380,10 +2400,10 @@ Alongside civil and road infrastructure, Makhaswa Holdings has completed turnkey
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard{commercial-building-aerial.jpeg}{2.8cm}{Institutional \& Commercial Building}{Face-Brick Superstructure \& IBR Roof Installation}
+    \photocard[equal height group=pc-p22]{commercial-building-aerial.jpeg}{\photocardimgheight}{Institutional \& Commercial Building}{Face-Brick Superstructure \& IBR Roof Installation}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard{building-photos-commercial.jpeg}{2.8cm}{Completed Multi-Storey Complex}{Structural Masonry, Walkways \& Paved Courtyard}
+    \photocard[equal height group=pc-p22]{building-photos-commercial.jpeg}{\photocardimgheight}{Completed Multi-Storey Complex}{Structural Masonry, Walkways \& Paved Courtyard}
 \end{minipage}
 
 \clearpage
@@ -2715,10 +2735,10 @@ DLM-79/02/2020 &
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard{surveying-gps-site.jpeg}{3.2cm}{Engineering Survey \& Setting Out}{On-Site Level, Alignment \& Invert Control}
+    \photocard[equal height group=pc-p27]{surveying-gps-site.jpeg}{\photocardimgheight}{Engineering Survey \& Setting Out}{On-Site Level, Alignment \& Invert Control}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard{mounted-cherry-picker.jpeg}{3.2cm}{Mobile Elevated Access Plant}{Trailer-Mounted Hydraulic Boom Equipment}
+    \photocard[equal height group=pc-p27]{mounted-cherry-picker.jpeg}{\photocardimgheight}{Mobile Elevated Access Plant}{Trailer-Mounted Hydraulic Boom Equipment}
 \end{minipage}
 
 \vfill
@@ -2803,9 +2823,9 @@ Makhaswa Holdings separates its governance framework into \textbf{mandatory stat
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
-    \begin{tcolorbox}[enhanced, colback=mhoffwhite, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=8pt, right=8pt, top=7pt, bottom=7pt, drop shadow=black!3]
+    \begin{tcolorbox}[enhanced, colback=mhoffwhite, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, boxsep=0pt, left=8pt, right=8pt, top=7pt, bottom=7pt, valign=center, nobeforeafter, equal height group=govcards, drop shadow=black!3]
         \begin{minipage}[c]{0.26\linewidth}
-            \includegraphics[width=\linewidth, height=1.35cm, keepaspectratio]{images/sheq-logo.png}
+            \mhimageframe{white}{1.35cm}{\includegraphics[width=\mhimgmaxw, height=\mhimgmaxh, keepaspectratio]{images/sheq-logo.png}}
         \end{minipage}\hfill
         \begin{minipage}[c]{0.70\linewidth}
             {\fontsize{8.6pt}{10.8pt}\selectfont\bfseries\color{mhnavy}Statutory Site Safety Governance}\\[2pt]
@@ -2814,9 +2834,9 @@ Makhaswa Holdings separates its governance framework into \textbf{mandatory stat
     \end{tcolorbox}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\textwidth}
-    \begin{tcolorbox}[enhanced, colback=mhoffwhite, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, left=8pt, right=8pt, top=7pt, bottom=7pt, drop shadow=black!3]
+    \begin{tcolorbox}[enhanced, colback=mhoffwhite, colframe=mhlightgray, boxrule=0.7pt, arc=4pt, boxsep=0pt, left=8pt, right=8pt, top=7pt, bottom=7pt, valign=center, nobeforeafter, equal height group=govcards, drop shadow=black!3]
         \begin{minipage}[c]{0.26\linewidth}
-            \includegraphics[width=\linewidth, height=1.35cm, keepaspectratio]{images/iso-logo.png}
+            \mhimageframe{white}{1.35cm}{\includegraphics[width=\mhimgmaxw, height=\mhimgmaxh, keepaspectratio]{images/iso-logo.png}}
         \end{minipage}\hfill
         \begin{minipage}[c]{0.70\linewidth}
             {\fontsize{8.6pt}{10.8pt}\selectfont\bfseries\color{mhnavy}Management System Alignment}\\[2pt]
@@ -2862,10 +2882,10 @@ Makhaswa Holdings separates its governance framework into \textbf{mandatory stat
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard{wall-bricklaying.jpeg}{3.5cm}{Artisan Masonry \& Site Supervision}{On-Site Skills Transfer \& Quality Inspection}
+    \photocard[equal height group=pc-p29]{wall-bricklaying.jpeg}{\photocardimgheight}{Artisan Masonry \& Site Supervision}{On-Site Skills Transfer \& Quality Inspection}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard{building-construction-work-residential.jpeg}{3.5cm}{Community Housing \& Trade Works}{Local Bricklaying \& Structural Participation}
+    \photocard[equal height group=pc-p29]{building-construction-work-residential.jpeg}{\photocardimgheight}{Community Housing \& Trade Works}{Local Bricklaying \& Structural Participation}
 \end{minipage}
 
 \vfill
