@@ -15,3 +15,39 @@
   869 Patryshond Street, Garsfontein, Pretoria, Gauteng, 0042, South Africa.
 - **Date Recorded:**
   October 2026
+
+---
+
+## Archived Executive & Directorate Personnel Records
+
+### 1. Lucas Dinga — Chief Executive Officer (CEO)
+- **Full Name & Title:**
+  Lucas Dinga — Chief Executive Officer (CEO) / Authorized Business Signatory
+- **Statutory Appointment Reference:**
+  CR 7(19c) (OHS Act 85 of 1993 & Construction Regulations 2014)
+- **Archived Profile Summary & Responsibilities:**
+  Leads corporate strategy, tender procurement, joint ventures, commercial administration, and client liaison. Brings 7 to 10 years of practical experience across civil engineering, roadworks, and building construction, and serves as the sole authorized signatory for legal contracts and banking (FNB Cheque Account: 62763534445, Pretoria Branch 251445).
+- **Removed Website Record (`about.html`):**
+  Leadership card (`<h4>Lucas Dinga</h4>` / `<p class="role">Chief Executive Officer (CEO)</p>`) replaced with institutional role card (`Office of the CEO` / `Chief Executive Officer (CEO)`).
+- **Removed Company Profile Records (`latex/company-profile/makhaswa_company_profile.tex`):**
+  1. Page 4 executive profile card (`Lucas Dinga (CEO / Authorized Signatory)`) converted to an institutional governance card (`Office of the Chief Executive Officer (CEO / Signatory)`).
+  2. Page 4 Statutory Appointments table row (`Lucas Dinga | Chief Executive Officer | CR 7(19c) | Corporate leadership, commercial sign-off, tender bids`) removed; remaining technical personnel rows retained with alternating row shading.
+  3. Page 4 TikZ organogram top node (`Board of Directors & Executive Leadership`) updated to show role structure (`Chief Executive Officer (CEO) --- CR 7(19c) Executive Signatory • Corporate Directorate`) without personal names.
+  4. Page 5 banking signatory line and Page 30 back-cover signatory footer updated to `Office of the Chief Executive Officer (CEO)`.
+- **Source of Truth Status:**
+  Retained in `0archives/sourceoftruth.txt` and `0archives/sourceoftruthv2.txt` for internal historical reference.
+- **Date Recorded:**
+  November 2026
+
+### 2. Nelly Motswapong (Ms. Nelly) — Director / Co-Owner
+- **Full Name & Title:**
+  Nelly Motswapong (Ms. Nelly) — Director / Co-Owner (50% Black Female Ownership Equity)
+- **Archived Profile Summary & Responsibilities:**
+  Directs corporate governance, human resource administration, enterprise transformation, community participation, and internal compliance. Oversees administrative systems supporting workforce recruitment, local SMME onboarding, and corporate social responsibility programmes.
+- **Removed Company Profile Records (`latex/company-profile/makhaswa_company_profile.tex`):**
+  1. Page 4 directorate profile card (`Nelly Motswapong (Ms. Nelly) (Director / Co-Owner)`) converted to an institutional governance card (`Corporate Directorate & Transformation (Board Oversight)`).
+  2. Page 4 TikZ organogram top node (`Board of Directors & Executive Leadership`) updated to reference `Corporate Directorate` without personal names.
+- **Source of Truth Status:**
+  Retained in `0archives/sourceoftruth.txt` and `0archives/sourceoftruthv2.txt` for internal historical reference.
+- **Date Recorded:**
+  November 2026
