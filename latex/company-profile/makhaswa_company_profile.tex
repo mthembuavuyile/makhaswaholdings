@@ -103,7 +103,9 @@
 \newlength{\mhimgboxh}
 \newlength{\mhimgmaxw}
 \newlength{\mhimgmaxh}
-\newcommand{\photocardimgheight}{3.1cm}
+\newcommand{\photogridimgheight}{8.2cm}
+\newcommand{\photopairimgheight}{5.0cm}
+\newcommand{\photocardimgheight}{4.2cm}
 
 \newcommand{\mhimageframe}[4][draw=mhlightgray, line width=0.5pt]{%
     \setlength{\mhimgboxw}{\linewidth}%
@@ -142,18 +144,28 @@
 \newcommand{\photocard}[5][]{%
     \begin{tcolorbox}[
         enhanced, colback=white, colframe=mhlightgray, boxrule=0.8pt, arc=4pt,
-        boxsep=0pt, left=3.5pt, right=3.5pt, top=3.5pt, bottom=5pt,
+        boxsep=0pt, left=4pt, right=4pt, top=4pt, bottom=5.5pt,
         valign=top, nobeforeafter, before upper=\setlength{\parskip}{0pt},
         drop shadow=black!4, #1
     ]
         \tradeimage{#2}{#3}%
-        \par\vspace{4pt}%
+        \par\vspace{4.5pt}%
         {\centering
-            {\fontsize{7.9pt}{9.6pt}\selectfont\bfseries\color{mhnavy}#4\par}%
+            {\fontsize{8.2pt}{10.0pt}\selectfont\bfseries\color{mhnavy}#4\par}%
             \vspace{1.5pt}%
-            {\fontsize{6.9pt}{8.3pt}\selectfont\color{mhtextmuted}#5\par}%
+            {\fontsize{7.2pt}{8.8pt}\selectfont\color{mhtextmuted}#5\par}%
         }%
     \end{tcolorbox}%
+}
+
+\newcommand{\photopairrow}[8][pc-pair]{%
+    \noindent
+    \begin{minipage}[t]{0.485\textwidth}
+        \photocard[equal height group=#1]{#2}{#3}{#4}{#5}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.485\textwidth}
+        \photocard[equal height group=#1]{#6}{#3}{#7}{#8}
+    \end{minipage}\par
 }
 
 \newcommand{\showcasecard}[3]{%
@@ -419,40 +431,40 @@
             {\fontsize{7.5pt}{9.5pt}\selectfont\bfseries\color{mhgolddark}\MakeUppercase{Part B: Construction Services}}\\[1.5pt]
             \fontsize{7.4pt}{10.3pt}\selectfont
             \hyperlink{sec:capabilities}{{\color{mhblue}\faTools\ \ 04\ \ Construction Services Directory (13 Trades)} \dotfill {\bfseries\color{mhnavy}6}}\\[1.5pt]
-            \hyperlink{sec:earthworks}{{\color{mhblue}\faTractor\ \ \phantom{0}1.\ \ Bulk Earthworks \& Site Preparation} \dotfill {\bfseries\color{mhnavy}7}}\\[1.5pt]
-            \hyperlink{sec:roads}{{\color{mhblue}\faRoad\ \ \phantom{0}2.\ \ Road Construction \& Layerworks} \dotfill {\bfseries\color{mhnavy}8}}\\[1.5pt]
-            \hyperlink{sec:asphalt}{{\color{mhblue}\faLayerGroup\ \ \phantom{0}3.\ \ Asphalt Surfacing \& Road Rehabilitation} \dotfill {\bfseries\color{mhnavy}9}}\\[1.5pt]
-            \hyperlink{sec:kerbing}{{\color{mhblue}\faTrafficLight\ \ \phantom{0}4.\ \ Kerbing, Paving \& Traffic Signalisation} \dotfill {\bfseries\color{mhnavy}10}}\\[1.5pt]
-            \hyperlink{sec:stormwater}{{\color{mhblue}\faWater\ \ \phantom{0}5.\ \ Stormwater Drainage \& Civil Infrastructure} \dotfill {\bfseries\color{mhnavy}11}}\\[1.5pt]
-            \hyperlink{sec:bridges}{{\color{mhblue}\faArchway\ \ \phantom{0}6.\ \ Bridges, Culverts \& Concrete Structures} \dotfill {\bfseries\color{mhnavy}12}}\\[1.5pt]
-            \hyperlink{sec:gabions}{{\color{mhblue}\faLayerGroup\ \ \phantom{0}7.\ \ Gabions, Reno Mattresses \& Soil Retaining} \dotfill {\bfseries\color{mhnavy}13--14}}\\[1.5pt]
-            \hyperlink{sec:pitching}{{\color{mhblue}\faMountain\ \ \phantom{0}8.\ \ Stone Pitching \& Hydraulic Protection} \dotfill {\bfseries\color{mhnavy}15}}\\[1.5pt]
-            \hyperlink{sec:waterretic}{{\color{mhblue}\faTint\ \ \phantom{0}9.\ \ Bulk Water Reticulation} \dotfill {\bfseries\color{mhnavy}16}}\\[1.5pt]
-            \hyperlink{sec:sewer}{{\color{mhblue}\faWater\ \ 10.\ \ Sewer Pipelines \& Reticulation} \dotfill {\bfseries\color{mhnavy}17}}\\[1.5pt]
-            \hyperlink{sec:mechanical}{{\color{mhblue}\faCogs\ \ 11.\ \ Mechanical Engineering \& Pumping} \dotfill {\bfseries\color{mhnavy}18}}\\[1.5pt]
-            \hyperlink{sec:building}{{\color{mhblue}\faBuilding\ \ 12.\ \ General Building \& Structural Facilities} \dotfill {\bfseries\color{mhnavy}19}}\\[1.5pt]
-            \hyperlink{sec:electrical}{{\color{mhblue}\faBolt\ \ 13.\ \ Electrical Reticulation \& Infrastructure} \dotfill {\bfseries\color{mhnavy}20}}\\[3.5pt]
+            \hyperlink{sec:earthworks}{{\color{mhblue}\faTractor\ \ \phantom{0}1.\ \ Bulk Earthworks \& Site Preparation} \dotfill {\bfseries\color{mhnavy}7--8}}\\[1.5pt]
+            \hyperlink{sec:roads}{{\color{mhblue}\faRoad\ \ \phantom{0}2.\ \ Road Construction \& Layerworks} \dotfill {\bfseries\color{mhnavy}9--10}}\\[1.5pt]
+            \hyperlink{sec:asphalt}{{\color{mhblue}\faLayerGroup\ \ \phantom{0}3.\ \ Asphalt Surfacing \& Road Rehabilitation} \dotfill {\bfseries\color{mhnavy}11--12}}\\[1.5pt]
+            \hyperlink{sec:kerbing}{{\color{mhblue}\faTrafficLight\ \ \phantom{0}4.\ \ Kerbing, Paving \& Traffic Signalisation} \dotfill {\bfseries\color{mhnavy}13--14}}\\[1.5pt]
+            \hyperlink{sec:stormwater}{{\color{mhblue}\faWater\ \ \phantom{0}5.\ \ Stormwater Drainage \& Civil Infrastructure} \dotfill {\bfseries\color{mhnavy}15--16}}\\[1.5pt]
+            \hyperlink{sec:bridges}{{\color{mhblue}\faArchway\ \ \phantom{0}6.\ \ Bridges, Culverts \& Concrete Structures} \dotfill {\bfseries\color{mhnavy}17--18}}\\[1.5pt]
+            \hyperlink{sec:gabions}{{\color{mhblue}\faLayerGroup\ \ \phantom{0}7.\ \ Gabions, Reno Mattresses \& Soil Retaining} \dotfill {\bfseries\color{mhnavy}19--20}}\\[1.5pt]
+            \hyperlink{sec:pitching}{{\color{mhblue}\faMountain\ \ \phantom{0}8.\ \ Stone Pitching \& Hydraulic Protection} \dotfill {\bfseries\color{mhnavy}21--22}}\\[1.5pt]
+            \hyperlink{sec:waterretic}{{\color{mhblue}\faTint\ \ \phantom{0}9.\ \ Bulk Water Reticulation} \dotfill {\bfseries\color{mhnavy}23}}\\[1.5pt]
+            \hyperlink{sec:sewer}{{\color{mhblue}\faWater\ \ 10.\ \ Sewer Pipelines \& Reticulation} \dotfill {\bfseries\color{mhnavy}24}}\\[1.5pt]
+            \hyperlink{sec:mechanical}{{\color{mhblue}\faCogs\ \ 11.\ \ Mechanical Engineering \& Pumping} \dotfill {\bfseries\color{mhnavy}25--26}}\\[1.5pt]
+            \hyperlink{sec:building}{{\color{mhblue}\faBuilding\ \ 12.\ \ General Building \& Structural Facilities} \dotfill {\bfseries\color{mhnavy}27--28}}\\[1.5pt]
+            \hyperlink{sec:electrical}{{\color{mhblue}\faBolt\ \ 13.\ \ Electrical Reticulation \& Infrastructure} \dotfill {\bfseries\color{mhnavy}29--30}}\\[3.5pt]
 
             {\fontsize{7.5pt}{9.5pt}\selectfont\bfseries\color{mhgolddark}\MakeUppercase{Part C: Project Experience}}\\[1.5pt]
             \fontsize{7.4pt}{10.3pt}\selectfont
-            \hyperlink{sec:highlights-civil}{{\color{mhblue}\faRoad\ \ 05\ \ Selected Project Highlights --- Civil, Roads \& Water} \dotfill {\bfseries\color{mhnavy}21}}\\[1.5pt]
-            \hyperlink{sec:highlights-building}{{\color{mhblue}\faBuilding\ \ 06\ \ Selected Project Highlights --- Building \& Depots} \dotfill {\bfseries\color{mhnavy}22}}\\[1.5pt]
-            \hyperlink{sec:projects}{{\color{mhblue}\faClipboardList\ \ 07\ \ Consolidated Verified Project Register (16 Contracts)} \dotfill {\bfseries\color{mhnavy}23--24}}\\[1.5pt]
-            \hyperlink{sec:projects-3}{{\color{mhblue}\faTint\ \ \phantom{0}7b.\ Municipal Water, Reservoir \& Sanitation Schedule (5 Projects)} \dotfill {\bfseries\color{mhnavy}25}}\\[1.5pt]
-            \hyperlink{sec:references}{{\color{mhblue}\faUserCheck\ \ 08\ \ Contactable Client \& Contractor References} \dotfill {\bfseries\color{mhnavy}26}}\\[3.5pt]
+            \hyperlink{sec:highlights-civil}{{\color{mhblue}\faRoad\ \ 05\ \ Selected Project Highlights --- Civil, Roads \& Water} \dotfill {\bfseries\color{mhnavy}31}}\\[1.5pt]
+            \hyperlink{sec:highlights-building}{{\color{mhblue}\faBuilding\ \ 06\ \ Selected Project Highlights --- Building \& Depots} \dotfill {\bfseries\color{mhnavy}32}}\\[1.5pt]
+            \hyperlink{sec:projects}{{\color{mhblue}\faClipboardList\ \ 07\ \ Consolidated Verified Project Register (16 Contracts)} \dotfill {\bfseries\color{mhnavy}33--34}}\\[1.5pt]
+            \hyperlink{sec:projects-3}{{\color{mhblue}\faTint\ \ \phantom{0}7b.\ Municipal Water, Reservoir \& Sanitation Schedule (5 Projects)} \dotfill {\bfseries\color{mhnavy}35}}\\[1.5pt]
+            \hyperlink{sec:references}{{\color{mhblue}\faUserCheck\ \ 08\ \ Contactable Client \& Contractor References} \dotfill {\bfseries\color{mhnavy}36}}\\[3.5pt]
 
             {\fontsize{7.5pt}{9.5pt}\selectfont\bfseries\color{mhgolddark}\MakeUppercase{Part D: Operational Capacity}}\\[1.5pt]
             \fontsize{7.4pt}{10.3pt}\selectfont
-            \hyperlink{sec:plant}{{\color{mhblue}\faTruckMonster\ \ 09\ \ Plant, Hired Fleet, Survey \& Workforce Capacity} \dotfill {\bfseries\color{mhnavy}27}}\\[3.5pt]
+            \hyperlink{sec:plant}{{\color{mhblue}\faTruckMonster\ \ 09\ \ Plant, Hired Fleet, Survey \& Workforce Capacity} \dotfill {\bfseries\color{mhnavy}37}}\\[3.5pt]
 
             {\fontsize{7.5pt}{9.5pt}\selectfont\bfseries\color{mhgolddark}\MakeUppercase{Part E: Governance \& Compliance}}\\[1.5pt]
             \fontsize{7.4pt}{10.3pt}\selectfont
-            \hyperlink{sec:sheq}{{\color{mhblue}\faShieldAlt\ \ 10\ \ Health, Safety, Quality \& Environmental Governance} \dotfill {\bfseries\color{mhnavy}28}}\\[3.5pt]
+            \hyperlink{sec:sheq}{{\color{mhblue}\faShieldAlt\ \ 10\ \ Health, Safety, Quality \& Environmental Governance} \dotfill {\bfseries\color{mhnavy}38}}\\[3.5pt]
 
             {\fontsize{7.5pt}{9.5pt}\selectfont\bfseries\color{mhgolddark}\MakeUppercase{Part F: Social Responsibility \& Contact Directory}}\\[1.5pt]
             \fontsize{7.4pt}{10.3pt}\selectfont
-            \hyperlink{sec:csi}{{\color{mhblue}\faHandsHelping\ \ 11\ \ Corporate Social Responsibility \& Local Participation} \dotfill {\bfseries\color{mhnavy}29}}\\[1.5pt]
-            \hyperlink{sec:tenderpack}{{\color{mhblue}\faFileContract\ \ 12\ \ Statutory Compliance Summary \& Contact Directory} \dotfill {\bfseries\color{mhnavy}30}}
+            \hyperlink{sec:csi}{{\color{mhblue}\faHandsHelping\ \ 11\ \ Corporate Social Responsibility \& Local Participation} \dotfill {\bfseries\color{mhnavy}39}}\\[1.5pt]
+            \hyperlink{sec:tenderpack}{{\color{mhblue}\faFileContract\ \ 12\ \ Statutory Compliance Summary \& Contact Directory} \dotfill {\bfseries\color{mhnavy}40}}
 
             \vspace{0.22cm}
             \textcolor{mhlightgray}{\rule{\linewidth}{0.8pt}}
@@ -973,25 +985,25 @@
 {\color{white}\bfseries\fontsize{7.8pt}{9.2pt}\selectfont Principal Scope of Work} &
 {\color{white}\bfseries\fontsize{7.8pt}{9.2pt}\selectfont Page} \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 01 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Bulk Earthworks \& Site Preparation & \fontsize{7.5pt}{9.1pt}\selectfont Clearing, topsoil stripping, cut-to-fill platforms, trenching \& subgrade compaction & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:earthworks}{\bfseries\color{mhblue}Page 7} \\
-\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 02 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Road Construction \& Layerworks & \fontsize{7.5pt}{9.1pt}\selectfont Dump rock pioneer layers, selected layers, C3/C4 stabilised sub-base \& G1/G2 base & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:roads}{\bfseries\color{mhblue}Page 8} \\
+\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 01 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Bulk Earthworks \& Site Preparation & \fontsize{7.5pt}{9.1pt}\selectfont Clearing, topsoil stripping, cut-to-fill platforms, trenching \& subgrade compaction & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:earthworks}{\bfseries\color{mhblue}Page 7--8} \\
+\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 02 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Road Construction \& Layerworks & \fontsize{7.5pt}{9.1pt}\selectfont Dump rock pioneer layers, selected layers, C3/C4 stabilised sub-base \& G1/G2 base & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:roads}{\bfseries\color{mhblue}Page 9--10} \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 03 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Asphalt Surfacing \& Road Rehabilitation & \fontsize{7.5pt}{9.1pt}\selectfont Hot-mix asphalt overlays/inlays, cold milling, patching, crack sealing \& surface seals & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:asphalt}{\bfseries\color{mhblue}Page 9} \\
-\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 04 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Kerbing, Paving \& Traffic Signalisation & \fontsize{7.5pt}{9.1pt}\selectfont Precast kerbing, 60mm/80mm block paving, road markings \& signalised junction works & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:kerbing}{\bfseries\color{mhblue}Page 10} \\
+\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 03 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Asphalt Surfacing \& Road Rehabilitation & \fontsize{7.5pt}{9.1pt}\selectfont Hot-mix asphalt overlays/inlays, cold milling, patching, crack sealing \& surface seals & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:asphalt}{\bfseries\color{mhblue}Page 11--12} \\
+\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 04 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Kerbing, Paving \& Traffic Signalisation & \fontsize{7.5pt}{9.1pt}\selectfont Precast kerbing, 60mm/80mm block paving, road markings \& signalised junction works & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:kerbing}{\bfseries\color{mhblue}Page 13--14} \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 05 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Stormwater Drainage \& Civil Infrastructure & \fontsize{7.5pt}{9.1pt}\selectfont Concrete stormwater pipes (450--1200mm), subsoil drains, manholes \& kerb inlets & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:stormwater}{\bfseries\color{mhblue}Page 11} \\
-\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 06 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Bridges, Culverts \& Concrete Structures & \fontsize{7.5pt}{9.1pt}\selectfont Portal box culverts, in-situ RC bridge decks, abutments, wingwalls \& retaining walls & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:bridges}{\bfseries\color{mhblue}Page 12} \\
+\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 05 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Stormwater Drainage \& Civil Infrastructure & \fontsize{7.5pt}{9.1pt}\selectfont Concrete stormwater pipes (450--1200mm), subsoil drains, manholes \& kerb inlets & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:stormwater}{\bfseries\color{mhblue}Page 15--16} \\
+\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 06 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Bridges, Culverts \& Concrete Structures & \fontsize{7.5pt}{9.1pt}\selectfont Portal box culverts, in-situ RC bridge decks, abutments, wingwalls \& retaining walls & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:bridges}{\bfseries\color{mhblue}Page 17--18} \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 07 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Gabions, Reno Mattresses \& Soil Retaining & \fontsize{7.5pt}{9.1pt}\selectfont Woven-mesh gabion retaining walls, Reno scour mattresses \& geotextile-backed slopes & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:gabions}{\bfseries\color{mhblue}Page 13--14} \\
-\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 08 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Stone Pitching \& Hydraulic Protection & \fontsize{7.5pt}{9.1pt}\selectfont Grouted and dry stone pitching, culvert aprons, side drains \& embankment protection & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:pitching}{\bfseries\color{mhblue}Page 15} \\
+\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 07 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Gabions, Reno Mattresses \& Soil Retaining & \fontsize{7.5pt}{9.1pt}\selectfont Woven-mesh gabion retaining walls, Reno scour mattresses \& geotextile-backed slopes & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:gabions}{\bfseries\color{mhblue}Page 19--20} \\
+\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 08 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Stone Pitching \& Hydraulic Protection & \fontsize{7.5pt}{9.1pt}\selectfont Grouted and dry stone pitching, culvert aprons, side drains \& embankment protection & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:pitching}{\bfseries\color{mhblue}Page 21--22} \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 09 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Bulk Water Reticulation & \fontsize{7.5pt}{9.1pt}\selectfont uPVC/HDPE/steel potable water mains, valve chambers, pressure testing \& erf meters & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:waterretic}{\bfseries\color{mhblue}Page 16} \\
-\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 10 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Sewer Pipelines \& Reticulation & \fontsize{7.5pt}{9.1pt}\selectfont Gravity sewer collector lines, benching \& drop manholes, municipal sewer tie-ins & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:sewer}{\bfseries\color{mhblue}Page 17} \\
+\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 09 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Bulk Water Reticulation & \fontsize{7.5pt}{9.1pt}\selectfont uPVC/HDPE/steel potable water mains, valve chambers, pressure testing \& erf meters & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:waterretic}{\bfseries\color{mhblue}Page 23} \\
+\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 10 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Sewer Pipelines \& Reticulation & \fontsize{7.5pt}{9.1pt}\selectfont Gravity sewer collector lines, benching \& drop manholes, municipal sewer tie-ins & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:sewer}{\bfseries\color{mhblue}Page 24} \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 11 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Mechanical Engineering \& Pumping & \fontsize{7.5pt}{9.1pt}\selectfont Pump station pipework manifolds, flanged steel spools, valves \& storage tank works & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:mechanical}{\bfseries\color{mhblue}Page 18} \\
-\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 12 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries General Building \& Structural Facilities & \fontsize{7.5pt}{9.1pt}\selectfont Clinics, classrooms, commercial offices, municipal depots \& NHBRC housing works & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:building}{\bfseries\color{mhblue}Page 19} \\
+\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 11 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Mechanical Engineering \& Pumping & \fontsize{7.5pt}{9.1pt}\selectfont Pump station pipework manifolds, flanged steel spools, valves \& storage tank works & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:mechanical}{\bfseries\color{mhblue}Page 25--26} \\
+\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 12 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries General Building \& Structural Facilities & \fontsize{7.5pt}{9.1pt}\selectfont Clinics, classrooms, commercial offices, municipal depots \& NHBRC housing works & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:building}{\bfseries\color{mhblue}Page 27--28} \\
 \rowcolor{mhbluelight}
-\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 13 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Electrical Reticulation \& Infrastructure & \fontsize{7.5pt}{9.1pt}\selectfont Building electrical wiring, distribution boards, area lighting \& perimeter security & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:electrical}{\bfseries\color{mhblue}Page 20} \\
+\fontsize{7.5pt}{9.1pt}\selectfont\bfseries 13 & \fontsize{7.5pt}{9.1pt}\selectfont\bfseries Electrical Reticulation \& Infrastructure & \fontsize{7.5pt}{9.1pt}\selectfont Building electrical wiring, distribution boards, area lighting \& perimeter security & \fontsize{7.5pt}{9.1pt}\selectfont\hyperlink{sec:electrical}{\bfseries\color{mhblue}Page 29--30} \\
 \end{tabularx}
 \renewcommand{\arraystretch}{1}
 
@@ -1071,32 +1083,19 @@
 
 \vfill
 
-\noindent
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p7]{earthworks-platform-roller.jpeg}{\photocardimgheight}{Platform Compaction}{Engineered Terrace \& Site Establishment}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p7]{earthworks-bulk-terrace.jpeg}{\photocardimgheight}{Bulk Cut-to-Fill Formation}{Heavy Earthworks Platform Shaping}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p7]{bulk-trenching-earthworks-1.jpeg}{\photocardimgheight}{Corridor Trenching}{Pipeline \& Drainage Excavation}
-\end{minipage}
-
-\vfill
-
 {\large\bfseries\color{mhnavy} Key Construction Activities}
-\vspace{0.08cm}
+\vspace{0.10cm}
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faTractor]{Clearing, Stripping \& Setting Out}{Removal of vegetation and surface obstructions, 150--300mm topsoil stripping to designated stockpiles for later rehabilitation, and survey pegging of batters and formation levels.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faMountain]{Subgrade Improvement \& Rock Fill}{Excavation of soft or expansive pockets and placement of imported dump rock pioneer layers or lime/cement-modified fills where ground conditions require stabilisation.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faLayerGroup]{Engineered Fill \& Compaction}{Placement of approved borrow or cut material in controlled lifts with moisture conditioning by water tanker and mechanical compaction using vibratory smooth-drum and padfoot rollers.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faHammer]{Deep Trenching \& Shoring}{Excavation of stepped or battered service trenches across variable strata, rock breaking where encountered, dewatering of wet excavations, and safe spoil placement clear of trench edges.}
 \end{minipage}
 
@@ -1108,6 +1107,25 @@
 \textbf{Lerome Water Supply (014/MKLM/2022/2023 --- Main Contractor):} Bulk trenching across soft, intermediate, and hard rock classifications. \ $\bullet$ \
 \textbf{Tanganani Ext 51 (Subcontractor to Civplant/Civtek):} Site clearing, 300mm topsoil stripping, deep culvert trenching, and roadbed compaction.
 }
+
+\clearpage
+
+% =========================================================================
+% PAGE 8 --- SERVICE 01 (CONT.): BULK EARTHWORKS 2x2 PHOTO SHOWCASE
+% =========================================================================
+\sectionbanner{01. BULK EARTHWORKS}{Delivered Site Works --- Platform Compaction, Cut-to-Fill \& Trenching}
+
+\noindent
+{\large\bfseries\color{mhnavy} Delivered Site Works \& Field Execution Gallery}\par
+\vspace{0.14cm}
+
+\photopairrow[pc-p01-r1]{earthworks-platform-roller.jpeg}{\photogridimgheight}{Platform Compaction}{Engineered Terrace \& Site Establishment}{earthworks-bulk-terrace.jpeg}{Bulk Cut-to-Fill Formation}{Heavy Earthworks Platform Shaping}
+
+\vspace{0.42cm}
+
+\photopairrow[pc-p01-r2]{earthworks-makhaswa-4.jpeg}{\photogridimgheight}{Subgrade Soil Compaction}{Heavy Roller Compaction to Engineering Specification}{bulk-trenching-earthworks-1.jpeg}{Corridor Trenching}{Pipeline \& Drainage Excavation}
+
+\vfill
 
 \clearpage
 
@@ -1164,32 +1182,19 @@
 
 \vfill
 
-\noindent
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p8]{road-roundabout.jpeg}{\photocardimgheight}{Base Layer Compaction}{Crushed Stone Base \& Kerb Alignment}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p8]{earthworks-surfacing-watertruck.jpeg}{\photocardimgheight}{Moisture Conditioning}{Water Bowser \& Pavement Layer Prep}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p8]{road-roundabout-completed.jpeg}{\photocardimgheight}{Completed Urban Intersection}{Surfaced Carriageway \& Splitter Islands}
-\end{minipage}
-
-\vfill
-
 {\large\bfseries\color{mhnavy} Key Construction Activities}
-\vspace{0.08cm}
+\vspace{0.10cm}
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faRoad]{Box-Cut \& Roadbed Preparation}{Excavation to design box-cut levels, relocation or protection of existing municipal services, in-situ roadbed scarifying, moisture adjustment, and proof-rolling to identify soft zones.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faFlask]{Chemical Sub-Base Stabilisation}{Spreading and uniform mixing of cement or lime stabilising agents into imported gravel sub-base layers (such as C3/C4 horizons), followed by rapid compaction and wet curing.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faLayerGroup]{Crushed-Stone Base \& Slush-Grouting}{Grader blade-cutting and vibratory compaction of graded crushed aggregate base courses (including G1/G2 specifications) to design cross-falls, camber, and surface tolerances.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faDraftingCompass]{Level \& Compaction Sign-Off}{Survey verification of layer thicknesses and road profiles, paired with field density tests conducted through SANAS-accredited laboratories at each hold point.}
 \end{minipage}
 
@@ -1200,6 +1205,25 @@
 \textbf{Diepsloot Phase 4, Zeph Mothopeng St (JRA/22/83 --- Subcontractor to Baithusi Trading):} Roadbed, selected layer, cement-stabilised sub-base, and G1 crushed aggregate base (551m $\times$ 5.5m). \ $\bullet$ \
 \textbf{Diepsloot Ext 06 (JRA/19/214 --- Subcontractor to SR Construction):} Road subgrade preparation and C4 cement-stabilised sub-base layerworks.
 }
+
+\clearpage
+
+% =========================================================================
+% PAGE 10 --- SERVICE 02 (CONT.): ROAD CONSTRUCTION 2x2 PHOTO SHOWCASE
+% =========================================================================
+\sectionbanner{02. ROAD CONSTRUCTION}{Delivered Site Works --- Layerworks, Moisture Conditioning \& Intersections}
+
+\noindent
+{\large\bfseries\color{mhnavy} Delivered Site Works \& Field Execution Gallery}\par
+\vspace{0.14cm}
+
+\photopairrow[pc-p02-r1]{road-roundabout.jpeg}{\photogridimgheight}{Base Layer Compaction}{Crushed Stone Base \& Kerb Alignment}{roads-makhaswa-6.jpeg}{Compacted Base Course \& Kerbing}{Prepared Base Layer Ready for Surfacing}
+
+\vspace{0.42cm}
+
+\photopairrow[pc-p02-r2]{earthworks-surfacing-watertruck.jpeg}{\photogridimgheight}{Moisture Conditioning}{Water Bowser \& Pavement Layer Prep}{road-roundabout-completed.jpeg}{Completed Urban Intersection}{Surfaced Carriageway \& Splitter Islands}
+
+\vfill
 
 \clearpage
 
@@ -1256,32 +1280,19 @@
 
 \vfill
 
-\noindent
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p9]{asphalt-photos-2.jpeg}{\photocardimgheight}{Paver Laydown}{Hot-Mix Asphalt Wearing Course}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p9]{asphalt-photos-1.jpeg}{\photocardimgheight}{Mat Finishing \& Joints}{Longitudinal \& Kerb Edge Tie-In}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p9]{asphalt-photos-3.jpeg}{\photocardimgheight}{Rolling Train}{PTR \& Steel-Drum Roller Compaction}
-\end{minipage}
-
-\vfill
-
 {\large\bfseries\color{mhnavy} Key Construction Activities}
-\vspace{0.08cm}
+\vspace{0.10cm}
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faTint]{Base Sweeping, Prime \& Tack Coat}{Mechanical brooming of completed base courses to expose stone mosaic, followed by controlled application of bituminous prime or cationic tack emulsion prior to paving.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faTools]{Milling, Patching \& Crack Sealing}{Cold profiling of rutted or crocodile-cracked sections, base failure reconstruction, pothole and edge-break repairs, and routing/sealing of active pavement cracks.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faRoad]{Asphalt Paving \& Compaction}{Mechanical screed paving of hot-mix asphalt overlays and wearing courses, compacted sequentially by steel-drum vibratory and pneumatic-tyred rollers to achieve target mat density.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faLayerGroup]{Bituminous Surface Seals}{Application of slurry seals and single or double chip-and-spray seals on provincial and rural road corridors to restore skid resistance and waterproof underlying pavement layers.}
 \end{minipage}
 
@@ -1292,6 +1303,25 @@
 \textbf{Gauteng Provincial Road Rehab (DRT23/05/2016 --- Subcontractor to Civtek for Gauteng DRT):} Road profiling, cold milling, asphalt patching, and medium-graded asphalt resurfacing. \ $\bullet$ \
 \textbf{Diepsloot Ext 11 Phase 4 (JRA/21/59 --- Subcontractor to Anvisda Plant \& Civils):} Sub-base compaction and asphalt surfacing preparation.
 }
+
+\clearpage
+
+% =========================================================================
+% PAGE 12 --- SERVICE 03 (CONT.): ASPHALT SURFACING 2x2 PHOTO SHOWCASE
+% =========================================================================
+\sectionbanner{03. ASPHALT \& REHABILITATION}{Delivered Site Works --- Paver Laydown, Joint Finishing \& Compaction}
+
+\noindent
+{\large\bfseries\color{mhnavy} Delivered Site Works \& Field Execution Gallery}\par
+\vspace{0.14cm}
+
+\photopairrow[pc-p03-r1]{asphalt-photos-2.jpeg}{\photogridimgheight}{Paver Laydown}{Hot-Mix Asphalt Wearing Course}{asphalt-photos-1.jpeg}{Mat Finishing \& Joints}{Longitudinal \& Kerb Edge Tie-In}
+
+\vspace{0.42cm}
+
+\photopairrow[pc-p03-r2]{asphalt-photos-3.jpeg}{\photogridimgheight}{Rolling Train}{PTR \& Steel-Drum Roller Compaction}{asphalt-photos-4.jpeg}{Completed Asphalt Surfacing}{Finished Wearing Course \& Edge Tie-In}
+
+\vfill
 
 \clearpage
 
@@ -1348,32 +1378,19 @@
 
 \vfill
 
-\noindent
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p10]{kerbing-paving-island.jpeg}{\photocardimgheight}{Kerbing \& Splitter Island}{Precast Barrier Kerbs \& Block Apron}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p10]{interlocking-road-paving.jpeg}{\photocardimgheight}{Segmental Block Paving}{Interlocking Paved Roadway \& Channel}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p10]{road-markings-application.jpeg}{\photocardimgheight}{Road Markings}{Corridor Line Marking \& Delineation}
-\end{minipage}
-
-\vfill
-
 {\large\bfseries\color{mhnavy} Key Construction Activities}
-\vspace{0.08cm}
+\vspace{0.10cm}
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faRoad]{Precast Kerbing \& Channelling}{Stringline alignment, concrete bedding, rear concrete haunching, and expansion jointing of barrier, semi-mountable, and mountable kerbs along straight runs and tight intersection radii.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faThLarge]{Interlocking Concrete Block Paving}{Screeding of river-sand bedding layers, laying of 60mm pedestrian and 80mm heavy-duty Type SA interlocking blocks, edge cutting, plate compaction, and joint sand brooming.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faTrafficLight]{Intersection Ducting \& Signal Works}{Installation of underground uPVC sleeve crossings, drawboxes, pole foundations, signal standards, and associated electrical cabling for urban intersections.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faCheckCircle]{Markings, Signage \& Calming}{Application of retro-reflective road markings, bidirectional road studs, permanent road traffic signs, concrete driveway entrances, and rumble strips or speed humps.}
 \end{minipage}
 
@@ -1385,6 +1402,25 @@
 \textbf{Road K46-AS (DRT 40/11/2014 --- Subcontractor to Slim Construction):} Supply and installation of kerbing along provincial corridor. \ $\bullet$ \
 \textbf{Road D2702 (RAL/T1171/2021 --- Subcontractor):} Thermoplastic road markings and road studs.
 }
+
+\clearpage
+
+% =========================================================================
+% PAGE 14 --- SERVICE 04 (CONT.): KERBING, PAVING & SIGNALS 2x2 PHOTO SHOWCASE
+% =========================================================================
+\sectionbanner{04. KERBING, PAVING \& SIGNALS}{Delivered Site Works --- Precast Kerbing, Block Paving \& Road Markings}
+
+\noindent
+{\large\bfseries\color{mhnavy} Delivered Site Works \& Field Execution Gallery}\par
+\vspace{0.14cm}
+
+\photopairrow[pc-p04-r1]{interlocking-road-paving.jpeg}{\photogridimgheight}{Segmental Block Paving}{Interlocking Paved Roadway \& Channel}{makhaswa-61.jpeg}{Interlocking Block Paving}{Block Paving Installation Alongside Road Kerbing}
+
+\vspace{0.42cm}
+
+\photopairrow[pc-p04-r2]{kerbing-paving-island.jpeg}{\photogridimgheight}{Kerbing \& Splitter Island}{Precast Barrier Kerbs \& Block Apron}{road-markings-application.jpeg}{Road Markings}{Corridor Line Marking \& Delineation}
+
+\vfill
 
 \clearpage
 
@@ -1441,32 +1477,19 @@
 
 \vfill
 
-\noindent
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p11]{culvert-civil-storm-sewer-pipe.jpeg}{\photocardimgheight}{Stormwater Pipe Laying}{Precast Concrete Culvert Alignment}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p11]{stormwater-manhole-chamber.jpeg}{\photocardimgheight}{Chamber \& Inlet Works}{Brickwork / Concrete Catchpit Construction}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p11]{pipeline-trench-jcb.jpeg}{\photocardimgheight}{Trench Bedding \& Handling}{Mechanical Lowering \& Haunch Compaction}
-\end{minipage}
-
-\vfill
-
 {\large\bfseries\color{mhnavy} Key Construction Activities}
-\vspace{0.08cm}
+\vspace{0.10cm}
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faWater]{Precast Concrete Culvert Pipelines}{Trench excavation to survey invert pegs, compacted Class B granular bedding cradles, mechanical pipe lowering, rubber-ring or mortar jointing, and selected blanket compaction.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faLayerGroup]{Subsoil Cut-Off Drainage}{Excavation of pavement edge filter trenches, installation of 75mm and 110mm perforated pipes with crushed stone filter media wrapped in non-woven geotextile fabric.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faArchway]{Manholes, Catchpits \& Kerb Inlets}{Construction of engineering-brick and in-situ concrete chambers, stepped energy-dissipation drop manholes, precast cover slabs, and heavy-duty Type 2A / Type 4A frames and covers.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faCheckDouble]{Open Drains \& Tie-In Commissioning}{Casting of lined trapezoidal and V-side drains, transition channels, headwalls, and live tie-ins into existing municipal trunk stormwater infrastructure.}
 \end{minipage}
 
@@ -1478,6 +1501,25 @@
 \textbf{Diepsloot Ext 06 (JRA/19/214) \& Ext 11 (JRA/21/59 --- Subcontractor):} 450--1,200mm S\&S stormwater lines \& 75mm subsoil drains. \ $\bullet$ \
 \textbf{Road K46-AS (DRT 40/11/2014 --- Subcontractor):} Provincial corridor stormwater \& subsoil drainage.
 }
+
+\clearpage
+
+% =========================================================================
+% PAGE 16 --- SERVICE 05 (CONT.): STORMWATER DRAINAGE 2x2 PHOTO SHOWCASE
+% =========================================================================
+\sectionbanner{05. STORMWATER DRAINAGE}{Delivered Site Works --- Pipe Laying, Catchpits, Manholes \& Trenching}
+
+\noindent
+{\large\bfseries\color{mhnavy} Delivered Site Works \& Field Execution Gallery}\par
+\vspace{0.14cm}
+
+\photopairrow[pc-p05-r1]{culvert-civil-storm-sewer-pipe.jpeg}{\photogridimgheight}{Stormwater Pipe Laying}{Precast Concrete Culvert Alignment}{pipeline-trench-jcb.jpeg}{Trench Bedding \& Handling}{Mechanical Lowering \& Haunch Compaction}
+
+\vspace{0.42cm}
+
+\photopairrow[pc-p05-r2]{makhaswa-28.jpeg}{\photogridimgheight}{Stormwater Catch Pit Construction}{Brickwork Catchpit in Timber-Shuttered Excavation}{stormwater-manhole-chamber.jpeg}{Chamber \& Inlet Works}{Brickwork / Concrete Catchpit Construction}
+
+\vfill
 
 \clearpage
 
@@ -1534,32 +1576,19 @@
 
 \vfill
 
-\noindent
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p12]{concrete-bridges-1.jpeg}{\photocardimgheight}{Bridge Falsework \& Piers}{Multi-Span Reinforced Concrete Crossing}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p12]{concrete-bridges-2.jpeg}{\photocardimgheight}{Abutments \& Wingwalls}{River Channel Substructure \& Approaches}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p12]{culvert-bridge.jpeg}{\photocardimgheight}{Precast Concrete Culvert Bridge}{Multi-Barrel Wingwalls \& Scour Apron}
-\end{minipage}
-
-\vfill
-
 {\large\bfseries\color{mhnavy} Key Construction Activities}
-\vspace{0.08cm}
+\vspace{0.10cm}
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faArchway]{Bridge Substructures \& Decks}{Excavation of pier and abutment footings, blinding concrete, high-tensile rebar cage assembly, engineered falsework erection, and controlled structural concrete pours.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faCubes]{Precast Portal Culvert Crossings}{Preparation of reinforced invert slabs or Class B bedding, crane positioning of precast concrete portal units, structural joint grouting, and cast-in-situ headwalls and aprons.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faLayerGroup]{Structural Retaining Walls}{Construction of reinforced concrete, mass concrete, and brick earth-retaining walls along road dualisation corridors and steep township embankments.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faCheckCircle]{Concrete Quality \& Backfill}{On-site slump checks, 150mm cube sampling for SANAS laboratory strength verification, rear drainage blanket installation, and compacted structural backfill.}
 \end{minipage}
 
@@ -1570,6 +1599,25 @@
 \textbf{Garstfontein Road (K50) Upgrading, Pretoria (Subcontractor to Sedtrade):} Construction of corridor retaining walls (Appointed value: R12,477,889.13 excl. VAT, subject to remeasurement). \ $\bullet$ \
 \textbf{Diepsloot Ext 06 (JRA/19/214 --- Subcontractor):} Mass concrete and brick retaining walls.
 }
+
+\clearpage
+
+% =========================================================================
+% PAGE 18 --- SERVICE 06 (CONT.): BRIDGES & STRUCTURES 2x2 PHOTO SHOWCASE
+% =========================================================================
+\sectionbanner{06. BRIDGES \& STRUCTURES}{Delivered Site Works --- Bridge Falsework, Abutments \& Culvert Crossings}
+
+\noindent
+{\large\bfseries\color{mhnavy} Delivered Site Works \& Field Execution Gallery}\par
+\vspace{0.14cm}
+
+\photopairrow[pc-p06-r1]{concrete-bridges-1.jpeg}{\photogridimgheight}{Bridge Falsework \& Piers}{Multi-Span Reinforced Concrete Crossing}{concrete-bridges-2.jpeg}{Abutments \& Wingwalls}{River Channel Substructure \& Approaches}
+
+\vspace{0.42cm}
+
+\photopairrow[pc-p06-r2]{culvert-bridge.jpeg}{\photogridimgheight}{Precast Concrete Culvert Bridge}{Multi-Barrel Wingwalls \& Scour Apron}{precast-box-culvert.jpeg}{Portal Box Culverts}{Twin Precast Culvert Barrel Installation}
+
+\vfill
 
 \clearpage
 
@@ -1626,16 +1674,26 @@
 
 \vfill
 
+\phantomsection\hypertarget{sec:gabionspecs}{}\pdfbookmark[2]{Gabion Specifications}{sec:gabionspecs}
+{\large\bfseries\color{mhnavy} Gabion Products \& Materials}
+\vspace{0.08cm}
+
+\renewcommand{\arraystretch}{1.22}
 \noindent
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p13]{gabion_retaining_wall_arch_bridge.jpg}{\photocardimgheight}{Bridge Approach Gabions}{Stepped Gravity Retaining Structure}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p13]{gabion_mesh_retaining_wall_grass.jpg}{\photocardimgheight}{Embankment Stabilisation}{Terraced Corridor Slope Protection}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p13]{gabion_rock_wall_construction.jpg}{\photocardimgheight}{Basket Rock Packing}{Hand-Faced Quarry Stone Placement}
-\end{minipage}
+\begin{tabularx}{\textwidth}{@{}p{2.5cm} p{3.3cm} X p{4.2cm}@{}}
+\rowcolor{mhnavy}
+{\color{white}\bfseries\fontsize{7.6pt}{9.2pt}\selectfont Product} &
+{\color{white}\bfseries\fontsize{7.6pt}{9.2pt}\selectfont Standard Sizes (L$\times$W$\times$H)} &
+{\color{white}\bfseries\fontsize{7.6pt}{9.2pt}\selectfont Mesh \& Wire Specification} &
+{\color{white}\bfseries\fontsize{7.6pt}{9.2pt}\selectfont Typical Application} \\
+\rowcolor{mhbluelight}
+\fontsize{7.3pt}{9.0pt}\selectfont\bfseries Gabion boxes & \fontsize{7.3pt}{9.0pt}\selectfont 1m$\times$1m$\times$1m, 2m$\times$1m$\times$1m,\newline 3m$\times$1m$\times$1m, 2m$\times$1m$\times$0.5m & \fontsize{7.3pt}{9.0pt}\selectfont Double-twisted hexagonal mesh 80$\times$100\,mm; 2.7\,mm mesh wire, 3.4\,mm selvedge, 2.2\,mm lacing wire; Class A galvanised & \fontsize{7.3pt}{9.0pt}\selectfont Retaining walls, toe and abutment protection; diaphragms at 1\,m centres \\
+\fontsize{7.3pt}{9.0pt}\selectfont\bfseries Reno mattresses & \fontsize{7.3pt}{9.0pt}\selectfont 2m$\times$1m$\times$0.17m, 2m$\times$1m$\times$0.23m,\newline 6m$\times$2m$\times$0.30m & \fontsize{7.3pt}{9.0pt}\selectfont Double-twisted hexagonal mesh 60$\times$80\,mm; 2.2\,mm mesh wire, 2.7\,mm selvedge; Class A galvanised or PVC-coated & \fontsize{7.3pt}{9.0pt}\selectfont Channel lining, river bank protection, weir aprons and scour protection \\
+\rowcolor{mhbluelight}
+\fontsize{7.3pt}{9.0pt}\selectfont\bfseries Geotextile filter & \fontsize{7.3pt}{9.0pt}\selectfont Continuous rolls; 2.0m to 5.4m wide & \fontsize{7.3pt}{9.0pt}\selectfont Non-woven needle-punched polypropylene continuous filament (bidim A2/A4 or approved equivalent) & \fontsize{7.3pt}{9.0pt}\selectfont Behind all retaining walls and under all mattresses \\
+\fontsize{7.3pt}{9.0pt}\selectfont\bfseries Rock fill & \fontsize{7.3pt}{9.0pt}\selectfont 100--250\,mm (gabions);\newline 75--150\,mm (mattresses) & \fontsize{7.3pt}{9.0pt}\selectfont Hard, angular, durable quarried stone or clean field boulder; non-friable; density $\geq$ 2,600\,kg/m$^3$ & \fontsize{7.3pt}{9.0pt}\selectfont Hand-placed on exposed faces; machine/hand-filled in layers \\
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
 
 \vfill
 
@@ -1665,31 +1723,21 @@
 \clearpage
 
 % =========================================================================
-% PAGE 14 --- SERVICE 07 (CONT.): GABION SPECIFICATIONS --- PRODUCTS & MATERIALS
+% PAGE 20 --- SERVICE 07 (CONT.): GABIONS & SOIL RETAINING 2x2 PHOTO SHOWCASE
 % =========================================================================
-\phantomsection\hypertarget{sec:gabionspecs}{}\pdfbookmark[2]{Gabion Specifications}{sec:gabionspecs}
-\sectionbanner{07. GABION SPECIFICATIONS}{Standard Sizes, Mesh \& Wire Specification \& Typical Application}
+\sectionbanner{07. GABIONS \& SOIL RETAINING}{Delivered Site Works --- Gabion Gravity Walls, Rock Packing \& Retaining Footings}
 
 \noindent
-{\large\bfseries\color{mhnavy} Gabion Products \& Materials}
-\vspace{0.15cm}
+{\large\bfseries\color{mhnavy} Delivered Site Works \& Field Execution Gallery}\par
+\vspace{0.14cm}
 
-\renewcommand{\arraystretch}{1.35}
-\noindent
-\begin{tabularx}{\textwidth}{@{}p{2.6cm} p{3.4cm} X p{4.3cm}@{}}
-\rowcolor{mhnavy}
-{\color{white}\bfseries\fontsize{8.0pt}{9.8pt}\selectfont Product} &
-{\color{white}\bfseries\fontsize{8.0pt}{9.8pt}\selectfont Standard Sizes (L$\times$W$\times$H)} &
-{\color{white}\bfseries\fontsize{8.0pt}{9.8pt}\selectfont Mesh \& Wire Specification} &
-{\color{white}\bfseries\fontsize{8.0pt}{9.8pt}\selectfont Typical Application} \\
-\rowcolor{mhbluelight}
-\fontsize{7.6pt}{9.5pt}\selectfont\bfseries Gabion boxes & \fontsize{7.6pt}{9.5pt}\selectfont 1m$\times$1m$\times$1m,\newline 2m$\times$1m$\times$1m, 3m$\times$1m$\times$1m,\newline 2m$\times$1m$\times$0.5m & \fontsize{7.6pt}{9.5pt}\selectfont Double-twisted hexagonal mesh 80$\times$100\,mm; 2.7\,mm mesh wire, 3.4\,mm selvedge, 2.2\,mm lacing wire; Class A galvanised & \fontsize{7.6pt}{9.5pt}\selectfont Retaining walls, toe and abutment protection; diaphragms at 1\,m centres \\
-\fontsize{7.6pt}{9.5pt}\selectfont\bfseries Reno mattresses & \fontsize{7.6pt}{9.5pt}\selectfont 2m$\times$1m$\times$0.17m,\newline 2m$\times$1m$\times$0.23m,\newline 6m$\times$2m$\times$0.30m & \fontsize{7.6pt}{9.5pt}\selectfont Double-twisted hexagonal mesh 60$\times$80\,mm; 2.2\,mm mesh wire, 2.7\,mm selvedge; Class A galvanised or PVC-coated & \fontsize{7.6pt}{9.5pt}\selectfont Channel lining, river bank protection, weir aprons and scour protection \\
-\rowcolor{mhbluelight}
-\fontsize{7.6pt}{9.5pt}\selectfont\bfseries Geotextile filter & \fontsize{7.6pt}{9.5pt}\selectfont Continuous rolls; 2.0m to 5.4m wide & \fontsize{7.6pt}{9.5pt}\selectfont Non-woven needle-punched polypropylene continuous filament (bidim A2/A4 or approved equivalent) & \fontsize{7.6pt}{9.5pt}\selectfont Behind all retaining walls and under all mattresses \\
-\fontsize{7.6pt}{9.5pt}\selectfont\bfseries Rock fill & \fontsize{7.6pt}{9.5pt}\selectfont 100\,mm to 250\,mm for gabions; 75\,mm to 150\,mm for mattresses & \fontsize{7.6pt}{9.5pt}\selectfont Hard, angular, durable quarried stone or clean field boulder; non-friable; density $\geq$ 2,600\,kg/m$^3$ & \fontsize{7.6pt}{9.5pt}\selectfont Hand-placed on exposed faces; machine/hand-filled in layers \\
-\end{tabularx}
-\renewcommand{\arraystretch}{1}
+\photopairrow[pc-p07-r1]{gabion_retaining_wall_arch_bridge.jpg}{\photogridimgheight}{Bridge Approach Gabions}{Stepped Gravity Retaining Structure}{gabion_mesh_retaining_wall_grass.jpg}{Embankment Stabilisation}{Terraced Corridor Slope Protection}
+
+\vspace{0.42cm}
+
+\photopairrow[pc-p07-r2]{gabion_rock_wall_construction.jpg}{\photogridimgheight}{Basket Rock Packing}{Hand-Faced Quarry Stone Placement}{retaining-wall-makhaswa-1.jpeg}{Retaining Wall Footing \& Rebar}{Excavated Embankment Footing Steel Reinforcement}
+
+\vfill
 
 \clearpage
 
@@ -1746,35 +1794,19 @@
 
 \vfill
 
-\noindent
-\begin{minipage}[t]{0.238\textwidth}
-    \photocard[equal height group=pc-p15]{stone-pitching-1.jpeg}{\photocardimgheight}{01. Batter Trimming}{Subgrade Shaping \& Toe Trench}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.238\textwidth}
-    \photocard[equal height group=pc-p15]{stone-pitching-2.jpeg}{\photocardimgheight}{02. Stone Packing}{Hand-Interlocked Quarry Spalls}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.238\textwidth}
-    \photocard[equal height group=pc-p15]{stone-pitching-4.jpeg}{\photocardimgheight}{03. Mortar Grouting}{Joint Filling \& Recessed Pointing}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.238\textwidth}
-    \photocard[equal height group=pc-p15]{stone-pitching-6.jpeg}{\photocardimgheight}{04. Completed Apron}{Cured Hydraulic Slope Lining}
-\end{minipage}
-
-\vfill
-
 {\large\bfseries\color{mhnavy} Key Construction Activities}
-\vspace{0.08cm}
+\vspace{0.10cm}
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faTractor]{Batter Trimming \& Concrete Toe-Walls}{Shaping and compacting embankment slopes and channel profiles, casting concrete toe-walls and perimeter cut-off keys to prevent hydraulic undermining.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faMountain]{Quarry Stone Placement}{Wetting of clean, durable stone spalls and tight hand-packing perpendicular to the slope with smaller stone wedges driven into interstices for mechanical interlock.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faTools]{Mortar Grouting \& Mesh Reinforcement}{Full-depth rodding of sand-cement mortar into joints (including wire-tied mesh reinforcement where specified for high-velocity chutes) with exposed stone crowns.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faTint]{Weephole Relief \& Curing}{Installation of geotextile-backed PVC weepholes at regular centres to relieve rear groundwater pressure, followed by damp curing of finished mortar joints.}
 \end{minipage}
 
@@ -1784,6 +1816,25 @@
 \textbf{Construction of Road K46-AS (DRT 40/11/2014 --- Subcontractor to Slim Construction for Gauteng DRT):} Supply and installation of stone pitching, gabion baskets, kerbing, stormwater infrastructure, and subsoil drainage along provincial road corridor. \ $\bullet$ \
 \textbf{Gauteng Provincial Road Rehabilitation (DRT23/05/2016 --- Subcontractor to Civtek for Gauteng DRT):} Stone pitching, concrete side drains, kerb inlets, and road rehabilitation works.
 }
+
+\clearpage
+
+% =========================================================================
+% PAGE 22 --- SERVICE 08 (CONT.): STONE PITCHING 2x2 PHOTO SHOWCASE
+% =========================================================================
+\sectionbanner{08. STONE PITCHING}{Delivered Site Works --- Batter Trimming, Stone Packing, Grouting \& Aprons}
+
+\noindent
+{\large\bfseries\color{mhnavy} Delivered Site Works \& Field Execution Gallery}\par
+\vspace{0.14cm}
+
+\photopairrow[pc-p08-r1]{stone-pitching-1.jpeg}{\photogridimgheight}{01. Batter Trimming}{Subgrade Shaping \& Toe Trench}{stone-pitching-2.jpeg}{02. Stone Packing}{Hand-Interlocked Quarry Spalls}
+
+\vspace{0.42cm}
+
+\photopairrow[pc-p08-r2]{stone-pitching-4.jpeg}{\photogridimgheight}{03. Mortar Grouting}{Joint Filling \& Recessed Pointing}{stone-pitching-6.jpeg}{04. Completed Apron}{Cured Hydraulic Slope Lining}
+
+\vfill
 
 \clearpage
 
@@ -1842,10 +1893,10 @@
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard[equal height group=pc-p16]{water-steel-pipe-chamber.jpeg}{\photocardimgheight}{Bulk Pipeline \& Chamber Tie-In}{Flanged Steel Spool \& Trench Bedding}
+    \photocard[equal height group=pc-p16]{water-steel-pipe-chamber.jpeg}{\photopairimgheight}{Bulk Pipeline \& Chamber Tie-In}{Flanged Steel Spool \& Trench Bedding}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard[equal height group=pc-p16]{valves-and-groundwater-tanks-1.jpeg}{\photocardimgheight}{Valve Chamber Assembly}{Isolation Valve \& Flanged Coupling Works}
+    \photocard[equal height group=pc-p16]{valves-and-groundwater-tanks-1.jpeg}{\photopairimgheight}{Valve Chamber Assembly}{Isolation Valve \& Flanged Coupling Works}
 \end{minipage}
 
 \vfill
@@ -1931,10 +1982,10 @@
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard[equal height group=pc-p17]{sewer-collector-trench.jpeg}{\photocardimgheight}{Deep Collector Trench}{Graded Bedding \& Concrete Pipeline Alignment}
+    \photocard[equal height group=pc-p17]{sewer-collector-trench.jpeg}{\photopairimgheight}{Deep Collector Trench}{Graded Bedding \& Concrete Pipeline Alignment}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard[equal height group=pc-p17]{sewer-outfall-pipeline.jpeg}{\photocardimgheight}{Outfall \& Chamber Interface}{Pipeline Connection \& Trench Protection}
+    \photocard[equal height group=pc-p17]{sewer-outfall-pipeline.jpeg}{\photopairimgheight}{Outfall \& Chamber Interface}{Pipeline Connection \& Trench Protection}
 \end{minipage}
 
 \vfill
@@ -2018,32 +2069,19 @@
 
 \vfill
 
-\noindent
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p18]{pumphouse-steel-pipe-works-2.jpeg}{\photocardimgheight}{Pump Manifold Pipework}{Flanged Steel Delivery Spools}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p18]{pumphouse-steel-pipe-works-1.jpeg}{\photocardimgheight}{Pumphouse Mechanicals}{Suction Header \& Valve Installation}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p18]{valves-and-groundwater-tanks-2.jpeg}{\photocardimgheight}{Control Gate Valve \& Hoist}{Pump Station Rising Main Assembly}
-\end{minipage}
-
-\vfill
-
 {\large\bfseries\color{mhnavy} Key Construction Activities}
-\vspace{0.08cm}
+\vspace{0.10cm}
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faCogs]{Pump Set \& Baseplate Mounting}{Installation of booster and transfer pump sets onto cast concrete plinths, baseplate grouting, shaft alignment, and vibration-isolated coupling to suction and discharge headers.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faWrench]{Steel Spool Fabrication \& Coating}{Fabrication and bolting of SANS 1123 flanged steel pipe spools, reducers, tees, and puddle-flange chamber penetrations with corrosion-protective coatings.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faSlidersH]{Valve Trains \& Flow Metering}{Installation of resilient-seated gate valves, reflux non-return valves, pressure-reducing valves, dismantling joints, strainers, and bulk electromagnetic or mechanical flow meters.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faCheckDouble]{Pressure Testing \& Wet Commissioning}{Hydrostatic manifold pressure testing, bolt torque verification, control panel interlock checks, and wet functional run-testing under operating head.}
 \end{minipage}
 
@@ -2054,6 +2092,25 @@
 \textbf{Lerome Water Supply (014/MKLM/2022/2023 --- Main Contractor):} Mechanical couplings, isolation/control fittings, hydrostatic pressure testing, and potable water commissioning. \ $\bullet$ \
 \textbf{City of Tshwane JV (SEG 41 --- JV Partner):} Municipal civil and bulk reticulation infrastructure framework.
 }
+
+\clearpage
+
+% =========================================================================
+% PAGE 26 --- SERVICE 11 (CONT.): MECHANICAL & PUMPING 2x2 PHOTO SHOWCASE
+% =========================================================================
+\sectionbanner{11. MECHANICAL \& PUMPING}{Delivered Site Works --- Pumphouse Manifolds, Flanged Steel Spools \& Valves}
+
+\noindent
+{\large\bfseries\color{mhnavy} Delivered Site Works \& Field Execution Gallery}\par
+\vspace{0.14cm}
+
+\photopairrow[pc-p11-r1]{pumphouse-steel-pipe-works-2.jpeg}{\photogridimgheight}{Pump Manifold Pipework}{Flanged Steel Delivery Spools}{pumphouse-steel-pipe-works-1.jpeg}{Pumphouse Mechanicals}{Suction Header \& Valve Installation}
+
+\vspace{0.42cm}
+
+\photopairrow[pc-p11-r2]{pumphouse-steel-pipe-works-3.jpeg}{\photogridimgheight}{Completed Pumphouse Piping}{Installed Flanged Steel Delivery Line}{valves-and-groundwater-tanks-2.jpeg}{Control Gate Valve \& Hoist}{Pump Station Rising Main Assembly}
+
+\vfill
 
 \clearpage
 
@@ -2110,32 +2167,19 @@
 
 \vfill
 
-\noindent
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p19]{clinic.jpeg}{\photocardimgheight}{Healthcare Facility}{Turnkey Community Clinic Construction}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p19]{school.jpeg}{\photocardimgheight}{Educational Infrastructure}{Classroom Block \& Finishes}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p19]{building-construction-commercial.jpeg}{\photocardimgheight}{Commercial Building}{Superstructure Brickwork \& Roof Works}
-\end{minipage}
-
-\vfill
-
 {\large\bfseries\color{mhnavy} Key Construction Activities}
-\vspace{0.08cm}
+\vspace{0.10cm}
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faCubes]{Foundations, Slabs \& Masonry}{Strip footings, raft and surface-bed reinforced concrete slabs, damp-proof membranes, structural stock and face-brick masonry, lintels, and internal/external plastering.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faIndustry]{Structural Steel \& Roofing Systems}{Erection of structural steel framing, engineered timber roof trusses and scotch roofs, IBR/chromadek roof sheeting, flashings, thermal insulation, and torch-on waterproofing.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faThLarge]{Specialist Architectural Finishes}{Rhinolite skimming, ceramic and porcelain tiling, suspended ceilings, acoustic drywall partitioning, raised access flooring, commercial aluminium doors/windows, and security gates.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faFaucet]{Building Services \& Turnkey Fit-Out}{Complete potable water and sanitaryware plumbing, ablution blocks, electrical wiring and LED lighting, perimeter fencing, and institutional furniture installation.}
 \end{minipage}
 
@@ -2147,6 +2191,25 @@
 \textbf{Samrand Commercial/Office Facility (2022--2023 --- Sedtrade):} Foundations, brickwork, structural steel, timber scotch roof, and commercial glazing. \ $\bullet$ \
 \textbf{Pikitup Midrand Depot (PIK 28/2021-22):} Park home plinths, permanent guardhouse, and male/female ablution blocks.
 }
+
+\clearpage
+
+% =========================================================================
+% PAGE 28 --- SERVICE 12 (CONT.): GENERAL BUILDING 2x2 PHOTO SHOWCASE
+% =========================================================================
+\sectionbanner{12. GENERAL BUILDING}{Delivered Site Works --- Clinics, Schools, Commercial \& Structural Building}
+
+\noindent
+{\large\bfseries\color{mhnavy} Delivered Site Works \& Field Execution Gallery}\par
+\vspace{0.14cm}
+
+\photopairrow[pc-p12-r1]{clinic.jpeg}{\photogridimgheight}{Healthcare Facility}{Turnkey Community Clinic Construction}{school.jpeg}{Educational Infrastructure}{Classroom Block \& Finishes}
+
+\vspace{0.42cm}
+
+\photopairrow[pc-p12-r2]{building-construction-commercial.jpeg}{\photogridimgheight}{Commercial Building}{Superstructure Brickwork \& Roof Works}{multi-story-concrete-slab-brickwork.jpeg}{Structural Concrete Frame \& Infill}{Multi-Storey Slab \& Masonry Construction}
+
+\vfill
 
 \clearpage
 
@@ -2203,32 +2266,19 @@
 
 \vfill
 
-\noindent
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p20]{high-mast-electrical-1.jpeg}{\photocardimgheight}{Area \& Canopy Lighting}{Elevated Luminaire Installation \& Maintenance}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p20]{building-electrical-kiosk.jpeg}{\photocardimgheight}{Feeder Distribution Kiosk}{External Building Kiosk \& Armoured Cabling}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.32\textwidth}
-    \photocard[equal height group=pc-p20]{palisade-fencing-1.jpeg}{\photocardimgheight}{Perimeter Security Works}{Galvanised Palisade Fencing \& Plinths}
-\end{minipage}
-
-\vfill
-
 {\large\bfseries\color{mhnavy} Key Construction Activities}
-\vspace{0.08cm}
+\vspace{0.10cm}
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faBolt]{Building Power \& LED Lighting}{First-fix and second-fix conduit installation, cable trays, distribution boards, circuit protection, socket outlets, and energy-efficient interior/exterior LED luminaires.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faExchangeAlt]{Underground Cabling \& Plinth Civils}{Cable trenching, sifted sand bedding, armoured LV cable laying with warning tape, exterior feeder kiosks, and concrete plinths for lighting masts and standby plant.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
     \servicecard[\faShieldAlt]{Depot Security \& Perimeter Infrastructure}{Supply and erection of hot-dip galvanised steel palisade and weldmesh perimeter fencing, concrete under-plinths, guardhouse power feeds, and access gates.}
-    \vspace{0.14cm}
+    \vspace{0.18cm}
     \servicecard[\faCheckCircle]{Testing, Earthing \& CoC Handover}{Earth continuity, insulation resistance, and earth-leakage testing by accredited electricians, culminating in statutory Electrical Certificates of Compliance (CoC).}
 \end{minipage}
 
@@ -2239,6 +2289,25 @@
 \textbf{Pikitup Midrand Depot (PIK 28/2021-22 --- Main Contractor):} Guardhouse and ablution electrical services alongside depot boundary security fencing. \ $\bullet$ \
 \textbf{Diepsloot West Secondary School (Main Contractor):} Classroom electrical reticulation and security infrastructure.
 }
+
+\clearpage
+
+% =========================================================================
+% PAGE 30 --- SERVICE 13 (CONT.): ELECTRICAL RETICULATION 2x2 PHOTO SHOWCASE
+% =========================================================================
+\sectionbanner{13. ELECTRICAL RETICULATION}{Delivered Site Works --- Area Lighting, Distribution Kiosks, Signals \& Security}
+
+\noindent
+{\large\bfseries\color{mhnavy} Delivered Site Works \& Field Execution Gallery}\par
+\vspace{0.14cm}
+
+\photopairrow[pc-p13-r1]{high-mast-electrical-1.jpeg}{\photogridimgheight}{Area \& Canopy Lighting}{Elevated Luminaire Installation \& Maintenance}{building-electrical-kiosk.jpeg}{Feeder Distribution Kiosk}{External Building Kiosk \& Armoured Cabling}
+
+\vspace{0.42cm}
+
+\photopairrow[pc-p13-r2]{palisade-fencing-1.jpeg}{\photogridimgheight}{Perimeter Security Works}{Galvanised Palisade Fencing \& Plinths}{traffic-signal-installation.jpeg}{Traffic Signals \& Junction Works}{SARTSM Signal Head \& Intersection Cabling}
+
+\vfill
 
 \clearpage
 
@@ -2735,10 +2804,10 @@ DLM-79/02/2020 &
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard[equal height group=pc-p27]{surveying-gps-site.jpeg}{\photocardimgheight}{Engineering Survey \& Setting Out}{On-Site Level, Alignment \& Invert Control}
+    \photocard[equal height group=pc-p27]{surveying-gps-site.jpeg}{\photopairimgheight}{Engineering Survey \& Setting Out}{On-Site Level, Alignment \& Invert Control}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard[equal height group=pc-p27]{mounted-cherry-picker.jpeg}{\photocardimgheight}{Mobile Elevated Access Plant}{Trailer-Mounted Hydraulic Boom Equipment}
+    \photocard[equal height group=pc-p27]{mounted-cherry-picker.jpeg}{\photopairimgheight}{Mobile Elevated Access Plant}{Trailer-Mounted Hydraulic Boom Equipment}
 \end{minipage}
 
 \vfill
@@ -2882,10 +2951,10 @@ Makhaswa Holdings separates its governance framework into \textbf{mandatory stat
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard[equal height group=pc-p29]{wall-bricklaying.jpeg}{\photocardimgheight}{Artisan Masonry \& Site Supervision}{On-Site Skills Transfer \& Quality Inspection}
+    \photocard[equal height group=pc-p29]{wall-bricklaying.jpeg}{\photopairimgheight}{Artisan Masonry \& Site Supervision}{On-Site Skills Transfer \& Quality Inspection}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\textwidth}
-    \photocard[equal height group=pc-p29]{building-construction-work-residential.jpeg}{\photocardimgheight}{Community Housing \& Trade Works}{Local Bricklaying \& Structural Participation}
+    \photocard[equal height group=pc-p29]{building-construction-work-residential.jpeg}{\photopairimgheight}{Community Housing \& Trade Works}{Local Bricklaying \& Structural Participation}
 \end{minipage}
 
 \vfill
