@@ -525,6 +525,7 @@
 
         .page-node {
             position: relative;
+            flex-shrink: 0;
             background-color: var(--mh-bg-page);
             box-shadow: var(--shadow-elevation);
             border-radius: 2px;
@@ -533,6 +534,36 @@
 
         .page-node canvas {
             display: block;
+        }
+
+        .page-loading-overlay {
+            position: absolute;
+            inset: 0;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #f8fafc;
+            color: var(--mh-navy);
+            font-family: var(--font-head);
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .page-node.is-loading .page-loading-overlay {
+            display: flex;
+        }
+
+        .page-loading-overlay .spinner {
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgba(7, 25, 51, 0.12);
+            border-top-color: var(--mh-gold);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
         }
 
         /* Text Layer (For Selection & Accessibility) */
@@ -1272,7 +1303,7 @@
                     if (el.selectZoom) el.selectZoom.value = state.zoomMode;
 
                     setupPageNodes();
-                    calculateScaleAndRenderAll();
+                    await calculateScaleAndRenderAll();
 
                     // Only render thumbnails on desktop screens (saves mobile memory & bandwidth)
                     if (window.innerWidth >= 992) {
@@ -1298,9 +1329,14 @@
 
                 for (let i = 1; i <= state.totalPages; i++) {
                     const pageNode = document.createElement('div');
-                    pageNode.className = 'page-node';
+                    pageNode.className = 'page-node is-loading';
                     pageNode.id = `page-node-${i}`;
                     pageNode.dataset.pageNumber = i;
+
+                    const loadingOverlay = document.createElement('div');
+                    loadingOverlay.className = 'page-loading-overlay';
+                    loadingOverlay.innerHTML = `<div class="spinner"></div><span>Loading Page ${i}...</span>`;
+                    pageNode.appendChild(loadingOverlay);
 
                     const canvas = document.createElement('canvas');
                     canvas.id = `page-canvas-${i}`;
@@ -1348,10 +1384,19 @@
 
                     state.currentScale = computedScale;
 
+                    const estWidth = Math.floor(unscaledViewport.width * computedScale);
+                    const estHeight = Math.floor(unscaledViewport.height * computedScale);
+                    document.querySelectorAll('.page-node').forEach(node => {
+                        node.style.width = `${estWidth}px`;
+                        node.style.height = `${estHeight}px`;
+                        node.classList.add('is-loading');
+                    });
+
                     if (state.viewMode === 'scroll') {
+                        await renderPage(state.currentPage, computedScale);
                         renderAllPages(computedScale);
                     } else {
-                        renderSinglePresentationPage(state.currentPage, computedScale);
+                        await renderSinglePresentationPage(state.currentPage, computedScale);
                     }
 
                 } catch (err) {
@@ -1366,6 +1411,16 @@
                 const canvas = document.getElementById(`page-canvas-${pageNum}`);
                 const textLayerDiv = document.getElementById(`text-layer-${pageNum}`);
                 if (!pageNode || !canvas || !textLayerDiv) return;
+
+                const existing = state.renderedPages.get(pageNum);
+                if (existing && existing.scale === scale && (existing.status === 'rendering' || existing.status === 'done')) {
+                    if (existing.status === 'done') {
+                        pageNode.classList.remove('is-loading');
+                    }
+                    return;
+                }
+
+                pageNode.classList.add('is-loading');
 
                 try {
                     const page = await state.pdfDoc.getPage(pageNum);
@@ -1394,17 +1449,17 @@
                         viewport: viewport
                     };
 
-                    if (state.renderedPages.has(pageNum)) {
-                        const existing = state.renderedPages.get(pageNum);
-                        if (existing && existing.renderTask) {
-                            existing.renderTask.cancel();
-                        }
+                    const latestExisting = state.renderedPages.get(pageNum);
+                    if (latestExisting && latestExisting.renderTask) {
+                        latestExisting.renderTask.cancel();
                     }
 
                     const renderTask = page.render(renderContext);
-                    state.renderedPages.set(pageNum, { canvas, renderTask });
+                    state.renderedPages.set(pageNum, { canvas, renderTask, scale, status: 'rendering' });
 
                     await renderTask.promise;
+                    state.renderedPages.set(pageNum, { canvas, renderTask: null, scale, status: 'done' });
+                    pageNode.classList.remove('is-loading');
 
                     // Render Text Layer (in CSS scale)
                     textLayerDiv.innerHTML = '';
@@ -1429,17 +1484,18 @@
 
             async function renderAllPages(scale) {
                 for (let i = 1; i <= state.totalPages; i++) {
+                    if (state.currentScale !== scale || state.viewMode !== 'scroll') break;
                     await renderPage(i, scale);
                 }
             }
 
-            function renderSinglePresentationPage(pageNum, scale) {
+            async function renderSinglePresentationPage(pageNum, scale) {
                 for (let i = 1; i <= state.totalPages; i++) {
                     const node = document.getElementById(`page-node-${i}`);
                     if (!node) continue;
                     if (i === pageNum) {
                         node.classList.add('current-presentation-page');
-                        renderPage(i, scale);
+                        await renderPage(i, scale);
                     } else {
                         node.classList.remove('current-presentation-page');
                     }
@@ -1550,9 +1606,15 @@
                     let maxRatio = 0;
 
                     entries.forEach(entry => {
-                        if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
-                            maxRatio = entry.intersectionRatio;
-                            visiblePage = parseInt(entry.target.dataset.pageNumber, 10);
+                        if (entry.isIntersecting) {
+                            const pageNum = parseInt(entry.target.dataset.pageNumber, 10);
+                            if (pageNum) {
+                                renderPage(pageNum, state.currentScale);
+                            }
+                            if (entry.intersectionRatio > maxRatio) {
+                                maxRatio = entry.intersectionRatio;
+                                visiblePage = pageNum;
+                            }
                         }
                     });
 
