@@ -49,7 +49,7 @@
 
     <!-- Mozilla PDF.js v3.11.174 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf_viewer.min.css"
-        integrity="sha512-7zpN8Q4Y5kX16zN8mU9N0d8hB8qLz0K4x0q60G0L4P3K1/m+m8E7l0F/R+H8aIe7l9uJ5U+x1aJ+4j1c4w=="
+        integrity="sha512-tze+o/xG0w3yxxE8xe32piisVvI/LfcEuf6LW7lFLUxhio2SfFQ9mQ0TqB0avvonmxUXT7/l8+fnWkR03u85fQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
@@ -574,8 +574,11 @@
             right: 0;
             bottom: 0;
             overflow: hidden;
-            opacity: 0.25;
+            opacity: 1;
             line-height: 1.0;
+            z-index: 1;
+            user-select: text;
+            -webkit-user-select: text;
         }
 
         .textLayer>span {
@@ -587,8 +590,8 @@
         }
 
         .textLayer ::selection {
-            background: rgba(8, 45, 90, 0.8);
-            color: #ffffff;
+            background: rgba(21, 76, 138, 0.32);
+            color: transparent;
         }
 
         .page-badge-floater {
@@ -1467,13 +1470,14 @@
                     textLayerDiv.style.height = `${cssHeight}px`;
 
                     const textViewport = page.getViewport({ scale: scale });
+                    textLayerDiv.style.setProperty('--scale-factor', textViewport.scale);
                     const textContent = await page.getTextContent();
-                    pdfjsLib.renderTextLayer({
-                        textContent: textContent,
+                    await pdfjsLib.renderTextLayer({
+                        textContentSource: textContent,
                         container: textLayerDiv,
                         viewport: textViewport,
                         textDivs: []
-                    });
+                    }).promise;
 
                 } catch (err) {
                     if (err.name !== 'RenderingCancelledException') {
