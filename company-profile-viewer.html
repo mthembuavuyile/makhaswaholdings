@@ -1083,12 +1083,14 @@
                 <i data-lucide="maximize" width="16" height="16"></i>
             </button>
 
-            <!-- Direct Request CTA -->
-            <a id="btnDownload" href="mailto:info@makhaswaholdings.co.za?subject=Company%20Profile%20Request%20-%20Makhaswa%20Holdings"
-                class="download-cta-btn"
-                title="Request Official Corporate Profile" aria-label="Request Official Corporate Profile">
-                <i data-lucide="mail" width="15" height="15"></i>
-                <span class="btn-text">Request Profile</span>
+            <!-- Direct Download CTA -->
+            <a id="btnDownload"
+                href="documents/makhaswa-company-profile-nov-18-2026.pdf"
+                download="Makhaswa-Holdings-Company-Profile.pdf"
+                class="download-cta-btn" title="Download Company Profile (PDF)"
+                aria-label="Download Company Profile">
+                <i data-lucide="download" width="15" height="15"></i>
+                <span class="btn-text">Download PDF</span>
             </a>
         </div>
     </header>
@@ -1122,14 +1124,19 @@
             </div>
 
             <!-- Under Scheduled Revision Status Card -->
-            <div class="viewer-error-card" id="viewerErrorCard" style="max-width: 580px; padding: 40px 32px; text-align: center; border: 1px solid rgba(200, 169, 81, 0.4); box-shadow: 0 16px 40px rgba(0,0,0,0.5);">
+            <div class="viewer-error-card" id="viewerErrorCard"
+                style="max-width: 580px; padding: 40px 32px; text-align: center; border: 1px solid rgba(200, 169, 81, 0.4); box-shadow: 0 16px 40px rgba(0,0,0,0.5);">
                 <i data-lucide="clock" width="44" height="44" color="#C8A951"
                     style="margin:0 auto 16px auto; display: block;"></i>
-                <h3 style="font-size: 1.35rem; color: #ffffff; margin-bottom: 12px; font-weight: 700;">Profile Under Scheduled Revision</h3>
+                <h3 style="font-size: 1.35rem; color: #ffffff; margin-bottom: 12px; font-weight: 700;">Profile Under
+                    Scheduled Revision</h3>
                 <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">
-                    Our comprehensive corporate profile is currently undergoing its annual update to incorporate our latest completed civil engineering and infrastructure projects. In the interim, our verified credentials pack and tender schedules are available directly upon request.
+                    Our comprehensive corporate profile is currently undergoing its annual update to incorporate our
+                    latest completed civil engineering and infrastructure projects. In the interim, our verified
+                    credentials pack and tender schedules are available directly upon request.
                 </p>
-                <div class="error-card-actions" style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                <div class="error-card-actions"
+                    style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
                     <a href="mailto:info@makhaswaholdings.co.za?subject=Company%20Profile%20Request%20-%20Makhaswa%20Holdings"
                         class="download-cta-btn" style="text-decoration: none; padding: 12px 20px;">
                         <i data-lucide="mail" width="16" height="16"></i> Request Profile via Email
@@ -1182,9 +1189,11 @@
 
             // 2. Parse URL parameters (Default to official PDF)
             const urlParams = new URLSearchParams(window.location.search);
-            const PDF_URL = urlParams.get('file') || 'documents/makhaswa-holdings-company-profile.pdf';
+            const PDF_URL = urlParams.get('file') || 'documents/makhaswa-company-profile-nov-18-2026.pdf';
             const INITIAL_PAGE = parseInt(urlParams.get('page'), 10) || 1;
-            const INITIAL_ZOOM = urlParams.get('zoom') || 'fit-page';
+            const DEFAULT_ZOOM = window.innerWidth >= 992 ? '1.25' : 'fit-page';
+            const INITIAL_ZOOM = urlParams.get('zoom') || DEFAULT_ZOOM;
+            const parsedInitialScale = parseFloat(INITIAL_ZOOM);
 
             // 3. State Management
             const state = {
@@ -1192,7 +1201,7 @@
                 totalPages: 0,
                 currentPage: INITIAL_PAGE,
                 zoomMode: INITIAL_ZOOM,
-                customScale: 1.0,
+                customScale: !isNaN(parsedInitialScale) ? parsedInitialScale : 1.0,
                 currentScale: 1.0,
                 viewMode: 'scroll',
                 renderedPages: new Map()
@@ -1221,8 +1230,13 @@
                 btnCloseSidebar: document.getElementById('btnCloseSidebar'),
                 btnFullscreen: document.getElementById('btnFullscreen'),
                 btnPrint: document.getElementById('btnPrint'),
+                btnDownload: document.getElementById('btnDownload'),
                 btnRetry: document.getElementById('btnRetryLoad')
             };
+
+            if (el.btnDownload) {
+                el.btnDownload.href = PDF_URL;
+            }
 
             // Initialize Lucide Icons
             lucide.createIcons();
